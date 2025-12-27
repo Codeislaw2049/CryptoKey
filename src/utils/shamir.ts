@@ -64,7 +64,11 @@ export const hexToStr = (hex: string): string => {
 };
 
 // Generate random byte
-const randomByte = (): number => Math.floor(Math.random() * 256);
+const randomByte = (): number => {
+  const array = new Uint8Array(1);
+  crypto.getRandomValues(array);
+  return array[0];
+};
 
 // Helper: Calculate SHA-256 hash of a string
 export const sha256 = async (str: string): Promise<string> => {

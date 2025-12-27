@@ -10,9 +10,9 @@ export interface PaymentSession {
 }
 
 const getWorkerUrl = () => {
-  return window.location.hostname === 'localhost' 
+  return import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' 
     ? 'http://127.0.0.1:8787' 
-    : 'https://cryptokey-auth.c-2049.workers.dev';
+    : 'https://cryptokey-auth.c-2049.workers.dev');
 };
 
 export const PaymentService = {
