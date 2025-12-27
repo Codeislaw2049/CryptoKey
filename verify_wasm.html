@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm Verification</title>
+</head>
+<body>
+    <h1>CryptoKey Wasm Verification</h1>
+    <div id="status">Loading...</div>
+    <div id="output" style="white-space: pre-wrap; font-family: monospace;"></div>
+
+    <script type="module">
+        import init, { check_license, split_secret, combine_shares, embed_stego } from './wasm-pro/pkg/wasm_pro.js';
+
+        const log = (msg) => {
+            const output = document.getElementById('output');
+            output.textContent += msg + '\n';
+            console.log(msg);
+        };
+
+        async function runTests() {
+            try {
+                log('Initializing Wasm...');
+                await init();
+                log('Wasm Initialized.');
+                document.getElementById('status').textContent = 'Running Tests...';
+
+                // Test 1: License Check
+                log('\n--- Test 1: License Check ---');
+                const validKey = 'PRO-KEY-123456';
+                const invalidKey = 'FREE-KEY-000';
+                log(`Checking ${validKey}: ${check_license(validKey)}`);
+                log(`Checking ${invalidKey}: ${check_license(invalidKey)}`);
+
+                // Test 2: Shamir Secret Sharing
+                log('\n--- Test 2: Shamir Secret Sharing ---');
+                const secret = "CryptoKey-Secret-Message";
+                const sharesCount = 5;
+                const threshold = 3;
+                
+                const startTime = performance.now();
+                const shares = split_secret(secret, sharesCount, threshold);
+                const endTime = performance.now();
+                
+                log(`Secret: ${secret}`);
+                log(`Generated ${shares.length} shares in ${(endTime - startTime).toFixed(2)}ms`);
+                shares.forEach(s => log(`Share: ${s}`));
+
+                // Test 3: Shamir Reconstruct
+                log('\n--- Test 3: Shamir Reconstruction ---');
+                // Use first 3 shares
+                const sharesToUse = shares.slice(0, 3);
+                log(`Using ${sharesToUse.length} shares to reconstruct...`);
+                
+                const startRecTime = performance.now();
+                const recovered = combine_shares(sharesToUse);
+                const endRecTime = performance.now();
+                
+                log(`Recovered Secret: ${recovered}`);
+                log(`Reconstruction time: ${(endRecTime - startRecTime).toFixed(2)}ms`);
+                
+                if (recovered.includes(secret)) {
+                    log('✅ Shamir Test Passed');
+                } else {
+                    log('❌ Shamir Test Failed');
+                }
+                
+                // Test 4: Steganography (Mock Test for functionality)
+                log('\n--- Test 4: Steganography (GF2^8) ---');
+                // Since we can't easily load an image here without file input, we assume the function exists
+                // and maybe try to call it with dummy data if possible, or just check its type
+                log(`embed_stego function type: ${typeof embed_stego}`);
+                
+                document.getElementById('status').textContent = 'Verification Complete';
+
+            } catch (e) {
+                log(`❌ Error: ${e.message}`);
+                document.getElementById('status').textContent = 'Error';
+            }
+        }
+
+        runTests();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "cryptokey-im",
+  "source": {
+    "type": "github",
+    "config": {
+      "owner": "Codeislaw2049",
+      "repo_name": "cryptokey_im",
+      "production_branch": "main",
+      "pr_comments_enabled": true,
+      "deployments_enabled": true
+    }
+  },
+  "build_config": {
+    "build_command": "npm run build",
+    "destination_dir": "dist"
+  }
+}
