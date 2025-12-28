@@ -341,12 +341,46 @@ export const LicenseManager = () => {
                                 </button>
                             </div>
 
-                            {/* Login Form */}
-                            {mode === 'login' && (
-                                <div className="space-y-4">
-                                    <div className="space-y-2">
-                                        <label className="text-xs text-slate-400 uppercase font-bold">Nickname</label>
-                                        <input 
+                        {/* Login Form */}
+                        {mode === 'login' && (
+                            <div className="space-y-4">
+                                {userNickname ? (
+                                    <div className="text-center py-6 space-y-4">
+                                        <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <User size={32} className="text-slate-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-slate-200 font-bold text-xl">{userNickname}</p>
+                                            <p className="text-slate-400 text-sm">Free Account</p>
+                                        </div>
+                                        
+                                        <div className="pt-2 space-y-3">
+                                            <p className="text-xs text-slate-500">
+                                                Upgrade to Pro to unlock all features.
+                                            </p>
+                                            <Link 
+                                                to="/pricing" 
+                                                onClick={() => setUpgradeModalOpen(false)}
+                                                className="block w-full py-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-amber-900/20"
+                                            >
+                                                Upgrade Now
+                                            </Link>
+                                            <button 
+                                                onClick={() => {
+                                                    logout();
+                                                    setUpgradeModalOpen(false);
+                                                }}
+                                                className="block w-full py-2 text-sm font-bold text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+                                            >
+                                                Logout
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div className="space-y-2">
+                                            <label className="text-xs text-slate-400 uppercase font-bold">Nickname</label>
+                                            <input 
                                             type="text" 
                                             value={nickname}
                                             onChange={(e) => {
@@ -371,6 +405,8 @@ export const LicenseManager = () => {
                                     <Button variant="primary" className="w-full py-3" onClick={handleLogin} disabled={isLoading}>
                                         {isLoading ? 'Verifying...' : 'Unlock Pro Features'}
                                     </Button>
+                                    </>
+                                )}
                                 </div>
                             )}
 
