@@ -392,12 +392,12 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
               <div className="bg-red-900/20 border border-red-700/50 p-4 rounded-lg text-sm text-red-200 flex gap-3 animate-in fade-in">
                   <AlertTriangle className="shrink-0 text-red-400" size={20} />
                   <div className="space-y-2">
-                      <p className="font-bold text-red-400">⚠️ 重要提示 (Important Warning):</p>
+                      <p className="font-bold text-red-400">⚠️ Important Payment Warning:</p>
                       <ul className="list-disc list-outside ml-4 space-y-1 text-xs opacity-90">
-                          <li>请务必支付<strong>精确金额</strong> (Pay EXACT amount)。</li>
-                          <li>支付<strong>少于</strong>订单金额将导致激活失败且<strong>无法退款</strong>。</li>
-                          <li>支付<strong>多于</strong>订单金额，多余部分<strong>不退还、不累计时长</strong>。</li>
-                          <li>系统仅验证单笔交易，不支持多次小额累计。</li>
+                          <li>Please pay the <strong>EXACT amount</strong> shown.</li>
+                          <li><strong>Underpayment</strong> will result in failure and is <strong>non-refundable</strong>.</li>
+                          <li><strong>Overpayment</strong> is <strong>non-refundable</strong> and <strong>does not accumulate</strong> extra time.</li>
+                          <li>The system verifies a single transaction only. Do not send multiple small payments.</li>
                       </ul>
                   </div>
               </div>
