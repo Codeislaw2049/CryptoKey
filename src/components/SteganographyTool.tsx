@@ -71,9 +71,9 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
     const newCarrierImages: CarrierImage[] = [];
     let loadedCount = 0;
     
-    // Pro Limit Check for Hide Mode
+    // Pro Limit Check
     let filesToProcess = Array.from(files);
-    if (mode === 'hide' && filesToProcess.length > features.maxUploads) {
+    if (filesToProcess.length > features.maxUploads) {
         triggerUpgrade();
         filesToProcess = filesToProcess.slice(0, features.maxUploads);
     }

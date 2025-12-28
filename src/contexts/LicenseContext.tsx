@@ -419,7 +419,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setUpgradeModalOpen,
       features: {
         maxRowCount: isPro ? 1000 : 100, 
-        maxUploads: isPro ? 100 : 3,
+        maxUploads: isPro ? 100 : 1,
         allowDuress: isPro,
         allowDualAuth: isPro,
         allowSharding: isPro,
