@@ -127,7 +127,21 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
     // For Data URLs, converting to Blob often helps with mobile download behavior
     fetch(url)
       .then(res => res.blob())
-      .then(blob => {
+      .then(async (blob) => {
+        // Mobile "Save to Photos" support via Web Share API
+        if (navigator.share && navigator.canShare) {
+            try {
+                const file = new File([blob], filename, { type: blob.type });
+                const shareData = { files: [file], title: filename };
+                if (navigator.canShare(shareData)) {
+                    await navigator.share(shareData);
+                    return; // Success, skip fallback
+                }
+            } catch (e) {
+                console.warn('Share API failed, falling back to download:', e);
+            }
+        }
+
         const blobUrl = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = blobUrl;

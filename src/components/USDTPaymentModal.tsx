@@ -383,7 +383,23 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
 
               <div className="bg-amber-500/10 border border-amber-500/20 p-4 rounded-lg text-sm text-amber-200 flex gap-3">
                 <AlertTriangle className="shrink-0" size={20} />
-                <p>Ensure you are sending USDT on the <strong>{selectedChain} ({CHAIN_INFO[selectedChain].standard})</strong> network. Wrong network transfers will be lost.</p>
+                <div className="space-y-1">
+                   <p>Ensure you are sending USDT on the <strong>{selectedChain} ({CHAIN_INFO[selectedChain].standard})</strong> network. Wrong network transfers will be lost.</p>
+                </div>
+              </div>
+
+              {/* Payment Warning */}
+              <div className="bg-red-900/20 border border-red-700/50 p-4 rounded-lg text-sm text-red-200 flex gap-3 animate-in fade-in">
+                  <AlertTriangle className="shrink-0 text-red-400" size={20} />
+                  <div className="space-y-2">
+                      <p className="font-bold text-red-400">⚠️ 重要提示 (Important Warning):</p>
+                      <ul className="list-disc list-outside ml-4 space-y-1 text-xs opacity-90">
+                          <li>请务必支付<strong>精确金额</strong> (Pay EXACT amount)。</li>
+                          <li>支付<strong>少于</strong>订单金额将导致激活失败且<strong>无法退款</strong>。</li>
+                          <li>支付<strong>多于</strong>订单金额，多余部分<strong>不退还、不累计时长</strong>。</li>
+                          <li>系统仅验证单笔交易，不支持多次小额累计。</li>
+                      </ul>
+                  </div>
               </div>
 
               <div className="space-y-4 animate-in fade-in">

@@ -124,11 +124,30 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
   };
 
   const downloadImage = (canvas: HTMLCanvasElement, filename: string) => {
-      const dataUrl = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.download = filename;
-      link.href = dataUrl;
-      link.click();
+      canvas.toBlob(async (blob) => {
+          if (!blob) return;
+
+          // Mobile "Save to Photos" support via Web Share API
+          if (navigator.share && navigator.canShare) {
+              try {
+                  const file = new File([blob], filename, { type: 'image/png' });
+                  const shareData = { files: [file], title: filename };
+                  if (navigator.canShare(shareData)) {
+                      await navigator.share(shareData);
+                      return;
+                  }
+              } catch (e) {
+                  console.warn('Share API failed, falling back to download:', e);
+              }
+          }
+
+          const dataUrl = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.download = filename;
+          link.href = dataUrl;
+          link.click();
+          URL.revokeObjectURL(dataUrl);
+      }, 'image/png');
   };
 
   const handleHideData = async () => {
