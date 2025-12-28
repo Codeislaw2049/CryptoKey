@@ -516,16 +516,16 @@ export const DecryptionTool = () => {
         </div>
       )}
 
-      <div className="flex justify-between items-center">
-        <div className="text-center flex-1">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
+        <div className="text-center flex-1 order-2 md:order-1">
           <h2 className="text-2xl font-bold text-white mb-2">Decryption Tool</h2>
-          <p className="text-slate-400">Recover your original message from various sources</p>
+          <p className="text-slate-400 text-sm">Recover your original message from various sources</p>
         </div>
         <Button 
                     variant="outline" 
                     size="sm"
                     onClick={() => features.allowDualAuth ? setUseDualAuth(true) : triggerUpgrade()}
-                    className={`flex items-center gap-2 border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 ${!features.allowDualAuth ? 'opacity-70' : ''}`}
+                    className={`order-1 md:order-2 flex items-center gap-2 border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 whitespace-nowrap ${!features.allowDualAuth ? 'opacity-70' : ''}`}
                     title={!features.allowDualAuth ? "Pro Feature: Click to Upgrade" : ""}
                 >
                     <ShieldCheck size={16} />

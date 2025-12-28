@@ -326,6 +326,7 @@ export const LicenseManager = () => {
                     ) : (
                         <>
                             {/* Mode Toggle */}
+                        {!userNickname && (
                             <div className="flex p-1 bg-slate-800 rounded-lg">
                                 <button 
                                     className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${mode === 'login' ? 'bg-slate-700 text-white shadow' : 'text-slate-400 hover:text-slate-200'}`}
@@ -340,9 +341,10 @@ export const LicenseManager = () => {
                                     Register
                                 </button>
                             </div>
+                        )}
 
                         {/* Login Form */}
-                        {mode === 'login' && (
+                        {(mode === 'login' || userNickname) && (
                             <div className="space-y-4">
                                 {userNickname ? (
                                     <div className="text-center py-6 space-y-4">

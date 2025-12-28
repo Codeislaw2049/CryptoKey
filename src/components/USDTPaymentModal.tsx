@@ -98,19 +98,41 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
       // 2. If already logged in
       if (nickname) {
         setStep(2);
-        return;
       } else {
-        setError("Please login or register via the main interface first.");
-        return;
+        // Must login/register
+        window.dispatchEvent(new CustomEvent('OPEN_LOGIN_MODAL'));
+        onClose();
       }
-    }
-
-    if (step === 2) {
+    } else if (step === 2) {
       if (!selectedChain) {
-        setError('Please select a payment network.');
+        setError('Please select a payment network');
         return;
       }
       setStep(3);
+    } else if (step === 3) {
+      if (!txHash) {
+        setError('Transaction Hash (TXID) is required');
+        return;
+      }
+
+      // Validation Logic
+      const cleanHash = txHash.trim();
+      let isValid = false;
+
+      if (selectedChain === 'TRX') {
+         // TRON TXID: 64 hex chars
+         isValid = /^[a-fA-F0-9]{64}$/.test(cleanHash);
+         if (!isValid) setError('Invalid TRON TXID. It should be a 64-character hex string (not an address).');
+      } else if (selectedChain === 'BSC' || selectedChain === 'ETH') {
+         // ETH/BSC TXID: 0x + 64 hex chars OR just 64 hex chars
+         isValid = /^(0x)?[a-fA-F0-9]{64}$/.test(cleanHash);
+         if (!isValid) setError(`Invalid ${selectedChain} TXID. It should look like 0x... and have 64 hex characters.`);
+      }
+
+      if (!isValid) return;
+
+      setPaymentId(cleanHash);
+      setStep(4);
     }
   };
 
