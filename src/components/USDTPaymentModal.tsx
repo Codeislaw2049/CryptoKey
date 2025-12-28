@@ -85,6 +85,33 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
     }
   }, [step, paymentId, plan.id]);
 
+  const validateTxHash = (hash: string, chain: Chain) => {
+    const cleanHash = hash.trim();
+    
+    // Explicitly check for wallet addresses (Common mistake)
+    if (chain === 'TRX' && cleanHash.startsWith('T') && cleanHash.length < 50) {
+        return { isValid: false, error: 'This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.' };
+    }
+    if ((chain === 'BSC' || chain === 'ETH') && cleanHash.startsWith('0x') && cleanHash.length < 60) {
+         return { isValid: false, error: 'This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.' };
+    }
+
+    let isValid = false;
+    let error = '';
+
+    if (chain === 'TRX') {
+         // TRON TXID: 64 hex chars
+         isValid = /^[a-fA-F0-9]{64}$/.test(cleanHash);
+         if (!isValid) error = 'Invalid TRON TXID. It should be a 64-character hex string.';
+    } else if (chain === 'BSC' || chain === 'ETH') {
+         // ETH/BSC TXID: 0x + 64 hex chars OR just 64 hex chars
+         isValid = /^(0x)?[a-fA-F0-9]{64}$/.test(cleanHash);
+         if (!isValid) error = `Invalid ${chain} TXID. It should look like 0x... and have 64 hex characters.`;
+    }
+
+    return { isValid, error };
+  };
+
   const handleNextStep = async () => {
     setError('');
     
@@ -109,32 +136,10 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
         return;
       }
       setStep(3);
-    } else if (step === 3) {
-      if (!txHash) {
-        setError('Transaction Hash (TXID) is required');
-        return;
-      }
-
-      // Validation Logic
-      const cleanHash = txHash.trim();
-      let isValid = false;
-
-      if (selectedChain === 'TRX') {
-         // TRON TXID: 64 hex chars
-         isValid = /^[a-fA-F0-9]{64}$/.test(cleanHash);
-         if (!isValid) setError('Invalid TRON TXID. It should be a 64-character hex string (not an address).');
-      } else if (selectedChain === 'BSC' || selectedChain === 'ETH') {
-         // ETH/BSC TXID: 0x + 64 hex chars OR just 64 hex chars
-         isValid = /^(0x)?[a-fA-F0-9]{64}$/.test(cleanHash);
-         if (!isValid) setError(`Invalid ${selectedChain} TXID. It should look like 0x... and have 64 hex characters.`);
-      }
-
-      if (!isValid) return;
-
-      setPaymentId(cleanHash);
-      setStep(4);
-    }
+    } 
+    // Step 3 is handled by handlePaymentComplete
   };
+
 
 
   const handlePaste = async () => {
@@ -157,6 +162,25 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
   const handlePaymentComplete = async () => {
     setIsLoading(true);
     setError('');
+
+    // Frontend Validation First
+    if (!selectedChain) {
+        setError('Please select a payment network');
+        setIsLoading(false);
+        return;
+    }
+    if (!txHash) {
+        setError('Transaction Hash (TXID) is required');
+        setIsLoading(false);
+        return;
+    }
+
+    const validation = validateTxHash(txHash, selectedChain);
+    if (!validation.isValid) {
+        setError(validation.error);
+        setIsLoading(false);
+        return;
+    }
 
     const WORKER_URL = window.location.hostname === 'localhost' 
         ? 'http://localhost:8787' 
@@ -403,7 +427,38 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
           )}
 
           {/* Step 4: Verification */}
-          {step === 4 && renderVerificationStep()}
+          {step === 4 && (
+             <div className="text-center space-y-6 animate-in slide-in-from-right-4 py-8">
+                <div className="relative mx-auto w-24 h-24">
+                   <div className="absolute inset-0 border-4 border-primary/30 rounded-full animate-ping"></div>
+                   <div className="absolute inset-0 border-4 border-t-primary border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                      <ShieldCheck className="text-primary w-10 h-10" />
+                   </div>
+                </div>
+                
+                <div className="space-y-2">
+                   <h4 className="text-xl font-bold text-white">Verifying Transaction...</h4>
+                   <p className="text-slate-400 max-w-xs mx-auto">
+                      We are checking the blockchain for your payment. This usually takes 1-3 minutes.
+                   </p>
+                </div>
+
+                <div className="bg-slate-800/50 rounded-lg p-4 max-w-sm mx-auto">
+                   <p className="text-xs text-slate-500 mb-1">Checking TXID:</p>
+                   <p className="font-mono text-xs text-primary break-all">{paymentId}</p>
+                </div>
+
+                <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
+                   <p className="text-green-400 text-sm font-medium">
+                      It is safe to close this window.
+                   </p>
+                   <p className="text-green-500/60 text-xs mt-1">
+                      Your Pro license will be activated automatically once the transaction is confirmed on-chain.
+                   </p>
+                </div>
+             </div>
+          )}
         </div>
       </div>
     </div>
