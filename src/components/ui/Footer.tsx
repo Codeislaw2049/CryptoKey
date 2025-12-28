@@ -1,9 +1,19 @@
-import { ShieldCheck, Github, Send } from 'lucide-react';
+import { ShieldCheck, Github, Send, RefreshCw } from 'lucide-react';
 import { APP_VERSION } from '../../version';
 import { IntegrityCheck } from './IntegrityCheck';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
+  const handleRefresh = async () => {
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const registration of registrations) {
+        await registration.unregister();
+      }
+    }
+    window.location.reload();
+  };
+
   return (
     <footer className="mt-12 border-t border-slate-800/50 bg-slate-900/20 backdrop-blur-sm py-8">
       <div className="max-w-4xl mx-auto px-4">
@@ -11,11 +21,22 @@ export const Footer = () => {
           
           {/* Brand & Version */}
           <div className="text-center md:text-left space-y-2">
-            <Link to="/" className="flex items-center justify-center md:justify-start gap-2 text-slate-200 font-bold hover:text-white transition-colors">
-              <ShieldCheck size={20} className="text-primary" />
-              <span>CryptoKey.im</span>
-              <span className="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-400">v{APP_VERSION}</span>
-            </Link>
+            <div className="flex items-center justify-center md:justify-start gap-2">
+                <Link to="/" className="flex items-center gap-2 text-slate-200 font-bold hover:text-white transition-colors">
+                  <ShieldCheck size={20} className="text-primary" />
+                  <span>CryptoKey.im</span>
+                </Link>
+                <div className="flex items-center gap-1 bg-slate-800 px-2 py-0.5 rounded text-xs text-slate-400">
+                  <span>v{APP_VERSION}</span>
+                  <button 
+                    onClick={handleRefresh}
+                    className="ml-1 hover:text-white transition-colors"
+                    title="Force Update / Clear Cache"
+                  >
+                    <RefreshCw size={10} />
+                  </button>
+                </div>
+            </div>
             <p className="text-xs text-slate-500 max-w-xs">
               Military-grade Steganography & Encryption Tool (AES-256-GCM + ChaCha20-Poly1305).
               <br />
