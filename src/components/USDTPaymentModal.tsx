@@ -196,7 +196,6 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in" onClick={onClose}>
       <div className="bg-slate-900 border border-slate-700 rounded-xl w-full max-w-lg overflow-hidden shadow-2xl flex flex-col max-h-[90vh]" onClick={e => e.stopPropagation()}>
         
-        {/* Header */}
         <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
           <h3 className="font-bold text-white flex items-center gap-2">
             <Wallet className="text-primary" size={20} />
@@ -404,42 +403,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
           )}
 
           {/* Step 4: Verification */}
-          {step === 4 && (
-            <div className="text-center space-y-6 animate-in zoom-in-50 py-8">
-              <div className="w-20 h-20 bg-blue-500/20 text-blue-500 rounded-full flex items-center justify-center mx-auto ring-4 ring-blue-500/10 animate-pulse">
-                <ShieldCheck size={40} />
-              </div>
-              
-              <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-white">Verifying Payment...</h3>
-                <p className="text-slate-400">
-                  Please wait while we confirm your transaction on the blockchain.
-                </p>
-                <p className="text-xs text-slate-500">
-                    This usually takes 1-3 minutes depending on network congestion.
-                </p>
-              </div>
-
-              <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 text-left space-y-3">
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-400">Status</span>
-                  <span className="text-blue-400 font-bold flex items-center gap-2">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full animate-ping" />
-                      Checking Chain
-                  </span>
-                </div>
-                <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">TXID</span>
-                    <span className="text-white font-mono text-xs truncate max-w-[150px]" title={txHash}>{txHash}</span>
-                </div>
-              </div>
-
-              <div className="text-xs text-slate-500">
-                  Do not close this window.
-              </div>
-            </div>
-          )}
-
+          {step === 4 && renderVerificationStep()}
         </div>
       </div>
     </div>

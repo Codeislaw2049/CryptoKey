@@ -252,9 +252,9 @@ export const DecryptionTool = () => {
     // ... render logic ...
     
     {isDualAuthDetected && (
-      <div className="mb-6 p-4 bg-indigo-900/30 border border-indigo-500/50 rounded-xl flex items-center justify-between animate-in fade-in slide-in-from-top-2">
+      <div className="mb-6 p-4 bg-indigo-900/30 border border-indigo-500/50 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 animate-in fade-in slide-in-from-top-2">
         <div className="flex items-center gap-3">
-          <ShieldCheck className="w-8 h-8 text-indigo-400" />
+          <ShieldCheck className="w-8 h-8 text-indigo-400 shrink-0" />
           <div>
             <h3 className="font-bold text-indigo-100">Dual Auth Detected</h3>
             <p className="text-sm text-indigo-300">
@@ -264,7 +264,7 @@ export const DecryptionTool = () => {
         </div>
         <Button 
           onClick={() => setUseDualAuth(true)}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white"
+          className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white"
         >
           Switch to Dual Auth Mode <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
