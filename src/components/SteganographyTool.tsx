@@ -398,7 +398,18 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
             <label htmlFor="image-upload" className="cursor-pointer flex flex-col items-center justify-center gap-4 py-8">
               {mode === 'extract' && extractImages.length > 0 ? (
                   <div className="w-full">
-                      <p className="text-center text-sm text-slate-400 mb-2">{extractImages.length} images loaded</p>
+                      <div className="flex justify-between items-center mb-2 px-1">
+                          <p className="text-sm text-slate-400">{extractImages.length} images loaded</p>
+                          <button 
+                              onClick={(e) => {
+                                  e.preventDefault();
+                                  setExtractImages([]);
+                              }}
+                              className="text-xs text-red-400 hover:text-red-300"
+                          >
+                              Clear All
+                          </button>
+                      </div>
                       <div className="grid grid-cols-3 gap-2 w-full max-h-64 overflow-y-auto p-1">
                         {extractImages.map((img, i) => (
                              <div key={i} className="relative group">
