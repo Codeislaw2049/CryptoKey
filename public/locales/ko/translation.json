@@ -461,5 +461,255 @@
       }
     },
     "close": "닫기"
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "복구 모드 선택",
+      "subtitle": "데이터를 암호화/복구할 방법을 선택하세요.",
+      "mnemonic": {
+        "title": "니모닉 문구",
+        "desc": "12/24 단어 시드 문구를 키 소스로 사용합니다.",
+        "features": {
+          "compliance": "BIP-39 준수",
+          "encryption": "표준 암호화",
+          "security": "높은 보안"
+        }
+      },
+      "physical": {
+        "title": "실물 책",
+        "desc": "책장에 있는 실제 책에 키를 숨깁니다.",
+        "features": {
+          "manual": "수동 입력",
+          "ownBook": "자신의 책 사용",
+          "flexible": "유연하고 은밀함"
+        }
+      },
+      "digital": {
+        "title": "디지털 책 (파일)",
+        "desc": "텍스트 파일을 키 소스로 업로드합니다.",
+        "features": {
+          "local": "로컬 처리",
+          "noUpload": "서버 업로드 없음",
+          "offline": "오프라인 작동"
+        }
+      },
+      "url": {
+        "title": "온라인 책 (URL)",
+        "desc": "영구 URL을 키 소스로 사용합니다."
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "니모닉 입력",
+        "file": "파일 업로드",
+        "url": "URL 입력",
+        "general": "데이터 입력"
+      },
+      "subtitle": {
+        "mnemonic": "12개 또는 24개의 단어로 된 니모닉 문구를 입력하세요.",
+        "file": "암호화할 텍스트 파일을 업로드하세요.",
+        "url": "콘텐츠를 가져올 URL을 입력하세요.",
+        "general": "암호화할 텍스트 데이터를 입력하세요."
+      },
+      "file": {
+        "loaded": "파일 로드 성공",
+        "upload": "드래그 앤 드롭 또는 클릭하여 업로드",
+        "sizeLoaded": "로드됨",
+        "maxSize": "최대 5MB • TXT",
+        "scheme": "암호화 체계",
+        "schemes": {
+          "offset": "문자 오프셋",
+          "chapter": "장 인덱스",
+          "virtual": "가상 라인"
+        }
+      },
+      "url": {
+        "fetch": "콘텐츠 가져오기",
+        "proxy": {
+          "title": "로컬 프록시 활성화",
+          "desc": "개발을 위해 로컬 프록시를 사용 중입니다."
+        }
+      },
+      "general": {
+        "addLine": "새 줄 추가"
+      },
+      "mnemonic": {
+        "paste": "붙여넣기"
+      }
+    },
+    "mixStep": {
+      "title": "암호화 비밀번호 설정",
+      "subtitle": "볼트를 암호화하려면 강력한 비밀번호를 설정하세요.",
+      "password": {
+        "label": "암호화 비밀번호 설정",
+        "placeholder": "강력한 비밀번호 입력"
+      },
+      "confirm": {
+        "label": "비밀번호 확인",
+        "placeholder": "비밀번호 재입력"
+      },
+      "rowCount": {
+        "label": "행 수 (혼합 밀도)",
+        "help": "수가 높을수록 익명성이 좋습니다.",
+        "upgrade": "(제한: 100. 업그레이드하려면 클릭)",
+        "proRequired": "100보다 큰 값은 Pro 라이선스가 필요합니다."
+      },
+      "duress": {
+        "label": "강압 비밀번호 (선택 사항)",
+        "help": "다른 비밀번호로 열리는 가짜 볼트를 만듭니다. 기기 잠금을 해제해야 하는 경우 이 비밀번호를 사용하세요.",
+        "passwordLabel": "강압 비밀번호",
+        "placeholder": "실제 비밀번호와 다름",
+        "fakeContentLabel": "가짜 콘텐츠 (미끼)"
+      },
+      "error": {
+        "required": "비밀번호는 필수입니다",
+        "mismatch": "비밀번호가 일치하지 않습니다",
+        "minLength": "비밀번호는 8자 이상이어야 합니다",
+        "duressRequired": "강압 비밀번호는 필수입니다",
+        "duressSame": "강압 비밀번호는 실제 비밀번호와 같을 수 없습니다",
+        "encryptionFailed": "암호화 실패. 다시 시도해 주세요."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "암호화 성공",
+        "title": "백업 준비 완료",
+        "subtitle": "암호문을 저장하고 자격 증명을 암기하세요."
+      },
+      "mode": {
+        "personal": "개인",
+        "public": "공용"
+      },
+      "realIndex": {
+        "title": "실제 행 인덱스",
+        "help": "이것은 귀하의 데이터를 포함하는 유일한 행입니다. 다른 모든 것은 가짜입니다."
+      },
+      "mnemonic": {
+        "title": "원본 니모닉"
+      },
+      "hash": {
+        "label": "해시"
+      },
+      "actions": {
+        "copy": "복사",
+        "copied": "복사됨!",
+        "download": "다운로드",
+        "email": "이메일",
+        "print": "인쇄"
+      },
+      "dualAuth": {
+        "button": "이중 인증 샤드 생성",
+        "pro": "Pro 기능: 업그레이드하여 액세스"
+      },
+      "reset": "재설정"
+    }
+  },
+  "wizard": {
+    "steps": {
+      "mode": "모드 선택",
+      "input": "입력",
+      "mix": "혼합",
+      "result": "결과"
+    },
+    "actions": {
+      "next": "다음",
+      "back": "이전",
+      "finish": "완료",
+      "process": "암호화 시작",
+      "reset": "초기화",
+      "copy": "복사",
+      "download": "다운로드",
+      "print": "인쇄"
+    },
+    "modeSelection": {
+      "title": "보호 모드 선택",
+      "subtitle": "니모닉이나 데이터를 보호할 최적의 방법을 선택하세요",
+      "modes": {
+        "physical": {
+          "title": "실물 / 가상 책",
+          "description": "책장에 있는 실제 책에 키를 숨깁니다 (페이지-줄-단어)"
+        },
+        "online": {
+          "title": "온라인 책 (URL)",
+          "description": "영구적인 Gutenberg URL을 키 소스로 사용합니다"
+        },
+        "digital": {
+          "title": "디지털 책 (파일)",
+          "description": "Gutenberg TXT 파일을 업로드합니다"
+        },
+        "general": {
+          "title": "일반 인덱스",
+          "description": "임의의 데이터 구조를 암호화합니다"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "니모닉 문구 입력",
+        "file": "책 파일 업로드",
+        "url": "책 URL 입력",
+        "general": "데이터 입력"
+      },
+      "description": {
+        "mnemonic": "보호할 12, 18, 또는 24단어 니모닉을 입력하세요",
+        "file": "참조로 사용할 텍스트 파일을 선택하세요",
+        "url": "Project Gutenberg와 같은 안정적인 URL을 사용하세요",
+        "general": "암호화할 텍스트 데이터를 입력하세요"
+      },
+      "labels": {
+        "mnemonic": "니모닉 문구",
+        "password": "비밀번호 (선택사항)",
+        "file": "파일 선택",
+        "url": "URL 주소",
+        "data": "데이터"
+      },
+      "placeholders": {
+        "mnemonic": "단어들을 공백으로 구분하여 입력하세요...",
+        "password": "추가 보안을 위한 비밀번호...",
+        "url": "https://...",
+        "data": "여기에 데이터를 입력하세요..."
+      }
+    },
+    "mixStep": {
+      "title": "데이터 혼합 및 난독화",
+      "description": "실제 데이터를 가짜 데이터 속에 숨겨 보안을 강화합니다",
+      "configuration": "설정",
+      "density": {
+        "label": "행 밀도",
+        "low": "낮음 (빠름)",
+        "medium": "중간 (권장)",
+        "high": "높음 (최대 보안)"
+      },
+      "security": {
+        "label": "보안 수준",
+        "standard": "표준",
+        "high": "높음",
+        "paranoid": "최상"
+      },
+      "duress": {
+        "enable": "강압 모드 활성화",
+        "help": "강압 비밀번호를 입력하면 가짜 데이터를 복호화하여 공격자를 속일 수 있습니다",
+        "passwordLabel": "강압 비밀번호",
+        "placeholder": "이 비밀번호는 가짜 데이터를 엽니다..."
+      }
+    },
+    "resultStep": {
+      "title": "암호화 완료",
+      "subtitle": "암호화된 데이터를 안전하게 저장하세요",
+      "warnings": {
+        "save": "이 데이터를 반드시 안전한 곳에 저장해야 합니다",
+        "loss": "데이터를 분실하면 복구할 수 없습니다"
+      },
+      "formats": {
+        "text": "텍스트 형식",
+        "qr": "QR 코드",
+        "json": "JSON 백업"
+      },
+      "actions": {
+        "copyAll": "전체 복사",
+        "downloadTxt": "텍스트 다운로드",
+        "downloadQr": "QR 이미지 저장"
+      }
+    }
   }
 }

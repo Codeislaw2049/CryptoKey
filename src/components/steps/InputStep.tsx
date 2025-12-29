@@ -14,6 +14,7 @@ import {
   mnemonicToIndex 
 } from '../../utils/gutenbergIndex';
 import { sanitizeUrl } from '../../utils/sanitize';
+import { useTranslation } from 'react-i18next';
 
 interface InputStepProps {
   mode: 'general' | 'mnemonic' | 'file' | 'url';
@@ -23,6 +24,7 @@ interface InputStepProps {
 }
 
 export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps) => {
+  const { t } = useTranslation();
   const [mnemonic, setMnemonic] = useSecureMemory(initialValue || '');
   const [error, setError] = React.useState('');
 
@@ -192,16 +194,16 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold text-white">
-          {mode === 'mnemonic' && "Enter Mnemonic Phrase"}
-          {mode === 'file' && "Upload Digital Book"}
-          {mode === 'url' && "Enter Book URL"}
-          {mode === 'general' && "Enter Ciphertext Data"}
+          {mode === 'mnemonic' && t('wizard.inputStep.title.mnemonic')}
+          {mode === 'file' && t('wizard.inputStep.title.file')}
+          {mode === 'url' && t('wizard.inputStep.title.url')}
+          {mode === 'general' && t('wizard.inputStep.title.general')}
         </h2>
         <p className="text-slate-400">
-          {mode === 'mnemonic' && "We will validate the checksum automatically."}
-          {mode === 'file' && "Upload a public domain book (TXT) to use as the key."}
-          {mode === 'url' && "Use a permanent URL as your key source."}
-          {mode === 'general' && "Enter the manually generated Page-Line-Column data."}
+          {mode === 'mnemonic' && t('wizard.inputStep.subtitle.mnemonic')}
+          {mode === 'file' && t('wizard.inputStep.subtitle.file')}
+          {mode === 'url' && t('wizard.inputStep.subtitle.url')}
+          {mode === 'general' && t('wizard.inputStep.subtitle.general')}
         </p>
       </div>
 
@@ -221,10 +223,10 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-3">
                     <Upload className="text-primary w-10 h-10 mb-2" />
                     <span className="text-lg font-medium text-slate-200">
-                      {fileInfo ? "File Loaded Successfully" : "Click to Upload TXT"}
+                      {fileInfo ? t('wizard.inputStep.file.loaded') : t('wizard.inputStep.file.upload')}
                     </span>
                     <span className="text-sm text-slate-500">
-                      {fileInfo ? `${(fileInfo.totalChars / 1024).toFixed(1)} KB Loaded` : "Max 10MB"}
+                      {fileInfo ? `${(fileInfo.totalChars / 1024).toFixed(1)} KB ${t('wizard.inputStep.file.sizeLoaded')}` : t('wizard.inputStep.file.maxSize')}
                     </span>
                   </label>
                </div>
@@ -232,7 +234,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                {fileInfo && (
                  <div className="bg-slate-800/50 p-4 rounded-lg space-y-3 border border-slate-700">
                     <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                      <Settings2 size={16} /> Encryption Scheme
+                      <Settings2 size={16} /> {t('wizard.inputStep.file.scheme')}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                       <button 
@@ -243,7 +245,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                           : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
                         }`}
                       >
-                        Offset
+                        {t('wizard.inputStep.file.schemes.offset')}
                       </button>
                       <button 
                         onClick={() => setFileScheme('chapter')}
@@ -253,7 +255,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                           : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
                         }`}
                       >
-                        Chapter
+                        {t('wizard.inputStep.file.schemes.chapter')}
                       </button>
                       <button 
                         onClick={() => setFileScheme('virtual')}
@@ -263,7 +265,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                           : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
                         }`}
                       >
-                        Virtual Line
+                        {t('wizard.inputStep.file.schemes.virtual')}
                       </button>
                     </div>
                  </div>
@@ -277,8 +279,8 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                  <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-3 flex gap-3 items-start text-xs text-indigo-200/80">
                     <CheckCircle2 size={16} className="shrink-0 mt-0.5 text-indigo-400" />
                     <div>
-                       <strong className="text-indigo-400 block mb-1">Using Secure Cloud Proxy</strong>
-                       You are currently offline/local. Requests are routed through secure cloud proxies (AllOrigins or CryptoKey.im) to bypass CORS restrictions.
+                       <strong className="text-indigo-400 block mb-1">{t('wizard.inputStep.url.proxy.title')}</strong>
+                       {t('wizard.inputStep.url.proxy.desc')}
                     </div>
                  </div>
               )}
@@ -296,20 +298,20 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   variant="secondary"
                   className="whitespace-nowrap min-w-[100px]"
                 >
-                  {isLoading ? "Fetching..." : "Fetch"}
+                  {isLoading ? t('common.loading') : t('wizard.inputStep.url.fetch')}
                 </Button>
               </div>
 
               {urlInfo && (
                 <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center gap-2 text-green-400 text-sm animate-in fade-in">
                   <CheckCircle2 size={16} />
-                  <span>Book loaded successfully ({urlInfo.pureText.length} chars)</span>
+                  <span>{t('wizard.inputStep.url.success', { count: urlInfo.pureText.length })}</span>
                 </div>
               )}
               
               {/* Preset Books */}
               <div className="space-y-2">
-                <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Recommended Books (Stable URLs)</p>
+                <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">{t('wizard.inputStep.url.recommended')}</p>
                 <div className="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto custom-scrollbar pr-2 border border-slate-800/50 rounded-lg p-2 bg-slate-900/30">
                   {PRESET_BOOKS.map((book) => (
                     <button
@@ -325,7 +327,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                         <div className="text-xs text-slate-500">{book.author}</div>
                       </div>
                       <div className="text-[10px] text-slate-600 font-mono bg-slate-900/50 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                        CLICK TO FILL
+                        {t('wizard.inputStep.url.clickToFill')}
                       </div>
                     </button>
                   ))}
@@ -345,7 +347,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                         type="text"
                         value={row}
                         onChange={(e) => handlePhysicalChange(index, e.target.value)}
-                        placeholder="Page-Line-Column (e.g., 123-10-5)"
+                        placeholder={t('wizard.inputStep.general.placeholder')}
                         className="flex-1 bg-slate-800 border border-slate-700 rounded-md px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-primary/50 font-mono"
                       />
                       <button
@@ -364,7 +366,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   className="mt-4 w-full py-2 border border-dashed border-slate-700 rounded-lg text-slate-400 hover:text-primary hover:border-primary/50 hover:bg-slate-800/50 transition-all flex items-center justify-center gap-2 text-sm"
                 >
                   <Plus size={16} />
-                  Add New Line
+                  {t('wizard.inputStep.general.addLine')}
                 </button>
               </div>
 
@@ -374,15 +376,15 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                 title="Generate Random Data"
               >
                 <Dices size={14} />
-                Generate
+                {t('wizard.inputStep.general.generate')}
               </button>
             </div>
           ) : (
             <div className="relative">
               {(mode === 'file' || mode === 'url') && (
                  <div className="flex items-center gap-2 mb-2 text-sm font-medium text-slate-400">
-                    <span>Mnemonic Phrase (Key)</span>
-                    <span className="text-xs text-slate-500 font-normal">(Required)</span>
+                    <span>{t('wizard.inputStep.mnemonic.label')}</span>
+                    <span className="text-xs text-slate-500 font-normal">{t('wizard.inputStep.mnemonic.required')}</span>
                  </div>
               )}
               <textarea
@@ -391,7 +393,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   setMnemonic(e.target.value);
                   setError('');
                 }}
-                placeholder="Enter your 12-24 word mnemonic phrase here..."
+                placeholder={t('wizard.inputStep.mnemonic.placeholder')}
                 className="w-full h-32 bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary/50 font-mono resize-none transition-all"
                 spellCheck={false}
               />
@@ -402,7 +404,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   title="Paste from Clipboard"
                 >
                   <Clipboard size={14} />
-                  Paste
+                  {t('wizard.inputStep.mnemonic.paste')}
                 </button>
                 <button
                   onClick={handleGenerateMnemonic}
@@ -410,7 +412,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                   title="Generate Random Mnemonic"
                 >
                   <Dices size={14} />
-                  Generate
+                  {t('wizard.inputStep.mnemonic.generate')}
                 </button>
               </div>
             </div>
@@ -432,7 +434,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
             onClick={onBack}
             className="flex-1"
           >
-            Back
+            {t('common.back')}
           </Button>
           <Button 
             onClick={handleMnemonicSubmit}
@@ -444,7 +446,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
               (mode === 'general' && !physicalRows.some(r => r.trim()))
             }
           >
-            Next
+            {t('common.next')}
           </Button>
         </div>
       </div>

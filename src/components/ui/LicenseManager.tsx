@@ -397,7 +397,7 @@ export const LicenseManager = () => {
                                 />
                             </div>
                          </div>
-                         <Button className="w-full bg-amber-600 hover:bg-amber-500 text-white" onClick={handleLogin} disabled={isLoading}>
+                         <Button className="w-full bg-amber-600 hover:bg-amber-500 text-white mt-2" onClick={handleLogin} disabled={isLoading}>
                              {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.login.button')}
                          </Button>
                      </div>
@@ -418,11 +418,20 @@ export const LicenseManager = () => {
                                             onKeyDown={e => e.key === 'Enter' && handleRegister()}
                                         />
                                     </div>
-                                    <p className="text-[10px] text-slate-500 mt-1">
-                                        {t('licenseManager.register.note')}
-                                    </p>
+                                    
+                                    <div className="mt-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                                        <p className="text-[10px] text-amber-200 font-bold mb-1">
+                                            {t('licenseManager.register.note')}
+                                        </p>
+                                        <p className="text-[10px] text-amber-500/80 leading-relaxed">
+                                            {t('terms.sections.responsibilities.items.1')}
+                                        </p>
+                                    </div>
                                 </div>
-                                <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white" onClick={handleRegister} disabled={isLoading}>
+
+                                <AuthenticatorLinks />
+
+                                <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white mt-2" onClick={handleRegister} disabled={isLoading}>
                                      {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.register.button')}
                                 </Button>
                              </>
@@ -463,9 +472,6 @@ export const LicenseManager = () => {
                      </div>
                  )}
 
-                 {/* App Download Links */}
-                 <AuthenticatorLinks />
-
                  {error && (
                     <div className="p-2 bg-red-900/20 border border-red-500/30 rounded text-xs text-red-200 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
                         <X size={12} className="text-red-400" />
@@ -485,4 +491,3 @@ export const LicenseManager = () => {
     </div>
   );
 };
-

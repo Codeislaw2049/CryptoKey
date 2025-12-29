@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/Button';
 import { ProBadge } from '../ui/ProBadge';
 import { Mail, CheckCircle, Eye, EyeOff, AlertTriangle, Download, Printer, Copy, Monitor } from 'lucide-react';
@@ -19,6 +20,7 @@ export interface ResultStepProps {
 }
 
 export const ResultStep: React.FC<ResultStepProps> = ({ result, mnemonic, onReset }) => {
+  const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [showRealIndex, setShowRealIndex] = useState(false);
   const [mode, setMode] = useState<'personal' | 'public'>('personal');
@@ -122,10 +124,10 @@ NOTE: Requires password + row index to decrypt.
       <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-2">
           <CheckCircle size={16} />
-          Encrypted Successfully
+          {t('wizard.resultStep.success.banner')}
         </div>
-        <h2 className="text-3xl font-black text-white">Your Backup is Ready</h2>
-        <p className="text-slate-400">Save the Ciphertext and memorize your credentials.</p>
+        <h2 className="text-3xl font-black text-white">{t('wizard.resultStep.success.title')}</h2>
+        <p className="text-slate-400">{t('wizard.resultStep.success.subtitle')}</p>
       </div>
 
       {/* View Mode Toggle */}
@@ -140,7 +142,7 @@ NOTE: Requires password + row index to decrypt.
             }`}
           >
             <Eye size={14} />
-            Personal
+            {t('wizard.resultStep.mode.personal')}
           </button>
           <button
             onClick={() => setMode('public')}
@@ -151,7 +153,7 @@ NOTE: Requires password + row index to decrypt.
             }`}
           >
             <Monitor size={14} />
-            Public
+            {t('wizard.resultStep.mode.public')}
           </button>
         </div>
       </div>
@@ -260,7 +262,7 @@ NOTE: Requires password + row index to decrypt.
 
       <div className="pt-8 border-t border-slate-800/50 flex justify-center">
         <Button variant="ghost" onClick={onReset} className="text-slate-500 hover:text-white">
-          Reset
+          {t('wizard.resultStep.reset')}
         </Button>
       </div>
 

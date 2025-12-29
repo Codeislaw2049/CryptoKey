@@ -1,17 +1,19 @@
 import { Card } from '../ui/Card';
 import { BookOpen, KeyRound, FileText, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ModeSelectionProps {
   onSelect: (mode: 'general' | 'mnemonic' | 'file' | 'url') => void;
 }
 
 export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
+  const { t } = useTranslation();
 
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold text-white">Select Recovery Mode</h2>
-        <p className="text-slate-400">Choose how you want to recover your data</p>
+        <h2 className="text-2xl font-bold text-white">{t('wizard.modeSelection.title')}</h2>
+        <p className="text-slate-400">{t('wizard.modeSelection.subtitle')}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
@@ -26,15 +28,15 @@ export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
               <KeyRound className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">Mnemonic Protection</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white">{t('wizard.modeSelection.mnemonic.title')}</h3>
               <p className="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
-                Protect & generate standard BIP39 mnemonics.
+                {t('wizard.modeSelection.mnemonic.desc')}
               </p>
             </div>
             <ul className="text-xs md:text-sm text-slate-500 space-y-1">
-              <li>• Standard BIP39 Wordlist Compliance</li>
-              <li>• Index-Based Mnemonic Encryption</li>
-              <li>• Bank-Grade Security</li>
+              <li>• {t('wizard.modeSelection.mnemonic.features.compliance')}</li>
+              <li>• {t('wizard.modeSelection.mnemonic.features.encryption')}</li>
+              <li>• {t('wizard.modeSelection.mnemonic.features.security')}</li>
             </ul>
           </div>
         </Card>
@@ -50,15 +52,15 @@ export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
               <BookOpen className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">Physical / Virtual Book</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white">{t('wizard.modeSelection.physical.title')}</h3>
               <p className="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
-                Use a real physical book or a virtual one.
+                {t('wizard.modeSelection.physical.desc')}
               </p>
             </div>
             <ul className="text-xs md:text-sm text-slate-500 space-y-1">
-              <li>• Manual Entry</li>
-              <li>• Your Own Book</li>
-              <li>• Flexible & Deniable</li>
+              <li>• {t('wizard.modeSelection.physical.features.manual')}</li>
+              <li>• {t('wizard.modeSelection.physical.features.ownBook')}</li>
+              <li>• {t('wizard.modeSelection.physical.features.flexible')}</li>
             </ul>
           </div>
         </Card>
@@ -74,15 +76,15 @@ export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
               <FileText className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">Digital Book (TXT)</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white">{t('wizard.modeSelection.digital.title')}</h3>
               <p className="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
-                Use a local text file (e.g., Project Gutenberg) as the key.
+                {t('wizard.modeSelection.digital.desc')}
               </p>
             </div>
             <ul className="text-xs md:text-sm text-slate-500 space-y-1">
-              <li>• Local Processing</li>
-              <li>• No Upload Required</li>
-              <li>• Works Offline</li>
+              <li>• {t('wizard.modeSelection.digital.features.local')}</li>
+              <li>• {t('wizard.modeSelection.digital.features.noUpload')}</li>
+              <li>• {t('wizard.modeSelection.digital.features.offline')}</li>
             </ul>
           </div>
         </Card>
@@ -98,15 +100,15 @@ export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
               <Globe className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">Online Book (URL)</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white">{t('wizard.modeSelection.online.title')}</h3>
               <p className="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
-                Fetch book content from a public URL.
+                {t('wizard.modeSelection.online.desc')}
               </p>
             </div>
             <ul className="text-xs md:text-sm text-slate-500 space-y-1">
-              <li>• Remote Content</li>
-              <li>• Convenient Access</li>
-              <li>• Dynamic Reference</li>
+              <li>• {t('wizard.modeSelection.online.features.fetch')}</li>
+              <li>• {t('wizard.modeSelection.online.features.cache')}</li>
+              <li>• {t('wizard.modeSelection.online.features.convenient')}</li>
             </ul>
           </div>
         </Card>

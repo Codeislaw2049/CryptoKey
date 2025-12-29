@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { ProBadge } from '../ui/ProBadge';
@@ -15,6 +16,7 @@ interface MixStepProps {
 }
 
 export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
+  const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [password, setPassword] = useSecureMemory('');
   const [confirmPassword, setConfirmPassword] = useSecureMemory('');
@@ -96,7 +98,7 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
       onNext({ ciphertext: finalCiphertext, hash: finalHash, realRowIndex, password });
     } catch (e) {
       console.error(e);
-      setError('Encryption failed. Please try again.');
+      setError(t('wizard.mixStep.error.encryptionFailed'));
     } finally {
       setIsProcessing(false);
     }
@@ -107,34 +109,34 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold text-white flex items-center justify-center gap-2">
           <Lock className="text-primary" />
-          Set Encryption Password
+          {t('wizard.mixStep.title')}
         </h2>
-        <p className="text-slate-400">Set a strong password to encrypt your vault.</p>
+        <p className="text-slate-400">{t('wizard.mixStep.subtitle')}</p>
       </div>
 
       <div className="space-y-4 max-w-md mx-auto">
         <div className="space-y-4 bg-slate-900/50 p-6 rounded-xl border border-slate-800">
           <Input
             type="password"
-            label="Set Encryption Password"
+            label={t('wizard.mixStep.password.label')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter a strong password"
+            placeholder={t('wizard.mixStep.password.placeholder')}
             autoComplete="new-password"
           />
           <Input
             type="password"
-            label="Confirm Password"
+            label={t('wizard.mixStep.confirm.label')}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Re-enter password"
+            placeholder={t('wizard.mixStep.confirm.placeholder')}
           />
         </div>
 
         <div className="space-y-2 bg-slate-900/50 p-6 rounded-xl border border-slate-800">
           <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
             <Shuffle size={16} />
-            Row Count (Mix Density) ({rowCount})
+            {t('wizard.mixStep.rowCount.label')} ({rowCount})
             {rowCount > 100 && <ProBadge />}
           </label>
           <input
@@ -147,13 +149,13 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
             className={`w-full accent-primary h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer ${rowCount > 100 ? 'accent-amber-500' : ''}`}
           />
           <p className="text-xs text-slate-500 text-center">
-            Higher count = Better anonymity. 
+            {t('wizard.mixStep.rowCount.help')} 
             {features.maxRowCount <= 100 ? (
               <span className="text-amber-500/80 ml-1 cursor-pointer hover:underline" onClick={triggerUpgrade}>
-                 (Limit: 100. Click to Upgrade)
+                 {t('wizard.mixStep.rowCount.upgrade')}
               </span>
             ) : (
-              <span className="text-amber-500/80 ml-1">Values &gt; 100 require Pro license.</span>
+              <span className="text-amber-500/80 ml-1">{t('wizard.mixStep.rowCount.proRequired')}</span>
             )}
           </p>
         </div>
@@ -163,7 +165,7 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
            <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-amber-500">
                  <ShieldAlert size={18} />
-                 <span className="font-bold text-sm">Duress Password (Optional)</span>
+                 <span className="font-bold text-sm">{t('wizard.mixStep.duress.label')}</span>
                  <ProBadge />
               </div>
               <label className={`relative inline-flex items-center cursor-pointer ${!features.allowDuress ? 'opacity-50 cursor-not-allowed' : ''}`}>
@@ -181,19 +183,19 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
            {enableDuress && (
              <div className="space-y-4 animate-in fade-in slide-in-from-top-2 pt-2">
                 <p className="text-xs text-slate-400">
-                  Create a fake vault that opens with a different password. Use this if forced to unlock your device.
+                  {t('wizard.mixStep.duress.help')}
                 </p>
                 <Input
                   type="password"
-                  label="Duress Password"
+                  label={t('wizard.mixStep.duress.passwordLabel')}
                   value={duressPassword}
                   onChange={(e) => setDuressPassword(e.target.value)}
-                  placeholder="Different from real password"
+                  placeholder={t('wizard.mixStep.duress.placeholder')}
                   autoComplete="new-password"
                   className="border-amber-500/30 focus:border-amber-500"
                 />
                 <div className="space-y-1">
-                   <label className="text-xs font-medium text-slate-400">Fake Content (Decoy)</label>
+                   <label className="text-xs font-medium text-slate-400">{t('wizard.mixStep.duress.fakeContentLabel')}</label>
                    <textarea
                       value={duressFakeContent}
                       onChange={(e) => setDuressFakeContent(e.target.value)}

@@ -461,7 +461,168 @@
       },
       "noPersistence": {
         "title": "无持久化",
-        "desc": "我们不使用 Cookie、本地存储或服务器数据库。数字书籍 (TXT) 在本地处理，从不上传。"
+        "desc": "我们不使用 Cookie、本地存储或服务器数据库。数字书籍 (TXT) 仅在本地处理，从不上传。"
+      },
+      "antiTheft": {
+        "title": "防盗保护",
+        "desc": "输入字段防止自动填充和缓存。离开时内存会被主动清除。在公共电脑上使用也很安全。"
+      }
+    },
+    "audit": {
+      "title": "技术审计",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "仅客户端",
+        "noUploads": "无上传 (文件模式)",
+        "noLog": "无日志政策",
+        "wipe": "内存清除"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "选择恢复模式",
+      "subtitle": "选择您想要加密/恢复数据的方式。",
+      "mnemonic": {
+        "title": "助记词",
+        "desc": "使用 12/24 个单词的种子短语作为密钥源。",
+        "features": {
+          "compliance": "符合 BIP-39 标准",
+          "encryption": "标准加密",
+          "security": "高安全性"
+        }
+      },
+      "physical": {
+        "title": "实体书",
+        "desc": "将您的密钥隐藏在书架上的真实书籍中。",
+        "features": {
+          "manual": "手动输入",
+          "ownBook": "使用您自己的书",
+          "flexible": "灵活且隐蔽"
+        }
+      },
+      "digital": {
+        "title": "数字书 (文件)",
+        "desc": "上传文本文件作为您的密钥源。",
+        "features": {
+          "local": "本地处理",
+          "noUpload": "无服务器上传",
+          "offline": "离线工作"
+        }
+      },
+      "url": {
+        "title": "在线书 (URL)",
+        "desc": "使用永久 URL 作为您的密钥源。"
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "输入助记词",
+        "file": "上传文件",
+        "url": "输入 URL",
+        "general": "输入数据"
+      },
+      "subtitle": {
+        "mnemonic": "输入您的 12 或 24 个单词的助记词短语。",
+        "file": "上传要加密的文本文件。",
+        "url": "输入 URL 以获取内容。",
+        "general": "输入任何文本数据进行加密。"
+      },
+      "file": {
+        "loaded": "文件加载成功",
+        "upload": "拖放或点击上传",
+        "sizeLoaded": "已加载",
+        "maxSize": "最大 5MB • TXT",
+        "scheme": "加密方案",
+        "schemes": {
+          "offset": "字符偏移",
+          "chapter": "章节索引",
+          "virtual": "虚拟行"
+        }
+      },
+      "url": {
+        "fetch": "获取内容",
+        "proxy": {
+          "title": "本地代理已激活",
+          "desc": "正在使用本地代理进行开发。"
+        }
+      },
+      "general": {
+        "addLine": "添加新行"
+      },
+      "mnemonic": {
+        "paste": "粘贴"
+      }
+    },
+    "mixStep": {
+      "title": "设置加密密码",
+      "subtitle": "设置一个强密码来加密您的保管库。",
+      "password": {
+        "label": "设置加密密码",
+        "placeholder": "输入强密码"
+      },
+      "confirm": {
+        "label": "确认密码",
+        "placeholder": "再次输入密码"
+      },
+      "rowCount": {
+        "label": "行数 (混合密度)",
+        "help": "计数越高 = 匿名性越好。",
+        "upgrade": "(限制：100。点击升级)",
+        "proRequired": "大于 100 的值需要专业版许可证。"
+      },
+      "duress": {
+        "label": "胁迫密码 (可选)",
+        "help": "创建一个使用不同密码打开的虚假保管库。如果被迫解锁设备，请使用此密码。",
+        "passwordLabel": "胁迫密码",
+        "placeholder": "与真实密码不同",
+        "fakeContentLabel": "虚假内容 (诱饵)"
+      },
+      "error": {
+        "required": "密码为必填项",
+        "mismatch": "密码不匹配",
+        "minLength": "密码至少需要 8 个字符",
+        "duressRequired": "胁迫密码为必填项",
+        "duressSame": "胁迫密码不能与真实密码相同",
+        "encryptionFailed": "加密失败。请重试。"
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "加密成功",
+        "title": "您的备份已就绪",
+        "subtitle": "保存密文并记住您的凭据。"
+      },
+      "mode": {
+        "personal": "个人",
+        "public": "公共"
+      },
+      "realIndex": {
+        "title": "真实行索引",
+        "help": "这是唯一包含您数据的行。其他所有行都是假的。"
+      },
+      "mnemonic": {
+        "title": "原始助记词"
+      },
+      "hash": {
+        "label": "哈希"
+      },
+      "actions": {
+        "copy": "复制",
+        "copied": "已复制！",
+        "download": "下载",
+        "email": "电子邮件",
+        "print": "打印"
+      },
+      "dualAuth": {
+        "button": "生成双重验证分片",
+        "pro": "专业版功能：升级以访问"
+      },
+      "reset": "重置"
+    }
+  }
+}        "desc": "我们不使用 Cookie、本地存储或服务器数据库。数字书籍 (TXT) 在本地处理，从不上传。"
       },
       "antiTheft": {
         "title": "防盗保护",

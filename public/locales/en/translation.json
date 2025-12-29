@@ -479,5 +479,147 @@
         "wipe": "Memory Wipe"
       }
     }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "Select Recovery Mode",
+      "subtitle": "Choose how you want to encrypt/recover your data.",
+      "mnemonic": {
+        "title": "Mnemonic Phrase",
+        "desc": "Use a 12/24 word seed phrase as your key source.",
+        "features": {
+          "compliance": "BIP-39 Compliant",
+          "encryption": "Standard Encryption",
+          "security": "High Security"
+        }
+      },
+      "physical": {
+        "title": "Physical Book",
+        "desc": "Hide your key in a real book on your shelf.",
+        "features": {
+          "manual": "Manual Entry",
+          "ownBook": "Use Your Own Book",
+          "flexible": "Flexible & Stealthy"
+        }
+      },
+      "digital": {
+        "title": "Digital Book (File)",
+        "desc": "Upload a text file to use as your key source.",
+        "features": {
+          "local": "Processed Locally",
+          "noUpload": "No Server Upload",
+          "offline": "Works Offline"
+        }
+      },
+      "url": {
+        "title": "Online Book (URL)",
+        "desc": "Use a permanent URL as your key source."
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Enter Mnemonic",
+        "file": "Upload File",
+        "url": "Enter URL",
+        "general": "Enter Data"
+      },
+      "subtitle": {
+        "mnemonic": "Enter your 12 or 24 word mnemonic phrase.",
+        "file": "Upload a text file to encrypt.",
+        "url": "Enter a URL to fetch content from.",
+        "general": "Enter any text data to encrypt."
+      },
+      "file": {
+        "loaded": "File Loaded Successfully",
+        "upload": "Drag & drop or Click to Upload",
+        "sizeLoaded": "Loaded",
+        "maxSize": "Max 5MB • TXT",
+        "scheme": "Encryption Scheme",
+        "schemes": {
+          "offset": "Character Offset",
+          "chapter": "Chapter Index",
+          "virtual": "Virtual Line"
+        }
+      },
+      "url": {
+        "fetch": "Fetch Content",
+        "proxy": {
+          "title": "Local Proxy Active",
+          "desc": "Using local proxy for development."
+        }
+      },
+      "general": {
+        "addLine": "Add New Line"
+      },
+      "mnemonic": {
+        "paste": "Paste"
+      }
+    },
+    "mixStep": {
+      "title": "Set Encryption Password",
+      "subtitle": "Set a strong password to encrypt your vault.",
+      "password": {
+        "label": "Set Encryption Password",
+        "placeholder": "Enter a strong password"
+      },
+      "confirm": {
+        "label": "Confirm Password",
+        "placeholder": "Re-enter password"
+      },
+      "rowCount": {
+        "label": "Row Count (Mix Density)",
+        "help": "Higher count = Better anonymity.",
+        "upgrade": "(Limit: 100. Click to Upgrade)",
+        "proRequired": "Values > 100 require Pro license."
+      },
+      "duress": {
+        "label": "Duress Password (Optional)",
+        "help": "Create a fake vault that opens with a different password. Use this if forced to unlock your device.",
+        "passwordLabel": "Duress Password",
+        "placeholder": "Different from real password",
+        "fakeContentLabel": "Fake Content (Decoy)"
+      },
+      "error": {
+        "required": "Password is required",
+        "mismatch": "Passwords do not match",
+        "minLength": "Password must be at least 8 characters",
+        "duressRequired": "Duress password is required",
+        "duressSame": "Duress password cannot be the same as real password",
+        "encryptionFailed": "Encryption failed. Please try again."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "Encrypted Successfully",
+        "title": "Your Backup is Ready",
+        "subtitle": "Save the Ciphertext and memorize your credentials."
+      },
+      "mode": {
+        "personal": "Personal",
+        "public": "Public"
+      },
+      "realIndex": {
+        "title": "Real Row Index",
+        "help": "This is the ONLY row containing your data. All others are fake."
+      },
+      "mnemonic": {
+        "title": "Original Mnemonic"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "Copy",
+        "copied": "Copied!",
+        "download": "Download",
+        "email": "Email",
+        "print": "Print"
+      },
+      "dualAuth": {
+        "button": "Generate Dual Auth Shards",
+        "pro": "Pro Feature: Upgrade to Access"
+      },
+      "reset": "Reset"
+    }
   }
 }

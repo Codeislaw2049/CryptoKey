@@ -55,16 +55,16 @@ export const LanguageSwitcher = () => {
     <div className="fixed top-4 left-4 z-50" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 hover:border-primary/50 backdrop-blur-sm transition-all hover:bg-slate-800 text-slate-300 hover:text-white group"
+        className="flex items-center gap-2 p-2 md:px-3 md:py-1.5 rounded-full bg-slate-900/80 border border-slate-700 hover:border-primary/50 backdrop-blur-sm transition-all hover:bg-slate-800 text-slate-300 hover:text-white group"
         title="Change Language"
       >
         <Globe size={16} className="text-primary group-hover:rotate-12 transition-transform" />
-        <span className="text-xs font-medium">{getCurrentLangLabel()}</span>
-        <ChevronDown size={12} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="text-xs font-medium hidden md:block">{getCurrentLangLabel()}</span>
+        <ChevronDown size={12} className={`transition-transform duration-200 hidden md:block ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-32 py-1 rounded-xl bg-slate-900 border border-slate-700 shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-100">
+        <div className="absolute top-full left-0 mt-2 w-24 md:w-32 py-1 rounded-xl bg-slate-900 border border-slate-700 shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-100">
           {languages.map((lang) => (
             <button
               key={lang.code}

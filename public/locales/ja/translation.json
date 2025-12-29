@@ -461,5 +461,147 @@
       }
     },
     "close": "閉じる"
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "復元モードの選択",
+      "subtitle": "データの暗号化/復元方法を選択してください。",
+      "mnemonic": {
+        "title": "ニーモニックフレーズ",
+        "desc": "12/24語のシードフレーズをキーソースとして使用します。",
+        "features": {
+          "compliance": "BIP-39準拠",
+          "encryption": "標準暗号化",
+          "security": "高セキュリティ"
+        }
+      },
+      "physical": {
+        "title": "物理的な本",
+        "desc": "本棚にある実際の本にキーを隠します。",
+        "features": {
+          "manual": "手動入力",
+          "ownBook": "自分の本を使用",
+          "flexible": "柔軟で隠密性が高い"
+        }
+      },
+      "digital": {
+        "title": "デジタルブック (ファイル)",
+        "desc": "テキストファイルをキーソースとしてアップロードします。",
+        "features": {
+          "local": "ローカル処理",
+          "noUpload": "サーバーへのアップロードなし",
+          "offline": "オフラインで動作"
+        }
+      },
+      "url": {
+        "title": "オンラインブック (URL)",
+        "desc": "永続的なURLをキーソースとして使用します。"
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "ニーモニックを入力",
+        "file": "ファイルをアップロード",
+        "url": "URLを入力",
+        "general": "データを入力"
+      },
+      "subtitle": {
+        "mnemonic": "12語または24語のニーモニックフレーズを入力してください。",
+        "file": "暗号化するテキストファイルをアップロードしてください。",
+        "url": "コンテンツを取得するURLを入力してください。",
+        "general": "暗号化するテキストデータを入力してください。"
+      },
+      "file": {
+        "loaded": "ファイルが正常に読み込まれました",
+        "upload": "ドラッグ＆ドロップまたはクリックしてアップロード",
+        "sizeLoaded": "読み込み済み",
+        "maxSize": "最大 5MB • TXT",
+        "scheme": "暗号化スキーム",
+        "schemes": {
+          "offset": "文字オフセット",
+          "chapter": "章インデックス",
+          "virtual": "仮想行"
+        }
+      },
+      "url": {
+        "fetch": "コンテンツを取得",
+        "proxy": {
+          "title": "ローカルプロキシ有効",
+          "desc": "開発用にローカルプロキシを使用しています。"
+        }
+      },
+      "general": {
+        "addLine": "新しい行を追加"
+      },
+      "mnemonic": {
+        "paste": "貼り付け"
+      }
+    },
+    "mixStep": {
+      "title": "暗号化パスワードの設定",
+      "subtitle": "保管庫を暗号化するための強力なパスワードを設定してください。",
+      "password": {
+        "label": "暗号化パスワードの設定",
+        "placeholder": "強力なパスワードを入力"
+      },
+      "confirm": {
+        "label": "パスワードの確認",
+        "placeholder": "パスワードを再入力"
+      },
+      "rowCount": {
+        "label": "行数 (混合密度)",
+        "help": "数が多いほど匿名性が高まります。",
+        "upgrade": "(制限: 100。クリックしてアップグレード)",
+        "proRequired": "100を超える値にはProライセンスが必要です。"
+      },
+      "duress": {
+        "label": "脅迫用パスワード (オプション)",
+        "help": "異なるパスワードで開く偽の保管庫を作成します。デバイスのロック解除を強制された場合に使用します。",
+        "passwordLabel": "脅迫用パスワード",
+        "placeholder": "実際のパスワードとは異なるもの",
+        "fakeContentLabel": "偽のコンテンツ (おとり)"
+      },
+      "error": {
+        "required": "パスワードは必須です",
+        "mismatch": "パスワードが一致しません",
+        "minLength": "パスワードは8文字以上である必要があります",
+        "duressRequired": "脅迫用パスワードは必須です",
+        "duressSame": "脅迫用パスワードは実際のパスワードと同じにすることはできません",
+        "encryptionFailed": "暗号化に失敗しました。再試行してください。"
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "暗号化成功",
+        "title": "バックアップの準備ができました",
+        "subtitle": "暗号文を保存し、資格情報を記憶してください。"
+      },
+      "mode": {
+        "personal": "個人",
+        "public": "公共"
+      },
+      "realIndex": {
+        "title": "実際の行インデックス",
+        "help": "これだけがデータを含む唯一の行です。他はすべて偽物です。"
+      },
+      "mnemonic": {
+        "title": "元のニーモニック"
+      },
+      "hash": {
+        "label": "ハッシュ"
+      },
+      "actions": {
+        "copy": "コピー",
+        "copied": "コピーしました！",
+        "download": "ダウンロード",
+        "email": "メール",
+        "print": "印刷"
+      },
+      "dualAuth": {
+        "button": "デュアル認証シャードを生成",
+        "pro": "Pro機能: アップグレードしてアクセス"
+      },
+      "reset": "リセット"
+    }
   }
 }

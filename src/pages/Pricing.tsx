@@ -8,7 +8,7 @@ import { useLicense } from '../contexts/LicenseContext';
 import { useGeoLocation } from '../utils/geo';
 import { USDTPaymentModal } from '../components/USDTPaymentModal';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 interface Plan {
   id: string;
@@ -151,7 +151,7 @@ export const Pricing = () => {
       {/* Header */}
       <div className="text-center space-y-4 max-w-2xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white">
-          {t('pricing.title', 'Simple, Transparent Pricing')}
+          <Trans i18nKey="pricing.title" defaults="Simple, Transparent <0>Pricing</0>" components={[<span className="text-green-500" key="0" />]} />
         </h1>
         <p className="text-slate-400 text-lg">
           {t('pricing.subtitle', 'Choose the perfect plan for your needs')}
