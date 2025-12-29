@@ -1,0 +1,483 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "language": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "terms": "Terms",
+    "about": "About"
+  },
+  "home": {
+    "subtitle": "Military-grade Steganography & Encryption Tool",
+    "tabs": {
+      "encrypt": "Encrypt",
+      "decrypt": "Decrypt",
+      "stego": "Steganography",
+      "wallet": "Paper Wallet"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the perfect plan for your needs",
+    "plans": {
+      "price_weekly_trial": {
+        "name": "24-Hour Pass",
+        "description": "Instant 24-hour access. Device-bound, no login required.",
+        "features": [
+          "Full Pro Features",
+          "Instant Access (No Login)",
+          "Device Bound (24h Only)",
+          "⚠️ Risk: Lost if cache cleared",
+          "⚠️ Non-Transferable"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "Monthly",
+        "description": "Flexible access for regular users.",
+        "features": [
+          "Full Pro Features",
+          "Cancel Anytime",
+          "Priority Support"
+        ]
+      },
+      "price_quarterly": {
+        "name": "Quarterly",
+        "description": "Save ~15% vs Monthly.",
+        "features": [
+          "Full Pro Features",
+          "Priority Support",
+          "Quarterly Billing"
+        ]
+      },
+      "price_semiannual": {
+        "name": "Semi-Annual",
+        "description": "Save ~23% vs Monthly.",
+        "features": [
+          "Full Pro Features",
+          "Priority Support",
+          "Semi-Annual Billing"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "Yearly",
+        "description": "Best value! Save ~33% vs Monthly.",
+        "features": [
+          "Full Pro Features",
+          "Priority Support",
+          "Yearly Billing"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "contact us",
+        "description": "For large teams and organizations.",
+        "features": [
+          "Custom License Terms",
+          "Dedicated Support",
+          "SLA",
+          "On-premise Options"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: {{date}}",
+    "backToHome": "Back to Home",
+    "disclaimer": {
+      "title": "Service Disclaimer",
+      "content_non_china": "We provide a crypto key security management tool (cryptokey.im) that offers offline mnemonic backup, TOTP dynamic authorization, and secure key derivation services. We do NOT involve cryptocurrency trading, custody, or financial services — only security tools for user-owned keys.",
+      "content_china": "We provide a crypto key security management tool (cryptokey.im) that offers offline mnemonic backup, TOTP dynamic authorization, and secure key derivation services. We focus on hardware security solutions for your digital assets."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using CryptoKey.im (\"the Service\"), you accept and agree to be bound by the terms and provision of this agreement."
+      },
+      "nature": {
+        "title": "2. Nature of Service",
+        "content": "CryptoKey.im is a client-side encryption and steganography tool. All encryption operations are performed locally in your browser using WebAssembly. We do not have access to your private keys, mnemonics, or passwords. You are solely responsible for safeguarding your data."
+      },
+      "responsibilities": {
+        "title": "3. User Responsibilities",
+        "items": [
+          "You agree not to use the Service for any illegal activities.",
+          "You acknowledge that if you lose your credentials or master password, we cannot recover your data.",
+          "You are responsible for maintaining the confidentiality of your account and license keys."
+        ]
+      },
+      "ip": {
+        "title": "4. Intellectual Property",
+        "content": "The Service contains proprietary algorithms and code. The \"Community Edition\" is provided for audit purposes under the CC-BY-NC-ND 4.0 license. Commercial use of the core encryption modules requires a valid Pro license."
+      },
+      "liability": {
+        "title": "5. Limitation of Liability",
+        "content": "To the fullest extent permitted by law, CryptoKey.im shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service."
+      },
+      "refund": {
+        "title": "6. Refund Policy & Fees",
+        "policy": "Strict No-Refund Policy: All sales are final. Once payment is confirmed and the license key is issued, no refunds will be provided under any circumstances.",
+        "fees": "Transaction Fees: Users are solely responsible for all transaction fees (including but not limited to Gas fees, network fees, and exchange withdrawal fees). Please ensure you transfer the exact required amount plus any necessary fees. Under-payment will result in license activation failure."
+      }
+    }
+  },
+  "footer": {
+    "description": "Military-grade Steganography & Encryption Tool (AES-256-GCM + ChaCha20-Poly1305).\nRunning entirely in your browser. No data sent to server.",
+    "links": {
+      "pricing": "Pricing",
+      "terms": "Terms of Service",
+      "source": "Source",
+      "share": "Share"
+    },
+    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. All Rights Reserved.",
+    "license": "Commercial License Notice: This software contains proprietary Wasm encryption modules protected by international copyright laws. The public source code is provided for security audit purposes only under the CC-BY-NC-ND 4.0 license. Unauthorized commercial use, modification, or redistribution of the core algorithms is strictly prohibited."
+  },
+  "licenseManager": {
+    "status": {
+      "active": "Active",
+      "expired": "EXPIRED",
+      "expiresIn": "Expires in:",
+      "proActive": "PRO ACTIVE",
+      "proLicenseActive": "Pro License Active",
+      "hardwareKeyActive": "Hardware Key Active",
+      "tempPro": "TEMP PRO",
+      "activatePro": "ACTIVATE PRO",
+      "unlockPro": "Unlock Pro Features",
+      "user": "USER"
+    },
+    "login": {
+      "tab": "Login",
+      "nickname": "Nickname",
+      "nicknamePlaceholder": "Enter your nickname",
+      "code": "Authenticator Code",
+      "codePlaceholder": "000 000",
+      "button": "Unlock Pro Features",
+      "success": "Login Successful! Pro Features Activated.",
+      "error": "Login Failed. Invalid Code or Nickname.",
+      "inputError": "Please enter Nickname and Code"
+    },
+    "register": {
+      "tab": "Register",
+      "chooseNickname": "Choose Nickname",
+      "nicknamePlaceholder": "3-20 characters",
+      "note": "This nickname will be used to generate your 2FA secret.",
+      "button": "Get Authenticator Key",
+      "scanTitle": "Scan with Authenticator App",
+      "scanNote": "Scan with phone to auto-detect system & download",
+      "success": "Nickname Registered! Bind Authenticator now.",
+      "manualSuccess": "Registered! Please enter secret manually.",
+      "errorNickname": "Please enter a Nickname",
+      "errorFormat": "Nickname must be 3-20 characters (A-Z, 0-9, _)",
+      "errorTaken": "Nickname \"{{nickname}}\" is already taken."
+    },
+    "authApp": {
+      "title": "Authenticator App",
+      "download": "Download",
+      "google": "Google Auth",
+      "microsoft": "Microsoft Auth"
+    },
+    "modal": {
+      "title": "Pro License",
+      "subtitle": "Unlock advanced encryption features",
+      "logout": "Log Out"
+    },
+    "networkError": "Network error: {{error}}"
+  },
+  "paymentModal": {
+    "title": "USDT Payment",
+    "step": "Step {{step}}/4",
+    "close": "Close",
+    "steps": {
+      "identity": {
+        "title": "Account Verification",
+        "loggedIn": "Logged in as",
+        "loginRequired": "You must be logged in to subscribe to this plan.",
+        "loginNote": "Please close this window and register/login first.",
+        "continue": "Continue",
+        "trial": {
+          "title": "Temporary Access Warning",
+          "subtitle": "You are purchasing a 24-Hour Pass without logging in.",
+          "deviceBound": "This license is device-bound. It will only work on this specific browser and device.",
+          "risk": "If you clear your cache or switch devices, you will lose access permanently. No recovery possible.",
+          "note": "We recommend logging in for safety, but you can proceed anonymously."
+        }
+      },
+      "network": {
+        "title": "Select Payment Network",
+        "selected": "Selected Network:",
+        "error": "Please select a payment network"
+      },
+      "payment": {
+        "instruction": "Please send exactly",
+        "walletLabel": "Official Wallet Address",
+        "networkWarning": "Ensure you are sending USDT on the {{network}} ({{standard}}) network. Wrong network transfers will be lost.",
+        "importantWarning": {
+          "title": "Important Payment Warning:",
+          "exactAmount": "Please pay the EXACT amount shown.",
+          "underpayment": "Underpayment will result in failure and is non-refundable.",
+          "overpayment": "Overpayment is non-refundable and does not accumulate extra time.",
+          "singleTx": "The system verifies a single transaction only. Do not send multiple small payments."
+        },
+        "txHashLabel": "Transaction Hash (TXID)",
+        "txHashPlaceholder": "Paste the transaction hash (TXID)",
+        "button": "I Have Sent Payment",
+        "verifying": "Verifying...",
+        "errorTx": "Transaction Hash (TXID) is required",
+        "errorValidation": {
+            "wallet": "This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.",
+            "tron": "Invalid TRON TXID. It should be a 64-character hex string.",
+            "eth": "Invalid {{chain}} TXID. It should look like 0x... and have 64 hex characters."
+        },
+        "clipboardError": "Failed to read clipboard. Please type manually.",
+        "copied": "Link copied to clipboard!"
+      },
+      "verification": {
+        "verifying": "Verifying Payment...",
+        "success": "Payment Verified!",
+        "failed": "Payment verification failed. Please check your transaction."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "Dual Authenticator Mode (Recommended)",
+    "dualAuthDesc": "Split encryption into two separate QR keys (Key A + Key B). Even if one key is stolen, your data remains safe.",
+    "switchToDual": "Switch to Dual Auth Encryption",
+    "generateStandard": "Generate Standard QR Code",
+    "generating": "Generating...",
+    "standardModeDesc": "Standard Mode: Generates AES-256 encrypted QR shards.",
+    "streamMode": "Air-Gap Stream Mode",
+    "proFeature": "High-speed QR streaming is a Pro feature.",
+    "unlockStream": "Unlock Stream Mode",
+    "pauseStream": "Pause Stream",
+    "playStream": "Play Stream",
+    "scanNote": "Use a compatible QR scanner app (e.g. Cobo Vault, Keystone) to capture the stream.",
+    "shardCount": "Shard {{current}} of {{total}}",
+    "saveAll": "Save All Images",
+    "saveImage": "Save Image",
+    "close": "Close"
+  },
+  "dualAuthGenerator": {
+    "title": "Dual Authenticator Encryption",
+    "back": "Back",
+    "howItWorks": {
+      "title": "How this works:",
+      "step1": "System generates two unique keys (Secret A & B).",
+      "step2": "You bind them to your Authenticator App (Google/Microsoft Auth).",
+      "step3": "<strong>Secret A</strong> encrypts your Mnemonic.",
+      "step4": "<strong>Secret B</strong> encrypts your Password & Line Number.",
+      "step5": "Result is split into QR shards.",
+      "step6": "To decrypt, you need the Shards + The Authenticator Codes (or backup Binding QRs)."
+    },
+    "generateKeys": "Generate Secure Keys",
+    "authA": "Authenticator A (Mnemonic Key)",
+    "authB": "Authenticator B (Context Key)",
+    "scanAuth": "Scan with Google/Microsoft Authenticator",
+    "saveImage": "Save Image",
+    "processing": "Processing...",
+    "encryptAndGenerate": "Encrypt & Generate Shards",
+    "encryptionComplete": "Encryption Complete!",
+    "resultDesc": "You have {{count}} data shards and 2 authenticator keys.",
+    "importantWarning": "Important: You MUST save ALL images (Shards + Auth Keys) to decrypt later!",
+    "downloadAll": "Download All Images (Zip recommended)",
+    "shardLabel": "Shard {{index}}",
+    "errorBind": "Please bind authenticators first",
+    "errorGen": "Generation failed"
+  },
+  "userManual": {
+    "button": "User Manual",
+    "title": "CryptoKey User Manual",
+    "subtitle": "Secure Data Encryption & Recovery Guide",
+    "close": "Close",
+    "tabs": {
+      "start": "Quick Start Guide",
+      "dual": "Dual Authenticator",
+      "security": "Security & Privacy",
+      "recover": "Recovery Process"
+    },
+    "mobileTabs": {
+      "start": "Quick Start",
+      "dual": "Dual Auth",
+      "security": "Security",
+      "recover": "Recovery"
+    },
+    "start": {
+      "title": "Getting Started",
+      "description": "CryptoKey allows you to hide sensitive data (like mnemonics) within decoy data using standard encryption or dual-authenticator protection.",
+      "steps": [
+        "Select a mode (Standard or Dual Authenticator).",
+        "Input your secret data.",
+        "Generate encrypted shards or blocks.",
+        "Save the output safely (QR codes or text)."
+      ]
+    },
+    "dual": {
+      "title": "Dual Authenticator Mode",
+      "coreConcept": {
+        "title": "Core Concept",
+        "description": "Unlike standard encryption, this mode requires <strong>Two Separate Keys</strong> (Key A & Key B) to decrypt. It splits trust between two different authenticator tokens/devices."
+      },
+      "encryption": {
+        "title": "1. Encryption (Generation)",
+        "step1": "Input your Mnemonic and Password/Context.",
+        "step2": "Scan the two generated QR codes (Key A & Key B) with your Google Authenticator app. <strong>Save these QR images!</strong> They are your permanent keys.",
+        "step3": "Enter the 6-digit codes from your app to verify and lock the encryption.",
+        "step4": "Download the generated Shard Images (QR Sharding)."
+      },
+      "decryption": {
+        "title": "2. Decryption (Recovery)",
+        "important": {
+          "title": "Important: Keys vs Codes",
+          "content": "<strong>Key (QR/Secret):</strong> The permanent \"Key\" you scanned. Required for decryption.<br/><strong>Code (6-digits):</strong> The temporary \"Token\" generated every 30s. Used only for verification.",
+          "note": "* You CANNOT decrypt with just the 6-digit code. You MUST upload the Key QR or input the Secret string."
+        },
+        "step1": "Upload all your Shard Images.",
+        "step2": "<strong>REQUIRED:</strong> Upload Key A & Key B QR images (or paste the Secret strings).",
+        "step3": "(Optional) Enter current 6-digit codes to verify correctness."
+      },
+      "lost": {
+        "title": "3. Lost your QR Images?",
+        "description": "If you still have the Authenticator App on your phone:",
+        "steps": [
+          "Open Google Authenticator.",
+          "Use the \"Export Accounts\" or \"Transfer\" feature.",
+          "This will show a QR code containing your Secrets.",
+          "Scan/Decode that export QR to get your Secret string back."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. Choose Protection Mode",
+        "description": "Select the best way to secure your mnemonic phrase or data:",
+        "book": {
+          "physical": {
+            "title": "Physical / Virtual Book",
+            "desc": "Hide your key in a real book on your shelf. (Page-Line-Word)"
+          },
+          "online": {
+            "title": "Online Book (URL)",
+            "desc": "Use a permanent Gutenberg URL as your key source. No files needed."
+          },
+          "digital": {
+            "title": "Digital Book (File)",
+            "desc": "Upload a Gutenberg TXT file. Processed locally, never uploaded."
+          },
+          "index": {
+            "title": "General Index",
+            "desc": "Encrypt arbitrary data structures (e.g., Bank Info, Passwords)."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. Enter & Obfuscate",
+        "description": "Input your sensitive data. We will then ask you to set a <span class=\"text-white font-mono\">Row Density</span> (e.g., 100 rows). Your real data will be hidden in one random row among 99 fake rows.",
+        "example": {
+          "fake1": "Row 34: 832-19-22 (Fake)",
+          "real": "Row 35: 123-45-67 (Real Data)",
+          "fake2": "Row 36: 992-11-02 (Fake)"
+        }
+      },
+      "export": {
+        "title": "3. Export & Save",
+        "description": "Once encrypted, you will receive a ciphertext block. You must save this block!",
+        "ways": "Ways to save:",
+        "email": "Email (Personal Device)",
+        "usb": "USB Download (Safest)",
+        "print": "Print Paper (Offline)"
+      },
+      "publicComputer": {
+        "title": "Public Computer Safety",
+        "description": "If you are using a public computer (internet cafe, library, friend's PC):",
+        "steps": [
+          "Do NOT log in to your personal email.",
+          "Do NOT use the clipboard (copy/paste) if possible.",
+          "Use the <strong>\"Public Computer Mode\"</strong> toggle on the result page.",
+          "Download the file to a USB drive or scan the QR code with your phone.",
+          "Click <strong>\"Clear All Data\"</strong> before leaving."
+        ]
+      },
+      "military": {
+        "title": "Military-Grade Encryption",
+        "description": "We use <strong>AES-256-GCM</strong> encryption. This is the same standard used by governments and banks. Your password is salted and hashed using <strong>PBKDF2-HMAC-SHA256</strong> with 100,000 iterations, making brute-force attacks nearly impossible."
+      },
+      "zk": {
+        "title": "Zero-Knowledge Architecture",
+        "description": "Everything happens in your browser. We have <strong>no servers</strong>, no database, and no logs. If you close this tab, your data is gone forever unless you saved the backup."
+      },
+      "deniability": {
+        "title": "Plausible Deniability",
+        "description": "We generate <strong>fake decoy rows</strong> indistinguishable from your real data. Even if someone forces you to decrypt the file, you can claim any of the fake rows is the \"real\" one, or that the file contains no meaningful data at all. The encryption math hides which row is real."
+      },
+      "transparency": {
+        "title": "Code Transparency",
+        "description": "CryptoKey is a pure client-side application. You can inspect the source code in your browser's developer tools. We encourage security audits. No external scripts or analytics are loaded."
+      }
+    },
+    "recover": {
+      "title": "How to Decrypt",
+      "steps": {
+        "step1": {
+          "title": "Select Mode",
+          "description": "Choose the same mode used for encryption (Physical, File, or URL). If using File or URL, you must provide the exact same source book."
+        },
+        "step2": {
+          "title": "Paste Ciphertext",
+          "description": "Copy the entire ciphertext block (including the random characters) from your email or file."
+        },
+        "step3": {
+          "title": "Enter Password",
+          "description": "Input the password you set during encryption."
+        },
+        "step4": {
+          "title": "Identify Your Row",
+          "description": "The system will decrypt ALL rows (real + fake). You must remember which row number was yours (e.g., Row 35) to find your data."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "Military-Grade Security",
+    "title": "Security Architecture",
+    "subtitle": "Zero-Knowledge Proof & Military-Grade Encryption",
+    "features": {
+      "aes": {
+        "title": "AES-256-GCM Encryption",
+        "desc": "Your data is encrypted using the strongest standard available (Web Crypto API). We use PBKDF2 with 100,000 iterations for key derivation."
+      },
+      "steganography": {
+        "title": "Book Cipher Steganography",
+        "desc": "Hides sensitive data within regular book text (Gutenberg/Physical). Attackers see only harmless page/line/word indices, not ciphertext."
+      },
+      "dual": {
+        "title": "Dual-Factor & Sharding",
+        "desc": "New Dual Authenticator mode splits encryption between two separate keys (A & B), plus QR Sharding for redundancy. Even if one key is compromised, your data remains safe."
+      },
+      "zk": {
+        "title": "Zero-Knowledge",
+        "desc": "We never see your password or data. Everything happens locally in your browser. No data is ever sent to our servers."
+      },
+      "noPersistence": {
+        "title": "No Persistence",
+        "desc": "We do not use cookies, local storage, or server databases. Digital Books (TXT) are processed locally and never uploaded."
+      },
+      "antiTheft": {
+        "title": "Anti-Theft Protection",
+        "desc": "Input fields prevent autocomplete and caching. Memory is actively cleared when you leave. Safe for public computers."
+      }
+    },
+    "audit": {
+      "title": "Technical Audit",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "Client-Side Only",
+        "noUploads": "No Uploads (File Mode)",
+        "noLog": "No-Log Policy",
+        "wipe": "Memory Wipe"
+      }
+    }
+  }
+}

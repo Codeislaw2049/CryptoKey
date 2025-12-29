@@ -22,11 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Docs & Private Info
-# docs/ is ALLOWED for private repo, but exclude specific secrets
-docs/PAT.txt
-docs/secrets.txt
-docs/keys/
+# Docs & Private Info (STRICT BLOCK FOR PUBLIC REPO)
+docs/
 
 # Configs (Sensitive)
 cf_config.json
@@ -53,3 +50,5 @@ scripts/*.pem
 scripts/verify_compliance.ts
 scripts/license_tools.ts
 
+nul
+public_repo/

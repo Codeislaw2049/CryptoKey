@@ -6,8 +6,10 @@ import { WalletGenerator } from '../components/WalletGenerator';
 import WasmBenchmark from '../pages/WasmBenchmark';
 import { ShieldCheck, UnlockKeyhole, Image, Wallet } from 'lucide-react';
 import { cn } from '../components/ui/Button';
+import { useTranslation } from 'react-i18next';
 
 export const Home = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'encrypt' | 'decrypt' | 'stego' | 'wallet' | 'benchmark'>('encrypt');
   const [stegoSecret, setStegoSecret] = useState<string>('');
   const [encryptSecret, setEncryptSecret] = useState<string>('');
@@ -29,7 +31,7 @@ export const Home = () => {
           <ShieldCheck className="text-primary" size={40} />
           CryptoKey.im
         </h1>
-        <p className="text-slate-400 font-medium">Military-grade Steganography & Encryption Tool</p>
+        <p className="text-slate-400 font-medium">{t('home.subtitle')}</p>
       </div>
 
       {/* Tabs */}
@@ -45,7 +47,7 @@ export const Home = () => {
           )}
         >
           <ShieldCheck size={18} />
-          Encrypt
+          {t('home.tabs.encrypt')}
         </button>
         <button
           onClick={() => {
@@ -58,7 +60,7 @@ export const Home = () => {
           )}
         >
           <UnlockKeyhole size={18} />
-          Decrypt
+          {t('home.tabs.decrypt')}
         </button>
         <button
           onClick={() => {
@@ -71,7 +73,7 @@ export const Home = () => {
           )}
         >
           <Image size={18} />
-          Steganography
+          {t('home.tabs.stego')}
         </button>
         <button
           onClick={() => {
@@ -84,7 +86,7 @@ export const Home = () => {
           )}
         >
           <Wallet size={18} />
-          Paper Wallet
+          {t('home.tabs.wallet')}
         </button>
       </div>
 

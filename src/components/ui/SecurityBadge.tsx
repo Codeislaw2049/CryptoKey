@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Shield, Lock, EyeOff, Server, Smartphone, X, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export const SecurityBadge = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -25,7 +27,7 @@ export const SecurityBadge = () => {
         <Shield 
             className={`w-6 h-6 md:w-5 md:h-5 text-green-500 transition-all duration-500 ${isHovered ? 'drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]' : ''}`} 
         />
-        <span className="hidden md:inline text-xs font-medium text-slate-300">Military-Grade Security</span>
+        <span className="hidden md:inline text-xs font-medium text-slate-300">{t('securityBadge.button')}</span>
         
         {/* Pulse Effect Ring */}
         <span className="absolute inset-0 rounded-full border border-green-500/20 animate-ping opacity-75"></span>
@@ -54,53 +56,53 @@ export const SecurityBadge = () => {
                     <Shield className="w-8 h-8 text-green-500" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-white">Security Architecture</h2>
-                    <p className="text-slate-400">Zero-Knowledge Proof & Military-Grade Encryption</p>
+                    <h2 className="text-2xl font-bold text-white">{t('securityBadge.title')}</h2>
+                    <p className="text-slate-400">{t('securityBadge.subtitle')}</p>
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <SecurityFeature
                     icon={<Lock className="w-6 h-6 text-blue-400" />}
-                    title="AES-256-GCM Encryption"
-                    description="Your data is encrypted using the strongest standard available (Web Crypto API). We use PBKDF2 with 100,000 iterations for key derivation."
+                    title={t('securityBadge.features.aes.title')}
+                    description={t('securityBadge.features.aes.desc')}
                   />
                   <SecurityFeature
                     icon={<BookOpen className="w-6 h-6 text-orange-400" />}
-                    title="Book Cipher Steganography"
-                    description="Hides sensitive data within regular book text (Gutenberg/Physical). Attackers see only harmless page/line/word indices, not ciphertext."
+                    title={t('securityBadge.features.steganography.title')}
+                    description={t('securityBadge.features.steganography.desc')}
                   />
                   <SecurityFeature
                     icon={<Shield className="w-6 h-6 text-indigo-400" />}
-                    title="Dual-Factor & Sharding"
-                    description="New Dual Authenticator mode splits encryption between two separate keys (A & B), plus QR Sharding for redundancy. Even if one key is compromised, your data remains safe."
+                    title={t('securityBadge.features.dual.title')}
+                    description={t('securityBadge.features.dual.desc')}
                   />
                   <SecurityFeature
                     icon={<EyeOff className="w-6 h-6 text-purple-400" />}
-                    title="Zero-Knowledge"
-                    description="We never see your password or data. Everything happens locally in your browser. No data is ever sent to our servers."
+                    title={t('securityBadge.features.zk.title')}
+                    description={t('securityBadge.features.zk.desc')}
                   />
                   <SecurityFeature
                     icon={<Server className="w-6 h-6 text-red-400" />}
-                    title="No Persistence"
-                    description="We do not use cookies, local storage, or server databases. Digital Books (TXT) are processed locally and never uploaded."
+                    title={t('securityBadge.features.noPersistence.title')}
+                    description={t('securityBadge.features.noPersistence.desc')}
                   />
                   <SecurityFeature
                     icon={<Smartphone className="w-6 h-6 text-yellow-400" />}
-                    title="Anti-Theft Protection"
-                    description="Input fields prevent autocomplete and caching. Memory is actively cleared when you leave. Safe for public computers."
+                    title={t('securityBadge.features.antiTheft.title')}
+                    description={t('securityBadge.features.antiTheft.desc')}
                   />
                 </div>
 
                 <div className="mt-8 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
-                  <h3 className="text-sm font-semibold text-slate-300 mb-2">Technical Audit</h3>
+                  <h3 className="text-sm font-semibold text-slate-300 mb-2">{t('securityBadge.audit.title')}</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge text="PBKDF2-SHA256" />
-                    <Badge text="AES-GCM-256" />
-                    <Badge text="Client-Side Only" />
-                    <Badge text="No Uploads (File Mode)" />
-                    <Badge text="No-Log Policy" />
-                    <Badge text="Memory Wipe" />
+                    <Badge text={t('securityBadge.audit.badges.pbkdf2')} />
+                    <Badge text={t('securityBadge.audit.badges.aes')} />
+                    <Badge text={t('securityBadge.audit.badges.client')} />
+                    <Badge text={t('securityBadge.audit.badges.noUploads')} />
+                    <Badge text={t('securityBadge.audit.badges.noLog')} />
+                    <Badge text={t('securityBadge.audit.badges.wipe')} />
                   </div>
                 </div>
               </div>

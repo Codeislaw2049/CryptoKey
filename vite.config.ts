@@ -76,8 +76,8 @@ export default defineConfig({
       name: 'inject-csp',
       transformIndexHtml(html) {
         const csp = process.env.NODE_ENV === 'production'
-              ? "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://cryptokey-auth.c-2049.workers.dev;"
-              : "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org http://localhost:8787 http://127.0.0.1:8787 ws://localhost:8787 ws://127.0.0.1:8787 https://cryptokey-auth.c-2049.workers.dev;";
+              ? "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://cryptokey-auth.c-2049.workers.dev; worker-src 'self' blob:;"
+              : "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org http://localhost:8787 http://127.0.0.1:8787 ws://localhost:8787 ws://127.0.0.1:8787 https://cryptokey-auth.c-2049.workers.dev; worker-src 'self' blob:;";
 
         return html.replace(
           /<meta http-equiv="Content-Security-Policy"[^>]*>/,
@@ -98,6 +98,10 @@ export default defineConfig({
     strictPort: true,
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
+        if (req.url === '/index_zh.html') {
+          // Serve index_zh.html - handled by Vite default usually, but good to have placeholder
+        }
+        
         if (req.url.startsWith('/api/')) {
           console.log(`[Mock API] ${req.method} ${req.url}`);
           
@@ -153,6 +157,12 @@ export default defineConfig({
       compress: {
         drop_console: true, // 🔒 Security: Remove console logs in production
         drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        zh: path.resolve(__dirname, 'index_zh.html'),
       },
     },
   }

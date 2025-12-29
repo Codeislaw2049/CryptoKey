@@ -10,6 +10,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { Footer } from './components/ui/Footer';
 import { wasmManager } from './wasm/wasmLoader';
 import { useEffect } from 'react';
+import { LanguageSwitcher } from './components/ui/LanguageSwitcher';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
           <SecurityBadge />
           <LicenseManager />
           <UserManual />
+          <LanguageSwitcher />
           
           <div className="max-w-4xl mx-auto">
             <Routes>

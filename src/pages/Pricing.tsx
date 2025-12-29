@@ -8,6 +8,7 @@ import { useLicense } from '../contexts/LicenseContext';
 import { useGeoLocation } from '../utils/geo';
 import { USDTPaymentModal } from '../components/USDTPaymentModal';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface Plan {
   id: string;
@@ -21,94 +22,69 @@ interface Plan {
   originalPrice?: string;
 }
 
-const plans: Plan[] = [
-  {
-    id: 'price_weekly_trial',
-    name: '24-Hour Pass',
-    price: '$2.99',
-    period: 'one-time',
-    description: 'Instant 24-hour access. Device-bound, no login required.',
-    features: [
-      'Full Pro Features',
-      'Instant Access (No Login)',
-      'Device Bound (24h Only)',
-      '⚠️ Risk: Lost if cache cleared',
-      '⚠️ Non-Transferable'
-    ],
-    recommended: false,
-  },
-  {
-    id: 'price_monthly_standard',
-    name: 'Monthly',
-    price: '$9.99',
-    period: 'per month',
-    description: 'Flexible access for regular users.',
-    features: [
-      'Full Pro Features',
-      'Cancel Anytime',
-      'Priority Support'
-    ],
-    recommended: false,
-  },
-  {
-    id: 'price_quarterly',
-    name: 'Quarterly',
-    price: '$24.99',
-    period: 'per quarter',
-    description: 'Save ~15% vs Monthly.',
-    features: [
-      'Full Pro Features',
-      'Priority Support',
-      'Quarterly Billing'
-    ],
-    recommended: false,
-  },
-  {
-    id: 'price_semiannual',
-    name: 'Semi-Annual',
-    price: '$45.99',
-    period: 'per 6 months',
-    description: 'Save ~23% vs Monthly.',
-    features: [
-      'Full Pro Features',
-      'Priority Support',
-      'Semi-Annual Billing'
-    ],
-    recommended: true,
-  },
-  {
-    id: 'price_yearly_pro',
-    name: 'Yearly',
-    price: '$79.99',
-    period: 'per year',
-    description: 'Best value! Save ~33% vs Monthly.',
-    features: [
-      'Full Pro Features',
-      'Priority Support',
-      'Yearly Billing'
-    ],
-    recommended: false,
-  },
-  {
-    id: 'price_enterprise',
-    name: 'Enterprise',
-    price: 'Custom',
-    period: 'contact us',
-    description: 'For large teams and organizations.',
-    features: [
-      'Custom License Terms',
-      'Dedicated Support',
-      'SLA Available'
-    ],
-    recommended: false,
-    isEnterprise: true,
-  },
-];
-
 export const Pricing = () => {
   const { isPro } = useLicense();
   const { isChina } = useGeoLocation();
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const { t } = useTranslation();
+
+  const plans: Plan[] = [
+    {
+      id: 'price_weekly_trial',
+      name: t('pricing.plans.price_weekly_trial.name'),
+      price: '$2.99',
+      period: 'one-time',
+      description: t('pricing.plans.price_weekly_trial.description'),
+      features: t('pricing.plans.price_weekly_trial.features', { returnObjects: true }) as string[],
+      recommended: false,
+    },
+    {
+      id: 'price_monthly_standard',
+      name: t('pricing.plans.price_monthly_standard.name'),
+      price: '$9.99',
+      period: 'per month',
+      description: t('pricing.plans.price_monthly_standard.description'),
+      features: t('pricing.plans.price_monthly_standard.features', { returnObjects: true }) as string[],
+      recommended: false,
+    },
+    {
+      id: 'price_quarterly',
+      name: t('pricing.plans.price_quarterly.name'),
+      price: '$24.99',
+      period: 'per quarter',
+      description: t('pricing.plans.price_quarterly.description'),
+      features: t('pricing.plans.price_quarterly.features', { returnObjects: true }) as string[],
+      recommended: false,
+    },
+    {
+      id: 'price_semiannual',
+      name: t('pricing.plans.price_semiannual.name'),
+      price: '$45.99',
+      period: 'per 6 months',
+      description: t('pricing.plans.price_semiannual.description'),
+      features: t('pricing.plans.price_semiannual.features', { returnObjects: true }) as string[],
+      recommended: true,
+    },
+    {
+      id: 'price_yearly_pro',
+      name: t('pricing.plans.price_yearly_pro.name'),
+      price: '$79.99',
+      period: 'per year',
+      description: t('pricing.plans.price_yearly_pro.description'),
+      features: t('pricing.plans.price_yearly_pro.features', { returnObjects: true }) as string[],
+      recommended: false,
+    },
+    {
+      id: 'price_enterprise',
+      name: t('pricing.plans.price_enterprise.name'),
+      price: 'Custom',
+      period: 'contact us',
+      description: t('pricing.plans.price_enterprise.description'),
+      features: t('pricing.plans.price_enterprise.features', { returnObjects: true }) as string[],
+      recommended: false,
+      isEnterprise: true,
+    },
+  ];
 
   /*
   const [email, setEmail] = useState('');
@@ -175,10 +151,10 @@ export const Pricing = () => {
       {/* Header */}
       <div className="text-center space-y-4 max-w-2xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white">
-          Simple, Transparent <span className="text-primary">Pricing</span>
+          {t('pricing.title', 'Simple, Transparent Pricing')}
         </h1>
         <p className="text-slate-400 text-lg">
-          Choose the plan that fits your security needs. All plans unlock the full power of CryptoKey.im's military-grade encryption and steganography tools.
+          {t('pricing.subtitle', 'Choose the perfect plan for your needs')}
         </p>
       </div>
 

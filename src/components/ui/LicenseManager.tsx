@@ -1,11 +1,27 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLicense } from '../../contexts/LicenseContext';
-import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import { Key, CheckCircle, X, ShieldCheck, ChevronUp, User, Copy } from 'lucide-react';
+import { Key, CheckCircle, X, ShieldCheck, ChevronUp, User, Copy, Loader2 } from 'lucide-react';
 import QRCode from 'qrcode';
 
+const DesktopQRWrapper = ({ url }: { url: string }) => {
+    const [dataUrl, setDataUrl] = useState<string>('');
+    
+    useEffect(() => {
+        if (!url) return;
+        QRCode.toDataURL(url, { width: 150, margin: 1 })
+            .then(setDataUrl)
+            .catch(err => console.error(err));
+    }, [url]);
+
+    if (!dataUrl) return <div className="w-32 h-32 flex items-center justify-center"><Loader2 className="animate-spin text-slate-400" /></div>;
+
+    return <img src={dataUrl} alt="Desktop Auth QR" className="w-32 h-32" />;
+};
+
 export const LicenseManager = () => {
+  const { t } = useTranslation();
   const { licenseType, licenseExpiry, loginWithTOTP, requestTOTP, logout, isUpgradeModalOpen, setUpgradeModalOpen, userNickname } = useLicense();
   
   const [mode, setMode] = useState<'login' | 'register'>('login');
@@ -22,13 +38,13 @@ export const LicenseManager = () => {
     }
 
     if (licenseType === 'pro_local') {
-        setTimeLeft('USB Key / Local');
+        setTimeLeft(t('licenseManager.status.hardwareKeyActive'));
         setIsExpired(false);
         return;
     }
 
     if (!licenseExpiry) {
-        setTimeLeft('Active'); // Lifetime or Admin
+        setTimeLeft(t('licenseManager.status.active')); // Lifetime or Admin
         return;
     }
 
@@ -94,12 +110,12 @@ export const LicenseManager = () => {
 
   const handleRegister = async () => {
     if (!nickname) {
-      setError('Please enter a Nickname');
+      setError(t('licenseManager.register.errorNickname'));
       return;
     }
     // Validation: 3-20 chars, alphanumeric
     if (!/^[a-zA-Z0-9_]{3,20}$/.test(nickname)) {
-        setError('Nickname must be 3-20 characters (A-Z, 0-9, _)');
+        setError(t('licenseManager.register.errorFormat'));
         return;
     }
 
@@ -114,29 +130,29 @@ export const LicenseManager = () => {
             try {
                 const url = await QRCode.toDataURL(otpauth);
                 setQrCodeUrl(url);
-                setSuccess('Nickname Registered! Bind Authenticator now.');
+                setSuccess(t('licenseManager.register.success'));
             } catch (e) {
                 console.error("QR Gen failed", e);
-                setSuccess('Registered! Please enter secret manually.');
+                setSuccess(t('licenseManager.register.manualSuccess'));
             }
         } else {
             // Enhanced error handling
             const errMsg = response?.error || 'Registration failed';
             if (errMsg.toLowerCase().includes('taken') || errMsg.toLowerCase().includes('exist')) {
-                 setError(`Nickname "${nickname}" is already taken.`);
+                 setError(t('licenseManager.register.errorTaken', { nickname }));
             } else {
                  setError(errMsg);
             }
         }
     } catch (e) {
-        setError('Network error: ' + String(e));
+        setError(t('licenseManager.networkError', { error: String(e) }));
     }
     setIsLoading(false);
   };
 
   const handleLogin = async () => {
     if (!nickname || !totpToken) {
-        setError('Please enter Nickname and Code');
+        setError(t('licenseManager.login.inputError'));
         return;
     }
     
@@ -146,12 +162,12 @@ export const LicenseManager = () => {
     const success = await loginWithTOTP(nickname, totpToken);
     
     if (success) {
-        setSuccess('Login Successful! Pro Features Activated.');
+        setSuccess(t('licenseManager.login.success'));
         setUpgradeModalOpen(false);
         // Reset sensitive fields
         setTotpToken('');
     } else {
-        setError('Login Failed. Invalid Code or Nickname.');
+        setError(t('licenseManager.login.error'));
     }
     
     setIsLoading(false);
@@ -189,35 +205,32 @@ export const LicenseManager = () => {
         
         return (
             <div className="mt-4 p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                <p className="text-[10px] text-slate-400 font-bold mb-2 uppercase tracking-wider text-center">Authenticator App</p>
+                <p className="text-[10px] text-slate-400 font-bold mb-2 uppercase tracking-wider text-center">{t('licenseManager.authApp.title')}</p>
                 <div className="flex gap-2">
                      <button 
                         onClick={() => setShowDesktopAuthQR(showDesktopAuthQR === 'google' ? null : 'google')}
                         className={`flex-1 p-2 rounded border transition-all text-center ${showDesktopAuthQR === 'google' ? 'bg-amber-500/20 border-amber-500 text-amber-200' : 'bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700'}`}
                      >
-                         <span className="text-xs font-bold block">Google Auth</span>
-                         <span className="text-[9px] opacity-70 block">Download</span>
+                         <span className="text-xs font-bold block">{t('licenseManager.authApp.google')}</span>
+                         <span className="text-[9px] opacity-70 block">{t('licenseManager.authApp.download')}</span>
                      </button>
                      <button 
                         onClick={() => setShowDesktopAuthQR(showDesktopAuthQR === 'microsoft' ? null : 'microsoft')}
                         className={`flex-1 p-2 rounded border transition-all text-center ${showDesktopAuthQR === 'microsoft' ? 'bg-amber-500/20 border-amber-500 text-amber-200' : 'bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700'}`}
                      >
-                         <span className="text-xs font-bold block">Microsoft Auth</span>
-                         <span className="text-[9px] opacity-70 block">Download</span>
+                         <span className="text-xs font-bold block">{t('licenseManager.authApp.microsoft')}</span>
+                         <span className="text-[9px] opacity-70 block">{t('licenseManager.authApp.download')}</span>
                      </button>
                 </div>
                 
                 {showDesktopAuthQR && (
                     <div className="mt-3 text-center animate-in fade-in zoom-in duration-300">
                         <div className="bg-white p-2 rounded-lg inline-block mx-auto mb-2">
-                            <img 
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`${qrBaseUrl}?app=${showDesktopAuthQR}`)}`}
-                                alt={`${showDesktopAuthQR} QR`}
-                                className="w-32 h-32"
-                            />
+                            {/* Local QR Code Generation - Replaces api.qrserver.com */}
+                            <DesktopQRWrapper url={`${qrBaseUrl}?app=${showDesktopAuthQR}`} />
                         </div>
                         <p className="text-[10px] text-slate-400">
-                            Scan with phone to auto-detect system & download
+                            {t('licenseManager.register.scanNote')}
                         </p>
                     </div>
                 )}
@@ -230,12 +243,12 @@ export const LicenseManager = () => {
     return (
         <div className="flex gap-2 mt-2">
             <a href={links.google[platform]} target="_blank" rel="noreferrer" className="flex-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded p-1.5 text-center transition-colors">
-                <span className="text-[10px] text-slate-200 block font-bold">Google Auth</span>
-                <span className="text-[8px] text-slate-400 block">Download</span>
+                <span className="text-[10px] text-slate-200 block font-bold">{t('licenseManager.authApp.google')}</span>
+                <span className="text-[8px] text-slate-400 block">{t('licenseManager.authApp.download')}</span>
             </a>
             <a href={links.microsoft[platform]} target="_blank" rel="noreferrer" className="flex-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded p-1.5 text-center transition-colors">
-                <span className="text-[10px] text-slate-200 block font-bold">Microsoft Auth</span>
-                <span className="text-[8px] text-slate-400 block">Download</span>
+                <span className="text-[10px] text-slate-200 block font-bold">{t('licenseManager.authApp.microsoft')}</span>
+                <span className="text-[8px] text-slate-400 block">{t('licenseManager.authApp.download')}</span>
             </a>
         </div>
     );
@@ -248,33 +261,28 @@ export const LicenseManager = () => {
     
     let badgeClass = 'bg-amber-900/20 border-amber-500/50 text-amber-200';
     let icon = <Key size={18} className="text-amber-400" />;
-    let text = 'ACTIVATE PRO';
+    let text = t('licenseManager.status.activatePro');
     
     if (isPro) {
         if (licenseType === 'pro_temp') {
             badgeClass = 'bg-amber-900/90 border-amber-500 text-amber-100';
             icon = <ShieldCheck size={18} className="text-amber-400" />;
-            text = 'TEMP PRO';
+            text = t('licenseManager.status.tempPro');
         } else if (licenseType === 'pro_local') {
             badgeClass = 'bg-green-900/90 border-green-500 text-green-100';
             icon = <ShieldCheck size={18} className="text-green-400" />;
-            text = 'PRO ACTIVE';
+            text = t('licenseManager.status.proActive');
         } else {
             // Online Pro User
             badgeClass = 'bg-green-900/90 border-green-500 text-green-100';
             icon = <ShieldCheck size={18} className="text-green-400" />;
-            text = 'PRO ACTIVE';
+            text = t('licenseManager.status.proActive');
         }
     } else if (isLoggedIn) {
         // Logged in but no license (Free Tier)
         badgeClass = 'bg-slate-800 border-slate-600 text-slate-300';
         icon = <User size={18} className="text-slate-400" />;
-        text = userNickname ? userNickname.substring(0, 10) : 'USER';
-    } else {
-        // Not logged in
-        badgeClass = 'bg-amber-900/20 border-amber-500/50 text-amber-200';
-        icon = <Key size={18} className="text-amber-400" />;
-        text = 'ACTIVATE PRO';
+        text = userNickname ? userNickname.substring(0, 10) : t('licenseManager.status.user');
     }
 
     return (
@@ -301,296 +309,180 @@ export const LicenseManager = () => {
         className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl w-full max-w-md overflow-hidden relative"
         onClick={e => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-900/50">
-            <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-                <ShieldCheck className={licenseType === 'pro_real' ? "text-green-400" : "text-amber-500"} />
-                {licenseType === 'pro_real' ? 'Pro License Active' : 'Activate Pro License'}
-            </h3>
-            <button onClick={() => setUpgradeModalOpen(false)} className="text-slate-400 hover:text-white">
-                <X size={20} />
-            </button>
+        <div className="absolute top-2 right-2">
+          <button onClick={() => setUpgradeModalOpen(false)} className="p-1 text-slate-500 hover:text-white transition-colors">
+            <X size={20} />
+          </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 space-y-6">
-            {/* Feedback Messages */}
-            {(error || success) && (
-                <div className={`p-3 rounded-lg border flex items-center gap-2 animate-in fade-in slide-in-from-top-2 ${
-                    error 
-                        ? 'bg-red-500/10 border-red-500/50 text-red-200' 
-                        : 'bg-green-500/10 border-green-500/50 text-green-200'
-                }`}>
-                    {error ? <X size={16} /> : <CheckCircle size={16} />}
-                    <p className="text-sm font-medium">{error || success}</p>
-                </div>
-            )}
+        <div className="p-6">
+          <div className="flex items-center gap-3 mb-6">
+             <div className="bg-amber-500/10 p-2 rounded-lg">
+                <ShieldCheck className="text-amber-500" size={24} />
+             </div>
+             <div>
+                <h2 className="text-lg font-bold text-white">{t('licenseManager.modal.title')}</h2>
+                <p className="text-xs text-slate-400">{t('licenseManager.modal.subtitle')}</p>
+             </div>
+          </div>
 
-            {/* Status Display */}
-            {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (
-                <div className="text-center py-4 space-y-4">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${isExpired ? 'bg-red-500/10' : 'bg-green-500/10'}`}>
-                        {isExpired ? (
-                            <X size={32} className="text-red-500" />
-                        ) : (
-                            <CheckCircle size={32} className="text-green-500" />
-                        )}
+          {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (
+             <div className="space-y-4">
+                 <div className={`p-4 rounded-lg border ${licenseType === 'pro_local' ? 'bg-green-900/20 border-green-500/50' : 'bg-amber-900/20 border-amber-500/50'}`}>
+                    <div className="flex items-center justify-between mb-2">
+                        <span className={`text-sm font-bold ${licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400'}`}>
+                            {licenseType === 'pro_local' ? t('licenseManager.status.hardwareKeyActive') : t('licenseManager.status.proLicenseActive')}
+                        </span>
+                        <CheckCircle size={16} className={licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400'} />
                     </div>
-                    
-                    <div>
-                        {isExpired ? (
-                            <>
-                                <p className="text-red-400 font-medium text-lg">License Expired</p>
-                                <p className="text-slate-400 text-sm mt-1">Please renew your subscription.</p>
-                                <Link 
-                                    to="/pricing" 
-                                    onClick={() => setUpgradeModalOpen(false)}
-                                    className="inline-block mt-4 px-6 py-2 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-lg transition-colors"
-                                >
-                                    Renew Now
-                                </Link>
-                            </>
-                        ) : (
-                            <>
-                                {licenseType === 'pro_local' ? (
-                                    <div className="space-y-3">
-                                        <p className="text-green-400 font-bold text-xl">Official Offline License</p>
-                                        <p className="text-slate-400 text-xs">Valid Local Key Detected</p>
-                                    </div>
-                                ) : licenseType === 'pro_temp' ? (
-                                    <div className="space-y-3">
-                                         <p className="text-green-400 font-bold text-xl">24h Temporary Pass</p>
-                                         <p className="text-amber-400 font-mono text-xl font-bold mt-2 tracking-wider">
-                                            {timeLeft}
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <>
-                                        <p className="text-green-400 font-medium text-lg">Pro License Active</p>
-                                        <p className="text-slate-300 font-bold text-xl mt-1">{userNickname}</p>
-                                        {timeLeft && (
-                                            <p className="text-amber-400 font-mono text-sm font-bold mt-2 tracking-wider">
-                                                Expires: {timeLeft}
-                                            </p>
-                                        )}
-                                    </>
-                                )}
-                            </>
-                        )}
-                    </div>
-                    
-                    <button 
-                        onClick={() => {
-                            logout();
-                            setUpgradeModalOpen(false);
-                        }}
-                        className="w-full py-2 mt-4 text-sm font-bold text-red-400 border border-red-500/30 rounded-lg hover:bg-red-500/10 transition-colors"
-                    >
-                        {licenseType === 'pro_local' ? 'Deactivate Local Key' : 'Logout'}
-                    </button>
-                </div>
-            ) : (
-                <>
-                    {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? (
-                        <div className="text-center py-8 space-y-4">
-                            <ShieldCheck size={48} className="text-amber-500 mx-auto" />
-                            <h4 className="text-xl font-bold text-white">Local Offline Mode</h4>
-                            <p className="text-slate-400 text-sm px-4">
-                                Online registration is disabled in local environment.
-                                <br />
-                                Please place a valid <code>.key</code> file in the root directory.
-                            </p>
-                            <div className="pt-4">
-                                <a 
-                                    href="https://cryptokey.im" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="inline-block px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors"
-                                >
-                                    Get Official License
-                                </a>
-                            </div>
+                    {licenseExpiry && (
+                        <div className="text-xs text-slate-400">
+                           {t('licenseManager.status.expiresIn')} <span className="text-white font-mono">{timeLeft}</span>
+                           {isExpired && <span className="text-red-500 font-bold ml-2">({t('licenseManager.status.expired')})</span>}
                         </div>
-                    ) : (
-                        <>
-                            {/* Mode Toggle */}
-                        {!userNickname && (
-                            <div className="flex p-1 bg-slate-800 rounded-lg">
-                                <button 
-                                    className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${mode === 'login' ? 'bg-slate-700 text-white shadow' : 'text-slate-400 hover:text-slate-200'}`}
-                                    onClick={() => { setMode('login'); setRegisterData(null); }}
-                                >
-                                    Login
-                                </button>
-                                <button 
-                                    className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${mode === 'register' ? 'bg-slate-700 text-white shadow' : 'text-slate-400 hover:text-slate-200'}`}
-                                    onClick={() => { setMode('register'); setError(''); setSuccess(''); }}
-                                >
-                                    Register
-                                </button>
-                            </div>
-                        )}
+                    )}
+                 </div>
 
-                        {/* Login Form */}
-                        {(mode === 'login' || userNickname) && (
-                            <div className="space-y-4">
-                                {userNickname ? (
-                                    <div className="text-center py-6 space-y-4">
-                                        <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <User size={32} className="text-slate-400" />
-                                        </div>
-                                        <div>
-                                            <p className="text-slate-200 font-bold text-xl">{userNickname}</p>
-                                            <p className="text-slate-400 text-sm">Free Account</p>
-                                        </div>
-                                        
-                                        <div className="pt-2 space-y-3">
-                                            <p className="text-xs text-slate-500">
-                                                Upgrade to Pro to unlock all features.
-                                            </p>
-                                            <Link 
-                                                to="/pricing" 
-                                                onClick={() => setUpgradeModalOpen(false)}
-                                                className="block w-full py-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-amber-900/20"
-                                            >
-                                                Upgrade Now
-                                            </Link>
-                                            <button 
-                                                onClick={() => {
-                                                    logout();
-                                                    setUpgradeModalOpen(false);
-                                                }}
-                                                className="block w-full py-2 text-sm font-bold text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
-                                            >
-                                                Logout
-                                            </button>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <>
-                                        <div className="space-y-2">
-                                            <label className="text-xs text-slate-400 uppercase font-bold">Nickname</label>
-                                            <input 
-                                            type="text" 
-                                            value={nickname}
-                                            onChange={(e) => {
-                                                setNickname(e.target.value);
-                                                if (error) setError('');
-                                            }}
-                                            placeholder="Your Nickname"
-                                            className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs text-slate-400 uppercase font-bold">Authenticator Code</label>
+                 {licenseType !== 'pro_local' && (
+                     <Button variant="outline" className="w-full border-slate-700 hover:bg-slate-800 text-slate-300" onClick={logout}>
+                        {t('licenseManager.modal.logout')}
+                     </Button>
+                 )}
+             </div>
+          ) : (
+             <div className="space-y-4">
+                 <div className="flex bg-slate-800 p-1 rounded-lg">
+                     <button 
+                        onClick={() => setMode('login')}
+                        className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all ${mode === 'login' ? 'bg-slate-700 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                     >
+                        {t('licenseManager.login.tab')}
+                     </button>
+                     <button 
+                        onClick={() => setMode('register')}
+                        className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all ${mode === 'register' ? 'bg-slate-700 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                     >
+                        {t('licenseManager.register.tab')}
+                     </button>
+                 </div>
+
+                 {mode === 'login' ? (
+                     <div className="space-y-3 animate-in fade-in slide-in-from-right-4 duration-300">
+                         <div>
+                            <label className="block text-xs font-bold text-slate-400 mb-1">{t('licenseManager.login.nickname')}</label>
+                            <div className="relative">
+                                <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                                <input 
+                                    type="text" 
+                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg py-2 pl-9 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
+                                    placeholder={t('licenseManager.login.nicknamePlaceholder')}
+                                    value={nickname}
+                                    onChange={e => setNickname(e.target.value)}
+                                />
+                            </div>
+                         </div>
+                         <div>
+                            <label className="block text-xs font-bold text-slate-400 mb-1">{t('licenseManager.login.code')}</label>
+                            <div className="relative">
+                                <Key size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                                <input 
+                                    type="text" 
+                                    inputMode="numeric"
+                                    maxLength={6}
+                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg py-2 pl-9 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-mono tracking-widest"
+                                    placeholder={t('licenseManager.login.codePlaceholder')}
+                                    value={totpToken}
+                                    onChange={e => setTotpToken(e.target.value.replace(/[^0-9]/g, ''))}
+                                    onKeyDown={e => e.key === 'Enter' && handleLogin()}
+                                />
+                            </div>
+                         </div>
+                         <Button className="w-full bg-amber-600 hover:bg-amber-500 text-white" onClick={handleLogin} disabled={isLoading}>
+                             {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.login.button')}
+                         </Button>
+                     </div>
+                 ) : (
+                     <div className="space-y-3 animate-in fade-in slide-in-from-left-4 duration-300">
+                         {!registerData ? (
+                             <>
+                                <div>
+                                    <label className="block text-xs font-bold text-slate-400 mb-1">{t('licenseManager.register.chooseNickname')}</label>
+                                    <div className="relative">
+                                        <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
                                         <input 
                                             type="text" 
-                                            value={totpToken}
-                                            onChange={(e) => setTotpToken(e.target.value)}
-                                            placeholder="000 000"
-                                            className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500 font-mono text-center tracking-widest text-lg"
-                                            onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+                                            className="w-full bg-slate-950 border border-slate-700 rounded-lg py-2 pl-9 pr-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
+                                            placeholder={t('licenseManager.register.nicknamePlaceholder')}
+                                            value={nickname}
+                                            onChange={e => setNickname(e.target.value)}
+                                            onKeyDown={e => e.key === 'Enter' && handleRegister()}
                                         />
                                     </div>
-                                    <Button variant="primary" className="w-full py-3" onClick={handleLogin} disabled={isLoading}>
-                                        {isLoading ? 'Verifying...' : 'Unlock Pro Features'}
-                                    </Button>
-                                    </>
-                                )}
+                                    <p className="text-[10px] text-slate-500 mt-1">
+                                        {t('licenseManager.register.note')}
+                                    </p>
                                 </div>
-                            )}
+                                <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white" onClick={handleRegister} disabled={isLoading}>
+                                     {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.register.button')}
+                                </Button>
+                             </>
+                         ) : (
+                             <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-center animate-in zoom-in duration-300">
+                                 <h3 className="text-sm font-bold text-white mb-2">Scan with Authenticator App</h3>
+                                 <div className="bg-white p-2 rounded-lg inline-block mb-3">
+                                     {qrCodeUrl ? (
+                                        <img src={qrCodeUrl} alt="TOTP QR" className="w-32 h-32" />
+                                     ) : (
+                                        <div className="w-32 h-32 flex items-center justify-center text-black text-xs">Loading QR...</div>
+                                     )}
+                                 </div>
+                                 
+                                 <div className="text-left bg-slate-900 p-2 rounded border border-slate-800 mb-3">
+                                    <p className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Manual Entry Key</p>
+                                    <div className="flex items-center gap-2">
+                                        <code className="flex-1 font-mono text-xs text-amber-400 break-all">{registerData.secret}</code>
+                                        <button onClick={() => copyToClipboard(registerData.secret)} className="text-slate-400 hover:text-white">
+                                            {localCopySuccess ? <CheckCircle size={14} className="text-green-500" /> : <Copy size={14} />}
+                                        </button>
+                                    </div>
+                                 </div>
 
-                            {/* Register Form */}
-                            {mode === 'register' && (
-                                <div className="space-y-4">
-                                    {!registerData ? (
-                                        <>
-                                            <div className="space-y-2">
-                                                <label className="text-xs text-slate-400 uppercase font-bold">Nickname (Unique)</label>
-                                                <input 
-                                                    type="text" 
-                                                    value={nickname}
-                                                    onChange={(e) => setNickname(e.target.value)}
-                                                    placeholder="Create a Nickname (3-20 chars)"
-                                                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2 text-slate-200 focus:outline-none focus:border-amber-500"
-                                                />
-                                            </div>
-                                            <div className="bg-amber-900/20 border border-amber-900/50 rounded-lg p-4">
-                                                <p className="text-amber-200 text-xs leading-relaxed mb-3">
-                                                    <strong>Privacy First:</strong> No email required. 
-                                                    Your unique nickname and authenticator are your only keys. 
-                                                    Don't lose them!
-                                                </p>
-                                                <div className="border-t border-amber-900/30 pt-2">
-                                                    <p className="text-[10px] text-amber-300/80 mb-1 font-semibold">Step 1: Install Authenticator App</p>
-                                                    <AuthenticatorLinks />
-                                                </div>
-                                            </div>
-                                            <Button variant="secondary" className="w-full py-3" onClick={handleRegister} disabled={isLoading}>
-                                                {isLoading ? 'Checking Availability...' : 'Create Account'}
-                                            </Button>
-                                        </>
-                                    ) : (
-                                        <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4">
-                                            <div className="text-center space-y-2">
-                                                <h4 className="text-slate-200 font-medium">Bind Authenticator</h4>
-                                                <p className="text-xs text-slate-400">Scan this with your Auth App</p>
-                                            </div>
-                                            
-                                            {qrCodeUrl && (
-                                                <div className="bg-white p-4 rounded-lg w-fit mx-auto">
-                                                    <img src={qrCodeUrl} alt="QR Code" className="w-48 h-48" />
-                                                </div>
-                                            )}
-                                            
-                                            <div className="text-center space-y-2">
-                                                <p className="text-xs text-slate-500">Or enter secret manually:</p>
-                                                <div className="flex flex-col gap-1">
-                                                    <div className="flex items-center gap-2">
-                                                        <code 
-                                                            onClick={() => copyToClipboard(registerData.secret)}
-                                                            className="flex-1 bg-slate-950 p-2 rounded border border-slate-800 text-amber-500 text-xs font-mono text-center overflow-hidden text-ellipsis cursor-pointer hover:bg-slate-900 hover:border-amber-500/50 transition-all active:scale-[0.98]"
-                                                            title="Click to Copy"
-                                                        >
-                                                            {registerData.secret}
-                                                        </code>
-                                                        <button
-                                                            onClick={() => copyToClipboard(registerData.secret)}
-                                                            className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded border border-slate-700 transition-colors flex-shrink-0"
-                                                            title="Copy Secret"
-                                                        >
-                                                            <Copy size={16} />
-                                                        </button>
-                                                    </div>
-                                                    {localCopySuccess && (
-                                                        <div className="text-[10px] text-green-400 font-bold text-center animate-in fade-in slide-in-from-top-1">
-                                                            Copied to clipboard!
-                                                        </div>
-                                                    )}
-                                                </div>
-                                                <div className="pt-2">
-                                                     <p className="text-[10px] text-slate-500 mb-1">Don't have an app yet?</p>
-                                                     <AuthenticatorLinks />
-                                                </div>
-                                            </div>
+                                 <Button 
+                                    size="sm" 
+                                    className="w-full bg-amber-600 hover:bg-amber-500 text-white" 
+                                    onClick={() => {
+                                        setRegisterData(null);
+                                        setMode('login');
+                                        setSuccess('Key Saved! Please Login now.');
+                                    }}
+                                 >
+                                     I Have Saved It, Go to Login
+                                 </Button>
+                             </div>
+                         )}
+                     </div>
+                 )}
 
-                                            <Button 
-                                                variant="primary" 
-                                                className="w-full" 
-                                                onClick={() => { setMode('login'); setRegisterData(null); }}
-                                            >
-                                                I have bound it, Go to Login
-                                            </Button>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </>
-                    )}
-                </>
-            )}
+                 {/* App Download Links */}
+                 <AuthenticatorLinks />
+
+                 {error && (
+                    <div className="p-2 bg-red-900/20 border border-red-500/30 rounded text-xs text-red-200 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
+                        <X size={12} className="text-red-400" />
+                        {error}
+                    </div>
+                 )}
+                 {success && (
+                    <div className="p-2 bg-green-900/20 border border-green-500/30 rounded text-xs text-green-200 flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
+                        <CheckCircle size={12} className="text-green-400" />
+                        {success}
+                    </div>
+                 )}
+             </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
+

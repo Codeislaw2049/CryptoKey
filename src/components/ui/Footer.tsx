@@ -2,8 +2,13 @@ import { ShieldCheck, Github, Send, RefreshCw, Share2 } from 'lucide-react';
 import { APP_VERSION } from '../../version';
 import { IntegrityCheck } from './IntegrityCheck';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
+  const { t } = useTranslation();
+  const currentYear = new Date().getUTCFullYear();
+  const nextYear = currentYear + 1;
+
   const handleRefresh = async () => {
     if ('serviceWorker' in navigator) {
       const registrations = await navigator.serviceWorker.getRegistrations();
@@ -17,7 +22,7 @@ export const Footer = () => {
   const handleShare = async () => {
     const shareData = {
       title: 'CryptoKey.im - Secure Backup',
-      text: 'Securely hide your data in images with CryptoKey.im. Protect your privacy with advanced steganography.',
+      text: t('footer.description').replace('\n', ' '), // Flatten description for share text
       url: 'https://cryptokey.im',
     };
 
@@ -64,17 +69,15 @@ export const Footer = () => {
                   </button>
                 </div>
             </div>
-            <p className="text-xs text-slate-500 max-w-xs">
-              Military-grade Steganography & Encryption Tool (AES-256-GCM + ChaCha20-Poly1305).
-              <br />
-              Running entirely in your browser. No data sent to server.
+            <p className="text-xs text-slate-500 max-w-xs whitespace-pre-line">
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Navigation Links */}
           <div className="flex gap-6 text-sm font-medium text-slate-400">
-             <Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link>
-             <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+             <Link to="/pricing" className="hover:text-primary transition-colors">{t('footer.links.pricing')}</Link>
+             <Link to="/terms" className="hover:text-primary transition-colors">{t('footer.links.terms')}</Link>
           </div>
 
           {/* Social & Links */}
@@ -87,7 +90,7 @@ export const Footer = () => {
               title="Public Repository (Audit)"
             >
               <Github size={20} className="group-hover:scale-110 transition-transform" />
-              <span className="text-[10px]">Source</span>
+              <span className="text-[10px]">{t('footer.links.source')}</span>
             </a>
             <a 
               href="https://t.me/C_2046" 
@@ -121,7 +124,7 @@ export const Footer = () => {
               title="Share"
             >
               <Share2 size={20} className="group-hover:scale-110 transition-transform" />
-              <span className="text-[10px]">Share</span>
+              <span className="text-[10px]">{t('footer.links.share')}</span>
             </button>
           </div>
 
@@ -135,13 +138,10 @@ export const Footer = () => {
           
           <div className="text-[10px] text-slate-600 space-y-1">
             <p>
-              &copy; {new Date().getUTCFullYear()} - {new Date().getUTCFullYear() + 1} CryptoKey.im. All Rights Reserved.
+              {t('footer.copyright', { year: currentYear, nextYear: nextYear })}
             </p>
             <p className="text-slate-500">
-              <span className="text-amber-500/80 font-medium">Commercial License Notice:</span> This software contains proprietary Wasm encryption modules protected by international copyright laws. 
-              <br className="hidden md:block"/>
-              The public source code is provided for security audit purposes only under the <span className="text-slate-400">CC-BY-NC-ND 4.0</span> license. 
-              Unauthorized commercial use, modification, or redistribution of the core algorithms is strictly prohibited.
+              {t('footer.license')}
             </p>
           </div>
         </div>

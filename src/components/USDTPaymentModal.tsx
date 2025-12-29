@@ -5,6 +5,7 @@ import { Input } from './ui/Input';
 import { QRCodeSVG } from 'qrcode.react';
 import { useLicense } from '../contexts/LicenseContext';
 import { getDeviceFingerprint } from '../utils/device';
+import { useTranslation } from 'react-i18next';
 
 interface USDTPaymentModalProps {
   plan: {
@@ -31,6 +32,7 @@ const CHAIN_INFO: Record<Chain, { name: string; standard: string; color: string 
 
 export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
   const { userNickname: nickname } = useLicense();
+  const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [selectedChain, setSelectedChain] = useState<Chain | null>(null);
 
@@ -72,7 +74,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                 } else if (data.status === 'failed') {
                     clearInterval(interval);
                     // setVerifying(false);
-                    setError(data.reason || 'Payment verification failed. Please check your transaction.');
+                    setError(data.reason || t('paymentModal.steps.verification.failed'));
                     setStep(2); // Go back to input
                 }
                 // If pending, continue polling
@@ -90,10 +92,10 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
     
     // Explicitly check for wallet addresses (Common mistake)
     if (chain === 'TRX' && cleanHash.startsWith('T') && cleanHash.length < 50) {
-        return { isValid: false, error: 'This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.' };
+        return { isValid: false, error: t('paymentModal.steps.payment.errorValidation.wallet') };
     }
     if ((chain === 'BSC' || chain === 'ETH') && cleanHash.startsWith('0x') && cleanHash.length < 60) {
-         return { isValid: false, error: 'This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.' };
+         return { isValid: false, error: t('paymentModal.steps.payment.errorValidation.wallet') };
     }
 
     let isValid = false;
@@ -102,11 +104,11 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
     if (chain === 'TRX') {
          // TRON TXID: 64 hex chars
          isValid = /^[a-fA-F0-9]{64}$/.test(cleanHash);
-         if (!isValid) error = 'Invalid TRON TXID. It should be a 64-character hex string.';
+         if (!isValid) error = t('paymentModal.steps.payment.errorValidation.tron');
     } else if (chain === 'BSC' || chain === 'ETH') {
          // ETH/BSC TXID: 0x + 64 hex chars OR just 64 hex chars
          isValid = /^(0x)?[a-fA-F0-9]{64}$/.test(cleanHash);
-         if (!isValid) error = `Invalid ${chain} TXID. It should look like 0x... and have 64 hex characters.`;
+         if (!isValid) error = t('paymentModal.steps.payment.errorValidation.eth', { chain });
     }
 
     return { isValid, error };
@@ -132,7 +134,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
       }
     } else if (step === 2) {
       if (!selectedChain) {
-        setError('Please select a payment network');
+        setError(t('paymentModal.steps.network.error'));
         return;
       }
       setStep(3);
@@ -147,7 +149,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
       const text = await navigator.clipboard.readText();
       setTxHash(text);
     } catch (err) {
-      setError('Failed to read clipboard. Please type manually.');
+      setError(t('paymentModal.steps.payment.clipboardError'));
     }
   };
 
@@ -165,12 +167,12 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
 
     // Frontend Validation First
     if (!selectedChain) {
-        setError('Please select a payment network');
+        setError(t('paymentModal.steps.network.error'));
         setIsLoading(false);
         return;
     }
     if (!txHash) {
-        setError('Transaction Hash (TXID) is required');
+        setError(t('paymentModal.steps.payment.errorTx'));
         setIsLoading(false);
         return;
     }
@@ -207,10 +209,10 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
             setStep(4);
         } else {
             const data = await response.json().catch(() => ({}));
-            setError(data.error || "Failed to submit payment verification. Please try again.");
+            setError(data.error || t('paymentModal.steps.verification.failed'));
         }
     } catch (e) {
-        setError("Network error. Please ensure the backend is running.");
+        setError(t('networkError', { error: "Please ensure the backend is running." }));
     } finally {
         setIsLoading(false);
     }
@@ -223,7 +225,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
         <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
           <h3 className="font-bold text-white flex items-center gap-2">
             <Wallet className="text-primary" size={20} />
-            USDT Payment <span className="text-slate-500 text-sm">Step {step}/4</span>
+            {t('paymentModal.title')} <span className="text-slate-500 text-sm">{t('paymentModal.step', { step })}</span>
           </h3>
           <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
             <X size={20} />
@@ -241,27 +243,27 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                         <AlertTriangle className="text-amber-500" size={24} />
                      </div>
                      <div className="text-center space-y-2">
-                        <h4 className="text-xl font-bold text-white">Temporary Access Warning</h4>
-                        <p className="text-slate-400 text-sm">You are purchasing a 24-Hour Pass without logging in.</p>
+                        <h4 className="text-xl font-bold text-white">{t('paymentModal.steps.identity.trial.title')}</h4>
+                        <p className="text-slate-400 text-sm">{t('paymentModal.steps.identity.trial.subtitle')}</p>
                      </div>
                      
                      <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 space-y-3">
                          <div className="flex gap-3">
                              <ShieldCheck className="text-amber-500 shrink-0" size={20} />
                              <p className="text-sm text-amber-200">
-                                 This license is <strong>device-bound</strong>. It will only work on this specific browser and device.
+                                 {t('paymentModal.steps.identity.trial.deviceBound')}
                              </p>
                          </div>
                          <div className="flex gap-3">
                              <X className="text-red-400 shrink-0" size={20} />
                              <p className="text-sm text-red-200">
-                                 If you clear your cache or switch devices, you will <strong>lose access</strong> permanently. No recovery possible.
+                                 {t('paymentModal.steps.identity.trial.risk')}
                              </p>
                          </div>
                      </div>
 
                      <div className="text-center">
-                         <p className="text-xs text-slate-500 mb-4">We recommend logging in for safety, but you can proceed anonymously.</p>
+                         <p className="text-xs text-slate-500 mb-4">{t('paymentModal.steps.identity.trial.note')}</p>
                      </div>
                  </div>
               ) : (
@@ -270,15 +272,15 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <User className="text-primary" size={24} />
                         </div>
-                        <h4 className="text-xl font-bold text-white">Account Verification</h4>
+                        <h4 className="text-xl font-bold text-white">{t('paymentModal.steps.identity.title')}</h4>
                         {nickname ? (
                              <p className="text-green-400 text-sm flex items-center justify-center gap-1">
-                                <Check size={14} /> Logged in as <span className="font-bold">{nickname}</span>
+                                <Check size={14} /> {t('paymentModal.steps.identity.loggedIn')} <span className="font-bold">{nickname}</span>
                              </p>
                         ) : (
                              <div className="text-red-400 space-y-2">
-                                <p>You must be logged in to subscribe to this plan.</p>
-                                <p className="text-xs text-slate-400">Please close this window and register/login first.</p>
+                                <p>{t('paymentModal.steps.identity.loginRequired')}</p>
+                                <p className="text-xs text-slate-400">{t('paymentModal.steps.identity.loginNote')}</p>
                              </div>
                         )}
                     </div>
@@ -297,7 +299,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                 className="w-full h-12 text-lg font-bold"
                 disabled={!nickname && plan.id !== 'price_weekly_trial'}
               >
-                Continue <ArrowRight size={18} className="ml-2" />
+                {t('paymentModal.steps.identity.continue')} <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
           )}
@@ -331,7 +333,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
 
               {selectedChain && (
                  <div className="mt-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700/50 text-center animate-in fade-in">
-                    <p className="text-sm text-slate-400">Selected Network:</p>
+                    <p className="text-sm text-slate-400">{t('paymentModal.steps.network.selected')}</p>
                     <p className="text-lg font-bold text-white">{CHAIN_INFO[selectedChain].name} ({CHAIN_INFO[selectedChain].standard})</p>
                  </div>
               )}
@@ -344,7 +346,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
               )}
 
               <Button onClick={handleNextStep} className="w-full">
-                Continue <ArrowRight size={18} className="ml-2" />
+                {t('paymentModal.steps.identity.continue')} <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
           )}

@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { BookOpen, X, Download, Mail, Printer, AlertTriangle, Smartphone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation, Trans } from 'react-i18next';
 
 export const UserManual = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'start' | 'dual' | 'security' | 'recover'>('start');
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -26,7 +28,7 @@ export const UserManual = () => {
         <BookOpen 
             className={`w-6 h-6 md:w-5 md:h-5 text-blue-400 transition-all duration-500 ${isHovered ? 'drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]' : ''}`} 
         />
-        <span className="hidden md:inline text-xs font-medium text-slate-300">User Manual</span>
+        <span className="hidden md:inline text-xs font-medium text-slate-300">{t('userManual.button')}</span>
         
         {/* Pulse Effect Ring (Blue) */}
         <span className="absolute inset-0 rounded-full border border-blue-500/20 animate-ping opacity-75"></span>
@@ -55,14 +57,14 @@ export const UserManual = () => {
                     <BookOpen className="w-6 h-6 text-blue-400" />
                   </div>
                   <div>
-                    <h2 className="text-lg md:text-xl font-bold text-white">CryptoKey User Manual</h2>
-                    <p className="text-xs md:text-sm text-slate-400">Secure Data Encryption & Recovery Guide</p>
+                    <h2 className="text-lg md:text-xl font-bold text-white">{t('userManual.title')}</h2>
+                    <p className="text-xs md:text-sm text-slate-400">{t('userManual.subtitle')}</p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setIsOpen(false)}
                   className="p-4 -mr-4 md:mr-0 hover:bg-slate-800 rounded-full transition-colors shrink-0 z-50"
-                  aria-label="Close"
+                  aria-label={t('userManual.close')}
                 >
                   <X className="w-6 h-6 text-slate-400" />
                 </button>
@@ -76,25 +78,25 @@ export const UserManual = () => {
                     onClick={() => setActiveTab('start')}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activeTab === 'start' ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' : 'text-slate-400 hover:bg-slate-900 border border-transparent'}`}
                   >
-                    Quick Start Guide
+                    {t('userManual.tabs.start')}
                   </button>
                   <button 
                     onClick={() => setActiveTab('dual')}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activeTab === 'dual' ? 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30' : 'text-slate-400 hover:bg-slate-900 border border-transparent'}`}
                   >
-                    Dual Authenticator
+                    {t('userManual.tabs.dual')}
                   </button>
                   <button 
                     onClick={() => setActiveTab('security')}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activeTab === 'security' ? 'bg-green-600/20 text-green-400 border border-green-500/30' : 'text-slate-400 hover:bg-slate-900 border border-transparent'}`}
                   >
-                    Security & Privacy
+                    {t('userManual.tabs.security')}
                   </button>
                   <button 
                     onClick={() => setActiveTab('recover')}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all ${activeTab === 'recover' ? 'bg-purple-600/20 text-purple-400 border border-purple-500/30' : 'text-slate-400 hover:bg-slate-900 border border-transparent'}`}
                   >
-                    Recovery Process
+                    {t('userManual.tabs.recover')}
                   </button>
                 </div>
 
@@ -108,13 +110,13 @@ export const UserManual = () => {
                         onClick={() => { setActiveTab('start'); document.getElementById('manual-content')?.scrollTo(0,0); }}
                         className={`text-center py-2 px-1 rounded-lg text-xs font-bold transition-all border ${activeTab === 'start' ? 'bg-blue-600/20 text-blue-400 border-blue-500/30' : 'text-slate-400 border-slate-800 bg-slate-800/50'}`}
                       >
-                        Quick Start
+                        {t('userManual.mobileTabs.start')}
                       </button>
                       <button 
                         onClick={() => { setActiveTab('dual'); document.getElementById('manual-content')?.scrollTo(0,0); }}
                         className={`text-center py-2 px-1 rounded-lg text-xs font-bold transition-all border ${activeTab === 'dual' ? 'bg-indigo-600/20 text-indigo-400 border-indigo-500/30' : 'text-slate-400 border-slate-800 bg-slate-800/50'}`}
                       >
-                        Dual Auth
+                        {t('userManual.mobileTabs.dual')}
                       </button>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
@@ -122,13 +124,13 @@ export const UserManual = () => {
                         onClick={() => { setActiveTab('security'); document.getElementById('manual-content')?.scrollTo(0,0); }}
                         className={`text-center py-2 px-1 rounded-lg text-xs font-bold transition-all border ${activeTab === 'security' ? 'bg-green-600/20 text-green-400 border-green-500/30' : 'text-slate-400 border-slate-800 bg-slate-800/50'}`}
                       >
-                        Security
+                        {t('userManual.mobileTabs.security')}
                       </button>
                       <button 
                         onClick={() => { setActiveTab('recover'); document.getElementById('manual-content')?.scrollTo(0,0); }}
                         className={`text-center py-2 px-1 rounded-lg text-xs font-bold transition-all border ${activeTab === 'recover' ? 'bg-purple-600/20 text-purple-400 border-purple-500/30' : 'text-slate-400 border-slate-800 bg-slate-800/50'}`}
                       >
-                        Recovery
+                        {t('userManual.mobileTabs.recover')}
                       </button>
                     </div>
                   </div>
@@ -138,17 +140,16 @@ export const UserManual = () => {
                       <div>
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                           <BookOpen className="w-5 h-5 text-blue-400" />
-                          Getting Started
+                          {t('userManual.start.title')}
                         </h3>
                         <div className="prose prose-invert prose-sm max-w-none">
                           <p className="text-slate-400">
-                            CryptoKey allows you to hide sensitive data (like mnemonics) within decoy data using standard encryption or dual-authenticator protection.
+                            {t('userManual.start.description')}
                           </p>
                           <ul className="list-disc pl-4 space-y-2 mt-4 text-slate-300">
-                            <li>Select a mode (Standard or Dual Authenticator).</li>
-                            <li>Input your secret data.</li>
-                            <li>Generate encrypted shards or blocks.</li>
-                            <li>Save the output safely (QR codes or text).</li>
+                            {(t('userManual.start.steps', { returnObjects: true }) as string[]).map((step, i) => (
+                              <li key={i}>{step}</li>
+                            ))}
                           </ul>
                         </div>
                       </div>
@@ -160,83 +161,79 @@ export const UserManual = () => {
                       <div>
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                           <Smartphone className="w-5 h-5 text-indigo-400" />
-                          Dual Authenticator Mode
+                          {t('userManual.dual.title')}
                         </h3>
                         
                         <div className="bg-indigo-900/20 border border-indigo-500/30 rounded-xl p-4 mb-6">
-                           <h4 className="font-bold text-indigo-300 mb-2">Core Concept</h4>
+                           <h4 className="font-bold text-indigo-300 mb-2">{t('userManual.dual.coreConcept.title')}</h4>
                            <p className="text-sm text-indigo-200/80">
-                             Unlike standard encryption, this mode requires <strong>Two Separate Keys</strong> (Key A & Key B) to decrypt. 
-                             It splits trust between two different authenticator tokens/devices.
+                             <Trans i18nKey="userManual.dual.coreConcept.description" />
                            </p>
                         </div>
 
                         <div className="space-y-6">
                           <section>
-                            <h4 className="text-lg font-semibold text-white mb-2">1. Encryption (Generation)</h4>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('userManual.dual.encryption.title')}</h4>
                             <ul className="space-y-2 text-sm text-slate-300">
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 1</span>
-                                <span>Input your Mnemonic and Password/Context.</span>
+                                <span>{t('userManual.dual.encryption.step1')}</span>
                               </li>
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 2</span>
-                                <span>Scan the two generated QR codes (Key A & Key B) with your Google Authenticator app. <strong>Save these QR images!</strong> They are your permanent keys.</span>
+                                <span><Trans i18nKey="userManual.dual.encryption.step2" /></span>
                               </li>
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 3</span>
-                                <span>Enter the 6-digit codes from your app to verify and lock the encryption.</span>
+                                <span>{t('userManual.dual.encryption.step3')}</span>
                               </li>
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 4</span>
-                                <span>Download the generated Shard Images (QR Sharding).</span>
+                                <span>{t('userManual.dual.encryption.step4')}</span>
                               </li>
                             </ul>
                           </section>
 
                           <section>
-                            <h4 className="text-lg font-semibold text-white mb-2">2. Decryption (Recovery)</h4>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('userManual.dual.decryption.title')}</h4>
                             <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
                               <h5 className="font-bold text-yellow-400 text-sm mb-2 flex items-center gap-2">
                                 <AlertTriangle className="w-4 h-4" />
-                                Important: Keys vs Codes
+                                {t('userManual.dual.decryption.important.title')}
                               </h5>
                               <p className="text-sm text-slate-300 mb-2">
-                                <strong>Key (QR/Secret):</strong> The permanent "Key" you scanned. Required for decryption.
-                                <br/>
-                                <strong>Code (6-digits):</strong> The temporary "Token" generated every 30s. Used only for verification.
+                                <Trans i18nKey="userManual.dual.decryption.important.content" />
                               </p>
                               <p className="text-sm text-slate-400 italic">
-                                * You CANNOT decrypt with just the 6-digit code. You MUST upload the Key QR or input the Secret string.
+                                {t('userManual.dual.decryption.important.note')}
                               </p>
                             </div>
                             
                             <ul className="space-y-2 text-sm text-slate-300 mt-4">
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 1</span>
-                                <span>Upload all your Shard Images.</span>
+                                <span>{t('userManual.dual.decryption.step1')}</span>
                               </li>
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 2</span>
-                                <span><strong>REQUIRED:</strong> Upload Key A & Key B QR images (or paste the Secret strings).</span>
+                                <span><Trans i18nKey="userManual.dual.decryption.step2" /></span>
                               </li>
                               <li className="flex gap-2">
                                 <span className="bg-slate-800 px-2 py-0.5 rounded text-xs h-fit mt-0.5">Step 3</span>
-                                <span>(Optional) Enter current 6-digit codes to verify correctness.</span>
+                                <span>{t('userManual.dual.decryption.step3')}</span>
                               </li>
                             </ul>
                           </section>
 
                            <section>
-                            <h4 className="text-lg font-semibold text-white mb-2">3. Lost your QR Images?</h4>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t('userManual.dual.lost.title')}</h4>
                             <p className="text-sm text-slate-300">
-                              If you still have the Authenticator App on your phone:
+                              {t('userManual.dual.lost.description')}
                             </p>
                             <ol className="list-decimal pl-4 space-y-1 mt-2 text-sm text-slate-400">
-                              <li>Open Google Authenticator.</li>
-                              <li>Use the "Export Accounts" or "Transfer" feature.</li>
-                              <li>This will show a QR code containing your Secrets.</li>
-                              <li>Scan/Decode that export QR to get your Secret string back.</li>
+                              {(t('userManual.dual.lost.steps', { returnObjects: true }) as string[]).map((step, i) => (
+                                <li key={i}>{step}</li>
+                              ))}
                             </ol>
                           </section>
                         </div>
@@ -249,27 +246,27 @@ export const UserManual = () => {
                       <section>
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                           <span className="w-6 h-6 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-xs">1</span>
-                          Choose Protection Mode
+                          {t('userManual.security.mode.title')}
                         </h3>
                         <p className="text-slate-400 leading-relaxed mb-3">
-                          Select the best way to secure your mnemonic phrase or data:
+                          {t('userManual.security.mode.description')}
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                            <div className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                              <strong className="text-blue-400 block mb-1">Physical / Virtual Book</strong>
-                              <span className="text-slate-400">Hide your key in a real book on your shelf. (Page-Line-Word)</span>
+                              <strong className="text-blue-400 block mb-1">{t('userManual.security.mode.book.physical.title')}</strong>
+                              <span className="text-slate-400">{t('userManual.security.mode.book.physical.desc')}</span>
                            </div>
                            <div className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                              <strong className="text-green-400 block mb-1">Online Book (URL)</strong>
-                              <span className="text-slate-400">Use a permanent Gutenberg URL as your key source. No files needed.</span>
+                              <strong className="text-green-400 block mb-1">{t('userManual.security.mode.book.online.title')}</strong>
+                              <span className="text-slate-400">{t('userManual.security.mode.book.online.desc')}</span>
                            </div>
                            <div className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                              <strong className="text-purple-400 block mb-1">Digital Book (File)</strong>
-                              <span className="text-slate-400">Upload a Gutenberg TXT file. Processed locally, never uploaded.</span>
+                              <strong className="text-purple-400 block mb-1">{t('userManual.security.mode.book.digital.title')}</strong>
+                              <span className="text-slate-400">{t('userManual.security.mode.book.digital.desc')}</span>
                            </div>
                            <div className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                              <strong className="text-orange-400 block mb-1">General Index</strong>
-                              <span className="text-slate-400">Encrypt arbitrary data structures (e.g., Bank Info, Passwords).</span>
+                              <strong className="text-orange-400 block mb-1">{t('userManual.security.mode.book.index.title')}</strong>
+                              <span className="text-slate-400">{t('userManual.security.mode.book.index.desc')}</span>
                            </div>
                         </div>
                       </section>
@@ -277,96 +274,84 @@ export const UserManual = () => {
                       <section>
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                           <span className="w-6 h-6 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-xs">2</span>
-                          Enter & Obfuscate
+                          {t('userManual.security.obfuscate.title')}
                         </h3>
                         <p className="text-slate-400 leading-relaxed mb-4">
-                          Input your sensitive data. We will then ask you to set a <span className="text-white font-mono">Row Density</span> (e.g., 100 rows).
-                          Your real data will be hidden in one random row among 99 fake rows.
+                          <Trans i18nKey="userManual.security.obfuscate.description" />
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-sm font-mono text-slate-500">
-                          Row 34: 832-19-22 (Fake)<br/>
-                          <span className="text-green-400">Row 35: 123-45-67 (Real Data)</span><br/>
-                          Row 36: 992-11-02 (Fake)
+                          {t('userManual.security.obfuscate.example.fake1')}<br/>
+                          <span className="text-green-400">{t('userManual.security.obfuscate.example.real')}</span><br/>
+                          {t('userManual.security.obfuscate.example.fake2')}
                         </div>
                       </section>
 
                       <section>
                         <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                           <span className="w-6 h-6 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-xs">3</span>
-                          Export & Save
+                          {t('userManual.security.export.title')}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
-                          Once encrypted, you will receive a ciphertext block. You must save this block!
+                          {t('userManual.security.export.description')}
                           <br/><br/>
-                          <strong className="text-white">Ways to save:</strong>
+                          <strong className="text-white">{t('userManual.security.export.ways')}</strong>
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
                           <li className="flex items-center gap-2 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
                             <Mail className="w-4 h-4 text-blue-400" />
-                            <span className="text-sm text-slate-300">Email (Personal Device)</span>
+                            <span className="text-sm text-slate-300">{t('userManual.security.export.email')}</span>
                           </li>
                           <li className="flex items-center gap-2 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
                             <Download className="w-4 h-4 text-green-400" />
-                            <span className="text-sm text-slate-300">USB Download (Safest)</span>
+                            <span className="text-sm text-slate-300">{t('userManual.security.export.usb')}</span>
                           </li>
                           <li className="flex items-center gap-2 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
                             <Printer className="w-4 h-4 text-orange-400" />
-                            <span className="text-sm text-slate-300">Print Paper (Offline)</span>
+                            <span className="text-sm text-slate-300">{t('userManual.security.export.print')}</span>
                           </li>
                         </ul>
                       </section>
-                    </div>
-                  )}
 
-                  {activeTab === 'security' && (
-                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
                       <div className="p-4 bg-red-900/20 border border-red-500/30 rounded-xl">
                         <h3 className="text-red-400 font-bold flex items-center gap-2 mb-2">
                           <AlertTriangle size={20} />
-                          Public Computer Safety
+                          {t('userManual.security.publicComputer.title')}
                         </h3>
                         <p className="text-sm text-red-200/80">
-                          If you are using a public computer (internet cafe, library, friend's PC):
+                          {t('userManual.security.publicComputer.description')}
                         </p>
                         <ul className="mt-2 space-y-1 list-disc list-inside text-sm text-red-200/80">
-                          <li>Do NOT log in to your personal email.</li>
-                          <li>Do NOT use the clipboard (copy/paste) if possible.</li>
-                          <li>Use the <strong>"Public Computer Mode"</strong> toggle on the result page.</li>
-                          <li>Download the file to a USB drive or scan the QR code with your phone.</li>
-                          <li>Click <strong>"Clear All Data"</strong> before leaving.</li>
+                          {(t('userManual.security.publicComputer.steps', { returnObjects: true }) as string[]).map((step, i) => (
+                            <li key={i} dangerouslySetInnerHTML={{ __html: step }} />
+                          ))}
                         </ul>
                       </div>
 
                       <section>
-                        <h3 className="text-lg font-semibold text-white mb-3">Military-Grade Encryption</h3>
+                        <h3 className="text-lg font-semibold text-white mb-3">{t('userManual.security.military.title')}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          We use <strong>AES-256-GCM</strong> encryption. This is the same standard used by governments and banks.
-                          Your password is salted and hashed using <strong>PBKDF2-HMAC-SHA256</strong> with 100,000 iterations, making brute-force attacks nearly impossible.
+                          <Trans i18nKey="userManual.security.military.description" />
                         </p>
                       </section>
 
                       <section>
-                        <h3 className="text-lg font-semibold text-white mb-3">Zero-Knowledge Architecture</h3>
+                        <h3 className="text-lg font-semibold text-white mb-3">{t('userManual.security.zk.title')}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          Everything happens in your browser. We have <strong>no servers</strong>, no database, and no logs.
-                          If you close this tab, your data is gone forever unless you saved the backup.
+                          <Trans i18nKey="userManual.security.zk.description" />
                         </p>
                       </section>
 
                       <section>
-                        <h3 className="text-lg font-semibold text-white mb-3">Plausible Deniability</h3>
+                        <h3 className="text-lg font-semibold text-white mb-3">{t('userManual.security.deniability.title')}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          We generate <strong>fake decoy rows</strong> indistinguishable from your real data. 
-                          Even if someone forces you to decrypt the file, you can claim any of the fake rows is the "real" one, 
-                          or that the file contains no meaningful data at all. The encryption math hides which row is real.
+                          <Trans i18nKey="userManual.security.deniability.description" />
                         </p>
                       </section>
 
                       <section>
-                        <h3 className="text-lg font-semibold text-white mb-3">Code Transparency</h3>
+                        <h3 className="text-lg font-semibold text-white mb-3">{t('userManual.security.transparency.title')}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                          CryptoKey is a pure client-side application. You can inspect the source code in your browser's developer tools.
-                          We encourage security audits. No external scripts or analytics are loaded.
+                          {t('userManual.security.transparency.description')}
                         </p>
                       </section>
                     </div>
@@ -375,34 +360,34 @@ export const UserManual = () => {
                   {activeTab === 'recover' && (
                     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
                       <section>
-                        <h3 className="text-lg font-semibold text-white mb-4">How to Decrypt</h3>
+                        <h3 className="text-lg font-semibold text-white mb-4">{t('userManual.recover.title')}</h3>
                         <ol className="space-y-4 text-slate-400">
                           <li className="flex gap-3">
                             <span className="font-mono text-purple-400">01.</span>
                             <div>
-                              <p className="font-medium text-slate-200">Select Mode</p>
-                              <p className="text-sm">Choose the same mode used for encryption (Physical, File, or URL). If using File or URL, you must provide the exact same source book.</p>
+                              <p className="font-medium text-slate-200">{t('userManual.recover.steps.step1.title')}</p>
+                              <p className="text-sm">{t('userManual.recover.steps.step1.description')}</p>
                             </div>
                           </li>
                           <li className="flex gap-3">
                             <span className="font-mono text-purple-400">02.</span>
                             <div>
-                              <p className="font-medium text-slate-200">Paste Ciphertext</p>
-                              <p className="text-sm">Copy the entire ciphertext block (including the random characters) from your email or file.</p>
+                              <p className="font-medium text-slate-200">{t('userManual.recover.steps.step2.title')}</p>
+                              <p className="text-sm">{t('userManual.recover.steps.step2.description')}</p>
                             </div>
                           </li>
                           <li className="flex gap-3">
                             <span className="font-mono text-purple-400">03.</span>
                             <div>
-                              <p className="font-medium text-slate-200">Enter Password</p>
-                              <p className="text-sm">Input the password you set during encryption.</p>
+                              <p className="font-medium text-slate-200">{t('userManual.recover.steps.step3.title')}</p>
+                              <p className="text-sm">{t('userManual.recover.steps.step3.description')}</p>
                             </div>
                           </li>
                           <li className="flex gap-3">
                             <span className="font-mono text-purple-400">04.</span>
                             <div>
-                              <p className="font-medium text-slate-200">Identify Your Row</p>
-                              <p className="text-sm">The system will decrypt ALL rows (real + fake). You must remember which row number was yours (e.g., Row 35) to find your data.</p>
+                              <p className="font-medium text-slate-200">{t('userManual.recover.steps.step4.title')}</p>
+                              <p className="text-sm">{t('userManual.recover.steps.step4.description')}</p>
                             </div>
                           </li>
                         </ol>

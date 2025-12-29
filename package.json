@@ -1,7 +1,7 @@
 {
   "name": "app18",
   "private": true,
-  "version": "1.4.34",
+  "version": "1.4.41",
   "type": "module",
   "scripts": {
     "dev": "vite --port 1616",
@@ -20,6 +20,8 @@
     "dompurify": "^3.3.1",
     "ethers": "^6.16.0",
     "framer-motion": "^12.23.26",
+    "i18next": "^25.7.3",
+    "i18next-http-backend": "^3.0.2",
     "jsqr": "^1.4.0",
     "lucide-react": "^0.378.0",
     "lzma": "^2.3.2",

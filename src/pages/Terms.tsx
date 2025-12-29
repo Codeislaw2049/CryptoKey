@@ -1,20 +1,23 @@
 import { ShieldAlert, ArrowLeft } from 'lucide-react';
 import { useGeoLocation } from '../utils/geo';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const Terms = () => {
   const { isChina } = useGeoLocation();
+  const { t } = useTranslation();
+  const currentDate = new Date().toLocaleDateString();
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 space-y-12">
       <div className="flex items-center justify-between">
           <div className="space-y-4">
-            <h1 className="text-4xl font-black text-white">Terms of Service</h1>
-            <p className="text-slate-400">Last Updated: {new Date().toLocaleDateString()}</p>
+            <h1 className="text-4xl font-black text-white">{t('terms.title')}</h1>
+            <p className="text-slate-400">{t('terms.lastUpdated', { date: currentDate })}</p>
           </div>
           <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors bg-slate-800/50 px-4 py-2 rounded-lg">
              <ArrowLeft size={20} />
-             <span className="font-medium">Back to Home</span>
+             <span className="font-medium">{t('terms.backToHome')}</span>
           </Link>
       </div>
 
@@ -24,65 +27,59 @@ export const Terms = () => {
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8">
           <h3 className="text-xl font-bold text-primary flex items-center gap-2 mb-4">
             <ShieldAlert size={24} />
-            Service Disclaimer
+            {t('terms.disclaimer.title')}
           </h3>
           <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed">
-            We provide a crypto key security management tool (cryptokey.im) that offers offline mnemonic backup, 
-            TOTP dynamic authorization, and secure key derivation services. 
-            {!isChina && " We do NOT involve cryptocurrency trading, custody, or financial services — only security tools for user-owned keys."}
-            {isChina && " We focus on hardware security solutions for your digital assets."}
+            {!isChina && t('terms.disclaimer.content_non_china')}
+            {isChina && t('terms.disclaimer.content_china')}
           </p>
         </div>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">1. Acceptance of Terms</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.acceptance.title')}</h2>
           <p className="text-slate-400">
-            By accessing and using CryptoKey.im ("the Service"), you accept and agree to be bound by the terms and provision of this agreement.
+            {t('terms.sections.acceptance.content')}
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">2. Nature of Service</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.nature.title')}</h2>
           <p className="text-slate-400">
-            CryptoKey.im is a client-side encryption and steganography tool. All encryption operations are performed locally in your browser using WebAssembly.
-            We do not have access to your private keys, mnemonics, or passwords. You are solely responsible for safeguarding your data.
+            {t('terms.sections.nature.content')}
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">3. User Responsibilities</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.responsibilities.title')}</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-400">
-            <li>You agree not to use the Service for any illegal activities.</li>
-            <li>You acknowledge that if you lose your credentials or master password, we cannot recover your data.</li>
-            <li>You are responsible for maintaining the confidentiality of your account and license keys.</li>
+            {(t('terms.sections.responsibilities.items', { returnObjects: true }) as string[]).map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">4. Intellectual Property</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.ip.title')}</h2>
           <p className="text-slate-400">
-            The Service contains proprietary algorithms and code. The "Community Edition" is provided for audit purposes under the CC-BY-NC-ND 4.0 license.
-            Commercial use of the core encryption modules requires a valid Pro license.
+            {t('terms.sections.ip.content')}
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">5. Limitation of Liability</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.liability.title')}</h2>
           <p className="text-slate-400">
-            To the fullest extent permitted by law, CryptoKey.im shall not be liable for any indirect, incidental, special, consequential, or punitive damages,
-            including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+            {t('terms.sections.liability.content')}
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">6. Refund Policy & Fees</h2>
+          <h2 className="text-2xl font-bold text-white">{t('terms.sections.refund.title')}</h2>
           <p className="text-slate-400">
-            <strong>Strict No-Refund Policy:</strong> All sales are final. Once payment is confirmed and the license key is issued, no refunds will be provided under any circumstances.
+            <strong>{t('terms.sections.refund.policy').split(':')[0]}:</strong> {t('terms.sections.refund.policy').split(':')[1]}
           </p>
           {!isChina && (
             <p className="text-slate-400 mt-2">
-              <strong>Transaction Fees:</strong> Users are solely responsible for all transaction fees (including but not limited to Gas fees, network fees, and exchange withdrawal fees). 
-              Please ensure you transfer the exact required amount plus any necessary fees. Under-payment will result in license activation failure.
+              <strong>{t('terms.sections.refund.fees').split(':')[0]}:</strong> {t('terms.sections.refund.fees').split(':')[1]}
             </p>
           )}
         </section>

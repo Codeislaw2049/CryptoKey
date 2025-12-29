@@ -1,0 +1,465 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "language": "언어"
+  },
+  "nav": {
+    "home": "홈",
+    "pricing": "요금",
+    "terms": "이용약관",
+    "about": "소개"
+  },
+  "home": {
+    "subtitle": "군용 등급 스테가노그래피 및 암호화 도구",
+    "tabs": {
+      "encrypt": "암호화",
+      "decrypt": "복호화",
+      "stego": "스테가노그래피",
+      "wallet": "종이 지갑"
+    }
+  },
+  "pricing": {
+    "title": "간편하고 투명한 요금제",
+    "subtitle": "귀하의 필요에 맞는 완벽한 플랜을 선택하세요",
+    "plans": {
+      "price_weekly_trial": {
+        "name": "24시간 패스",
+        "description": "즉시 24시간 액세스. 기기 귀속, 로그인 불필요.",
+        "features": [
+          "모든 Pro 기능",
+          "즉시 액세스 (로그인 없음)",
+          "기기 귀속 (24시간만)",
+          "⚠️ 위험: 캐시 삭제 시 분실",
+          "⚠️ 양도 불가"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "월간",
+        "description": "일반 사용자를 위한 유연한 액세스.",
+        "features": [
+          "모든 Pro 기능",
+          "언제든지 취소 가능",
+          "우선 지원"
+        ]
+      },
+      "price_quarterly": {
+        "name": "분기별",
+        "description": "월간 대비 약 15% 절약.",
+        "features": [
+          "모든 Pro 기능",
+          "우선 지원",
+          "분기별 청구"
+        ]
+      },
+      "price_semiannual": {
+        "name": "반기별",
+        "description": "월간 대비 약 23% 절약.",
+        "features": [
+          "모든 Pro 기능",
+          "우선 지원",
+          "반기별 청구"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "연간",
+        "description": "최고의 가치! 월간 대비 약 33% 절약.",
+        "features": [
+          "모든 Pro 기능",
+          "우선 지원",
+          "연간 청구"
+        ]
+      },
+      "price_enterprise": {
+        "name": "엔터프라이즈",
+        "price": "맞춤형",
+        "period": "문의하기",
+        "description": "대규모 팀 및 조직용.",
+        "features": [
+          "맞춤형 라이선스 조건",
+          "전담 지원",
+          "SLA (서비스 수준 계약)",
+          "온프레미스 옵션"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "이용약관",
+    "lastUpdated": "최종 업데이트: {{date}}",
+    "backToHome": "홈으로 돌아가기",
+    "disclaimer": {
+      "title": "서비스 면책 조항",
+      "content_non_china": "우리는 오프라인 니모닉 백업, TOTP 동적 인증 및 보안 키 파생 서비스를 제공하는 암호화 키 보안 관리 도구(cryptokey.im)를 제공합니다. 우리는 암호화폐 거래, 수탁 또는 금융 서비스에 관여하지 않으며, 사용자 소유 키를 위한 보안 도구만 제공합니다.",
+      "content_china": "우리는 오프라인 니모닉 백업, TOTP 동적 인증 및 보안 키 파생 서비스를 제공하는 암호화 키 보안 관리 도구(cryptokey.im)를 제공합니다. 우리는 귀하의 디지털 자산을 위한 하드웨어 보안 솔루션에 중점을 둡니다."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. 약관 동의",
+        "content": "CryptoKey.im(\"서비스\")에 액세스하고 사용함으로써 귀하는 본 계약의 조건 및 조항을 준수하는 데 동의하는 것으로 간주됩니다."
+      },
+      "nature": {
+        "title": "2. 서비스의 성격",
+        "content": "CryptoKey.im은 클라이언트 측 암호화 및 스테가노그래피 도구입니다. 모든 암호화 작업은 WebAssembly를 사용하여 브라우저에서 로컬로 수행됩니다. 당사는 귀하의 개인 키, 니모닉 또는 비밀번호에 액세스할 수 없습니다. 데이터 보호에 대한 책임은 전적으로 귀하에게 있습니다."
+      },
+      "responsibilities": {
+        "title": "3. 사용자 책임",
+        "items": [
+          "귀하는 불법적인 활동에 서비스를 사용하지 않을 것에 동의합니다.",
+          "자격 증명이나 마스터 비밀번호를 분실할 경우 당사가 데이터를 복구할 수 없음을 인정합니다.",
+          "계정 및 라이선스 키의 기밀성을 유지할 책임은 귀하에게 있습니다."
+        ]
+      },
+      "ip": {
+        "title": "4. 지적 재산권",
+        "content": "이 서비스에는 독점 알고리즘과 코드가 포함되어 있습니다. \"커뮤니티 에디션\"은 CC-BY-NC-ND 4.0 라이선스에 따라 감사 목적으로 제공됩니다. 핵심 암호화 모듈을 상업적으로 사용하려면 유효한 Pro 라이선스가 필요합니다."
+      },
+      "liability": {
+        "title": "5. 책임의 제한",
+        "content": "법이 허용하는 최대 범위 내에서 CryptoKey.im은 서비스 사용으로 인해 발생하는 이익, 데이터, 사용, 영업권 또는 기타 무형 손실의 손실을 포함하되 이에 국한되지 않는 간접적, 부수적, 특별, 결과적 또는 징벌적 손해에 대해 책임을 지지 않습니다."
+      },
+      "refund": {
+        "title": "6. 환불 정책 및 수수료",
+        "policy": "엄격한 환불 불가 정책: 모든 판매는 최종적입니다. 결제가 확인되고 라이선스 키가 발급되면 어떤 경우에도 환불이 제공되지 않습니다.",
+        "fees": "거래 수수료: 사용자는 모든 거래 수수료(가스비, 네트워크 수수료 및 거래소 출금 수수료를 포함하되 이에 국한되지 않음)에 대해 전적으로 책임을 집니다. 필요한 정확한 금액과 필요한 수수료를 송금했는지 확인하십시오. 과소 결제는 라이선스 활성화 실패로 이어집니다."
+      }
+    }
+  },
+  "footer": {
+    "description": "군사급 스테가노그래피 및 암호화 도구 (AES-256-GCM + ChaCha20-Poly1305).\n브라우저에서 완전히 실행됩니다. 서버로 데이터가 전송되지 않습니다.",
+    "links": {
+      "pricing": "요금",
+      "terms": "이용약관",
+      "source": "소스 코드",
+      "share": "공유"
+    },
+    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. All Rights Reserved.",
+    "license": "상업용 라이선스 고지: 이 소프트웨어에는 국제 저작권법의 보호를 받는 독점 Wasm 암호화 모듈이 포함되어 있습니다. 공개 소스 코드는 CC-BY-NC-ND 4.0 라이선스에 따라 보안 감사 목적으로만 제공됩니다. 핵심 알고리즘의 무단 상업적 사용, 수정 또는 재배포는 엄격히 금지됩니다."
+  },
+  "licenseManager": {
+    "status": {
+      "active": "활성",
+      "expired": "만료됨",
+      "expiresIn": "만료:",
+      "proActive": "PRO 활성",
+      "proLicenseActive": "Pro 라이선스 활성",
+      "hardwareKeyActive": "하드웨어 키 활성",
+      "tempPro": "임시 PRO",
+      "activatePro": "PRO 활성화",
+      "unlockPro": "Pro 기능 잠금 해제",
+      "user": "사용자"
+    },
+    "login": {
+      "tab": "로그인",
+      "nickname": "닉네임",
+      "nicknamePlaceholder": "닉네임 입력",
+      "code": "인증 코드",
+      "codePlaceholder": "000 000",
+      "button": "Pro 기능 잠금 해제",
+      "success": "로그인 성공! Pro 기능이 활성화되었습니다.",
+      "error": "로그인 실패. 유효하지 않은 코드 또는 닉네임입니다.",
+      "inputError": "닉네임과 코드를 입력하세요"
+    },
+    "register": {
+      "tab": "등록",
+      "chooseNickname": "닉네임 선택",
+      "nicknamePlaceholder": "3-20자",
+      "note": "이 닉네임은 2FA 비밀 생성에 사용됩니다.",
+      "button": "인증 키 받기",
+      "scanTitle": "인증 앱으로 스캔",
+      "scanNote": "휴대폰으로 스캔하여 시스템 자동 감지 및 다운로드",
+      "success": "닉네임 등록 완료! 인증 앱을 연동하세요.",
+      "manualSuccess": "등록 완료! 비밀 키를 수동으로 입력하세요.",
+      "errorNickname": "닉네임을 입력하세요",
+      "errorFormat": "닉네임은 3-20자여야 합니다 (A-Z, 0-9, _)",
+      "errorTaken": "닉네임 \"{{nickname}}\"은(는) 이미 사용 중입니다."
+    },
+    "authApp": {
+      "title": "인증 앱",
+      "download": "다운로드",
+      "google": "Google Auth",
+      "microsoft": "Microsoft Auth"
+    },
+    "modal": {
+      "title": "Pro 라이선스",
+      "subtitle": "고급 암호화 기능 잠금 해제",
+      "logout": "로그아웃"
+    },
+    "networkError": "네트워크 오류: {{error}}"
+  },
+  "paymentModal": {
+    "title": "USDT 결제",
+    "step": "단계 {{step}}/4",
+    "close": "닫기",
+    "steps": {
+      "identity": {
+        "title": "계정 확인",
+        "loggedIn": "로그인됨:",
+        "loginRequired": "이 플랜을 구독하려면 로그인해야 합니다.",
+        "loginNote": "이 창을 닫고 먼저 등록/로그인하십시오.",
+        "continue": "계속",
+        "trial": {
+          "title": "임시 액세스 경고",
+          "subtitle": "로그인하지 않고 24시간 패스를 구매하려고 합니다.",
+          "deviceBound": "이 라이선스는 기기에 귀속됩니다. 이 특정 브라우저와 기기에서만 작동합니다.",
+          "risk": "캐시를 지우거나 기기를 변경하면 액세스 권한을 영구적으로 잃게 됩니다. 복구할 수 없습니다.",
+          "note": "안전을 위해 로그인하는 것을 권장하지만, 익명으로 계속할 수 있습니다."
+        }
+      },
+      "network": {
+        "title": "결제 네트워크 선택",
+        "selected": "선택된 네트워크:",
+        "error": "결제 네트워크를 선택하십시오"
+      },
+      "payment": {
+        "instruction": "정확히 다음 금액을 보내십시오",
+        "walletLabel": "공식 지갑 주소",
+        "networkWarning": "{{network}} ({{standard}}) 네트워크에서 USDT를 보내고 있는지 확인하십시오. 잘못된 네트워크로 전송하면 손실됩니다.",
+        "importantWarning": {
+          "title": "중요한 결제 경고:",
+          "exactAmount": "표시된 정확한 금액을 지불하십시오.",
+          "underpayment": "과소 결제는 실패로 이어지며 환불되지 않습니다.",
+          "overpayment": "과다 결제는 환불되지 않으며 추가 시간이 누적되지 않습니다.",
+          "singleTx": "시스템은 단일 트랜잭션만 확인합니다. 여러 번의 소액 결제를 보내지 마십시오."
+        },
+        "txHashLabel": "트랜잭션 해시 (TXID)",
+        "txHashPlaceholder": "트랜잭션 해시 (TXID) 붙여넣기",
+        "button": "결제를 보냈습니다",
+        "verifying": "확인 중...",
+        "errorTx": "트랜잭션 해시 (TXID)가 필요합니다",
+        "errorValidation": {
+            "wallet": "지갑 주소처럼 보입니다. TXID가 아닙니다. TXID를 붙여넣으십시오.",
+            "tron": "유효하지 않은 TRON TXID입니다. 64자 16진수 문자열이어야 합니다.",
+            "eth": "유효하지 않은 {{chain}} TXID입니다. 0x...로 시작하고 64자 16진수여야 합니다."
+        },
+        "clipboardError": "클립보드를 읽지 못했습니다. 수동으로 입력하십시오.",
+        "copied": "링크가 클립보드에 복사되었습니다!"
+      },
+      "verification": {
+        "verifying": "결제 확인 중...",
+        "success": "결제 확인됨!",
+        "failed": "결제 확인에 실패했습니다. 트랜잭션을 확인하십시오."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "이중 인증 모드 (권장)",
+    "dualAuthDesc": "암호화를 두 개의 별도 QR 키(키 A + 키 B)로 분할합니다. 하나의 키를 도난당하더라도 데이터는 안전합니다.",
+    "switchToDual": "이중 인증 암호화로 전환",
+    "generateStandard": "표준 QR 코드 생성",
+    "generating": "생성 중...",
+    "standardModeDesc": "표준 모드: AES-256 암호화된 QR 샤드를 생성합니다.",
+    "streamMode": "에어갭 스트림 모드",
+    "proFeature": "고속 QR 스트리밍은 Pro 기능입니다.",
+    "unlockStream": "스트림 모드 잠금 해제",
+    "pauseStream": "스트림 일시 중지",
+    "playStream": "스트림 재생",
+    "scanNote": "호환되는 QR 스캐너 앱(예: Cobo Vault, Keystone)을 사용하여 스트림을 캡처하십시오.",
+    "shardCount": "샤드 {{current}} / {{total}}",
+    "saveAll": "모든 이미지 저장",
+    "saveImage": "이미지 저장",
+    "close": "닫기"
+  },
+  "dualAuthGenerator": {
+    "title": "이중 인증 암호화",
+    "back": "뒤로",
+    "howItWorks": {
+      "title": "작동 방식:",
+      "step1": "시스템이 두 개의 고유 키(비밀 A 및 B)를 생성합니다.",
+      "step2": "이를 인증 앱(Google/Microsoft Auth)에 바인딩합니다.",
+      "step3": "<strong>비밀 A</strong>는 니모닉을 암호화합니다.",
+      "step4": "<strong>비밀 B</strong>는 비밀번호와 행 번호를 암호화합니다.",
+      "step5": "결과는 QR 샤드로 분할됩니다.",
+      "step6": "복호화하려면 샤드 + 인증 코드(또는 백업 바인딩 QR)가 필요합니다."
+    },
+    "generateKeys": "보안 키 생성",
+    "authA": "인증 키 A (니모닉 키)",
+    "authB": "인증 키 B (컨텍스트 키)",
+    "scanAuth": "Google/Microsoft Authenticator로 스캔",
+    "saveImage": "이미지 저장",
+    "processing": "처리 중...",
+    "encryptAndGenerate": "암호화 및 샤드 생성",
+    "encryptionComplete": "암호화 완료!",
+    "resultDesc": "{{count}} 개의 데이터 샤드와 2개의 인증 키가 있습니다.",
+    "importantWarning": "중요: 나중에 복호화하려면 모든 이미지(샤드 + 인증 키)를 저장해야 합니다!",
+    "downloadAll": "모든 이미지 다운로드 (Zip 권장)",
+    "shardLabel": "샤드 {{index}}",
+    "errorBind": "먼저 인증 앱을 바인딩하십시오",
+    "errorGen": "생성 실패"
+  },
+  "userManual": {
+    "button": "사용자 매뉴얼",
+    "title": "CryptoKey 사용자 매뉴얼",
+    "subtitle": "보안 데이터 암호화 및 복구 가이드",
+    "close": "닫기",
+    "tabs": {
+      "start": "빠른 시작",
+      "dual": "이중 인증",
+      "security": "보안 및 개인정보",
+      "recover": "복구 프로세스"
+    },
+    "mobileTabs": {
+      "start": "시작",
+      "dual": "이중",
+      "security": "보안",
+      "recover": "복구"
+    },
+    "start": {
+      "title": "시작하기",
+      "description": "CryptoKey를 사용하면 표준 암호화 또는 이중 인증 보호를 사용하여 미끼 데이터 내에 민감한 데이터(니모닉 등)를 숨길 수 있습니다.",
+      "steps": [
+        "모드를 선택합니다(표준 또는 이중 인증).",
+        "비밀 데이터를 입력합니다.",
+        "암호화된 샤드 또는 블록을 생성합니다.",
+        "출력을 안전하게 저장합니다(QR 코드 또는 텍스트)."
+      ]
+    },
+    "dual": {
+      "title": "이중 인증 모드",
+      "coreConcept": {
+        "title": "핵심 개념",
+        "description": "표준 암호화와 달리 이 모드는 복호화에 <strong>두 개의 별도 키</strong>(키 A 및 키 B)가 필요합니다. 신뢰를 두 개의 서로 다른 인증 토큰/기기로 분할합니다."
+      },
+      "encryption": {
+        "title": "1. 암호화 (생성)",
+        "step1": "니모닉과 비밀번호/컨텍스트를 입력합니다.",
+        "step2": "생성된 두 개의 QR 코드(키 A 및 키 B)를 Google Authenticator 앱으로 스캔합니다. <strong>이 QR 이미지를 저장하십시오!</strong> 이것은 영구적인 키입니다.",
+        "step3": "앱의 6자리 코드를 입력하여 암호화를 확인하고 잠급니다.",
+        "step4": "생성된 샤드 이미지를 다운로드합니다(QR 샤딩)."
+      },
+      "decryption": {
+        "title": "2. 복호화 (복구)",
+        "important": {
+          "title": "중요: 키 vs 코드",
+          "content": "<strong>키 (QR/비밀):</strong> 스캔한 영구적인 \"키\"입니다. 복호화에 필요합니다.<br/><strong>코드 (6자리):</strong> 30초마다 생성되는 임시 \"토큰\"입니다. 확인용으로만 사용됩니다.",
+          "note": "* 6자리 코드만으로는 복호화할 수 없습니다. 키 QR을 업로드하거나 비밀 문자열을 입력해야 합니다."
+        },
+        "step1": "모든 샤드 이미지를 업로드합니다.",
+        "step2": "<strong>필수:</strong> 키 A 및 키 B QR 이미지(또는 비밀 문자열)를 업로드합니다.",
+        "step3": "(선택 사항) 현재 6자리 코드를 입력하여 정확성을 확인합니다."
+      },
+      "lost": {
+        "title": "3. QR 이미지를 분실하셨습니까?",
+        "description": "휴대폰에 Authenticator 앱이 여전히 있는 경우:",
+        "steps": [
+          "Google Authenticator를 엽니다.",
+          "\"계정 내보내기\" 또는 \"전송\" 기능을 사용합니다.",
+          "그러면 비밀이 포함된 QR 코드가 표시됩니다.",
+          "해당 내보내기 QR을 스캔/디코딩하여 비밀 문자열을 다시 가져옵니다."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. 보호 모드 선택",
+        "description": "니모닉 문구 또는 데이터를 보호하는 가장 좋은 방법을 선택하십시오:",
+        "book": {
+          "physical": {
+            "title": "실물 / 가상 책",
+            "desc": "책장에 있는 실제 책에 키를 숨깁니다. (페이지-줄-단어)"
+          },
+          "online": {
+            "title": "온라인 책 (URL)",
+            "desc": "영구적인 Gutenberg URL을 키 소스로 사용합니다. 파일이 필요하지 않습니다."
+          },
+          "digital": {
+            "title": "디지털 책 (파일)",
+            "desc": "Gutenberg TXT 파일을 업로드합니다. 로컬에서 처리되며 업로드되지 않습니다."
+          },
+          "index": {
+            "title": "일반 인덱스",
+            "desc": "임의의 데이터 구조(예: 은행 정보, 비밀번호)를 암호화합니다."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. 입력 및 난독화",
+        "description": "민감한 데이터를 입력합니다. 그런 다음 <span class=\"text-white font-mono\">행 밀도</span>(예: 100행)를 설정하라는 메시지가 표시됩니다. 실제 데이터는 99개의 가짜 행 중 하나의 무작위 행에 숨겨집니다.",
+        "example": {
+          "fake1": "행 34: 832-19-22 (가짜)",
+          "real": "행 35: 123-45-67 (실제 데이터)",
+          "fake2": "행 36: 992-11-02 (가짜)"
+        }
+      },
+      "export": {
+        "title": "3. 내보내기 및 저장",
+        "description": "암호화되면 암호문 블록을 받게 됩니다. 이 블록을 저장해야 합니다!",
+        "ways": "저장 방법:",
+        "email": "이메일 (개인 기기)",
+        "usb": "USB 다운로드 (가장 안전함)",
+        "print": "종이 인쇄 (오프라인)"
+      },
+      "publicComputer": {
+        "title": "공용 컴퓨터 안전",
+        "description": "공용 컴퓨터(PC방, 도서관, 친구의 PC)를 사용하는 경우:",
+        "steps": [
+          "개인 이메일에 로그인하지 마십시오.",
+          "가능하면 클립보드(복사/붙여넣기)를 사용하지 마십시오.",
+          "결과 페이지의 <strong>\"공용 컴퓨터 모드\"</strong> 토글을 사용하십시오.",
+          "파일을 USB 드라이브에 다운로드하거나 휴대폰으로 QR 코드를 스캔하십시오.",
+          "떠나기 전에 <strong>\"모든 데이터 지우기\"</strong>를 클릭하십시오."
+        ]
+      },
+      "military": {
+        "title": "군사급 암호화",
+        "description": "<strong>AES-256-GCM</strong> 암호화를 사용합니다. 이는 정부와 은행에서 사용하는 것과 동일한 표준입니다. 비밀번호는 <strong>PBKDF2-HMAC-SHA256</strong>(100,000회 반복)을 사용하여 솔트 및 해시되므로 무차별 대입 공격이 거의 불가능합니다."
+      },
+      "zk": {
+        "title": "영지식 아키텍처",
+        "description": "모든 작업은 브라우저에서 이루어집니다. <strong>서버</strong>, 데이터베이스, 로그가 없습니다. 이 탭을 닫으면 백업을 저장하지 않는 한 데이터는 영원히 사라집니다."
+      },
+      "deniability": {
+        "title": "부인 방지",
+        "description": "실제 데이터와 구별할 수 없는 <strong>가짜 미끼 행</strong>을 생성합니다. 누군가 파일 복호화를 강요하더라도 가짜 행 중 하나가 \"진짜\"라고 주장하거나 파일에 의미 있는 데이터가 없다고 주장할 수 있습니다. 암호화 수학은 어떤 행이 진짜인지 숨깁니다."
+      },
+      "transparency": {
+        "title": "코드 투명성",
+        "description": "CryptoKey는 순수 클라이언트 측 애플리케이션입니다. 브라우저의 개발자 도구에서 소스 코드를 검사할 수 있습니다. 보안 감사를 권장합니다. 외부 스크립트나 분석 도구는 로드되지 않습니다."
+      }
+    },
+    "recover": {
+      "title": "복호화 방법",
+      "steps": {
+        "step1": {
+          "title": "모드 선택",
+          "description": "암호화에 사용된 것과 동일한 모드(물리, 파일 또는 URL)를 선택합니다. 파일 또는 URL을 사용하는 경우 정확히 동일한 소스 책을 제공해야 합니다."
+        },
+        "step2": {
+          "title": "암호문 붙여넣기",
+          "description": "이메일이나 파일에서 전체 암호문 블록(무작위 문자 포함)을 복사합니다."
+        },
+        "step3": {
+          "title": "비밀번호 입력",
+          "description": "암호화 중에 설정한 비밀번호를 입력합니다."
+        },
+        "step4": {
+          "title": "행 식별",
+          "description": "시스템은 모든 행(실제 + 가짜)을 복호화합니다. 데이터를 찾으려면 행 번호(예: 행 35)를 기억해야 합니다."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "군사급 보안",
+    "title": "보안 아키텍처",
+    "subtitle": "영지식 증명 및 군사급 암호화",
+    "features": {
+      "aes": {
+        "title": "AES-256-GCM 암호화",
+        "desc": "데이터는 사용 가능한 가장 강력한 표준(Web Crypto API)을 사용하여 암호화됩니다. 키 파생에는 PBKDF2(100,000회 반복)를 사용합니다."
+      },
+      "steganography": {
+        "title": "북 사이퍼 스테가노그래피",
+        "desc": "일반 책 텍스트(Gutenberg/실물) 내에 민감한 데이터를 숨깁니다. 공격자는 무해한 페이지/행/단어 인덱스만 볼 수 있으며 암호문은 볼 수 없습니다."
+      },
+      "dual": {
+        "title": "이중 인증 보호",
+        "desc": "신뢰를 두 개의 기기로 분할합니다. 니모닉을 복호화하려면 두 개의 인증 비밀(Key A 및 Key B)이 모두 필요합니다. 단일 실패 지점이 없습니다."
+      },
+      "client": {
+        "title": "100% 클라이언트 측",
+        "desc": "데이터는 기기를 떠나지 않습니다. 서버도 데이터베이스도 없습니다. 인터넷 연결을 끊고 오프라인에서 완벽하게 작동합니다."
+      }
+    },
+    "close": "닫기"
+  }
+}

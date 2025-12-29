@@ -6,6 +6,7 @@ import { compressData, createChunks } from '../utils/compression';
 import ShardDualAuthGenerator from './ShardDualAuthGenerator';
 import { useLicense } from '../contexts/LicenseContext';
 import { ProBadge } from './ui/ProBadge';
+import { useTranslation } from 'react-i18next';
 
 interface QRCodeGeneratorProps {
   ciphertext: string;
@@ -24,6 +25,7 @@ interface QRCodeGeneratorProps {
 const CHUNK_SIZE = 2500; 
 
 export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, hash, mnemonic, password, lineNumber }) => {
+  const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [qrcodeUrls, setQrcodeUrls] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -196,7 +198,7 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                <div className="flex items-center justify-between mb-2">
                  <span className="text-xs text-slate-400 font-bold uppercase flex items-center gap-1">
                    <Zap size={12} className="text-yellow-400" />
-                   Air-Gap Stream Mode
+                   {t('qrGenerator.streamMode')}
                    <ProBadge />
                  </span>
                  {features.allowStreamScan && (
@@ -208,9 +210,9 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                
                {!features.allowStreamScan ? (
                   <div className="text-center py-4 bg-slate-900/50 rounded-lg border border-dashed border-slate-700">
-                      <p className="text-xs text-slate-400 mb-2">High-speed QR streaming is a Pro feature.</p>
+                      <p className="text-xs text-slate-400 mb-2">{t('qrGenerator.proFeature')}</p>
                       <Button size="sm" variant="outline" onClick={triggerUpgrade} className="text-amber-500 border-amber-500/30 hover:bg-amber-500/10">
-                            Unlock Stream Mode
+                            {t('qrGenerator.unlockStream')}
                         </Button>
                   </div>
                ) : (
@@ -223,11 +225,11 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                      >
                        {isStreaming ? (
                          <>
-                           <Pause size={16} className="mr-2" /> Pause Stream
+                           <Pause size={16} className="mr-2" /> {t('qrGenerator.pauseStream')}
                          </>
                        ) : (
                          <>
-                           <Play size={16} className="mr-2" /> Play Stream
+                           <Play size={16} className="mr-2" /> {t('qrGenerator.playStream')}
                          </>
                        )}
                      </Button>
@@ -258,7 +260,7 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                      </div>
                    </div>
                    <p className="text-[10px] text-slate-500 mt-2 text-center">
-                     Use a compatible QR scanner app (e.g. Cobo Vault, Keystone) to capture the stream.
+                     {t('qrGenerator.scanNote')}
                    </p>
                    </>
                )}
@@ -277,7 +279,7 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                 <ArrowLeft size={20} />
               </Button>
               <span className="text-sm font-mono text-slate-400">
-                Shard {currentIndex + 1} of {qrcodeUrls.length}
+                {t('qrGenerator.shardCount', { current: currentIndex + 1, total: qrcodeUrls.length })}
               </span>
               <Button 
                 onClick={nextChunk} 
@@ -294,11 +296,11 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
         <div className="grid grid-cols-2 gap-3">
           <Button onClick={handleDownloadAll} variant="secondary" className="w-full">
             <Download className="mr-2" size={16} />
-            {qrcodeUrls.length > 1 ? 'Save All Images' : 'Save Image'}
+            {qrcodeUrls.length > 1 ? t('qrGenerator.saveAll') : t('qrGenerator.saveImage')}
           </Button>
           <Button onClick={clearQRCode} variant="ghost" className="w-full text-red-400 hover:text-red-300 hover:bg-red-500/10">
             <Trash2 className="mr-2" size={16} />
-            Close
+            {t('qrGenerator.close')}
           </Button>
         </div>
       </div>
@@ -312,17 +314,16 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
            <div className="flex items-start gap-3">
              <ShieldCheck className="text-indigo-400 shrink-0 mt-1" />
              <div>
-               <h4 className="font-bold text-white mb-1">Dual Authenticator Mode (Recommended)</h4>
+               <h4 className="font-bold text-white mb-1">{t('qrGenerator.dualAuthMode')}</h4>
                <p className="text-xs text-slate-400 mb-3">
-                 Split encryption into two separate QR keys (Key A + Key B). 
-                 Even if one key is stolen, your data remains safe.
+                 {t('qrGenerator.dualAuthDesc')}
                </p>
                <Button 
                  onClick={() => setUseDualAuth(true)} 
                  size="sm" 
                  className="bg-indigo-600 hover:bg-indigo-500 text-white border-none w-full sm:w-auto"
                >
-                 Switch to Dual Auth Encryption
+                 {t('qrGenerator.switchToDual')}
                </Button>
              </div>
            </div>
@@ -337,17 +338,17 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
         {isGenerating ? (
           <>
             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Generating...
+            {t('qrGenerator.generating')}
           </>
         ) : (
           <>
             <QrCode className="mr-2" size={20} />
-            Generate Standard QR Code
+            {t('qrGenerator.generateStandard')}
           </>
         )}
       </Button>
       <p className="text-xs text-center text-slate-500">
-        Standard Mode: Generates AES-256 encrypted QR shards.
+        {t('qrGenerator.standardModeDesc')}
       </p>
     </div>
   );
