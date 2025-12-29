@@ -38,12 +38,30 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const isPro = licenseType !== 'free';
   const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 Minutes
+  const OFFLINE_GRACE_PERIOD_MS = 24 * 60 * 60 * 1000; // 24 Hours
 
   // Persist state for dev convenience (only for simulated)
   useEffect(() => {
     // FORCE FREE ON INIT unless explicit valid license found
     
     const checkLicense = async () => {
+        // Monotonic Clock Check (Anti-Time Manipulation)
+        // Only applies if we have a stored real license (Online Pro)
+        const storedRealForCheck = sessionStorage.getItem('cryptokey_real_license');
+        const isOnlinePro = storedRealForCheck && (storedRealForCheck.startsWith('AUTH:') || storedRealForCheck === 'TEMP_PRO_ACTIVATED');
+        
+        if (isOnlinePro) {
+            const lastSeen = localStorage.getItem('cryptokey_sys_clock_check');
+            const now = Date.now();
+            if (lastSeen && now < parseInt(lastSeen)) {
+                console.error("System time manipulation detected. Clock moved backwards.");
+                alert("System clock error detected. Please correct your system time to continue using Pro features.");
+                logout();
+                return;
+            }
+            localStorage.setItem('cryptokey_sys_clock_check', now.toString());
+        }
+
         let newType: 'free' | 'pro_simulated' | 'pro_real' | 'pro_local' | 'pro_temp' = 'free';
 
         // 0. Auto-Read License Key (ROM/USB Strategy)
@@ -122,6 +140,47 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
                        setLicenseExpiry(expiry);
                        if (expiry > now) {
                            newType = 'pro_real';
+                           
+                           // Offline Grace Period Check
+                           const lastOnlineCheck = localStorage.getItem('cryptokey_last_online_check');
+                           if (!lastOnlineCheck || (now - parseInt(lastOnlineCheck) > OFFLINE_GRACE_PERIOD_MS)) {
+                               // Force check if grace period exceeded
+                               try {
+                                   const controller = new AbortController();
+                                   const timeoutId = setTimeout(() => controller.abort(), 5000);
+                                   const sessionToken = sessionStorage.getItem('cryptokey_session_token');
+                                   const deviceFingerprint = await getDeviceFingerprint();
+                                            
+                                   const res = await fetch('/api/get-license', {
+                                       method: 'POST',
+                                       headers: { 'Content-Type': 'application/json' },
+                                       body: JSON.stringify({ nickname, token: sessionToken, deviceFingerprint }),
+                                       signal: controller.signal
+                                   });
+                                   clearTimeout(timeoutId);
+        
+                                   if (res.ok) {
+                                       const data = await res.json();
+                                       if (data.success && data.license?.is_pro) {
+                                           localStorage.setItem('cryptokey_last_online_check', now.toString());
+                                       } else {
+                                           console.warn("Grace period check failed: License invalid");
+                                           newType = 'free'; // Revoke
+                                       }
+                                   } else {
+                                        // Server reachable but error? If 500, maybe keep. If 401/403, revoke.
+                                        // For safety, if we can't verify after grace period, we revoke.
+                                        console.warn("Grace period check failed: Server error");
+                                        newType = 'free';
+                                   }
+                               } catch (e) {
+                                   console.warn("Grace period check failed: Network unreachable");
+                                   // If network is unreachable AND grace period exceeded, strictly speaking we should revoke.
+                                   // User requirement: "Force max offline grace period".
+                                   newType = 'free';
+                               }
+                           }
+
                        } else {
                            // Expired?
                            // Wait, if it's an admin/lifetime without expiry, storedExpiry might not be set or set to far future.
@@ -419,7 +478,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setUpgradeModalOpen,
       features: {
         maxRowCount: isPro ? 1000 : 100, 
-        maxUploads: isPro ? 100 : 1,
+        maxUploads: isPro ? 100 : 3,
         allowDuress: isPro,
         allowDualAuth: isPro,
         allowSharding: isPro,

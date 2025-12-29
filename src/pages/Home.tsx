@@ -33,7 +33,7 @@ export const Home = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center p-1 bg-surface/50 rounded-full w-fit mx-auto border border-slate-800 flex-wrap gap-2 md:gap-0">
+      <div className="grid grid-cols-2 md:flex md:justify-center p-1 bg-surface/50 rounded-2xl md:rounded-full w-fit mx-auto border border-slate-800 gap-2 md:gap-0">
         <button
           onClick={() => {
             setEncryptSecret('');

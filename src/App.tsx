@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Home } from './pages/Home';
 import { Pricing } from './pages/Pricing';
 import { Terms } from './pages/Terms';
+import { InstallAuth } from './pages/InstallAuth';
 import { SecurityBadge } from './components/ui/SecurityBadge';
 import { LicenseManager } from './components/ui/LicenseManager';
 import { UserManual } from './components/ui/UserManual';
@@ -31,6 +32,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/install-auth" element={<InstallAuth />} />
               {/* Redirect any unknown routes to home */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, Shield, Zap, Globe, Lock } from 'lucide-react';
+import { Check, Shield, Zap, Globe, Lock, ArrowLeft } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { useLicense } from '../contexts/LicenseContext';
@@ -7,6 +7,7 @@ import { useLicense } from '../contexts/LicenseContext';
 // import { Input } from '../components/ui/Input';
 import { useGeoLocation } from '../utils/geo';
 import { USDTPaymentModal } from '../components/USDTPaymentModal';
+import { Link } from 'react-router-dom';
 
 interface Plan {
   id: string;
@@ -154,6 +155,15 @@ export const Pricing = () => {
 
   return (
     <div className="space-y-12 py-8 relative">
+      {!isChina && (
+        <div className="absolute top-4 left-4 z-10">
+          <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors bg-slate-800/50 px-3 py-2 rounded-lg text-sm backdrop-blur-sm border border-slate-700/50">
+            <ArrowLeft size={16} />
+            <span className="font-medium">Back</span>
+          </Link>
+        </div>
+      )}
+
       {/* Payment Modal */}
       {selectedPlan && (
         <USDTPaymentModal 
@@ -188,6 +198,9 @@ export const Pricing = () => {
                 <Button className="w-full" onClick={() => window.location.href = 'mailto:sales@cryptokey.im'}>
                   联系销售购买硬件
                 </Button>
+                <Link to="/" className="block mt-4 text-sm text-slate-400 hover:text-white transition-colors">
+                  返回首页
+                </Link>
               </div>
             </div>
           </div>

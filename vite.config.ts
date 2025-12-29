@@ -70,7 +70,21 @@ export default defineConfig({
             }
         ]
       }
-    })
+    }),
+    // CSP Injection Plugin
+    {
+      name: 'inject-csp',
+      transformIndexHtml(html) {
+        const csp = process.env.NODE_ENV === 'production'
+              ? "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://cryptokey-auth.c-2049.workers.dev;"
+              : "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org http://localhost:8787 http://127.0.0.1:8787 ws://localhost:8787 ws://127.0.0.1:8787 https://cryptokey-auth.c-2049.workers.dev;";
+
+        return html.replace(
+          /<meta http-equiv="Content-Security-Policy"[^>]*>/,
+          `<meta http-equiv="Content-Security-Policy" content="${csp}">`
+        );
+      },
+    }
   ],
   resolve: {
     alias: {

@@ -1,14 +1,21 @@
-import { ShieldAlert } from 'lucide-react';
+import { ShieldAlert, ArrowLeft } from 'lucide-react';
 import { useGeoLocation } from '../utils/geo';
+import { Link } from 'react-router-dom';
 
 export const Terms = () => {
   const { isChina } = useGeoLocation();
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 space-y-12">
-      <div className="space-y-4">
-        <h1 className="text-4xl font-black text-white">Terms of Service</h1>
-        <p className="text-slate-400">Last Updated: {new Date().toLocaleDateString()}</p>
+      <div className="flex items-center justify-between">
+          <div className="space-y-4">
+            <h1 className="text-4xl font-black text-white">Terms of Service</h1>
+            <p className="text-slate-400">Last Updated: {new Date().toLocaleDateString()}</p>
+          </div>
+          <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors bg-slate-800/50 px-4 py-2 rounded-lg">
+             <ArrowLeft size={20} />
+             <span className="font-medium">Back to Home</span>
+          </Link>
       </div>
 
       <div className="prose prose-invert prose-slate max-w-none space-y-8">

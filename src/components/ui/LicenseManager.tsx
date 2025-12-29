@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLicense } from '../../contexts/LicenseContext';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import { Key, CheckCircle, X, ShieldCheck, ChevronUp, User } from 'lucide-react';
+import { Key, CheckCircle, X, ShieldCheck, ChevronUp, User, Copy } from 'lucide-react';
 import QRCode from 'qrcode';
 
 export const LicenseManager = () => {
@@ -71,6 +71,8 @@ export const LicenseManager = () => {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [localCopySuccess, setLocalCopySuccess] = useState(false);
+  const [showDesktopAuthQR, setShowDesktopAuthQR] = useState<'google' | 'microsoft' | null>(null);
 
   // Auto-clear messages
   useEffect(() => {
@@ -82,6 +84,13 @@ export const LicenseManager = () => {
       return () => clearTimeout(timer);
     }
   }, [error, success]);
+
+  useEffect(() => {
+      if (localCopySuccess) {
+          const timer = setTimeout(() => setLocalCopySuccess(false), 2000);
+          return () => clearTimeout(timer);
+      }
+  }, [localCopySuccess]);
 
   const handleRegister = async () => {
     if (!nickname) {
@@ -150,7 +159,86 @@ export const LicenseManager = () => {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    setSuccess('Copied to clipboard!');
+    setLocalCopySuccess(true);
+    // setSuccess('Copied to clipboard!'); // Removed global toast in favor of local feedback
+  };
+
+  const getMobileOS = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    if (/android/i.test(userAgent)) return "android";
+    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) return "ios";
+    return "desktop";
+  };
+
+  const AuthenticatorLinks = () => {
+    const os = getMobileOS();
+    
+    const links = {
+        google: {
+            android: "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2",
+            ios: "https://apps.apple.com/us/app/google-authenticator/id388497605"
+        },
+        microsoft: {
+            android: "https://play.google.com/store/apps/details?id=com.azure.authenticator",
+            ios: "https://apps.apple.com/us/app/microsoft-authenticator/id983156458"
+        }
+    };
+
+    if (os === 'desktop') {
+        const qrBaseUrl = "https://cryptokey.im/install-auth";
+        
+        return (
+            <div className="mt-4 p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+                <p className="text-[10px] text-slate-400 font-bold mb-2 uppercase tracking-wider text-center">Authenticator App</p>
+                <div className="flex gap-2">
+                     <button 
+                        onClick={() => setShowDesktopAuthQR(showDesktopAuthQR === 'google' ? null : 'google')}
+                        className={`flex-1 p-2 rounded border transition-all text-center ${showDesktopAuthQR === 'google' ? 'bg-amber-500/20 border-amber-500 text-amber-200' : 'bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700'}`}
+                     >
+                         <span className="text-xs font-bold block">Google Auth</span>
+                         <span className="text-[9px] opacity-70 block">Download</span>
+                     </button>
+                     <button 
+                        onClick={() => setShowDesktopAuthQR(showDesktopAuthQR === 'microsoft' ? null : 'microsoft')}
+                        className={`flex-1 p-2 rounded border transition-all text-center ${showDesktopAuthQR === 'microsoft' ? 'bg-amber-500/20 border-amber-500 text-amber-200' : 'bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700'}`}
+                     >
+                         <span className="text-xs font-bold block">Microsoft Auth</span>
+                         <span className="text-[9px] opacity-70 block">Download</span>
+                     </button>
+                </div>
+                
+                {showDesktopAuthQR && (
+                    <div className="mt-3 text-center animate-in fade-in zoom-in duration-300">
+                        <div className="bg-white p-2 rounded-lg inline-block mx-auto mb-2">
+                            <img 
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`${qrBaseUrl}?app=${showDesktopAuthQR}`)}`}
+                                alt={`${showDesktopAuthQR} QR`}
+                                className="w-32 h-32"
+                            />
+                        </div>
+                        <p className="text-[10px] text-slate-400">
+                            Scan with phone to auto-detect system & download
+                        </p>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    const platform = os === 'android' ? 'android' : 'ios';
+
+    return (
+        <div className="flex gap-2 mt-2">
+            <a href={links.google[platform]} target="_blank" rel="noreferrer" className="flex-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded p-1.5 text-center transition-colors">
+                <span className="text-[10px] text-slate-200 block font-bold">Google Auth</span>
+                <span className="text-[8px] text-slate-400 block">Download</span>
+            </a>
+            <a href={links.microsoft[platform]} target="_blank" rel="noreferrer" className="flex-1 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded p-1.5 text-center transition-colors">
+                <span className="text-[10px] text-slate-200 block font-bold">Microsoft Auth</span>
+                <span className="text-[8px] text-slate-400 block">Download</span>
+            </a>
+        </div>
+    );
   };
 
   // Compact Badge (When Closed)
@@ -428,11 +516,15 @@ export const LicenseManager = () => {
                                                 />
                                             </div>
                                             <div className="bg-amber-900/20 border border-amber-900/50 rounded-lg p-4">
-                                                <p className="text-amber-200 text-xs leading-relaxed">
+                                                <p className="text-amber-200 text-xs leading-relaxed mb-3">
                                                     <strong>Privacy First:</strong> No email required. 
                                                     Your unique nickname and authenticator are your only keys. 
                                                     Don't lose them!
                                                 </p>
+                                                <div className="border-t border-amber-900/30 pt-2">
+                                                    <p className="text-[10px] text-amber-300/80 mb-1 font-semibold">Step 1: Install Authenticator App</p>
+                                                    <AuthenticatorLinks />
+                                                </div>
                                             </div>
                                             <Button variant="secondary" className="w-full py-3" onClick={handleRegister} disabled={isLoading}>
                                                 {isLoading ? 'Checking Availability...' : 'Create Account'}
@@ -453,12 +545,33 @@ export const LicenseManager = () => {
                                             
                                             <div className="text-center space-y-2">
                                                 <p className="text-xs text-slate-500">Or enter secret manually:</p>
-                                                <code 
-                                                    onClick={() => copyToClipboard(registerData.secret)}
-                                                    className="block bg-slate-950 p-2 rounded border border-slate-800 text-amber-500 text-xs cursor-pointer hover:bg-slate-900"
-                                                >
-                                                    {registerData.secret}
-                                                </code>
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex items-center gap-2">
+                                                        <code 
+                                                            onClick={() => copyToClipboard(registerData.secret)}
+                                                            className="flex-1 bg-slate-950 p-2 rounded border border-slate-800 text-amber-500 text-xs font-mono text-center overflow-hidden text-ellipsis cursor-pointer hover:bg-slate-900 hover:border-amber-500/50 transition-all active:scale-[0.98]"
+                                                            title="Click to Copy"
+                                                        >
+                                                            {registerData.secret}
+                                                        </code>
+                                                        <button
+                                                            onClick={() => copyToClipboard(registerData.secret)}
+                                                            className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded border border-slate-700 transition-colors flex-shrink-0"
+                                                            title="Copy Secret"
+                                                        >
+                                                            <Copy size={16} />
+                                                        </button>
+                                                    </div>
+                                                    {localCopySuccess && (
+                                                        <div className="text-[10px] text-green-400 font-bold text-center animate-in fade-in slide-in-from-top-1">
+                                                            Copied to clipboard!
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                <div className="pt-2">
+                                                     <p className="text-[10px] text-slate-500 mb-1">Don't have an app yet?</p>
+                                                     <AuthenticatorLinks />
+                                                </div>
                                             </div>
 
                                             <Button 

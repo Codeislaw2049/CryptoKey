@@ -1,4 +1,4 @@
-import { ShieldCheck, Github, Send, RefreshCw } from 'lucide-react';
+import { ShieldCheck, Github, Send, RefreshCw, Share2 } from 'lucide-react';
 import { APP_VERSION } from '../../version';
 import { IntegrityCheck } from './IntegrityCheck';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,33 @@ export const Footer = () => {
       }
     }
     window.location.reload();
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'CryptoKey.im - Secure Backup',
+      text: 'Securely hide your data in images with CryptoKey.im. Protect your privacy with advanced steganography.',
+      url: 'https://cryptokey.im',
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        throw new Error('Share API not supported');
+      }
+    } catch (err: any) {
+      // Ignore user cancellation
+      if (err.name === 'AbortError') return;
+
+      // Fallback to clipboard
+      try {
+        await navigator.clipboard.writeText('https://cryptokey.im');
+        alert('Link copied to clipboard!');
+      } catch (clipboardErr) {
+        console.error('Clipboard failed:', clipboardErr);
+      }
+    }
   };
 
   return (
@@ -88,6 +115,14 @@ export const Footer = () => {
               </svg>
               <span className="text-[10px]">X.com</span>
             </a>
+            <button 
+              onClick={handleShare}
+              className="hover:text-primary transition-colors flex flex-col items-center gap-1 group"
+              title="Share"
+            >
+              <Share2 size={20} className="group-hover:scale-110 transition-transform" />
+              <span className="text-[10px]">Share</span>
+            </button>
           </div>
 
         </div>

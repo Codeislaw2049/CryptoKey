@@ -4,9 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org http://localhost:8787 http://127.0.0.1:8787 ws://localhost:8787 ws://127.0.0.1:8787 https://cryptokey-auth.c-2049.workers.dev;">
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://api.qrserver.com; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://cryptokey-auth.c-2049.workers.dev;">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/pwa-512x512.png">
+  <link rel="apple-touch-icon" href="/pwa-192x192.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="CryptoKey.im - Secure Backup" />
+  <meta property="og:description"
+    content="Securely hide your data in images with CryptoKey.im. Protect your privacy with advanced steganography." />
+  <meta property="og:image" content="https://cryptokey.im/pwa-512x512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:url" content="https://cryptokey.im/" />
+  <meta property="og:type" content="website" />
+  <meta itemprop="image" content="https://cryptokey.im/pwa-512x512.png">
   <title>CryptoKey.im - Secure Backup</title>
 </head>
 

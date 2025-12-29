@@ -519,8 +519,8 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                     </p>
                     <p className="text-sm text-slate-400">
                         {mode === 'extract' 
-                            ? <span>Upload all shard images to reconstruct. <span className="text-amber-500/80">Free: 1 image. Pro: Unlimited.</span></span> 
-                            : <span>Upload carrier image. <span className="text-amber-500/80">Free: 1 image. Pro: Unlimited.</span></span>}
+                            ? <span>Upload all shard images to reconstruct. <span className="text-amber-500/80">Free: 3 images. Pro: Unlimited.</span></span> 
+                            : <span>Upload carrier image. <span className="text-amber-500/80">Free: 3 images. Pro: Unlimited.</span></span>}
                     </p>
                   </div>
                 </>
