@@ -1,7 +1,7 @@
 {
   "name": "cryptokey-im",
   "private": true,
-  "version": "1.4.55",
+  "version": "1.4.56",
   "type": "module",
   "scripts": {
     "dev": "vite --port 1616",

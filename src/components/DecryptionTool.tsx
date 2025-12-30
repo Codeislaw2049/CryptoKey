@@ -166,21 +166,44 @@ export const DecryptionTool = () => {
       } else {
           // 2. Regex-based Marker Extraction
           // Support multiple languages and variations
-          // Start markers: Ciphertext, 密文, 暗号, 暗号文, 암호문
-          // End markers: Hash, 哈希, 哈希值, ハッシュ, 해시
           
+          // Comprehensive list of Start Markers (Ciphertext) from all 13 supported languages
+          // en, id, vi, hi, ko, tr, pt, es, de, fr, ja, zh, zh-TW
+          const startMarkers = [
+              'Ciphertext', 
+              'Texto Cifrado', 
+              'Geheimtext', 
+              'Texte chiffré', 
+              'Şifreli Metin', 
+              'Bản mã', 
+              'सिफरटेक्स्ट', 
+              '암호문', 
+              '暗号文', 
+              '密文'
+          ];
+          
+          // Comprehensive list of End Markers (Hash) from all 13 supported languages
+          const endMarkers = [
+              'Hash', 
+              '雜湊', 
+              '雜湊值', 
+              'Hachage', 
+              '해시', 
+              'ハッシュ', 
+              '哈希', 
+              '哈希值', 
+              'हैश'
+          ];
+
           // Construct regex for start marker: (Label)(Optional Space)(Colon)(Optional Space)
-          // Labels: Ciphertext|密文|暗号文|暗号|암호문
-          // Colon: [:：]
-          const startRegex = /(?:Ciphertext|密文|暗号文|暗号|암호문)\s*[:：]\s*/i;
+          const startRegex = new RegExp(`(?:${startMarkers.join('|')})\\s*[:：]\\s*`, 'i');
           const matchStart = val.match(startRegex);
 
           if (matchStart && matchStart.index !== undefined) {
                const startIndex = matchStart.index + matchStart[0].length;
                
                // Construct regex for end marker
-               // Labels: Hash|哈希值|哈希|ハッシュ|해시
-               const endRegex = /(?:Hash|哈希值|哈希|ハッシュ|해시)\s*[:：]/i;
+               const endRegex = new RegExp(`(?:${endMarkers.join('|')})\\s*[:：]`, 'i');
                
                // Search for end marker AFTER the start marker
                const remainingText = val.substring(startIndex);
@@ -208,7 +231,7 @@ export const DecryptionTool = () => {
               });
 
               // Try to remove "Hash: ..." lines if they exist in the remaining lines
-              const endRegex = /(?:Hash|哈希值|哈希|ハッシュ|해시)\s*[:：]/i;
+              const endRegex = new RegExp(`(?:${endMarkers.join('|')})\\s*[:：]`, 'i');
               cleanLines = cleanLines.filter(line => !endRegex.test(line));
 
               if (cleanLines.length > 0) {
