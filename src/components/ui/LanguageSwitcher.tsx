@@ -58,7 +58,7 @@ export const LanguageSwitcher = () => {
               className="w-full flex items-center justify-between px-3 py-2 text-xs text-left hover:bg-slate-800 transition-colors text-slate-300 hover:text-white"
             >
               <span>{lang.label}</span>
-              {i18n.language.startsWith(lang.code) && <Check size={12} className="text-primary" />}
+              {i18n.language === lang.code && <Check size={12} className="text-primary" />}
             </button>
           ))}
         </div>

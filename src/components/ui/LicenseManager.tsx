@@ -439,14 +439,18 @@ export const LicenseManager = () => {
                              <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-center animate-in zoom-in duration-300">
                                  <h3 className="text-sm font-bold text-white mb-2">Scan with Authenticator App</h3>
                                  <div className="bg-white p-2 rounded-lg inline-block mb-3">
-                                     {qrCodeUrl ? (
-                                        <img src={qrCodeUrl} alt="TOTP QR" className="w-32 h-32" />
-                                     ) : (
-                                        <div className="w-32 h-32 flex items-center justify-center text-black text-xs">Loading QR...</div>
-                                     )}
-                                 </div>
-                                 
-                                 <div className="text-left bg-slate-900 p-2 rounded border border-slate-800 mb-3">
+                                    {qrCodeUrl ? (
+                                       <img src={qrCodeUrl} alt="TOTP QR" className="w-32 h-32" />
+                                    ) : (
+                                       <div className="w-32 h-32 flex items-center justify-center text-black text-xs">Loading QR...</div>
+                                    )}
+                                </div>
+
+                                <div className="mb-4">
+                                    <AuthenticatorLinks />
+                                </div>
+                                
+                                <div className="text-left bg-slate-900 p-2 rounded border border-slate-800 mb-3">
                                     <p className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Manual Entry Key</p>
                                     <div className="flex items-center gap-2">
                                         <code className="flex-1 font-mono text-xs text-amber-400 break-all">{registerData.secret}</code>
