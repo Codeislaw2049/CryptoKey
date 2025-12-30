@@ -328,19 +328,45 @@ export const LicenseManager = () => {
              </div>
           </div>
 
-          {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (
+          {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) || (userNickname && !['pro_real', 'pro_local', 'pro_temp'].includes(licenseType)) ? (
              <div className="space-y-4">
-                 <div className={`p-4 rounded-lg border ${licenseType === 'pro_local' ? 'bg-green-900/20 border-green-500/50' : 'bg-amber-900/20 border-amber-500/50'}`}>
+                 <div className={`p-4 rounded-lg border ${['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (licenseType === 'pro_local' ? 'bg-green-900/20 border-green-500/50' : 'bg-amber-900/20 border-amber-500/50') : 'bg-slate-800 border-slate-600'}`}>
                     <div className="flex items-center justify-between mb-2">
-                        <span className={`text-sm font-bold ${licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400'}`}>
-                            {licenseType === 'pro_local' ? t('licenseManager.status.hardwareKeyActive') : t('licenseManager.status.proLicenseActive')}
+                        <span className={`text-sm font-bold ${['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400') : 'text-slate-300'}`}>
+                            {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) 
+                                ? (licenseType === 'pro_local' ? t('licenseManager.status.hardwareKeyActive') : t('licenseManager.status.proLicenseActive'))
+                                : `${t('paymentModal.steps.identity.loggedIn')} ${userNickname}`
+                            }
                         </span>
-                        <CheckCircle size={16} className={licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400'} />
+                        {['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) ? (
+                            <CheckCircle size={16} className={licenseType === 'pro_local' ? 'text-green-400' : 'text-amber-400'} />
+                        ) : (
+                            <User size={16} className="text-slate-400" />
+                        )}
                     </div>
-                    {licenseExpiry && (
+                    {licenseExpiry && ['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) && (
                         <div className="text-xs text-slate-400">
                            {t('licenseManager.status.expiresIn')} <span className="text-white font-mono">{timeLeft}</span>
                            {isExpired && <span className="text-red-500 font-bold ml-2">({t('licenseManager.status.expired')})</span>}
+                        </div>
+                    )}
+                    {!['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) && (
+                        <div className="mt-2">
+                             <Button 
+                                className="w-full bg-amber-600 hover:bg-amber-500 text-white"
+                                onClick={() => {
+                                    // Close this modal first if needed, but usually we navigate or show upgrade flow
+                                    // Actually, this modal IS the upgrade modal wrapper in some contexts, but here it acts as status.
+                                    // If we are here, we are likely wanting to upgrade.
+                                    // We can show a message or just let the user browse pricing (which is outside).
+                                    // But wait, this modal is triggered by the "User" badge.
+                                    // If they are free user, they should see "Upgrade" option.
+                                    window.location.hash = '#pricing';
+                                    setUpgradeModalOpen(false);
+                                }}
+                             >
+                                {t('licenseManager.status.activatePro')}
+                             </Button>
                         </div>
                     )}
                  </div>

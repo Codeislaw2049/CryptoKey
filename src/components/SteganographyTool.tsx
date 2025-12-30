@@ -160,6 +160,8 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
       const ctx = canvas.getContext('2d', { willReadFrequently: true });
       if (!ctx) throw new Error(t('errors.canvasContext'));
 
+      const generatedFiles: File[] = [];
+
       if (isSharded) {
           // Generate Shards
           const shares = await split(secret, shardTotal, shardThreshold);
@@ -197,9 +199,48 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
               
               ctx.putImageData(newImageData, 0, 0);
               
-              // Download
-              await new Promise(r => setTimeout(r, 500));
-              downloadImage(canvas, outputFilename);
+              // Create Blob for this shard
+              const blob = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, 'image/png'));
+              if (blob) {
+                  generatedFiles.push(new File([blob], outputFilename, { type: 'image/png' }));
+              }
+          }
+          
+          // Batch Download / Share Logic
+          if (generatedFiles.length > 0) {
+               // Try Web Share API for multiple files (Mobile)
+               let shared = false;
+               if (navigator.share && navigator.canShare) {
+                   try {
+                       const shareData = {
+                           files: generatedFiles,
+                           title: 'CryptoKey Shards',
+                           text: 'Here are your encrypted image shards.'
+                       };
+                       if (navigator.canShare(shareData)) {
+                           await navigator.share(shareData);
+                           shared = true;
+                       }
+                   } catch (e) {
+                       console.warn('Batch share failed, falling back to individual download', e);
+                   }
+               }
+               
+               if (!shared) {
+                   // Fallback: Individual Downloads with delay to prevent browser blocking
+                   for (const file of generatedFiles) {
+                       const url = URL.createObjectURL(file);
+                       const a = document.createElement('a');
+                       a.href = url;
+                       a.download = file.name;
+                       document.body.appendChild(a);
+                       a.click();
+                       document.body.removeChild(a);
+                       URL.revokeObjectURL(url);
+                       // 800ms delay between downloads
+                       await new Promise(r => setTimeout(r, 800));
+                   }
+               }
           }
           
           setResult(t('steganographyExtra.successGenerated', {count: shares.length}));

@@ -149,6 +149,48 @@ export const DecryptionTool = () => {
       }
   };
 
+  const handleCiphertextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const val = e.target.value;
+      
+      // Attempt to extract clean ciphertext from potential garbage/headers
+      // Case 1: JSON format (contains "iv": "...")
+      // Case 2: Base64 string (long alphanumeric)
+      // Case 3: Result File format (--- headers ---)
+      
+      let clean = val;
+
+      // 1. Try to find JSON block
+      const jsonMatch = val.match(/\{[\s\S]*"iv"[\s\S]*\}/);
+      if (jsonMatch) {
+          clean = jsonMatch[0];
+      } else {
+          // 2. If no JSON, look for common file headers to strip
+          // Remove lines starting with --- or headers
+          const lines = val.split('\n');
+          const cleanLines = lines.filter(line => {
+              const trim = line.trim();
+              if (trim.startsWith('---')) return false;
+              if (trim.includes('Ciphertext:')) return false;
+              if (trim.includes('Hash:')) return false;
+              if (trim.includes('Generated on:')) return false;
+              if (trim.includes('Note:')) return false;
+              if (trim === '') return false;
+              return true;
+          });
+          
+          // If we stripped lines, check if we have a single block remaining that looks like ciphertext
+          if (cleanLines.length > 0) {
+              // Usually the longest line is the ciphertext
+              const longest = cleanLines.reduce((a, b) => a.length > b.length ? a : b);
+              if (longest.length > 20) { // arbitrary min length for ciphertext
+                  clean = longest.trim();
+              }
+          }
+      }
+
+      setCiphertext(clean);
+  };
+
   const handleQRUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
@@ -591,7 +633,7 @@ export const DecryptionTool = () => {
 
           <textarea
             value={ciphertext}
-            onChange={(e) => setCiphertext(e.target.value)}
+            onChange={handleCiphertextChange}
             className="w-full h-32 bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-sm font-mono focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-y"
             placeholder={t('decryption.placeholder.ciphertext')}
             autoComplete="off"

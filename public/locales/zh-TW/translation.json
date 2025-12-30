@@ -78,8 +78,8 @@
     },
     "plans": {
       "price_weekly_trial": {
-        "name": "24小时通行证",
-        "description": "即时24小时访问。设备绑定，无需登录。",
+        "name": "24小時通行證",
+        "description": "即時24小時訪问。裝置綁定，无需登入。",
         "features": [
           "完整专业版功能",
           "即时访问（无需登录）",
@@ -90,7 +90,7 @@
       },
       "price_monthly_standard": {
         "name": "月付方案",
-        "description": "灵活访问，适合常规用户。",
+        "description": "灵活訪问，适合常規使用者。",
         "features": [
           "完整专业版功能",
           "随时取消",
@@ -99,7 +99,7 @@
       },
       "price_quarterly": {
         "name": "季度方案",
-        "description": "比月付节省约 15%。",
+        "description": "比月付節省約 15%。",
         "features": [
           "完整专业版功能",
           "优先支持",
@@ -108,7 +108,7 @@
       },
       "price_semiannual": {
         "name": "半年方案",
-        "description": "比月付节省约 23%。",
+        "description": "比月付節省約 23%。",
         "features": [
           "完整专业版功能",
           "优先支持",
@@ -117,7 +117,7 @@
       },
       "price_yearly_pro": {
         "name": "年度方案",
-        "description": "最超值！比月付节省约 33%。",
+        "description": "最超值！比月付節省約 33%。",
         "features": [
           "完整专业版功能",
           "优先支持",
@@ -125,10 +125,10 @@
         ]
       },
       "price_enterprise": {
-        "name": "企业版",
-        "price": "定制",
-        "period": "联系我们",
-        "description": "适用于大型团队和组织。",
+        "name": "企業版",
+        "price": "定製",
+        "period": "聯絡我們",
+        "description": "适用於大型团队和组织。",
         "features": [
           "定制许可条款",
           "专属支持",
@@ -144,47 +144,47 @@
       "semiAnnual": "每半年",
       "yearly": "每年",
       "contactUs": "聯繫我們",
-      "custom": "定制"
+      "custom": "定製"
     }
   },
   "terms": {
-    "title": "服务条款",
+    "title": "服務條款",
     "lastUpdated": "最后更新：{{date}}",
-    "backToHome": "返回首页",
+    "backToHome": "返回首頁",
     "disclaimer": {
-      "title": "服务免责声明",
-      "content_non_china": "我们提供加密密钥安全管理工具（cryptokey.im），提供离线助记词备份、TOTP动态授权和安全密钥派生服务。我们不涉及加密货币交易、托管或金融服务——仅提供用于用户自有密钥的安全工具。",
-      "content_china": "我们提供加密密钥安全管理工具（cryptokey.im），提供离线助记词备份、TOTP动态授权和安全密钥派生服务。我们专注于数字资产的硬件安全解决方案。"
+      "title": "服務免责声明",
+      "content_non_china": "我們提供加密密鑰安全管理工具（cryptokey.im），提供离線助記词備份、TOTP動态授權和安全密鑰派生服務。我們不涉及加密货币交易、托管或金融服務——仅提供用於使用者自有密鑰的安全工具。",
+      "content_china": "我們提供加密密鑰安全管理工具（cryptokey.im），提供离線助記词備份、TOTP動态授權和安全密鑰派生服務。我們专注於数字资产的硬體安全解决方案。"
     },
     "sections": {
       "acceptance": {
-        "title": "1. 接受条款",
-        "content": "访问并使用 CryptoKey.im（“本服务”），即表示您接受并同意受本协议条款和规定的约束。"
+        "title": "1. 接受條款",
+        "content": "訪问并使用 CryptoKey.im（“本服務”），即表示您接受并同意受本協議條款和規定的约束。"
       },
       "nature": {
-        "title": "2. 服务性质",
-        "content": "CryptoKey.im 是一个客户端加密和隐写术工具。所有加密操作均使用 WebAssembly 在您的浏览器中本地执行。我们无法访问您的私钥、助记词或密码。您对保护您的数据负全部责任。"
+        "title": "2. 服務性质",
+        "content": "CryptoKey.im 是一個客戶端加密和隐写术工具。所有加密操作均使用 WebAssembly 在您的浏览器中本地執行。我們无法訪问您的私鑰、助記词或密碼。您對保護您的資料负全部责任。"
       },
       "responsibilities": {
-        "title": "3. 用户责任",
+        "title": "3. 使用者责任",
         "items": {
-          "0": "您同意不将本服务用于任何非法活动。",
-          "1": "您承认，如果您丢失凭据或主密码，我们将无法恢复您的数据。",
-          "2": "您有责任维护您的帐户和许可证密钥的机密性。"
+          "0": "您同意不將本服務用於任何非法活動。",
+          "1": "您承認，如果您丢失凭据或主密碼，我們將无法復原您的資料。",
+          "2": "您有责任維護您的帐戶和許可證密鑰的机密性。"
         }
       },
       "ip": {
-        "title": "4. 知识产权",
-        "content": "本服务包含专有算法和代码。“社区版”根据 CC-BY-NC-ND 4.0 许可证提供用于审计目的。核心加密模块的商业用途需要有效的 Pro 许可证。"
+        "title": "4. 知識產權",
+        "content": "本服務包含专有算法和代碼。“社区版”根据 CC-BY-NC-ND 4.0 許可證提供用於審計目的。核心加密模块的商业用途需要有效的 Pro 許可證。"
       },
       "liability": {
-        "title": "5. 责任限制",
-        "content": "在法律允许的最大范围内，CryptoKey.im 不对因您使用本服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害负责，包括但不限于利润、数据、使用、商誉或其他无形损失的损失。"
+        "title": "5. 责任限製",
+        "content": "在法律允许的最大范围內，CryptoKey.im 不對因您使用本服務而導致的任何間接、偶然、特殊、后果性或惩罚性损害负责，包括但不限於利润、資料、使用、商誉或其他无形损失的损失。"
       },
       "refund": {
         "title": "6. 退款政策和费用",
-        "policy": "严格的不退款政策：所有销售均为最终销售。一旦确认付款并签发许可证密钥，在任何情况下均不提供退款。",
-        "fees": "交易费用：用户自行承担所有交易费用（包括但不限于 Gas 费、网络费和交易所提款费）。请确保您转账的金额准确无误，并包含任何必要的费用。支付不足将导致许可证激活失败。"
+        "policy": "严格的不退款政策：所有銷售均為最终銷售。一旦確認付款并簽發許可證密鑰，在任何情况下均不提供退款。",
+        "fees": "交易费用：使用者自行承担所有交易费用（包括但不限於 Gas 费、網路费和交易所提款费）。請確保您轉賬的金额準確无误，并包含任何必要的费用。支付不足將導致許可證啟用失敗。"
       }
     }
   },
@@ -264,50 +264,50 @@
   "paymentModal": {
     "title": "USDT 支付",
     "step": "第 {{step}}/4 步",
-    "close": "关闭",
+    "close": "關閉",
     "steps": {
       "identity": {
-        "title": "账户验证",
-        "loggedIn": "当前登录：",
-        "loginRequired": "您必须登录才能订阅此计划。",
-        "loginNote": "请关闭此窗口并先注册/登录。",
-        "continue": "继续",
+        "title": "賬戶驗證",
+        "loggedIn": "目前登入：",
+        "loginRequired": "您必須登入才能订阅此計劃。",
+        "loginNote": "請關閉此窗口并先註冊/登入。",
+        "continue": "繼續",
         "trial": {
-          "title": "临时访问警告",
-          "subtitle": "您正在购买 24 小时通行证，无需登录。",
-          "deviceBound": "此许可证已绑定设备。它只能在此特定的浏览器和设备上使用。",
-          "risk": "如果您清除缓存或更换设备，您将永久失去访问权限。无法恢复。",
-          "note": "为了安全起见，我们建议您登录，但您可以选择匿名继续。"
+          "title": "临時訪问警告",
+          "subtitle": "您正在購買 24 小時通行證，无需登入。",
+          "deviceBound": "此許可證已綁定裝置。它只能在此特定的浏览器和裝置上使用。",
+          "risk": "如果您清除缓存或更換裝置，您將永久失去訪问权限。无法復原。",
+          "note": "為了安全起见，我們建议您登入，但您可以選擇匿名繼續。"
         }
       },
       "network": {
-        "title": "选择支付网络",
-        "selected": "已选网络：",
-        "error": "请选择支付网络"
+        "title": "選擇支付網路",
+        "selected": "已選網路：",
+        "error": "請選擇支付網路"
       },
       "payment": {
-        "instruction": "请准确发送",
+        "instruction": "請準確傳送",
         "walletLabel": "官方钱包地址",
-        "networkWarning": "请确保您在 {{network}} ({{standard}}) 网络上发送 USDT。错误的转账将无法找回。",
+        "networkWarning": "請確保您在 {{network}} ({{standard}}) 網路上傳送 USDT。錯誤的轉賬將无法找回。",
         "importantWarning": {
           "title": "重要支付警告：",
-          "exactAmount": "请支付显示的 确切金额。",
-          "underpayment": "支付不足将导致失败且 不可退款。",
-          "overpayment": "多付 不可退款 且 不会累积 额外时间。",
-          "singleTx": "系统仅验证单笔交易。请勿发送多笔小额支付。"
+          "exactAmount": "請支付顯示的 確切金额。",
+          "underpayment": "支付不足將導致失敗且 不可退款。",
+          "overpayment": "多付 不可退款 且 不会累积 额外時間。",
+          "singleTx": "系統仅驗證單笔交易。請勿傳送多笔小额支付。"
         },
         "txHashLabel": "交易哈希 (TXID)",
-        "txHashPlaceholder": "粘贴交易哈希 (TXID)",
+        "txHashPlaceholder": "貼上交易哈希 (TXID)",
         "button": "我已完成支付",
-        "verifying": "验证中...",
+        "verifying": "驗證中...",
         "errorTx": "需要交易哈希 (TXID)",
         "errorValidation": {
-          "wallet": "这看起来像钱包地址，而不是交易哈希 (TXID)。请粘贴 TXID。",
-          "tron": "无效的 TRON TXID。它应该是 64 个字符的十六进制字符串。",
-          "eth": "无效的 {{chain}} TXID。它应该以 0x 开头并包含 64 个十六进制字符。"
+          "wallet": "這看起来像钱包地址，而不是交易哈希 (TXID)。請貼上 TXID。",
+          "tron": "无效的 TRON TXID。它應該是 64 個字符的十六进製字符串。",
+          "eth": "无效的 {{chain}} TXID。它應該以 0x 開头并包含 64 個十六进製字符。"
         },
-        "clipboardError": "无法读取剪贴板。请手动输入。",
-        "copied": "链接已复制到剪贴板！"
+        "clipboardError": "无法读取剪貼板。請手動輸入。",
+        "copied": "链接已複製到剪貼板！"
       },
       "verification": {
         "title": "正在驗證交易...",
@@ -322,52 +322,52 @@
     }
   },
   "qrGenerator": {
-    "dualAuthMode": "双重验证模式（推荐）",
-    "dualAuthDesc": "将加密拆分为两个单独的 QR 密钥（密钥 A + 密钥 B）。即使其中一个密钥被盗，您的数据仍然安全。",
-    "switchToDual": "切换到双重验证加密",
-    "generateStandard": "生成标准二维码",
+    "dualAuthMode": "双重驗證模式（推荐）",
+    "dualAuthDesc": "將加密拆分為两個單独的 QR 密鑰（密鑰 A + 密鑰 B）。即使其中一個密鑰被盗，您的資料仍然安全。",
+    "switchToDual": "切換到双重驗證加密",
+    "generateStandard": "生成標準二維碼",
     "generating": "生成中...",
-    "standardModeDesc": "标准模式：生成 AES-256 加密的二维码分片。",
+    "standardModeDesc": "標準模式：生成 AES-256 加密的二維碼分片。",
     "streamMode": "气隙流模式",
-    "proFeature": "高速二维码流是专业版功能。",
-    "unlockStream": "解锁流模式",
+    "proFeature": "高速二維碼流是专业版功能。",
+    "unlockStream": "解鎖流模式",
     "pauseStream": "暂停流",
     "playStream": "播放流",
-    "scanNote": "使用兼容的二维码扫描应用（如 Cobo Vault, Keystone）捕获流。",
+    "scanNote": "使用兼容的二維碼扫描應用（如 Cobo Vault, Keystone）捕获流。",
     "shardCount": "分片 {{current}} / {{total}}",
-    "saveAll": "保存所有图片",
-    "saveImage": "保存图片",
-    "close": "关闭",
+    "saveAll": "儲存所有圖片",
+    "saveImage": "儲存圖片",
+    "close": "關閉",
     "speedSlow": "慢速 (2 FPS)",
     "speedFast": "快速 (4 FPS)",
     "speedTurbo": "極速 (10 FPS)"
   },
   "dualAuthGenerator": {
-    "title": "双重验证加密",
+    "title": "双重驗證加密",
     "back": "返回",
     "howItWorks": {
       "title": "工作原理：",
-      "step1": "系统生成两个唯一密钥（密钥 A 和 B）。",
-      "step2": "您将它们绑定到您的验证器应用（Google/Microsoft Auth）。",
-      "step3": "<strong>密钥 A</strong> 加密您的助记词。",
-      "step4": "<strong>密钥 B</strong> 加密您的密码和行号。",
-      "step5": "结果被拆分为二维码分片。",
-      "step6": "解密时，您需要 分片 + 验证器代码（或备份的绑定二维码）。"
+      "step1": "系統生成两個唯一密鑰（密鑰 A 和 B）。",
+      "step2": "您將它們綁定到您的驗證器應用（Google/Microsoft Auth）。",
+      "step3": "<strong>密鑰 A</strong> 加密您的助記词。",
+      "step4": "<strong>密鑰 B</strong> 加密您的密碼和行號。",
+      "step5": "結果被拆分為二維碼分片。",
+      "step6": "解密時，您需要 分片 + 驗證器代碼（或備份的綁定二維碼）。"
     },
-    "generateKeys": "生成安全密钥",
-    "authA": "验证器 A（助记词密钥）",
-    "authB": "验证器 B（上下文密钥）",
-    "scanAuth": "使用 Google/Microsoft 验证器扫描",
-    "saveImage": "保存图片",
-    "processing": "处理中...",
+    "generateKeys": "生成安全密鑰",
+    "authA": "驗證器 A（助記词密鑰）",
+    "authB": "驗證器 B（上下文密鑰）",
+    "scanAuth": "使用 Google/Microsoft 驗證器扫描",
+    "saveImage": "儲存圖片",
+    "processing": "處理中...",
     "encryptAndGenerate": "加密并生成分片",
     "encryptionComplete": "加密完成！",
-    "resultDesc": "您有 {{count}} 个数据分片和 2 个验证器密钥。",
-    "importantWarning": "重要：您必须保存所有图片（分片 + 验证密钥）以便稍后解密！",
-    "downloadAll": "下载所有图片（推荐 Zip）",
+    "resultDesc": "您有 {{count}} 個資料分片和 2 個驗證器密鑰。",
+    "importantWarning": "重要：您必須儲存所有圖片（分片 + 驗證密鑰）以便稍後解密！",
+    "downloadAll": "下載所有圖片（推荐 Zip）",
     "shardLabel": "分片 {{index}}",
-    "errorBind": "请先绑定验证器",
-    "errorGen": "生成失败"
+    "errorBind": "請先綁定驗證器",
+    "errorGen": "生成失敗"
   },
   "qrScanner": {
     "error": {
@@ -476,25 +476,25 @@
     "tooltip": "此功能在商業/專業版中可用"
   },
   "userManual": {
-    "button": "用户手册",
-    "title": "CryptoKey 用户手册",
-    "subtitle": "安全数据加密与恢复指南",
-    "close": "关闭",
+    "button": "使用者手册",
+    "title": "CryptoKey 使用者手册",
+    "subtitle": "安全資料加密与復原指南",
+    "close": "關閉",
     "tabs": {
       "start": "快速入门指南",
-      "dual": "双重验证器",
-      "security": "安全与隐私",
-      "recover": "恢复流程"
+      "dual": "双重驗證器",
+      "security": "安全与隱私",
+      "recover": "復原流程"
     },
     "mobileTabs": {
       "start": "快速入门",
-      "dual": "双重验证",
+      "dual": "双重驗證",
       "security": "安全",
-      "recover": "恢复"
+      "recover": "復原"
     },
     "start": {
-      "title": "开始使用",
-      "description": "CryptoKey 允许您使用标准加密或双重验证器保护将敏感数据（如助记词）隐藏在诱饵数据中。",
+      "title": "開始使用",
+      "description": "CryptoKey 允许您使用標準加密或双重驗證器保護將敏感資料（如助記词）隱藏在诱饵資料中。",
       "steps": [
         "选择一种模式（标准或双重验证器）。",
         "输入您的秘密数据。",
@@ -503,32 +503,32 @@
       ]
     },
     "dual": {
-      "title": "双重验证器模式",
+      "title": "双重驗證器模式",
       "coreConcept": {
         "title": "核心概念",
-        "description": "与标准加密不同，此模式需要<strong>两个单独的密钥</strong>（密钥 A 和密钥 B）来解密。它将信任分散在两个不同的验证器令牌/设备之间。"
+        "description": "与標準加密不同，此模式需要<strong>两個單独的密鑰</strong>（密鑰 A 和密鑰 B）来解密。它將信任分散在两個不同的驗證器令牌/裝置之間。"
       },
       "encryption": {
         "title": "1. 加密（生成）",
-        "step1": "输入您的助记词和密码/上下文。",
-        "step2": "使用您的 Google 验证器应用扫描两个生成的二维码（密钥 A 和密钥 B）。<strong>保存这些二维码图片！</strong>它们是您的永久密钥。",
-        "step3": "输入应用中的 6 位代码以验证并锁定加密。",
-        "step4": "下载生成的二维码分片图片。"
+        "step1": "輸入您的助記词和密碼/上下文。",
+        "step2": "使用您的 Google 驗證器應用扫描两個生成的二維碼（密鑰 A 和密鑰 B）。<strong>儲存這些二維碼圖片！</strong>它們是您的永久密鑰。",
+        "step3": "輸入應用中的 6 位代碼以驗證并鎖定加密。",
+        "step4": "下載生成的二維碼分片圖片。"
       },
       "decryption": {
-        "title": "2. 解密（恢复）",
+        "title": "2. 解密（復原）",
         "important": {
-          "title": "重要：密钥 vs 代码",
-          "content": "<strong>密钥 (QR/Secret)：</strong>您扫描的永久“密钥”。解密所需。<br/><strong>代码 (6 位数)：</strong>每 30 秒生成的临时“令牌”。仅用于验证。",
-          "note": "* 您不能仅使用 6 位代码解密。您必须上传密钥二维码或输入密钥字符串。"
+          "title": "重要：密鑰 vs 代碼",
+          "content": "<strong>密鑰 (QR/Secret)：</strong>您扫描的永久“密鑰”。解密所需。<br/><strong>代碼 (6 位数)：</strong>每 30 秒生成的临時“令牌”。仅用於驗證。",
+          "note": "* 您不能仅使用 6 位代碼解密。您必須上傳密鑰二維碼或輸入密鑰字符串。"
         },
-        "step1": "上传您的所有分片图片。",
-        "step2": "<strong>必须：</strong>上传密钥 A 和密钥 B 的二维码图片（或粘贴密钥字符串）。",
-        "step3": "（可选）输入当前的 6 位代码以验证正确性。"
+        "step1": "上傳您的所有分片圖片。",
+        "step2": "<strong>必須：</strong>上傳密鑰 A 和密鑰 B 的二維碼圖片（或貼上密鑰字符串）。",
+        "step3": "（可選）輸入目前的 6 位代碼以驗證正確性。"
       },
       "lost": {
-        "title": "3. 丢失了二维码图片？",
-        "description": "如果您的手机上仍有验证器应用：",
+        "title": "3. 丢失了二維碼圖片？",
+        "description": "如果您的手机上仍有驗證器應用：",
         "steps": [
           "打开 Google 验证器。",
           "使用“导出账户”或“转移”功能。",
@@ -539,47 +539,47 @@
     },
     "security": {
       "mode": {
-        "title": "1. 选择保护模式",
-        "description": "选择保护助记词或数据的最佳方式：",
+        "title": "1. 選擇保護模式",
+        "description": "選擇保護助記词或資料的最佳方式：",
         "book": {
           "physical": {
-            "title": "实体 / 虚拟书籍",
-            "desc": "将您的密钥隐藏在书架上的真实书籍中。（页码-行号-单词）"
+            "title": "实體 / 虚拟书籍",
+            "desc": "將您的密鑰隱藏在书架上的真实书籍中。（頁碼-行號-單词）"
           },
           "online": {
-            "title": "在线书籍 (URL)",
-            "desc": "使用永久的古腾堡 URL 作为密钥源。无需文件。"
+            "title": "在線书籍 (URL)",
+            "desc": "使用永久的古腾堡 URL 作為密鑰源。无需文件。"
           },
           "digital": {
             "title": "数字书籍 (文件)",
-            "desc": "上传古腾堡 TXT 文件。本地处理，从不上传。"
+            "desc": "上傳古腾堡 TXT 文件。本地處理，从不上傳。"
           },
           "index": {
             "title": "通用索引",
-            "desc": "加密任意数据结构（例如，银行信息，密码）。"
+            "desc": "加密任意資料結構（例如，银行資訊，密碼）。"
           }
         }
       },
       "obfuscate": {
-        "title": "2. 输入与混淆",
+        "title": "2. 輸入与混淆",
         "description": "輸入您的敏感數據。我們會要求您設置<0>行密度</0>（例如，100 行）。您的真實數據將隱藏在 99 個虛假行中的一個隨機行中。",
         "example": {
           "fake1": "第 34 行: 832-19-22 (假)",
-          "real": "第 35 行: 123-45-67 (真实数据)",
+          "real": "第 35 行: 123-45-67 (真实資料)",
           "fake2": "第 36 行: 992-11-02 (假)"
         }
       },
       "export": {
-        "title": "3. 导出与保存",
-        "description": "加密后，您将收到一个密文块。您必须保存此块！",
-        "ways": "保存方式：",
-        "email": "电子邮件（个人设备）",
-        "usb": "USB 下载（最安全）",
-        "print": "打印纸张（离线）"
+        "title": "3. 匯出与儲存",
+        "description": "加密后，您將收到一個密文块。您必須儲存此块！",
+        "ways": "儲存方式：",
+        "email": "電子郵件（個人裝置）",
+        "usb": "USB 下載（最安全）",
+        "print": "打印纸张（离線）"
       },
       "publicComputer": {
-        "title": "公共电脑安全",
-        "description": "如果您使用的是公共电脑（网吧、图书馆、朋友的电脑）：",
+        "title": "公共電脑安全",
+        "description": "如果您使用的是公共電脑（网吧、圖书馆、朋友的電脑）：",
         "steps": [
           "不要登录您的个人电子邮件。",
           "如果可能，不要使用剪贴板（复制/粘贴）。",
@@ -589,83 +589,83 @@
         ]
       },
       "military": {
-        "title": "军用级加密",
-        "description": "我们使用 <strong>AES-256-GCM</strong> 加密。这是政府和银行使用的相同标准。您的密码使用 <strong>PBKDF2-HMAC-SHA256</strong> 进行加盐和哈希处理，迭代 100,000 次，使暴力破解几乎不可能。"
+        "title": "军用級加密",
+        "description": "我們使用 <strong>AES-256-GCM</strong> 加密。這是政府和银行使用的相同標準。您的密碼使用 <strong>PBKDF2-HMAC-SHA256</strong> 进行加盐和哈希處理，迭代 100,000 次，使暴力破解几乎不可能。"
       },
       "zk": {
-        "title": "零知识架构",
-        "description": "一切都在您的浏览器中进行。我们<strong>没有服务器</strong>，没有数据库，没有日志。如果您关闭此标签页，除非您保存了备份，否则您的数据将永远丢失。"
+        "title": "零知识架構",
+        "description": "一切都在您的浏览器中进行。我們<strong>没有服務器</strong>，没有資料庫，没有日志。如果您關閉此標籤頁，除非您儲存了備份，否則您的資料將永远丢失。"
       },
       "deniability": {
-        "title": "可否认性",
-        "description": "我们生成与您的真实数据无法区分的<strong>虚假诱饵行</strong>。即使有人强迫您解密文件，您也可以声称任何假行是“真实”的，或者文件根本不包含有意义的数据。加密数学隐藏了哪一行是真实的。"
+        "title": "可否認性",
+        "description": "我們生成与您的真实資料无法区分的<strong>虚假诱饵行</strong>。即使有人强迫您解密文件，您也可以声称任何假行是“真实”的，或者文件根本不包含有意义的資料。加密数学隱藏了哪一行是真实的。"
       },
       "transparency": {
-        "title": "代码透明度",
-        "description": "CryptoKey 是一个纯客户端应用程序。您可以在浏览器的开发者工具中检查源代码。我们鼓励安全审计。不加载外部脚本或分析工具。"
+        "title": "代碼透明度",
+        "description": "CryptoKey 是一個纯客戶端應用程式。您可以在浏览器的開發者工具中檢查源代碼。我們鼓励安全審計。不載入外部脚本或分析工具。"
       }
     },
     "recover": {
       "title": "如何解密",
       "steps": {
         "step1": {
-          "title": "选择模式",
-          "description": "选择用于加密的相同模式（实体、文件或 URL）。如果使用文件或 URL，必须提供完全相同的源书。"
+          "title": "選擇模式",
+          "description": "選擇用於加密的相同模式（实體、文件或 URL）。如果使用文件或 URL，必須提供完全相同的源书。"
         },
         "step2": {
-          "title": "粘贴密文",
-          "description": "从您的电子邮件或文件中复制整个密文块（包括随机字符）。"
+          "title": "貼上密文",
+          "description": "从您的電子郵件或文件中複製整個密文块（包括随机字符）。"
         },
         "step3": {
-          "title": "输入密码",
-          "description": "输入您在加密时设置的密码。"
+          "title": "輸入密碼",
+          "description": "輸入您在加密時設定的密碼。"
         },
         "step4": {
-          "title": "识别您的行",
-          "description": "系统将解密所有行（真实 + 假）。您必须记住哪一行是您的（例如，第 35 行）以找到您的数据。"
+          "title": "識别您的行",
+          "description": "系統將解密所有行（真实 + 假）。您必須記住哪一行是您的（例如，第 35 行）以找到您的資料。"
         }
       }
     }
   },
   "securityBadge": {
-    "button": "军用级安全",
-    "title": "安全架构",
-    "subtitle": "零知识证明 & 军用级加密",
+    "button": "军用級安全",
+    "title": "安全架構",
+    "subtitle": "零知识證明 & 军用級加密",
     "features": {
       "aes": {
         "title": "AES-256-GCM 加密",
-        "desc": "您的数据使用可用的最强标准（Web Crypto API）进行加密。我们使用 PBKDF2 进行 100,000 次迭代的密钥派生。"
+        "desc": "您的資料使用可用的最强標準（Web Crypto API）进行加密。我們使用 PBKDF2 进行 100,000 次迭代的密鑰派生。"
       },
       "steganography": {
-        "title": "书本密码隐写术",
-        "desc": "将敏感数据隐藏在常规书籍文本（古腾堡/实体）中。攻击者只能看到无害的页/行/词索引，而不是密文。"
+        "title": "书本密碼隐写术",
+        "desc": "將敏感資料隱藏在常規书籍文本（古腾堡/实體）中。攻擊者只能看到无害的頁/行/词索引，而不是密文。"
       },
       "dual": {
         "title": "双重因素 & 分片",
-        "desc": "新的双重验证器模式将加密拆分在两个单独的密钥（A 和 B）之间，加上 QR 分片以实现冗余。即使一个密钥泄露，您的数据仍然安全。"
+        "desc": "新的双重驗證器模式將加密拆分在两個單独的密鑰（A 和 B）之間，加上 QR 分片以实現冗余。即使一個密鑰泄露，您的資料仍然安全。"
       },
       "zk": {
-        "title": "零知识",
-        "desc": "我们从不查看您的密码或数据。一切都在您的浏览器中本地发生。没有任何数据发送到我们的服务器。"
+        "title": "零知識",
+        "desc": "我們从不檢視您的密碼或資料。一切都在您的浏览器中本地發生。没有任何資料傳送到我們的服務器。"
       },
       "noPersistence": {
-        "title": "无持久化",
-        "desc": "我们不使用 Cookie、本地存储或服务器数据库。数字书籍 (TXT) 仅在本地处理，从不上传。"
+        "title": "無持久化",
+        "desc": "我們不使用 Cookie、本地存储或服務器資料庫。数字书籍 (TXT) 仅在本地處理，从不上傳。"
       },
       "antiTheft": {
-        "title": "防盗保护",
-        "desc": "输入字段防止自动填充和缓存。离开时内存会被主动清除。在公共电脑上使用也很安全。"
+        "title": "防盗保護",
+        "desc": "輸入字段防止自動填充和缓存。离開時內存会被主動清除。在公共電脑上使用也很安全。"
       }
     },
     "audit": {
-      "title": "技术审计",
+      "title": "技术審計",
       "badges": {
         "pbkdf2": "PBKDF2-SHA256",
         "aes": "AES-GCM-256",
-        "client": "仅客户端",
-        "noUploads": "无上传 (文件模式)",
-        "noLog": "无日志政策",
-        "wipe": "内存清除"
+        "client": "仅客戶端",
+        "noUploads": "无上傳 (文件模式)",
+        "noLog": "無日志政策",
+        "wipe": "內存清除"
       }
     }
   },
@@ -759,68 +759,68 @@
       }
     },
     "mixStep": {
-      "title": "设置加密密码",
-      "subtitle": "设置一个强密码来加密您的保管库。",
+      "title": "設定加密密碼",
+      "subtitle": "設定一個强密碼来加密您的保管庫。",
       "password": {
-        "label": "设置加密密码",
-        "placeholder": "输入强密码"
+        "label": "設定加密密碼",
+        "placeholder": "輸入强密碼"
       },
       "confirm": {
-        "label": "确认密码",
-        "placeholder": "再次输入密码"
+        "label": "確認密碼",
+        "placeholder": "再次輸入密碼"
       },
       "rowCount": {
         "label": "行数 (混合密度)",
-        "help": "计数越高 = 匿名性越好。",
-        "upgrade": "(限制：100。点击升级)",
-        "proRequired": "大于 100 的值需要专业版许可证。"
+        "help": "計数越高 = 匿名性越好。",
+        "upgrade": "(限製：100。点擊升級)",
+        "proRequired": "大於 100 的值需要专业版許可證。"
       },
       "duress": {
-        "label": "胁迫密码 (可选)",
-        "help": "创建一个使用不同密码打开的虚假保管库。如果被迫解锁设备，请使用此密码。",
-        "passwordLabel": "胁迫密码",
-        "placeholder": "与真实密码不同",
-        "fakeContentLabel": "虚假内容 (诱饵)"
+        "label": "胁迫密碼 (可選)",
+        "help": "創建一個使用不同密碼開啟的虚假保管庫。如果被迫解鎖裝置，請使用此密碼。",
+        "passwordLabel": "胁迫密碼",
+        "placeholder": "与真实密碼不同",
+        "fakeContentLabel": "虚假內容 (诱饵)"
       },
       "error": {
-        "required": "密码为必填项",
-        "mismatch": "密码不匹配",
-        "minLength": "密码至少需要 8 个字符",
-        "duressRequired": "胁迫密码为必填项",
-        "duressSame": "胁迫密码不能与真实密码相同",
-        "encryptionFailed": "加密失败。请重试。"
+        "required": "密碼為必填項",
+        "mismatch": "密碼不匹配",
+        "minLength": "密碼至少需要 8 個字符",
+        "duressRequired": "胁迫密碼為必填項",
+        "duressSame": "胁迫密碼不能与真实密碼相同",
+        "encryptionFailed": "加密失敗。請重試。"
       }
     },
     "resultStep": {
       "success": {
         "banner": "加密成功",
-        "title": "您的备份已就绪",
-        "subtitle": "保存密文并记住您的凭据。"
+        "title": "您的備份已就绪",
+        "subtitle": "儲存密文并記住您的凭据。"
       },
       "mode": {
-        "personal": "个人",
+        "personal": "個人",
         "public": "公共"
       },
       "realIndex": {
         "title": "真实行索引",
-        "help": "这是唯一包含您数据的行。其他所有行都是假的。"
+        "help": "這是唯一包含您資料的行。其他所有行都是假的。"
       },
       "mnemonic": {
-        "title": "原始助记词"
+        "title": "原始助記词"
       },
       "hash": {
         "label": "哈希"
       },
       "actions": {
-        "copy": "复制",
-        "copied": "已复制！",
-        "download": "下载",
-        "email": "电子邮件",
+        "copy": "複製",
+        "copied": "已複製！",
+        "download": "下載",
+        "email": "電子郵件",
         "print": "打印"
       },
       "dualAuth": {
-        "button": "生成双重验证分片",
-        "pro": "专业版功能：升级以访问"
+        "button": "生成双重驗證分片",
+        "pro": "专业版功能：升級以訪问"
       },
       "reset": "重置"
     }
@@ -960,7 +960,7 @@
     "about": {
       "title": "關於隱寫術",
       "text": "此工具將您的數據隱藏在圖像像素的最低有效位 (LSB) 中。生成的圖像在肉眼看來完全相同，但包含您的秘密訊息。",
-      "noteTitle": "注意：",
+      "noteTitle": "註意：",
       "noteText": "請勿壓縮下載的圖像（例如，通過 WhatsApp/Messenger 發送通常會壓縮圖像）。始終以文件（文檔）形式共享或嚴格保存在本地。"
     },
     "error": {
