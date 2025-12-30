@@ -164,37 +164,39 @@ export const DecryptionTool = () => {
       if (jsonMatch) {
           clean = jsonMatch[0];
       } else {
-          // 2. Robust Marker Extraction (User requested optimization)
-          // Find content between "Ciphertext:" and "Hash:" markers regardless of language
-          const markers = {
-              start: ['Ciphertext:', '密文：', '密文:', '暗号：', '暗号:', '암호문：', '암호문:'],
-              end: ['Hash:', '哈希：', '哈希:', 'ハッシュ：', 'ハッシュ:', '해시：', '해시:']
-          };
+          // 2. Regex-based Marker Extraction
+          // Support multiple languages and variations
+          // Start markers: Ciphertext, 密文, 暗号, 暗号文, 암호문
+          // End markers: Hash, 哈希, 哈希值, ハッシュ, 해시
+          
+          // Construct regex for start marker: (Label)(Optional Space)(Colon)(Optional Space)
+          // Labels: Ciphertext|密文|暗号文|暗号|암호문
+          // Colon: [:：]
+          const startRegex = /(?:Ciphertext|密文|暗号文|暗号|암호문)\s*[:：]\s*/i;
+          const matchStart = val.match(startRegex);
 
-          let startIndex = -1;
-          for (const m of markers.start) {
-              const idx = val.indexOf(m);
-              if (idx !== -1) {
-                  startIndex = idx + m.length;
-                  break;
-              }
-          }
-
-          if (startIndex !== -1) {
-              let endIndex = val.length;
-              for (const m of markers.end) {
-                  const idx = val.indexOf(m, startIndex);
-                  if (idx !== -1) {
-                      endIndex = idx;
-                      break;
-                  }
-              }
-              const extracted = val.substring(startIndex, endIndex).trim();
-              if (extracted.length > 0) {
-                  clean = extracted;
-              }
+          if (matchStart && matchStart.index !== undefined) {
+               const startIndex = matchStart.index + matchStart[0].length;
+               
+               // Construct regex for end marker
+               // Labels: Hash|哈希值|哈希|ハッシュ|해시
+               const endRegex = /(?:Hash|哈希值|哈希|ハッシュ|해시)\s*[:：]/i;
+               
+               // Search for end marker AFTER the start marker
+               const remainingText = val.substring(startIndex);
+               const matchEnd = remainingText.match(endRegex);
+               
+               let endIndex = val.length;
+               if (matchEnd && matchEnd.index !== undefined) {
+                   endIndex = startIndex + matchEnd.index;
+               }
+               
+               const extracted = val.substring(startIndex, endIndex).trim();
+               if (extracted.length > 0) {
+                   clean = extracted;
+               }
           } else {
-              // Fallback: If no start marker found, try to clean line by line
+              // Fallback: Clean line by line
               const lines = val.split('\n');
               let cleanLines = lines.filter(line => {
                   const trim = line.trim();
@@ -206,12 +208,8 @@ export const DecryptionTool = () => {
               });
 
               // Try to remove "Hash: ..." lines if they exist in the remaining lines
-              cleanLines = cleanLines.filter(line => {
-                  for (const m of markers.end) {
-                      if (line.includes(m)) return false;
-                  }
-                  return true;
-              });
+              const endRegex = /(?:Hash|哈希值|哈希|ハッシュ|해시)\s*[:：]/i;
+              cleanLines = cleanLines.filter(line => !endRegex.test(line));
 
               if (cleanLines.length > 0) {
                    // Assume the longest remaining line is ciphertext
