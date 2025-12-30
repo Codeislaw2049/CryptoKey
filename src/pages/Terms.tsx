@@ -52,7 +52,7 @@ export const Terms = () => {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-white">{t('terms.sections.responsibilities.title')}</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-400">
-            {(t('terms.sections.responsibilities.items', { returnObjects: true }) as string[]).map((item, index) => (
+            {Object.values(t('terms.sections.responsibilities.items', { returnObjects: true }) as Record<string, string>).map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>

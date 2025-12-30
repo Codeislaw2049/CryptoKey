@@ -14,7 +14,8 @@
     "fetch": "Récupérer",
     "or": "- OU -",
     "none": "Aucun",
-    "processing": "Traitement..."
+    "processing": "Traitement...",
+    "next": "Suivant"
   },
   "errorBoundary": {
     "title": "Une erreur s'est produite",
@@ -135,6 +136,15 @@
           "Options sur site"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "unique",
+      "monthly": "par mois",
+      "quarterly": "par trimestre",
+      "semiAnnual": "par 6 mois",
+      "yearly": "par an",
+      "contactUs": "nous contacter",
+      "custom": "Personnalisé"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Responsabilités de l'utilisateur",
-        "items": [
-          "Vous acceptez de ne pas utiliser le Service pour des activités illégales.",
-          "Vous reconnaissez que si vous perdez vos identifiants ou votre mot de passe principal, nous ne pouvons pas récupérer vos données.",
-          "Vous êtes responsable du maintien de la confidentialité de votre compte et de vos clés de licence."
-        ]
+        "items": {
+          "0": "Vous acceptez de ne pas utiliser le Service pour des activités illégales.",
+          "1": "Vous reconnaissez que si vous perdez vos identifiants ou votre mot de passe principal, nous ne pouvons pas récupérer vos données.",
+          "2": "Vous êtes responsable du maintien de la confidentialité de votre compte et de vos clés de licence."
+        }
       },
       "ip": {
         "title": "4. Propriété intellectuelle",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Chiffrement et stéganographie sécurisés pour vos actifs numériques. Protection de niveau militaire avec architecture à connaissance nulle.",
+    "links": {
+      "pricing": "Tarifs",
+      "terms": "Conditions de service",
+      "source": "Code source",
+      "share": "Partager"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Tous droits réservés.",
+    "license": "Sous licence CC-BY-NC-ND 4.0 à des fins d'audit. Licence Pro requise pour usage commercial.",
     "linkCopied": "Lien copié dans le presse-papiers !",
     "forceUpdate": "Forcer la mise à jour / Effacer le cache",
     "publicRepo": "Dépôt public (audit)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "QR d'authentification bureau",
-    "registrationFailed": "Échec de l'inscription"
+    "registrationFailed": "Échec de l'inscription",
+    "status": {
+      "hardwareKeyActive": "Clé matérielle active",
+      "active": "Actif",
+      "activatePro": "Activer Pro",
+      "tempPro": "Pro temporaire (24h)",
+      "proActive": "Pro actif",
+      "user": "Utilisateur",
+      "proLicenseActive": "Licence Pro active",
+      "expiresIn": "Expire dans {{days}} jours",
+      "expired": "Expiré"
+    },
+    "networkError": "Erreur réseau : {{error}}",
+    "authApp": {
+      "title": "Numériser avec l'application d'authentification",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Télécharger"
+    },
+    "login": {
+      "tab": "Connexion",
+      "nickname": "Pseudo",
+      "nicknamePlaceholder": "Entrez votre pseudo",
+      "code": "Code à 6 chiffres",
+      "codePlaceholder": "Entrez le code à 6 chiffres de l'application",
+      "button": "Se connecter",
+      "success": "Connexion réussie !",
+      "error": "Échec de la connexion. Veuillez vérifier vos identifiants.",
+      "inputError": "Veuillez remplir tous les champs"
+    },
+    "register": {
+      "tab": "S'inscrire",
+      "chooseNickname": "Choisir un pseudo",
+      "nicknamePlaceholder": "Entrez un pseudo unique",
+      "note": "Note : Enregistrez votre clé secrète en toute sécurité. Vous en aurez besoin pour vous connecter.",
+      "button": "S'inscrire",
+      "scanWithAuth": "Scanner le code QR avec l'authentificateur",
+      "loadingQR": "Génération du QR...",
+      "manualEntry": "Saisie manuelle",
+      "keySaved": "Clé enregistrée ! Veuillez aller à l'onglet Connexion.",
+      "savedGoLogin": "Inscription terminée. Veuillez passer à l'onglet Connexion.",
+      "scanNote": "Scannez ce code QR avec votre application d'authentification (Google Authenticator ou Microsoft Authenticator)",
+      "success": "Inscription réussie ! Code QR généré.",
+      "manualSuccess": "Saisie manuelle de la clé réussie !",
+      "errorNickname": "Le pseudo doit comporter 3 à 20 caractères, alphanumériques uniquement",
+      "errorFormat": "Format secret invalide. Doit être en base32 (A-Z, 2-7)",
+      "errorTaken": "Le pseudo '{{nickname}}' est déjà pris. Veuillez en choisir un autre."
+    },
+    "modal": {
+      "title": "Gestionnaire de licences",
+      "subtitle": "Gérez votre licence Pro et votre authentification",
+      "logout": "Se déconnecter"
+    }
   },
   "paymentModal": {
     "title": "Paiement USDT",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hachage : {{hash}}",
     "couldNotVerify": "⚠️ Impossible de vérifier {{path}} : {{error}}",
-    "criticalError": "Erreur critique : {{error}}"
+    "criticalError": "Erreur critique : {{error}}",
+    "buttonLabel": "Vérifier l'intégrité",
+    "devModeWarning": "⚠️ Mode développement détecté",
+    "devModeDesc": "La vérification d'intégrité est désactivée en mode développement. Compilez la version de production pour activer la vérification.",
+    "modalTitle": "Vérification d'intégrité de l'application",
+    "calculating": "Calcul des sommes de contrôle...",
+    "connectionError": "Impossible de se connecter à GitHub pour récupérer les sommes de contrôle officielles. Veuillez vérifier manuellement.",
+    "viewRelease": "Voir les notes de version",
+    "log": {
+      "receivedChecksums": "✅ Sommes de contrôle officielles reçues de GitHub",
+      "corsBlocked": "⚠️ CORS bloqué - impossible de récupérer les sommes de contrôle de GitHub",
+      "corsReason1": "Raison 1 : La politique CORS de GitHub bloque les requêtes cross-origin",
+      "corsReason2": "Raison 2 : Extension de navigateur ou proxy réseau interférant",
+      "corsReason3": "Raison 3 : Vous pouvez vérifier manuellement sur la page des versions GitHub",
+      "fileVerified": "✅ {{path}} vérifié avec succès",
+      "hashMismatch": "❌ Hash incompatible pour {{path}}",
+      "noChecksum": "❓ Aucune somme de contrôle trouvée pour {{path}}"
+    },
+    "manual": {
+      "title": "Guide de vérification manuelle",
+      "step1": "Visitez <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Téléchargez <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> pour votre version",
+      "step3": "Comparez les sommes de contrôle manuellement à l'aide d'outils de vérification SHA-256"
+    }
   },
   "militaryBadge": {
     "title": "SÉCURITÉ DE NIVEAU MILITAIRE",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Entrer et obscurcir",
-        "description": "Entrez vos données sensibles. Nous vous demanderons ensuite de définir une <span class=\"text-white font-mono\">densité de lignes</span> (par ex. 100 lignes). Vos vraies données seront cachées dans une ligne aléatoire parmi 99 fausses lignes.",
+        "description": "Saisissez vos données sensibles. Nous vous demanderons ensuite de définir une <0>Densité de ligne</0>（par exemple, 100 lignes）. Vos données réelles seront cachées dans une ligne aléatoire parmi 99 lignes factices。",
         "example": {
           "fake1": "Ligne 34 : 832-19-22 (faux)",
           "real": "Ligne 35 : 123-45-67 (vraies données)",
@@ -868,6 +962,9 @@
       "text": "Cet outil masque vos données dans les bits les moins significatifs (LSB) des pixels de l'image. L'image résultante semble identique à l'œil humain mais contient votre message secret.",
       "noteTitle": "Remarque :",
       "noteText": "Ne compressez pas l'image téléchargée (par ex. l'envoi via WhatsApp/Messenger compresse souvent les images). Partagez toujours en tant que fichier (document) ou conservez strictement en local."
+    },
+    "error": {
+      "copyFailed": "Échec de la copie dans le presse-papiers"
     }
   },
   "wallet": {

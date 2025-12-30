@@ -14,7 +14,8 @@
     "fetch": "가져오기",
     "or": "- 또는 -",
     "none": "없음",
-    "processing": "처리 중..."
+    "processing": "처리 중...",
+    "next": "다음"
   },
   "errorBoundary": {
     "title": "문제가 발생했습니다",
@@ -38,7 +39,7 @@
   },
   "pricing": {
     "title": "간편하고 투명한 요금제",
-    "subtitle": "귀하의 필요에 맞는 완벽한 플랜을 선택하세요",
+    "subtitle": "귀하의 보안 요구사항에 맞는 플랜을 선택하세요. 모든 플랜은 CryptoKey.im의 군사급 암호화 및 스테가노그래피 도구의 모든 기능을 제공합니다。",
     "badge": {
       "bestValue": "최고의 가치"
     },
@@ -135,6 +136,15 @@
           "온프레미스 옵션"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "일회성",
+      "monthly": "월간",
+      "quarterly": "분기별",
+      "semiAnnual": "반기별",
+      "yearly": "연간",
+      "contactUs": "문의하기",
+      "custom": "맞춤형"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. 사용자 책임",
-        "items": [
-          "귀하는 불법적인 활동에 서비스를 사용하지 않을 것에 동의합니다.",
-          "자격 증명이나 마스터 비밀번호를 분실할 경우 당사가 데이터를 복구할 수 없음을 인정합니다.",
-          "계정 및 라이선스 키의 기밀성을 유지할 책임은 귀하에게 있습니다."
-        ]
+        "items": {
+          "0": "귀하는 불법적인 활동에 서비스를 사용하지 않을 것에 동의합니다.",
+          "1": "자격 증명이나 마스터 비밀번호를 분실할 경우 당사가 데이터를 복구할 수 없음을 인정합니다.",
+          "2": "계정 및 라이선스 키의 기밀성을 유지할 책임은 귀하에게 있습니다."
+        }
       },
       "ip": {
         "title": "4. 지적 재산권",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "디지털 자산을 위한 안전한 암호화 및 스테가노그래피. 제로 지식 아키텍처를 갖춘 군사급 보호.",
+    "links": {
+      "pricing": "요금",
+      "terms": "서비스 약관",
+      "source": "소스 코드",
+      "share": "공유"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. All rights reserved.",
+    "license": "감사 목적으로 CC-BY-NC-ND 4.0에 따라 라이선스가 부여됩니다. 상업적 사용에는 Pro 라이선스가 필요합니다.",
     "linkCopied": "링크가 클립보드에 복사되었습니다!",
     "forceUpdate": "강제 업데이트 / 캐시 지우기",
     "publicRepo": "공개 리포지토리 (감사)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "데스크톱 인증 QR",
-    "registrationFailed": "등록 실패"
+    "registrationFailed": "등록 실패",
+    "status": {
+      "hardwareKeyActive": "하드웨어 키 활성화",
+      "active": "활성",
+      "activatePro": "Pro 활성화",
+      "tempPro": "임시 Pro (24시간)",
+      "proActive": "Pro 활성",
+      "user": "사용자",
+      "proLicenseActive": "Pro 라이선스 활성",
+      "expiresIn": "{{days}}일 후 만료",
+      "expired": "만료됨"
+    },
+    "networkError": "네트워크 오류: {{error}}",
+    "authApp": {
+      "title": "인증 앱으로 스캔",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "다운로드"
+    },
+    "login": {
+      "tab": "로그인",
+      "nickname": "닉네임",
+      "nicknamePlaceholder": "닉네임을 입력하세요",
+      "code": "6자리 코드",
+      "codePlaceholder": "앱의 6자리 코드를 입력하세요",
+      "button": "로그인",
+      "success": "로그인 성공!",
+      "error": "로그인 실패. 자격 증명을 확인하세요.",
+      "inputError": "모든 필드를 입력하세요"
+    },
+    "register": {
+      "tab": "등록",
+      "chooseNickname": "닉네임 선택",
+      "nicknamePlaceholder": "고유한 닉네임을 입력하세요",
+      "note": "참고: 비밀 키를 안전하게 저장하세요. 로그인에 필요합니다.",
+      "button": "등록",
+      "scanWithAuth": "인증 앱으로 QR 코드 스캔",
+      "loadingQR": "QR 코드 생성 중...",
+      "manualEntry": "수동 입력",
+      "keySaved": "키가 저장되었습니다! 로그인 탭으로 이동하세요.",
+      "savedGoLogin": "등록 완료. 로그인 탭으로 전환하세요.",
+      "scanNote": "인증 앱(Google Authenticator 또는 Microsoft Authenticator)으로 이 QR 코드를 스캔하세요",
+      "success": "등록 성공! QR 코드가 생성되었습니다.",
+      "manualSuccess": "수동 키 입력 성공!",
+      "errorNickname": "닉네임은 3-20자의 영숫자만 가능합니다",
+      "errorFormat": "비밀 키 형식이 잘못되었습니다. base32 형식(A-Z, 2-7)이어야 합니다",
+      "errorTaken": "닉네임 '{{nickname}}'은(는) 이미 사용 중입니다. 다른 닉네임을 선택하세요."
+    },
+    "modal": {
+      "title": "라이선스 관리자",
+      "subtitle": "Pro 라이선스 및 인증 관리",
+      "logout": "로그아웃"
+    }
   },
   "paymentModal": {
     "title": "USDT 결제",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "해시: {{hash}}",
     "couldNotVerify": "⚠️ {{path}}을(를) 확인할 수 없습니다: {{error}}",
-    "criticalError": "심각한 오류: {{error}}"
+    "criticalError": "심각한 오류: {{error}}",
+    "buttonLabel": "무결성 확인",
+    "devModeWarning": "⚠️ 개발 모드 감지됨",
+    "devModeDesc": "개발 모드에서는 무결성 검사가 비활성화됩니다. 검증을 활성화하려면 프로덕션 버전을 빌드하세요.",
+    "modalTitle": "애플리케이션 무결성 검사",
+    "calculating": "체크섬 계산 중...",
+    "connectionError": "GitHub에 연결하여 공식 체크섬을 가져올 수 없습니다. 수동으로 확인하세요.",
+    "viewRelease": "릴리스 노트 보기",
+    "log": {
+      "receivedChecksums": "✅ GitHub에서 공식 체크섬을 받았습니다",
+      "corsBlocked": "⚠️ CORS 차단 - GitHub에서 체크섬을 가져올 수 없습니다",
+      "corsReason1": "이유 1: GitHub의 CORS 정책이 교차 출처 요청을 차단합니다",
+      "corsReason2": "이유 2: 브라우저 확장 프로그램 또는 네트워크 프록시가 간섭합니다",
+      "corsReason3": "이유 3: GitHub 릴리스 페이지에서 수동으로 확인할 수 있습니다",
+      "fileVerified": "✅ {{path}} 검증 성공",
+      "hashMismatch": "❌ {{path}} 해시 불일치",
+      "noChecksum": "❓ {{path}}에 대한 체크섬을 찾을 수 없습니다"
+    },
+    "manual": {
+      "title": "수동 검증 가이드",
+      "step1": "<a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub 릴리스 페이지</a> 방문",
+      "step2": "사용 중인 버전의 <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> 다운로드",
+      "step3": "SHA-256 검증 도구를 사용하여 체크섬을 수동으로 비교"
+    }
   },
   "militaryBadge": {
     "title": "군용 등급 보안",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. 입력 및 난독화",
-        "description": "민감한 데이터를 입력합니다. 그런 다음 <span class=\"text-white font-mono\">행 밀도</span>(예: 100행)를 설정하라는 메시지가 표시됩니다. 실제 데이터는 99개의 가짜 행 중 하나의 무작위 행에 숨겨집니다.",
+        "description": "민감한 데이터를 입력하세요. <0>행 밀도</0>를 설정하도록 요청합니다（예: 100행）。실제 데이터는 99개의 가짜 행 중 무작위 한 행에 숨겨집니다。",
         "example": {
           "fake1": "행 34: 832-19-22 (가짜)",
           "real": "행 35: 123-45-67 (실제 데이터)",
@@ -868,6 +962,9 @@
       "text": "이 도구는 이미지 픽셀의 최하위 비트(LSB)에 데이터를 숨깁니다. 결과 이미지는 육안으로는 동일하게 보이지만 비밀 메시지가 포함되어 있습니다.",
       "noteTitle": "참고:",
       "noteText": "다운로드한 이미지를 압축하지 마세요(예: WhatsApp/Messenger를 통해 전송하면 이미지가 압축되는 경우가 많습니다). 항상 파일(문서)로 공유하거나 엄격하게 로컬에 보관하세요."
+    },
+    "error": {
+      "copyFailed": "클립보드에 복사 실패"
     }
   },
   "wallet": {

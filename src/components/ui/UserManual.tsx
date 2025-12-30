@@ -277,7 +277,10 @@ export const UserManual = () => {
                           {t('userManual.security.obfuscate.title')}
                         </h3>
                         <p className="text-slate-400 leading-relaxed mb-4">
-                          <Trans i18nKey="userManual.security.obfuscate.description" />
+                          <Trans
+                            i18nKey="userManual.security.obfuscate.description"
+                            components={[<span className="text-white font-mono" key="0" />]}
+                          />
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-sm font-mono text-slate-500">
                           {t('userManual.security.obfuscate.example.fake1')}<br/>

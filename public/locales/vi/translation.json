@@ -14,7 +14,8 @@
     "fetch": "Tải về",
     "or": "- HOẶC -",
     "none": "Không có",
-    "processing": "Đang xử lý..."
+    "processing": "Đang xử lý...",
+    "next": "Tiếp theo"
   },
   "errorBoundary": {
     "title": "Đã xảy ra lỗi",
@@ -135,6 +136,15 @@
           "Tùy chọn triển khai tại chỗ"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "một lần",
+      "monthly": "mỗi tháng",
+      "quarterly": "mỗi quý",
+      "semiAnnual": "mỗi 6 tháng",
+      "yearly": "mỗi năm",
+      "contactUs": "liên hệ chúng tôi",
+      "custom": "Tùy chỉnh"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Trách nhiệm của người dùng",
-        "items": [
-          "Bạn đồng ý không sử dụng Dịch vụ cho bất kỳ hoạt động bất hợp pháp nào.",
-          "Bạn thừa nhận rằng nếu bạn mất thông tin xác thực hoặc mật khẩu chính, chúng tôi không thể khôi phục dữ liệu của bạn.",
-          "Bạn chịu trách nhiệm duy trì tính bảo mật của tài khoản và khóa bản quyền của mình."
-        ]
+        "items": {
+          "0": "Bạn đồng ý không sử dụng Dịch vụ cho bất kỳ hoạt động bất hợp pháp nào.",
+          "1": "Bạn thừa nhận rằng nếu bạn mất thông tin xác thực hoặc mật khẩu chính, chúng tôi không thể khôi phục dữ liệu của bạn.",
+          "2": "Bạn chịu trách nhiệm duy trì tính bảo mật của tài khoản và khóa bản quyền của mình."
+        }
       },
       "ip": {
         "title": "4. Sở hữu trí tuệ",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Mã hóa và steganography an toàn cho tài sản kỹ thuật số của bạn. Bảo vệ cấp quân sự với kiến trúc không có kiến thức.",
+    "links": {
+      "pricing": "Bảng giá",
+      "terms": "Điều khoản dịch vụ",
+      "source": "Mã nguồn",
+      "share": "Chia sẻ"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Bảo lưu mọi quyền.",
+    "license": "Được cấp phép theo CC-BY-NC-ND 4.0 cho mục đích kiểm toán. Cần giấy phép Pro cho sử dụng thương mại.",
     "linkCopied": "Đã sao chép liên kết vào clipboard!",
     "forceUpdate": "Buộc cập nhật / Xóa bộ nhớ cache",
     "publicRepo": "Kho công khai (Kiểm toán)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "QR xác thực Desktop",
-    "registrationFailed": "Đăng ký thất bại"
+    "registrationFailed": "Đăng ký thất bại",
+    "status": {
+      "hardwareKeyActive": "Khóa phần cứng đang hoạt động",
+      "active": "Đang hoạt động",
+      "activatePro": "Kích hoạt Pro",
+      "tempPro": "Pro tạm thời (24h)",
+      "proActive": "Pro đang hoạt động",
+      "user": "Người dùng",
+      "proLicenseActive": "Giấy phép Pro đang hoạt động",
+      "expiresIn": "Hết hạn trong {{days}} ngày",
+      "expired": "Đã hết hạn"
+    },
+    "networkError": "Lỗi mạng: {{error}}",
+    "authApp": {
+      "title": "Quét bằng ứng dụng xác thực",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Tải xuống"
+    },
+    "login": {
+      "tab": "Đăng nhập",
+      "nickname": "Biệt danh",
+      "nicknamePlaceholder": "Nhập biệt danh của bạn",
+      "code": "Mã 6 chữ số",
+      "codePlaceholder": "Nhập mã 6 chữ số từ ứng dụng",
+      "button": "Đăng nhập",
+      "success": "Đăng nhập thành công!",
+      "error": "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.",
+      "inputError": "Vui lòng điền tất cả các trường"
+    },
+    "register": {
+      "tab": "Đăng ký",
+      "chooseNickname": "Chọn biệt danh",
+      "nicknamePlaceholder": "Nhập biệt danh duy nhất",
+      "note": "Lưu ý: Lưu khóa bí mật của bạn an toàn. Bạn sẽ cần nó để đăng nhập.",
+      "button": "Đăng ký",
+      "scanWithAuth": "Quét mã QR bằng xác thực",
+      "loadingQR": "Đang tạo QR...",
+      "manualEntry": "Nhập thủ công",
+      "keySaved": "Khóa đã lưu! Vui lòng chuyển đến tab Đăng nhập.",
+      "savedGoLogin": "Đăng ký hoàn tất. Vui lòng chuyển sang tab Đăng nhập.",
+      "scanNote": "Quét mã QR này bằng ứng dụng xác thực của bạn (Google Authenticator hoặc Microsoft Authenticator)",
+      "success": "Đăng ký thành công! Mã QR đã được tạo.",
+      "manualSuccess": "Nhập khóa thủ công thành công!",
+      "errorNickname": "Biệt danh phải có 3-20 ký tự, chỉ chữ và số",
+      "errorFormat": "Định dạng bí mật không hợp lệ. Phải là base32 (A-Z, 2-7)",
+      "errorTaken": "Biệt danh '{{nickname}}' đã được sử dụng. Vui lòng chọn tên khác."
+    },
+    "modal": {
+      "title": "Quản lý giấy phép",
+      "subtitle": "Quản lý giấy phép Pro và xác thực của bạn",
+      "logout": "Đăng xuất"
+    }
   },
   "paymentModal": {
     "title": "Thanh toán USDT",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ Không thể xác minh {{path}}: {{error}}",
-    "criticalError": "Lỗi nghiêm trọng: {{error}}"
+    "criticalError": "Lỗi nghiêm trọng: {{error}}",
+    "buttonLabel": "Xác minh tính toàn vẹn",
+    "devModeWarning": "⚠️ Đã phát hiện chế độ phát triển",
+    "devModeDesc": "Kiểm tra tính toàn vẹn bị vô hiệu hóa trong chế độ phát triển. Xây dựng phiên bản sản xuất để kích hoạt xác minh.",
+    "modalTitle": "Kiểm tra tính toàn vẹn ứng dụng",
+    "calculating": "Đang tính toán checksum...",
+    "connectionError": "Không thể kết nối với GitHub để lấy checksum chính thức. Vui lòng kiểm tra thủ công.",
+    "viewRelease": "Xem ghi chú phát hành",
+    "log": {
+      "receivedChecksums": "✅ Đã nhận checksum chính thức từ GitHub",
+      "corsBlocked": "⚠️ CORS bị chặn - không thể lấy checksum từ GitHub",
+      "corsReason1": "Lý do 1: Chính sách CORS của GitHub chặn yêu cầu cross-origin",
+      "corsReason2": "Lý do 2: Tiện ích mở rộng trình duyệt hoặc proxy mạng đang can thiệp",
+      "corsReason3": "Lý do 3: Bạn có thể xác minh thủ công tại trang phát hành GitHub",
+      "fileVerified": "✅ {{path}} đã được xác minh thành công",
+      "hashMismatch": "❌ Hash không khớp cho {{path}}",
+      "noChecksum": "❓ Không tìm thấy checksum cho {{path}}"
+    },
+    "manual": {
+      "title": "Hướng dẫn xác minh thủ công",
+      "step1": "Truy cập <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Tải xuống <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> cho phiên bản của bạn",
+      "step3": "So sánh checksum thủ công bằng công cụ xác minh SHA-256"
+    }
   },
   "militaryBadge": {
     "title": "BẢO MẬT CẤP QUÂN SỰ",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Nhập & Làm rối",
-        "description": "Nhập dữ liệu nhạy cảm của bạn. Sau đó chúng tôi sẽ yêu cầu bạn đặt <span class=\"text-white font-mono\">Mật độ dòng</span> (ví dụ: 100 dòng). Dữ liệu thật của bạn sẽ được ẩn trong một dòng ngẫu nhiên giữa 99 dòng giả.",
+        "description": "Nhập dữ liệu nhạy cảm của bạn. Sau đó chúng tôi sẽ yêu cầu bạn đặt <0>Mật độ hàng</0>（ví dụ: 100 hàng）. Dữ liệu thực của bạn sẽ được ẩn trong một hàng ngẫu nhiên giữa 99 hàng giả。",
         "example": {
           "fake1": "Dòng 34: 832-19-22 (Giả)",
           "real": "Dòng 35: 123-45-67 (Dữ liệu thật)",
@@ -868,6 +962,9 @@
       "text": "Công cụ này ẩn dữ liệu của bạn trong các bit ít quan trọng nhất (LSB) của các pixel hình ảnh. Hình ảnh kết quả trông giống hệt với mắt người nhưng chứa thông điệp bí mật của bạn.",
       "noteTitle": "Lưu ý:",
       "noteText": "Không nén hình ảnh đã tải xuống (ví dụ: gửi qua WhatsApp/Messenger thường nén hình ảnh). Luôn chia sẻ dưới dạng tệp (Tài liệu) hoặc giữ hoàn toàn cục bộ."
+    },
+    "error": {
+      "copyFailed": "Không sao chép vào clipboard được"
     }
   },
   "wallet": {

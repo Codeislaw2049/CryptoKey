@@ -14,7 +14,8 @@
     "fetch": "取得",
     "or": "- または -",
     "none": "なし",
-    "processing": "処理中..."
+    "processing": "処理中...",
+    "next": "次へ"
   },
   "errorBoundary": {
     "title": "問題が発生しました",
@@ -38,7 +39,7 @@
   },
   "pricing": {
     "title": "シンプルで透明性の高い料金設定",
-    "subtitle": "ニーズに合ったプランをお選びください",
+    "subtitle": "セキュリティニーズに合ったプランをお選びください。すべてのプランで CryptoKey.im の軍事グレード暗号化およびステガノグラフィツールのフルパワーをご利用いただけます。",
     "badge": {
       "bestValue": "最もお得"
     },
@@ -135,6 +136,15 @@
           "オンプレミス・オプション"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "1回限り",
+      "monthly": "月額",
+      "quarterly": "四半期ごと",
+      "semiAnnual": "半年ごと",
+      "yearly": "年額",
+      "contactUs": "お問い合わせ",
+      "custom": "カスタム"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. ユーザーの責任",
-        "items": [
-          "違法な活動のために本サービスを使用しないことに同意します。",
-          "資格情報またはマスターパスワードを紛失した場合、当社はデータを復元できないことを認めます。",
-          "アカウントおよびライセンスキーの機密性を維持する責任があります。"
-        ]
+        "items": {
+          "0": "違法な活動のために本サービスを使用しないことに同意します。",
+          "1": "資格情報またはマスターパスワードを紛失した場合、当社はデータを復元できないことを認めます。",
+          "2": "アカウントおよびライセンスキーの機密性を維持する責任があります。"
+        }
       },
       "ip": {
         "title": "4. 知的財産権",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "デジタル資産のための安全な暗号化とステガノグラフィ。ゼロ知識アーキテクチャによる軍事レベルの保護。",
+    "links": {
+      "pricing": "料金",
+      "terms": "利用規約",
+      "source": "ソースコード",
+      "share": "共有"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. All rights reserved.",
+    "license": "監査目的でCC-BY-NC-ND 4.0の下でライセンスされています。商用利用にはProライセンスが必要です。",
     "linkCopied": "リンクをクリップボードにコピーしました！",
     "forceUpdate": "強制更新 / キャッシュクリア",
     "publicRepo": "公開リポジトリ（監査）",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "デスクトップ認証QR",
-    "registrationFailed": "登録に失敗しました"
+    "registrationFailed": "登録に失敗しました",
+    "status": {
+      "hardwareKeyActive": "ハードウェアキー有効",
+      "active": "有効",
+      "activatePro": "Proを有効化",
+      "tempPro": "一時的Pro（24時間）",
+      "proActive": "Pro有効",
+      "user": "ユーザー",
+      "proLicenseActive": "Proライセンス有効",
+      "expiresIn": "{{days}}日後に期限切れ",
+      "expired": "期限切れ"
+    },
+    "networkError": "ネットワークエラー：{{error}}",
+    "authApp": {
+      "title": "認証アプリでスキャン",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "ダウンロード"
+    },
+    "login": {
+      "tab": "ログイン",
+      "nickname": "ニックネーム",
+      "nicknamePlaceholder": "ニックネームを入力",
+      "code": "6桁コード",
+      "codePlaceholder": "アプリの6桁コードを入力",
+      "button": "ログイン",
+      "success": "ログイン成功！",
+      "error": "ログインに失敗しました。認証情報を確認してください。",
+      "inputError": "すべてのフィールドを入力してください"
+    },
+    "register": {
+      "tab": "登録",
+      "chooseNickname": "ニックネームを選択",
+      "nicknamePlaceholder": "一意のニックネームを入力",
+      "note": "注意：秘密鍵を安全に保存してください。ログインに必要です。",
+      "button": "登録",
+      "scanWithAuth": "認証アプリでQRコードをスキャン",
+      "loadingQR": "QRコード生成中...",
+      "manualEntry": "手動入力",
+      "keySaved": "キーが保存されました！ログインタブに移動してください。",
+      "savedGoLogin": "登録完了。ログインタブに切り替えてください。",
+      "scanNote": "認証アプリ（Google Authenticator または Microsoft Authenticator）でこのQRコードをスキャン",
+      "success": "登録成功！QRコードが生成されました。",
+      "manualSuccess": "手動キー入力成功！",
+      "errorNickname": "ニックネームは3〜20文字の英数字のみです",
+      "errorFormat": "秘密鍵の形式が無効です。base32形式（A-Z、2-7）である必要があります",
+      "errorTaken": "ニックネーム '{{nickname}}' は既に使用されています。別のものを選択してください。"
+    },
+    "modal": {
+      "title": "ライセンス管理",
+      "subtitle": "Pro ライセンスと認証を管理",
+      "logout": "ログアウト"
+    }
   },
   "paymentModal": {
     "title": "USDT支払い",
@@ -363,13 +434,36 @@
   },
   "integrityCheck": {
     "title": "このアプリのコードがGitHub上のソースコードと一致することを検証する",
+    "buttonLabel": "整合性を検証",
     "fetching": "{{version}}のリリース署名を取得中...",
     "verifying": "{{path}}を検証中...",
     "failedToLoad": "読み込みに失敗しました",
     "info": "ℹ️ {{path}}",
     "hash": "ハッシュ: {{hash}}",
     "couldNotVerify": "⚠️ {{path}}を検証できませんでした: {{error}}",
-    "criticalError": "重大なエラー: {{error}}"
+    "criticalError": "重大なエラー: {{error}}",
+    "devModeWarning": "⚠️ 開発モードが検出されました",
+    "devModeDesc": "開発モードでは整合性チェックが無効になっています。検証を有効にするには、本番バージョンをビルドしてください。",
+    "modalTitle": "アプリケーション整合性チェック",
+    "calculating": "チェックサムを計算中...",
+    "connectionError": "GitHub に接続して公式チェックサムを取得できませんでした。手動で確認してください。",
+    "viewRelease": "リリースノートを表示",
+    "log": {
+      "receivedChecksums": "✅ GitHub から公式チェックサムを受信しました",
+      "corsBlocked": "⚠️ CORS ブロック - GitHub からチェックサムを取得できません",
+      "corsReason1": "理由 1：GitHub の CORS ポリシーがクロスオリジンリクエストをブロックしています",
+      "corsReason2": "理由 2：ブラウザ拡張機能またはネットワークプロキシが干渉しています",
+      "corsReason3": "理由 3：GitHub リリースページで手動で確認できます",
+      "fileVerified": "✅ {{path}} の検証に成功しました",
+      "hashMismatch": "❌ {{path}} のハッシュが一致しません",
+      "noChecksum": "❓ {{path}} のチェックサムが見つかりません"
+    },
+    "manual": {
+      "title": "手動検証ガイド",
+      "step1": "<a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub リリースページ</a>にアクセス",
+      "step2": "お使いのバージョンの <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> をダウンロード",
+      "step3": "SHA-256 検証ツールを使用してチェックサムを手動で比較"
+    }
   },
   "militaryBadge": {
     "title": "軍用レベルのセキュリティ",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. 入力と難読化",
-        "description": "機密データを入力します。次に、<span class=\"text-white font-mono\">行密度</span>（例：100行）を設定するように求められます。実際のデータは、99行の偽の行の中の1つのランダムな行に隠されます。",
+        "description": "機密データを入力してください。次に<0>行密度</0>（例：100行）を設定するよう求められます。実際のデータは99個のダミー行の中のランダムな1行に隠されます。",
         "example": {
           "fake1": "行 34: 832-19-22 (偽)",
           "real": "行 35: 123-45-67 (実データ)",
@@ -868,6 +962,9 @@
       "text": "このツールは画像ピクセルの最下位ビット（LSB）にデータを隠します。結果の画像は人間の目には同じに見えますが、秘密メッセージが含まれています。",
       "noteTitle": "注意:",
       "noteText": "ダウンロードした画像を圧縮しないでください（例: WhatsApp/Messenger経由で送信すると画像が圧縮されることがよくあります）。常にファイル（ドキュメント）として共有するか、厳密にローカルに保管してください。"
+    },
+    "error": {
+      "copyFailed": "クリップボードへのコピーに失敗しました"
     }
   },
   "wallet": {

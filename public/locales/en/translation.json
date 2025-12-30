@@ -14,7 +14,8 @@
     "fetch": "Fetch",
     "or": "- OR -",
     "none": "None",
-    "processing": "Processing..."
+    "processing": "Processing...",
+    "next": "Next"
   },
   "errorBoundary": {
     "title": "Something went wrong",
@@ -135,6 +136,15 @@
           "On-premise Options"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "one-time",
+      "monthly": "per month",
+      "quarterly": "per quarter",
+      "semiAnnual": "per 6 months",
+      "yearly": "per year",
+      "contactUs": "contact us",
+      "custom": "Custom"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. User Responsibilities",
-        "items": [
-          "You agree not to use the Service for any illegal activities.",
-          "You acknowledge that if you lose your credentials or master password, we cannot recover your data.",
-          "You are responsible for maintaining the confidentiality of your account and license keys."
-        ]
+        "items": {
+          "0": "You agree not to use the Service for any illegal activities.",
+          "1": "You acknowledge that if you lose your credentials or master password, we cannot recover your data.",
+          "2": "You are responsible for maintaining the confidentiality of your account and license keys."
+        }
       },
       "ip": {
         "title": "4. Intellectual Property",
@@ -179,71 +189,77 @@
     }
   },
   "footer": {
-    "description": "Military-grade Steganography & Encryption Tool (AES-256-GCM + ChaCha20-Poly1305).\nRunning entirely in your browser. No data sent to server.",
+    "description": "Secure encryption and steganography for your digital assets. Military-grade protection with zero-knowledge architecture.",
     "links": {
       "pricing": "Pricing",
       "terms": "Terms of Service",
-      "source": "Source",
+      "source": "Source Code",
       "share": "Share"
     },
-    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. All Rights Reserved.",
-    "license": "Commercial License Notice: This software contains proprietary Wasm encryption modules protected by international copyright laws. The public source code is provided for security audit purposes only under the CC-BY-NC-ND 4.0 license. Unauthorized commercial use, modification, or redistribution of the core algorithms is strictly prohibited."
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. All rights reserved.",
+    "license": "Licensed under CC-BY-NC-ND 4.0 for audit purposes. Pro license required for commercial use.",
+    "linkCopied": "Link copied to clipboard!",
+    "forceUpdate": "Force Update / Clear Cache",
+    "publicRepo": "Public Repository (Audit)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "Share"
   },
   "licenseManager": {
+    "desktopAuthQr": "Desktop Auth QR",
+    "registrationFailed": "Registration failed",
     "status": {
-      "active": "Active",
-      "expired": "EXPIRED",
-      "expiresIn": "Expires in:",
-      "proActive": "PRO ACTIVE",
-      "proLicenseActive": "Pro License Active",
       "hardwareKeyActive": "Hardware Key Active",
-      "tempPro": "TEMP PRO",
-      "activatePro": "ACTIVATE PRO",
-      "unlockPro": "Unlock Pro Features",
-      "user": "USER"
+      "active": "Active",
+      "activatePro": "Activate Pro",
+      "tempPro": "Temporary Pro (24h)",
+      "proActive": "Pro Active",
+      "user": "User",
+      "proLicenseActive": "Pro License Active",
+      "expiresIn": "Expires in {{days}} days",
+      "expired": "Expired"
+    },
+    "networkError": "Network error: {{error}}",
+    "authApp": {
+      "title": "Scan with Authenticator App",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Download"
     },
     "login": {
       "tab": "Login",
       "nickname": "Nickname",
       "nicknamePlaceholder": "Enter your nickname",
-      "code": "Authenticator Code",
-      "codePlaceholder": "000 000",
-      "button": "Unlock Pro Features",
-      "success": "Login Successful! Pro Features Activated.",
-      "error": "Login Failed. Invalid Code or Nickname.",
-      "inputError": "Please enter Nickname and Code"
+      "code": "6-digit Code",
+      "codePlaceholder": "Enter 6-digit code from app",
+      "button": "Login",
+      "success": "Login successful!",
+      "error": "Login failed. Please check your credentials.",
+      "inputError": "Please fill in all fields"
     },
     "register": {
       "tab": "Register",
-      "chooseNickname": "Choose Nickname",
-      "nicknamePlaceholder": "3-20 characters",
-      "note": "This nickname will be used to generate your 2FA secret.",
-      "button": "Get Authenticator Key",
-      "scanTitle": "Scan with Authenticator App",
-      "scanWithAuth": "Scan with Authenticator App",
-      "scanNote": "Scan with phone to auto-detect system & download",
-      "loadingQR": "Loading QR...",
-      "manualEntry": "Manual Entry Key",
-      "savedGoLogin": "I Have Saved It, Go to Login",
-      "keySaved": "Key Saved! Please Login now.",
-      "success": "Nickname Registered! Bind Authenticator now.",
-      "manualSuccess": "Registered! Please enter secret manually.",
-      "errorNickname": "Please enter a Nickname",
-      "errorFormat": "Nickname must be 3-20 characters (A-Z, 0-9, _)",
-      "errorTaken": "Nickname \"{{nickname}}\" is already taken."
-    },
-    "authApp": {
-      "title": "Authenticator App",
-      "download": "Download",
-      "google": "Google Auth",
-      "microsoft": "Microsoft Auth"
+      "chooseNickname": "Choose a Nickname",
+      "nicknamePlaceholder": "Enter a unique nickname",
+      "note": "Note: Save your secret key securely. You'll need it to login.",
+      "button": "Register",
+      "scanWithAuth": "Scan QR Code with Authenticator",
+      "loadingQR": "Generating QR...",
+      "manualEntry": "Manual Entry",
+      "keySaved": "Key saved! Please go to Login tab.",
+      "savedGoLogin": "Registration complete. Please switch to Login tab.",
+      "scanNote": "Scan this QR code with your authenticator app (Google Authenticator or Microsoft Authenticator)",
+      "success": "Registration successful! QR code generated.",
+      "manualSuccess": "Manual key entry successful!",
+      "errorNickname": "Nickname must be 3-20 characters, alphanumeric only",
+      "errorFormat": "Invalid secret format. Must be base32 (A-Z, 2-7)",
+      "errorTaken": "Nickname '{{nickname}}' is already taken. Please choose another."
     },
     "modal": {
-      "title": "Pro License",
-      "subtitle": "Unlock advanced encryption features",
-      "logout": "Log Out"
-    },
-    "networkError": "Network error: {{error}}"
+      "title": "License Manager",
+      "subtitle": "Manage your Pro license and authentication",
+      "logout": "Logout"
+    }
   },
   "paymentModal": {
     "title": "USDT Payment",
@@ -286,9 +302,9 @@
         "verifying": "Verifying...",
         "errorTx": "Transaction Hash (TXID) is required",
         "errorValidation": {
-            "wallet": "This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.",
-            "tron": "Invalid TRON TXID. It should be a 64-character hex string.",
-            "eth": "Invalid {{chain}} TXID. It should look like 0x... and have 64 hex characters."
+          "wallet": "This looks like a Wallet Address, not a Transaction Hash (TXID). Please paste the TXID.",
+          "tron": "Invalid TRON TXID. It should be a 64-character hex string.",
+          "eth": "Invalid {{chain}} TXID. It should look like 0x... and have 64 hex characters."
         },
         "clipboardError": "Failed to read clipboard. Please type manually.",
         "copied": "Link copied to clipboard!"
@@ -429,29 +445,37 @@
     "bookCipherNote": "Note: These appear to be Book Cipher Indices..."
   },
   "integrityCheck": {
-    "devModeWarning": "Integrity check is only available in production builds.",
-    "devModeDesc": "Development mode uses hot-reloading scripts which cannot be verified against release builds.",
+    "title": "Verify that this app code matches the source code on GitHub",
+    "buttonLabel": "Verify Integrity",
+    "fetching": "Fetching release signature for {{version}}...",
+    "verifying": "Verifying {{path}}...",
+    "failedToLoad": "Failed to load",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ Could not verify {{path}}: {{error}}",
+    "criticalError": "Critical Error: {{error}}",
+    "devModeWarning": "⚠️ Development Mode Detected",
+    "devModeDesc": "Integrity check is disabled in development mode. Build the production version to enable verification.",
+    "modalTitle": "Application Integrity Check",
+    "calculating": "Calculating checksums...",
+    "connectionError": "Could not connect to GitHub to fetch official checksums. Please check manually.",
+    "viewRelease": "View Release Notes",
     "log": {
       "receivedChecksums": "✅ Received official checksums from GitHub",
-      "corsBlocked": "⚠️ Automatic verification blocked by browser security (CORS).",
-      "corsReason1": "This is a browser security feature, not a security flaw.",
-      "corsReason2": "You can manually verify by comparing hashes with the GitHub release.",
-      "corsReason3": "Or use browser extensions to bypass CORS for this verification.",
-      "fileVerified": "✅ {{path}}: Verified",
-      "hashMismatch": "❌ {{path}}: HASH MISMATCH!",
-      "noChecksum": "❓ {{path}}: No checksum found in release record"
+      "corsBlocked": "⚠️ CORS blocked - cannot fetch checksums from GitHub",
+      "corsReason1": "Reason 1: GitHub's CORS policy blocks cross-origin requests",
+      "corsReason2": "Reason 2: Browser extension or network proxy interfering",
+      "corsReason3": "Reason 3: You can manually verify at GitHub releases page",
+      "fileVerified": "✅ {{path}} verified successfully",
+      "hashMismatch": "❌ Hash mismatch for {{path}}",
+      "noChecksum": "❓ No checksum found for {{path}}"
     },
-    "buttonLabel": "Verify Build Integrity",
-    "modalTitle": "Build Integrity Check",
-    "calculating": "Calculating hashes...",
-    "connectionError": "Could not connect to GitHub. Please check your internet connection.",
     "manual": {
-      "title": "How to Verify Manually:",
-      "step1": "1. Visit the GitHub release page (link below).",
-      "step2": "2. Download the official checksum file (SHA256SUMS.txt).",
-      "step3": "3. Compare the hashes with the ones shown above."
-    },
-    "viewRelease": "View Release on GitHub"
+      "title": "Manual Verification Guide",
+      "step1": "Visit <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Download <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> for your version",
+      "step3": "Compare the checksums manually using SHA-256 verification tools"
+    }
   },
   "militaryBadge": {
     "title": "MILITARY-GRADE SECURITY",
@@ -550,7 +574,7 @@
       },
       "obfuscate": {
         "title": "2. Enter & Obfuscate",
-        "description": "Input your sensitive data. We will then ask you to set a <span class=\"text-white font-mono\">Row Density</span> (e.g., 100 rows). Your real data will be hidden in one random row among 99 fake rows.",
+        "description": "Input your sensitive data. We will then ask you to set a <0>Row Density</0> (e.g., 100 rows). Your real data will be hidden in one random row among 99 fake rows.",
         "example": {
           "fake1": "Row 34: 832-19-22 (Fake)",
           "real": "Row 35: 123-45-67 (Real Data)",
@@ -890,11 +914,11 @@
       "rawPreview": "RAW DATA PREVIEW"
     },
     "error": {
-        "fileMode": "Please upload the original book file to recover data.",
-        "fileModeUnknown": "Unknown data format for File mode.",
-        "urlMode": "Please fetch the book URL to recover data.",
-        "clipboard": "Unable to access clipboard. Please paste manually.",
-        "decryptFailed": "Decryption failed. Please check your password."
+      "fileMode": "Please upload the original book file to recover data.",
+      "fileModeUnknown": "Unknown data format for File mode.",
+      "urlMode": "Please fetch the book URL to recover data.",
+      "clipboard": "Unable to access clipboard. Please paste manually.",
+      "decryptFailed": "Decryption failed. Please check your password."
     }
   },
   "steganography": {
@@ -950,6 +974,9 @@
       "text": "This tool hides your data in the least significant bits (LSB) of the image pixels. The resulting image looks identical to the human eye but contains your secret message.",
       "noteTitle": "Note:",
       "noteText": "Do not compress the downloaded image (e.g., sending via WhatsApp/Messenger often compresses images). Always share as a file (Document) or keep strictly local."
+    },
+    "error": {
+      "copyFailed": "Failed to copy to clipboard"
     }
   },
   "wallet": {
@@ -1008,29 +1035,11 @@
     "redirecting": "Redirecting to App Store...",
     "detecting": "Detecting your device..."
   },
-  "footer": {
-    "linkCopied": "Link copied to clipboard!",
-    "forceUpdate": "Force Update / Clear Cache",
-    "publicRepo": "Public Repository (Audit)",
-    "telegram": "Telegram",
-    "twitter": "X.com",
-    "share": "Share"
-  },
   "license": {
     "alerts": {
       "systemClockError": "System clock error detected. Please correct your system time to continue using Pro features.",
       "deactivateConfirm": "Deactivate Real Pro License?"
     }
-  },
-  "integrityCheck": {
-    "title": "Verify that this app code matches the source code on GitHub",
-    "fetching": "Fetching release signature for {{version}}...",
-    "verifying": "Verifying {{path}}...",
-    "failedToLoad": "Failed to load",
-    "info": "ℹ️ {{path}}",
-    "hash": "Hash: {{hash}}",
-    "couldNotVerify": "⚠️ Could not verify {{path}}: {{error}}",
-    "criticalError": "Critical Error: {{error}}"
   },
   "languageSwitcher": {
     "changeLanguage": "Change Language"
@@ -1105,10 +1114,6 @@
       "decompressionError": "Decompression Error: Malformed Data. Please try re-uploading the images, ensuring they are clear and complete.",
       "decompressionFailed": "Decompression failed: {{error}}"
     }
-  },
-  "licenseManager": {
-    "desktopAuthQr": "Desktop Auth QR",
-    "registrationFailed": "Registration failed"
   },
   "mixStepButtons": {
     "back": "Back",

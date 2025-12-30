@@ -14,7 +14,8 @@
     "fetch": "Ambil",
     "or": "- ATAU -",
     "none": "Tidak Ada",
-    "processing": "Memproses..."
+    "processing": "Memproses...",
+    "next": "Selanjutnya"
   },
   "errorBoundary": {
     "title": "Terjadi kesalahan",
@@ -135,6 +136,15 @@
           "Opsi On-premise"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "sekali",
+      "monthly": "per bulan",
+      "quarterly": "per kuartal",
+      "semiAnnual": "per 6 bulan",
+      "yearly": "per tahun",
+      "contactUs": "hubungi kami",
+      "custom": "Kustom"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Tanggung Jawab Pengguna",
-        "items": [
-          "Anda setuju untuk tidak menggunakan Layanan untuk aktivitas ilegal apa pun.",
-          "Anda mengakui bahwa jika Anda kehilangan kredensial atau kata sandi utama Anda, kami tidak dapat memulihkan data Anda.",
-          "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan kunci lisensi Anda."
-        ]
+        "items": {
+          "0": "Anda setuju untuk tidak menggunakan Layanan untuk aktivitas ilegal apa pun.",
+          "1": "Anda mengakui bahwa jika Anda kehilangan kredensial atau kata sandi utama Anda, kami tidak dapat memulihkan data Anda.",
+          "2": "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan kunci lisensi Anda."
+        }
       },
       "ip": {
         "title": "4. Kekayaan Intelektual",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Enkripsi dan steganografi yang aman untuk aset digital Anda. Perlindungan tingkat militer dengan arsitektur tanpa pengetahuan.",
+    "links": {
+      "pricing": "Harga",
+      "terms": "Ketentuan Layanan",
+      "source": "Kode Sumber",
+      "share": "Bagikan"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Hak cipta dilindungi.",
+    "license": "Dilisensikan di bawah CC-BY-NC-ND 4.0 untuk tujuan audit. Lisensi Pro diperlukan untuk penggunaan komersial.",
     "linkCopied": "Tautan tersalin ke clipboard!",
     "forceUpdate": "Paksa Pembaruan / Hapus Cache",
     "publicRepo": "Repositori Publik (Audit)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "QR Auth Desktop",
-    "registrationFailed": "Registrasi gagal"
+    "registrationFailed": "Registrasi gagal",
+    "status": {
+      "hardwareKeyActive": "Kunci Hardware Aktif",
+      "active": "Aktif",
+      "activatePro": "Aktifkan Pro",
+      "tempPro": "Pro Sementara (24j)",
+      "proActive": "Pro Aktif",
+      "user": "Pengguna",
+      "proLicenseActive": "Lisensi Pro Aktif",
+      "expiresIn": "Kedaluwarsa dalam {{days}} hari",
+      "expired": "Kedaluwarsa"
+    },
+    "networkError": "Kesalahan jaringan: {{error}}",
+    "authApp": {
+      "title": "Pindai dengan Aplikasi Autentikator",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Unduh"
+    },
+    "login": {
+      "tab": "Masuk",
+      "nickname": "Nama panggilan",
+      "nicknamePlaceholder": "Masukkan nama panggilan Anda",
+      "code": "Kode 6 digit",
+      "codePlaceholder": "Masukkan kode 6 digit dari aplikasi",
+      "button": "Masuk",
+      "success": "Login berhasil!",
+      "error": "Login gagal. Silakan periksa kredensial Anda.",
+      "inputError": "Harap isi semua bidang"
+    },
+    "register": {
+      "tab": "Daftar",
+      "chooseNickname": "Pilih Nama Panggilan",
+      "nicknamePlaceholder": "Masukkan nama panggilan unik",
+      "note": "Catatan: Simpan kunci rahasia Anda dengan aman. Anda akan membutuhkannya untuk login.",
+      "button": "Daftar",
+      "scanWithAuth": "Pindai Kode QR dengan Autentikator",
+      "loadingQR": "Membuat QR...",
+      "manualEntry": "Entri Manual",
+      "keySaved": "Kunci tersimpan! Silakan ke tab Login.",
+      "savedGoLogin": "Pendaftaran selesai. Silakan beralih ke tab Login.",
+      "scanNote": "Pindai kode QR ini dengan aplikasi autentikator Anda (Google Authenticator atau Microsoft Authenticator)",
+      "success": "Pendaftaran berhasil! Kode QR dibuat.",
+      "manualSuccess": "Entri kunci manual berhasil!",
+      "errorNickname": "Nama panggilan harus 3-20 karakter, alfanumerik saja",
+      "errorFormat": "Format rahasia tidak valid. Harus base32 (A-Z, 2-7)",
+      "errorTaken": "Nama panggilan '{{nickname}}' sudah digunakan. Silakan pilih yang lain."
+    },
+    "modal": {
+      "title": "Manajer Lisensi",
+      "subtitle": "Kelola lisensi Pro dan autentikasi Anda",
+      "logout": "Keluar"
+    }
   },
   "paymentModal": {
     "title": "Pembayaran USDT",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ Tidak dapat memverifikasi {{path}}: {{error}}",
-    "criticalError": "Kesalahan Kritis: {{error}}"
+    "criticalError": "Kesalahan Kritis: {{error}}",
+    "buttonLabel": "Verifikasi Integritas",
+    "devModeWarning": "⚠️ Mode Pengembangan Terdeteksi",
+    "devModeDesc": "Pemeriksaan integritas dinonaktifkan dalam mode pengembangan. Bangun versi produksi untuk mengaktifkan verifikasi.",
+    "modalTitle": "Pemeriksaan Integritas Aplikasi",
+    "calculating": "Menghitung checksum...",
+    "connectionError": "Tidak dapat terhubung ke GitHub untuk mengambil checksum resmi. Silakan periksa secara manual.",
+    "viewRelease": "Lihat Catatan Rilis",
+    "log": {
+      "receivedChecksums": "✅ Checksum resmi diterima dari GitHub",
+      "corsBlocked": "⚠️ CORS diblokir - tidak dapat mengambil checksum dari GitHub",
+      "corsReason1": "Alasan 1: Kebijakan CORS GitHub memblokir permintaan lintas asal",
+      "corsReason2": "Alasan 2: Ekstensi browser atau proxy jaringan mengganggu",
+      "corsReason3": "Alasan 3: Anda dapat memverifikasi secara manual di halaman rilis GitHub",
+      "fileVerified": "✅ {{path}} berhasil diverifikasi",
+      "hashMismatch": "❌ Hash tidak cocok untuk {{path}}",
+      "noChecksum": "❓ Tidak ada checksum ditemukan untuk {{path}}"
+    },
+    "manual": {
+      "title": "Panduan Verifikasi Manual",
+      "step1": "Kunjungi <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Unduh <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> untuk versi Anda",
+      "step3": "Bandingkan checksum secara manual menggunakan alat verifikasi SHA-256"
+    }
   },
   "militaryBadge": {
     "title": "KEAMANAN TINGKAT MILITER",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Masukkan & Sembunyikan",
-        "description": "Masukkan data sensitif Anda. Kami kemudian akan meminta Anda untuk mengatur <span class=\"text-white font-mono\">Kepadatan Baris</span> (mis., 100 baris). Data asli Anda akan disembunyikan di satu baris acak di antara 99 baris palsu.",
+        "description": "Masukkan data sensitif Anda. Kami kemudian akan meminta Anda untuk mengatur <0>Kepadatan Baris</0>（mis., 100 baris）. Data asli Anda akan disembunyikan dalam satu baris acak di antara 99 baris palsu。",
         "example": {
           "fake1": "Baris 34: 832-19-22 (Palsu)",
           "real": "Baris 35: 123-45-67 (Data Asli)",
@@ -868,6 +962,9 @@
       "text": "Alat ini menyembunyikan data Anda di bit paling tidak signifikan (LSB) dari piksel gambar. Gambar yang dihasilkan terlihat identik dengan mata manusia tetapi berisi pesan rahasia Anda.",
       "noteTitle": "Catatan:",
       "noteText": "Jangan kompres gambar yang diunduh (mis., mengirim melalui WhatsApp/Messenger sering mengompres gambar). Selalu bagikan sebagai file (Dokumen) atau simpan secara lokal."
+    },
+    "error": {
+      "copyFailed": "Gagal menyalin ke clipboard"
     }
   },
   "wallet": {

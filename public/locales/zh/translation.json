@@ -14,7 +14,8 @@
     "fetch": "获取",
     "or": "- 或 -",
     "none": "无",
-    "processing": "处理中..."
+    "processing": "处理中...",
+    "next": "下一步"
   },
   "errorBoundary": {
     "title": "出现问题",
@@ -38,7 +39,7 @@
   },
   "pricing": {
     "title": "简单、透明的价格",
-    "subtitle": "选择最适合您的方案",
+    "subtitle": "选择最适合您安全需求的方案。所有方案均可解锁 CryptoKey.im 军工级加密和隐写术工具的全部功能。",
     "badge": {
       "bestValue": "最超值"
     },
@@ -135,6 +136,15 @@
           "私有化部署选项"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "一次性",
+      "monthly": "每月",
+      "quarterly": "每季度",
+      "semiAnnual": "每半年",
+      "yearly": "每年",
+      "contactUs": "联系我们",
+      "custom": "定制"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. 用户责任",
-        "items": [
-          "您同意不将本服务用于任何非法活动。",
-          "您承认，如果您丢失凭据或主密码，我们将无法恢复您的数据。",
-          "您有责任维护您的帐户和许可证密钥的机密性。"
-        ]
+        "items": {
+          "0": "您同意不将本服务用于任何非法活动。",
+          "1": "您承认，如果您丢失凭据或主密码，我们将无法恢复您的数据。",
+          "2": "您有责任维护您的帐户和许可证密钥的机密性。"
+        }
       },
       "ip": {
         "title": "4. 知识产权",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "为您的数字资产提供安全加密和隐写术。军用级保护，零知识架构。",
+    "links": {
+      "pricing": "价格",
+      "terms": "服务条款",
+      "source": "源代码",
+      "share": "分享"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. 保留所有权利。",
+    "license": "根据 CC-BY-NC-ND 4.0 许可证用于审计目的。商业用途需要 Pro 许可证。",
     "linkCopied": "链接已复制到剪贴板！",
     "forceUpdate": "强制更新 / 清除缓存",
     "publicRepo": "公开代码库（审计）",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "桌面认证二维码",
-    "registrationFailed": "注册失败"
+    "registrationFailed": "注册失败",
+    "status": {
+      "hardwareKeyActive": "硬件密钥已激活",
+      "active": "已激活",
+      "activatePro": "激活专业版",
+      "tempPro": "临时专业版（24小时）",
+      "proActive": "专业版已激活",
+      "user": "用户",
+      "proLicenseActive": "专业版许可证已激活",
+      "expiresIn": "{{days}} 天后过期",
+      "expired": "已过期"
+    },
+    "networkError": "网络错误：{{error}}",
+    "authApp": {
+      "title": "使用验证器应用扫描",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "下载"
+    },
+    "login": {
+      "tab": "登录",
+      "nickname": "昵称",
+      "nicknamePlaceholder": "输入您的昵称",
+      "code": "6位验证码",
+      "codePlaceholder": "输入应用中的6位验证码",
+      "button": "登录",
+      "success": "登录成功！",
+      "error": "登录失败。请检查您的凭据。",
+      "inputError": "请填写所有字段"
+    },
+    "register": {
+      "tab": "注册",
+      "chooseNickname": "选择昵称",
+      "nicknamePlaceholder": "输入唯一的昵称",
+      "note": "注意：请安全保存您的密钥。登录时需要使用。",
+      "button": "注册",
+      "scanWithAuth": "使用验证器扫描二维码",
+      "loadingQR": "生成二维码中...",
+      "manualEntry": "手动输入",
+      "keySaved": "密钥已保存！请前往登录选项卡。",
+      "savedGoLogin": "注册完成。请切换到登录选项卡。",
+      "scanNote": "使用您的验证器应用（Google Authenticator 或 Microsoft Authenticator）扫描此二维码",
+      "success": "注册成功！二维码已生成。",
+      "manualSuccess": "手动输入密钥成功！",
+      "errorNickname": "昵称必须为3-20个字符，仅限字母数字",
+      "errorFormat": "密钥格式无效。必须是base32格式（A-Z，2-7）",
+      "errorTaken": "昵称 '{{nickname}}' 已被占用。请选择其他昵称。"
+    },
+    "modal": {
+      "title": "许可证管理器",
+      "subtitle": "管理您的 Pro 许可证和身份验证",
+      "logout": "退出登录"
+    }
   },
   "paymentModal": {
     "title": "USDT 支付",
@@ -363,13 +434,36 @@
   },
   "integrityCheck": {
     "title": "验证此应用代码是否与 GitHub 上的源代码匹配",
+    "buttonLabel": "验证完整性",
     "fetching": "正在获取 {{version}} 版本的签名...",
     "verifying": "正在验证 {{path}}...",
     "failedToLoad": "加载失败",
     "info": "ℹ️ {{path}}",
     "hash": "哈希值：{{hash}}",
     "couldNotVerify": "⚠️ 无法验证 {{path}}：{{error}}",
-    "criticalError": "严重错误：{{error}}"
+    "criticalError": "严重错误：{{error}}",
+    "devModeWarning": "⚠️ 检测到开发模式",
+    "devModeDesc": "开发模式下完整性检查已禁用。请构建生产版本以启用验证。",
+    "modalTitle": "应用完整性检查",
+    "calculating": "正在计算校验和...",
+    "connectionError": "无法连接到 GitHub 获取官方校验和。请手动检查。",
+    "viewRelease": "查看发布说明",
+    "log": {
+      "receivedChecksums": "✅ 已从 GitHub 接收官方校验和",
+      "corsBlocked": "⚠️ CORS 拦截 - 无法从 GitHub 获取校验和",
+      "corsReason1": "原因 1：GitHub 的 CORS 策略阻止跨域请求",
+      "corsReason2": "原因 2：浏览器扩展或网络代理干扰",
+      "corsReason3": "原因 3：您可以在 GitHub 发布页面手动验证",
+      "fileVerified": "✅ {{path}} 验证成功",
+      "hashMismatch": "❌ {{path}} 哈希不匹配",
+      "noChecksum": "❓ 未找到 {{path}} 的校验和"
+    },
+    "manual": {
+      "title": "手动验证指南",
+      "step1": "访问 <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub 发布页面</a>",
+      "step2": "下载您版本的 <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code>",
+      "step3": "使用 SHA-256 验证工具手动比较校验和"
+    }
   },
   "militaryBadge": {
     "title": "军用级安全",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. 输入与混淆",
-        "description": "输入您的敏感数据。我们将要求您设置<span class=\"text-white font-mono\">行密度</span>（例如，100 行）。您的真实数据将隐藏在 99 个假行中的一个随机行中。",
+        "description": "输入您的敏感数据。我们会要求您设置<0>行密度</0>（例如，100 行）。您的真实数据将隐藏在 99 个虚假行中的一个随机行中。",
         "example": {
           "fake1": "第 34 行: 832-19-22 (假)",
           "real": "第 35 行: 123-45-67 (真实数据)",
@@ -868,6 +962,9 @@
       "text": "此工具将您的数据隐藏在图像像素的最低有效位 (LSB) 中。生成的图像在肉眼看来完全相同，但包含您的秘密信息。",
       "noteTitle": "注意：",
       "noteText": "请勿压缩下载的图像（例如，通过 WhatsApp/Messenger 发送通常会压缩图像）。始终以文件（文档）形式共享或严格保存在本地。"
+    },
+    "error": {
+      "copyFailed": "复制到剪贴板失败"
     }
   },
   "wallet": {

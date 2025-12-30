@@ -14,7 +14,8 @@
     "fetch": "Getir",
     "or": "- VEYA -",
     "none": "Yok",
-    "processing": "İşleniyor..."
+    "processing": "İşleniyor...",
+    "next": "İleri"
   },
   "errorBoundary": {
     "title": "Bir şeyler yanlış gitti",
@@ -135,6 +136,15 @@
           "Yerinde Seçenekler"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "tek seferlik",
+      "monthly": "aylık",
+      "quarterly": "üç aylık",
+      "semiAnnual": "6 aylık",
+      "yearly": "yıllık",
+      "contactUs": "bizimle iletişime geçin",
+      "custom": "Özel"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Kullanıcı Sorumlulukları",
-        "items": [
-          "Hizmeti hiçbir yasadışı faaliyet için kullanmamayı kabul edersiniz.",
-          "Kimlik bilgilerinizi veya ana şifrenizi kaybederseniz, verilerinizi kurtaramayacağımızı kabul edersiniz.",
-          "Hesabınızın ve lisans anahtarlarınızın gizliliğini korumaktan sorumlusunuz."
-        ]
+        "items": {
+          "0": "Hizmeti hiçbir yasadışı faaliyet için kullanmamayı kabul edersiniz.",
+          "1": "Kimlik bilgilerinizi veya ana şifrenizi kaybederseniz, verilerinizi kurtaramayacağımızı kabul edersiniz.",
+          "2": "Hesabınızın ve lisans anahtarlarınızın gizliliğini korumaktan sorumlusunuz."
+        }
       },
       "ip": {
         "title": "4. Fikri Mülkiyet",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Dijital varlıklarınız için güvenli şifreleme ve steganografi. Sıfır bilgi mimarisi ile askeri düzey koruma.",
+    "links": {
+      "pricing": "Fiyatlandırma",
+      "terms": "Hizmet Şartları",
+      "source": "Kaynak Kodu",
+      "share": "Paylaş"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Tüm hakları saklıdır.",
+    "license": "Denetim amaçlı CC-BY-NC-ND 4.0 altında lisanslanmıştır. Ticari kullanım için Pro lisansı gereklidir.",
     "linkCopied": "Link panoya kopyalandı!",
     "forceUpdate": "Zorla Güncelle / Önbelleği Temizle",
     "publicRepo": "Genel Depo (Denetim)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "Masaüstü Kimlik Doğrulama QR",
-    "registrationFailed": "Kayıt başarısız"
+    "registrationFailed": "Kayıt başarısız",
+    "status": {
+      "hardwareKeyActive": "Donanım Anahtarı Etkin",
+      "active": "Etkin",
+      "activatePro": "Pro'yu Etkinleştir",
+      "tempPro": "Geçici Pro (24s)",
+      "proActive": "Pro Etkin",
+      "user": "Kullanıcı",
+      "proLicenseActive": "Pro Lisansı Etkin",
+      "expiresIn": "{{days}} gün içinde sona erer",
+      "expired": "Süresi doldu"
+    },
+    "networkError": "Ağ hatası: {{error}}",
+    "authApp": {
+      "title": "Kimlik Doğrulayıcı ile Tarayın",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "İndir"
+    },
+    "login": {
+      "tab": "Giriş",
+      "nickname": "Takma ad",
+      "nicknamePlaceholder": "Takma adınızı girin",
+      "code": "6 haneli kod",
+      "codePlaceholder": "Uygulamadan 6 haneli kodu girin",
+      "button": "Giriş Yap",
+      "success": "Giriş başarılı!",
+      "error": "Giriş başarısız. Lütfen kimlik bilgilerinizi kontrol edin.",
+      "inputError": "Lütfen tüm alanları doldurun"
+    },
+    "register": {
+      "tab": "Kayıt",
+      "chooseNickname": "Takma Ad Seçin",
+      "nicknamePlaceholder": "Benzersiz bir takma ad girin",
+      "note": "Not: Gizli anahtarınızı güvenli bir şekilde saklayın. Giriş yapmak için ihtiyacınız olacak.",
+      "button": "Kayıt Ol",
+      "scanWithAuth": "Kimlik Doğrulayıcı ile QR Kodu Tarayın",
+      "loadingQR": "QR oluşturuluyor...",
+      "manualEntry": "Manuel Giriş",
+      "keySaved": "Anahtar kaydedildi! Lütfen Giriş sekmesine gidin.",
+      "savedGoLogin": "Kayıt tamamlandı. Lütfen Giriş sekmesine geçin.",
+      "scanNote": "Bu QR kodunu kimlik doğrulayıcı uygulamanızla (Google Authenticator veya Microsoft Authenticator) tarayın",
+      "success": "Kayıt başarılı! QR kodu oluşturuldu.",
+      "manualSuccess": "Manuel anahtar girişi başarılı!",
+      "errorNickname": "Takma ad 3-20 karakter olmalı, yalnızca alfanümerik",
+      "errorFormat": "Geçersiz gizli format. Base32 (A-Z, 2-7) olmalıdır",
+      "errorTaken": "Takma ad '{{nickname}}' zaten alınmış. Lütfen başka birini seçin."
+    },
+    "modal": {
+      "title": "Lisans Yöneticisi",
+      "subtitle": "Pro lisansınızı ve kimlik doğrulamanızı yönetin",
+      "logout": "Çıkış Yap"
+    }
   },
   "paymentModal": {
     "title": "USDT Ödemesi",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ {{path}} doğrulanamadı: {{error}}",
-    "criticalError": "Kritik Hata: {{error}}"
+    "criticalError": "Kritik Hata: {{error}}",
+    "buttonLabel": "Bütünlüğü Doğrula",
+    "devModeWarning": "⚠️ Geliştirme Modu Algılandı",
+    "devModeDesc": "Geliştirme modunda bütünlük kontrolü devre dışı. Doğrulamayı etkinleştirmek için üretim sürümünü oluşturun.",
+    "modalTitle": "Uygulama Bütünlük Kontrolü",
+    "calculating": "Kontrol toplamları hesaplanıyor...",
+    "connectionError": "Resmi kontrol toplamlarını almak için GitHub'a bağlanılamadı. Lütfen manuel olarak kontrol edin.",
+    "viewRelease": "Sürüm Notlarını Görüntüle",
+    "log": {
+      "receivedChecksums": "✅ GitHub'dan resmi kontrol toplamları alındı",
+      "corsBlocked": "⚠️ CORS engellendi - GitHub'dan kontrol toplamları alınamıyor",
+      "corsReason1": "Neden 1: GitHub'ın CORS politikası çapraz kaynak isteklerini engelliyor",
+      "corsReason2": "Neden 2: Tarayıcı uzantısı veya ağ proxy'si müdahale ediyor",
+      "corsReason3": "Neden 3: GitHub sürüm sayfasında manuel olarak doğrulayabilirsiniz",
+      "fileVerified": "✅ {{path}} başarıyla doğrulandı",
+      "hashMismatch": "❌ {{path}} için hash uyuşmazlığı",
+      "noChecksum": "❓ {{path}} için kontrol toplamı bulunamadı"
+    },
+    "manual": {
+      "title": "Manuel Doğrulama Kılavuzu",
+      "step1": "<a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Sürümler</a> sayfasını ziyaret edin",
+      "step2": "Sürümünüz için <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> dosyasını indirin",
+      "step3": "SHA-256 doğrulama araçlarını kullanarak kontrol toplamlarını manuel olarak karşılaştırın"
+    }
   },
   "militaryBadge": {
     "title": "ASKERİ DÜZEY GÜVENLİK",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Girin & Gizleyin",
-        "description": "Hassas verilerinizi girin. Ardından bir <span class=\"text-white font-mono\">Satır Yoğunluğu</span> (örn. 100 satır) ayarlamanızı isteyeceğiz. Gerçek verileriniz 99 sahte satır arasında rastgele bir satırda gizlenecek.",
+        "description": "Hassas verilerinizi girin. Daha sonra bir <0>Satır Yoğunluğu</0> belirlemenizi isteyeceğiz（örn. 100 satır）. Gerçek verileriniz 99 sahte satır arasında rastgele bir satırda gizlenecektir。",
         "example": {
           "fake1": "Satır 34: 832-19-22 (Sahte)",
           "real": "Satır 35: 123-45-67 (Gerçek Veri)",
@@ -868,6 +962,9 @@
       "text": "Bu araç verilerinizi resim piksellerinin en az önemli bitlerinde (LSB) gizler. Ortaya çıkan resim insan gözüne aynı görünür ancak gizli mesajınızı içerir.",
       "noteTitle": "Not:",
       "noteText": "İndirilen resmi sıkıştırmayın (örn. WhatsApp/Messenger üzerinden göndermek genellikle resimleri sıkıştırır). Her zaman Dosya (Belge) olarak paylaşın veya kesinlikle yerel tutun."
+    },
+    "error": {
+      "copyFailed": "Panoya kopyalama başarısız"
     }
   },
   "wallet": {

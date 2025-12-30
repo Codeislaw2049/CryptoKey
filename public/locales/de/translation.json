@@ -14,7 +14,8 @@
     "fetch": "Abrufen",
     "or": "- ODER -",
     "none": "Keine",
-    "processing": "Verarbeitung..."
+    "processing": "Verarbeitung...",
+    "next": "Weiter"
   },
   "errorBoundary": {
     "title": "Es ist ein Fehler aufgetreten",
@@ -135,6 +136,15 @@
           "On-Premise-Optionen"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "einmalig",
+      "monthly": "pro Monat",
+      "quarterly": "pro Quartal",
+      "semiAnnual": "pro 6 Monate",
+      "yearly": "pro Jahr",
+      "contactUs": "kontaktieren Sie uns",
+      "custom": "Individuell"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Nutzerpflichten",
-        "items": [
-          "Sie verpflichten sich, den Dienst nicht für illegale Aktivitäten zu nutzen.",
-          "Sie bestätigen, dass wir Ihre Daten nicht wiederherstellen können, wenn Sie Ihre Anmeldedaten oder Ihr Master-Passwort verlieren.",
-          "Sie sind verantwortlich für die Wahrung der Vertraulichkeit Ihres Kontos und Ihrer Lizenzschlüssel."
-        ]
+        "items": {
+          "0": "Sie verpflichten sich, den Dienst nicht für illegale Aktivitäten zu nutzen.",
+          "1": "Sie bestätigen, dass wir Ihre Daten nicht wiederherstellen können, wenn Sie Ihre Anmeldedaten oder Ihr Master-Passwort verlieren.",
+          "2": "Sie sind verantwortlich für die Wahrung der Vertraulichkeit Ihres Kontos und Ihrer Lizenzschlüssel."
+        }
       },
       "ip": {
         "title": "4. Geistiges Eigentum",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Sichere Verschlüsselung und Steganographie für Ihre digitalen Vermögenswerte. Militärischer Schutz mit Zero-Knowledge-Architektur.",
+    "links": {
+      "pricing": "Preise",
+      "terms": "Nutzungsbedingungen",
+      "source": "Quellcode",
+      "share": "Teilen"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Alle Rechte vorbehalten.",
+    "license": "Lizenziert unter CC-BY-NC-ND 4.0 für Prüfungszwecke. Pro-Lizenz für kommerzielle Nutzung erforderlich.",
     "linkCopied": "Link in Zwischenablage kopiert!",
     "forceUpdate": "Update erzwingen / Cache löschen",
     "publicRepo": "Öffentliches Repository (Prüfung)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "Desktop-Auth-QR",
-    "registrationFailed": "Registrierung fehlgeschlagen"
+    "registrationFailed": "Registrierung fehlgeschlagen",
+    "status": {
+      "hardwareKeyActive": "Hardware-Schlüssel aktiv",
+      "active": "Aktiv",
+      "activatePro": "Pro aktivieren",
+      "tempPro": "Temporäres Pro (24h)",
+      "proActive": "Pro aktiv",
+      "user": "Benutzer",
+      "proLicenseActive": "Pro-Lizenz aktiv",
+      "expiresIn": "Läuft in {{days}} Tagen ab",
+      "expired": "Abgelaufen"
+    },
+    "networkError": "Netzwerkfehler: {{error}}",
+    "authApp": {
+      "title": "Mit Authentifizierungs-App scannen",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Herunterladen"
+    },
+    "login": {
+      "tab": "Anmelden",
+      "nickname": "Spitzname",
+      "nicknamePlaceholder": "Geben Sie Ihren Spitznamen ein",
+      "code": "6-stelliger Code",
+      "codePlaceholder": "Geben Sie den 6-stelligen Code aus der App ein",
+      "button": "Anmelden",
+      "success": "Anmeldung erfolgreich!",
+      "error": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.",
+      "inputError": "Bitte füllen Sie alle Felder aus"
+    },
+    "register": {
+      "tab": "Registrieren",
+      "chooseNickname": "Spitznamen wählen",
+      "nicknamePlaceholder": "Geben Sie einen eindeutigen Spitznamen ein",
+      "note": "Hinweis: Speichern Sie Ihren geheimen Schlüssel sicher. Sie benötigen ihn zum Anmelden.",
+      "button": "Registrieren",
+      "scanWithAuth": "QR-Code mit Authentifikator scannen",
+      "loadingQR": "QR wird generiert...",
+      "manualEntry": "Manuelle Eingabe",
+      "keySaved": "Schlüssel gespeichert! Bitte gehen Sie zur Registerkarte Anmelden.",
+      "savedGoLogin": "Registrierung abgeschlossen. Bitte wechseln Sie zur Registerkarte Anmelden.",
+      "scanNote": "Scannen Sie diesen QR-Code mit Ihrer Authentifizierungs-App (Google Authenticator oder Microsoft Authenticator)",
+      "success": "Registrierung erfolgreich! QR-Code generiert.",
+      "manualSuccess": "Manuelle Schlüsseleingabe erfolgreich!",
+      "errorNickname": "Spitzname muss 3-20 Zeichen lang sein, nur alphanumerisch",
+      "errorFormat": "Ungültiges geheimes Format. Muss base32 (A-Z, 2-7) sein",
+      "errorTaken": "Spitzname '{{nickname}}' ist bereits vergeben. Bitte wählen Sie einen anderen."
+    },
+    "modal": {
+      "title": "Lizenzverwaltung",
+      "subtitle": "Verwalten Sie Ihre Pro-Lizenz und Authentifizierung",
+      "logout": "Abmelden"
+    }
   },
   "paymentModal": {
     "title": "USDT-Zahlung",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ {{path}} konnte nicht verifiziert werden: {{error}}",
-    "criticalError": "Kritischer Fehler: {{error}}"
+    "criticalError": "Kritischer Fehler: {{error}}",
+    "buttonLabel": "Integrität überprüfen",
+    "devModeWarning": "⚠️ Entwicklungsmodus erkannt",
+    "devModeDesc": "Die Integritätsprüfung ist im Entwicklungsmodus deaktiviert. Erstellen Sie die Produktionsversion, um die Überprüfung zu aktivieren.",
+    "modalTitle": "Anwendungsintegritätsprüfung",
+    "calculating": "Prüfsummen werden berechnet...",
+    "connectionError": "Es konnte keine Verbindung zu GitHub hergestellt werden, um offizielle Prüfsummen abzurufen. Bitte manuell überprüfen.",
+    "viewRelease": "Versionshinweise anzeigen",
+    "log": {
+      "receivedChecksums": "✅ Offizielle Prüfsummen von GitHub empfangen",
+      "corsBlocked": "⚠️ CORS blockiert - Prüfsummen können nicht von GitHub abgerufen werden",
+      "corsReason1": "Grund 1: Die CORS-Richtlinie von GitHub blockiert Cross-Origin-Anfragen",
+      "corsReason2": "Grund 2: Browser-Erweiterung oder Netzwerk-Proxy stört",
+      "corsReason3": "Grund 3: Sie können auf der GitHub-Release-Seite manuell überprüfen",
+      "fileVerified": "✅ {{path}} erfolgreich überprüft",
+      "hashMismatch": "❌ Hash-Nichtübereinstimmung für {{path}}",
+      "noChecksum": "❓ Keine Prüfsumme für {{path}} gefunden"
+    },
+    "manual": {
+      "title": "Manuelle Überprüfungsanleitung",
+      "step1": "Besuchen Sie <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Laden Sie <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> für Ihre Version herunter",
+      "step3": "Vergleichen Sie die Prüfsummen manuell mit SHA-256-Verifizierungstools"
+    }
   },
   "militaryBadge": {
     "title": "SICHERHEIT IN MILITÄRQUALITÄT",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Eingeben & Verschleiern",
-        "description": "Geben Sie Ihre sensiblen Daten ein. Wir werden Sie dann bitten, eine <span class=\"text-white font-mono\">Zeilendichte</span> festzulegen (z.B. 100 Zeilen). Ihre echten Daten werden in einer zufälligen Zeile unter 99 gefälschten Zeilen versteckt.",
+        "description": "Geben Sie Ihre sensiblen Daten ein. Wir werden Sie dann bitten, eine <0>Zeilendichte</0> festzulegen（z. B. 100 Zeilen）. Ihre echten Daten werden in einer zufälligen Zeile unter 99 gefälschten Zeilen versteckt。",
         "example": {
           "fake1": "Zeile 34: 832-19-22 (Gefälscht)",
           "real": "Zeile 35: 123-45-67 (Echte Daten)",
@@ -868,6 +962,9 @@
       "text": "Dieses Tool versteckt Ihre Daten in den am wenigsten signifikanten Bits (LSB) der Bildpixel. Das resultierende Bild sieht für das menschliche Auge identisch aus, enthält aber Ihre geheime Nachricht.",
       "noteTitle": "Hinweis:",
       "noteText": "Komprimieren Sie das heruntergeladene Bild nicht (z.B. das Senden über WhatsApp/Messenger komprimiert Bilder oft). Teilen Sie es immer als Datei (Dokument) oder bewahren Sie es strikt lokal auf."
+    },
+    "error": {
+      "copyFailed": "Kopieren in die Zwischenablage fehlgeschlagen"
     }
   },
   "wallet": {

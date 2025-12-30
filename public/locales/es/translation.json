@@ -14,7 +14,8 @@
     "fetch": "Obtener",
     "or": "- O -",
     "none": "Ninguno",
-    "processing": "Procesando..."
+    "processing": "Procesando...",
+    "next": "Siguiente"
   },
   "errorBoundary": {
     "title": "Algo salió mal",
@@ -135,6 +136,15 @@
           "Opciones On-premise"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "único",
+      "monthly": "por mes",
+      "quarterly": "por trimestre",
+      "semiAnnual": "por 6 meses",
+      "yearly": "por año",
+      "contactUs": "contáctenos",
+      "custom": "Personalizado"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Responsabilidades del Usuario",
-        "items": [
-          "Aceptas no usar el Servicio para actividades ilegales.",
-          "Reconoces que si pierdes tus credenciales o contraseña maestra, no podemos recuperar tus datos.",
-          "Eres responsable de mantener la confidencialidad de tu cuenta y claves de licencia."
-        ]
+        "items": {
+          "0": "Aceptas no usar el Servicio para actividades ilegales.",
+          "1": "Reconoces que si pierdes tus credenciales o contraseña maestra, no podemos recuperar tus datos.",
+          "2": "Eres responsable de mantener la confidencialidad de tu cuenta y claves de licencia."
+        }
       },
       "ip": {
         "title": "4. Propiedad Intelectual",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Cifrado y esteganografía segura para sus activos digitales. Protección de grado militar con arquitectura de conocimiento cero.",
+    "links": {
+      "pricing": "Precios",
+      "terms": "Términos de Servicio",
+      "source": "Código Fuente",
+      "share": "Compartir"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Todos los derechos reservados.",
+    "license": "Licenciado bajo CC-BY-NC-ND 4.0 con fines de auditoría. Se requiere licencia Pro para uso comercial.",
     "linkCopied": "¡Enlace copiado al portapapeles!",
     "forceUpdate": "Forzar Actualización / Limpiar Caché",
     "publicRepo": "Repositorio Público (Auditoría)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "QR de Autenticación de Escritorio",
-    "registrationFailed": "Registro fallido"
+    "registrationFailed": "Registro fallido",
+    "status": {
+      "hardwareKeyActive": "Clave de Hardware Activa",
+      "active": "Activo",
+      "activatePro": "Activar Pro",
+      "tempPro": "Pro Temporal (24h)",
+      "proActive": "Pro Activo",
+      "user": "Usuario",
+      "proLicenseActive": "Licencia Pro Activa",
+      "expiresIn": "Expira en {{days}} días",
+      "expired": "Expirado"
+    },
+    "networkError": "Error de red: {{error}}",
+    "authApp": {
+      "title": "Escanear con la aplicación de autenticación",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Descargar"
+    },
+    "login": {
+      "tab": "Iniciar sesión",
+      "nickname": "Apodo",
+      "nicknamePlaceholder": "Ingrese su apodo",
+      "code": "Código de 6 dígitos",
+      "codePlaceholder": "Ingrese el código de 6 dígitos de la app",
+      "button": "Iniciar sesión",
+      "success": "¡Inicio de sesión exitoso!",
+      "error": "Inicio de sesión fallido. Verifique sus credenciales.",
+      "inputError": "Por favor complete todos los campos"
+    },
+    "register": {
+      "tab": "Registrarse",
+      "chooseNickname": "Elegir un apodo",
+      "nicknamePlaceholder": "Ingrese un apodo único",
+      "note": "Nota: Guarde su clave secreta de forma segura. La necesitará para iniciar sesión.",
+      "button": "Registrarse",
+      "scanWithAuth": "Escanear código QR con autenticador",
+      "loadingQR": "Generando QR...",
+      "manualEntry": "Entrada manual",
+      "keySaved": "¡Clave guardada! Por favor vaya a la pestaña Iniciar sesión.",
+      "savedGoLogin": "Registro completo. Por favor cambie a la pestaña Iniciar sesión.",
+      "scanNote": "Escanee este código QR con su aplicación de autenticación (Google Authenticator o Microsoft Authenticator)",
+      "success": "¡Registro exitoso! Código QR generado.",
+      "manualSuccess": "¡Entrada manual de clave exitosa!",
+      "errorNickname": "El apodo debe tener 3-20 caracteres, solo alfanuméricos",
+      "errorFormat": "Formato secreto inválido. Debe ser base32 (A-Z, 2-7)",
+      "errorTaken": "El apodo '{{nickname}}' ya está en uso. Por favor elija otro."
+    },
+    "modal": {
+      "title": "Administrador de licencias",
+      "subtitle": "Administre su licencia Pro y autenticación",
+      "logout": "Cerrar sesión"
+    }
   },
   "paymentModal": {
     "title": "Pago en USDT",
@@ -363,13 +434,36 @@
   },
   "integrityCheck": {
     "title": "Verifica que el código de esta app coincida con el código fuente en GitHub",
+    "buttonLabel": "Verificar Integridad",
     "fetching": "Obteniendo firma de lanzamiento para {{version}}...",
     "verifying": "Verificando {{path}}...",
     "failedToLoad": "Error al cargar",
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ No se pudo verificar {{path}}: {{error}}",
-    "criticalError": "Error Crítico: {{error}}"
+    "criticalError": "Error Crítico: {{error}}",
+    "devModeWarning": "⚠️ Modo de desarrollo detectado",
+    "devModeDesc": "La verificación de integridad está deshabilitada en modo de desarrollo. Compile la versión de producción para habilitar la verificación.",
+    "modalTitle": "Verificación de integridad de la aplicación",
+    "calculating": "Calculando sumas de verificación...",
+    "connectionError": "No se pudo conectar a GitHub para obtener las sumas de verificación oficiales. Por favor, verifique manualmente.",
+    "viewRelease": "Ver notas de la versión",
+    "log": {
+      "receivedChecksums": "✅ Sumas de verificación oficiales recibidas de GitHub",
+      "corsBlocked": "⚠️ CORS bloqueado - no se pueden obtener sumas de verificación de GitHub",
+      "corsReason1": "Razón 1: La política CORS de GitHub bloquea solicitudes de origen cruzado",
+      "corsReason2": "Razón 2: Extensión del navegador o proxy de red interfiriendo",
+      "corsReason3": "Razón 3: Puede verificar manualmente en la página de versiones de GitHub",
+      "fileVerified": "✅ {{path}} verificado exitosamente",
+      "hashMismatch": "❌ Hash no coincide para {{path}}",
+      "noChecksum": "❓ No se encontró suma de verificación para {{path}}"
+    },
+    "manual": {
+      "title": "Guía de verificación manual",
+      "step1": "Visite <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Descargue <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> para su versión",
+      "step3": "Compare las sumas de verificación manualmente usando herramientas de verificación SHA-256"
+    }
   },
   "militaryBadge": {
     "title": "SEGURIDAD DE GRADO MILITAR",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Ingresar y Ofuscar",
-        "description": "Ingresa tus datos sensibles. Luego te pediremos que establezcas una <span class=\"text-white font-mono\">Densidad de Filas</span> (ej., 100 filas). Tus datos reales se ocultarán en una fila aleatoria entre 99 filas falsas.",
+        "description": "Ingrese sus datos sensibles. Luego le pediremos que establezca una <0>Densidad de fila</0>（por ejemplo, 100 filas）. Sus datos reales se ocultarán en una fila aleatoria entre 99 filas falsas。",
         "example": {
           "fake1": "Fila 34: 832-19-22 (Falso)",
           "real": "Fila 35: 123-45-67 (Datos Reales)",
@@ -868,6 +962,9 @@
       "text": "Esta herramienta oculta tus datos en los bits menos significativos (LSB) de los píxeles de la imagen. La imagen resultante se ve idéntica al ojo humano pero contiene tu mensaje secreto.",
       "noteTitle": "Nota:",
       "noteText": "No comprimas la imagen descargada (ej., enviar vía WhatsApp/Messenger a menudo comprime imágenes). Siempre comparte como archivo (Documento) o mantén estrictamente local."
+    },
+    "error": {
+      "copyFailed": "Error al copiar al portapapeles"
     }
   },
   "wallet": {

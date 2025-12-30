@@ -14,7 +14,8 @@
     "fetch": "Buscar",
     "or": "- OU -",
     "none": "Nenhum",
-    "processing": "Processando..."
+    "processing": "Processando...",
+    "next": "Próximo"
   },
   "errorBoundary": {
     "title": "Algo correu mal",
@@ -135,6 +136,15 @@
           "Opções On-premise"
         ]
       }
+    },
+    "periods": {
+      "oneTime": "único",
+      "monthly": "por mês",
+      "quarterly": "por trimestre",
+      "semiAnnual": "por 6 meses",
+      "yearly": "por ano",
+      "contactUs": "entre em contato",
+      "custom": "Personalizado"
     }
   },
   "terms": {
@@ -157,11 +167,11 @@
       },
       "responsibilities": {
         "title": "3. Responsabilidades do Utilizador",
-        "items": [
-          "Concorda em não utilizar o Serviço para qualquer atividade ilegal.",
-          "Reconhece que se perder as suas credenciais ou palavra-passe mestra, não podemos recuperar os seus dados.",
-          "É responsável por manter a confidencialidade da sua conta e chaves de licença."
-        ]
+        "items": {
+          "0": "Concorda em não utilizar o Serviço para qualquer atividade ilegal.",
+          "1": "Reconhece que se perder as suas credenciais ou palavra-passe mestra, não podemos recuperar os seus dados.",
+          "2": "É responsável por manter a confidencialidade da sua conta e chaves de licença."
+        }
       },
       "ip": {
         "title": "4. Propriedade Intelectual",
@@ -179,6 +189,15 @@
     }
   },
   "footer": {
+    "description": "Encriptação e esteganografia segura para os seus ativos digitais. Proteção de nível militar com arquitetura de conhecimento zero.",
+    "links": {
+      "pricing": "Preços",
+      "terms": "Termos de Serviço",
+      "source": "Código Fonte",
+      "share": "Partilhar"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Todos os direitos reservados.",
+    "license": "Licenciado sob CC-BY-NC-ND 4.0 para fins de auditoria. Licença Pro necessária para uso comercial.",
     "linkCopied": "Link copiado para a área de transferência!",
     "forceUpdate": "Forçar Atualização / Limpar Cache",
     "publicRepo": "Repositório Público (Auditoria)",
@@ -188,7 +207,59 @@
   },
   "licenseManager": {
     "desktopAuthQr": "QR Auth Desktop",
-    "registrationFailed": "Falha no registo"
+    "registrationFailed": "Falha no registo",
+    "status": {
+      "hardwareKeyActive": "Chave de Hardware Ativa",
+      "active": "Ativo",
+      "activatePro": "Ativar Pro",
+      "tempPro": "Pro Temporário (24h)",
+      "proActive": "Pro Ativo",
+      "user": "Utilizador",
+      "proLicenseActive": "Licença Pro Ativa",
+      "expiresIn": "Expira em {{days}} dias",
+      "expired": "Expirado"
+    },
+    "networkError": "Erro de rede: {{error}}",
+    "authApp": {
+      "title": "Digitalizar com Autenticador",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "Baixar"
+    },
+    "login": {
+      "tab": "Entrar",
+      "nickname": "Apelido",
+      "nicknamePlaceholder": "Digite seu apelido",
+      "code": "Código de 6 dígitos",
+      "codePlaceholder": "Digite o código de 6 dígitos do app",
+      "button": "Entrar",
+      "success": "Login bem-sucedido!",
+      "error": "Falha no login. Verifique suas credenciais.",
+      "inputError": "Por favor, preencha todos os campos"
+    },
+    "register": {
+      "tab": "Registrar",
+      "chooseNickname": "Escolha um Apelido",
+      "nicknamePlaceholder": "Digite um apelido único",
+      "note": "Nota: Salve sua chave secreta com segurança. Você precisará dela para fazer login.",
+      "button": "Registrar",
+      "scanWithAuth": "Digitalize o código QR com Autenticador",
+      "loadingQR": "Gerando QR...",
+      "manualEntry": "Entrada Manual",
+      "keySaved": "Chave salva! Por favor, vá para a aba Login.",
+      "savedGoLogin": "Registro completo. Por favor, mude para a aba Login.",
+      "scanNote": "Digitalize este código QR com seu aplicativo autenticador (Google Authenticator ou Microsoft Authenticator)",
+      "success": "Registro bem-sucedido! Código QR gerado.",
+      "manualSuccess": "Entrada manual de chave bem-sucedida!",
+      "errorNickname": "O apelido deve ter 3-20 caracteres, apenas alfanuméricos",
+      "errorFormat": "Formato secreto inválido. Deve ser base32 (A-Z, 2-7)",
+      "errorTaken": "O apelido '{{nickname}}' já está em uso. Por favor, escolha outro."
+    },
+    "modal": {
+      "title": "Gerenciador de Licenças",
+      "subtitle": "Gerencie sua licença Pro e autenticação",
+      "logout": "Sair"
+    }
   },
   "paymentModal": {
     "title": "Pagamento USDT",
@@ -369,7 +440,30 @@
     "info": "ℹ️ {{path}}",
     "hash": "Hash: {{hash}}",
     "couldNotVerify": "⚠️ Não foi possível verificar {{path}}: {{error}}",
-    "criticalError": "Erro Crítico: {{error}}"
+    "criticalError": "Erro Crítico: {{error}}",
+    "buttonLabel": "Verificar Integridade",
+    "devModeWarning": "⚠️ Modo de desenvolvimento detectado",
+    "devModeDesc": "A verificação de integridade está desativada no modo de desenvolvimento. Compile a versão de produção para ativar a verificação.",
+    "modalTitle": "Verificação de integridade da aplicação",
+    "calculating": "Calculando checksums...",
+    "connectionError": "Não foi possível conectar ao GitHub para buscar checksums oficiais. Por favor, verifique manualmente.",
+    "viewRelease": "Ver notas de lançamento",
+    "log": {
+      "receivedChecksums": "✅ Checksums oficiais recebidos do GitHub",
+      "corsBlocked": "⚠️ CORS bloqueado - não é possível buscar checksums do GitHub",
+      "corsReason1": "Motivo 1: A política CORS do GitHub bloqueia solicitações de origem cruzada",
+      "corsReason2": "Motivo 2: Extensão do navegador ou proxy de rede interferindo",
+      "corsReason3": "Motivo 3: Você pode verificar manualmente na página de lançamentos do GitHub",
+      "fileVerified": "✅ {{path}} verificado com sucesso",
+      "hashMismatch": "❌ Hash incompatível para {{path}}",
+      "noChecksum": "❓ Nenhum checksum encontrado para {{path}}"
+    },
+    "manual": {
+      "title": "Guia de verificação manual",
+      "step1": "Visite <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub Releases</a>",
+      "step2": "Baixe <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code> para sua versão",
+      "step3": "Compare os checksums manualmente usando ferramentas de verificação SHA-256"
+    }
   },
   "militaryBadge": {
     "title": "SEGURANÇA DE NÍVEL MILITAR",
@@ -468,7 +562,7 @@
       },
       "obfuscate": {
         "title": "2. Digitar e Ofuscar",
-        "description": "Digite os seus dados sensíveis. Depois pediremos que defina uma <span class=\"text-white font-mono\">Densidade de Linhas</span> (ex., 100 linhas). Os seus dados reais serão ocultados numa linha aleatória entre 99 linhas falsas.",
+        "description": "Digite seus dados sensíveis. Em seguida, pediremos que você defina uma <0>Densidade de Linha</0>（por exemplo, 100 linhas）. Seus dados reais serão ocultados em uma linha aleatória entre 99 linhas falsas。",
         "example": {
           "fake1": "Linha 34: 832-19-22 (Falso)",
           "real": "Linha 35: 123-45-67 (Dados Reais)",
@@ -868,6 +962,9 @@
       "text": "Esta ferramenta oculta os seus dados nos bits menos significativos (LSB) dos pixels da imagem. A imagem resultante parece idêntica ao olho humano mas contém a sua mensagem secreta.",
       "noteTitle": "Nota:",
       "noteText": "Não comprima a imagem descarregada (ex., enviar via WhatsApp/Messenger frequentemente comprime imagens). Sempre partilhe como ficheiro (Documento) ou mantenha estritamente local."
+    },
+    "error": {
+      "copyFailed": "Falha ao copiar para a área de transferência"
     }
   },
   "wallet": {
