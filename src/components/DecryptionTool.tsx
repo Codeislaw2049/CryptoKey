@@ -159,103 +159,37 @@ export const DecryptionTool = () => {
       
       let clean = val;
 
-      // 1. Try to find Separator-based block (User requested robust fix)
-      // Matches content between -------------------- separators
-      // We use split() which is more robust than regex against newlines/spacing issues
-      const separatorParts = val.split('--------------------');
-      if (separatorParts.length >= 3) {
-          // The content should be in the middle part (index 1)
-          // Part 0: Header/Label
-          // Part 1: Ciphertext (surrounded by newlines usually)
-          // Part 2: Footer/Hash
-          const candidate = separatorParts[1].trim();
-          if (candidate.length > 0) {
-              clean = candidate;
-          }
-      } 
-      // 2. Try to find JSON block
-      else {
-          const jsonMatch = val.match(/\{[\s\S]*"iv"[\s\S]*\}/);
-          if (jsonMatch) {
-              clean = jsonMatch[0];
-          } else {
-              // 3. Regex-based Marker Extraction
-          // Support multiple languages and variations
+      // 1. Try to find JSON block
+      const jsonMatch = val.match(/\{[\s\S]*"iv"[\s\S]*\}/);
+      if (jsonMatch) {
+          clean = jsonMatch[0];
+      } else {
+          // 2. Fallback: Find the longest Base64-like string
+          // This ignores all headers, footers, language labels, and separators.
+          // AES ciphertext is Base64. We look for continuous blocks of [A-Za-z0-9+/=]
           
-          // Comprehensive list of Start Markers (Ciphertext) from all 13 supported languages
-          // en, id, vi, hi, ko, tr, pt, es, de, fr, ja, zh, zh-TW
-          const startMarkers = [
-              'Ciphertext', 
-              'Texto Cifrado', 
-              'Geheimtext', 
-              'Texte chiffré', 
-              'Şifreli Metin', 
-              'Bản mã', 
-              'सिफरटेक्स्ट', 
-              '암호문', 
-              '暗号文', 
-              '密文'
-          ];
+          // Split by whitespace to get "words"
+          const words = val.split(/[\s\n\r\t]+/);
           
-          // Comprehensive list of End Markers (Hash) from all 13 supported languages
-          const endMarkers = [
-              'Hash', 
-              '雜湊', 
-              '雜湊值', 
-              'Hachage', 
-              '해시', 
-              'ハッシュ', 
-              '哈希', 
-              '哈希值', 
-              'हैश'
-          ];
-
-          // Construct regex for start marker: (Label)(Optional Space)(Colon)(Optional Space)
-          const startRegex = new RegExp(`(?:${startMarkers.join('|')})\\s*[:：]\\s*`, 'i');
-          const matchStart = val.match(startRegex);
-
-          if (matchStart && matchStart.index !== undefined) {
-               const startIndex = matchStart.index + matchStart[0].length;
-               
-               // Construct regex for end marker
-               const endRegex = new RegExp(`(?:${endMarkers.join('|')})\\s*[:：]`, 'i');
-               
-               // Search for end marker AFTER the start marker
-               const remainingText = val.substring(startIndex);
-               const matchEnd = remainingText.match(endRegex);
-               
-               let endIndex = val.length;
-               if (matchEnd && matchEnd.index !== undefined) {
-                   endIndex = startIndex + matchEnd.index;
-               }
-               
-               const extracted = val.substring(startIndex, endIndex).trim();
-               if (extracted.length > 0) {
-                   clean = extracted;
-               }
+          // Filter potential Base64 strings (length > 20 to avoid short random words or labels)
+          // Base64 chars: A-Z, a-z, 0-9, +, /, =
+          const base64Regex = /^[A-Za-z0-9+/]+={0,2}$/;
+          
+          const candidates = words.filter(w => {
+              if (w.length < 20) return false;
+              // Check if it looks like Base64
+              return base64Regex.test(w);
+          });
+          
+          if (candidates.length > 0) {
+              // Pick the longest one. 
+              // Usually ciphertext is longer than Hash (44 chars), but not always.
+              // However, this is the safest heuristic for "just the ciphertext".
+              clean = candidates.reduce((a, b) => a.length > b.length ? a : b);
           } else {
-              // Fallback: Clean line by line
-              const lines = val.split('\n');
-              let cleanLines = lines.filter(line => {
-                  const trim = line.trim();
-                  if (trim.startsWith('---')) return false;
-                  if (trim.includes('Generated on:')) return false;
-                  if (trim.includes('Note:')) return false;
-                  if (trim === '') return false;
-                  return true;
-              });
-
-              // Try to remove "Hash: ..." lines if they exist in the remaining lines
-              const endRegex = new RegExp(`(?:${endMarkers.join('|')})\\s*[:：]`, 'i');
-              cleanLines = cleanLines.filter(line => !endRegex.test(line));
-
-              if (cleanLines.length > 0) {
-                   // Assume the longest remaining line is ciphertext
-                   const longest = cleanLines.reduce((a, b) => a.length > b.length ? a : b);
-                   clean = longest.trim();
-              }
+              // If no valid Base64 found, fallback to original trim
+              clean = val.trim();
           }
-      }
       }
 
       setCiphertext(clean);

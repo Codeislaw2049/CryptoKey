@@ -99,12 +99,9 @@ ${t('resultStep.fileContent.note')}
   };
 
   const handleCopy = async () => {
-    // User requested separator for robust extraction across languages
-    const separator = "--------------------";
-    const protectedCiphertext = `\n${separator}\n${result.ciphertext}\n${separator}\n`;
-    
-    // Inject the protected ciphertext with separators into the template
-    const textToCopy = t('resultStep.clipboard.labels', { ciphertext: protectedCiphertext, hash: result.hash });
+    // User requested to copy ONLY the ciphertext for maximum compatibility
+    // No headers, no footers, no separators. Just the raw ciphertext.
+    const textToCopy = result.ciphertext;
     
     try {
       await navigator.clipboard.writeText(textToCopy);
