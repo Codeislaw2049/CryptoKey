@@ -161,9 +161,17 @@ export const DecryptionTool = () => {
 
       // 1. Try to find Separator-based block (User requested robust fix)
       // Matches content between -------------------- separators
-      const separatorMatch = val.match(/--------------------\s*\n([\s\S]*?)\n\s*--------------------/);
-      if (separatorMatch) {
-          clean = separatorMatch[1].trim();
+      // We use split() which is more robust than regex against newlines/spacing issues
+      const separatorParts = val.split('--------------------');
+      if (separatorParts.length >= 3) {
+          // The content should be in the middle part (index 1)
+          // Part 0: Header/Label
+          // Part 1: Ciphertext (surrounded by newlines usually)
+          // Part 2: Footer/Hash
+          const candidate = separatorParts[1].trim();
+          if (candidate.length > 0) {
+              clean = candidate;
+          }
       } 
       // 2. Try to find JSON block
       else {
