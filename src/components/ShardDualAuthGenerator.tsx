@@ -136,23 +136,58 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
     }
   };
 
-  const downloadImage = (url: string, filename: string) => {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  const downloadImage = async (url: string, filename: string) => {
+    try {
+        const res = await fetch(url);
+        const blob = await res.blob();
+        
+        if (navigator.share && navigator.canShare) {
+            try {
+                const file = new File([blob], filename, { type: blob.type });
+                const shareData = { files: [file], title: filename };
+                if (navigator.canShare(shareData)) {
+                    await navigator.share(shareData);
+                    return;
+                }
+            } catch (e) {
+                console.warn('Share API failed:', e);
+            }
+        }
+
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(blobUrl);
+    } catch (e) {
+        console.error('Download failed', e);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
   };
 
-  const downloadAll = () => {
+  const downloadAll = async () => {
     // Download Auth QRs
-    if (authQrA) downloadImage(authQrA, 'Authenticator_A_Key.png');
-    if (authQrB) downloadImage(authQrB, 'Authenticator_B_Key.png');
+    if (authQrA) {
+        await downloadImage(authQrA, 'Authenticator_A_Key.png');
+        await new Promise(r => setTimeout(r, 1000));
+    }
+    if (authQrB) {
+        await downloadImage(authQrB, 'Authenticator_B_Key.png');
+        await new Promise(r => setTimeout(r, 1000));
+    }
     // Download Shards
-    shardQrcodes.forEach((url, i) => {
-      downloadImage(url, `Shard_${i + 1}_of_${shardQrcodes.length}.png`);
-    });
+    for (let i = 0; i < shardQrcodes.length; i++) {
+        await downloadImage(shardQrcodes[i], `Shard_${i + 1}_of_${shardQrcodes.length}.png`);
+        await new Promise(r => setTimeout(r, 1000));
+    }
   };
 
   return (
@@ -316,9 +351,19 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
                 >
                   <ArrowLeft size={20} />
                 </Button>
-                <span className="text-sm font-mono text-slate-500 font-bold">
-                  {t('qrGenerator.shardCount', { current: currentIndex + 1, total: shardQrcodes.length })}
-                </span>
+                
+                <div className="flex flex-col items-center">
+                    <span className="text-sm font-mono text-slate-500 font-bold">
+                      {t('qrGenerator.shardCount', { current: currentIndex + 1, total: shardQrcodes.length })}
+                    </span>
+                    <button 
+                        onClick={() => downloadImage(shardQrcodes[currentIndex], `Shard_${currentIndex + 1}_of_${shardQrcodes.length}.png`)}
+                        className="text-xs text-indigo-600 hover:text-indigo-800 underline mt-1 font-medium"
+                    >
+                        {t('qrGenerator.saveImage')}
+                    </button>
+                </div>
+
                 <Button
                   onClick={() => { setIsStreaming(false); if(currentIndex < shardQrcodes.length - 1) setCurrentIndex(c => c + 1); }}
                   variant="ghost"

@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { Download, Eye, EyeOff, Image as ImageIcon, AlertTriangle, CheckCircle2, Copy, Share2, Layers, FileText, Lock, Clipboard } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Download, Eye, EyeOff, Image as ImageIcon, AlertTriangle, CheckCircle2, Copy, Share2, Layers, FileText, Lock, Clipboard, ArrowLeft, ArrowRight } from 'lucide-react';
 import { ProBadge } from './ui/ProBadge';
 import { embedData, extractData } from '../utils/steganography';
 import { split, combine, sha256, hexToStr } from '../utils/shamir';
@@ -35,12 +35,23 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
   const [useStrictFilename, setUseStrictFilename] = useState(false);
   const [shardFilenames, setShardFilenames] = useState<string[]>([]);
 
+  // Generated Result State (for manual download/carousel)
+  const [generatedResultImages, setGeneratedResultImages] = useState<{url: string, name: string}[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   // Extract Mode State
   const [extractImages, setExtractImages] = useState<CarrierImage[]>([]);
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copyFeedback, setCopyFeedback] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Cleanup generated URLs on unmount or change
+  useEffect(() => {
+      return () => {
+          generatedResultImages.forEach(img => URL.revokeObjectURL(img.url));
+      };
+  }, [generatedResultImages]);
 
   const copyToClipboard = async () => {
     if (!result) return;
@@ -152,6 +163,19 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
       }, 'image/png');
   };
 
+  const handleDownloadAll = async () => {
+      // Sequential download with delay to prevent browser throttling
+      for (const img of generatedResultImages) {
+          const a = document.createElement('a');
+          a.href = img.url;
+          a.download = img.name;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          await new Promise(r => setTimeout(r, 1000));
+      }
+  };
+
   const handleHideData = async () => {
     if (hideImages.length === 0 || !secret || !canvasRef.current) return;
 
@@ -208,8 +232,17 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
           
           // Batch Download / Share Logic
           if (generatedFiles.length > 0) {
+               const newImages = generatedFiles.map(file => ({
+                   url: URL.createObjectURL(file),
+                   name: file.name
+               }));
+               
+               // Revoke old
+               generatedResultImages.forEach(img => URL.revokeObjectURL(img.url));
+               setGeneratedResultImages(newImages);
+               setCurrentIndex(0);
+
                // Try Web Share API for multiple files (Mobile)
-               let shared = false;
                if (navigator.share && navigator.canShare) {
                    try {
                        const shareData = {
@@ -219,26 +252,9 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                        };
                        if (navigator.canShare(shareData)) {
                            await navigator.share(shareData);
-                           shared = true;
                        }
                    } catch (e) {
-                       console.warn('Batch share failed, falling back to individual download', e);
-                   }
-               }
-               
-               if (!shared) {
-                   // Fallback: Individual Downloads with delay to prevent browser blocking
-                   for (const file of generatedFiles) {
-                       const url = URL.createObjectURL(file);
-                       const a = document.createElement('a');
-                       a.href = url;
-                       a.download = file.name;
-                       document.body.appendChild(a);
-                       a.click();
-                       document.body.removeChild(a);
-                       URL.revokeObjectURL(url);
-                       // 800ms delay between downloads
-                       await new Promise(r => setTimeout(r, 800));
+                       console.warn('Batch share failed', e);
                    }
                }
           }
@@ -255,7 +271,21 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
           const newImageData = embedData(imageData, secret);
           
           ctx.putImageData(newImageData, 0, 0);
-          downloadImage(canvas, carrier.customName.endsWith('.png') ? carrier.customName : carrier.customName + '.png');
+          
+          const filename = carrier.customName.endsWith('.png') ? carrier.customName : carrier.customName + '.png';
+          
+          // Create Blob
+          const blob = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, 'image/png'));
+          if (blob) {
+              const url = URL.createObjectURL(blob);
+              // Revoke old
+              generatedResultImages.forEach(img => URL.revokeObjectURL(img.url));
+              setGeneratedResultImages([{ url, name: filename }]);
+              setCurrentIndex(0);
+              
+              // Auto-download for single image
+              downloadImage(canvas, filename);
+          }
           
           setResult(t('steganography.status.successHide'));
       }
@@ -755,6 +785,78 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
             <CheckCircle2 size={20} />
             {result}
           </motion.div>
+        )}
+
+        {mode === 'hide' && generatedResultImages.length > 0 && (
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-6 p-6 bg-slate-800 rounded-2xl border border-slate-700 shadow-xl"
+             >
+                <div className="flex flex-col items-center space-y-4">
+                    <h3 className="text-lg font-bold text-white mb-2">{t('steganographyExtra.successGenerated', { count: generatedResultImages.length })}</h3>
+                    
+                    <div className="relative group w-full max-w-md aspect-auto bg-slate-900 rounded-xl overflow-hidden border border-slate-600 flex items-center justify-center min-h-[200px]">
+                        <img 
+                            src={generatedResultImages[currentIndex].url} 
+                            alt={generatedResultImages[currentIndex].name}
+                            className="w-full h-auto object-contain max-h-[400px]" 
+                        />
+                        <div className="absolute bottom-0 inset-x-0 bg-black/70 p-2 text-center text-xs text-white truncate">
+                            {generatedResultImages[currentIndex].name}
+                        </div>
+                    </div>
+
+                    <div className="flex items-center justify-between w-full max-w-md gap-4">
+                        <button
+                            onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
+                            disabled={currentIndex === 0}
+                            className="p-2 rounded-full bg-slate-700 text-white hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                            <ArrowLeft size={24} />
+                        </button>
+
+                        <div className="flex flex-col items-center gap-2">
+                             <span className="text-sm font-mono text-slate-400 font-bold">
+                                {currentIndex + 1} / {generatedResultImages.length}
+                             </span>
+                             <button
+                                onClick={() => {
+                                    const img = generatedResultImages[currentIndex];
+                                    const a = document.createElement('a');
+                                    a.href = img.url;
+                                    a.download = img.name;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                }}
+                                className="text-sm text-indigo-400 hover:text-indigo-300 underline font-medium flex items-center gap-1"
+                             >
+                                <Download size={14} />
+                                {t('common.download') || 'Download'}
+                             </button>
+                        </div>
+
+                        <button
+                            onClick={() => setCurrentIndex(prev => Math.min(generatedResultImages.length - 1, prev + 1))}
+                            disabled={currentIndex === generatedResultImages.length - 1}
+                            className="p-2 rounded-full bg-slate-700 text-white hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                            <ArrowRight size={24} />
+                        </button>
+                    </div>
+
+                    {generatedResultImages.length > 1 && (
+                        <button
+                            onClick={handleDownloadAll}
+                            className="mt-4 px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-bold transition-colors flex items-center gap-2"
+                        >
+                            <Download size={18} />
+                            {t('dualAuthGenerator.downloadAll') || 'Download All'}
+                        </button>
+                    )}
+                </div>
+             </motion.div>
         )}
       </AnimatePresence>
 

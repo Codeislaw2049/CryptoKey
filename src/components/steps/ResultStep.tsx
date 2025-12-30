@@ -100,6 +100,7 @@ ${t('resultStep.fileContent.note')}
 
   const handleCopy = async () => {
     const textToCopy = t('resultStep.clipboard.labels', { ciphertext: result.ciphertext, hash: result.hash });
+    
     try {
       await navigator.clipboard.writeText(textToCopy);
       setCopyFeedback(true);

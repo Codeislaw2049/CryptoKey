@@ -164,26 +164,59 @@ export const DecryptionTool = () => {
       if (jsonMatch) {
           clean = jsonMatch[0];
       } else {
-          // 2. If no JSON, look for common file headers to strip
-          // Remove lines starting with --- or headers
-          const lines = val.split('\n');
-          const cleanLines = lines.filter(line => {
-              const trim = line.trim();
-              if (trim.startsWith('---')) return false;
-              if (trim.includes('Ciphertext:')) return false;
-              if (trim.includes('Hash:')) return false;
-              if (trim.includes('Generated on:')) return false;
-              if (trim.includes('Note:')) return false;
-              if (trim === '') return false;
-              return true;
-          });
-          
-          // If we stripped lines, check if we have a single block remaining that looks like ciphertext
-          if (cleanLines.length > 0) {
-              // Usually the longest line is the ciphertext
-              const longest = cleanLines.reduce((a, b) => a.length > b.length ? a : b);
-              if (longest.length > 20) { // arbitrary min length for ciphertext
-                  clean = longest.trim();
+          // 2. Robust Marker Extraction (User requested optimization)
+          // Find content between "Ciphertext:" and "Hash:" markers regardless of language
+          const markers = {
+              start: ['Ciphertext:', '密文：', '密文:', '暗号：', '暗号:', '암호문：', '암호문:'],
+              end: ['Hash:', '哈希：', '哈希:', 'ハッシュ：', 'ハッシュ:', '해시：', '해시:']
+          };
+
+          let startIndex = -1;
+          for (const m of markers.start) {
+              const idx = val.indexOf(m);
+              if (idx !== -1) {
+                  startIndex = idx + m.length;
+                  break;
+              }
+          }
+
+          if (startIndex !== -1) {
+              let endIndex = val.length;
+              for (const m of markers.end) {
+                  const idx = val.indexOf(m, startIndex);
+                  if (idx !== -1) {
+                      endIndex = idx;
+                      break;
+                  }
+              }
+              const extracted = val.substring(startIndex, endIndex).trim();
+              if (extracted.length > 0) {
+                  clean = extracted;
+              }
+          } else {
+              // Fallback: If no start marker found, try to clean line by line
+              const lines = val.split('\n');
+              let cleanLines = lines.filter(line => {
+                  const trim = line.trim();
+                  if (trim.startsWith('---')) return false;
+                  if (trim.includes('Generated on:')) return false;
+                  if (trim.includes('Note:')) return false;
+                  if (trim === '') return false;
+                  return true;
+              });
+
+              // Try to remove "Hash: ..." lines if they exist in the remaining lines
+              cleanLines = cleanLines.filter(line => {
+                  for (const m of markers.end) {
+                      if (line.includes(m)) return false;
+                  }
+                  return true;
+              });
+
+              if (cleanLines.length > 0) {
+                   // Assume the longest remaining line is ciphertext
+                   const longest = cleanLines.reduce((a, b) => a.length > b.length ? a : b);
+                   clean = longest.trim();
               }
           }
       }

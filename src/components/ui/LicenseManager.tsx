@@ -345,11 +345,11 @@ export const LicenseManager = () => {
                         )}
                     </div>
                     {licenseExpiry && ['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) && (
-                        <div className="text-xs text-slate-400">
-                           {t('licenseManager.status.expiresIn')} <span className="text-white font-mono">{timeLeft}</span>
-                           {isExpired && <span className="text-red-500 font-bold ml-2">({t('licenseManager.status.expired')})</span>}
-                        </div>
-                    )}
+                       <div className="text-xs text-slate-400">
+                          {t('licenseManager.status.expiresIn', { days: timeLeft })}
+                          {isExpired && <span className="text-red-500 font-bold ml-2">({t('licenseManager.status.expired')})</span>}
+                       </div>
+                   )}
                     {!['pro_real', 'pro_local', 'pro_temp'].includes(licenseType) && (
                         <div className="mt-2">
                              <Button 
@@ -459,10 +459,10 @@ export const LicenseManager = () => {
 
                                 <AuthenticatorLinks />
 
-                                <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white mt-2" onClick={handleRegister} disabled={isLoading}>
-                                     {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.register.button')}
-                                </Button>
-                             </>
+                               <Button className="w-full bg-amber-600 hover:bg-amber-500 text-white mt-2" onClick={handleRegister} disabled={isLoading}>
+                                    {isLoading ? <Loader2 size={16} className="animate-spin" /> : t('licenseManager.register.button')}
+                               </Button>
+                            </>
                          ) : (
                              <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-center animate-in zoom-in duration-300">
                                  <h3 className="text-sm font-bold text-white mb-2">{t('licenseManager.register.scanWithAuth')}</h3>

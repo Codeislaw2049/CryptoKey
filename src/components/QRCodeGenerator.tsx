@@ -125,54 +125,60 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
   };
 
   // Robust download function for mobile compatibility
-  const downloadImage = (url: string, filename: string) => {
-    // For Data URLs, converting to Blob often helps with mobile download behavior
-    fetch(url)
-      .then(res => res.blob())
-      .then(async (blob) => {
-        // Mobile "Save to Photos" support via Web Share API
-        if (navigator.share && navigator.canShare) {
-            try {
-                const file = new File([blob], filename, { type: blob.type });
-                const shareData = { files: [file], title: filename };
-                if (navigator.canShare(shareData)) {
-                    await navigator.share(shareData);
-                    return; // Success, skip fallback
-                }
-            } catch (e) {
-                console.warn('Share API failed, falling back to download:', e);
-            }
-        }
+  const downloadImage = async (url: string, filename: string) => {
+    try {
+      // For Data URLs, converting to Blob often helps with mobile download behavior
+      const res = await fetch(url);
+      const blob = await res.blob();
 
-        const blobUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(blobUrl);
-      })
-      .catch(err => {
-        console.error('Download failed:', err);
-        // Fallback
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
+      // Mobile "Save to Photos" support via Web Share API
+      if (navigator.share && navigator.canShare) {
+          try {
+              const file = new File([blob], filename, { type: blob.type });
+              const shareData = { files: [file], title: filename };
+              if (navigator.canShare(shareData)) {
+                  await navigator.share(shareData);
+                  return; // Success, skip fallback
+              }
+          } catch (e) {
+              console.warn('Share API failed, falling back to download:', e);
+          }
+      }
+
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+      console.error('Download failed:', err);
+      // Fallback
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   };
 
   const handleDownloadAll = async () => {
      if (qrcodeUrls.length === 1) {
-        downloadImage(qrcodeUrls[0], `cryptokey_backup_${Date.now()}.png`);
+        await downloadImage(qrcodeUrls[0], `cryptokey_backup_${Date.now()}.png`);
      } else {
         // Download all sequentially
         for (let i = 0; i < qrcodeUrls.length; i++) {
-           downloadImage(qrcodeUrls[i], `cryptokey_backup_shard_${i+1}_of_${qrcodeUrls.length}.png`);
-           await new Promise(r => setTimeout(r, 500)); // Delay to prevent browser throttling
+           await downloadImage(qrcodeUrls[i], `cryptokey_backup_shard_${i+1}_of_${qrcodeUrls.length}.png`);
+           await new Promise(r => setTimeout(r, 1000)); // Extended delay for Android
+           
+           // Add user confirmation prompt for Android if needed (optional, but requested to fix skipping)
+           // Actually, Steganography uses 800ms and works. Let's use 1000ms to be safe.
+           // User said: "Steganography works very well... Android skips images... is it browser issue?"
+           // Steganography code uses loop + await.
+           // Previous code here was loop + await 500ms. Maybe 500ms is too short.
         }
      }
   };

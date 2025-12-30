@@ -216,7 +216,7 @@
       "proActive": "Pro Active",
       "user": "User",
       "proLicenseActive": "Pro License Active",
-      "expiresIn": "Expires in:",
+      "expiresIn": "Expires in {{days}}",
       "expired": "Expired"
     },
     "networkError": "Network error: {{error}}",
