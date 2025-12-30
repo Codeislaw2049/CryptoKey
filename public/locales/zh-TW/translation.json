@@ -37,8 +37,44 @@
     }
   },
   "pricing": {
-    "title": "简单、透明的价格",
-    "subtitle": "选择最适合您的方案",
+    "title": "簡單、透明的價格",
+    "subtitle": "選擇最適合您的方案",
+    "badge": {
+      "bestValue": "最超值"
+    },
+    "button": {
+      "contactSales": "聯絡銷售",
+      "subscribeNow": "立即訂閱",
+      "extendLicense": "續費許可證"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "即時訪問",
+        "desc": "支付後立即獲得許可證密鑰和TOTP設定。無需等待。"
+      },
+      "globalPayments": {
+        "title": "全球支付",
+        "desc": "支援透過BSC、TRX和ETH網路進行全球USDT支付。",
+        "descChina": "敬請期待更新。"
+      },
+      "securePrivate": {
+        "title": "安全與隱私",
+        "desc": "不保留個人資料。您的安全是我們的首要任務。"
+      },
+      "refundPolicy": {
+        "title": "退款政策",
+        "desc": "嚴格的無退款政策。一旦頒發許可證密鑰，所有銷售均為最終銷售。"
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im 是一個安全工具提供商。我們不提供財務建議、加密貨幣交易或託管服務。價格以美元計價。根據您的所在地可能需要繳納增值稅。"
+    },
+    "china": {
+      "hardwareOnly": "僅限硬體授權",
+      "description": "請購買我們的硬體產品 CryptoKey 來使用，<1/>線上使用方式靜等通知...",
+      "contactSales": "聯絡銷售購買硬體",
+      "backToHome": "返回首頁"
+    },
     "plans": {
       "price_weekly_trial": {
         "name": "24小时通行证",
@@ -143,66 +179,16 @@
     }
   },
   "footer": {
-    "description": "军用级隐写术和加密工具 (AES-256-GCM + ChaCha20-Poly1305)。\n完全在您的浏览器中运行。无数据发送到服务器。",
-    "links": {
-      "pricing": "价格",
-      "terms": "服务条款",
-      "source": "源码",
-      "share": "分享"
-    },
-    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. 保留所有权利。",
-    "license": "商业许可声明：本软件包含受国际版权法保护的专有 Wasm 加密模块。公共源代码仅根据 CC-BY-NC-ND 4.0 许可证提供用于安全审计目的。严禁未经授权对核心算法进行商业使用、修改或重新分发。"
+    "linkCopied": "連結已複製到剪貼簿！",
+    "forceUpdate": "強制更新 / 清除快取",
+    "publicRepo": "公開程式碼庫（審計）",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "分享"
   },
   "licenseManager": {
-    "status": {
-      "active": "已激活",
-      "expired": "已过期",
-      "expiresIn": "有效期剩余：",
-      "proActive": "专业版已激活",
-      "proLicenseActive": "专业版许可已激活",
-      "hardwareKeyActive": "硬件密钥已激活",
-      "tempPro": "临时专业版",
-      "activatePro": "激活专业版",
-      "unlockPro": "解锁专业功能",
-      "user": "用户"
-    },
-    "login": {
-      "tab": "登录",
-      "nickname": "昵称",
-      "nicknamePlaceholder": "请输入您的昵称",
-      "code": "验证码",
-      "codePlaceholder": "000 000",
-      "button": "解锁专业功能",
-      "success": "登录成功！专业版功能已激活。",
-      "error": "登录失败。验证码或昵称无效。",
-      "inputError": "请输入昵称和验证码"
-    },
-    "register": {
-      "tab": "注册",
-      "chooseNickname": "选择昵称",
-      "nicknamePlaceholder": "3-20 个字符",
-      "note": "此昵称将用于生成您的 2FA 密钥。",
-      "button": "获取验证器密钥",
-      "scanTitle": "使用验证器应用扫描",
-      "scanNote": "用手机扫描以自动检测系统并下载",
-      "success": "昵称已注册！请立即绑定验证器。",
-      "manualSuccess": "注册成功！请手动输入密钥。",
-      "errorNickname": "请输入昵称",
-      "errorFormat": "昵称必须是 3-20 个字符（A-Z, 0-9, _）",
-      "errorTaken": "昵称 \"{{nickname}}\" 已被占用。"
-    },
-    "authApp": {
-      "title": "验证器应用",
-      "download": "下载",
-      "google": "谷歌验证器",
-      "microsoft": "微软验证器"
-    },
-    "modal": {
-      "title": "专业版许可",
-      "subtitle": "解锁高级加密功能",
-      "logout": "退出登录"
-    },
-    "networkError": "网络错误：{{error}}"
+    "desktopAuthQr": "桌面認證二維碼",
+    "registrationFailed": "註冊失敗"
   },
   "paymentModal": {
     "title": "USDT 支付",
@@ -245,17 +231,22 @@
         "verifying": "验证中...",
         "errorTx": "需要交易哈希 (TXID)",
         "errorValidation": {
-            "wallet": "这看起来像钱包地址，而不是交易哈希 (TXID)。请粘贴 TXID。",
-            "tron": "无效的 TRON TXID。它应该是 64 个字符的十六进制字符串。",
-            "eth": "无效的 {{chain}} TXID。它应该以 0x 开头并包含 64 个十六进制字符。"
+          "wallet": "这看起来像钱包地址，而不是交易哈希 (TXID)。请粘贴 TXID。",
+          "tron": "无效的 TRON TXID。它应该是 64 个字符的十六进制字符串。",
+          "eth": "无效的 {{chain}} TXID。它应该以 0x 开头并包含 64 个十六进制字符。"
         },
         "clipboardError": "无法读取剪贴板。请手动输入。",
         "copied": "链接已复制到剪贴板！"
       },
       "verification": {
-        "verifying": "正在验证支付...",
-        "success": "支付已验证！",
-        "failed": "支付验证失败。请检查您的交易。"
+        "title": "正在驗證交易...",
+        "description": "我們正在區塊鏈上檢查您的支付。通常需要1-3分鐘。",
+        "checkingTxid": "正在檢查交易ID：",
+        "safeToClose": "關閉此視窗是安全的。",
+        "autoActivation": "一旦交易在鏈上確認，您的專業版許可證將自動啟用。",
+        "verifying": "正在驗證支付...",
+        "success": "支付已驗證！",
+        "failed": "支付驗證失敗。請檢查您的交易。"
       }
     }
   },
@@ -275,7 +266,10 @@
     "shardCount": "分片 {{current}} / {{total}}",
     "saveAll": "保存所有图片",
     "saveImage": "保存图片",
-    "close": "关闭"
+    "close": "关闭",
+    "speedSlow": "慢速 (2 FPS)",
+    "speedFast": "快速 (4 FPS)",
+    "speedTurbo": "極速 (10 FPS)"
   },
   "dualAuthGenerator": {
     "title": "双重验证加密",
@@ -368,29 +362,14 @@
     "bookCipherNote": "注意: 這些似乎是書本密碼索引..."
   },
   "integrityCheck": {
-    "devModeWarning": "完整性檢查僅在生產建置中可用。",
-    "devModeDesc": "開發模式使用熱重載腳本，無法與發布建置進行驗證。",
-    "log": {
-      "receivedChecksums": "✅ 已從GitHub接收官方校驗和",
-      "corsBlocked": "⚠️ 自動驗證被瀏覽器安全性（CORS）阻止。",
-      "corsReason1": "這是瀏覽器安全功能，不是安全缺陷。",
-      "corsReason2": "您可以透過與GitHub發布比較雜湊值來手動驗證。",
-      "corsReason3": "或者使用瀏覽器擴充功能繞過CORS進行此驗證。",
-      "fileVerified": "✅ {{path}}: 已驗證",
-      "hashMismatch": "❌ {{path}}: 雜湊不符合！",
-      "noChecksum": "❓ {{path}}: 在發布記錄中未找到校驗和"
-    },
-    "buttonLabel": "驗證建置完整性",
-    "modalTitle": "建置完整性檢查",
-    "calculating": "計算雜湊值中...",
-    "connectionError": "無法連接到GitHub。請檢查您的網際網路連線。",
-    "manual": {
-      "title": "如何手動驗證:",
-      "step1": "1. 訪問GitHub發布頁面（下方連結）。",
-      "step2": "2. 下載官方校驗和檔案（SHA256SUMS.txt）。",
-      "step3": "3. 與上面顯示的雜湊值進行比較。"
-    },
-    "viewRelease": "在GitHub上檢視發布"
+    "title": "驗證此應用程式碼是否與 GitHub 上的原始碼相符",
+    "fetching": "正在取得 {{version}} 版本的簽章...",
+    "verifying": "正在驗證 {{path}}...",
+    "failedToLoad": "載入失敗",
+    "info": "ℹ️ {{path}}",
+    "hash": "雜湊值：{{hash}}",
+    "couldNotVerify": "⚠️ 無法驗證 {{path}}：{{error}}",
+    "criticalError": "嚴重錯誤：{{error}}"
   },
   "militaryBadge": {
     "title": "軍用級安全",
@@ -770,17 +749,70 @@
     },
     "label": {
       "ciphertext": "密文 / 加密資料",
-      "closeScanner": "關閉掃描器"
+      "closeScanner": "關閉掃描器",
+      "password": "解密密碼",
+      "failedFiles": "失敗檔案：",
+      "missingParts": "缺失部分：",
+      "fragmentsFound": "找到片段：",
+      "uploadRemaining": "上傳剩餘部分"
     },
     "button": {
-      "scanStream": "掃描串流"
+      "scanStream": "掃描串流",
+      "uploadQRShards": "上傳二維碼分片",
+      "paste": "貼上",
+      "decrypt": "解密資料"
+    },
+    "placeholder": {
+      "ciphertext": "在此貼上您的密文、加密塊或二維碼內容...",
+      "password": "輸入用於加密的密碼"
+    },
+    "mode": {
+      "physicalBook": "實體 / 虛擬書籍",
+      "digitalBook": "數位書籍（檔案）",
+      "onlineBook": "線上書籍（URL）"
+    },
+    "file": {
+      "title": "上傳書籍檔案",
+      "description": "上傳加密時使用的<strong>完全相同的古騰堡 TXT 檔案</strong>。",
+      "loaded": "已載入：{{size}} KB",
+      "choose": "選擇古騰堡 TXT 檔案...",
+      "browse": "瀏覽",
+      "parsed": "成功解析了 {{count}} 章"
+    },
+    "url": {
+      "title": "獲取書籍 URL",
+      "description": "輸入加密時使用的<strong>完全相同的古騰堡 HTML URL</strong>。",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "獲取",
+      "loaded": "已載入：{{length}} 字元（雜湊：{{hash}}...）"
+    },
+    "locate": {
+      "title": "定位資料",
+      "description": "您的資料在哪一行？",
+      "row": "行"
+    },
+    "result": {
+      "title": "恢復的資料（第 {{row}} 行）",
+      "copy": "複製",
+      "copied": "已複製！",
+      "empty": "行為空或無效",
+      "rowAppears": "第 {{row}} 行似乎為空或包含無效資料。",
+      "enterRow": "輸入您隱藏資料的行號（1-100+）以顯示它。",
+      "rawPreview": "原始資料預覽"
+    },
+    "errors": {
+      "incompleteData": "資料不完整：找到 {{current}}/{{total}} 部分",
+      "invalidFormat": "（無效格式）",
+      "noQrFound": "（未找到 QR 碼）",
+      "failedToReadFile": "（讀取檔案失敗）",
+      "decryptionFailed": "解密失敗。請檢查您的密碼。"
     },
     "error": {
-        "fileMode": "請上傳原始書籍檔案以恢復資料。",
-        "fileModeUnknown": "檔案模式的資料格式未知。",
-        "urlMode": "請獲取書籍 URL 以恢復資料。",
-        "clipboard": "無法存取剪貼簿。請手動貼上。",
-        "decryptFailed": "解密失敗。請檢查您的密碼。"
+      "fileMode": "請上傳原始書籍檔案以恢復資料。",
+      "fileModeUnknown": "檔案模式的資料格式未知。",
+      "urlMode": "請獲取書籍 URL 以恢復資料。",
+      "clipboard": "無法存取剪貼簿。請手動貼上。",
+      "decryptFailed": "解密失敗。請檢查您的密碼。"
     }
   },
   "steganography": {
@@ -807,7 +839,9 @@
       "extractedContent": "提取的內容"
     },
     "placeholder": {
-      "pasteCiphertext": "在此貼上加密的密文..."
+      "pasteCiphertext": "在此貼上加密的密文...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "輸出檔案名稱"
     },
     "warning": {
       "title": "嚴重警告：",
@@ -834,11 +868,6 @@
       "text": "此工具將您的數據隱藏在圖像像素的最低有效位 (LSB) 中。生成的圖像在肉眼看來完全相同，但包含您的秘密訊息。",
       "noteTitle": "注意：",
       "noteText": "請勿壓縮下載的圖像（例如，通過 WhatsApp/Messenger 發送通常會壓縮圖像）。始終以文件（文檔）形式共享或嚴格保存在本地。"
-    },
-    "error": {
-      "filenameMismatch": "文件名不匹配！預期：{{expected}}，實際：{{actual}}",
-      "canvasContext": "無法獲取畫布上下文",
-      "copyFailed": "複製到剪貼板失敗"
     }
   },
   "wallet": {
@@ -866,8 +895,8 @@
       "reveal": "點擊顯示"
     },
     "copyTo": {
-      "encrypt": "複製到“輸入助記詞”",
-      "steganography": "複製到“隱寫術”"
+      "encrypt": "複製到「輸入助記詞」",
+      "steganography": "複製到「隱寫術」"
     },
     "details": {
       "title": "錢包詳情",
@@ -885,6 +914,188 @@
       "never": "切勿",
       "line2": "與任何人分享。",
       "line3": "如果您丟失了這些單詞，您的資金將永遠丟失。"
+    },
+    "tooltip": {
+      "pasteClipboard": "從剪貼簿貼上",
+      "hide": "隱藏",
+      "show": "顯示",
+      "copyClipboard": "複製到剪貼簿"
     }
+  },
+  "installAuth": {
+    "redirecting": "正在跳轉到應用商店...",
+    "detecting": "正在檢測您的裝置..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "更改語言"
+  },
+  "mixStep": {
+    "duress": {
+      "defaultMessage": "存取被拒絕。未經授權的嘗試已記錄。"
+    },
+    "error": {
+      "accessDenied": "存取被拒絕。未經授權的嘗試已記錄。",
+      "passwordRequired": "密碼為必填項",
+      "passwordMismatch": "密碼不相符",
+      "passwordTooShort": "密碼必須至少8個字元",
+      "duressPasswordRequired": "脅迫密碼為必填項",
+      "duressPasswordSame": "脅迫密碼不能與真實密碼相同"
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "無效的助記詞。請檢查您的單詞。",
+      "enterCiphertext": "請輸入密文資料",
+      "invalidMode": "無效的模式或缺少資料",
+      "encryptionFailed": "加密過程失敗。請檢查您的輸入。",
+      "parseFileFailed": "解析檔案失敗。請確保它是有效的文字檔案。",
+      "invalidUrl": "無效的 URL",
+      "fetchUrlFailed": "取得 URL 失敗"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "刪除行",
+      "generateRandom": "產生隨機資料",
+      "pasteClipboard": "從剪貼簿貼上",
+      "generateMnemonic": "產生隨機助記詞"
+    }
+  },
+  "resultStep": {
+    "print": {
+      "title": "CryptoKey 安全備份"
+    },
+    "clipboard": {
+      "labels": "密文：{{ciphertext}}\n雜湊：{{hash}}"
+    },
+    "fileContent": {
+      "header": "【CryptoKey 安全備份】",
+      "ciphertext": "密文：",
+      "hash": "雜湊值：",
+      "footer": "解密位址：https://cryptokey.im",
+      "generated": "產生時間：{{date}}",
+      "note": "注意：需要密碼 + 行索引才能解密。"
+    },
+    "watermark": "在 https://CryptoKey.im 解密 | 產生於 {{date}}"
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "正在完成..."
+    },
+    "errors": {
+      "invalidFormat": "（無效格式）",
+      "integrityFailed": "完整性檢查失敗：重組的資料已損壞。請重新掃描。",
+      "decompressionError": "解壓縮錯誤：資料格式錯誤。請嘗試重新上傳圖片，確保它們清晰完整。",
+      "decompressionFailed": "解壓縮失敗：{{error}}"
+    },
+    "error": {
+      "generationFailed": "產生失敗",
+      "startProcessing": "開始處理...",
+      "processingImage": "正在處理第 {{current}} 張圖片，共 {{total}} 張..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "檢測到系統時鐘錯誤。請更正您的系統時間以繼續使用 Pro 功能。",
+      "deactivateConfirm": "停用 Real Pro 許可證？"
+    }
+  },
+  "mixStepButtons": {
+    "back": "返回",
+    "processing": "處理中...",
+    "encryptGenerate": "加密並產生"
+  },
+  "steganographyExtra": {
+    "successGenerated": "成功產生並下載了 {{count}} 個分片圖片。",
+    "carrierImages": "載體圖片",
+    "strictMatchRequired": "需要嚴格匹配"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm 效能基準測試",
+    "testConfig": "測試配置",
+    "algorithm": "演算法：Shamir's Secret Sharing (GF(2^8))",
+    "shares": "分片：總共 5 個，閾值 3",
+    "payload": "載荷：隨機 32 位元組金鑰 + 校驗和",
+    "steganography": "隱寫術：LSB 嵌入在 100x100 緩衝區上",
+    "running": "正在執行測試...",
+    "startBenchmark": "開始基準測試（原始證據）",
+    "jsTime": "JS 時間",
+    "wasmTime": "Wasm 時間",
+    "fasterSuffix": "快 {{ratio}} 倍",
+    "correctness": "正確性",
+    "verified": "已驗證",
+    "failed": "失敗",
+    "waiting": "等待開始..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - 安全備份",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "開始基準測試...",
+      "runningJs": "執行 JS 實作...",
+      "loadingWasm": "載入 Wasm 模組...",
+      "runningWasm": "執行 Wasm 實作..."
+    },
+    "validation": {
+      "pass": "通過",
+      "fail": "失敗",
+      "result": "驗證結果：{{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "請先綁定身分驗證器",
+    "invalidDataFormat": "無效的資料格式",
+    "hashMismatch": "雜湊不相符",
+    "noValidQr": "未找到有效的二維碼",
+    "passwordIncorrect": "任何保險庫內容的密碼不正確",
+    "couldNotReadQr": "無法讀取二維碼",
+    "invalidAuthQr": "無效的身分驗證二維碼",
+    "noSecretInQr": "二維碼中未找到金鑰",
+    "authAIncorrect": "身分驗證器 A 代碼不正確",
+    "authBIncorrect": "身分驗證器 B 代碼不正確",
+    "decryptCiphertextFailed": "解密密文失敗（金鑰 A 可能錯誤）",
+    "decryptContextFailedA": "解密上下文失敗（金鑰 B 可能錯誤）",
+    "decryptMnemonicFailed": "解密助記詞失敗（金鑰 A 可能錯誤）",
+    "decryptContextFailedB": "解密上下文失敗（金鑰 B 可能錯誤）",
+    "shardIntegrityError": "分片完整性錯誤：檔案 {{filename}} 屬於不同的集合。請確保所有檔案來自同一加密會話。",
+    "shareApiNotSupported": "不支援共享 API",
+    "canvasContext": "無法取得畫布上下文",
+    "invalidShareType": "jsSplit 傳回無效類型：{{type}}",
+    "wasmLoadFailed": "載入 Wasm 模組失敗"
   }
 }

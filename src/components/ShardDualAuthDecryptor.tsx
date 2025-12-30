@@ -83,7 +83,7 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
     if (!files || files.length === 0) return;
 
     setError('');
-    setProcessingStatus('Starting processing...');
+    setProcessingStatus(t('shardDualAuth.error.startProcessing'));
     
     // Helper delay to allow UI to update
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -94,25 +94,25 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
 
     try {
       for (let i = 0; i < files.length; i++) {
-        setProcessingStatus(`Processing image ${i + 1} of ${files.length}...`);
+        setProcessingStatus(t('shardDualAuth.error.processingImage', { current: i + 1, total: files.length }));
         await delay(50); // Yield to main thread
 
         const text = await readQrFromFile(files[i]);
         if (!text) {
           console.warn(`File ${files[i].name} is not a valid QR code`);
-          currentFailedFiles.push(`${files[i].name} (No QR found)`);
-          continue; 
+          currentFailedFiles.push(`${files[i].name} (${t('errors.couldNotReadQr')})`);
+          continue;
         }
 
         const shard = parseChunk(text);
         if (!shard) {
-           currentFailedFiles.push(`${files[i].name} (Invalid format)`);
+           currentFailedFiles.push(`${files[i].name} ${t('shardDualAuth.errors.invalidFormat')}`);
            continue;
         }
 
         // Strict Hash Validation
         if (currentBatchHash && currentBatchHash !== shard.hash) {
-           throw new Error(`Shard Integrity Error: File ${files[i].name} belongs to a different set (Hash: ${shard.hash.substring(0,6)}...) than previous shards (Hash: ${currentBatchHash.substring(0,6)}...). Please do not mix shards.`);
+           throw new Error(t('errors.shardIntegrityError', { filename: files[i].name }));
         }
         if (!currentBatchHash) currentBatchHash = shard.hash;
 
@@ -131,7 +131,7 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
         newShardsCount++;
       }
 
-      setProcessingStatus('Finalizing...');
+      setProcessingStatus(t('shardDualAuth.status.finalizing'));
       await delay(50);
 
       setFailedFiles(prev => [...prev, ...currentFailedFiles]);
@@ -196,7 +196,7 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
             
             // Integrity Check
             if (!verifyIntegrity(sorted, globalHash)) {
-                setError('Integrity Check Failed: The reassembled data is corrupted. Please rescan.');
+                setError(t('shardDualAuth.errors.integrityFailed'));
                 return;
             }
             
@@ -209,9 +209,9 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
                 if (missing.length > 0) {
                      setError(`Decompression failed. You might be missing specific parts: ${missing.join(', ')}`);
                 } else if (err.message && err.message.includes('Malformed UTF-8')) {
-                     setError('Decompression Error: Malformed Data. Please try re-uploading the images, ensuring they are clear and complete.');
+                     setError(t('shardDualAuth.errors.decompressionError'));
                 } else {
-                     setError('Decompression failed: ' + err.message);
+                     setError(t('shardDualAuth.errors.decompressionFailed', { error: err.message }));
                 }
             });
         }
@@ -225,16 +225,16 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
     
     try {
       const text = await readQrFromFile(file);
-      if (!text) throw new Error('Could not read QR code');
-      
+      if (!text) throw new Error(t('errors.couldNotReadQr'));
+
       // Parse otpauth:// URI
       // Format: otpauth://totp/Label?secret=SECRET&...
-      if (!text.startsWith('otpauth://')) throw new Error('Invalid Auth QR Code');
-      
+      if (!text.startsWith('otpauth://')) throw new Error(t('errors.invalidAuthQr'));
+
       const url = new URL(text);
       const secret = url.searchParams.get('secret');
-      
-      if (!secret) throw new Error('No secret found in QR');
+
+      if (!secret) throw new Error(t('errors.noSecretInQr'));
       
       if (type === 'A') setSecretA(secret);
       else setSecretB(secret);
@@ -265,14 +265,14 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
     try {
       // 1. Verify Codes (Optional if strictly file-based, but enforced for security/process)
       // If user provided codes, verify them.
-      if (codeA && !verifyToken(secretA, codeA)) throw new Error('Authenticator A code is incorrect');
-      if (codeB && !verifyToken(secretB, codeB)) throw new Error('Authenticator B code is incorrect');
-      
+      if (codeA && !verifyToken(secretA, codeA)) throw new Error(t('errors.authAIncorrect'));
+      if (codeB && !verifyToken(secretB, codeB)) throw new Error(t('errors.authBIncorrect'));
+
       // 2. Parse Merged Data
       const data = JSON.parse(mergedData);
       // Expected: { ec: string, epl: string } OR { em: string, epl: string }
-      
-      if ((!data.em && !data.ec) || !data.epl) throw new Error('Invalid data format');
+
+      if ((!data.em && !data.ec) || !data.epl) throw new Error(t('errors.invalidDataFormat'));
       
       let mnemonic = '';
       let password = '';
@@ -287,12 +287,12 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
           
           // A. Decrypt ec -> ciphertext using Secret A
           const decryptedCiphertext = decryptWithSecret(data.ec, secretA);
-          if (!decryptedCiphertext) throw new Error('Failed to decrypt Ciphertext (Key A might be wrong)');
+          if (!decryptedCiphertext) throw new Error(t('errors.decryptCiphertextFailed'));
           ciphertext = decryptedCiphertext;
 
           // B. Decrypt epl -> Context using Secret B
           const pwdLineJson = decryptWithSecret(data.epl, secretB);
-          if (!pwdLineJson) throw new Error('Failed to decrypt Context (Key B might be wrong)');
+          if (!pwdLineJson) throw new Error(t('errors.decryptContextFailedA'));
           
           const context = JSON.parse(pwdLineJson);
           password = context.password;
@@ -340,10 +340,10 @@ const ShardDualAuthDecryptor: React.FC<ShardDualAuthDecryptorProps> = ({ initial
       } else {
           // Legacy Logic (Small Payload)
           mnemonic = decryptWithSecret(data.em, secretA);
-          if (!mnemonic) throw new Error('Failed to decrypt Mnemonic (Key A might be wrong)');
-          
+          if (!mnemonic) throw new Error(t('errors.decryptMnemonicFailed'));
+
           const pwdLineJson = decryptWithSecret(data.epl, secretB);
-          if (!pwdLineJson) throw new Error('Failed to decrypt Context (Key B might be wrong)');
+          if (!pwdLineJson) throw new Error(t('errors.decryptContextFailedB'));
           
           const context = JSON.parse(pwdLineJson);
           password = context.password;

@@ -1,0 +1,1101 @@
+{
+  "common": {
+    "loading": "Memuat...",
+    "language": "Bahasa",
+    "close": "Tutup",
+    "back": "Kembali",
+    "copy": "Salin",
+    "copied": "Tersalin!",
+    "download": "Unduh",
+    "email": "Email",
+    "print": "Cetak",
+    "paste": "Tempel",
+    "browse": "Jelajah",
+    "fetch": "Ambil",
+    "or": "- ATAU -",
+    "none": "Tidak Ada",
+    "processing": "Memproses..."
+  },
+  "errorBoundary": {
+    "title": "Terjadi kesalahan",
+    "description": "Terjadi kesalahan yang tidak terduga. Data Anda mungkin aman, tetapi tampilan mengalami crash.",
+    "reload": "Muat Ulang Aplikasi"
+  },
+  "nav": {
+    "home": "Beranda",
+    "pricing": "Harga",
+    "terms": "Ketentuan",
+    "about": "Tentang"
+  },
+  "home": {
+    "subtitle": "Alat Steganography & Enkripsi Tingkat Militer",
+    "tabs": {
+      "encrypt": "Enkripsi",
+      "decrypt": "Dekripsi",
+      "stego": "Steganography",
+      "wallet": "Paper Wallet"
+    }
+  },
+  "pricing": {
+    "title": "Harga Sederhana dan Transparan",
+    "subtitle": "Pilih paket yang sesuai dengan kebutuhan keamanan Anda. Semua paket membuka kekuatan penuh alat enkripsi dan steganografi tingkat militer CryptoKey.im.",
+    "badge": {
+      "bestValue": "Nilai Terbaik"
+    },
+    "button": {
+      "contactSales": "Hubungi Sales",
+      "subscribeNow": "Berlangganan Sekarang",
+      "extendLicense": "Perpanjang Lisensi"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "Akses Instan",
+        "desc": "Dapatkan kunci lisensi dan pengaturan TOTP Anda segera setelah pembayaran. Tanpa menunggu."
+      },
+      "globalPayments": {
+        "title": "Pembayaran Global",
+        "desc": "Kami mendukung pembayaran USDT global melalui jaringan BSC, TRX, dan ETH.",
+        "descChina": "Tunggu pembaruan selanjutnya."
+      },
+      "securePrivate": {
+        "title": "Aman & Pribadi",
+        "desc": "Tidak ada penyimpanan data pribadi. Keamanan Anda adalah prioritas utama kami."
+      },
+      "refundPolicy": {
+        "title": "Kebijakan Pengembalian Dana",
+        "desc": "Kebijakan Tanpa Pengembalian Dana yang Ketat. Semua penjualan bersifat final setelah kunci lisensi diterbitkan."
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im adalah penyedia alat keamanan. Kami tidak menyediakan nasihat keuangan, perdagangan cryptocurrency, atau layanan kustodian. Harga dalam USD. PPN mungkin berlaku tergantung lokasi Anda."
+    },
+    "china": {
+      "hardwareOnly": "Hanya Otorisasi Hardware",
+      "description": "Silakan beli produk hardware kami CryptoKey untuk digunakan,<1/>Akses online akan segera hadir...",
+      "contactSales": "Hubungi Sales untuk Hardware",
+      "backToHome": "Kembali ke Beranda"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "Akses 24 Jam",
+        "description": "Akses instan 24 jam. Terikat perangkat, tidak perlu login.",
+        "features": [
+          "Fitur Pro Lengkap",
+          "Akses Instan (Tanpa Login)",
+          "Terikat Perangkat (24 jam Saja)",
+          "⚠️ Risiko: Hilang jika cache dibersihkan",
+          "⚠️ Tidak Dapat Dipindahkan"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "Bulanan",
+        "description": "Akses fleksibel untuk pengguna reguler.",
+        "features": [
+          "Fitur Pro Lengkap",
+          "Batal Kapan Saja",
+          "Dukungan Prioritas"
+        ]
+      },
+      "price_quarterly": {
+        "name": "Triwulan",
+        "description": "Hemat ~15% vs Bulanan.",
+        "features": [
+          "Fitur Pro Lengkap",
+          "Dukungan Prioritas",
+          "Penagihan Triwulan"
+        ]
+      },
+      "price_semiannual": {
+        "name": "Semi-Tahunan",
+        "description": "Hemat ~23% vs Bulanan.",
+        "features": [
+          "Fitur Pro Lengkap",
+          "Dukungan Prioritas",
+          "Penagihan Semi-Tahunan"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "Tahunan",
+        "description": "Nilai terbaik! Hemat ~33% vs Bulanan.",
+        "features": [
+          "Fitur Pro Lengkap",
+          "Dukungan Prioritas",
+          "Penagihan Tahunan"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Enterprise",
+        "price": "Kustom",
+        "period": "hubungi kami",
+        "description": "Untuk tim dan organisasi besar.",
+        "features": [
+          "Ketentuan Lisensi Kustom",
+          "Dukungan Khusus",
+          "SLA",
+          "Opsi On-premise"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Ketentuan Layanan",
+    "lastUpdated": "Terakhir Diperbarui: {{date}}",
+    "backToHome": "Kembali ke Beranda",
+    "disclaimer": {
+      "title": "Penafian Layanan",
+      "content_non_china": "Kami menyediakan alat manajemen keamanan kunci kripto (cryptokey.im) yang menawarkan cadangan mnemonic offline, otorisasi dinamis TOTP, dan layanan derivasi kunci yang aman. Kami TIDAK terlibat dalam perdagangan cryptocurrency, kustodian, atau layanan keuangan — hanya alat keamanan untuk kunci milik pengguna.",
+      "content_china": "Kami menyediakan alat manajemen keamanan kunci kripto (cryptokey.im) yang menawarkan cadangan mnemonic offline, otorisasi dinamis TOTP, dan layanan derivasi kunci yang aman. Kami fokus pada solusi keamanan hardware untuk aset digital Anda."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Penerimaan Ketentuan",
+        "content": "Dengan mengakses dan menggunakan CryptoKey.im (\"Layanan\"), Anda menerima dan menyetujui untuk terikat pada ketentuan dan ketentuan perjanjian ini."
+      },
+      "nature": {
+        "title": "2. Sifat Layanan",
+        "content": "CryptoKey.im adalah alat enkripsi dan steganografi sisi klien. Semua operasi enkripsi dilakukan secara lokal di browser Anda menggunakan WebAssembly. Kami tidak memiliki akses ke kunci pribadi, mnemonik, atau kata sandi Anda. Anda sepenuhnya bertanggung jawab untuk menjaga data Anda."
+      },
+      "responsibilities": {
+        "title": "3. Tanggung Jawab Pengguna",
+        "items": [
+          "Anda setuju untuk tidak menggunakan Layanan untuk aktivitas ilegal apa pun.",
+          "Anda mengakui bahwa jika Anda kehilangan kredensial atau kata sandi utama Anda, kami tidak dapat memulihkan data Anda.",
+          "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan kunci lisensi Anda."
+        ]
+      },
+      "ip": {
+        "title": "4. Kekayaan Intelektual",
+        "content": "Layanan ini berisi algoritma dan kode hak milik. \"Community Edition\" disediakan untuk tujuan audit di bawah lisensi CC-BY-NC-ND 4.0. Penggunaan komersial modul enkripsi inti memerlukan lisensi Pro yang valid."
+      },
+      "liability": {
+        "title": "5. Batasan Tanggung Jawab",
+        "content": "Sejauh yang diizinkan oleh hukum, CryptoKey.im tidak bertanggung jawab atas kerusakan tidak langsung, insidental, khusus, konsekuensial, atau punitif, termasuk namun tidak terbatas pada kehilangan keuntungan, data, penggunaan, niat baik, atau kerugian tidak berwujud lainnya, yang dihasilkan dari penggunaan Layanan Anda."
+      },
+      "refund": {
+        "title": "6. Kebijakan Pengembalian Dana & Biaya",
+        "policy": "Kebijakan Tanpa Pengembalian Dana yang Ketat: Semua penjualan bersifat final. Setelah pembayaran dikonfirmasi dan kunci lisensi diterbitkan, tidak ada pengembalian dana yang akan diberikan dalam keadaan apa pun.",
+        "fees": "Biaya Transaksi: Pengguna sepenuhnya bertanggung jawab atas semua biaya transaksi (termasuk tetapi tidak terbatas pada biaya Gas, biaya jaringan, dan biaya penarikan bursa). Pastikan Anda mentransfer jumlah yang tepat ditambah biaya yang diperlukan. Pembayaran kurang akan mengakibatkan kegagalan aktivasi lisensi."
+      }
+    }
+  },
+  "footer": {
+    "linkCopied": "Tautan tersalin ke clipboard!",
+    "forceUpdate": "Paksa Pembaruan / Hapus Cache",
+    "publicRepo": "Repositori Publik (Audit)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "Bagikan"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "QR Auth Desktop",
+    "registrationFailed": "Registrasi gagal"
+  },
+  "paymentModal": {
+    "title": "Pembayaran USDT",
+    "step": "Langkah {{step}}/4",
+    "close": "Tutup",
+    "steps": {
+      "identity": {
+        "title": "Verifikasi Akun",
+        "loggedIn": "Masuk sebagai",
+        "loginRequired": "Anda harus masuk untuk berlangganan paket ini.",
+        "loginNote": "Silakan tutup jendela ini dan daftar/masuk terlebih dahulu.",
+        "continue": "Lanjutkan",
+        "trial": {
+          "title": "Peringatan Akses Sementara",
+          "subtitle": "Anda membeli Akses 24 Jam tanpa masuk.",
+          "deviceBound": "Lisensi ini terikat perangkat. Hanya akan berfungsi di browser dan perangkat khusus ini.",
+          "risk": "Jika Anda membersihkan cache atau mengganti perangkat, Anda akan kehilangan akses secara permanen. Tidak ada pemulihan yang mungkin.",
+          "note": "Kami merekomendasikan masuk untuk keamanan, tetapi Anda dapat melanjutkan secara anonim."
+        }
+      },
+      "network": {
+        "title": "Pilih Jaringan Pembayaran",
+        "selected": "Jaringan Terpilih:",
+        "error": "Silakan pilih jaringan pembayaran"
+      },
+      "payment": {
+        "instruction": "Silakan kirim tepat",
+        "walletLabel": "Alamat Dompet Resmi",
+        "networkWarning": "Pastikan Anda mengirim USDT di jaringan {{network}} ({{standard}}). Transfer jaringan yang salah akan hilang.",
+        "importantWarning": {
+          "title": "⚠️ Peringatan Pembayaran Penting:",
+          "exactAmount": "Silakan bayar JUMLAH TEPAT yang ditampilkan.",
+          "underpayment": "Pembayaran kurang akan mengakibatkan kegagalan dan tidak dapat dikembalikan.",
+          "overpayment": "Pembayaran lebih tidak dapat dikembalikan dan tidak menumpuk waktu tambahan.",
+          "singleTx": "Sistem memverifikasi satu transaksi saja. Jangan kirim beberapa pembayaran kecil."
+        },
+        "txHashLabel": "Hash Transaksi (TXID)",
+        "txHashPlaceholder": "Tempel hash transaksi (TXID)",
+        "button": "Saya Sudah Mengirim Pembayaran",
+        "verifying": "Memverifikasi...",
+        "errorTx": "Hash Transaksi (TXID) diperlukan",
+        "errorValidation": {
+          "wallet": "Ini terlihat seperti Alamat Dompet, bukan Hash Transaksi (TXID). Silakan tempel TXID.",
+          "tron": "TXID TRON tidak valid. Harus berupa string hex 64 karakter.",
+          "eth": "TXID {{chain}} tidak valid. Harus terlihat seperti 0x... dan memiliki 64 karakter hex."
+        },
+        "clipboardError": "Gagal membaca clipboard. Silakan ketik secara manual.",
+        "copied": "Tautan tersalin ke clipboard!"
+      },
+      "verification": {
+        "title": "Memverifikasi Transaksi...",
+        "description": "Kami sedang memeriksa blockchain untuk pembayaran Anda. Ini biasanya memakan waktu 1-3 menit.",
+        "checkingTxid": "Memeriksa TXID:",
+        "safeToClose": "Aman untuk menutup jendela ini.",
+        "autoActivation": "Lisensi Pro Anda akan diaktifkan secara otomatis setelah transaksi dikonfirmasi di blockchain.",
+        "verifying": "Memverifikasi Pembayaran...",
+        "success": "Pembayaran Terverifikasi!",
+        "failed": "Verifikasi pembayaran gagal. Silakan periksa transaksi Anda."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "Mode Dual Authenticator (Direkomendasikan)",
+    "dualAuthDesc": "Pisahkan enkripsi menjadi dua kunci QR terpisah (Kunci A + Kunci B). Bahkan jika satu kunci dicuri, data Anda tetap aman.",
+    "switchToDual": "Beralih ke Enkripsi Dual Auth",
+    "generateStandard": "Hasilkan Kode QR Standar",
+    "generating": "Menghasilkan...",
+    "standardModeDesc": "Mode Standar: Menghasilkan pecahan QR terenkripsi AES-256.",
+    "streamMode": "Mode Air-Gap Stream",
+    "proFeature": "Streaming QR berkecepatan tinggi adalah fitur Pro.",
+    "unlockStream": "Buka Mode Stream",
+    "pauseStream": "Jeda Stream",
+    "playStream": "Putar Stream",
+    "scanNote": "Gunakan aplikasi pemindai QR yang kompatibel (mis. Cobo Vault, Keystone) untuk menangkap stream.",
+    "shardCount": "Pecahan {{current}} dari {{total}}",
+    "saveAll": "Simpan Semua Gambar",
+    "saveImage": "Simpan Gambar",
+    "close": "Tutup",
+    "speedSlow": "Lambat (2 FPS)",
+    "speedFast": "Cepat (4 FPS)",
+    "speedTurbo": "Turbo (10 FPS)"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "Akses kamera ditolak atau tidak tersedia. Pastikan Anda menggunakan HTTPS atau localhost."
+    },
+    "title": "Pemindai Stream",
+    "instruction": "Arahkan ke kode QR animasi",
+    "accessingCamera": "Mengakses Kamera...",
+    "scanning": "Memindai...",
+    "waitingStream": "Menunggu aliran data..."
+  },
+  "dualAuthGenerator": {
+    "title": "Enkripsi Dual Authenticator",
+    "back": "Kembali",
+    "howItWorks": {
+      "title": "Cara kerjanya:",
+      "step1": "Sistem menghasilkan dua kunci unik (Rahasia A & B).",
+      "step2": "Anda mengikatnya ke Aplikasi Authenticator Anda (Google/Microsoft Auth).",
+      "step3": "<strong>Rahasia A</strong> mengenkripsi Mnemonic Anda.",
+      "step4": "<strong>Rahasia B</strong> mengenkripsi Kata Sandi & Nomor Baris Anda.",
+      "step5": "Hasilnya dibagi menjadi pecahan QR.",
+      "step6": "Untuk mendekripsi, Anda memerlukan Pecahan + Kode Authenticator (atau QR Pengikatan cadangan)."
+    },
+    "generateKeys": "Hasilkan Kunci Aman",
+    "authA": "Authenticator A (Kunci Mnemonic)",
+    "authB": "Authenticator B (Kunci Konteks)",
+    "scanAuth": "Pindai dengan Google/Microsoft Authenticator",
+    "saveImage": "Simpan Gambar",
+    "processing": "Memproses...",
+    "encryptAndGenerate": "Enkripsi & Hasilkan Pecahan",
+    "encryptionComplete": "Enkripsi Selesai!",
+    "resultDesc": "Anda memiliki {{count}} pecahan data dan 2 kunci authenticator.",
+    "importantWarning": "Penting: Anda HARUS menyimpan SEMUA gambar (Pecahan + Kunci Auth) untuk mendekripsi nanti!",
+    "downloadAll": "Unduh Semua Gambar (Zip direkomendasikan)",
+    "shardLabel": "Pecahan {{index}}",
+    "errorBind": "Silakan ikat authenticator terlebih dahulu",
+    "errorGen": "Pembuatan gagal"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. Unggah Pecahan Dual-Auth",
+      "instruction": "Unggah semua pecahan (biasanya 8-12) yang dihasilkan oleh Generator Dual Auth."
+    },
+    "scanStream": "Pindai Stream",
+    "selectImages": "Pilih Gambar",
+    "clearReset": "Hapus / Reset",
+    "progress": "Progres: {{count}} / {{total}}",
+    "failedFiles": "Gagal membaca {{count}} file:",
+    "missingParts": "Bagian yang Hilang: {{parts}}",
+    "mergeSuccess": "Pecahan berhasil digabungkan!",
+    "step2": {
+      "title": "2. Masukkan Kunci Dekripsi (Wajib)",
+      "description": "Anda HARUS memberikan Rahasia A & B. Ini adalah kunci permanen (gambar QR atau string Base32), BUKAN kode 6 digit sementara."
+    },
+    "keyA": {
+      "label": "Kunci A (Rahasia untuk Mnemonic)",
+      "loaded": "QR Kunci A Dimuat",
+      "upload": "Unggah QR Kunci A",
+      "placeholder": "Tempel Rahasia Kunci A (Base32)"
+    },
+    "keyB": {
+      "label": "Kunci B (Rahasia untuk Konteks)",
+      "loaded": "QR Kunci B Dimuat",
+      "upload": "Unggah QR Kunci B",
+      "placeholder": "Tempel Rahasia Kunci B (Base32)"
+    },
+    "lostQrHelp": "* Kehilangan QR? Periksa fitur \"Ekspor\" atau \"Tampilkan Rahasia\" Aplikasi Authenticator Anda untuk menemukan kode ini.",
+    "step3": {
+      "title": "3. Verifikasi Kunci dengan Kode Authenticator (Opsional)",
+      "description": "Jika Anda memiliki akses ke Aplikasi Authenticator Anda, masukkan kode 6 digit saat ini untuk memverifikasi kebenaran (opsional)."
+    },
+    "codeA": {
+      "placeholder": "Kode A (mis. 123456)"
+    },
+    "codeB": {
+      "placeholder": "Kode B (mis. 654321)"
+    },
+    "decryptButton": "Dekripsi Data",
+    "keysRequired": "* Silakan berikan kedua Kunci Rahasia (Langkah 2) untuk mengaktifkan dekripsi.",
+    "success": {
+      "title": "Dekripsi Berhasil!"
+    },
+    "result": {
+      "mnemonicLabel": "Rahasia Terpulihkan (Mnemonic)",
+      "passwordLabel": "Kata Sandi Konteks",
+      "lineLabel": "Nomor Baris",
+      "fullContent": "Konten Terdekripsi Lengkap (Semua Baris)",
+      "rawCiphertext": "Ciphertext Mentah (Legacy)"
+    },
+    "bookCipherNote": "Catatan: Ini tampaknya merupakan Indeks Book Cipher..."
+  },
+  "integrityCheck": {
+    "title": "Verifikasi bahwa kode aplikasi ini cocok dengan kode sumber di GitHub",
+    "fetching": "Mengambil tanda tangan rilis untuk {{version}}...",
+    "verifying": "Memverifikasi {{path}}...",
+    "failedToLoad": "Gagal memuat",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ Tidak dapat memverifikasi {{path}}: {{error}}",
+    "criticalError": "Kesalahan Kritis: {{error}}"
+  },
+  "militaryBadge": {
+    "title": "KEAMANAN TINGKAT MILITER",
+    "feature1": "Arsitektur Zero-Knowledge",
+    "feature2": "Pemrosesan Sisi Klien Saja",
+    "feature3": "Tidak Ada Log Data yang Bertahan"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "Fitur ini tersedia dalam versi Komersial/Pro"
+  },
+  "userManual": {
+    "button": "Panduan Pengguna",
+    "title": "Panduan Pengguna CryptoKey",
+    "subtitle": "Panduan Enkripsi & Pemulihan Data Aman",
+    "close": "Tutup",
+    "tabs": {
+      "start": "Panduan Cepat",
+      "dual": "Dual Authenticator",
+      "security": "Keamanan & Privasi",
+      "recover": "Proses Pemulihan"
+    },
+    "mobileTabs": {
+      "start": "Mulai Cepat",
+      "dual": "Dual Auth",
+      "security": "Keamanan",
+      "recover": "Pemulihan"
+    },
+    "start": {
+      "title": "Memulai",
+      "description": "CryptoKey memungkinkan Anda menyembunyikan data sensitif (seperti mnemonik) dalam data umpan menggunakan enkripsi standar atau perlindungan dual-authenticator.",
+      "steps": [
+        "Pilih mode (Standar atau Dual Authenticator).",
+        "Masukkan data rahasia Anda.",
+        "Hasilkan pecahan atau blok terenkripsi.",
+        "Simpan output dengan aman (kode QR atau teks)."
+      ]
+    },
+    "dual": {
+      "title": "Mode Dual Authenticator",
+      "coreConcept": {
+        "title": "Konsep Inti",
+        "description": "Tidak seperti enkripsi standar, mode ini memerlukan <strong>Dua Kunci Terpisah</strong> (Kunci A & Kunci B) untuk mendekripsi. Ini membagi kepercayaan antara dua token/perangkat authenticator yang berbeda."
+      },
+      "encryption": {
+        "title": "1. Enkripsi (Pembuatan)",
+        "step1": "Masukkan Mnemonic dan Kata Sandi/Konteks Anda.",
+        "step2": "Pindai dua kode QR yang dihasilkan (Kunci A & Kunci B) dengan aplikasi Google Authenticator Anda. <strong>Simpan gambar QR ini!</strong> Mereka adalah kunci permanen Anda.",
+        "step3": "Masukkan kode 6 digit dari aplikasi Anda untuk memverifikasi dan mengunci enkripsi.",
+        "step4": "Unduh Gambar Pecahan yang dihasilkan (QR Sharding)."
+      },
+      "decryption": {
+        "title": "2. Dekripsi (Pemulihan)",
+        "important": {
+          "title": "Penting: Kunci vs Kode",
+          "content": "<strong>Kunci (QR/Rahasia):</strong> \"Kunci\" permanen yang Anda pindai. Diperlukan untuk dekripsi.<br/><strong>Kode (6-digit):</strong> \"Token\" sementara yang dihasilkan setiap 30 detik. Hanya digunakan untuk verifikasi.",
+          "note": "* Anda TIDAK BISA mendekripsi hanya dengan kode 6 digit. Anda HARUS mengunggah QR Kunci atau memasukkan string Rahasia."
+        },
+        "step1": "Unggah semua Gambar Pecahan Anda.",
+        "step2": "<strong>WAJIB:</strong> Unggah gambar QR Kunci A & Kunci B (atau tempel string Rahasia).",
+        "step3": "(Opsional) Masukkan kode 6 digit saat ini untuk memverifikasi kebenaran."
+      },
+      "lost": {
+        "title": "3. Kehilangan Gambar QR Anda?",
+        "description": "Jika Anda masih memiliki Aplikasi Authenticator di ponsel Anda:",
+        "steps": [
+          "Buka Google Authenticator.",
+          "Gunakan fitur \"Ekspor Akun\" atau \"Transfer\".",
+          "Ini akan menampilkan kode QR yang berisi Rahasia Anda.",
+          "Pindai/Dekode QR ekspor tersebut untuk mendapatkan kembali string Rahasia Anda."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. Pilih Mode Perlindungan",
+        "description": "Pilih cara terbaik untuk mengamankan frasa mnemonik atau data Anda:",
+        "book": {
+          "physical": {
+            "title": "Buku Fisik / Virtual",
+            "desc": "Sembunyikan kunci Anda di buku nyata di rak Anda. (Halaman-Baris-Kata)"
+          },
+          "online": {
+            "title": "Buku Online (URL)",
+            "desc": "Gunakan URL Gutenberg permanen sebagai sumber kunci Anda. Tidak perlu file."
+          },
+          "digital": {
+            "title": "Buku Digital (File)",
+            "desc": "Unggah file TXT Gutenberg. Diproses secara lokal, tidak pernah diunggah."
+          },
+          "index": {
+            "title": "Indeks Umum",
+            "desc": "Enkripsi struktur data arbitrer (mis., Info Bank, Kata Sandi)."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. Masukkan & Sembunyikan",
+        "description": "Masukkan data sensitif Anda. Kami kemudian akan meminta Anda untuk mengatur <span class=\"text-white font-mono\">Kepadatan Baris</span> (mis., 100 baris). Data asli Anda akan disembunyikan di satu baris acak di antara 99 baris palsu.",
+        "example": {
+          "fake1": "Baris 34: 832-19-22 (Palsu)",
+          "real": "Baris 35: 123-45-67 (Data Asli)",
+          "fake2": "Baris 36: 992-11-02 (Palsu)"
+        }
+      },
+      "export": {
+        "title": "3. Ekspor & Simpan",
+        "description": "Setelah dienkripsi, Anda akan menerima blok ciphertext. Anda harus menyimpan blok ini!",
+        "ways": "Cara menyimpan:",
+        "email": "Email (Perangkat Pribadi)",
+        "usb": "Unduh USB (Paling Aman)",
+        "print": "Cetak Kertas (Offline)"
+      },
+      "publicComputer": {
+        "title": "Keamanan Komputer Publik",
+        "description": "Jika Anda menggunakan komputer publik (warnet, perpustakaan, PC teman):",
+        "steps": [
+          "JANGAN masuk ke email pribadi Anda.",
+          "JANGAN gunakan clipboard (salin/tempel) jika memungkinkan.",
+          "Gunakan toggle <strong>\"Mode Komputer Publik\"</strong> di halaman hasil.",
+          "Unduh file ke USB drive atau pindai kode QR dengan ponsel Anda.",
+          "Klik <strong>\"Hapus Semua Data\"</strong> sebelum pergi."
+        ]
+      },
+      "military": {
+        "title": "Enkripsi Tingkat Militer",
+        "description": "Kami menggunakan enkripsi <strong>AES-256-GCM</strong>. Ini adalah standar yang sama yang digunakan oleh pemerintah dan bank. Kata sandi Anda di-salt dan di-hash menggunakan <strong>PBKDF2-HMAC-SHA256</strong> dengan 100.000 iterasi, membuat serangan brute-force hampir tidak mungkin."
+      },
+      "zk": {
+        "title": "Arsitektur Zero-Knowledge",
+        "description": "Semuanya terjadi di browser Anda. Kami tidak memiliki <strong>server</strong>, database, dan log. Jika Anda menutup tab ini, data Anda hilang selamanya kecuali Anda menyimpan cadangannya."
+      },
+      "deniability": {
+        "title": "Penyangkalan yang Masuk Akal",
+        "description": "Kami menghasilkan <strong>baris umpan palsu</strong> yang tidak dapat dibedakan dari data asli Anda. Bahkan jika seseorang memaksa Anda untuk mendekripsi file, Anda dapat mengklaim baris palsu mana pun adalah yang \"asli\", atau bahwa file tidak berisi data yang berarti sama sekali. Matematika enkripsi menyembunyikan baris mana yang asli."
+      },
+      "transparency": {
+        "title": "Transparansi Kode",
+        "description": "CryptoKey adalah aplikasi sisi klien murni. Anda dapat memeriksa kode sumber di alat pengembang browser Anda. Kami mendorong audit keamanan. Tidak ada skrip atau analitik eksternal yang dimuat."
+      }
+    },
+    "recover": {
+      "title": "Cara Mendekripsi",
+      "steps": {
+        "step1": {
+          "title": "Pilih Mode",
+          "description": "Pilih mode yang sama yang digunakan untuk enkripsi (Fisik, File, atau URL). Jika menggunakan File atau URL, Anda harus menyediakan buku sumber yang sama persis."
+        },
+        "step2": {
+          "title": "Tempel Ciphertext",
+          "description": "Salin seluruh blok ciphertext (termasuk karakter acak) dari email atau file Anda."
+        },
+        "step3": {
+          "title": "Masukkan Kata Sandi",
+          "description": "Masukkan kata sandi yang Anda tetapkan selama enkripsi."
+        },
+        "step4": {
+          "title": "Identifikasi Baris Anda",
+          "description": "Sistem akan mendekripsi SEMUA baris (asli + palsu). Anda harus ingat nomor baris mana yang milik Anda (mis., Baris 35) untuk menemukan data Anda."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "Keamanan Tingkat Militer",
+    "title": "Arsitektur Keamanan",
+    "subtitle": "Zero-Knowledge Proof & Enkripsi Tingkat Militer",
+    "features": {
+      "aes": {
+        "title": "Enkripsi AES-256-GCM",
+        "desc": "Data Anda dienkripsi menggunakan standar terkuat yang tersedia (Web Crypto API). Kami menggunakan PBKDF2 dengan 100.000 iterasi untuk derivasi kunci."
+      },
+      "steganography": {
+        "title": "Steganografi Book Cipher",
+        "desc": "Menyembunyikan data sensitif dalam teks buku biasa (Gutenberg/Fisik). Penyerang hanya melihat indeks halaman/baris/kata yang tidak berbahaya, bukan ciphertext."
+      },
+      "dual": {
+        "title": "Dual-Factor & Sharding",
+        "desc": "Mode Dual Authenticator baru membagi enkripsi antara dua kunci terpisah (A & B), ditambah QR Sharding untuk redundansi. Bahkan jika satu kunci dikompromikan, data Anda tetap aman."
+      },
+      "zk": {
+        "title": "Zero-Knowledge",
+        "desc": "Kami tidak pernah melihat kata sandi atau data Anda. Semuanya terjadi secara lokal di browser Anda. Tidak ada data yang pernah dikirim ke server kami."
+      },
+      "noPersistence": {
+        "title": "Tanpa Persistensi",
+        "desc": "Kami tidak menggunakan cookie, penyimpanan lokal, atau database server. Buku Digital (TXT) diproses secara lokal dan tidak pernah diunggah."
+      },
+      "antiTheft": {
+        "title": "Perlindungan Anti-Pencurian",
+        "desc": "Bidang input mencegah pelengkapan otomatis dan caching. Memori secara aktif dibersihkan saat Anda pergi. Aman untuk komputer publik."
+      }
+    },
+    "audit": {
+      "title": "Audit Teknis",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "Sisi Klien Saja",
+        "noUploads": "Tanpa Upload (Mode File)",
+        "noLog": "Kebijakan Tanpa Log",
+        "wipe": "Penghapusan Memori"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "Pilih Mode Pemulihan",
+      "subtitle": "Pilih bagaimana Anda ingin mengenkripsi/memulihkan data Anda.",
+      "mnemonic": {
+        "title": "Frasa Mnemonic",
+        "desc": "Gunakan frasa seed 12/24 kata sebagai sumber kunci Anda.",
+        "features": {
+          "compliance": "Sesuai BIP-39",
+          "encryption": "Enkripsi Standar",
+          "security": "Keamanan Tinggi"
+        }
+      },
+      "physical": {
+        "title": "Buku Fisik",
+        "desc": "Sembunyikan kunci Anda di buku nyata di rak Anda.",
+        "features": {
+          "manual": "Entri Manual",
+          "ownBook": "Gunakan Buku Anda Sendiri",
+          "flexible": "Fleksibel & Tersembunyi"
+        }
+      },
+      "digital": {
+        "title": "Buku Digital (File)",
+        "desc": "Unggah file teks untuk digunakan sebagai sumber kunci Anda.",
+        "features": {
+          "local": "Diproses Secara Lokal",
+          "noUpload": "Tanpa Upload Server",
+          "offline": "Bekerja Offline"
+        }
+      },
+      "url": {
+        "title": "Buku Online (URL)",
+        "desc": "Gunakan URL permanen sebagai sumber kunci Anda.",
+        "features": {
+          "remote": "Konten Jarak Jauh",
+          "convenient": "Akses Mudah",
+          "dynamic": "Referensi Dinamis"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Masukkan Mnemonic",
+        "file": "Unggah File",
+        "url": "Masukkan URL",
+        "general": "Masukkan Data"
+      },
+      "subtitle": {
+        "mnemonic": "Masukkan frasa mnemonic 12 atau 24 kata Anda.",
+        "file": "Unggah file teks untuk dienkripsi.",
+        "url": "Masukkan URL untuk mengambil konten dari.",
+        "general": "Masukkan data teks apa pun untuk dienkripsi."
+      },
+      "file": {
+        "loaded": "File Berhasil Dimuat",
+        "upload": "Seret & lepas atau Klik untuk Unggah",
+        "sizeLoaded": "Dimuat",
+        "maxSize": "Maks 5MB • TXT",
+        "scheme": "Skema Enkripsi",
+        "schemes": {
+          "offset": "Offset Karakter",
+          "chapter": "Indeks Bab",
+          "virtual": "Baris Virtual"
+        }
+      },
+      "url": {
+        "fetch": "Ambil Konten",
+        "proxy": {
+          "title": "Proxy Lokal Aktif",
+          "desc": "Menggunakan proxy lokal untuk pengembangan."
+        },
+        "success": "Dimuat {{count}} karakter",
+        "recommended": "Buku yang Direkomendasikan",
+        "clickToFill": "Klik untuk mengisi"
+      },
+      "general": {
+        "placeholder": "Masukkan baris data...",
+        "addLine": "Tambah Baris Baru",
+        "generate": "Data Acak"
+      },
+      "mnemonic": {
+        "label": "Frasa Mnemonic",
+        "required": "(Wajib)",
+        "placeholder": "Masukkan frasa mnemonic Anda...",
+        "paste": "Tempel",
+        "generate": "Hasilkan"
+      }
+    },
+    "mixStep": {
+      "title": "Atur Kata Sandi Enkripsi",
+      "subtitle": "Atur kata sandi yang kuat untuk mengenkripsi brankas Anda.",
+      "password": {
+        "label": "Atur Kata Sandi Enkripsi",
+        "placeholder": "Masukkan kata sandi yang kuat"
+      },
+      "confirm": {
+        "label": "Konfirmasi Kata Sandi",
+        "placeholder": "Masukkan kembali kata sandi"
+      },
+      "rowCount": {
+        "label": "Jumlah Baris (Kepadatan Campuran)",
+        "help": "Jumlah lebih tinggi = Anonimitas lebih baik.",
+        "upgrade": "(Batas: 100. Klik untuk Upgrade)",
+        "proRequired": "Nilai > 100 memerlukan lisensi Pro."
+      },
+      "duress": {
+        "label": "Kata Sandi Paksaan (Opsional)",
+        "help": "Buat brankas palsu yang terbuka dengan kata sandi berbeda. Gunakan ini jika dipaksa membuka perangkat Anda.",
+        "passwordLabel": "Kata Sandi Paksaan",
+        "placeholder": "Berbeda dari kata sandi asli",
+        "fakeContentLabel": "Konten Palsu (Umpan)"
+      },
+      "error": {
+        "required": "Kata sandi diperlukan",
+        "mismatch": "Kata sandi tidak cocok",
+        "minLength": "Kata sandi harus minimal 8 karakter",
+        "duressRequired": "Kata sandi paksaan diperlukan",
+        "duressSame": "Kata sandi paksaan tidak boleh sama dengan kata sandi asli",
+        "encryptionFailed": "Enkripsi gagal. Silakan coba lagi."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "Berhasil Dienkripsi",
+        "title": "Cadangan Anda Siap",
+        "subtitle": "Simpan Ciphertext dan hafalkan kredensial Anda."
+      },
+      "mode": {
+        "personal": "Pribadi",
+        "public": "Publik"
+      },
+      "realIndex": {
+        "title": "Indeks Baris Asli",
+        "help": "Ini adalah SATU-SATUNYA baris yang berisi data Anda. Semua yang lain palsu."
+      },
+      "mnemonic": {
+        "title": "Mnemonic Asli"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "Salin",
+        "copied": "Tersalin!",
+        "download": "Unduh",
+        "email": "Email",
+        "print": "Cetak"
+      },
+      "dualAuth": {
+        "button": "Hasilkan Pecahan Dual Auth",
+        "pro": "Fitur Pro: Upgrade untuk Akses"
+      },
+      "reset": "Reset"
+    }
+  },
+  "decryption": {
+    "title": "Alat Dekripsi",
+    "subtitle": "Pulihkan pesan asli Anda dari berbagai sumber",
+    "status": {
+      "scanning": "Memindai...",
+      "processing": "Memproses data stream...",
+      "reassembling": "Merakit Ulang & Mendekompresi...",
+      "scanProgress": "Memindai... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "Dual Auth Terdeteksi",
+      "dualAuthDesc": "Konten ini dilindungi oleh Autentikasi Dual-Factor.",
+      "switchToDual": "Beralih ke Mode Dual Auth",
+      "backToStandard": "Kembali ke Dekripsi Standar",
+      "dualAuthBadge": "Mode Dual Auth"
+    },
+    "label": {
+      "ciphertext": "Ciphertext / Data Terenkripsi",
+      "closeScanner": "Tutup Pemindai",
+      "password": "Kata Sandi Dekripsi",
+      "failedFiles": "File Gagal:",
+      "missingParts": "Bagian yang Hilang:",
+      "fragmentsFound": "Fragmen Ditemukan:",
+      "uploadRemaining": "Unggah yang Tersisa"
+    },
+    "button": {
+      "scanStream": "Pindai Stream",
+      "uploadQRShards": "Unggah Pecahan QR",
+      "paste": "Tempel",
+      "decrypt": "Dekripsi Data"
+    },
+    "placeholder": {
+      "ciphertext": "Tempel ciphertext, blok terenkripsi, atau konten QR Anda di sini...",
+      "password": "Masukkan kata sandi yang digunakan untuk enkripsi"
+    },
+    "mode": {
+      "physicalBook": "Buku Fisik / Virtual",
+      "digitalBook": "Buku Digital (File)",
+      "onlineBook": "Buku Online (URL)"
+    },
+    "file": {
+      "title": "Unggah File Buku",
+      "description": "Unggah <strong>file TXT Gutenberg yang sama persis</strong> yang digunakan selama enkripsi.",
+      "loaded": "Dimuat: {{size}} KB",
+      "choose": "Pilih File TXT Gutenberg...",
+      "browse": "Jelajah",
+      "parsed": "Berhasil mengurai {{count}} Bab"
+    },
+    "url": {
+      "title": "Ambil URL Buku",
+      "description": "Masukkan <strong>URL HTML Gutenberg yang sama persis</strong> yang digunakan selama enkripsi.",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "Ambil",
+      "loaded": "Dimuat: {{length}} karakter (Hash: {{hash}}...)"
+    },
+    "locate": {
+      "title": "Temukan Data",
+      "description": "Baris mana yang berisi data Anda?",
+      "row": "Baris"
+    },
+    "result": {
+      "title": "Data Terpulihkan (Baris {{row}})",
+      "copy": "Salin",
+      "copied": "Tersalin!",
+      "empty": "Baris kosong atau tidak valid",
+      "rowAppears": "Baris {{row}} tampaknya kosong atau berisi data tidak valid.",
+      "enterRow": "Masukkan nomor baris (1-100+) di mana Anda menyembunyikan data Anda untuk mengungkapkannya.",
+      "rawPreview": "PRATINJAU DATA MENTAH"
+    },
+    "errors": {
+      "incompleteData": "Data tidak lengkap: {{current}}/{{total}} bagian ditemukan",
+      "invalidFormat": "(Format tidak valid)",
+      "noQrFound": "(Tidak ada kode QR ditemukan)",
+      "failedToReadFile": "(Gagal membaca file)",
+      "decryptionFailed": "Dekripsi gagal. Silakan periksa kata sandi Anda."
+    },
+    "error": {
+      "fileMode": "Silakan unggah file buku asli untuk memulihkan data.",
+      "fileModeUnknown": "Format data tidak dikenal untuk mode File.",
+      "urlMode": "Silakan ambil URL buku untuk memulihkan data.",
+      "clipboard": "Tidak dapat mengakses clipboard. Silakan tempel secara manual.",
+      "decryptFailed": "Dekripsi gagal. Silakan periksa kata sandi Anda."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "Sembunyikan Data",
+      "extract": "Ekstrak Data"
+    },
+    "label": {
+      "carrierImages": "Gambar Pembawa",
+      "imagesLoaded": "gambar dimuat",
+      "source": "Sumber: {{name}}",
+      "original": "Asli: {{name}}",
+      "uploadImages": "Unggah Gambar",
+      "uploadExtractHelp": "Unggah semua gambar pecahan untuk merekonstruksi.",
+      "uploadHideHelp": "Unggah gambar pembawa.",
+      "limitInfo": "Gratis: 3 gambar. Pro: Tidak Terbatas.",
+      "secretMessage": "Pesan Rahasia",
+      "enableSharding": "Aktifkan Secret Sharing (Sharding)",
+      "proOnly": "(Hanya Pro)",
+      "totalShares": "Total Share (N)",
+      "threshold": "Diperlukan untuk Dekripsi (K)",
+      "strictMatching": "Pencocokan Nama File Ketat",
+      "strictMatchingHelp": "Dekripsi hanya akan berfungsi jika file cocok dengan nama aslinya dengan tepat.",
+      "extractedContent": "Konten Terekstrak"
+    },
+    "placeholder": {
+      "pasteCiphertext": "Tempel ciphertext terenkripsi di sini...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "Nama File Output"
+    },
+    "warning": {
+      "title": "PERINGATAN KRITIS:",
+      "text": "Jangan masukkan plaintext (seperti mnemonik) secara langsung! Siapa pun dengan gambar dapat mengekstraknya. Selalu enkripsi data Anda terlebih dahulu (mis., menggunakan tab \"Enkripsi\") dan tempel Ciphertext di sini."
+    },
+    "button": {
+      "clearAll": "Hapus Semua",
+      "paste": "Tempel",
+      "generateShards": "Hasilkan & Unduh Pecahan",
+      "hideData": "Sembunyikan Data & Unduh",
+      "copied": "Tersalin!",
+      "copy": "Salin",
+      "extractHidden": "Ekstrak Data Tersembunyi"
+    },
+    "status": {
+      "successHide": "Data berhasil disembunyikan! Gambar diunduh.",
+      "successShards": "Berhasil menghasilkan dan mengunduh {{count}} gambar pecahan.",
+      "noData": "Tidak ada data tersembunyi yang valid ditemukan. Periksa nama file jika mode ketat digunakan.",
+      "reconstructFailed": "Rekonstruksi gagal: {{error}}. Menampilkan data mentah di bawah ini.",
+      "waitingImage": "Menunggu gambar..."
+    },
+    "about": {
+      "title": "Tentang Steganografi",
+      "text": "Alat ini menyembunyikan data Anda di bit paling tidak signifikan (LSB) dari piksel gambar. Gambar yang dihasilkan terlihat identik dengan mata manusia tetapi berisi pesan rahasia Anda.",
+      "noteTitle": "Catatan:",
+      "noteText": "Jangan kompres gambar yang diunduh (mis., mengirim melalui WhatsApp/Messenger sering mengompres gambar). Selalu bagikan sebagai file (Dokumen) atau simpan secara lokal."
+    }
+  },
+  "wallet": {
+    "title": "Generator Wallet Aman",
+    "subtitle": "Hasilkan wallet yang sesuai dengan BIP39/BIP44. 100% Sisi Klien.",
+    "strength": {
+      "12words": "12 Kata (128-bit)",
+      "24words": "24 Kata (256-bit)"
+    },
+    "action": {
+      "generate": "Hasilkan Wallet Baru",
+      "import": "Impor Mnemonic"
+    },
+    "import": {
+      "title": "Impor Wallet yang Ada",
+      "placeholder": "Masukkan frasa mnemonic 12, 15, 18, 21, atau 24 kata Anda di sini...",
+      "paste": "Tempel",
+      "submit": "Impor Wallet"
+    },
+    "error": {
+      "invalidMnemonic": "Mnemonic tidak valid"
+    },
+    "mnemonic": {
+      "title": "Frasa Pemulihan (Mnemonic)",
+      "reveal": "Klik untuk Mengungkap"
+    },
+    "copyTo": {
+      "encrypt": "Salin ke \"Masukkan Frasa Mnemonic\"",
+      "steganography": "Salin ke \"Steganography\""
+    },
+    "details": {
+      "title": "Detail Wallet",
+      "showKeys": "Tampilkan Kunci Sensitif",
+      "hideKeys": "Sembunyikan Kunci Sensitif",
+      "ethAddress": "Alamat Ethereum (BIP44)",
+      "path": "Jalur: {{path}} (Standar Metamask/Ledger)",
+      "privateKey": "Kunci Pribadi",
+      "publicKey": "Kunci Publik",
+      "addressQr": "QR Alamat"
+    },
+    "security": {
+      "title": "Peringatan Keamanan",
+      "line1": "Tulis kata-kata ini di kertas dan simpan dengan aman.",
+      "never": "Jangan pernah",
+      "line2": "bagikan dengan siapa pun.",
+      "line3": "Jika Anda kehilangan kata-kata ini, dana Anda hilang selamanya."
+    },
+    "tooltip": {
+      "pasteClipboard": "Tempel dari clipboard",
+      "hide": "Sembunyikan",
+      "show": "Tampilkan",
+      "copyClipboard": "Salin ke clipboard"
+    }
+  },
+  "installAuth": {
+    "redirecting": "Mengarahkan ke App Store...",
+    "detecting": "Mendeteksi perangkat Anda..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Ubah Bahasa"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "Akses Ditolak. Percobaan tidak sah dicatat.",
+      "passwordRequired": "Kata sandi diperlukan",
+      "passwordMismatch": "Kata sandi tidak cocok",
+      "passwordTooShort": "Kata sandi harus minimal 8 karakter",
+      "duressPasswordRequired": "Kata sandi paksaan diperlukan",
+      "duressPasswordSame": "Kata sandi paksaan tidak boleh sama dengan kata sandi asli"
+    },
+    "duress": {
+      "defaultMessage": "Akses Ditolak. Percobaan tidak sah telah dicatat."
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "Frasa mnemonic tidak valid. Silakan periksa kata-kata Anda.",
+      "enterCiphertext": "Silakan masukkan data ciphertext",
+      "invalidMode": "Mode tidak valid atau data hilang",
+      "encryptionFailed": "Proses enkripsi gagal. Silakan periksa input Anda.",
+      "parseFileFailed": "Gagal mengurai file. Pastikan itu adalah file teks yang valid.",
+      "invalidUrl": "URL tidak valid",
+      "fetchUrlFailed": "Gagal mengambil URL"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "Hapus baris",
+      "generateRandom": "Hasilkan Data Acak",
+      "pasteClipboard": "Tempel dari Clipboard",
+      "generateMnemonic": "Hasilkan Mnemonic Acak"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【Cadangan Aman CryptoKey】",
+      "ciphertext": "Ciphertext:",
+      "hash": "Hash:",
+      "footer": "Dekripsi di: https://cryptokey.im",
+      "generated": "Dihasilkan: {{date}}",
+      "note": "CATATAN: Memerlukan kata sandi + indeks baris untuk mendekripsi."
+    },
+    "watermark": "Dekripsi di https://CryptoKey.im | Dihasilkan pada {{date}}",
+    "print": {
+      "title": "CryptoKey Cadangan Aman"
+    },
+    "clipboard": {
+      "labels": "Ciphertext: {{ciphertext}}\\nHash: {{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "Menyelesaikan..."
+    },
+    "errors": {
+      "invalidFormat": "(Format tidak valid)",
+      "integrityFailed": "Pemeriksaan Integritas Gagal: Data yang dirakit ulang rusak. Silakan pindai ulang.",
+      "decompressionError": "Kesalahan Dekompresi: Data Cacat. Silakan coba unggah ulang gambar, pastikan jelas dan lengkap.",
+      "decompressionFailed": "Dekompresi gagal: {{error}}"
+    },
+    "error": {
+      "generationFailed": "Pembuatan gagal",
+      "startProcessing": "Memulai pemrosesan...",
+      "processingImage": "Memproses gambar {{current}} dari {{total}}..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "Kesalahan jam sistem terdeteksi. Silakan perbaiki waktu sistem Anda untuk terus menggunakan fitur Pro.",
+      "deactivateConfirm": "Nonaktifkan Lisensi Real Pro?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "Kembali",
+    "processing": "Memproses...",
+    "encryptGenerate": "Enkripsi & Hasilkan"
+  },
+  "steganographyExtra": {
+    "successGenerated": "Berhasil menghasilkan dan mengunduh {{count}} gambar pecahan.",
+    "carrierImages": "Gambar Pembawa",
+    "strictMatchRequired": "Pencocokan Ketat Diperlukan"
+  },
+  "wasmBenchmark": {
+    "title": "Benchmark Performa Wasm",
+    "testConfig": "Konfigurasi Tes",
+    "algorithm": "Algoritma: Shamir's Secret Sharing (GF(2^8))",
+    "shares": "Share: 5 total, 3 ambang",
+    "payload": "Payload: Rahasia 32-byte acak + Checksum",
+    "steganography": "Steganography: LSB Embedding pada buffer 100x100",
+    "running": "Menjalankan Tes...",
+    "startBenchmark": "Mulai Benchmark (Bukti Mentah)",
+    "jsTime": "Waktu JS",
+    "wasmTime": "Waktu Wasm",
+    "fasterSuffix": "{{ratio}}x Lebih Cepat",
+    "correctness": "Kebenaran",
+    "verified": "TERVERIFIKASI",
+    "failed": "GAGAL",
+    "waiting": "Menunggu untuk memulai..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - Cadangan Aman",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "Memulai Benchmark...",
+      "runningJs": "Menjalankan Implementasi JS...",
+      "loadingWasm": "Memuat Modul Wasm...",
+      "runningWasm": "Menjalankan Implementasi Wasm..."
+    },
+    "validation": {
+      "pass": "LULUS",
+      "fail": "GAGAL",
+      "result": "Hasil Validasi: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "Harap ikat autentikator terlebih dahulu",
+    "invalidDataFormat": "Format data tidak valid",
+    "hashMismatch": "Hash tidak cocok",
+    "noValidQr": "Tidak ada kode QR valid yang ditemukan",
+    "passwordIncorrect": "Kata sandi salah untuk konten vault apa pun",
+    "couldNotReadQr": "Tidak dapat membaca kode QR",
+    "invalidAuthQr": "Kode QR Autentikasi Tidak Valid",
+    "noSecretInQr": "Tidak ada rahasia ditemukan di QR",
+    "authAIncorrect": "Kode Autentikator A salah",
+    "authBIncorrect": "Kode Autentikator B salah",
+    "decryptCiphertextFailed": "Gagal mendekripsi Ciphertext (Kunci A mungkin salah)",
+    "decryptContextFailedA": "Gagal mendekripsi Context (Kunci B mungkin salah)",
+    "decryptMnemonicFailed": "Gagal mendekripsi Mnemonic (Kunci A mungkin salah)",
+    "decryptContextFailedB": "Gagal mendekripsi Context (Kunci B mungkin salah)",
+    "shardIntegrityError": "Kesalahan Integritas Shard: File {{filename}} milik set yang berbeda. Pastikan semua file berasal dari sesi enkripsi yang sama.",
+    "shareApiNotSupported": "API Share tidak didukung",
+    "canvasContext": "Tidak bisa mendapatkan konteks canvas",
+    "invalidShareType": "jsSplit mengembalikan tipe yang tidak valid: {{type}}",
+    "wasmLoadFailed": "Gagal memuat modul Wasm"
+  }
+}

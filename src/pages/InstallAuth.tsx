@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const InstallAuth = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
     const isAndroid = /android/i.test(userAgent);
@@ -29,8 +31,8 @@ export const InstallAuth = () => {
     <div className="flex items-center justify-center min-h-screen bg-slate-950 text-slate-100">
       <div className="text-center p-8">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
-        <h2 className="text-xl font-bold mb-2">Redirecting to App Store...</h2>
-        <p className="text-slate-400">Detecting your device...</p>
+        <h2 className="text-xl font-bold mb-2">{t('installAuth.redirecting')}</h2>
+        <p className="text-slate-400">{t('installAuth.detecting')}</p>
       </div>
     </div>
   );

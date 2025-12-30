@@ -1,0 +1,1101 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "language": "Ngôn ngữ",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép!",
+    "download": "Tải xuống",
+    "email": "Email",
+    "print": "In",
+    "paste": "Dán",
+    "browse": "Duyệt",
+    "fetch": "Tải về",
+    "or": "- HOẶC -",
+    "none": "Không có",
+    "processing": "Đang xử lý..."
+  },
+  "errorBoundary": {
+    "title": "Đã xảy ra lỗi",
+    "description": "Đã xảy ra lỗi không mong đợi. Dữ liệu của bạn có thể an toàn, nhưng giao diện hiển thị bị lỗi.",
+    "reload": "Tải lại ứng dụng"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "pricing": "Bảng giá",
+    "terms": "Điều khoản",
+    "about": "Giới thiệu"
+  },
+  "home": {
+    "subtitle": "Công cụ mã hóa & Steganography cấp quân sự",
+    "tabs": {
+      "encrypt": "Mã hóa",
+      "decrypt": "Giải mã",
+      "stego": "Steganography",
+      "wallet": "Ví giấy"
+    }
+  },
+  "pricing": {
+    "title": "Bảng giá đơn giản, minh bạch",
+    "subtitle": "Chọn gói phù hợp với nhu cầu bảo mật của bạn. Tất cả các gói đều mở khóa toàn bộ sức mạnh của công cụ mã hóa và steganography cấp quân sự của CryptoKey.im.",
+    "badge": {
+      "bestValue": "Giá trị tốt nhất"
+    },
+    "button": {
+      "contactSales": "Liên hệ bán hàng",
+      "subscribeNow": "Đăng ký ngay",
+      "extendLicense": "Gia hạn bản quyền"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "Truy cập ngay lập tức",
+        "desc": "Nhận khóa bản quyền và thiết lập TOTP ngay sau khi thanh toán. Không phải chờ đợi."
+      },
+      "globalPayments": {
+        "title": "Thanh toán toàn cầu",
+        "desc": "Chúng tôi hỗ trợ thanh toán USDT toàn cầu qua các mạng BSC, TRX và ETH.",
+        "descChina": "Hãy đón chờ các cập nhật."
+      },
+      "securePrivate": {
+        "title": "Bảo mật & Riêng tư",
+        "desc": "Không lưu trữ dữ liệu cá nhân. Bảo mật của bạn là ưu tiên hàng đầu."
+      },
+      "refundPolicy": {
+        "title": "Chính sách hoàn tiền",
+        "desc": "Chính sách không hoàn tiền nghiêm ngặt. Tất cả giao dịch là cuối cùng khi khóa bản quyền được phát hành."
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im là nhà cung cấp công cụ bảo mật. Chúng tôi không cung cấp tư vấn tài chính, giao dịch tiền điện tử hoặc dịch vụ lưu ký. Giá tính bằng USD. VAT có thể áp dụng tùy theo vị trí của bạn."
+    },
+    "china": {
+      "hardwareOnly": "Chỉ ủy quyền phần cứng",
+      "description": "Vui lòng mua sản phẩm phần cứng CryptoKey của chúng tôi để sử dụng,<1/>Truy cập trực tuyến sẽ sớm ra mắt...",
+      "contactSales": "Liên hệ bán hàng để mua phần cứng",
+      "backToHome": "Quay lại trang chủ"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "Vé 24 giờ",
+        "description": "Truy cập ngay lập tức trong 24 giờ. Gắn với thiết bị, không cần đăng nhập.",
+        "features": [
+          "Đầy đủ tính năng Pro",
+          "Truy cập ngay (Không cần đăng nhập)",
+          "Gắn với thiết bị (Chỉ 24h)",
+          "⚠️ Rủi ro: Mất nếu xóa bộ nhớ cache",
+          "⚠️ Không thể chuyển nhượng"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "Hàng tháng",
+        "description": "Truy cập linh hoạt cho người dùng thường xuyên.",
+        "features": [
+          "Đầy đủ tính năng Pro",
+          "Hủy bất cứ lúc nào",
+          "Hỗ trợ ưu tiên"
+        ]
+      },
+      "price_quarterly": {
+        "name": "Hàng quý",
+        "description": "Tiết kiệm ~15% so với gói hàng tháng.",
+        "features": [
+          "Đầy đủ tính năng Pro",
+          "Hỗ trợ ưu tiên",
+          "Thanh toán theo quý"
+        ]
+      },
+      "price_semiannual": {
+        "name": "Nửa năm",
+        "description": "Tiết kiệm ~23% so với gói hàng tháng.",
+        "features": [
+          "Đầy đủ tính năng Pro",
+          "Hỗ trợ ưu tiên",
+          "Thanh toán nửa năm"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "Hàng năm",
+        "description": "Giá trị tốt nhất! Tiết kiệm ~33% so với gói hàng tháng.",
+        "features": [
+          "Đầy đủ tính năng Pro",
+          "Hỗ trợ ưu tiên",
+          "Thanh toán theo năm"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Doanh nghiệp",
+        "price": "Tùy chỉnh",
+        "period": "liên hệ",
+        "description": "Dành cho các nhóm và tổ chức lớn.",
+        "features": [
+          "Điều khoản bản quyền tùy chỉnh",
+          "Hỗ trợ chuyên biệt",
+          "SLA",
+          "Tùy chọn triển khai tại chỗ"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Điều khoản dịch vụ",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "backToHome": "Quay lại trang chủ",
+    "disclaimer": {
+      "title": "Tuyên bố miễn trừ dịch vụ",
+      "content_non_china": "Chúng tôi cung cấp công cụ quản lý bảo mật khóa mật mã (cryptokey.im) với dịch vụ sao lưu mnemonic ngoại tuyến, ủy quyền động TOTP và sinh khóa an toàn. Chúng tôi KHÔNG tham gia vào giao dịch tiền điện tử, lưu ký hoặc dịch vụ tài chính — chỉ là công cụ bảo mật cho khóa do người dùng sở hữu.",
+      "content_china": "Chúng tôi cung cấp công cụ quản lý bảo mật khóa mật mã (cryptokey.im) với dịch vụ sao lưu mnemonic ngoại tuyến, ủy quyền động TOTP và sinh khóa an toàn. Chúng tôi tập trung vào các giải pháp bảo mật phần cứng cho tài sản kỹ thuật số của bạn."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Chấp nhận điều khoản",
+        "content": "Bằng cách truy cập và sử dụng CryptoKey.im (\"Dịch vụ\"), bạn chấp nhận và đồng ý bị ràng buộc bởi các điều khoản và điều kiện của thỏa thuận này."
+      },
+      "nature": {
+        "title": "2. Bản chất của dịch vụ",
+        "content": "CryptoKey.im là công cụ mã hóa và steganography phía máy khách. Tất cả các thao tác mã hóa được thực hiện cục bộ trong trình duyệt của bạn bằng WebAssembly. Chúng tôi không có quyền truy cập vào khóa riêng tư, mnemonic hoặc mật khẩu của bạn. Bạn hoàn toàn chịu trách nhiệm bảo vệ dữ liệu của mình."
+      },
+      "responsibilities": {
+        "title": "3. Trách nhiệm của người dùng",
+        "items": [
+          "Bạn đồng ý không sử dụng Dịch vụ cho bất kỳ hoạt động bất hợp pháp nào.",
+          "Bạn thừa nhận rằng nếu bạn mất thông tin xác thực hoặc mật khẩu chính, chúng tôi không thể khôi phục dữ liệu của bạn.",
+          "Bạn chịu trách nhiệm duy trì tính bảo mật của tài khoản và khóa bản quyền của mình."
+        ]
+      },
+      "ip": {
+        "title": "4. Sở hữu trí tuệ",
+        "content": "Dịch vụ chứa các thuật toán và mã độc quyền. \"Phiên bản cộng đồng\" được cung cấp cho mục đích kiểm toán theo giấy phép CC-BY-NC-ND 4.0. Sử dụng thương mại các module mã hóa cốt lõi yêu cầu giấy phép Pro hợp lệ."
+      },
+      "liability": {
+        "title": "5. Giới hạn trách nhiệm",
+        "content": "Trong phạm vi tối đa được pháp luật cho phép, CryptoKey.im sẽ không chịu trách nhiệm cho bất kỳ thiệt hại gián tiếp, ngẫu nhiên, đặc biệt, hậu quả hoặc trừng phạt nào, bao gồm nhưng không giới hạn, mất lợi nhuận, dữ liệu, quyền sử dụng, uy tín hoặc các tổn thất vô hình khác, do việc bạn sử dụng Dịch vụ."
+      },
+      "refund": {
+        "title": "6. Chính sách hoàn tiền & Phí",
+        "policy": "Chính sách không hoàn tiền nghiêm ngặt: Tất cả giao dịch là cuối cùng. Khi thanh toán được xác nhận và khóa bản quyền được phát hành, sẽ không hoàn tiền dưới bất kỳ trường hợp nào.",
+        "fees": "Phí giao dịch: Người dùng hoàn toàn chịu trách nhiệm về tất cả phí giao dịch (bao gồm nhưng không giới hạn phí Gas, phí mạng và phí rút sàn). Vui lòng đảm bảo bạn chuyển đúng số tiền yêu cầu cộng với các phí cần thiết. Thanh toán thiếu sẽ dẫn đến thất bại kích hoạt bản quyền."
+      }
+    }
+  },
+  "footer": {
+    "linkCopied": "Đã sao chép liên kết vào clipboard!",
+    "forceUpdate": "Buộc cập nhật / Xóa bộ nhớ cache",
+    "publicRepo": "Kho công khai (Kiểm toán)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "Chia sẻ"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "QR xác thực Desktop",
+    "registrationFailed": "Đăng ký thất bại"
+  },
+  "paymentModal": {
+    "title": "Thanh toán USDT",
+    "step": "Bước {{step}}/4",
+    "close": "Đóng",
+    "steps": {
+      "identity": {
+        "title": "Xác minh tài khoản",
+        "loggedIn": "Đã đăng nhập với tư cách",
+        "loginRequired": "Bạn phải đăng nhập để đăng ký gói này.",
+        "loginNote": "Vui lòng đóng cửa sổ này và đăng ký/đăng nhập trước.",
+        "continue": "Tiếp tục",
+        "trial": {
+          "title": "Cảnh báo truy cập tạm thời",
+          "subtitle": "Bạn đang mua vé 24 giờ mà không đăng nhập.",
+          "deviceBound": "Bản quyền này gắn với thiết bị. Nó chỉ hoạt động trên trình duyệt và thiết bị cụ thể này.",
+          "risk": "Nếu bạn xóa bộ nhớ cache hoặc chuyển thiết bị, bạn sẽ mất quyền truy cập vĩnh viễn. Không thể khôi phục.",
+          "note": "Chúng tôi khuyên bạn nên đăng nhập để an toàn, nhưng bạn có thể tiếp tục ẩn danh."
+        }
+      },
+      "network": {
+        "title": "Chọn mạng thanh toán",
+        "selected": "Mạng đã chọn:",
+        "error": "Vui lòng chọn mạng thanh toán"
+      },
+      "payment": {
+        "instruction": "Vui lòng gửi chính xác",
+        "walletLabel": "Địa chỉ ví chính thức",
+        "networkWarning": "Đảm bảo bạn đang gửi USDT trên mạng {{network}} ({{standard}}). Chuyển khoản sai mạng sẽ bị mất.",
+        "importantWarning": {
+          "title": "⚠️ Cảnh báo thanh toán quan trọng:",
+          "exactAmount": "Vui lòng thanh toán CHÍNH XÁC số tiền hiển thị.",
+          "underpayment": "Thanh toán thiếu sẽ dẫn đến thất bại và không được hoàn tiền.",
+          "overpayment": "Thanh toán thừa sẽ không được hoàn tiền và không tích lũy thêm thời gian.",
+          "singleTx": "Hệ thống chỉ xác minh một giao dịch duy nhất. Không gửi nhiều khoản thanh toán nhỏ."
+        },
+        "txHashLabel": "Mã băm giao dịch (TXID)",
+        "txHashPlaceholder": "Dán mã băm giao dịch (TXID)",
+        "button": "Tôi đã gửi thanh toán",
+        "verifying": "Đang xác minh...",
+        "errorTx": "Cần có mã băm giao dịch (TXID)",
+        "errorValidation": {
+          "wallet": "Đây giống như địa chỉ ví, không phải mã băm giao dịch (TXID). Vui lòng dán TXID.",
+          "tron": "TXID TRON không hợp lệ. Nó phải là chuỗi hex 64 ký tự.",
+          "eth": "TXID {{chain}} không hợp lệ. Nó phải giống như 0x... và có 64 ký tự hex."
+        },
+        "clipboardError": "Không thể đọc clipboard. Vui lòng nhập thủ công.",
+        "copied": "Đã sao chép liên kết vào clipboard!"
+      },
+      "verification": {
+        "title": "Đang xác minh giao dịch...",
+        "description": "Chúng tôi đang kiểm tra blockchain cho khoản thanh toán của bạn. Thường mất 1-3 phút.",
+        "checkingTxid": "Đang kiểm tra TXID:",
+        "safeToClose": "Bạn có thể đóng cửa sổ này.",
+        "autoActivation": "Bản quyền Pro của bạn sẽ được kích hoạt tự động khi giao dịch được xác nhận trên chuỗi.",
+        "verifying": "Đang xác minh thanh toán...",
+        "success": "Đã xác minh thanh toán!",
+        "failed": "Xác minh thanh toán thất bại. Vui lòng kiểm tra giao dịch của bạn."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "Chế độ xác thực kép (Khuyến nghị)",
+    "dualAuthDesc": "Chia mã hóa thành hai khóa QR riêng biệt (Khóa A + Khóa B). Ngay cả khi một khóa bị đánh cắp, dữ liệu của bạn vẫn an toàn.",
+    "switchToDual": "Chuyển sang mã hóa xác thực kép",
+    "generateStandard": "Tạo mã QR tiêu chuẩn",
+    "generating": "Đang tạo...",
+    "standardModeDesc": "Chế độ tiêu chuẩn: Tạo các mảnh QR được mã hóa AES-256.",
+    "streamMode": "Chế độ luồng Air-Gap",
+    "proFeature": "Luồng QR tốc độ cao là tính năng Pro.",
+    "unlockStream": "Mở khóa chế độ luồng",
+    "pauseStream": "Tạm dừng luồng",
+    "playStream": "Phát luồng",
+    "scanNote": "Sử dụng ứng dụng quét QR tương thích (ví dụ: Cobo Vault, Keystone) để chụp luồng.",
+    "shardCount": "Mảnh {{current}} / {{total}}",
+    "saveAll": "Lưu tất cả hình ảnh",
+    "saveImage": "Lưu hình ảnh",
+    "close": "Đóng",
+    "speedSlow": "Chậm (2 FPS)",
+    "speedFast": "Nhanh (4 FPS)",
+    "speedTurbo": "Turbo (10 FPS)"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "Quyền truy cập camera bị từ chối hoặc không khả dụng. Vui lòng đảm bảo bạn đang sử dụng HTTPS hoặc localhost."
+    },
+    "title": "Máy quét luồng",
+    "instruction": "Hướng vào mã QR động",
+    "accessingCamera": "Đang truy cập camera...",
+    "scanning": "Đang quét...",
+    "waitingStream": "Đang chờ luồng dữ liệu..."
+  },
+  "dualAuthGenerator": {
+    "title": "Mã hóa xác thực kép",
+    "back": "Quay lại",
+    "howItWorks": {
+      "title": "Cách thức hoạt động:",
+      "step1": "Hệ thống tạo hai khóa duy nhất (Khóa bí mật A & B).",
+      "step2": "Bạn liên kết chúng với ứng dụng xác thực (Google/Microsoft Auth).",
+      "step3": "<strong>Khóa bí mật A</strong> mã hóa Mnemonic của bạn.",
+      "step4": "<strong>Khóa bí mật B</strong> mã hóa mật khẩu & số dòng của bạn.",
+      "step5": "Kết quả được chia thành các mảnh QR.",
+      "step6": "Để giải mã, bạn cần các mảnh + mã xác thực (hoặc các QR liên kết dự phòng)."
+    },
+    "generateKeys": "Tạo khóa bảo mật",
+    "authA": "Xác thực A (Khóa Mnemonic)",
+    "authB": "Xác thực B (Khóa ngữ cảnh)",
+    "scanAuth": "Quét bằng Google/Microsoft Authenticator",
+    "saveImage": "Lưu hình ảnh",
+    "processing": "Đang xử lý...",
+    "encryptAndGenerate": "Mã hóa & Tạo mảnh",
+    "encryptionComplete": "Mã hóa hoàn tất!",
+    "resultDesc": "Bạn có {{count}} mảnh dữ liệu và 2 khóa xác thực.",
+    "importantWarning": "Quan trọng: Bạn PHẢI lưu TẤT CẢ hình ảnh (Mảnh + Khóa xác thực) để giải mã sau này!",
+    "downloadAll": "Tải xuống tất cả hình ảnh (Khuyến nghị dùng Zip)",
+    "shardLabel": "Mảnh {{index}}",
+    "errorBind": "Vui lòng liên kết ứng dụng xác thực trước",
+    "errorGen": "Tạo thất bại"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. Tải lên các mảnh xác thực kép",
+      "instruction": "Tải lên tất cả các mảnh (thường là 8-12) được tạo bởi trình tạo xác thực kép."
+    },
+    "scanStream": "Quét luồng",
+    "selectImages": "Chọn hình ảnh",
+    "clearReset": "Xóa / Đặt lại",
+    "progress": "Tiến độ: {{count}} / {{total}}",
+    "failedFiles": "Không thể đọc {{count}} tệp:",
+    "missingParts": "Các phần còn thiếu: {{parts}}",
+    "mergeSuccess": "Đã hợp nhất các mảnh thành công!",
+    "step2": {
+      "title": "2. Nhập khóa giải mã (Bắt buộc)",
+      "description": "Bạn PHẢI cung cấp cả khóa bí mật A & B. Đây là các khóa vĩnh viễn (hình ảnh QR hoặc chuỗi Base32), KHÔNG phải mã 6 chữ số tạm thời."
+    },
+    "keyA": {
+      "label": "Khóa A (Bí mật cho Mnemonic)",
+      "loaded": "Đã tải QR Khóa A",
+      "upload": "Tải lên QR Khóa A",
+      "placeholder": "Dán khóa bí mật A (Base32)"
+    },
+    "keyB": {
+      "label": "Khóa B (Bí mật cho ngữ cảnh)",
+      "loaded": "Đã tải QR Khóa B",
+      "upload": "Tải lên QR Khóa B",
+      "placeholder": "Dán khóa bí mật B (Base32)"
+    },
+    "lostQrHelp": "* Mất QR? Kiểm tra tính năng \"Xuất\" hoặc \"Hiển thị bí mật\" trong ứng dụng xác thực để tìm mã này.",
+    "step3": {
+      "title": "3. Xác minh khóa bằng mã xác thực (Tùy chọn)",
+      "description": "Nếu bạn có quyền truy cập vào ứng dụng xác thực, hãy nhập mã 6 chữ số hiện tại để xác minh tính chính xác (tùy chọn)."
+    },
+    "codeA": {
+      "placeholder": "Mã A (ví dụ: 123456)"
+    },
+    "codeB": {
+      "placeholder": "Mã B (ví dụ: 654321)"
+    },
+    "decryptButton": "Giải mã dữ liệu",
+    "keysRequired": "* Vui lòng cung cấp cả hai khóa bí mật (Bước 2) để kích hoạt giải mã.",
+    "success": {
+      "title": "Giải mã thành công!"
+    },
+    "result": {
+      "mnemonicLabel": "Khôi phục bí mật (Mnemonic)",
+      "passwordLabel": "Mật khẩu ngữ cảnh",
+      "lineLabel": "Số dòng",
+      "fullContent": "Nội dung giải mã đầy đủ (Tất cả các dòng)",
+      "rawCiphertext": "Ciphertext thô (Cũ)"
+    },
+    "bookCipherNote": "Lưu ý: Đây có vẻ là chỉ số Book Cipher..."
+  },
+  "integrityCheck": {
+    "title": "Xác minh mã ứng dụng này khớp với mã nguồn trên GitHub",
+    "fetching": "Đang tải chữ ký phát hành cho {{version}}...",
+    "verifying": "Đang xác minh {{path}}...",
+    "failedToLoad": "Không thể tải",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ Không thể xác minh {{path}}: {{error}}",
+    "criticalError": "Lỗi nghiêm trọng: {{error}}"
+  },
+  "militaryBadge": {
+    "title": "BẢO MẬT CẤP QUÂN SỰ",
+    "feature1": "Kiến trúc Zero-Knowledge",
+    "feature2": "Chỉ xử lý phía máy khách",
+    "feature3": "Không lưu log dữ liệu"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "Tính năng này có sẵn trong phiên bản thương mại/Pro"
+  },
+  "userManual": {
+    "button": "Hướng dẫn sử dụng",
+    "title": "Hướng dẫn sử dụng CryptoKey",
+    "subtitle": "Hướng dẫn mã hóa & khôi phục dữ liệu an toàn",
+    "close": "Đóng",
+    "tabs": {
+      "start": "Hướng dẫn nhanh",
+      "dual": "Xác thực kép",
+      "security": "Bảo mật & Riêng tư",
+      "recover": "Quy trình khôi phục"
+    },
+    "mobileTabs": {
+      "start": "Bắt đầu",
+      "dual": "Xác thực kép",
+      "security": "Bảo mật",
+      "recover": "Khôi phục"
+    },
+    "start": {
+      "title": "Bắt đầu",
+      "description": "CryptoKey cho phép bạn ẩn dữ liệu nhạy cảm (như mnemonic) trong dữ liệu giả mạo bằng mã hóa tiêu chuẩn hoặc bảo vệ xác thực kép.",
+      "steps": [
+        "Chọn chế độ (Tiêu chuẩn hoặc Xác thực kép).",
+        "Nhập dữ liệu bí mật của bạn.",
+        "Tạo các mảnh hoặc khối được mã hóa.",
+        "Lưu đầu ra một cách an toàn (mã QR hoặc văn bản)."
+      ]
+    },
+    "dual": {
+      "title": "Chế độ xác thực kép",
+      "coreConcept": {
+        "title": "Khái niệm cốt lõi",
+        "description": "Không giống như mã hóa tiêu chuẩn, chế độ này yêu cầu <strong>Hai khóa riêng biệt</strong> (Khóa A & Khóa B) để giải mã. Nó chia sẻ niềm tin giữa hai token/thiết bị xác thực khác nhau."
+      },
+      "encryption": {
+        "title": "1. Mã hóa (Tạo)",
+        "step1": "Nhập Mnemonic và mật khẩu/ngữ cảnh của bạn.",
+        "step2": "Quét hai mã QR được tạo (Khóa A & Khóa B) bằng ứng dụng Google Authenticator. <strong>Lưu các hình ảnh QR này!</strong> Chúng là khóa vĩnh viễn của bạn.",
+        "step3": "Nhập mã 6 chữ số từ ứng dụng của bạn để xác minh và khóa mã hóa.",
+        "step4": "Tải xuống các hình ảnh mảnh được tạo (QR Sharding)."
+      },
+      "decryption": {
+        "title": "2. Giải mã (Khôi phục)",
+        "important": {
+          "title": "Quan trọng: Khóa so với mã",
+          "content": "<strong>Khóa (QR/Bí mật):</strong> \"Khóa\" vĩnh viễn mà bạn đã quét. Cần thiết để giải mã.<br/><strong>Mã (6 chữ số):</strong> \"Token\" tạm thời được tạo mỗi 30 giây. Chỉ được sử dụng để xác minh.",
+          "note": "* Bạn KHÔNG THỂ giải mã chỉ bằng mã 6 chữ số. Bạn PHẢI tải lên QR khóa hoặc nhập chuỗi bí mật."
+        },
+        "step1": "Tải lên tất cả các hình ảnh mảnh của bạn.",
+        "step2": "<strong>BẮT BUỘC:</strong> Tải lên hình ảnh QR khóa A & khóa B (hoặc dán chuỗi bí mật).",
+        "step3": "(Tùy chọn) Nhập mã 6 chữ số hiện tại để xác minh tính chính xác."
+      },
+      "lost": {
+        "title": "3. Mất hình ảnh QR?",
+        "description": "Nếu bạn vẫn còn ứng dụng xác thực trên điện thoại:",
+        "steps": [
+          "Mở Google Authenticator.",
+          "Sử dụng tính năng \"Xuất tài khoản\" hoặc \"Chuyển\".",
+          "Điều này sẽ hiển thị mã QR chứa các bí mật của bạn.",
+          "Quét/Giải mã QR xuất đó để lấy lại chuỗi bí mật của bạn."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. Chọn chế độ bảo vệ",
+        "description": "Chọn cách tốt nhất để bảo mật cụm từ mnemonic hoặc dữ liệu của bạn:",
+        "book": {
+          "physical": {
+            "title": "Sách vật lý / Ảo",
+            "desc": "Ẩn khóa của bạn trong một cuốn sách thật trên kệ. (Trang-Dòng-Từ)"
+          },
+          "online": {
+            "title": "Sách trực tuyến (URL)",
+            "desc": "Sử dụng URL Gutenberg vĩnh viễn làm nguồn khóa của bạn. Không cần tệp."
+          },
+          "digital": {
+            "title": "Sách kỹ thuật số (Tệp)",
+            "desc": "Tải lên tệp TXT Gutenberg. Xử lý cục bộ, không bao giờ tải lên."
+          },
+          "index": {
+            "title": "Chỉ mục chung",
+            "desc": "Mã hóa cấu trúc dữ liệu tùy ý (ví dụ: thông tin ngân hàng, mật khẩu)."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. Nhập & Làm rối",
+        "description": "Nhập dữ liệu nhạy cảm của bạn. Sau đó chúng tôi sẽ yêu cầu bạn đặt <span class=\"text-white font-mono\">Mật độ dòng</span> (ví dụ: 100 dòng). Dữ liệu thật của bạn sẽ được ẩn trong một dòng ngẫu nhiên giữa 99 dòng giả.",
+        "example": {
+          "fake1": "Dòng 34: 832-19-22 (Giả)",
+          "real": "Dòng 35: 123-45-67 (Dữ liệu thật)",
+          "fake2": "Dòng 36: 992-11-02 (Giả)"
+        }
+      },
+      "export": {
+        "title": "3. Xuất & Lưu",
+        "description": "Sau khi mã hóa, bạn sẽ nhận được một khối ciphertext. Bạn phải lưu khối này!",
+        "ways": "Cách lưu:",
+        "email": "Email (Thiết bị cá nhân)",
+        "usb": "Tải xuống USB (An toàn nhất)",
+        "print": "In giấy (Ngoại tuyến)"
+      },
+      "publicComputer": {
+        "title": "An toàn máy tính công cộng",
+        "description": "Nếu bạn đang sử dụng máy tính công cộng (quán net, thư viện, máy tính bạn bè):",
+        "steps": [
+          "KHÔNG đăng nhập vào email cá nhân của bạn.",
+          "KHÔNG sử dụng clipboard (sao chép/dán) nếu có thể.",
+          "Sử dụng nút chuyển đổi <strong>\"Chế độ máy tính công cộng\"</strong> trên trang kết quả.",
+          "Tải tệp xuống ổ USB hoặc quét mã QR bằng điện thoại của bạn.",
+          "Nhấp <strong>\"Xóa tất cả dữ liệu\"</strong> trước khi rời đi."
+        ]
+      },
+      "military": {
+        "title": "Mã hóa cấp quân sự",
+        "description": "Chúng tôi sử dụng mã hóa <strong>AES-256-GCM</strong>. Đây là tiêu chuẩn tương tự được sử dụng bởi chính phủ và ngân hàng. Mật khẩu của bạn được pha muối và băm bằng <strong>PBKDF2-HMAC-SHA256</strong> với 100,000 lần lặp, khiến các cuộc tấn công brute-force gần như không thể."
+      },
+      "zk": {
+        "title": "Kiến trúc Zero-Knowledge",
+        "description": "Mọi thứ xảy ra trong trình duyệt của bạn. Chúng tôi <strong>không có máy chủ</strong>, không có cơ sở dữ liệu và không có log. Nếu bạn đóng tab này, dữ liệu của bạn sẽ mất mãi mãi trừ khi bạn đã lưu bản sao lưu."
+      },
+      "deniability": {
+        "title": "Từ chối hợp lý",
+        "description": "Chúng tôi tạo ra <strong>các dòng giả mạo</strong> không thể phân biệt với dữ liệu thật của bạn. Ngay cả khi ai đó buộc bạn giải mã tệp, bạn có thể tuyên bố bất kỳ dòng giả nào là dòng \"thật\", hoặc tệp không chứa dữ liệu có ý nghĩa nào cả. Toán học mã hóa ẩn dòng nào là thật."
+      },
+      "transparency": {
+        "title": "Minh bạch mã nguồn",
+        "description": "CryptoKey là ứng dụng hoàn toàn phía máy khách. Bạn có thể kiểm tra mã nguồn trong công cụ dành cho nhà phát triển của trình duyệt. Chúng tôi khuyến khích kiểm toán bảo mật. Không tải các script hoặc phân tích bên ngoài."
+      }
+    },
+    "recover": {
+      "title": "Cách giải mã",
+      "steps": {
+        "step1": {
+          "title": "Chọn chế độ",
+          "description": "Chọn chế độ tương tự được sử dụng để mã hóa (Vật lý, Tệp hoặc URL). Nếu sử dụng Tệp hoặc URL, bạn phải cung cấp chính xác cuốn sách nguồn tương tự."
+        },
+        "step2": {
+          "title": "Dán Ciphertext",
+          "description": "Sao chép toàn bộ khối ciphertext (bao gồm các ký tự ngẫu nhiên) từ email hoặc tệp của bạn."
+        },
+        "step3": {
+          "title": "Nhập mật khẩu",
+          "description": "Nhập mật khẩu bạn đã đặt trong quá trình mã hóa."
+        },
+        "step4": {
+          "title": "Xác định dòng của bạn",
+          "description": "Hệ thống sẽ giải mã TẤT CẢ các dòng (thật + giả). Bạn phải nhớ số dòng nào là của bạn (ví dụ: Dòng 35) để tìm dữ liệu của bạn."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "Bảo mật cấp quân sự",
+    "title": "Kiến trúc bảo mật",
+    "subtitle": "Zero-Knowledge Proof & Mã hóa cấp quân sự",
+    "features": {
+      "aes": {
+        "title": "Mã hóa AES-256-GCM",
+        "desc": "Dữ liệu của bạn được mã hóa bằng tiêu chuẩn mạnh nhất có sẵn (Web Crypto API). Chúng tôi sử dụng PBKDF2 với 100,000 lần lặp để sinh khóa."
+      },
+      "steganography": {
+        "title": "Steganography Book Cipher",
+        "desc": "Ẩn dữ liệu nhạy cảm trong văn bản sách thông thường (Gutenberg/Vật lý). Kẻ tấn công chỉ thấy các chỉ số trang/dòng/từ vô hại, không phải ciphertext."
+      },
+      "dual": {
+        "title": "Xác thực kép & Sharding",
+        "desc": "Chế độ xác thực kép mới chia mã hóa giữa hai khóa riêng biệt (A & B), cộng với QR Sharding để dự phòng. Ngay cả khi một khóa bị xâm phạm, dữ liệu của bạn vẫn an toàn."
+      },
+      "zk": {
+        "title": "Zero-Knowledge",
+        "desc": "Chúng tôi không bao giờ thấy mật khẩu hoặc dữ liệu của bạn. Mọi thứ xảy ra cục bộ trong trình duyệt của bạn. Không có dữ liệu nào được gửi đến máy chủ của chúng tôi."
+      },
+      "noPersistence": {
+        "title": "Không lưu trữ",
+        "desc": "Chúng tôi không sử dụng cookie, local storage hoặc cơ sở dữ liệu máy chủ. Sách kỹ thuật số (TXT) được xử lý cục bộ và không bao giờ được tải lên."
+      },
+      "antiTheft": {
+        "title": "Bảo vệ chống trộm",
+        "desc": "Các trường nhập ngăn tự động hoàn thành và bộ nhớ đệm. Bộ nhớ được xóa tích cực khi bạn rời đi. An toàn cho máy tính công cộng."
+      }
+    },
+    "audit": {
+      "title": "Kiểm toán kỹ thuật",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "Chỉ phía máy khách",
+        "noUploads": "Không tải lên (Chế độ tệp)",
+        "noLog": "Chính sách không log",
+        "wipe": "Xóa bộ nhớ"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "Chọn chế độ khôi phục",
+      "subtitle": "Chọn cách bạn muốn mã hóa/khôi phục dữ liệu của mình.",
+      "mnemonic": {
+        "title": "Cụm từ Mnemonic",
+        "desc": "Sử dụng cụm từ seed 12/24 từ làm nguồn khóa của bạn.",
+        "features": {
+          "compliance": "Tuân thủ BIP-39",
+          "encryption": "Mã hóa tiêu chuẩn",
+          "security": "Bảo mật cao"
+        }
+      },
+      "physical": {
+        "title": "Sách vật lý",
+        "desc": "Ẩn khóa của bạn trong một cuốn sách thật trên kệ.",
+        "features": {
+          "manual": "Nhập thủ công",
+          "ownBook": "Sử dụng sách của bạn",
+          "flexible": "Linh hoạt & Bí mật"
+        }
+      },
+      "digital": {
+        "title": "Sách kỹ thuật số (Tệp)",
+        "desc": "Tải lên tệp văn bản để sử dụng làm nguồn khóa.",
+        "features": {
+          "local": "Xử lý cục bộ",
+          "noUpload": "Không tải lên máy chủ",
+          "offline": "Hoạt động ngoại tuyến"
+        }
+      },
+      "url": {
+        "title": "Sách trực tuyến (URL)",
+        "desc": "Sử dụng URL vĩnh viễn làm nguồn khóa của bạn.",
+        "features": {
+          "remote": "Nội dung từ xa",
+          "convenient": "Truy cập thuận tiện",
+          "dynamic": "Tham chiếu động"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Nhập Mnemonic",
+        "file": "Tải lên tệp",
+        "url": "Nhập URL",
+        "general": "Nhập dữ liệu"
+      },
+      "subtitle": {
+        "mnemonic": "Nhập cụm từ mnemonic 12 hoặc 24 từ của bạn.",
+        "file": "Tải lên tệp văn bản để mã hóa.",
+        "url": "Nhập URL để tải nội dung.",
+        "general": "Nhập bất kỳ dữ liệu văn bản nào để mã hóa."
+      },
+      "file": {
+        "loaded": "Đã tải tệp thành công",
+        "upload": "Kéo & thả hoặc Nhấp để tải lên",
+        "sizeLoaded": "Đã tải",
+        "maxSize": "Tối đa 5MB • TXT",
+        "scheme": "Lược đồ mã hóa",
+        "schemes": {
+          "offset": "Độ lệch ký tự",
+          "chapter": "Chỉ số chương",
+          "virtual": "Dòng ảo"
+        }
+      },
+      "url": {
+        "fetch": "Tải nội dung",
+        "proxy": {
+          "title": "Proxy cục bộ đang hoạt động",
+          "desc": "Sử dụng proxy cục bộ cho phát triển."
+        },
+        "success": "Đã tải {{count}} ký tự",
+        "recommended": "Sách được khuyến nghị",
+        "clickToFill": "Nhấp để điền"
+      },
+      "general": {
+        "placeholder": "Nhập dòng dữ liệu...",
+        "addLine": "Thêm dòng mới",
+        "generate": "Dữ liệu ngẫu nhiên"
+      },
+      "mnemonic": {
+        "label": "Cụm từ Mnemonic",
+        "required": "(Bắt buộc)",
+        "placeholder": "Nhập cụm từ mnemonic của bạn...",
+        "paste": "Dán",
+        "generate": "Tạo"
+      }
+    },
+    "mixStep": {
+      "title": "Đặt mật khẩu mã hóa",
+      "subtitle": "Đặt mật khẩu mạnh để mã hóa kho của bạn.",
+      "password": {
+        "label": "Đặt mật khẩu mã hóa",
+        "placeholder": "Nhập mật khẩu mạnh"
+      },
+      "confirm": {
+        "label": "Xác nhận mật khẩu",
+        "placeholder": "Nhập lại mật khẩu"
+      },
+      "rowCount": {
+        "label": "Số dòng (Mật độ trộn)",
+        "help": "Số lượng cao hơn = Ẩn danh tốt hơn.",
+        "upgrade": "(Giới hạn: 100. Nhấp để nâng cấp)",
+        "proRequired": "Giá trị > 100 yêu cầu bản quyền Pro."
+      },
+      "duress": {
+        "label": "Mật khẩu ép buộc (Tùy chọn)",
+        "help": "Tạo kho giả mở bằng mật khẩu khác. Sử dụng nếu bị buộc mở khóa thiết bị.",
+        "passwordLabel": "Mật khẩu ép buộc",
+        "placeholder": "Khác với mật khẩu thật",
+        "fakeContentLabel": "Nội dung giả (Mồi nhử)"
+      },
+      "error": {
+        "required": "Cần có mật khẩu",
+        "mismatch": "Mật khẩu không khớp",
+        "minLength": "Mật khẩu phải có ít nhất 8 ký tự",
+        "duressRequired": "Cần có mật khẩu ép buộc",
+        "duressSame": "Mật khẩu ép buộc không thể giống mật khẩu thật",
+        "encryptionFailed": "Mã hóa thất bại. Vui lòng thử lại."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "Mã hóa thành công",
+        "title": "Bản sao lưu của bạn đã sẵn sàng",
+        "subtitle": "Lưu Ciphertext và ghi nhớ thông tin xác thực của bạn."
+      },
+      "mode": {
+        "personal": "Cá nhân",
+        "public": "Công cộng"
+      },
+      "realIndex": {
+        "title": "Chỉ số dòng thật",
+        "help": "Đây là dòng DUY NHẤT chứa dữ liệu của bạn. Tất cả những dòng khác là giả."
+      },
+      "mnemonic": {
+        "title": "Mnemonic gốc"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "Sao chép",
+        "copied": "Đã sao chép!",
+        "download": "Tải xuống",
+        "email": "Email",
+        "print": "In"
+      },
+      "dualAuth": {
+        "button": "Tạo mảnh xác thực kép",
+        "pro": "Tính năng Pro: Nâng cấp để truy cập"
+      },
+      "reset": "Đặt lại"
+    }
+  },
+  "decryption": {
+    "title": "Công cụ giải mã",
+    "subtitle": "Khôi phục thông điệp gốc của bạn từ nhiều nguồn khác nhau",
+    "status": {
+      "scanning": "Đang quét...",
+      "processing": "Đang xử lý dữ liệu luồng...",
+      "reassembling": "Đang lắp ráp lại & Giải nén...",
+      "scanProgress": "Đang quét... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "Phát hiện xác thực kép",
+      "dualAuthDesc": "Nội dung này được bảo vệ bởi xác thực hai yếu tố.",
+      "switchToDual": "Chuyển sang chế độ xác thực kép",
+      "backToStandard": "Quay lại giải mã tiêu chuẩn",
+      "dualAuthBadge": "Chế độ xác thực kép"
+    },
+    "label": {
+      "ciphertext": "Ciphertext / Dữ liệu đã mã hóa",
+      "closeScanner": "Đóng máy quét",
+      "password": "Mật khẩu giải mã",
+      "failedFiles": "Tệp thất bại:",
+      "missingParts": "Các phần còn thiếu:",
+      "fragmentsFound": "Các mảnh tìm thấy:",
+      "uploadRemaining": "Tải lên phần còn lại"
+    },
+    "button": {
+      "scanStream": "Quét luồng",
+      "uploadQRShards": "Tải lên các mảnh QR",
+      "paste": "Dán",
+      "decrypt": "Giải mã dữ liệu"
+    },
+    "placeholder": {
+      "ciphertext": "Dán ciphertext, khối mã hóa hoặc nội dung QR của bạn tại đây...",
+      "password": "Nhập mật khẩu được sử dụng để mã hóa"
+    },
+    "mode": {
+      "physicalBook": "Sách vật lý / Ảo",
+      "digitalBook": "Sách kỹ thuật số (Tệp)",
+      "onlineBook": "Sách trực tuyến (URL)"
+    },
+    "file": {
+      "title": "Tải lên tệp sách",
+      "description": "Tải lên <strong>chính xác cùng tệp TXT Gutenberg</strong> được sử dụng trong quá trình mã hóa.",
+      "loaded": "Đã tải: {{size}} KB",
+      "choose": "Chọn tệp TXT Gutenberg...",
+      "browse": "Duyệt",
+      "parsed": "Đã phân tích {{count}} chương thành công"
+    },
+    "url": {
+      "title": "Tải URL sách",
+      "description": "Nhập <strong>chính xác URL HTML Gutenberg</strong> được sử dụng trong quá trình mã hóa.",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "Tải",
+      "loaded": "Đã tải: {{length}} ký tự (Hash: {{hash}}...)"
+    },
+    "locate": {
+      "title": "Xác định vị trí dữ liệu",
+      "description": "Dòng nào chứa dữ liệu của bạn?",
+      "row": "Dòng"
+    },
+    "result": {
+      "title": "Dữ liệu đã khôi phục (Dòng {{row}})",
+      "copy": "Sao chép",
+      "copied": "Đã sao chép!",
+      "empty": "Dòng trống hoặc không hợp lệ",
+      "rowAppears": "Dòng {{row}} có vẻ trống hoặc chứa dữ liệu không hợp lệ.",
+      "enterRow": "Nhập số dòng (1-100+) nơi bạn ẩn dữ liệu của mình để hiển thị nó.",
+      "rawPreview": "XEM TRƯỚC DỮ LIỆU THÔ"
+    },
+    "errors": {
+      "incompleteData": "Dữ liệu không đầy đủ: Tìm thấy {{current}}/{{total}} phần",
+      "invalidFormat": "(Định dạng không hợp lệ)",
+      "noQrFound": "(Không tìm thấy mã QR)",
+      "failedToReadFile": "(Không đọc được tệp)",
+      "decryptionFailed": "Giải mã thất bại. Vui lòng kiểm tra mật khẩu của bạn."
+    },
+    "error": {
+      "fileMode": "Vui lòng tải lên tệp sách gốc để khôi phục dữ liệu.",
+      "fileModeUnknown": "Định dạng dữ liệu không xác định cho chế độ tệp.",
+      "urlMode": "Vui lòng tải URL sách để khôi phục dữ liệu.",
+      "clipboard": "Không thể truy cập clipboard. Vui lòng dán thủ công.",
+      "decryptFailed": "Giải mã thất bại. Vui lòng kiểm tra mật khẩu của bạn."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "Ẩn dữ liệu",
+      "extract": "Trích xuất dữ liệu"
+    },
+    "label": {
+      "carrierImages": "Hình ảnh mang",
+      "imagesLoaded": "hình ảnh đã tải",
+      "source": "Nguồn: {{name}}",
+      "original": "Gốc: {{name}}",
+      "uploadImages": "Tải lên hình ảnh",
+      "uploadExtractHelp": "Tải lên tất cả hình ảnh mảnh để tái tạo.",
+      "uploadHideHelp": "Tải lên hình ảnh mang.",
+      "limitInfo": "Miễn phí: 3 hình ảnh. Pro: Không giới hạn.",
+      "secretMessage": "Thông điệp bí mật",
+      "enableSharding": "Bật chia sẻ bí mật (Sharding)",
+      "proOnly": "(Chỉ Pro)",
+      "totalShares": "Tổng số phần (N)",
+      "threshold": "Yêu cầu để giải mã (K)",
+      "strictMatching": "Khớp tên tệp nghiêm ngặt",
+      "strictMatchingHelp": "Giải mã chỉ hoạt động nếu tệp khớp chính xác tên gốc.",
+      "extractedContent": "Nội dung đã trích xuất"
+    },
+    "placeholder": {
+      "pasteCiphertext": "Dán ciphertext đã mã hóa tại đây...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "Tên tệp đầu ra"
+    },
+    "warning": {
+      "title": "CẢNH BÁO QUAN TRỌNG:",
+      "text": "Không nhập văn bản thô (như mnemonic) trực tiếp! Bất kỳ ai có hình ảnh đều có thể trích xuất nó. Luôn mã hóa dữ liệu của bạn trước (ví dụ: sử dụng tab \"Mã hóa\") và dán Ciphertext tại đây."
+    },
+    "button": {
+      "clearAll": "Xóa tất cả",
+      "paste": "Dán",
+      "generateShards": "Tạo & Tải xuống mảnh",
+      "hideData": "Ẩn dữ liệu & Tải xuống",
+      "copied": "Đã sao chép!",
+      "copy": "Sao chép",
+      "extractHidden": "Trích xuất dữ liệu ẩn"
+    },
+    "status": {
+      "successHide": "Đã ẩn dữ liệu thành công! Đã tải xuống hình ảnh.",
+      "successShards": "Đã tạo và tải xuống thành công {{count}} hình ảnh mảnh.",
+      "noData": "Không tìm thấy dữ liệu ẩn hợp lệ. Kiểm tra tên tệp nếu chế độ nghiêm ngặt được sử dụng.",
+      "reconstructFailed": "Tái tạo thất bại: {{error}}. Hiển thị dữ liệu thô bên dưới.",
+      "waitingImage": "Đang chờ hình ảnh..."
+    },
+    "about": {
+      "title": "Về Steganography",
+      "text": "Công cụ này ẩn dữ liệu của bạn trong các bit ít quan trọng nhất (LSB) của các pixel hình ảnh. Hình ảnh kết quả trông giống hệt với mắt người nhưng chứa thông điệp bí mật của bạn.",
+      "noteTitle": "Lưu ý:",
+      "noteText": "Không nén hình ảnh đã tải xuống (ví dụ: gửi qua WhatsApp/Messenger thường nén hình ảnh). Luôn chia sẻ dưới dạng tệp (Tài liệu) hoặc giữ hoàn toàn cục bộ."
+    }
+  },
+  "wallet": {
+    "title": "Trình tạo ví bảo mật",
+    "subtitle": "Tạo ví tuân thủ BIP39/BIP44. 100% phía máy khách.",
+    "strength": {
+      "12words": "12 từ (128-bit)",
+      "24words": "24 từ (256-bit)"
+    },
+    "action": {
+      "generate": "Tạo ví mới",
+      "import": "Nhập Mnemonic"
+    },
+    "import": {
+      "title": "Nhập ví hiện có",
+      "placeholder": "Nhập cụm từ mnemonic 12, 15, 18, 21 hoặc 24 từ của bạn tại đây...",
+      "paste": "Dán",
+      "submit": "Nhập ví"
+    },
+    "error": {
+      "invalidMnemonic": "Mnemonic không hợp lệ"
+    },
+    "mnemonic": {
+      "title": "Cụm từ khôi phục (Mnemonic)",
+      "reveal": "Nhấp để hiển thị"
+    },
+    "copyTo": {
+      "encrypt": "Sao chép sang \"Nhập cụm từ Mnemonic\"",
+      "steganography": "Sao chép sang \"Steganography\""
+    },
+    "details": {
+      "title": "Chi tiết ví",
+      "showKeys": "Hiển thị khóa nhạy cảm",
+      "hideKeys": "Ẩn khóa nhạy cảm",
+      "ethAddress": "Địa chỉ Ethereum (BIP44)",
+      "path": "Đường dẫn: {{path}} (Metamask/Ledger tiêu chuẩn)",
+      "privateKey": "Khóa riêng tư",
+      "publicKey": "Khóa công khai",
+      "addressQr": "QR địa chỉ"
+    },
+    "security": {
+      "title": "Cảnh báo bảo mật",
+      "line1": "Viết những từ này trên giấy và lưu trữ chúng an toàn.",
+      "never": "Không bao giờ",
+      "line2": "chia sẻ chúng với bất kỳ ai.",
+      "line3": "Nếu bạn mất những từ này, tiền của bạn sẽ mất mãi mãi."
+    },
+    "tooltip": {
+      "pasteClipboard": "Dán từ clipboard",
+      "hide": "Ẩn",
+      "show": "Hiển thị",
+      "copyClipboard": "Sao chép vào clipboard"
+    }
+  },
+  "installAuth": {
+    "redirecting": "Đang chuyển hướng đến App Store...",
+    "detecting": "Đang phát hiện thiết bị của bạn..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Thay đổi ngôn ngữ"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "Truy cập bị từ chối. Đã ghi nhận nỗ lực truy cập trái phép.",
+      "passwordRequired": "Cần có mật khẩu",
+      "passwordMismatch": "Mật khẩu không khớp",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 8 ký tự",
+      "duressPasswordRequired": "Cần có mật khẩu ép buộc",
+      "duressPasswordSame": "Mật khẩu ép buộc không thể giống mật khẩu thật"
+    },
+    "duress": {
+      "defaultMessage": "Truy cập bị từ chối. Nỗ lực trái phép đã được ghi lại."
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "Cụm từ mnemonic không hợp lệ. Vui lòng kiểm tra các từ của bạn.",
+      "enterCiphertext": "Vui lòng nhập dữ liệu ciphertext",
+      "invalidMode": "Chế độ không hợp lệ hoặc thiếu dữ liệu",
+      "encryptionFailed": "Quá trình mã hóa thất bại. Vui lòng kiểm tra đầu vào của bạn.",
+      "parseFileFailed": "Không thể phân tích tệp. Vui lòng đảm bảo đây là tệp văn bản hợp lệ.",
+      "invalidUrl": "URL không hợp lệ",
+      "fetchUrlFailed": "Không thể tải URL"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "Xóa dòng",
+      "generateRandom": "Tạo dữ liệu ngẫu nhiên",
+      "pasteClipboard": "Dán từ clipboard",
+      "generateMnemonic": "Tạo Mnemonic ngẫu nhiên"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【Sao lưu bảo mật CryptoKey】",
+      "ciphertext": "Ciphertext:",
+      "hash": "Hash:",
+      "footer": "Giải mã tại: https://cryptokey.im",
+      "generated": "Được tạo: {{date}}",
+      "note": "LƯU Ý: Yêu cầu mật khẩu + chỉ số dòng để giải mã."
+    },
+    "watermark": "Giải mã tại https://CryptoKey.im | Được tạo vào {{date}}",
+    "print": {
+      "title": "CryptoKey Sao lưu An toàn"
+    },
+    "clipboard": {
+      "labels": "Bản mã: {{ciphertext}}\\nHash: {{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "Đang hoàn tất..."
+    },
+    "errors": {
+      "invalidFormat": "(Định dạng không hợp lệ)",
+      "integrityFailed": "Kiểm tra tính toàn vẹn thất bại: Dữ liệu được tái tạo bị hỏng. Vui lòng quét lại.",
+      "decompressionError": "Lỗi giải nén: Dữ liệu không đúng định dạng. Vui lòng thử tải lại hình ảnh, đảm bảo chúng rõ ràng và đầy đủ.",
+      "decompressionFailed": "Giải nén thất bại: {{error}}"
+    },
+    "error": {
+      "generationFailed": "Tạo thất bại",
+      "startProcessing": "Bắt đầu xử lý...",
+      "processingImage": "Đang xử lý hình ảnh {{current}} / {{total}}..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "Phát hiện lỗi đồng hồ hệ thống. Vui lòng điều chỉnh thời gian hệ thống của bạn để tiếp tục sử dụng các tính năng Pro.",
+      "deactivateConfirm": "Hủy kích hoạt Giấy phép Real Pro?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "Quay lại",
+    "processing": "Đang xử lý...",
+    "encryptGenerate": "Mã hóa & Tạo"
+  },
+  "steganographyExtra": {
+    "successGenerated": "Đã tạo và tải xuống thành công {{count}} hình ảnh mảnh.",
+    "carrierImages": "Hình ảnh mang",
+    "strictMatchRequired": "Yêu cầu khớp nghiêm ngặt"
+  },
+  "wasmBenchmark": {
+    "title": "Đánh giá hiệu suất Wasm",
+    "testConfig": "Cấu hình thử nghiệm",
+    "algorithm": "Thuật toán: Shamir's Secret Sharing (GF(2^8))",
+    "shares": "Phần chia sẻ: 5 tổng, 3 ngưỡng",
+    "payload": "Payload: Bí mật ngẫu nhiên 32-byte + Checksum",
+    "steganography": "Steganography: LSB Embedding trên buffer 100x100",
+    "running": "Đang chạy kiểm tra...",
+    "startBenchmark": "Bắt đầu đánh giá (Bằng chứng thô)",
+    "jsTime": "Thời gian JS",
+    "wasmTime": "Thời gian Wasm",
+    "fasterSuffix": "Nhanh hơn {{ratio}}x",
+    "correctness": "Tính chính xác",
+    "verified": "ĐÃ XÁC MINH",
+    "failed": "THẤT BẠI",
+    "waiting": "Đang chờ bắt đầu..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - Sao lưu bảo mật",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "Bắt đầu Đánh giá...",
+      "runningJs": "Đang chạy Triển khai JS...",
+      "loadingWasm": "Đang tải Mô-đun Wasm...",
+      "runningWasm": "Đang chạy Triển khai Wasm..."
+    },
+    "validation": {
+      "pass": "ĐẠT",
+      "fail": "KHÔNG ĐẠT",
+      "result": "Kết quả Xác thực: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "Vui lòng liên kết trình xác thực trước",
+    "invalidDataFormat": "Định dạng dữ liệu không hợp lệ",
+    "hashMismatch": "Hash không khớp",
+    "noValidQr": "Không tìm thấy mã QR hợp lệ",
+    "passwordIncorrect": "Mật khẩu không chính xác cho bất kỳ nội dung kho nào",
+    "couldNotReadQr": "Không thể đọc mã QR",
+    "invalidAuthQr": "Mã QR xác thực không hợp lệ",
+    "noSecretInQr": "Không tìm thấy bí mật trong QR",
+    "authAIncorrect": "Mã Trình xác thực A không chính xác",
+    "authBIncorrect": "Mã Trình xác thực B không chính xác",
+    "decryptCiphertextFailed": "Giải mã Bản mã thất bại (Khóa A có thể sai)",
+    "decryptContextFailedA": "Giải mã Ngữ cảnh thất bại (Khóa B có thể sai)",
+    "decryptMnemonicFailed": "Giải mã Mnemonic thất bại (Khóa A có thể sai)",
+    "decryptContextFailedB": "Giải mã Ngữ cảnh thất bại (Khóa B có thể sai)",
+    "shardIntegrityError": "Lỗi Toàn vẹn Shard: Tệp {{filename}} thuộc về một bộ khác. Vui lòng đảm bảo tất cả các tệp đều từ cùng một phiên mã hóa.",
+    "shareApiNotSupported": "API Chia sẻ không được hỗ trợ",
+    "canvasContext": "Không thể lấy ngữ cảnh canvas",
+    "invalidShareType": "jsSplit trả về loại không hợp lệ: {{type}}",
+    "wasmLoadFailed": "Tải mô-đun Wasm thất bại"
+  }
+}

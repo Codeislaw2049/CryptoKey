@@ -236,24 +236,24 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ ciphertext, ha
                      
                      {/* Speed Control */}
                      <div className="flex items-center gap-1 bg-slate-900 rounded-lg p-1">
-                        <button 
+                        <button
                           onClick={() => setStreamIntervalMs(500)}
                           className={`px-2 py-1 text-xs rounded ${streamIntervalMs === 500 ? 'bg-slate-700 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                          title="Slow (2 FPS)"
+                          title={t('qrGenerator.speedSlow')}
                         >
                           1x
                         </button>
-                        <button 
+                        <button
                           onClick={() => setStreamIntervalMs(250)}
                           className={`px-2 py-1 text-xs rounded ${streamIntervalMs === 250 ? 'bg-slate-700 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                          title="Fast (4 FPS)"
+                          title={t('qrGenerator.speedFast')}
                         >
                           2x
                         </button>
-                        <button 
+                        <button
                           onClick={() => setStreamIntervalMs(100)}
                           className={`px-2 py-1 text-xs rounded ${streamIntervalMs === 100 ? 'bg-slate-700 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                          title="Turbo (10 FPS)"
+                          title={t('qrGenerator.speedTurbo')}
                         >
                           MAX
                         </button>

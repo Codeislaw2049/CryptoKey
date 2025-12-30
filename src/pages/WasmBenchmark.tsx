@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { splitJS as jsSplit, combineJS as jsCombine } from '../utils/shamir';
 import { embedDataJS as jsEmbed } from '../utils/steganography';
 import { wasmManager } from '../wasm/wasmLoader'; // Will be used when Wasm is ready
 
 const WasmBenchmark: React.FC = () => {
+  const { t } = useTranslation();
   const [logs, setLogs] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [results, setResults] = useState<{
@@ -17,11 +19,11 @@ const WasmBenchmark: React.FC = () => {
   const runBenchmark = async () => {
     setIsRunning(true);
     setLogs([]);
-    addLog('Starting Benchmark...');
+    addLog(t('benchmark.log.starting'));
 
     try {
       // 1. JS Benchmark
-      addLog('Running JS Implementation...');
+      addLog(t('benchmark.log.runningJs'));
       const secret = "CryptoKey-Secret-Test-" + Math.random().toString(36).substring(7);
       const startJS = performance.now();
       
@@ -30,7 +32,7 @@ const WasmBenchmark: React.FC = () => {
       
       // Ensure shares is an array before slicing
       if (!Array.isArray(shares)) {
-         throw new Error(`jsSplit returned invalid type: ${typeof shares}`);
+         throw new Error(t('errors.invalidShareType', { type: typeof shares }));
       }
 
       const recovered = await jsCombine(shares.slice(0, 3));
@@ -49,14 +51,14 @@ const WasmBenchmark: React.FC = () => {
       addLog(`JS Finished in ${jsDuration.toFixed(2)}ms`);
 
       // 2. Wasm Benchmark
-      addLog('Loading Wasm Module...');
+      addLog(t('benchmark.log.loadingWasm'));
       const loaded = await wasmManager.loadProModule();
-      if (!loaded) throw new Error("Failed to load Wasm module");
+      if (!loaded) throw new Error(t('errors.wasmLoadFailed'));
       
       const wasmExports = wasmManager.getExports();
       if (!wasmExports) throw new Error("Wasm exports not available");
 
-      addLog('Running Wasm Implementation...');
+      addLog(t('benchmark.log.runningWasm'));
       const startWasm = performance.now();
       
       // Shamir (Rust)
@@ -73,7 +75,7 @@ const WasmBenchmark: React.FC = () => {
 
       // 3. Validation
       const isValid = recovered === secret && wasmShares.length === 5;
-      addLog(`Validation Result: ${isValid ? 'PASS' : 'FAIL'}`);
+      addLog(t('benchmark.validation.result', { result: isValid ? t('benchmark.validation.pass') : t('benchmark.validation.fail') }));
 
       setResults({
         jsTime: jsDuration,
@@ -90,15 +92,15 @@ const WasmBenchmark: React.FC = () => {
 
   return (
     <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-white">Wasm Performance Benchmark</h1>
-      
+      <h1 className="text-3xl font-bold mb-6 text-white">{t('wasmBenchmark.title')}</h1>
+
       <div className="bg-gray-800 rounded-lg p-6 mb-8 border border-gray-700">
-        <h2 className="text-xl font-semibold mb-4 text-blue-400">Test Configuration</h2>
+        <h2 className="text-xl font-semibold mb-4 text-blue-400">{t('wasmBenchmark.testConfig')}</h2>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
-          <li>Algorithm: Shamir's Secret Sharing (GF(2^8))</li>
-          <li>Shares: 5 total, 3 threshold</li>
-          <li>Payload: Random 32-byte secret + Checksum</li>
-          <li>Steganography: LSB Embedding on 100x100 buffer</li>
+          <li>{t('wasmBenchmark.algorithm')}</li>
+          <li>{t('wasmBenchmark.shares')}</li>
+          <li>{t('wasmBenchmark.payload')}</li>
+          <li>{t('wasmBenchmark.steganography')}</li>
         </ul>
       </div>
 
@@ -107,30 +109,30 @@ const WasmBenchmark: React.FC = () => {
           onClick={runBenchmark}
           disabled={isRunning}
           className={`px-6 py-3 rounded-lg font-bold transition-colors ${
-            isRunning 
-              ? 'bg-gray-600 cursor-not-allowed' 
+            isRunning
+              ? 'bg-gray-600 cursor-not-allowed'
               : 'bg-green-600 hover:bg-green-700 text-white'
           }`}
         >
-          {isRunning ? 'Running Tests...' : 'Start Benchmark (Raw Evidence)'}
+          {isRunning ? t('wasmBenchmark.running') : t('wasmBenchmark.startBenchmark')}
         </button>
       </div>
 
       {results && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 text-center">
-            <div className="text-gray-400 mb-1">JS Time</div>
+            <div className="text-gray-400 mb-1">{t('wasmBenchmark.jsTime')}</div>
             <div className="text-2xl font-mono text-yellow-400">{results.jsTime.toFixed(2)}ms</div>
           </div>
           <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 text-center">
-            <div className="text-gray-400 mb-1">Wasm Time</div>
+            <div className="text-gray-400 mb-1">{t('wasmBenchmark.wasmTime')}</div>
             <div className="text-2xl font-mono text-green-400">{results.wasmTime.toFixed(2)}ms</div>
-            <div className="text-xs text-gray-500 mt-1">{(results.jsTime / results.wasmTime).toFixed(1)}x Faster</div>
+            <div className="text-xs text-gray-500 mt-1">{t('wasmBenchmark.fasterSuffix', {ratio: (results.jsTime / results.wasmTime).toFixed(1)})}</div>
           </div>
           <div className="bg-gray-800 p-4 rounded-lg border border-gray-700 text-center">
-            <div className="text-gray-400 mb-1">Correctness</div>
+            <div className="text-gray-400 mb-1">{t('wasmBenchmark.correctness')}</div>
             <div className={`text-2xl font-bold ${results.isValid ? 'text-green-500' : 'text-red-500'}`}>
-              {results.isValid ? 'VERIFIED' : 'FAILED'}
+              {results.isValid ? t('wasmBenchmark.verified') : t('wasmBenchmark.failed')}
             </div>
           </div>
         </div>
@@ -138,7 +140,7 @@ const WasmBenchmark: React.FC = () => {
 
       <div className="bg-black rounded-lg p-4 font-mono text-sm h-64 overflow-y-auto border border-gray-800">
         {logs.length === 0 ? (
-          <span className="text-gray-600">Waiting to start...</span>
+          <span className="text-gray-600">{t('wasmBenchmark.waiting')}</span>
         ) : (
           logs.map((log, i) => (
             <div key={i} className="text-gray-300 mb-1 border-b border-gray-900 pb-1">{log}</div>

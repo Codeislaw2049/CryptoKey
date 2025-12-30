@@ -21,7 +21,7 @@ export const Footer = () => {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'CryptoKey.im - Secure Backup',
+      title: t('footerExtra.shareTitle'),
       text: t('footer.description').replace('\n', ' '), // Flatten description for share text
       url: 'https://cryptokey.im',
     };
@@ -30,7 +30,7 @@ export const Footer = () => {
       if (navigator.share) {
         await navigator.share(shareData);
       } else {
-        throw new Error('Share API not supported');
+        throw new Error(t('errors.shareApiNotSupported'));
       }
     } catch (err: any) {
       // Ignore user cancellation
@@ -39,7 +39,7 @@ export const Footer = () => {
       // Fallback to clipboard
       try {
         await navigator.clipboard.writeText('https://cryptokey.im');
-        alert('Link copied to clipboard!');
+        alert(t('footer.linkCopied'));
       } catch (clipboardErr) {
         console.error('Clipboard failed:', clipboardErr);
       }
@@ -56,14 +56,14 @@ export const Footer = () => {
             <div className="flex items-center justify-center md:justify-start gap-2">
                 <Link to="/" className="flex items-center gap-2 text-slate-200 font-bold hover:text-white transition-colors">
                   <ShieldCheck size={20} className="text-primary" />
-                  <span>CryptoKey.im</span>
+                  <span>{t('footerExtra.brandName')}</span>
                 </Link>
                 <div className="flex items-center gap-1 bg-slate-800 px-2 py-0.5 rounded text-xs text-slate-400">
                   <span>v{APP_VERSION}</span>
-                  <button 
+                  <button
                     onClick={handleRefresh}
                     className="ml-1 hover:text-white transition-colors"
-                    title="Force Update / Clear Cache"
+                    title={t('footer.forceUpdate')}
                   >
                     <RefreshCw size={10} />
                   </button>
@@ -82,24 +82,24 @@ export const Footer = () => {
 
           {/* Social & Links */}
           <div className="flex gap-6 text-slate-400">
-            <a 
-              href="https://github.com/Codeislaw2049/CryptoKey" 
-              target="_blank" 
+            <a
+              href="https://github.com/Codeislaw2049/CryptoKey"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors flex flex-col items-center gap-1 group"
-              title="Public Repository (Audit)"
+              title={t('footer.publicRepo')}
             >
               <Github size={20} className="group-hover:scale-110 transition-transform" />
               <span className="text-[10px]">{t('footer.links.source')}</span>
             </a>
-            <a 
-              href="https://t.me/C_2046" 
-              target="_blank" 
+            <a
+              href="https://t.me/C_2046"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors flex flex-col items-center gap-1 group"
             >
               <Send size={20} className="group-hover:scale-110 transition-transform" />
-              <span className="text-[10px]">Telegram</span>
+              <span className="text-[10px]">{t('footer.telegram')}</span>
             </a>
             <a 
               href="https://x.com/CryptoKeyim" 
@@ -116,12 +116,12 @@ export const Footer = () => {
               >
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-              <span className="text-[10px]">X.com</span>
+              <span className="text-[10px]">{t('footer.twitter')}</span>
             </a>
-            <button 
+            <button
               onClick={handleShare}
               className="hover:text-primary transition-colors flex flex-col items-center gap-1 group"
-              title="Share"
+              title={t('footer.share')}
             >
               <Share2 size={20} className="group-hover:scale-110 transition-transform" />
               <span className="text-[10px]">{t('footer.links.share')}</span>

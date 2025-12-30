@@ -1,0 +1,1101 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "language": "Idioma",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "download": "Descargar",
+    "email": "Correo electrónico",
+    "print": "Imprimir",
+    "paste": "Pegar",
+    "browse": "Examinar",
+    "fetch": "Obtener",
+    "or": "- O -",
+    "none": "Ninguno",
+    "processing": "Procesando..."
+  },
+  "errorBoundary": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Tus datos pueden estar seguros, pero la visualización falló.",
+    "reload": "Recargar aplicación"
+  },
+  "nav": {
+    "home": "Inicio",
+    "pricing": "Precios",
+    "terms": "Términos",
+    "about": "Acerca de"
+  },
+  "home": {
+    "subtitle": "Herramienta de Esteganografía y Cifrado de Grado Militar",
+    "tabs": {
+      "encrypt": "Cifrar",
+      "decrypt": "Descifrar",
+      "stego": "Esteganografía",
+      "wallet": "Cartera de Papel"
+    }
+  },
+  "pricing": {
+    "title": "Precios Simples y Transparentes",
+    "subtitle": "Elige el plan que se ajuste a tus necesidades de seguridad. Todos los planes desbloquean el poder completo del cifrado de grado militar y herramientas de esteganografía de CryptoKey.im.",
+    "badge": {
+      "bestValue": "Mejor Valor"
+    },
+    "button": {
+      "contactSales": "Contactar Ventas",
+      "subscribeNow": "Suscribirse Ahora",
+      "extendLicense": "Extender Licencia"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "Acceso Instantáneo",
+        "desc": "Obtén tu clave de licencia y configuración TOTP inmediatamente después del pago. Sin esperas."
+      },
+      "globalPayments": {
+        "title": "Pagos Globales",
+        "desc": "Soportamos pagos globales en USDT vía redes BSC, TRX y ETH.",
+        "descChina": "Mantente al tanto de las actualizaciones."
+      },
+      "securePrivate": {
+        "title": "Seguro y Privado",
+        "desc": "Sin retención de datos personales. Tu seguridad es nuestra máxima prioridad."
+      },
+      "refundPolicy": {
+        "title": "Política de Reembolso",
+        "desc": "Política Estricta de No Reembolso. Todas las ventas son finales una vez que se emite la clave de licencia."
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im es un proveedor de herramientas de seguridad. No proporcionamos asesoramiento financiero, trading de criptomonedas ni servicios de custodia. Los precios están en USD. El IVA puede aplicar dependiendo de tu ubicación."
+    },
+    "china": {
+      "hardwareOnly": "Solo Autorización de Hardware",
+      "description": "Por favor, compra nuestro producto de hardware CryptoKey para usar,<1/>El acceso en línea estará disponible pronto...",
+      "contactSales": "Contactar Ventas para Hardware",
+      "backToHome": "Volver al Inicio"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "Pase de 24 Horas",
+        "description": "Acceso instantáneo de 24 horas. Vinculado al dispositivo, sin inicio de sesión requerido.",
+        "features": [
+          "Todas las Funciones Pro",
+          "Acceso Instantáneo (Sin Login)",
+          "Vinculado al Dispositivo (Solo 24h)",
+          "⚠️ Riesgo: Se pierde si se borra la caché",
+          "⚠️ No Transferible"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "Mensual",
+        "description": "Acceso flexible para usuarios regulares.",
+        "features": [
+          "Todas las Funciones Pro",
+          "Cancelar en Cualquier Momento",
+          "Soporte Prioritario"
+        ]
+      },
+      "price_quarterly": {
+        "name": "Trimestral",
+        "description": "Ahorra ~15% vs Mensual.",
+        "features": [
+          "Todas las Funciones Pro",
+          "Soporte Prioritario",
+          "Facturación Trimestral"
+        ]
+      },
+      "price_semiannual": {
+        "name": "Semestral",
+        "description": "Ahorra ~23% vs Mensual.",
+        "features": [
+          "Todas las Funciones Pro",
+          "Soporte Prioritario",
+          "Facturación Semestral"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "Anual",
+        "description": "¡Mejor valor! Ahorra ~33% vs Mensual.",
+        "features": [
+          "Todas las Funciones Pro",
+          "Soporte Prioritario",
+          "Facturación Anual"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Empresarial",
+        "price": "Personalizado",
+        "period": "contáctanos",
+        "description": "Para equipos grandes y organizaciones.",
+        "features": [
+          "Términos de Licencia Personalizados",
+          "Soporte Dedicado",
+          "SLA",
+          "Opciones On-premise"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización: {{date}}",
+    "backToHome": "Volver al Inicio",
+    "disclaimer": {
+      "title": "Descargo de Responsabilidad del Servicio",
+      "content_non_china": "Proporcionamos una herramienta de gestión de seguridad de claves cripto (cryptokey.im) que ofrece respaldo de mnemónicos offline, autorización dinámica TOTP y servicios de derivación de claves seguras. NO nos involucramos en trading de criptomonedas, custodia o servicios financieros — solo herramientas de seguridad para claves de propiedad del usuario.",
+      "content_china": "Proporcionamos una herramienta de gestión de seguridad de claves cripto (cryptokey.im) que ofrece respaldo de mnemónicos offline, autorización dinámica TOTP y servicios de derivación de claves seguras. Nos enfocamos en soluciones de seguridad de hardware para tus activos digitales."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Aceptación de Términos",
+        "content": "Al acceder y usar CryptoKey.im (\"el Servicio\"), aceptas y acuerdas estar sujeto a los términos y disposiciones de este acuerdo."
+      },
+      "nature": {
+        "title": "2. Naturaleza del Servicio",
+        "content": "CryptoKey.im es una herramienta de cifrado y esteganografía del lado del cliente. Todas las operaciones de cifrado se realizan localmente en tu navegador usando WebAssembly. No tenemos acceso a tus claves privadas, mnemónicos o contraseñas. Eres el único responsable de proteger tus datos."
+      },
+      "responsibilities": {
+        "title": "3. Responsabilidades del Usuario",
+        "items": [
+          "Aceptas no usar el Servicio para actividades ilegales.",
+          "Reconoces que si pierdes tus credenciales o contraseña maestra, no podemos recuperar tus datos.",
+          "Eres responsable de mantener la confidencialidad de tu cuenta y claves de licencia."
+        ]
+      },
+      "ip": {
+        "title": "4. Propiedad Intelectual",
+        "content": "El Servicio contiene algoritmos y código propietarios. La \"Edición Comunitaria\" se proporciona para fines de auditoría bajo la licencia CC-BY-NC-ND 4.0. El uso comercial de los módulos de cifrado principales requiere una licencia Pro válida."
+      },
+      "liability": {
+        "title": "5. Limitación de Responsabilidad",
+        "content": "En la medida máxima permitida por la ley, CryptoKey.im no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo, incluyendo sin limitación, pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu uso del Servicio."
+      },
+      "refund": {
+        "title": "6. Política de Reembolso y Tarifas",
+        "policy": "Política Estricta de No Reembolso: Todas las ventas son finales. Una vez confirmado el pago y emitida la clave de licencia, no se proporcionarán reembolsos bajo ninguna circunstancia.",
+        "fees": "Tarifas de Transacción: Los usuarios son los únicos responsables de todas las tarifas de transacción (incluyendo pero no limitado a tarifas de Gas, tarifas de red y tarifas de retiro de exchanges). Por favor, asegúrate de transferir la cantidad exacta requerida más las tarifas necesarias. El pago insuficiente resultará en falla de activación de licencia."
+      }
+    }
+  },
+  "footer": {
+    "linkCopied": "¡Enlace copiado al portapapeles!",
+    "forceUpdate": "Forzar Actualización / Limpiar Caché",
+    "publicRepo": "Repositorio Público (Auditoría)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "Compartir"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "QR de Autenticación de Escritorio",
+    "registrationFailed": "Registro fallido"
+  },
+  "paymentModal": {
+    "title": "Pago en USDT",
+    "step": "Paso {{step}}/4",
+    "close": "Cerrar",
+    "steps": {
+      "identity": {
+        "title": "Verificación de Cuenta",
+        "loggedIn": "Conectado como",
+        "loginRequired": "Debes iniciar sesión para suscribirte a este plan.",
+        "loginNote": "Por favor cierra esta ventana y regístrate/inicia sesión primero.",
+        "continue": "Continuar",
+        "trial": {
+          "title": "Advertencia de Acceso Temporal",
+          "subtitle": "Estás comprando un Pase de 24 Horas sin iniciar sesión.",
+          "deviceBound": "Esta licencia está vinculada al dispositivo. Solo funcionará en este navegador y dispositivo específico.",
+          "risk": "Si borras tu caché o cambias de dispositivo, perderás el acceso permanentemente. No hay posibilidad de recuperación.",
+          "note": "Recomendamos iniciar sesión por seguridad, pero puedes proceder de forma anónima."
+        }
+      },
+      "network": {
+        "title": "Seleccionar Red de Pago",
+        "selected": "Red Seleccionada:",
+        "error": "Por favor selecciona una red de pago"
+      },
+      "payment": {
+        "instruction": "Por favor envía exactamente",
+        "walletLabel": "Dirección de Billetera Oficial",
+        "networkWarning": "Asegúrate de enviar USDT en la red {{network}} ({{standard}}). Las transferencias a redes incorrectas se perderán.",
+        "importantWarning": {
+          "title": "⚠️ Advertencia Importante de Pago:",
+          "exactAmount": "Por favor paga la cantidad EXACTA mostrada.",
+          "underpayment": "El pago insuficiente resultará en falla y no es reembolsable.",
+          "overpayment": "El pago excesivo no es reembolsable y no acumula tiempo extra.",
+          "singleTx": "El sistema verifica una sola transacción. No envíes múltiples pagos pequeños."
+        },
+        "txHashLabel": "Hash de Transacción (TXID)",
+        "txHashPlaceholder": "Pega el hash de transacción (TXID)",
+        "button": "He Enviado el Pago",
+        "verifying": "Verificando...",
+        "errorTx": "Se requiere el Hash de Transacción (TXID)",
+        "errorValidation": {
+          "wallet": "Esto parece una Dirección de Billetera, no un Hash de Transacción (TXID). Por favor pega el TXID.",
+          "tron": "TXID de TRON inválido. Debe ser una cadena hexadecimal de 64 caracteres.",
+          "eth": "TXID de {{chain}} inválido. Debe verse como 0x... y tener 64 caracteres hexadecimales."
+        },
+        "clipboardError": "Error al leer el portapapeles. Por favor escribe manualmente.",
+        "copied": "¡Enlace copiado al portapapeles!"
+      },
+      "verification": {
+        "title": "Verificando Transacción...",
+        "description": "Estamos verificando tu pago en la blockchain. Esto generalmente toma 1-3 minutos.",
+        "checkingTxid": "Verificando TXID:",
+        "safeToClose": "Es seguro cerrar esta ventana.",
+        "autoActivation": "Tu licencia Pro se activará automáticamente una vez que la transacción se confirme en la cadena.",
+        "verifying": "Verificando Pago...",
+        "success": "¡Pago Verificado!",
+        "failed": "Verificación de pago fallida. Por favor verifica tu transacción."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "Modo de Autenticador Dual (Recomendado)",
+    "dualAuthDesc": "Divide el cifrado en dos claves QR separadas (Clave A + Clave B). Incluso si una clave es robada, tus datos permanecen seguros.",
+    "switchToDual": "Cambiar a Cifrado de Autenticación Dual",
+    "generateStandard": "Generar Código QR Estándar",
+    "generating": "Generando...",
+    "standardModeDesc": "Modo Estándar: Genera fragmentos QR cifrados con AES-256.",
+    "streamMode": "Modo de Transmisión Air-Gap",
+    "proFeature": "La transmisión QR de alta velocidad es una función Pro.",
+    "unlockStream": "Desbloquear Modo de Transmisión",
+    "pauseStream": "Pausar Transmisión",
+    "playStream": "Reproducir Transmisión",
+    "scanNote": "Usa una app de escaneo QR compatible (ej. Cobo Vault, Keystone) para capturar la transmisión.",
+    "shardCount": "Fragmento {{current}} de {{total}}",
+    "saveAll": "Guardar Todas las Imágenes",
+    "saveImage": "Guardar Imagen",
+    "close": "Cerrar",
+    "speedSlow": "Lento (2 FPS)",
+    "speedFast": "Rápido (4 FPS)",
+    "speedTurbo": "Turbo (10 FPS)"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "Acceso a cámara denegado o no disponible. Por favor asegúrate de usar HTTPS o localhost."
+    },
+    "title": "Escáner de Transmisión",
+    "instruction": "Apunta al código QR animado",
+    "accessingCamera": "Accediendo a Cámara...",
+    "scanning": "Escaneando...",
+    "waitingStream": "Esperando transmisión de datos..."
+  },
+  "dualAuthGenerator": {
+    "title": "Cifrado de Autenticador Dual",
+    "back": "Atrás",
+    "howItWorks": {
+      "title": "Cómo funciona esto:",
+      "step1": "El sistema genera dos claves únicas (Secreto A y B).",
+      "step2": "Las vinculas a tu App Autenticadora (Google/Microsoft Auth).",
+      "step3": "<strong>Secreto A</strong> cifra tu Mnemónico.",
+      "step4": "<strong>Secreto B</strong> cifra tu Contraseña y Número de Línea.",
+      "step5": "El resultado se divide en fragmentos QR.",
+      "step6": "Para descifrar, necesitas los Fragmentos + Los Códigos del Autenticador (o QRs de Vinculación de respaldo)."
+    },
+    "generateKeys": "Generar Claves Seguras",
+    "authA": "Autenticador A (Clave Mnemónica)",
+    "authB": "Autenticador B (Clave de Contexto)",
+    "scanAuth": "Escanea con Google/Microsoft Authenticator",
+    "saveImage": "Guardar Imagen",
+    "processing": "Procesando...",
+    "encryptAndGenerate": "Cifrar y Generar Fragmentos",
+    "encryptionComplete": "¡Cifrado Completo!",
+    "resultDesc": "Tienes {{count}} fragmentos de datos y 2 claves de autenticador.",
+    "importantWarning": "Importante: ¡DEBES guardar TODAS las imágenes (Fragmentos + Claves Auth) para descifrar más tarde!",
+    "downloadAll": "Descargar Todas las Imágenes (Zip recomendado)",
+    "shardLabel": "Fragmento {{index}}",
+    "errorBind": "Por favor vincula los autenticadores primero",
+    "errorGen": "Generación fallida"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. Subir Fragmentos de Autenticación Dual",
+      "instruction": "Sube todos los fragmentos (generalmente 8-12) generados por el Generador de Autenticación Dual."
+    },
+    "scanStream": "Escanear Transmisión",
+    "selectImages": "Seleccionar Imágenes",
+    "clearReset": "Limpiar / Reiniciar",
+    "progress": "Progreso: {{count}} / {{total}}",
+    "failedFiles": "Error al leer {{count}} archivos:",
+    "missingParts": "Partes Faltantes: {{parts}}",
+    "mergeSuccess": "¡Fragmentos combinados exitosamente!",
+    "step2": {
+      "title": "2. Ingresar Claves de Descifrado (Requerido)",
+      "description": "DEBES proporcionar ambos Secretos A y B. Estas son las claves permanentes (imágenes QR o cadenas Base32), NO los códigos temporales de 6 dígitos."
+    },
+    "keyA": {
+      "label": "Clave A (Secreto para Mnemónico)",
+      "loaded": "QR de Clave A Cargado",
+      "upload": "Subir QR de Clave A",
+      "placeholder": "Pega el Secreto de Clave A (Base32)"
+    },
+    "keyB": {
+      "label": "Clave B (Secreto para Contexto)",
+      "loaded": "QR de Clave B Cargado",
+      "upload": "Subir QR de Clave B",
+      "placeholder": "Pega el Secreto de Clave B (Base32)"
+    },
+    "lostQrHelp": "* ¿Perdiste el QR? Revisa la función \"Exportar\" o \"Mostrar Secreto\" de tu App Autenticadora para encontrar este código.",
+    "step3": {
+      "title": "3. Verificar Claves con Código del Autenticador (Opcional)",
+      "description": "Si tienes acceso a tu App Autenticadora, ingresa los códigos actuales de 6 dígitos para verificar corrección (opcional)."
+    },
+    "codeA": {
+      "placeholder": "Código A (ej. 123456)"
+    },
+    "codeB": {
+      "placeholder": "Código B (ej. 654321)"
+    },
+    "decryptButton": "Descifrar Datos",
+    "keysRequired": "* Por favor proporciona ambas Claves Secretas (Paso 2) para habilitar el descifrado.",
+    "success": {
+      "title": "¡Descifrado Exitoso!"
+    },
+    "result": {
+      "mnemonicLabel": "Secreto Recuperado (Mnemónico)",
+      "passwordLabel": "Contraseña de Contexto",
+      "lineLabel": "Número de Línea",
+      "fullContent": "Contenido Descifrado Completo (Todas las Filas)",
+      "rawCiphertext": "Texto Cifrado Bruto (Legado)"
+    },
+    "bookCipherNote": "Nota: Estos parecen ser Índices de Cifrado de Libro..."
+  },
+  "integrityCheck": {
+    "title": "Verifica que el código de esta app coincida con el código fuente en GitHub",
+    "fetching": "Obteniendo firma de lanzamiento para {{version}}...",
+    "verifying": "Verificando {{path}}...",
+    "failedToLoad": "Error al cargar",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ No se pudo verificar {{path}}: {{error}}",
+    "criticalError": "Error Crítico: {{error}}"
+  },
+  "militaryBadge": {
+    "title": "SEGURIDAD DE GRADO MILITAR",
+    "feature1": "Arquitectura de Conocimiento Cero",
+    "feature2": "Procesamiento Solo del Lado del Cliente",
+    "feature3": "Sin Registros de Datos Persistidos"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "Esta función está disponible en la versión Comercial/Pro"
+  },
+  "userManual": {
+    "button": "Manual de Usuario",
+    "title": "Manual de Usuario de CryptoKey",
+    "subtitle": "Guía de Cifrado y Recuperación de Datos Seguros",
+    "close": "Cerrar",
+    "tabs": {
+      "start": "Guía de Inicio Rápido",
+      "dual": "Autenticador Dual",
+      "security": "Seguridad y Privacidad",
+      "recover": "Proceso de Recuperación"
+    },
+    "mobileTabs": {
+      "start": "Inicio Rápido",
+      "dual": "Autenticación Dual",
+      "security": "Seguridad",
+      "recover": "Recuperación"
+    },
+    "start": {
+      "title": "Comenzando",
+      "description": "CryptoKey te permite ocultar datos sensibles (como mnemónicos) dentro de datos señuelo usando cifrado estándar o protección de autenticador dual.",
+      "steps": [
+        "Selecciona un modo (Estándar o Autenticador Dual).",
+        "Ingresa tus datos secretos.",
+        "Genera fragmentos o bloques cifrados.",
+        "Guarda la salida de forma segura (códigos QR o texto)."
+      ]
+    },
+    "dual": {
+      "title": "Modo de Autenticador Dual",
+      "coreConcept": {
+        "title": "Concepto Principal",
+        "description": "A diferencia del cifrado estándar, este modo requiere <strong>Dos Claves Separadas</strong> (Clave A y Clave B) para descifrar. Divide la confianza entre dos tokens/dispositivos autenticadores diferentes."
+      },
+      "encryption": {
+        "title": "1. Cifrado (Generación)",
+        "step1": "Ingresa tu Mnemónico y Contraseña/Contexto.",
+        "step2": "Escanea los dos códigos QR generados (Clave A y Clave B) con tu app Google Authenticator. <strong>¡Guarda estas imágenes QR!</strong> Son tus claves permanentes.",
+        "step3": "Ingresa los códigos de 6 dígitos de tu app para verificar y bloquear el cifrado.",
+        "step4": "Descarga las Imágenes de Fragmentos generadas (Fragmentación QR)."
+      },
+      "decryption": {
+        "title": "2. Descifrado (Recuperación)",
+        "important": {
+          "title": "Importante: Claves vs Códigos",
+          "content": "<strong>Clave (QR/Secreto):</strong> La \"Clave\" permanente que escaneaste. Requerida para descifrar.<br/><strong>Código (6 dígitos):</strong> El \"Token\" temporal generado cada 30s. Usado solo para verificación.",
+          "note": "* NO PUEDES descifrar solo con el código de 6 dígitos. DEBES subir el QR de Clave o ingresar la cadena Secreta."
+        },
+        "step1": "Sube todas tus Imágenes de Fragmentos.",
+        "step2": "<strong>REQUERIDO:</strong> Sube las imágenes QR de Clave A y Clave B (o pega las cadenas Secretas).",
+        "step3": "(Opcional) Ingresa los códigos actuales de 6 dígitos para verificar corrección."
+      },
+      "lost": {
+        "title": "3. ¿Perdiste tus Imágenes QR?",
+        "description": "Si aún tienes la App Autenticadora en tu teléfono:",
+        "steps": [
+          "Abre Google Authenticator.",
+          "Usa la función \"Exportar Cuentas\" o \"Transferir\".",
+          "Esto mostrará un código QR que contiene tus Secretos.",
+          "Escanea/Decodifica ese QR de exportación para recuperar tu cadena Secreta."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. Elegir Modo de Protección",
+        "description": "Selecciona la mejor manera de asegurar tu frase mnemónica o datos:",
+        "book": {
+          "physical": {
+            "title": "Libro Físico / Virtual",
+            "desc": "Oculta tu clave en un libro real en tu estante. (Página-Línea-Palabra)"
+          },
+          "online": {
+            "title": "Libro en Línea (URL)",
+            "desc": "Usa una URL permanente de Gutenberg como tu fuente de clave. No se necesitan archivos."
+          },
+          "digital": {
+            "title": "Libro Digital (Archivo)",
+            "desc": "Sube un archivo TXT de Gutenberg. Procesado localmente, nunca subido."
+          },
+          "index": {
+            "title": "Índice General",
+            "desc": "Cifra estructuras de datos arbitrarias (ej., Info Bancaria, Contraseñas)."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. Ingresar y Ofuscar",
+        "description": "Ingresa tus datos sensibles. Luego te pediremos que establezcas una <span class=\"text-white font-mono\">Densidad de Filas</span> (ej., 100 filas). Tus datos reales se ocultarán en una fila aleatoria entre 99 filas falsas.",
+        "example": {
+          "fake1": "Fila 34: 832-19-22 (Falso)",
+          "real": "Fila 35: 123-45-67 (Datos Reales)",
+          "fake2": "Fila 36: 992-11-02 (Falso)"
+        }
+      },
+      "export": {
+        "title": "3. Exportar y Guardar",
+        "description": "Una vez cifrado, recibirás un bloque de texto cifrado. ¡Debes guardar este bloque!",
+        "ways": "Formas de guardar:",
+        "email": "Correo Electrónico (Dispositivo Personal)",
+        "usb": "Descarga USB (Más Seguro)",
+        "print": "Imprimir Papel (Offline)"
+      },
+      "publicComputer": {
+        "title": "Seguridad en Computadora Pública",
+        "description": "Si estás usando una computadora pública (cibercafé, biblioteca, PC de un amigo):",
+        "steps": [
+          "NO inicies sesión en tu correo personal.",
+          "NO uses el portapapeles (copiar/pegar) si es posible.",
+          "Usa el interruptor <strong>\"Modo Computadora Pública\"</strong> en la página de resultados.",
+          "Descarga el archivo a una unidad USB o escanea el código QR con tu teléfono.",
+          "Haz clic en <strong>\"Borrar Todos los Datos\"</strong> antes de irte."
+        ]
+      },
+      "military": {
+        "title": "Cifrado de Grado Militar",
+        "description": "Usamos cifrado <strong>AES-256-GCM</strong>. Este es el mismo estándar usado por gobiernos y bancos. Tu contraseña se salta y hashea usando <strong>PBKDF2-HMAC-SHA256</strong> con 100,000 iteraciones, haciendo que los ataques de fuerza bruta sean casi imposibles."
+      },
+      "zk": {
+        "title": "Arquitectura de Conocimiento Cero",
+        "description": "Todo sucede en tu navegador. No tenemos <strong>servidores</strong>, ni base de datos, ni registros. Si cierras esta pestaña, tus datos desaparecerán para siempre a menos que hayas guardado el respaldo."
+      },
+      "deniability": {
+        "title": "Negación Plausible",
+        "description": "Generamos <strong>filas señuelo falsas</strong> indistinguibles de tus datos reales. Incluso si alguien te obliga a descifrar el archivo, puedes afirmar que cualquiera de las filas falsas es la \"real\", o que el archivo no contiene datos significativos. Las matemáticas del cifrado ocultan qué fila es real."
+      },
+      "transparency": {
+        "title": "Transparencia del Código",
+        "description": "CryptoKey es una aplicación puramente del lado del cliente. Puedes inspeccionar el código fuente en las herramientas de desarrollador de tu navegador. Fomentamos las auditorías de seguridad. No se cargan scripts externos ni analíticas."
+      }
+    },
+    "recover": {
+      "title": "Cómo Descifrar",
+      "steps": {
+        "step1": {
+          "title": "Seleccionar Modo",
+          "description": "Elige el mismo modo usado para el cifrado (Físico, Archivo o URL). Si usas Archivo o URL, debes proporcionar exactamente la misma fuente de libro."
+        },
+        "step2": {
+          "title": "Pegar Texto Cifrado",
+          "description": "Copia el bloque de texto cifrado completo (incluyendo los caracteres aleatorios) de tu correo o archivo."
+        },
+        "step3": {
+          "title": "Ingresar Contraseña",
+          "description": "Ingresa la contraseña que estableciste durante el cifrado."
+        },
+        "step4": {
+          "title": "Identificar Tu Fila",
+          "description": "El sistema descifrará TODAS las filas (reales + falsas). Debes recordar qué número de fila era el tuyo (ej., Fila 35) para encontrar tus datos."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "Seguridad de Grado Militar",
+    "title": "Arquitectura de Seguridad",
+    "subtitle": "Prueba de Conocimiento Cero y Cifrado de Grado Militar",
+    "features": {
+      "aes": {
+        "title": "Cifrado AES-256-GCM",
+        "desc": "Tus datos se cifran usando el estándar más fuerte disponible (Web Crypto API). Usamos PBKDF2 con 100,000 iteraciones para derivación de claves."
+      },
+      "steganography": {
+        "title": "Esteganografía de Cifrado de Libro",
+        "desc": "Oculta datos sensibles dentro de texto regular de libros (Gutenberg/Físico). Los atacantes solo ven índices inofensivos de página/línea/palabra, no texto cifrado."
+      },
+      "dual": {
+        "title": "Doble Factor y Fragmentación",
+        "desc": "El nuevo modo de Autenticador Dual divide el cifrado entre dos claves separadas (A y B), más Fragmentación QR para redundancia. Incluso si una clave se compromete, tus datos permanecen seguros."
+      },
+      "zk": {
+        "title": "Conocimiento Cero",
+        "desc": "Nunca vemos tu contraseña o datos. Todo sucede localmente en tu navegador. Ningún dato se envía a nuestros servidores."
+      },
+      "noPersistence": {
+        "title": "Sin Persistencia",
+        "desc": "No usamos cookies, almacenamiento local o bases de datos de servidor. Los Libros Digitales (TXT) se procesan localmente y nunca se suben."
+      },
+      "antiTheft": {
+        "title": "Protección Anti-Robo",
+        "desc": "Los campos de entrada previenen autocompletar y caché. La memoria se limpia activamente cuando te vas. Seguro para computadoras públicas."
+      }
+    },
+    "audit": {
+      "title": "Auditoría Técnica",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "Solo Lado del Cliente",
+        "noUploads": "Sin Subidas (Modo Archivo)",
+        "noLog": "Política Sin Registros",
+        "wipe": "Borrado de Memoria"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "Seleccionar Modo de Recuperación",
+      "subtitle": "Elige cómo quieres cifrar/recuperar tus datos.",
+      "mnemonic": {
+        "title": "Frase Mnemónica",
+        "desc": "Usa una frase semilla de 12/24 palabras como tu fuente de clave.",
+        "features": {
+          "compliance": "Cumple BIP-39",
+          "encryption": "Cifrado Estándar",
+          "security": "Alta Seguridad"
+        }
+      },
+      "physical": {
+        "title": "Libro Físico",
+        "desc": "Oculta tu clave en un libro real en tu estante.",
+        "features": {
+          "manual": "Entrada Manual",
+          "ownBook": "Usa Tu Propio Libro",
+          "flexible": "Flexible y Sigiloso"
+        }
+      },
+      "digital": {
+        "title": "Libro Digital (Archivo)",
+        "desc": "Sube un archivo de texto para usar como tu fuente de clave.",
+        "features": {
+          "local": "Procesado Localmente",
+          "noUpload": "Sin Subida al Servidor",
+          "offline": "Funciona Offline"
+        }
+      },
+      "url": {
+        "title": "Libro en Línea (URL)",
+        "desc": "Usa una URL permanente como tu fuente de clave.",
+        "features": {
+          "remote": "Contenido Remoto",
+          "convenient": "Acceso Conveniente",
+          "dynamic": "Referencia Dinámica"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Ingresar Mnemónico",
+        "file": "Subir Archivo",
+        "url": "Ingresar URL",
+        "general": "Ingresar Datos"
+      },
+      "subtitle": {
+        "mnemonic": "Ingresa tu frase mnemónica de 12 o 24 palabras.",
+        "file": "Sube un archivo de texto para cifrar.",
+        "url": "Ingresa una URL para obtener contenido.",
+        "general": "Ingresa cualquier dato de texto para cifrar."
+      },
+      "file": {
+        "loaded": "Archivo Cargado Exitosamente",
+        "upload": "Arrastra y suelta o Haz clic para Subir",
+        "sizeLoaded": "Cargado",
+        "maxSize": "Máx 5MB • TXT",
+        "scheme": "Esquema de Cifrado",
+        "schemes": {
+          "offset": "Desplazamiento de Caracteres",
+          "chapter": "Índice de Capítulo",
+          "virtual": "Línea Virtual"
+        }
+      },
+      "url": {
+        "fetch": "Obtener Contenido",
+        "proxy": {
+          "title": "Proxy Local Activo",
+          "desc": "Usando proxy local para desarrollo."
+        },
+        "success": "Cargados {{count}} caracteres",
+        "recommended": "Libros Recomendados",
+        "clickToFill": "Haz clic para llenar"
+      },
+      "general": {
+        "placeholder": "Ingresar fila de datos...",
+        "addLine": "Agregar Nueva Línea",
+        "generate": "Datos Aleatorios"
+      },
+      "mnemonic": {
+        "label": "Frase Mnemónica",
+        "required": "(Requerido)",
+        "placeholder": "Ingresa tu frase mnemónica...",
+        "paste": "Pegar",
+        "generate": "Generar"
+      }
+    },
+    "mixStep": {
+      "title": "Establecer Contraseña de Cifrado",
+      "subtitle": "Establece una contraseña fuerte para cifrar tu bóveda.",
+      "password": {
+        "label": "Establecer Contraseña de Cifrado",
+        "placeholder": "Ingresa una contraseña fuerte"
+      },
+      "confirm": {
+        "label": "Confirmar Contraseña",
+        "placeholder": "Reingresa la contraseña"
+      },
+      "rowCount": {
+        "label": "Cantidad de Filas (Densidad de Mezcla)",
+        "help": "Mayor cantidad = Mejor anonimato.",
+        "upgrade": "(Límite: 100. Haz clic para Actualizar)",
+        "proRequired": "Valores > 100 requieren licencia Pro."
+      },
+      "duress": {
+        "label": "Contraseña de Coerción (Opcional)",
+        "help": "Crea una bóveda falsa que se abre con una contraseña diferente. Úsala si te obligan a desbloquear tu dispositivo.",
+        "passwordLabel": "Contraseña de Coerción",
+        "placeholder": "Diferente de la contraseña real",
+        "fakeContentLabel": "Contenido Falso (Señuelo)"
+      },
+      "error": {
+        "required": "Se requiere contraseña",
+        "mismatch": "Las contraseñas no coinciden",
+        "minLength": "La contraseña debe tener al menos 8 caracteres",
+        "duressRequired": "Se requiere contraseña de coerción",
+        "duressSame": "La contraseña de coerción no puede ser la misma que la contraseña real",
+        "encryptionFailed": "Cifrado fallido. Por favor inténtalo de nuevo."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "Cifrado Exitosamente",
+        "title": "Tu Respaldo Está Listo",
+        "subtitle": "Guarda el Texto Cifrado y memoriza tus credenciales."
+      },
+      "mode": {
+        "personal": "Personal",
+        "public": "Público"
+      },
+      "realIndex": {
+        "title": "Índice de Fila Real",
+        "help": "Esta es la ÚNICA fila que contiene tus datos. Todas las demás son falsas."
+      },
+      "mnemonic": {
+        "title": "Mnemónico Original"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "Copiar",
+        "copied": "¡Copiado!",
+        "download": "Descargar",
+        "email": "Correo",
+        "print": "Imprimir"
+      },
+      "dualAuth": {
+        "button": "Generar Fragmentos de Autenticación Dual",
+        "pro": "Función Pro: Actualiza para Acceder"
+      },
+      "reset": "Reiniciar"
+    }
+  },
+  "decryption": {
+    "title": "Herramienta de Descifrado",
+    "subtitle": "Recupera tu mensaje original de varias fuentes",
+    "status": {
+      "scanning": "Escaneando...",
+      "processing": "Procesando datos de transmisión...",
+      "reassembling": "Reensamblando y Descomprimiendo...",
+      "scanProgress": "Escaneando... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "Autenticación Dual Detectada",
+      "dualAuthDesc": "Este contenido está protegido por Autenticación de Doble Factor.",
+      "switchToDual": "Cambiar a Modo de Autenticación Dual",
+      "backToStandard": "Volver a Descifrado Estándar",
+      "dualAuthBadge": "Modo de Autenticación Dual"
+    },
+    "label": {
+      "ciphertext": "Texto Cifrado / Datos Cifrados",
+      "closeScanner": "Cerrar Escáner",
+      "password": "Contraseña de Descifrado",
+      "failedFiles": "Archivos Fallidos:",
+      "missingParts": "Partes Faltantes:",
+      "fragmentsFound": "Fragmentos Encontrados:",
+      "uploadRemaining": "Subir Restantes"
+    },
+    "button": {
+      "scanStream": "Escanear Transmisión",
+      "uploadQRShards": "Subir Fragmentos QR",
+      "paste": "Pegar",
+      "decrypt": "Descifrar Datos"
+    },
+    "placeholder": {
+      "ciphertext": "Pega tu texto cifrado, bloque cifrado o contenido QR aquí...",
+      "password": "Ingresa la contraseña usada para el cifrado"
+    },
+    "mode": {
+      "physicalBook": "Libro Físico / Virtual",
+      "digitalBook": "Libro Digital (Archivo)",
+      "onlineBook": "Libro en Línea (URL)"
+    },
+    "file": {
+      "title": "Subir Archivo de Libro",
+      "description": "Sube el <strong>mismo archivo TXT de Gutenberg exacto</strong> usado durante el cifrado.",
+      "loaded": "Cargado: {{size}} KB",
+      "choose": "Elegir Archivo TXT de Gutenberg...",
+      "browse": "Examinar",
+      "parsed": "{{count}} Capítulos analizados exitosamente"
+    },
+    "url": {
+      "title": "Obtener URL de Libro",
+      "description": "Ingresa la <strong>URL HTML de Gutenberg exacta</strong> usada durante el cifrado.",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "Obtener",
+      "loaded": "Cargado: {{length}} caracteres (Hash: {{hash}}...)"
+    },
+    "locate": {
+      "title": "Localizar Datos",
+      "description": "¿Qué fila contiene tus datos?",
+      "row": "Fila"
+    },
+    "result": {
+      "title": "Datos Recuperados (Fila {{row}})",
+      "copy": "Copiar",
+      "copied": "¡Copiado!",
+      "empty": "La fila está vacía o es inválida",
+      "rowAppears": "La fila {{row}} parece estar vacía o contener datos inválidos.",
+      "enterRow": "Ingresa el número de fila (1-100+) donde ocultaste tus datos para revelarlo.",
+      "rawPreview": "VISTA PREVIA DE DATOS BRUTOS"
+    },
+    "errors": {
+      "incompleteData": "Datos incompletos: se encontraron {{current}}/{{total}} partes",
+      "invalidFormat": "(Formato inválido)",
+      "noQrFound": "(No se encontró código QR)",
+      "failedToReadFile": "(Error al leer el archivo)",
+      "decryptionFailed": "Descifrado fallido. Por favor verifica tu contraseña."
+    },
+    "error": {
+      "fileMode": "Por favor sube el archivo de libro original para recuperar datos.",
+      "fileModeUnknown": "Formato de datos desconocido para modo Archivo.",
+      "urlMode": "Por favor obtén la URL del libro para recuperar datos.",
+      "clipboard": "No se puede acceder al portapapeles. Por favor pega manualmente.",
+      "decryptFailed": "Descifrado fallido. Por favor verifica tu contraseña."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "Ocultar Datos",
+      "extract": "Extraer Datos"
+    },
+    "label": {
+      "carrierImages": "Imagen(es) Portadora",
+      "imagesLoaded": "imágenes cargadas",
+      "source": "Fuente: {{name}}",
+      "original": "Original: {{name}}",
+      "uploadImages": "Subir Imagen(es)",
+      "uploadExtractHelp": "Sube todas las imágenes de fragmentos para reconstruir.",
+      "uploadHideHelp": "Sube imagen portadora.",
+      "limitInfo": "Gratis: 3 imágenes. Pro: Ilimitado.",
+      "secretMessage": "Mensaje Secreto",
+      "enableSharding": "Habilitar Compartición Secreta (Fragmentación)",
+      "proOnly": "(Solo Pro)",
+      "totalShares": "Comparticiones Totales (N)",
+      "threshold": "Requeridas para Descifrar (K)",
+      "strictMatching": "Coincidencia Estricta de Nombres",
+      "strictMatchingHelp": "El descifrado solo funcionará si los archivos coinciden exactamente con sus nombres originales.",
+      "extractedContent": "Contenido Extraído"
+    },
+    "placeholder": {
+      "pasteCiphertext": "Pega texto cifrado aquí...",
+      "shardFilename": "compartir-{{index}}.png",
+      "outputFilename": "Nombre de Archivo de Salida"
+    },
+    "warning": {
+      "title": "ADVERTENCIA CRÍTICA:",
+      "text": "¡No ingreses texto plano (como mnemónicos) directamente! Cualquiera con la imagen puede extraerlo. Siempre cifra tus datos primero (ej., usando la pestaña \"Cifrar\") y pega el Texto Cifrado aquí."
+    },
+    "button": {
+      "clearAll": "Limpiar Todo",
+      "paste": "Pegar",
+      "generateShards": "Generar y Descargar Fragmentos",
+      "hideData": "Ocultar Datos y Descargar",
+      "copied": "¡Copiado!",
+      "copy": "Copiar",
+      "extractHidden": "Extraer Datos Ocultos"
+    },
+    "status": {
+      "successHide": "¡Datos ocultados exitosamente! Imagen descargada.",
+      "successShards": "Se generaron y descargaron exitosamente {{count}} imágenes de fragmentos.",
+      "noData": "No se encontraron datos ocultos válidos. Verifica los nombres de archivo si se usó modo estricto.",
+      "reconstructFailed": "Reconstrucción fallida: {{error}}. Mostrando datos brutos abajo.",
+      "waitingImage": "Esperando imagen..."
+    },
+    "about": {
+      "title": "Acerca de la Esteganografía",
+      "text": "Esta herramienta oculta tus datos en los bits menos significativos (LSB) de los píxeles de la imagen. La imagen resultante se ve idéntica al ojo humano pero contiene tu mensaje secreto.",
+      "noteTitle": "Nota:",
+      "noteText": "No comprimas la imagen descargada (ej., enviar vía WhatsApp/Messenger a menudo comprime imágenes). Siempre comparte como archivo (Documento) o mantén estrictamente local."
+    }
+  },
+  "wallet": {
+    "title": "Generador de Cartera Segura",
+    "subtitle": "Genera carteras compatibles con BIP39/BIP44. 100% del lado del cliente.",
+    "strength": {
+      "12words": "12 Palabras (128-bit)",
+      "24words": "24 Palabras (256-bit)"
+    },
+    "action": {
+      "generate": "Generar Nueva Cartera",
+      "import": "Importar Mnemónico"
+    },
+    "import": {
+      "title": "Importar Cartera Existente",
+      "placeholder": "Ingresa tu frase mnemónica de 12, 15, 18, 21 o 24 palabras aquí...",
+      "paste": "Pegar",
+      "submit": "Importar Cartera"
+    },
+    "error": {
+      "invalidMnemonic": "Mnemónico inválido"
+    },
+    "mnemonic": {
+      "title": "Frase de Recuperación (Mnemónico)",
+      "reveal": "Haz clic para Revelar"
+    },
+    "copyTo": {
+      "encrypt": "Copiar a \"Ingresar Frase Mnemónica\"",
+      "steganography": "Copiar a \"Esteganografía\""
+    },
+    "details": {
+      "title": "Detalles de la Cartera",
+      "showKeys": "Mostrar Claves Sensibles",
+      "hideKeys": "Ocultar Claves Sensibles",
+      "ethAddress": "Dirección Ethereum (BIP44)",
+      "path": "Ruta: {{path}} (Estándar Metamask/Ledger)",
+      "privateKey": "Clave Privada",
+      "publicKey": "Clave Pública",
+      "addressQr": "QR de Dirección"
+    },
+    "security": {
+      "title": "Advertencia de Seguridad",
+      "line1": "Escribe estas palabras en papel y guárdalas de forma segura.",
+      "never": "Nunca",
+      "line2": "las compartas con nadie.",
+      "line3": "Si pierdes estas palabras, tus fondos se perderán para siempre."
+    },
+    "tooltip": {
+      "pasteClipboard": "Pegar desde portapapeles",
+      "hide": "Ocultar",
+      "show": "Mostrar",
+      "copyClipboard": "Copiar al portapapeles"
+    }
+  },
+  "installAuth": {
+    "redirecting": "Redirigiendo a App Store...",
+    "detecting": "Detectando tu dispositivo..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Cambiar Idioma"
+  },
+  "mixStep": {
+    "duress": {
+      "defaultMessage": "Acceso Denegado. Intento no autorizado registrado."
+    },
+    "error": {
+      "accessDenied": "Acceso Denegado. Intento no autorizado registrado.",
+      "passwordRequired": "Se requiere contraseña",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "passwordTooShort": "La contraseña debe tener al menos 8 caracteres",
+      "duressPasswordRequired": "Se requiere contraseña de coerción",
+      "duressPasswordSame": "La contraseña de coerción no puede ser la misma que la contraseña real"
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "Frase mnemónica inválida. Por favor verifica tus palabras.",
+      "enterCiphertext": "Por favor ingresa los datos de texto cifrado",
+      "invalidMode": "Modo inválido o datos faltantes",
+      "encryptionFailed": "Proceso de cifrado fallido. Por favor verifica tu entrada.",
+      "parseFileFailed": "Error al analizar el archivo. Por favor asegúrate de que es un archivo de texto válido.",
+      "invalidUrl": "URL inválida",
+      "fetchUrlFailed": "Error al obtener URL"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "Eliminar línea",
+      "generateRandom": "Generar Datos Aleatorios",
+      "pasteClipboard": "Pegar desde Portapapeles",
+      "generateMnemonic": "Generar Mnemónico Aleatorio"
+    }
+  },
+  "resultStep": {
+    "print": {
+      "title": "CryptoKey Respaldo Seguro"
+    },
+    "clipboard": {
+      "labels": "Texto Cifrado: {{ciphertext}}\nHash: {{hash}}"
+    },
+    "fileContent": {
+      "header": "【Respaldo Seguro CryptoKey】",
+      "ciphertext": "Texto Cifrado:",
+      "hash": "Hash:",
+      "footer": "Descifrar en: https://cryptokey.im",
+      "generated": "Generado: {{date}}",
+      "note": "NOTA: Requiere contraseña + índice de fila para descifrar."
+    },
+    "watermark": "Descifrar en https://CryptoKey.im | Generado el {{date}}"
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:TextoCifrado",
+      "passwordLine": "CryptoKey:ContraseñaLinea",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "Finalizando..."
+    },
+    "errors": {
+      "invalidFormat": "(Formato inválido)",
+      "integrityFailed": "Fallo en la Verificación de Integridad: Los datos reensamblados están corruptos. Por favor, vuelva a escanear.",
+      "decompressionError": "Error de Descompresión: Datos Malformados. Por favor, intente volver a subir las imágenes, asegurándose de que sean claras y completas.",
+      "decompressionFailed": "Descompresión fallida: {{error}}"
+    },
+    "error": {
+      "generationFailed": "Generación fallida",
+      "startProcessing": "Iniciando procesamiento...",
+      "processingImage": "Procesando imagen {{current}} de {{total}}..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "Se detectó un error en el reloj del sistema. Por favor, corrija la hora de su sistema para continuar usando las funciones Pro.",
+      "deactivateConfirm": "¿Desactivar Licencia Real Pro?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "Atrás",
+    "processing": "Procesando...",
+    "encryptGenerate": "Cifrar y Generar"
+  },
+  "steganographyExtra": {
+    "successGenerated": "Se generaron y descargaron exitosamente {{count}} imágenes de fragmentos.",
+    "carrierImages": "Imagen(es) Portadora",
+    "strictMatchRequired": "Se Requiere Coincidencia Estricta"
+  },
+  "wasmBenchmark": {
+    "title": "Prueba de Rendimiento Wasm",
+    "testConfig": "Configuración de Prueba",
+    "algorithm": "Algoritmo: Compartición de Secretos de Shamir (GF(2^8))",
+    "shares": "Comparticiones: 5 totales, 3 umbral",
+    "payload": "Carga: Secreto aleatorio de 32 bytes + Checksum",
+    "steganography": "Esteganografía: Incrustación LSB en búfer de 100x100",
+    "running": "Ejecutando Pruebas...",
+    "startBenchmark": "Iniciar Prueba (Evidencia Bruta)",
+    "jsTime": "Tiempo JS",
+    "wasmTime": "Tiempo Wasm",
+    "fasterSuffix": "{{ratio}}x Más Rápido",
+    "correctness": "Corrección",
+    "verified": "VERIFICADO",
+    "failed": "FALLIDO",
+    "waiting": "Esperando para iniciar..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - Respaldo Seguro",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "Iniciando Benchmark...",
+      "runningJs": "Ejecutando Implementación JS...",
+      "loadingWasm": "Cargando Módulo Wasm...",
+      "runningWasm": "Ejecutando Implementación Wasm..."
+    },
+    "validation": {
+      "pass": "APROBADO",
+      "fail": "FALLIDO",
+      "result": "Resultado de Validación: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "Por favor vincule los autenticadores primero",
+    "invalidDataFormat": "Formato de datos inválido",
+    "hashMismatch": "Discrepancia de hash",
+    "noValidQr": "No se encontró ningún código QR válido",
+    "passwordIncorrect": "Contraseña incorrecta para cualquier contenido del cofre",
+    "couldNotReadQr": "No se pudo leer el código QR",
+    "invalidAuthQr": "Código QR de Autenticación Inválido",
+    "noSecretInQr": "No se encontró secreto en el QR",
+    "authAIncorrect": "El código del Autenticador A es incorrecto",
+    "authBIncorrect": "El código del Autenticador B es incorrecto",
+    "decryptCiphertextFailed": "Error al descifrar Texto Cifrado (la Clave A podría estar incorrecta)",
+    "decryptContextFailedA": "Error al descifrar Contexto (la Clave B podría estar incorrecta)",
+    "decryptMnemonicFailed": "Error al descifrar Mnemónico (la Clave A podría estar incorrecta)",
+    "decryptContextFailedB": "Error al descifrar Contexto (la Clave B podría estar incorrecta)",
+    "shardIntegrityError": "Error de Integridad del Fragmento: El archivo {{filename}} pertenece a un conjunto diferente. Asegúrese de que todos los archivos sean de la misma sesión de cifrado.",
+    "shareApiNotSupported": "API de Compartir no compatible",
+    "canvasContext": "No se pudo obtener el contexto del canvas",
+    "invalidShareType": "jsSplit devolvió un tipo inválido: {{type}}",
+    "wasmLoadFailed": "Error al cargar el módulo Wasm"
+  }
+}

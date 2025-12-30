@@ -1,0 +1,1101 @@
+{
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "language": "भाषा",
+    "close": "बंद करें",
+    "back": "वापस",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!",
+    "download": "डाउनलोड करें",
+    "email": "ईमेल",
+    "print": "प्रिंट करें",
+    "paste": "पेस्ट करें",
+    "browse": "ब्राउज़ करें",
+    "fetch": "लाएं",
+    "or": "- या -",
+    "none": "कोई नहीं",
+    "processing": "प्रोसेस हो रहा है..."
+  },
+  "errorBoundary": {
+    "title": "कुछ गलत हो गया",
+    "description": "एक अप्रत्याशित त्रुटि हुई। आपका डेटा सुरक्षित हो सकता है, लेकिन डिस्प्ले क्रैश हो गया।",
+    "reload": "एप्लिकेशन रीलोड करें"
+  },
+  "nav": {
+    "home": "होम",
+    "pricing": "मूल्य निर्धारण",
+    "terms": "नियम",
+    "about": "परिचय"
+  },
+  "home": {
+    "subtitle": "मिलिट्री-ग्रेड Steganography और Encryption टूल",
+    "tabs": {
+      "encrypt": "एन्क्रिप्ट करें",
+      "decrypt": "डिक्रिप्ट करें",
+      "stego": "Steganography",
+      "wallet": "Paper Wallet"
+    }
+  },
+  "pricing": {
+    "title": "सरल, पारदर्शी मूल्य निर्धारण",
+    "subtitle": "वह योजना चुनें जो आपकी सुरक्षा आवश्यकताओं के अनुरूप हो। सभी योजनाएं CryptoKey.im के मिलिट्री-ग्रेड एन्क्रिप्शन और steganography टूल्स की पूर्ण शक्ति अनलॉक करती हैं।",
+    "badge": {
+      "bestValue": "सर्वोत्तम मूल्य"
+    },
+    "button": {
+      "contactSales": "सेल्स से संपर्क करें",
+      "subscribeNow": "अभी सब्सक्राइब करें",
+      "extendLicense": "लाइसेंस बढ़ाएं"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "तत्काल पहुंच",
+        "desc": "भुगतान के तुरंत बाद अपनी लाइसेंस की और TOTP सेटअप प्राप्त करें। कोई प्रतीक्षा नहीं।"
+      },
+      "globalPayments": {
+        "title": "वैश्विक भुगतान",
+        "desc": "हम BSC, TRX और ETH नेटवर्क के माध्यम से वैश्विक USDT भुगतान का समर्थन करते हैं।",
+        "descChina": "अपडेट के लिए बने रहें।"
+      },
+      "securePrivate": {
+        "title": "सुरक्षित और निजी",
+        "desc": "कोई व्यक्तिगत डेटा संग्रहण नहीं। आपकी सुरक्षा हमारी प्राथमिकता है।"
+      },
+      "refundPolicy": {
+        "title": "धनवापसी नीति",
+        "desc": "सख्त कोई-धनवापसी-नहीं नीति। एक बार लाइसेंस की जारी होने के बाद सभी बिक्री अंतिम हैं।"
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im एक सुरक्षा टूल प्रदाता है। हम वित्तीय सलाह, cryptocurrency ट्रेडिंग, या कस्टडी सेवाएं प्रदान नहीं करते हैं। मूल्य USD में हैं। आपके स्थान के आधार पर VAT लागू हो सकता है।"
+    },
+    "china": {
+      "hardwareOnly": "केवल हार्डवेयर प्राधिकरण",
+      "description": "कृपया हमारे हार्डवेयर उत्पाद CryptoKey का उपयोग करने के लिए खरीदें,<1/>ऑनलाइन एक्सेस जल्द ही आ रहा है...",
+      "contactSales": "हार्डवेयर के लिए सेल्स से संपर्क करें",
+      "backToHome": "होम पर वापस जाएं"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "24-घंटे पास",
+        "description": "तत्काल 24-घंटे की पहुंच। डिवाइस-बाउंड, लॉगिन की आवश्यकता नहीं।",
+        "features": [
+          "सभी Pro फीचर्स",
+          "तत्काल पहुंच (लॉगिन नहीं)",
+          "डिवाइस बाउंड (केवल 24 घंटे)",
+          "⚠️ जोखिम: कैश क्लियर होने पर खो जाएगा",
+          "⚠️ ट्रांसफर योग्य नहीं"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "मासिक",
+        "description": "नियमित उपयोगकर्ताओं के लिए लचीली पहुंच।",
+        "features": [
+          "सभी Pro फीचर्स",
+          "कभी भी रद्द करें",
+          "प्राथमिकता सहायता"
+        ]
+      },
+      "price_quarterly": {
+        "name": "तिमाही",
+        "description": "मासिक की तुलना में ~15% बचाएं।",
+        "features": [
+          "सभी Pro फीचर्स",
+          "प्राथमिकता सहायता",
+          "तिमाही बिलिंग"
+        ]
+      },
+      "price_semiannual": {
+        "name": "अर्ध-वार्षिक",
+        "description": "मासिक की तुलना में ~23% बचाएं।",
+        "features": [
+          "सभी Pro फीचर्स",
+          "प्राथमिकता सहायता",
+          "अर्ध-वार्षिक बिलिंग"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "वार्षिक",
+        "description": "सर्वोत्तम मूल्य! मासिक की तुलना में ~33% बचाएं।",
+        "features": [
+          "सभी Pro फीचर्स",
+          "प्राथमिकता सहायता",
+          "वार्षिक बिलिंग"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Enterprise",
+        "price": "कस्टम",
+        "period": "हमसे संपर्क करें",
+        "description": "बड़ी टीमों और संगठनों के लिए।",
+        "features": [
+          "कस्टम लाइसेंस शर्तें",
+          "समर्पित सहायता",
+          "SLA",
+          "ऑन-प्रिमाइस विकल्प"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "सेवा की शर्तें",
+    "lastUpdated": "अंतिम अपडेट: {{date}}",
+    "backToHome": "होम पर वापस जाएं",
+    "disclaimer": {
+      "title": "सेवा अस्वीकरण",
+      "content_non_china": "हम एक क्रिप्टो की सुरक्षा प्रबंधन टूल (cryptokey.im) प्रदान करते हैं जो ऑफलाइन mnemonic बैकअप, TOTP डायनेमिक प्राधिकरण, और सुरक्षित की derivation सेवाएं प्रदान करता है। हम cryptocurrency ट्रेडिंग, कस्टडी, या वित्तीय सेवाओं में शामिल नहीं हैं — केवल उपयोगकर्ता-स्वामित्व वाली कीज़ के लिए सुरक्षा टूल्स।",
+      "content_china": "हम एक क्रिप्टो की सुरक्षा प्रबंधन टूल (cryptokey.im) प्रदान करते हैं जो ऑफलाइन mnemonic बैकअप, TOTP डायनेमिक प्राधिकरण, और सुरक्षित की derivation सेवाएं प्रदान करता है। हम आपकी डिजिटल संपत्तियों के लिए हार्डवेयर सुरक्षा समाधानों पर ध्यान केंद्रित करते हैं।"
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. शर्तों की स्वीकृति",
+        "content": "CryptoKey.im (\"सेवा\") का उपयोग और पहुंच करके, आप इस समझौते की शर्तों और प्रावधानों से बंधे रहने के लिए सहमत होते हैं।"
+      },
+      "nature": {
+        "title": "2. सेवा की प्रकृति",
+        "content": "CryptoKey.im एक क्लाइंट-साइड एन्क्रिप्शन और steganography टूल है। सभी एन्क्रिप्शन ऑपरेशन WebAssembly का उपयोग करके आपके ब्राउज़र में स्थानीय रूप से किए जाते हैं। हमारे पास आपकी प्राइवेट कीज़, mnemonics या पासवर्ड तक पहुंच नहीं है। आप अपने डेटा की सुरक्षा के लिए पूर्ण रूप से जिम्मेदार हैं।"
+      },
+      "responsibilities": {
+        "title": "3. उपयोगकर्ता जिम्मेदारियां",
+        "items": [
+          "आप सेवा का उपयोग किसी भी अवैध गतिविधियों के लिए नहीं करने के लिए सहमत हैं।",
+          "आप स्वीकार करते हैं कि यदि आप अपने क्रेडेंशियल्स या मास्टर पासवर्ड खो देते हैं, तो हम आपका डेटा पुनर्प्राप्त नहीं कर सकते।",
+          "आप अपने अकाउंट और लाइसेंस कीज़ की गोपनीयता बनाए रखने के लिए जिम्मेदार हैं।"
+        ]
+      },
+      "ip": {
+        "title": "4. बौद्धिक संपदा",
+        "content": "सेवा में मालिकाना algorithms और कोड शामिल हैं। \"Community Edition\" CC-BY-NC-ND 4.0 लाइसेंस के तहत ऑडिट उद्देश्यों के लिए प्रदान किया गया है। कोर एन्क्रिप्शन मॉड्यूल का व्यावसायिक उपयोग के लिए वैध Pro लाइसेंस की आवश्यकता होती है।"
+      },
+      "liability": {
+        "title": "5. दायित्व की सीमा",
+        "content": "कानून द्वारा अनुमत पूर्ण सीमा तक, CryptoKey.im किसी भी अप्रत्यक्ष, आकस्मिक, विशेष, परिणामी, या दंडात्मक क्षतियों के लिए उत्तरदायी नहीं होगा, जिसमें बिना किसी सीमा के, लाभ, डेटा, उपयोग, सद्भावना, या अन्य अमूर्त नुकसान शामिल हैं, जो सेवा के आपके उपयोग से उत्पन्न होते हैं।"
+      },
+      "refund": {
+        "title": "6. धनवापसी नीति और शुल्क",
+        "policy": "सख्त कोई-धनवापसी-नहीं नीति: सभी बिक्री अंतिम हैं। एक बार भुगतान की पुष्टि होने और लाइसेंस की जारी होने के बाद, किसी भी परिस्थिति में कोई धनवापसी प्रदान नहीं की जाएगी।",
+        "fees": "लेनदेन शुल्क: उपयोगकर्ता सभी लेनदेन शुल्क (जिसमें Gas शुल्क, नेटवर्क शुल्क, और एक्सचेंज निकासी शुल्क शामिल हैं लेकिन इन्हीं तक सीमित नहीं है) के लिए पूरी तरह से जिम्मेदार हैं। कृपया सुनिश्चित करें कि आप सटीक आवश्यक राशि और कोई आवश्यक शुल्क ट्रांसफर करें। कम भुगतान के परिणामस्वरूप लाइसेंस सक्रियण विफल होगा।"
+      }
+    }
+  },
+  "footer": {
+    "linkCopied": "लिंक clipboard पर कॉपी हो गया!",
+    "forceUpdate": "Force Update / Cache क्लियर करें",
+    "publicRepo": "Public Repository (Audit)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "शेयर करें"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "Desktop Auth QR",
+    "registrationFailed": "रजिस्ट्रेशन विफल"
+  },
+  "paymentModal": {
+    "title": "USDT भुगतान",
+    "step": "चरण {{step}}/4",
+    "close": "बंद करें",
+    "steps": {
+      "identity": {
+        "title": "अकाउंट सत्यापन",
+        "loggedIn": "लॉग इन के रूप में",
+        "loginRequired": "इस योजना की सदस्यता लेने के लिए आपको लॉग इन होना चाहिए।",
+        "loginNote": "कृपया यह विंडो बंद करें और पहले रजिस्टर/लॉगिन करें।",
+        "continue": "जारी रखें",
+        "trial": {
+          "title": "अस्थायी पहुंच चेतावनी",
+          "subtitle": "आप लॉगिन किए बिना 24-घंटे पास खरीद रहे हैं।",
+          "deviceBound": "यह लाइसेंस डिवाइस-बाउंड है। यह केवल इस विशिष्ट ब्राउज़र और डिवाइस पर काम करेगा।",
+          "risk": "यदि आप अपना कैश क्लियर करते हैं या डिवाइस स्विच करते हैं, तो आप स्थायी रूप से पहुंच खो देंगे। कोई रिकवरी संभव नहीं है।",
+          "note": "हम सुरक्षा के लिए लॉगिन करने की सिफारिश करते हैं, लेकिन आप गुमनाम रूप से आगे बढ़ सकते हैं।"
+        }
+      },
+      "network": {
+        "title": "भुगतान नेटवर्क चुनें",
+        "selected": "चयनित नेटवर्क:",
+        "error": "कृपया भुगतान नेटवर्क चुनें"
+      },
+      "payment": {
+        "instruction": "कृपया बिल्कुल सही भेजें",
+        "walletLabel": "आधिकारिक Wallet पता",
+        "networkWarning": "सुनिश्चित करें कि आप {{network}} ({{standard}}) नेटवर्क पर USDT भेज रहे हैं। गलत नेटवर्क ट्रांसफर खो जाएंगे।",
+        "importantWarning": {
+          "title": "⚠️ महत्वपूर्ण भुगतान चेतावनी:",
+          "exactAmount": "कृपया दिखाई गई सटीक राशि का भुगतान करें।",
+          "underpayment": "कम भुगतान विफलता का परिणाम होगा और गैर-धनवापसी योग्य है।",
+          "overpayment": "अधिक भुगतान गैर-धनवापसी योग्य है और अतिरिक्त समय जमा नहीं होता।",
+          "singleTx": "सिस्टम केवल एक लेनदेन को सत्यापित करता है। कई छोटे भुगतान न भेजें।"
+        },
+        "txHashLabel": "Transaction Hash (TXID)",
+        "txHashPlaceholder": "Transaction hash (TXID) पेस्ट करें",
+        "button": "मैंने भुगतान भेज दिया है",
+        "verifying": "सत्यापित हो रहा है...",
+        "errorTx": "Transaction Hash (TXID) आवश्यक है",
+        "errorValidation": {
+          "wallet": "यह Wallet पते जैसा दिखता है, Transaction Hash (TXID) नहीं। कृपया TXID पेस्ट करें।",
+          "tron": "अमान्य TRON TXID। यह 64-वर्ण हेक्स स्ट्रिंग होनी चाहिए।",
+          "eth": "अमान्य {{chain}} TXID। यह 0x... जैसा दिखना चाहिए और 64 हेक्स वर्ण होने चाहिए।"
+        },
+        "clipboardError": "क्लिपबोर्ड पढ़ने में विफल। कृपया मैनुअली टाइप करें।",
+        "copied": "लिंक क्लिपबोर्ड पर कॉपी हो गया!"
+      },
+      "verification": {
+        "title": "लेनदेन सत्यापित हो रही है...",
+        "description": "हम आपके भुगतान के लिए ब्लॉकचेन की जांच कर रहे हैं। इसमें आमतौर पर 1-3 मिनट लगते हैं।",
+        "checkingTxid": "TXID की जांच हो रही है:",
+        "safeToClose": "इस विंडो को बंद करना सुरक्षित है।",
+        "autoActivation": "एक बार लेनदेन ऑन-चेन पर पुष्टि होने के बाद आपका Pro लाइसेंस स्वचालित रूप से सक्रिय हो जाएगा।",
+        "verifying": "भुगतान सत्यापित हो रहा है...",
+        "success": "भुगतान सत्यापित हो गया!",
+        "failed": "भुगतान सत्यापन विफल। कृपया अपनी लेनदेन की जांच करें।"
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "दोहरा Authenticator मोड (अनुशंसित)",
+    "dualAuthDesc": "एन्क्रिप्शन को दो अलग QR कीज़ (Key A + Key B) में विभाजित करें। यदि एक की चोरी भी हो जाती है, तो आपका डेटा सुरक्षित रहता है।",
+    "switchToDual": "दोहरा Auth एन्क्रिप्शन पर स्विच करें",
+    "generateStandard": "मानक QR कोड जेनरेट करें",
+    "generating": "जेनरेट हो रहा है...",
+    "standardModeDesc": "मानक मोड: AES-256 एन्क्रिप्टेड QR शार्ड्स जेनरेट करता है।",
+    "streamMode": "Air-Gap Stream मोड",
+    "proFeature": "हाई-स्पीड QR स्ट्रीमिंग एक Pro फीचर है।",
+    "unlockStream": "Stream मोड अनलॉक करें",
+    "pauseStream": "Stream रोकें",
+    "playStream": "Stream चलाएं",
+    "scanNote": "स्ट्रीम को कैप्चर करने के लिए एक संगत QR स्कैनर ऐप (जैसे Cobo Vault, Keystone) का उपयोग करें।",
+    "shardCount": "Shard {{current}} का {{total}}",
+    "saveAll": "सभी इमेजेस सेव करें",
+    "saveImage": "इमेज सेव करें",
+    "close": "बंद करें",
+    "speedSlow": "धीमा (2 FPS)",
+    "speedFast": "तेज़ (4 FPS)",
+    "speedTurbo": "Turbo (10 FPS)"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "कैमरा पहुंच अस्वीकृत या उपलब्ध नहीं। कृपया सुनिश्चित करें कि आप HTTPS या localhost का उपयोग कर रहे हैं।"
+    },
+    "title": "Stream स्कैनर",
+    "instruction": "एनिमेटेड QR कोड की ओर इशारा करें",
+    "accessingCamera": "कैमरा एक्सेस हो रहा है...",
+    "scanning": "स्कैन हो रहा है...",
+    "waitingStream": "डेटा स्ट्रीम की प्रतीक्षा है..."
+  },
+  "dualAuthGenerator": {
+    "title": "दोहरा Authenticator एन्क्रिप्शन",
+    "back": "वापस",
+    "howItWorks": {
+      "title": "यह कैसे काम करता है:",
+      "step1": "सिस्टम दो अद्वितीय कीज़ (Secret A और B) जेनरेट करता है।",
+      "step2": "आप उन्हें अपने Authenticator ऐप (Google/Microsoft Auth) से बाइंड करते हैं।",
+      "step3": "<strong>Secret A</strong> आपके Mnemonic को एन्क्रिप्ट करता है।",
+      "step4": "<strong>Secret B</strong> आपके पासवर्ड और लाइन नंबर को एन्क्रिप्ट करता है।",
+      "step5": "परिणाम को QR शार्ड्स में विभाजित किया जाता है।",
+      "step6": "डिक्रिप्ट करने के लिए, आपको Shards + Authenticator कोड्स (या बैकअप Binding QRs) की आवश्यकता है।"
+    },
+    "generateKeys": "सुरक्षित कीज़ जेनरेट करें",
+    "authA": "Authenticator A (Mnemonic की)",
+    "authB": "Authenticator B (Context की)",
+    "scanAuth": "Google/Microsoft Authenticator से स्कैन करें",
+    "saveImage": "इमेज सेव करें",
+    "processing": "प्रोसेस हो रहा है...",
+    "encryptAndGenerate": "एन्क्रिप्ट करें और Shards जेनरेट करें",
+    "encryptionComplete": "एन्क्रिप्शन पूर्ण!",
+    "resultDesc": "आपके पास {{count}} डेटा शार्ड्स और 2 authenticator कीज़ हैं।",
+    "importantWarning": "महत्वपूर्ण: बाद में डिक्रिप्ट करने के लिए आपको सभी इमेजेस (Shards + Auth Keys) सेव करनी होंगी!",
+    "downloadAll": "सभी इमेजेस डाउनलोड करें (Zip अनुशंसित)",
+    "shardLabel": "Shard {{index}}",
+    "errorBind": "कृपया पहले authenticators बाइंड करें",
+    "errorGen": "जेनरेशन विफल"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. Dual-Auth Shards अपलोड करें",
+      "instruction": "Dual Auth Generator द्वारा जेनरेट किए गए सभी shards (आमतौर पर 8-12) अपलोड करें।"
+    },
+    "scanStream": "Stream स्कैन करें",
+    "selectImages": "इमेजेस चुनें",
+    "clearReset": "क्लियर / रीसेट",
+    "progress": "प्रगति: {{count}} / {{total}}",
+    "failedFiles": "{{count}} फाइलें पढ़ने में विफल:",
+    "missingParts": "गुम भाग: {{parts}}",
+    "mergeSuccess": "Shards सफलतापूर्वक मर्ज हो गए!",
+    "step2": {
+      "title": "2. डिक्रिप्शन कीज़ इनपुट करें (आवश्यक)",
+      "description": "आपको Secret A और B दोनों प्रदान करने होंगे। ये स्थायी कीज़ (QR इमेजेस या Base32 स्ट्रिंग्स) हैं, न कि अस्थायी 6-अंकीय कोड।"
+    },
+    "keyA": {
+      "label": "Key A (Mnemonic के लिए Secret)",
+      "loaded": "Key A QR लोड हो गया",
+      "upload": "Key A QR अपलोड करें",
+      "placeholder": "Key A Secret पेस्ट करें (Base32)"
+    },
+    "keyB": {
+      "label": "Key B (Context के लिए Secret)",
+      "loaded": "Key B QR लोड हो गया",
+      "upload": "Key B QR अपलोड करें",
+      "placeholder": "Key B Secret पेस्ट करें (Base32)"
+    },
+    "lostQrHelp": "* QR खो गया? इस कोड को खोजने के लिए अपने Authenticator ऐप \"Export\" या \"Show Secret\" फीचर की जांच करें।",
+    "step3": {
+      "title": "3. Authenticator कोड से कीज़ सत्यापित करें (वैकल्पिक)",
+      "description": "यदि आपके पास अपने Authenticator ऐप तक पहुंच है, तो सत्यता की जांच के लिए वर्तमान 6-अंकीय कोड दर्ज करें (वैकल्पिक)।"
+    },
+    "codeA": {
+      "placeholder": "Code A (जैसे 123456)"
+    },
+    "codeB": {
+      "placeholder": "Code B (जैसे 654321)"
+    },
+    "decryptButton": "डेटा डिक्रिप्ट करें",
+    "keysRequired": "* कृपया डिक्रिप्शन सक्षम करने के लिए दोनों Secret कीज़ (चरण 2) प्रदान करें।",
+    "success": {
+      "title": "डिक्रिप्शन सफल!"
+    },
+    "result": {
+      "mnemonicLabel": "रिकवर किया गया सीक्रेट (Mnemonic)",
+      "passwordLabel": "Context पासवर्ड",
+      "lineLabel": "लाइन नंबर",
+      "fullContent": "पूर्ण डिक्रिप्टेड सामग्री (सभी पंक्तियाँ)",
+      "rawCiphertext": "Raw Ciphertext (Legacy)"
+    },
+    "bookCipherNote": "नोट: ये Book Cipher इंडेक्स प्रतीत होते हैं..."
+  },
+  "integrityCheck": {
+    "title": "सत्यापित करें कि यह ऐप कोड GitHub पर स्रोत कोड से मेल खाता है",
+    "fetching": "{{version}} के लिए release signature लाया जा रहा है...",
+    "verifying": "{{path}} सत्यापित हो रहा है...",
+    "failedToLoad": "लोड करने में विफल",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ {{path}} सत्यापित नहीं कर सका: {{error}}",
+    "criticalError": "गंभीर त्रुटि: {{error}}"
+  },
+  "militaryBadge": {
+    "title": "मिलिट्री-ग्रेड सुरक्षा",
+    "feature1": "Zero-Knowledge आर्किटेक्चर",
+    "feature2": "केवल क्लाइंट-साइड प्रोसेसिंग",
+    "feature3": "कोई डेटा लॉग संरक्षित नहीं"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "यह फीचर Commercial/Pro संस्करण में उपलब्ध है"
+  },
+  "userManual": {
+    "button": "उपयोगकर्ता मैनुअल",
+    "title": "CryptoKey उपयोगकर्ता मैनुअल",
+    "subtitle": "सुरक्षित डेटा एन्क्रिप्शन और रिकवरी गाइड",
+    "close": "बंद करें",
+    "tabs": {
+      "start": "त्वरित प्रारंभ गाइड",
+      "dual": "दोहरा Authenticator",
+      "security": "सुरक्षा और गोपनीयता",
+      "recover": "रिकवरी प्रक्रिया"
+    },
+    "mobileTabs": {
+      "start": "त्वरित प्रारंभ",
+      "dual": "दोहरा Auth",
+      "security": "सुरक्षा",
+      "recover": "रिकवरी"
+    },
+    "start": {
+      "title": "आरंभ करना",
+      "description": "CryptoKey आपको मानक एन्क्रिप्शन या दोहरे-authenticator सुरक्षा का उपयोग करके decoy डेटा के भीतर संवेदनशील डेटा (जैसे mnemonics) छुपाने की अनुमति देता है।",
+      "steps": [
+        "एक मोड चुनें (मानक या दोहरा Authenticator)।",
+        "अपना सीक्रेट डेटा इनपुट करें।",
+        "एन्क्रिप्टेड shards या blocks जेनरेट करें।",
+        "आउटपुट को सुरक्षित रूप से सेव करें (QR कोड या टेक्स्ट)।"
+      ]
+    },
+    "dual": {
+      "title": "दोहरा Authenticator मोड",
+      "coreConcept": {
+        "title": "मुख्य अवधारणा",
+        "description": "मानक एन्क्रिप्शन के विपरीत, इस मोड को डिक्रिप्ट करने के लिए <strong>दो अलग कीज़</strong> (Key A और Key B) की आवश्यकता होती है। यह दो अलग authenticator tokens/devices के बीच विश्वास को विभाजित करता है।"
+      },
+      "encryption": {
+        "title": "1. एन्क्रिप्शन (जेनरेशन)",
+        "step1": "अपना Mnemonic और Password/Context इनपुट करें।",
+        "step2": "दो जेनरेट किए गए QR कोड (Key A और Key B) को अपने Google Authenticator ऐप से स्कैन करें। <strong>इन QR इमेजेस को सेव करें!</strong> वे आपकी स्थायी कीज़ हैं।",
+        "step3": "एन्क्रिप्शन को सत्यापित और लॉक करने के लिए अपने ऐप से 6-अंकीय कोड दर्ज करें।",
+        "step4": "जेनरेट की गई Shard इमेजेस (QR Sharding) डाउनलोड करें।"
+      },
+      "decryption": {
+        "title": "2. डिक्रिप्शन (रिकवरी)",
+        "important": {
+          "title": "महत्वपूर्ण: कीज़ बनाम कोड्स",
+          "content": "<strong>Key (QR/Secret):</strong> स्थायी \"Key\" जिसे आपने स्कैन किया। डिक्रिप्शन के लिए आवश्यक।<br/><strong>Code (6-अंक):</strong> अस्थायी \"Token\" जो हर 30 सेकंड में जेनरेट होता है। केवल सत्यापन के लिए उपयोग किया जाता है।",
+          "note": "* आप केवल 6-अंकीय कोड से डिक्रिप्ट नहीं कर सकते। आपको Key QR अपलोड करना होगा या Secret स्ट्रिंग इनपुट करनी होगी।"
+        },
+        "step1": "अपनी सभी Shard इमेजेस अपलोड करें।",
+        "step2": "<strong>आवश्यक:</strong> Key A और Key B QR इमेजेस अपलोड करें (या Secret स्ट्रिंग्स पेस्ट करें)।",
+        "step3": "(वैकल्पिक) सत्यता की जांच के लिए वर्तमान 6-अंकीय कोड दर्ज करें।"
+      },
+      "lost": {
+        "title": "3. अपनी QR इमेजेस खो गईं?",
+        "description": "यदि आपके पास अभी भी अपने फोन पर Authenticator ऐप है:",
+        "steps": [
+          "Google Authenticator खोलें।",
+          "\"Export Accounts\" या \"Transfer\" फीचर का उपयोग करें।",
+          "यह आपके Secrets वाला एक QR कोड दिखाएगा।",
+          "अपनी Secret स्ट्रिंग वापस पाने के लिए उस export QR को स्कैन/डिकोड करें।"
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. सुरक्षा मोड चुनें",
+        "description": "अपने mnemonic phrase या डेटा को सुरक्षित करने का सबसे अच्छा तरीका चुनें:",
+        "book": {
+          "physical": {
+            "title": "Physical / Virtual Book",
+            "desc": "अपनी की को अपनी शेल्फ पर एक असली किताब में छुपाएं। (Page-Line-Word)"
+          },
+          "online": {
+            "title": "Online Book (URL)",
+            "desc": "अपने की स्रोत के रूप में एक स्थायी Gutenberg URL का उपयोग करें। कोई फाइलें आवश्यक नहीं।"
+          },
+          "digital": {
+            "title": "Digital Book (File)",
+            "desc": "एक Gutenberg TXT फाइल अपलोड करें। स्थानीय रूप से प्रोसेस किया गया, कभी अपलोड नहीं किया गया।"
+          },
+          "index": {
+            "title": "General Index",
+            "desc": "मनमाने डेटा संरचनाओं को एन्क्रिप्ट करें (जैसे, Bank Info, Passwords)।"
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. दर्ज करें और अस्पष्ट करें",
+        "description": "अपना संवेदनशील डेटा इनपुट करें। फिर हम आपसे <span class=\"text-white font-mono\">Row Density</span> (जैसे, 100 पंक्तियाँ) सेट करने के लिए कहेंगे। आपका असली डेटा 99 नकली पंक्तियों के बीच एक यादृच्छिक पंक्ति में छुपाया जाएगा।",
+        "example": {
+          "fake1": "पंक्ति 34: 832-19-22 (नकली)",
+          "real": "पंक्ति 35: 123-45-67 (असली डेटा)",
+          "fake2": "पंक्ति 36: 992-11-02 (नकली)"
+        }
+      },
+      "export": {
+        "title": "3. एक्सपोर्ट और सेव करें",
+        "description": "एक बार एन्क्रिप्ट होने के बाद, आपको एक ciphertext ब्लॉक प्राप्त होगा। आपको इस ब्लॉक को सेव करना होगा!",
+        "ways": "सेव करने के तरीके:",
+        "email": "ईमेल (व्यक्तिगत डिवाइस)",
+        "usb": "USB डाउनलोड (सबसे सुरक्षित)",
+        "print": "कागज़ प्रिंट करें (ऑफलाइन)"
+      },
+      "publicComputer": {
+        "title": "सार्वजनिक कंप्यूटर सुरक्षा",
+        "description": "यदि आप एक सार्वजनिक कंप्यूटर (इंटरनेट कैफे, लाइब्रेरी, दोस्त का PC) का उपयोग कर रहे हैं:",
+        "steps": [
+          "अपने व्यक्तिगत ईमेल में लॉग इन न करें।",
+          "यदि संभव हो तो clipboard (copy/paste) का उपयोग न करें।",
+          "परिणाम पेज पर <strong>\"Public Computer Mode\"</strong> टॉगल का उपयोग करें।",
+          "फाइल को USB ड्राइव में डाउनलोड करें या अपने फोन से QR कोड स्कैन करें।",
+          "जाने से पहले <strong>\"सभी डेटा क्लियर करें\"</strong> पर क्लिक करें।"
+        ]
+      },
+      "military": {
+        "title": "मिलिट्री-ग्रेड एन्क्रिप्शन",
+        "description": "हम <strong>AES-256-GCM</strong> एन्क्रिप्शन का उपयोग करते हैं। यह वही मानक है जो सरकारों और बैंकों द्वारा उपयोग किया जाता है। आपका पासवर्ड 100,000 iterations के साथ <strong>PBKDF2-HMAC-SHA256</strong> का उपयोग करके salted और hashed है, जो brute-force हमलों को लगभग असंभव बना देता है।"
+      },
+      "zk": {
+        "title": "Zero-Knowledge आर्किटेक्चर",
+        "description": "सब कुछ आपके ब्राउज़र में होता है। हमारे पास <strong>कोई सर्वर</strong>, कोई डेटाबेस और कोई लॉग नहीं है। यदि आप इस टैब को बंद करते हैं, तो आपका डेटा हमेशा के लिए चला जाता है जब तक कि आपने बैकअप सेव नहीं किया।"
+      },
+      "deniability": {
+        "title": "Plausible Deniability",
+        "description": "हम <strong>नकली decoy पंक्तियाँ</strong> जेनरेट करते हैं जो आपके असली डेटा से अप्रभेद्य हैं। यदि कोई आपको फाइल को डिक्रिप्ट करने के लिए मजबूर करता है, तो भी आप किसी भी नकली पंक्ति को \"असली\" होने का दावा कर सकते हैं, या यह कि फाइल में कोई सार्थक डेटा नहीं है। एन्क्रिप्शन गणित यह छुपाता है कि कौन सी पंक्ति असली है।"
+      },
+      "transparency": {
+        "title": "कोड पारदर्शिता",
+        "description": "CryptoKey एक शुद्ध क्लाइंट-साइड एप्लिकेशन है। आप अपने ब्राउज़र के डेवलपर टूल में स्रोत कोड का निरीक्षण कर सकते हैं। हम सुरक्षा ऑडिट को प्रोत्साहित करते हैं। कोई बाहरी स्क्रिप्ट या analytics लोड नहीं किए जाते।"
+      }
+    },
+    "recover": {
+      "title": "डिक्रिप्ट कैसे करें",
+      "steps": {
+        "step1": {
+          "title": "मोड चुनें",
+          "description": "एन्क्रिप्शन के लिए उपयोग किए गए वही मोड को चुनें (Physical, File, या URL)। यदि File या URL का उपयोग कर रहे हैं, तो आपको बिल्कुल वही स्रोत पुस्तक प्रदान करनी होगी।"
+        },
+        "step2": {
+          "title": "Ciphertext पेस्ट करें",
+          "description": "अपने ईमेल या फाइल से पूरा ciphertext ब्लॉक (यादृच्छिक वर्णों सहित) कॉपी करें।"
+        },
+        "step3": {
+          "title": "पासवर्ड दर्ज करें",
+          "description": "एन्क्रिप्शन के दौरान सेट किया गया पासवर्ड इनपुट करें।"
+        },
+        "step4": {
+          "title": "अपनी पंक्ति की पहचान करें",
+          "description": "सिस्टम सभी पंक्तियों (असली + नकली) को डिक्रिप्ट करेगा। अपना डेटा खोजने के लिए आपको याद रखना होगा कि कौन सी पंक्ति संख्या आपकी थी (जैसे, पंक्ति 35)।"
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "मिलिट्री-ग्रेड सुरक्षा",
+    "title": "सुरक्षा आर्किटेक्चर",
+    "subtitle": "Zero-Knowledge Proof और मिलिट्री-ग्रेड एन्क्रिप्शन",
+    "features": {
+      "aes": {
+        "title": "AES-256-GCM एन्क्रिप्शन",
+        "desc": "आपका डेटा उपलब्ध सबसे मजबूत मानक (Web Crypto API) का उपयोग करके एन्क्रिप्ट किया गया है। हम की derivation के लिए 100,000 iterations के साथ PBKDF2 का उपयोग करते हैं।"
+      },
+      "steganography": {
+        "title": "Book Cipher Steganography",
+        "desc": "नियमित पुस्तक पाठ (Gutenberg/Physical) के भीतर संवेदनशील डेटा छुपाता है। हमलावर केवल हानिरहित page/line/word इंडेक्स देखते हैं, ciphertext नहीं।"
+      },
+      "dual": {
+        "title": "Dual-Factor और Sharding",
+        "desc": "नया दोहरा Authenticator मोड दो अलग कीज़ (A और B) के बीच एन्क्रिप्शन को विभाजित करता है, साथ ही redundancy के लिए QR Sharding। यदि एक की भी समझौता हो जाती है, तो आपका डेटा सुरक्षित रहता है।"
+      },
+      "zk": {
+        "title": "Zero-Knowledge",
+        "desc": "हम कभी आपका पासवर्ड या डेटा नहीं देखते। सब कुछ आपके ब्राउज़र में स्थानीय रूप से होता है। कोई डेटा कभी हमारे सर्वर को नहीं भेजा जाता।"
+      },
+      "noPersistence": {
+        "title": "कोई Persistence नहीं",
+        "desc": "हम cookies, local storage, या सर्वर डेटाबेस का उपयोग नहीं करते। Digital Books (TXT) स्थानीय रूप से प्रोसेस की जाती हैं और कभी अपलोड नहीं की जातीं।"
+      },
+      "antiTheft": {
+        "title": "चोरी-विरोधी सुरक्षा",
+        "desc": "इनपुट फ़ील्ड autocomplete और caching को रोकते हैं। जब आप छोड़ते हैं तो मेमोरी सक्रिय रूप से क्लियर हो जाती है। सार्वजनिक कंप्यूटरों के लिए सुरक्षित।"
+      }
+    },
+    "audit": {
+      "title": "तकनीकी ऑडिट",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "केवल क्लाइंट-साइड",
+        "noUploads": "कोई अपलोड नहीं (File मोड)",
+        "noLog": "No-Log नीति",
+        "wipe": "Memory Wipe"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "रिकवरी मोड चुनें",
+      "subtitle": "चुनें कि आप अपने डेटा को कैसे एन्क्रिप्ट/रिकवर करना चाहते हैं।",
+      "mnemonic": {
+        "title": "Mnemonic Phrase",
+        "desc": "अपने की स्रोत के रूप में 12/24 शब्द की seed phrase का उपयोग करें।",
+        "features": {
+          "compliance": "BIP-39 Compliant",
+          "encryption": "मानक एन्क्रिप्शन",
+          "security": "उच्च सुरक्षा"
+        }
+      },
+      "physical": {
+        "title": "Physical Book",
+        "desc": "अपनी की को अपनी शेल्फ पर एक असली किताब में छुपाएं।",
+        "features": {
+          "manual": "मैनुअल एंट्री",
+          "ownBook": "अपनी किताब का उपयोग करें",
+          "flexible": "लचीला और गुप्त"
+        }
+      },
+      "digital": {
+        "title": "Digital Book (File)",
+        "desc": "अपने की स्रोत के रूप में एक टेक्स्ट फाइल अपलोड करें।",
+        "features": {
+          "local": "स्थानीय रूप से प्रोसेस किया गया",
+          "noUpload": "कोई सर्वर अपलोड नहीं",
+          "offline": "ऑफलाइन काम करता है"
+        }
+      },
+      "url": {
+        "title": "Online Book (URL)",
+        "desc": "अपने की स्रोत के रूप में एक स्थायी URL का उपयोग करें।",
+        "features": {
+          "remote": "रिमोट सामग्री",
+          "convenient": "सुविधाजनक पहुंच",
+          "dynamic": "गतिशील संदर्भ"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Mnemonic दर्ज करें",
+        "file": "फाइल अपलोड करें",
+        "url": "URL दर्ज करें",
+        "general": "डेटा दर्ज करें"
+      },
+      "subtitle": {
+        "mnemonic": "अपना 12 या 24 शब्द का mnemonic phrase दर्ज करें।",
+        "file": "एन्क्रिप्ट करने के लिए एक टेक्स्ट फाइल अपलोड करें।",
+        "url": "सामग्री लाने के लिए एक URL दर्ज करें।",
+        "general": "एन्क्रिप्ट करने के लिए कोई भी टेक्स्ट डेटा दर्ज करें।"
+      },
+      "file": {
+        "loaded": "फाइल सफलतापूर्वक लोड हुई",
+        "upload": "ड्रैग और ड्रॉप करें या अपलोड करने के लिए क्लिक करें",
+        "sizeLoaded": "लोड किया गया",
+        "maxSize": "अधिकतम 5MB • TXT",
+        "scheme": "एन्क्रिप्शन स्कीम",
+        "schemes": {
+          "offset": "Character Offset",
+          "chapter": "Chapter Index",
+          "virtual": "Virtual Line"
+        }
+      },
+      "url": {
+        "fetch": "सामग्री लाएं",
+        "proxy": {
+          "title": "Local Proxy सक्रिय",
+          "desc": "Development के लिए local proxy का उपयोग कर रहे हैं।"
+        },
+        "success": "{{count}} chars लोड किए गए",
+        "recommended": "अनुशंसित पुस्तकें",
+        "clickToFill": "भरने के लिए क्लिक करें"
+      },
+      "general": {
+        "placeholder": "डेटा पंक्ति दर्ज करें...",
+        "addLine": "नई लाइन जोड़ें",
+        "generate": "यादृच्छिक डेटा"
+      },
+      "mnemonic": {
+        "label": "Mnemonic Phrase",
+        "required": "(आवश्यक)",
+        "placeholder": "अपना mnemonic phrase दर्ज करें...",
+        "paste": "पेस्ट करें",
+        "generate": "जेनरेट करें"
+      }
+    },
+    "mixStep": {
+      "title": "एन्क्रिप्शन पासवर्ड सेट करें",
+      "subtitle": "अपने vault को एन्क्रिप्ट करने के लिए एक मजबूत पासवर्ड सेट करें।",
+      "password": {
+        "label": "एन्क्रिप्शन पासवर्ड सेट करें",
+        "placeholder": "एक मजबूत पासवर्ड दर्ज करें"
+      },
+      "confirm": {
+        "label": "पासवर्ड पुष्टि करें",
+        "placeholder": "पासवर्ड पुनः दर्ज करें"
+      },
+      "rowCount": {
+        "label": "पंक्ति संख्या (Mix Density)",
+        "help": "अधिक संख्या = बेहतर गुमनामी।",
+        "upgrade": "(सीमा: 100. अपग्रेड करने के लिए क्लिक करें)",
+        "proRequired": "100 से अधिक मूल्यों के लिए Pro लाइसेंस की आवश्यकता है।"
+      },
+      "duress": {
+        "label": "Duress पासवर्ड (वैकल्पिक)",
+        "help": "एक नकली vault बनाएं जो एक अलग पासवर्ड से खुलता है। यदि आपको अपना डिवाइस अनलॉक करने के लिए मजबूर किया जाता है तो इसका उपयोग करें।",
+        "passwordLabel": "Duress पासवर्ड",
+        "placeholder": "असली पासवर्ड से अलग",
+        "fakeContentLabel": "नकली सामग्री (Decoy)"
+      },
+      "error": {
+        "required": "पासवर्ड आवश्यक है",
+        "mismatch": "पासवर्ड मेल नहीं खाते",
+        "minLength": "पासवर्ड कम से कम 8 वर्णों का होना चाहिए",
+        "duressRequired": "Duress पासवर्ड आवश्यक है",
+        "duressSame": "Duress पासवर्ड असली पासवर्ड के समान नहीं हो सकता",
+        "encryptionFailed": "एन्क्रिप्शन विफल। कृपया पुनः प्रयास करें।"
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "सफलतापूर्वक एन्क्रिप्ट किया गया",
+        "title": "आपका बैकअप तैयार है",
+        "subtitle": "Ciphertext को सेव करें और अपने क्रेडेंशियल्स याद रखें।"
+      },
+      "mode": {
+        "personal": "व्यक्तिगत",
+        "public": "सार्वजनिक"
+      },
+      "realIndex": {
+        "title": "असली पंक्ति इंडेक्स",
+        "help": "यह एकमात्र पंक्ति है जिसमें आपका डेटा है। अन्य सभी नकली हैं।"
+      },
+      "mnemonic": {
+        "title": "मूल Mnemonic"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "कॉपी करें",
+        "copied": "कॉपी हो गया!",
+        "download": "डाउनलोड करें",
+        "email": "ईमेल",
+        "print": "प्रिंट करें"
+      },
+      "dualAuth": {
+        "button": "दोहरा Auth Shards जेनरेट करें",
+        "pro": "Pro फीचर: एक्सेस के लिए अपग्रेड करें"
+      },
+      "reset": "रीसेट करें"
+    }
+  },
+  "decryption": {
+    "title": "डिक्रिप्शन टूल",
+    "subtitle": "विभिन्न स्रोतों से अपने मूल संदेश को पुनर्प्राप्त करें",
+    "status": {
+      "scanning": "स्कैन हो रहा है...",
+      "processing": "Stream डेटा प्रोसेस हो रहा है...",
+      "reassembling": "पुनर्संयोजन और Decompressing...",
+      "scanProgress": "स्कैन हो रहा है... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "Dual Auth पता चला",
+      "dualAuthDesc": "यह सामग्री Dual-Factor Authentication द्वारा संरक्षित है।",
+      "switchToDual": "Dual Auth मोड पर स्विच करें",
+      "backToStandard": "मानक डिक्रिप्शन पर वापस जाएं",
+      "dualAuthBadge": "Dual Auth मोड"
+    },
+    "label": {
+      "ciphertext": "Ciphertext / एन्क्रिप्टेड डेटा",
+      "closeScanner": "स्कैनर बंद करें",
+      "password": "डिक्रिप्शन पासवर्ड",
+      "failedFiles": "विफल फाइलें:",
+      "missingParts": "गुम भाग:",
+      "fragmentsFound": "Fragments मिले:",
+      "uploadRemaining": "शेष अपलोड करें"
+    },
+    "button": {
+      "scanStream": "Stream स्कैन करें",
+      "uploadQRShards": "QR Shards अपलोड करें",
+      "paste": "पेस्ट करें",
+      "decrypt": "डेटा डिक्रिप्ट करें"
+    },
+    "placeholder": {
+      "ciphertext": "अपना ciphertext, एन्क्रिप्टेड ब्लॉक, या QR सामग्री यहां पेस्ट करें...",
+      "password": "एन्क्रिप्शन के लिए उपयोग किया गया पासवर्ड दर्ज करें"
+    },
+    "mode": {
+      "physicalBook": "Physical / Virtual Book",
+      "digitalBook": "Digital Book (File)",
+      "onlineBook": "Online Book (URL)"
+    },
+    "file": {
+      "title": "बुक फाइल अपलोड करें",
+      "description": "एन्क्रिप्शन के दौरान उपयोग की गई <strong>बिल्कुल वही Gutenberg TXT फाइल</strong> अपलोड करें।",
+      "loaded": "लोड किया गया: {{size}} KB",
+      "choose": "Gutenberg TXT फाइल चुनें...",
+      "browse": "ब्राउज़ करें",
+      "parsed": "{{count}} Chapters सफलतापूर्वक पार्स किए गए"
+    },
+    "url": {
+      "title": "Book URL लाएं",
+      "description": "एन्क्रिप्शन के दौरान उपयोग किया गया <strong>बिल्कुल वही Gutenberg HTML URL</strong> दर्ज करें।",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "लाएं",
+      "loaded": "लोड किया गया: {{length}} chars (Hash: {{hash}}...)"
+    },
+    "locate": {
+      "title": "डेटा का पता लगाएं",
+      "description": "आपका डेटा किस पंक्ति में है?",
+      "row": "पंक्ति"
+    },
+    "result": {
+      "title": "पुनर्प्राप्त डेटा (पंक्ति {{row}})",
+      "copy": "कॉपी करें",
+      "copied": "कॉपी हो गया!",
+      "empty": "पंक्ति खाली या अमान्य है",
+      "rowAppears": "पंक्ति {{row}} खाली प्रतीत होती है या अमान्य डेटा है।",
+      "enterRow": "इसे प्रकट करने के लिए पंक्ति संख्या (1-100+) दर्ज करें जहां आपने अपना डेटा छुपाया था।",
+      "rawPreview": "RAW डेटा PREVIEW"
+    },
+    "errors": {
+      "incompleteData": "अधूरा डेटा: {{current}}/{{total}} भाग मिले",
+      "invalidFormat": "(अमान्य प्रारूप)",
+      "noQrFound": "(कोई QR कोड नहीं मिला)",
+      "failedToReadFile": "(फ़ाइल पढ़ने में विफल)",
+      "decryptionFailed": "डिक्रिप्शन विफल। कृपया अपना पासवर्ड जांचें।"
+    },
+    "error": {
+      "fileMode": "कृपया डेटा रिकवर करने के लिए मूल बुक फाइल अपलोड करें।",
+      "fileModeUnknown": "File मोड के लिए अज्ञात डेटा प्रारूप।",
+      "urlMode": "कृपया डेटा रिकवर करने के लिए book URL लाएं।",
+      "clipboard": "clipboard तक पहुंच असमर्थ। कृपया मैनुअली पेस्ट करें।",
+      "decryptFailed": "डिक्रिप्शन विफल। कृपया अपना पासवर्ड जांचें।"
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "डेटा छुपाएं",
+      "extract": "डेटा निकालें"
+    },
+    "label": {
+      "carrierImages": "Carrier Image(s)",
+      "imagesLoaded": "इमेजेस लोड की गईं",
+      "source": "स्रोत: {{name}}",
+      "original": "मूल: {{name}}",
+      "uploadImages": "Image(s) अपलोड करें",
+      "uploadExtractHelp": "पुनर्निर्माण के लिए सभी shard इमेजेस अपलोड करें।",
+      "uploadHideHelp": "Carrier इमेज अपलोड करें।",
+      "limitInfo": "Free: 3 इमेजेस। Pro: असीमित।",
+      "secretMessage": "गुप्त संदेश",
+      "enableSharding": "Secret Sharing सक्षम करें (Sharding)",
+      "proOnly": "(केवल Pro)",
+      "totalShares": "कुल Shares (N)",
+      "threshold": "डिक्रिप्ट करने के लिए आवश्यक (K)",
+      "strictMatching": "Strict Filename Matching",
+      "strictMatchingHelp": "डिक्रिप्शन केवल तभी काम करेगा जब फाइलें अपने मूल नामों से बिल्कुल मेल खाती हैं।",
+      "extractedContent": "निकाली गई सामग्री"
+    },
+    "placeholder": {
+      "pasteCiphertext": "एन्क्रिप्टेड ciphertext यहां पेस्ट करें...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "Output Filename"
+    },
+    "warning": {
+      "title": "महत्वपूर्ण चेतावनी:",
+      "text": "Plaintext (जैसे mnemonics) सीधे दर्ज न करें! इमेज वाला कोई भी व्यक्ति इसे निकाल सकता है। हमेशा पहले अपने डेटा को एन्क्रिप्ट करें (जैसे, \"Encrypt\" टैब का उपयोग करके) और Ciphertext यहां पेस्ट करें।"
+    },
+    "button": {
+      "clearAll": "सभी क्लियर करें",
+      "paste": "पेस्ट करें",
+      "generateShards": "Shards जेनरेट और डाउनलोड करें",
+      "hideData": "डेटा छुपाएं और डाउनलोड करें",
+      "copied": "कॉपी हो गया!",
+      "copy": "कॉपी करें",
+      "extractHidden": "छुपे हुए डेटा को निकालें"
+    },
+    "status": {
+      "successHide": "डेटा सफलतापूर्वक छुपाया गया! इमेज डाउनलोड हो गई।",
+      "successShards": "सफलतापूर्वक {{count}} shard इमेजेस जेनरेट और डाउनलोड की गईं।",
+      "noData": "कोई मान्य छुपा हुआ डेटा नहीं मिला। यदि strict मोड का उपयोग किया गया था तो फ़ाइल नाम की जांच करें।",
+      "reconstructFailed": "पुनर्निर्माण विफल: {{error}}। नीचे raw डेटा दिखा रहा है।",
+      "waitingImage": "इमेज की प्रतीक्षा है..."
+    },
+    "about": {
+      "title": "Steganography के बारे में",
+      "text": "यह टूल आपके डेटा को इमेज पिक्सल के least significant bits (LSB) में छुपाता है। परिणामी इमेज मानव आंख के लिए समान दिखती है लेकिन आपके गुप्त संदेश को शामिल करती है।",
+      "noteTitle": "नोट:",
+      "noteText": "डाउनलोड की गई इमेज को compress न करें (जैसे, WhatsApp/Messenger के माध्यम से भेजना अक्सर इमेजेस को compress करता है)। हमेशा फ़ाइल (Document) के रूप में शेयर करें या सख्ती से local रखें।"
+    }
+  },
+  "wallet": {
+    "title": "सुरक्षित Wallet जेनरेटर",
+    "subtitle": "BIP39/BIP44 अनुरूप wallets जेनरेट करें। 100% क्लाइंट-साइड।",
+    "strength": {
+      "12words": "12 शब्द (128-bit)",
+      "24words": "24 शब्द (256-bit)"
+    },
+    "action": {
+      "generate": "नया Wallet जेनरेट करें",
+      "import": "Mnemonic Import करें"
+    },
+    "import": {
+      "title": "मौजूदा Wallet Import करें",
+      "placeholder": "अपना 12, 15, 18, 21, या 24 शब्द का mnemonic phrase यहां दर्ज करें...",
+      "paste": "पेस्ट करें",
+      "submit": "Wallet Import करें"
+    },
+    "error": {
+      "invalidMnemonic": "अमान्य mnemonic"
+    },
+    "mnemonic": {
+      "title": "रिकवरी Phrase (Mnemonic)",
+      "reveal": "प्रकट करने के लिए क्लिक करें"
+    },
+    "copyTo": {
+      "encrypt": "\"Mnemonic Phrase दर्ज करें\" पर कॉपी करें",
+      "steganography": "\"Steganography\" पर कॉपी करें"
+    },
+    "details": {
+      "title": "Wallet विवरण",
+      "showKeys": "संवेदनशील कीज़ दिखाएं",
+      "hideKeys": "संवेदनशील कीज़ छुपाएं",
+      "ethAddress": "Ethereum Address (BIP44)",
+      "path": "Path: {{path}} (Standard Metamask/Ledger)",
+      "privateKey": "Private Key",
+      "publicKey": "Public Key",
+      "addressQr": "Address QR"
+    },
+    "security": {
+      "title": "सुरक्षा चेतावनी",
+      "line1": "इन शब्दों को कागज़ पर लिखें और सुरक्षित रूप से स्टोर करें।",
+      "never": "कभी भी",
+      "line2": "इन्हें किसी के साथ साझा न करें।",
+      "line3": "यदि आप ये शब्द खो देते हैं, तो आपके फंड हमेशा के लिए खो जाएंगे।"
+    },
+    "tooltip": {
+      "pasteClipboard": "clipboard से पेस्ट करें",
+      "hide": "छुपाएं",
+      "show": "दिखाएं",
+      "copyClipboard": "clipboard पर कॉपी करें"
+    }
+  },
+  "installAuth": {
+    "redirecting": "App Store पर Redirect हो रहा है...",
+    "detecting": "आपका डिवाइस डिटेक्ट हो रहा है..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "भाषा बदलें"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "पहुंच अस्वीकृत। अनधिकृत प्रयास लॉग किया गया।",
+      "passwordRequired": "पासवर्ड आवश्यक है",
+      "passwordMismatch": "पासवर्ड मेल नहीं खाते",
+      "passwordTooShort": "पासवर्ड कम से कम 8 वर्णों का होना चाहिए",
+      "duressPasswordRequired": "Duress पासवर्ड आवश्यक है",
+      "duressPasswordSame": "Duress पासवर्ड असली पासवर्ड के समान नहीं हो सकता"
+    },
+    "duress": {
+      "defaultMessage": "पहुंच अस्वीकृत। अनधिकृत प्रयास लॉग किया गया।"
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "अमान्य mnemonic phrase। कृपया अपने शब्दों की जांच करें।",
+      "enterCiphertext": "कृपया ciphertext डेटा दर्ज करें",
+      "invalidMode": "अमान्य मोड या गुम डेटा",
+      "encryptionFailed": "एन्क्रिप्शन प्रक्रिया विफल। कृपया अपने इनपुट की जांच करें।",
+      "parseFileFailed": "फाइल पार्स करने में विफल। कृपया सुनिश्चित करें कि यह एक मान्य टेक्स्ट फाइल है।",
+      "invalidUrl": "अमान्य URL",
+      "fetchUrlFailed": "URL लाने में विफल"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "लाइन हटाएं",
+      "generateRandom": "यादृच्छिक डेटा जेनरेट करें",
+      "pasteClipboard": "Clipboard से पेस्ट करें",
+      "generateMnemonic": "यादृच्छिक Mnemonic जेनरेट करें"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【CryptoKey सुरक्षित बैकअप】",
+      "ciphertext": "Ciphertext:",
+      "hash": "Hash:",
+      "footer": "यहां डिक्रिप्ट करें: https://cryptokey.im",
+      "generated": "जेनरेट किया गया: {{date}}",
+      "note": "नोट: डिक्रिप्ट करने के लिए पासवर्ड + पंक्ति इंडेक्स की आवश्यकता है।"
+    },
+    "watermark": "https://CryptoKey.im पर डिक्रिप्ट करें | {{date}} को जेनरेट किया गया",
+    "print": {
+      "title": "CryptoKey सुरक्षित बैकअप"
+    },
+    "clipboard": {
+      "labels": "सिफरटेक्स्ट: {{ciphertext}}\\nहैश: {{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "अंतिम रूप दिया जा रहा है..."
+    },
+    "errors": {
+      "invalidFormat": "(अमान्य प्रारूप)",
+      "integrityFailed": "अखंडता जांच विफल: पुन: संयोजित डेटा दूषित है। कृपया फिर से स्कैन करें।",
+      "decompressionError": "डीकम्प्रेशन त्रुटि: विकृत डेटा। कृपया छवियों को फिर से अपलोड करने का प्रयास करें, यह सुनिश्चित करते हुए कि वे स्पष्ट और पूर्ण हैं।",
+      "decompressionFailed": "डीकम्प्रेशन विफल: {{error}}"
+    },
+    "error": {
+      "generationFailed": "जेनरेशन विफल",
+      "startProcessing": "प्रोसेसिंग शुरू हो रही है...",
+      "processingImage": "{{total}} में से {{current}} इमेज प्रोसेस हो रही है..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "सिस्टम घड़ी त्रुटि का पता चला। Pro सुविधाओं का उपयोग जारी रखने के लिए कृपया अपना सिस्टम समय ठीक करें।",
+      "deactivateConfirm": "Real Pro लाइसेंस निष्क्रिय करें?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "वापस",
+    "processing": "प्रोसेस हो रहा है...",
+    "encryptGenerate": "एन्क्रिप्ट करें और जेनरेट करें"
+  },
+  "steganographyExtra": {
+    "successGenerated": "सफलतापूर्वक {{count}} shard इमेजेस जेनरेट और डाउनलोड की गईं।",
+    "carrierImages": "Carrier Image(s)",
+    "strictMatchRequired": "Strict Match आवश्यक"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm Performance Benchmark",
+    "testConfig": "टेस्ट Configuration",
+    "algorithm": "Algorithm: Shamir's Secret Sharing (GF(2^8))",
+    "shares": "Shares: 5 कुल, 3 threshold",
+    "payload": "Payload: Random 32-byte secret + Checksum",
+    "steganography": "Steganography: 100x100 buffer पर LSB Embedding",
+    "running": "टेस्ट चल रहे हैं...",
+    "startBenchmark": "Benchmark शुरू करें (Raw Evidence)",
+    "jsTime": "JS Time",
+    "wasmTime": "Wasm Time",
+    "fasterSuffix": "{{ratio}}x तेज़",
+    "correctness": "शुद्धता",
+    "verified": "सत्यापित",
+    "failed": "विफल",
+    "waiting": "शुरू होने की प्रतीक्षा है..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - सुरक्षित बैकअप",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "बेंचमार्क शुरू हो रहा है...",
+      "runningJs": "JS कार्यान्वयन चल रहा है...",
+      "loadingWasm": "Wasm मॉड्यूल लोड हो रहा है...",
+      "runningWasm": "Wasm कार्यान्वयन चल रहा है..."
+    },
+    "validation": {
+      "pass": "उत्तीर्ण",
+      "fail": "असफल",
+      "result": "सत्यापन परिणाम: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "कृपया पहले प्रमाणक बांधें",
+    "invalidDataFormat": "अमान्य डेटा प्रारूप",
+    "hashMismatch": "हैश बेमेल",
+    "noValidQr": "कोई वैध QR कोड नहीं मिला",
+    "passwordIncorrect": "किसी भी वॉल्ट सामग्री के लिए पासवर्ड गलत है",
+    "couldNotReadQr": "QR कोड नहीं पढ़ा जा सका",
+    "invalidAuthQr": "अमान्य प्रमाणीकरण QR कोड",
+    "noSecretInQr": "QR में कोई गुप्त नहीं मिला",
+    "authAIncorrect": "प्रमाणक A कोड गलत है",
+    "authBIncorrect": "प्रमाणक B कोड गलत है",
+    "decryptCiphertextFailed": "सिफरटेक्स्ट डिक्रिप्ट करने में विफल (कुंजी A गलत हो सकती है)",
+    "decryptContextFailedA": "संदर्भ डिक्रिप्ट करने में विफल (कुंजी B गलत हो सकती है)",
+    "decryptMnemonicFailed": "निमोनिक डिक्रिप्ट करने में विफल (कुंजी A गलत हो सकती है)",
+    "decryptContextFailedB": "संदर्भ डिक्रिप्ट करने में विफल (कुंजी B गलत हो सकती है)",
+    "shardIntegrityError": "शार्ड अखंडता त्रुटि: फ़ाइल {{filename}} एक अलग सेट से संबंधित है। कृपया सुनिश्चित करें कि सभी फ़ाइलें एक ही एन्क्रिप्शन सत्र से हैं।",
+    "shareApiNotSupported": "साझा API समर्थित नहीं है",
+    "canvasContext": "कैनवास संदर्भ प्राप्त नहीं किया जा सका",
+    "invalidShareType": "jsSplit ने अमान्य प्रकार लौटाया: {{type}}",
+    "wasmLoadFailed": "Wasm मॉड्यूल लोड करने में विफल"
+  }
+}

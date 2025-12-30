@@ -186,7 +186,7 @@ export function WalletGenerator({ onBackup, onBackupToBook }: WalletGeneratorPro
                     }
                   }}
                   className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full border border-slate-600 transition-colors flex items-center gap-1.5"
-                  title="Paste from clipboard"
+                  title={t('wallet.tooltip.pasteClipboard')}
                 >
                   <Clipboard size={14} />
                   {t('wallet.import.paste')}
@@ -227,14 +227,14 @@ export function WalletGenerator({ onBackup, onBackupToBook }: WalletGeneratorPro
                   <button
                     onClick={() => setShowMnemonic(!showMnemonic)}
                     className="p-2 hover:bg-slate-700 rounded-lg text-slate-400 hover:text-white transition-colors"
-                    title={showMnemonic ? "Hide" : "Show"}
+                    title={showMnemonic ? t('wallet.tooltip.hide') : t('wallet.tooltip.show')}
                   >
                     {showMnemonic ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
                   <button
                     onClick={copyToClipboard}
                     className="p-2 hover:bg-slate-700 rounded-lg text-slate-400 hover:text-white transition-colors relative"
-                    title="Copy to clipboard"
+                    title={t('wallet.tooltip.copyClipboard')}
                   >
                     {copyFeedback ? <CheckCircle2 size={18} className="text-green-500" /> : <Copy size={18} />}
                   </button>

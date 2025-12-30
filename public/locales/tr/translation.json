@@ -1,0 +1,1101 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "language": "Dil",
+    "close": "Kapat",
+    "back": "Geri",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "download": "İndir",
+    "email": "E-posta",
+    "print": "Yazdır",
+    "paste": "Yapıştır",
+    "browse": "Gözat",
+    "fetch": "Getir",
+    "or": "- VEYA -",
+    "none": "Yok",
+    "processing": "İşleniyor..."
+  },
+  "errorBoundary": {
+    "title": "Bir şeyler yanlış gitti",
+    "description": "Beklenmeyen bir hata oluştu. Verileriniz güvende olabilir, ancak görüntüleme çöktü.",
+    "reload": "Uygulamayı Yeniden Yükle"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "pricing": "Fiyatlandırma",
+    "terms": "Şartlar",
+    "about": "Hakkında"
+  },
+  "home": {
+    "subtitle": "Askeri Düzey Steganografi & Şifreleme Aracı",
+    "tabs": {
+      "encrypt": "Şifrele",
+      "decrypt": "Şifre Çöz",
+      "stego": "Steganografi",
+      "wallet": "Kağıt Cüzdan"
+    }
+  },
+  "pricing": {
+    "title": "Basit, Şeffaf Fiyatlandırma",
+    "subtitle": "Güvenlik ihtiyaçlarınıza uygun planı seçin. Tüm planlar CryptoKey.im'in askeri düzey şifreleme ve steganografi araçlarının tam gücünü açar.",
+    "badge": {
+      "bestValue": "En İyi Değer"
+    },
+    "button": {
+      "contactSales": "Satış Ekibi ile İletişime Geçin",
+      "subscribeNow": "Şimdi Abone Olun",
+      "extendLicense": "Lisansı Uzat"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "Anında Erişim",
+        "desc": "Ödeme sonrası lisans anahtarınızı ve TOTP kurulumunuzu hemen alın. Beklemeye gerek yok."
+      },
+      "globalPayments": {
+        "title": "Küresel Ödemeler",
+        "desc": "BSC, TRX ve ETH ağları üzerinden küresel USDT ödemelerini destekliyoruz.",
+        "descChina": "Güncellemeler için takipte kalın."
+      },
+      "securePrivate": {
+        "title": "Güvenli & Gizli",
+        "desc": "Kişisel veri saklama yok. Güvenliğiniz en büyük önceliğimiz."
+      },
+      "refundPolicy": {
+        "title": "İade Politikası",
+        "desc": "Katı İade Yok Politikası. Lisans anahtarı verildiğinde tüm satışlar kesinleşir."
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im bir güvenlik aracı sağlayıcısıdır. Finansal tavsiye, kripto para alım satımı veya saklama hizmeti sunmuyoruz. Fiyatlar USD cinsindendir. Konumunuza bağlı olarak KDV uygulanabilir."
+    },
+    "china": {
+      "hardwareOnly": "Sadece Donanım Yetkilendirmesi",
+      "description": "Lütfen kullanmak için CryptoKey donanım ürünümüzü satın alın,<1/>Online erişim yakında geliyor...",
+      "contactSales": "Donanım için Satış Ekibi ile İletişime Geçin",
+      "backToHome": "Ana Sayfaya Dön"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "24 Saatlik Geçiş",
+        "description": "Anında 24 saatlik erişim. Cihaza bağlı, giriş gerekmez.",
+        "features": [
+          "Tüm Pro Özellikler",
+          "Anında Erişim (Giriş Yok)",
+          "Cihaza Bağlı (Sadece 24s)",
+          "⚠️ Risk: Önbellek temizlenirse kaybolur",
+          "⚠️ Transfer Edilemez"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "Aylık",
+        "description": "Normal kullanıcılar için esnek erişim.",
+        "features": [
+          "Tüm Pro Özellikler",
+          "İstediğiniz Zaman İptal Edin",
+          "Öncelikli Destek"
+        ]
+      },
+      "price_quarterly": {
+        "name": "Üç Aylık",
+        "description": "Aylık'a göre ~%15 tasarruf edin.",
+        "features": [
+          "Tüm Pro Özellikler",
+          "Öncelikli Destek",
+          "Üç Aylık Faturalandırma"
+        ]
+      },
+      "price_semiannual": {
+        "name": "Altı Aylık",
+        "description": "Aylık'a göre ~%23 tasarruf edin.",
+        "features": [
+          "Tüm Pro Özellikler",
+          "Öncelikli Destek",
+          "Altı Aylık Faturalandırma"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "Yıllık",
+        "description": "En iyi değer! Aylık'a göre ~%33 tasarruf edin.",
+        "features": [
+          "Tüm Pro Özellikler",
+          "Öncelikli Destek",
+          "Yıllık Faturalandırma"
+        ]
+      },
+      "price_enterprise": {
+        "name": "Kurumsal",
+        "price": "Özel",
+        "period": "bize ulaşın",
+        "description": "Büyük ekipler ve organizasyonlar için.",
+        "features": [
+          "Özel Lisans Koşulları",
+          "Özel Destek",
+          "SLA",
+          "Yerinde Seçenekler"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Hizmet Şartları",
+    "lastUpdated": "Son Güncelleme: {{date}}",
+    "backToHome": "Ana Sayfaya Dön",
+    "disclaimer": {
+      "title": "Hizmet Sorumluluk Reddi",
+      "content_non_china": "Çevrimdışı anımsatıcı yedekleme, TOTP dinamik yetkilendirme ve güvenli anahtar türetme hizmetleri sunan bir kripto anahtar güvenlik yönetim aracı (cryptokey.im) sağlıyoruz. Kripto para alım satımı, saklama veya finansal hizmetler sunmuyoruz — sadece kullanıcıya ait anahtarlar için güvenlik araçları.",
+      "content_china": "Çevrimdışı anımsatıcı yedekleme, TOTP dinamik yetkilendirme ve güvenli anahtar türetme hizmetleri sunan bir kripto anahtar güvenlik yönetim aracı (cryptokey.im) sağlıyoruz. Dijital varlıklarınız için donanım güvenlik çözümlerine odaklanıyoruz."
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Şartların Kabulü",
+        "content": "CryptoKey.im'e (\"Hizmet\") erişerek ve kullanarak, bu sözleşmenin şart ve hükümlerine bağlı kalmayı kabul ve onaylarsınız."
+      },
+      "nature": {
+        "title": "2. Hizmetin Niteliği",
+        "content": "CryptoKey.im istemci taraflı bir şifreleme ve steganografi aracıdır. Tüm şifreleme işlemleri WebAssembly kullanarak tarayıcınızda yerel olarak gerçekleştirilir. Özel anahtarlarınıza, anımsatıcılarınıza veya şifrelerinize erişimimiz yoktur. Verilerinizi korumaktan yalnızca siz sorumlusunuz."
+      },
+      "responsibilities": {
+        "title": "3. Kullanıcı Sorumlulukları",
+        "items": [
+          "Hizmeti hiçbir yasadışı faaliyet için kullanmamayı kabul edersiniz.",
+          "Kimlik bilgilerinizi veya ana şifrenizi kaybederseniz, verilerinizi kurtaramayacağımızı kabul edersiniz.",
+          "Hesabınızın ve lisans anahtarlarınızın gizliliğini korumaktan sorumlusunuz."
+        ]
+      },
+      "ip": {
+        "title": "4. Fikri Mülkiyet",
+        "content": "Hizmet, tescilli algoritmalar ve kod içerir. \"Topluluk Sürümü\" CC-BY-NC-ND 4.0 lisansı altında denetim amaçlı sağlanır. Temel şifreleme modüllerinin ticari kullanımı geçerli bir Pro lisansı gerektirir."
+      },
+      "liability": {
+        "title": "5. Sorumluluk Sınırlaması",
+        "content": "Kanunların izin verdiği en geniş ölçüde, CryptoKey.im, Hizmeti kullanımınızdan kaynaklanan kar, veri, kullanım, itibar veya diğer maddi olmayan kayıplar dahil ancak bunlarla sınırlı olmamak üzere hiçbir dolaylı, arızi, özel, sonuç olarak ortaya çıkan veya cezai zarardan sorumlu olmayacaktır."
+      },
+      "refund": {
+        "title": "6. İade Politikası & Ücretler",
+        "policy": "Katı İade Yok Politikası: Tüm satışlar kesindir. Ödeme onaylandıktan ve lisans anahtarı verildikten sonra, hiçbir koşulda iade yapılmayacaktır.",
+        "fees": "İşlem Ücretleri: Kullanıcılar tüm işlem ücretlerinden (Gas ücretleri, ağ ücretleri ve borsa çekim ücretleri dahil ancak bunlarla sınırlı olmamak üzere) yalnızca kendileri sorumludur. Lütfen tam olarak gerekli tutarı artı gerekli ücretleri transfer ettiğinizden emin olun. Eksik ödeme lisans aktivasyon hatasına neden olur."
+      }
+    }
+  },
+  "footer": {
+    "linkCopied": "Link panoya kopyalandı!",
+    "forceUpdate": "Zorla Güncelle / Önbelleği Temizle",
+    "publicRepo": "Genel Depo (Denetim)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "Paylaş"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "Masaüstü Kimlik Doğrulama QR",
+    "registrationFailed": "Kayıt başarısız"
+  },
+  "paymentModal": {
+    "title": "USDT Ödemesi",
+    "step": "Adım {{step}}/4",
+    "close": "Kapat",
+    "steps": {
+      "identity": {
+        "title": "Hesap Doğrulaması",
+        "loggedIn": "Giriş yapılan:",
+        "loginRequired": "Bu plana abone olmak için giriş yapmış olmalısınız.",
+        "loginNote": "Lütfen bu pencereyi kapatın ve önce kayıt olun/giriş yapın.",
+        "continue": "Devam Et",
+        "trial": {
+          "title": "Geçici Erişim Uyarısı",
+          "subtitle": "Giriş yapmadan 24 Saatlik Geçiş satın alıyorsunuz.",
+          "deviceBound": "Bu lisans cihaza bağlıdır. Yalnızca bu belirli tarayıcı ve cihazda çalışacaktır.",
+          "risk": "Önbelleğinizi temizlerseniz veya cihaz değiştirirseniz, erişimi kalıcı olarak kaybedersiniz. Kurtarma mümkün değil.",
+          "note": "Güvenlik için giriş yapmanızı öneririz, ancak anonim olarak devam edebilirsiniz."
+        }
+      },
+      "network": {
+        "title": "Ödeme Ağını Seçin",
+        "selected": "Seçilen Ağ:",
+        "error": "Lütfen bir ödeme ağı seçin"
+      },
+      "payment": {
+        "instruction": "Lütfen tam olarak gönderin",
+        "walletLabel": "Resmi Cüzdan Adresi",
+        "networkWarning": "USDT'yi {{network}} ({{standard}}) ağında gönderdiğinizden emin olun. Yanlış ağ transferleri kaybolur.",
+        "importantWarning": {
+          "title": "⚠️ Önemli Ödeme Uyarısı:",
+          "exactAmount": "Lütfen gösterilen TAM tutarı ödeyin.",
+          "underpayment": "Eksik ödeme başarısızlığa neden olur ve iade edilemez.",
+          "overpayment": "Fazla ödeme iade edilmez ve ekstra süre biriktirmez.",
+          "singleTx": "Sistem yalnızca tek bir işlemi doğrular. Birden fazla küçük ödeme göndermeyin."
+        },
+        "txHashLabel": "İşlem Hash (TXID)",
+        "txHashPlaceholder": "İşlem hash'ini (TXID) yapıştırın",
+        "button": "Ödemeyi Gönderdim",
+        "verifying": "Doğrulanıyor...",
+        "errorTx": "İşlem Hash (TXID) gereklidir",
+        "errorValidation": {
+          "wallet": "Bu bir Cüzdan Adresi gibi görünüyor, İşlem Hash (TXID) değil. Lütfen TXID'yi yapıştırın.",
+          "tron": "Geçersiz TRON TXID. 64 karakterli hex dizisi olmalıdır.",
+          "eth": "Geçersiz {{chain}} TXID. 0x... gibi görünmeli ve 64 hex karakteri olmalıdır."
+        },
+        "clipboardError": "Pano okunamadı. Lütfen manuel olarak yazın.",
+        "copied": "Link panoya kopyalandı!"
+      },
+      "verification": {
+        "title": "İşlem Doğrulanıyor...",
+        "description": "Ödemeniz için blok zincirini kontrol ediyoruz. Bu genellikle 1-3 dakika sürer.",
+        "checkingTxid": "TXID kontrol ediliyor:",
+        "safeToClose": "Bu pencereyi kapatmak güvenlidir.",
+        "autoActivation": "İşlem zincir üzerinde onaylandığında Pro lisansınız otomatik olarak etkinleştirilecek.",
+        "verifying": "Ödeme Doğrulanıyor...",
+        "success": "Ödeme Doğrulandı!",
+        "failed": "Ödeme doğrulama başarısız. Lütfen işleminizi kontrol edin."
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "İkili Kimlik Doğrulayıcı Modu (Önerilen)",
+    "dualAuthDesc": "Şifrelemeyi iki ayrı QR anahtarına bölün (Anahtar A + Anahtar B). Bir anahtar çalınsa bile verileriniz güvende kalır.",
+    "switchToDual": "İkili Kimlik Doğrulama Şifrelemesine Geç",
+    "generateStandard": "Standart QR Kodu Oluştur",
+    "generating": "Oluşturuluyor...",
+    "standardModeDesc": "Standart Mod: AES-256 şifreli QR parçaları oluşturur.",
+    "streamMode": "Hava Boşluğu Akış Modu",
+    "proFeature": "Yüksek hızlı QR akışı bir Pro özelliktir.",
+    "unlockStream": "Akış Modunu Aç",
+    "pauseStream": "Akışı Duraklat",
+    "playStream": "Akışı Oynat",
+    "scanNote": "Akışı yakalamak için uyumlu bir QR tarayıcı uygulaması (örn. Cobo Vault, Keystone) kullanın.",
+    "shardCount": "Parça {{current}} / {{total}}",
+    "saveAll": "Tüm Resimleri Kaydet",
+    "saveImage": "Resmi Kaydet",
+    "close": "Kapat",
+    "speedSlow": "Yavaş (2 FPS)",
+    "speedFast": "Hızlı (4 FPS)",
+    "speedTurbo": "Turbo (10 FPS)"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "Kamera erişimi reddedildi veya mevcut değil. Lütfen HTTPS veya localhost kullandığınızdan emin olun."
+    },
+    "title": "Akış Tarayıcı",
+    "instruction": "Animasyonlu QR koduna doğrultun",
+    "accessingCamera": "Kameraya Erişiliyor...",
+    "scanning": "Taranıyor...",
+    "waitingStream": "Veri akışı bekleniyor..."
+  },
+  "dualAuthGenerator": {
+    "title": "İkili Kimlik Doğrulayıcı Şifreleme",
+    "back": "Geri",
+    "howItWorks": {
+      "title": "Bu nasıl çalışır:",
+      "step1": "Sistem iki benzersiz anahtar (Gizli A & B) oluşturur.",
+      "step2": "Bunları Kimlik Doğrulayıcı Uygulamanıza (Google/Microsoft Auth) bağlarsınız.",
+      "step3": "<strong>Gizli A</strong> Anımsatıcınızı şifreler.",
+      "step4": "<strong>Gizli B</strong> Şifrenizi & Satır Numaranızı şifreler.",
+      "step5": "Sonuç QR parçalarına bölünür.",
+      "step6": "Şifresini çözmek için Parçalara + Kimlik Doğrulayıcı Kodlarına (veya yedek Bağlama QR'larına) ihtiyacınız var."
+    },
+    "generateKeys": "Güvenli Anahtarlar Oluştur",
+    "authA": "Kimlik Doğrulayıcı A (Anımsatıcı Anahtarı)",
+    "authB": "Kimlik Doğrulayıcı B (Bağlam Anahtarı)",
+    "scanAuth": "Google/Microsoft Authenticator ile Tara",
+    "saveImage": "Resmi Kaydet",
+    "processing": "İşleniyor...",
+    "encryptAndGenerate": "Şifrele & Parçalar Oluştur",
+    "encryptionComplete": "Şifreleme Tamamlandı!",
+    "resultDesc": "{{count}} veri parçanız ve 2 kimlik doğrulayıcı anahtarınız var.",
+    "importantWarning": "Önemli: Daha sonra şifresini çözmek için TÜM resimleri (Parçalar + Kimlik Doğrulama Anahtarları) kaydetmelisiniz!",
+    "downloadAll": "Tüm Resimleri İndir (Zip önerilir)",
+    "shardLabel": "Parça {{index}}",
+    "errorBind": "Lütfen önce kimlik doğrulayıcıları bağlayın",
+    "errorGen": "Oluşturma başarısız"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. İkili-Kimlik Doğrulama Parçalarını Yükle",
+      "instruction": "İkili Kimlik Doğrulama Oluşturucusu tarafından oluşturulan tüm parçaları (genellikle 8-12) yükleyin."
+    },
+    "scanStream": "Akışı Tara",
+    "selectImages": "Resimleri Seç",
+    "clearReset": "Temizle / Sıfırla",
+    "progress": "İlerleme: {{count}} / {{total}}",
+    "failedFiles": "{{count}} dosya okunamadı:",
+    "missingParts": "Eksik Parçalar: {{parts}}",
+    "mergeSuccess": "Parçalar başarıyla birleştirildi!",
+    "step2": {
+      "title": "2. Şifre Çözme Anahtarlarını Girin (Gerekli)",
+      "description": "Hem Gizli A & B'yi sağlamalısınız. Bunlar kalıcı anahtarlardır (QR resimleri veya Base32 dizeleri), geçici 6 haneli kodlar DEĞİL."
+    },
+    "keyA": {
+      "label": "Anahtar A (Anımsatıcı için Gizli)",
+      "loaded": "Anahtar A QR Yüklendi",
+      "upload": "Anahtar A QR Yükle",
+      "placeholder": "Anahtar A Gizlisini Yapıştır (Base32)"
+    },
+    "keyB": {
+      "label": "Anahtar B (Bağlam için Gizli)",
+      "loaded": "Anahtar B QR Yüklendi",
+      "upload": "Anahtar B QR Yükle",
+      "placeholder": "Anahtar B Gizlisini Yapıştır (Base32)"
+    },
+    "lostQrHelp": "* QR'ı mı kaybettiniz? Bu kodu bulmak için Kimlik Doğrulayıcı Uygulamanızın \"Dışa Aktar\" veya \"Gizli Anahtarı Göster\" özelliğini kontrol edin.",
+    "step3": {
+      "title": "3. Kimlik Doğrulayıcı Kodu ile Anahtarları Doğrula (İsteğe Bağlı)",
+      "description": "Kimlik Doğrulayıcı Uygulamanıza erişiminiz varsa, doğruluğu doğrulamak için mevcut 6 haneli kodları girin (isteğe bağlı)."
+    },
+    "codeA": {
+      "placeholder": "Kod A (örn. 123456)"
+    },
+    "codeB": {
+      "placeholder": "Kod B (örn. 654321)"
+    },
+    "decryptButton": "Verilerin Şifresini Çöz",
+    "keysRequired": "* Şifre çözmeyi etkinleştirmek için lütfen her iki Gizli Anahtarı (Adım 2) sağlayın.",
+    "success": {
+      "title": "Şifre Çözme Başarılı!"
+    },
+    "result": {
+      "mnemonicLabel": "Kurtarılan Gizli Anahtar (Anımsatıcı)",
+      "passwordLabel": "Bağlam Şifresi",
+      "lineLabel": "Satır Numarası",
+      "fullContent": "Tam Şifresi Çözülmüş İçerik (Tüm Satırlar)",
+      "rawCiphertext": "Ham Şifreli Metin (Eski)"
+    },
+    "bookCipherNote": "Not: Bunlar Kitap Şifresi İndeksleri gibi görünüyor..."
+  },
+  "integrityCheck": {
+    "title": "Bu uygulama kodunun GitHub'daki kaynak koduyla eşleştiğini doğrulayın",
+    "fetching": "{{version}} için sürüm imzası getiriliyor...",
+    "verifying": "{{path}} doğrulanıyor...",
+    "failedToLoad": "Yüklenemedi",
+    "info": "ℹ️ {{path}}",
+    "hash": "Hash: {{hash}}",
+    "couldNotVerify": "⚠️ {{path}} doğrulanamadı: {{error}}",
+    "criticalError": "Kritik Hata: {{error}}"
+  },
+  "militaryBadge": {
+    "title": "ASKERİ DÜZEY GÜVENLİK",
+    "feature1": "Sıfır-Bilgi Mimarisi",
+    "feature2": "Yalnızca İstemci Tarafı İşleme",
+    "feature3": "Veri Günlüğü Kalıcı Değil"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "Bu özellik Ticari/Pro sürümünde mevcuttur"
+  },
+  "userManual": {
+    "button": "Kullanım Kılavuzu",
+    "title": "CryptoKey Kullanım Kılavuzu",
+    "subtitle": "Güvenli Veri Şifreleme & Kurtarma Rehberi",
+    "close": "Kapat",
+    "tabs": {
+      "start": "Hızlı Başlangıç Rehberi",
+      "dual": "İkili Kimlik Doğrulayıcı",
+      "security": "Güvenlik & Gizlilik",
+      "recover": "Kurtarma Süreci"
+    },
+    "mobileTabs": {
+      "start": "Hızlı Başlangıç",
+      "dual": "İkili Kimlik Doğrulama",
+      "security": "Güvenlik",
+      "recover": "Kurtarma"
+    },
+    "start": {
+      "title": "Başlarken",
+      "description": "CryptoKey, hassas verileri (anımsatıcılar gibi) standart şifreleme veya ikili kimlik doğrulayıcı koruması kullanarak aldatıcı verilerin içine gizlemenize olanak tanır.",
+      "steps": [
+        "Bir mod seçin (Standart veya İkili Kimlik Doğrulayıcı).",
+        "Gizli verilerinizi girin.",
+        "Şifreli parçalar veya bloklar oluşturun.",
+        "Çıktıyı güvenli bir şekilde kaydedin (QR kodları veya metin)."
+      ]
+    },
+    "dual": {
+      "title": "İkili Kimlik Doğrulayıcı Modu",
+      "coreConcept": {
+        "title": "Temel Konsept",
+        "description": "Standart şifrelemenin aksine, bu mod şifre çözmek için <strong>İki Ayrı Anahtar</strong> (Anahtar A & Anahtar B) gerektirir. Güveni iki farklı kimlik doğrulayıcı belirteci/cihaz arasında böler."
+      },
+      "encryption": {
+        "title": "1. Şifreleme (Oluşturma)",
+        "step1": "Anımsatıcınızı ve Şifre/Bağlamınızı girin.",
+        "step2": "Oluşturulan iki QR kodunu (Anahtar A & Anahtar B) Google Authenticator uygulamanızla tarayın. <strong>Bu QR resimlerini kaydedin!</strong> Bunlar kalıcı anahtarlarınızdır.",
+        "step3": "Şifrelemeyi doğrulamak ve kilitlemek için uygulamanızdan 6 haneli kodları girin.",
+        "step4": "Oluşturulan Parça Resimlerini indirin (QR Parçalama)."
+      },
+      "decryption": {
+        "title": "2. Şifre Çözme (Kurtarma)",
+        "important": {
+          "title": "Önemli: Anahtarlar vs Kodlar",
+          "content": "<strong>Anahtar (QR/Gizli):</strong> Taradığınız kalıcı \"Anahtar\". Şifre çözme için gerekli.<br/><strong>Kod (6-hane):</strong> Her 30s'de oluşturulan geçici \"Belirteç\". Yalnızca doğrulama için kullanılır.",
+          "note": "* Yalnızca 6 haneli kod ile şifre çözemezsiniz. Anahtar QR'ını yüklemeli veya Gizli dizeyi girmelisiniz."
+        },
+        "step1": "Tüm Parça Resimlerinizi yükleyin.",
+        "step2": "<strong>GEREKLİ:</strong> Anahtar A & Anahtar B QR resimlerini yükleyin (veya Gizli dizelerini yapıştırın).",
+        "step3": "(İsteğe bağlı) Doğruluğu doğrulamak için mevcut 6 haneli kodları girin."
+      },
+      "lost": {
+        "title": "3. QR Resimlerinizi mi Kaybettiniz?",
+        "description": "Kimlik Doğrulayıcı Uygulamasını telefonunuzda hala bulunduruyorsanız:",
+        "steps": [
+          "Google Authenticator'ı açın.",
+          "\"Hesapları Dışa Aktar\" veya \"Transfer\" özelliğini kullanın.",
+          "Bu, Gizli anahtarlarınızı içeren bir QR kodu gösterecektir.",
+          "Gizli dizenizi geri almak için bu dışa aktarma QR'ını tarayın/çözün."
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. Koruma Modunu Seçin",
+        "description": "Anımsatıcı ifadenizi veya verilerinizi güvence altına almanın en iyi yolunu seçin:",
+        "book": {
+          "physical": {
+            "title": "Fiziksel / Sanal Kitap",
+            "desc": "Anahtarınızı rafınızdaki gerçek bir kitapta gizleyin. (Sayfa-Satır-Kelime)"
+          },
+          "online": {
+            "title": "Çevrimiçi Kitap (URL)",
+            "desc": "Anahtar kaynağınız olarak kalıcı bir Gutenberg URL'si kullanın. Dosyaya gerek yok."
+          },
+          "digital": {
+            "title": "Dijital Kitap (Dosya)",
+            "desc": "Bir Gutenberg TXT dosyası yükleyin. Yerel olarak işlenir, asla yüklenmez."
+          },
+          "index": {
+            "title": "Genel İndeks",
+            "desc": "Rastgele veri yapılarını şifreleyin (örn. Banka Bilgisi, Şifreler)."
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. Girin & Gizleyin",
+        "description": "Hassas verilerinizi girin. Ardından bir <span class=\"text-white font-mono\">Satır Yoğunluğu</span> (örn. 100 satır) ayarlamanızı isteyeceğiz. Gerçek verileriniz 99 sahte satır arasında rastgele bir satırda gizlenecek.",
+        "example": {
+          "fake1": "Satır 34: 832-19-22 (Sahte)",
+          "real": "Satır 35: 123-45-67 (Gerçek Veri)",
+          "fake2": "Satır 36: 992-11-02 (Sahte)"
+        }
+      },
+      "export": {
+        "title": "3. Dışa Aktar & Kaydet",
+        "description": "Şifrelendikten sonra bir şifreli metin bloğu alacaksınız. Bu bloğu kaydetmelisiniz!",
+        "ways": "Kaydetme yolları:",
+        "email": "E-posta (Kişisel Cihaz)",
+        "usb": "USB İndirme (En Güvenli)",
+        "print": "Kağıt Yazdırma (Çevrimdışı)"
+      },
+      "publicComputer": {
+        "title": "Genel Bilgisayar Güvenliği",
+        "description": "Genel bir bilgisayar kullanıyorsanız (internet kafe, kütüphane, arkadaşın bilgisayarı):",
+        "steps": [
+          "Kişisel e-postanıza giriş yapmayın.",
+          "Mümkünse panoyu (kopyala/yapıştır) kullanmayın.",
+          "Sonuç sayfasındaki <strong>\"Genel Bilgisayar Modu\"</strong> düğmesini kullanın.",
+          "Dosyayı bir USB sürücüye indirin veya QR kodunu telefonunuzla tarayın.",
+          "Ayrılmadan önce <strong>\"Tüm Verileri Temizle\"</strong> seçeneğine tıklayın."
+        ]
+      },
+      "military": {
+        "title": "Askeri Düzey Şifreleme",
+        "description": "<strong>AES-256-GCM</strong> şifrelemesi kullanıyoruz. Bu, hükümetler ve bankalar tarafından kullanılan standarttır. Şifreniz <strong>PBKDF2-HMAC-SHA256</strong> kullanılarak 100.000 iterasyonla tuzlanır ve hash'lenir, bu da kaba kuvvet saldırılarını neredeyse imkansız hale getirir."
+      },
+      "zk": {
+        "title": "Sıfır-Bilgi Mimarisi",
+        "description": "Her şey tarayıcınızda olur. <strong>Sunucumuz</strong>, veritabanımız ve günlüklerimiz yok. Bu sekmeyi kapatırsanız, yedeklemeyi kaydetmediyseniz verileriniz sonsuza kadar kaybolur."
+      },
+      "deniability": {
+        "title": "Makul İnkar Edilebilirlik",
+        "description": "Gerçek verilerinizden ayırt edilemeyen <strong>sahte aldatıcı satırlar</strong> oluşturuyoruz. Birisi sizi dosyanın şifresini çözmeye zorlasa bile, sahte satırlardan herhangi birinin \"gerçek\" olduğunu veya dosyanın hiç anlamlı veri içermediğini iddia edebilirsiniz. Şifreleme matematiği hangi satırın gerçek olduğunu gizler."
+      },
+      "transparency": {
+        "title": "Kod Şeffaflığı",
+        "description": "CryptoKey tamamen istemci taraflı bir uygulamadır. Tarayıcınızın geliştirici araçlarında kaynak kodunu inceleyebilirsiniz. Güvenlik denetimlerini teşvik ediyoruz. Harici komut dosyası veya analitik yüklenmez."
+      }
+    },
+    "recover": {
+      "title": "Şifre Nasıl Çözülür",
+      "steps": {
+        "step1": {
+          "title": "Modu Seçin",
+          "description": "Şifreleme için kullanılan aynı modu seçin (Fiziksel, Dosya veya URL). Dosya veya URL kullanıyorsanız, tam olarak aynı kaynak kitabı sağlamalısınız."
+        },
+        "step2": {
+          "title": "Şifreli Metni Yapıştırın",
+          "description": "E-postanızdan veya dosyanızdan tüm şifreli metin bloğunu (rastgele karakterler dahil) kopyalayın."
+        },
+        "step3": {
+          "title": "Şifreyi Girin",
+          "description": "Şifreleme sırasında belirlediğiniz şifreyi girin."
+        },
+        "step4": {
+          "title": "Satırınızı Tanımlayın",
+          "description": "Sistem TÜM satırların (gerçek + sahte) şifresini çözecektir. Verilerinizi bulmak için hangi satır numarasının sizin olduğunu (örn. Satır 35) hatırlamalısınız."
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "Askeri Düzey Güvenlik",
+    "title": "Güvenlik Mimarisi",
+    "subtitle": "Sıfır-Bilgi Kanıtı & Askeri Düzey Şifreleme",
+    "features": {
+      "aes": {
+        "title": "AES-256-GCM Şifreleme",
+        "desc": "Verileriniz mevcut en güçlü standart kullanılarak şifrelenir (Web Crypto API). Anahtar türetme için 100.000 iterasyonlu PBKDF2 kullanıyoruz."
+      },
+      "steganography": {
+        "title": "Kitap Şifresi Steganografisi",
+        "desc": "Hassas verileri normal kitap metninin içine gizler (Gutenberg/Fiziksel). Saldırganlar şifreli metin değil, yalnızca zararsız sayfa/satır/kelime indekslerini görür."
+      },
+      "dual": {
+        "title": "İkili-Faktör & Parçalama",
+        "desc": "Yeni İkili Kimlik Doğrulayıcı modu şifrelemeyi iki ayrı anahtara (A & B) ayırır, artı fazlalık için QR Parçalama. Bir anahtar ele geçirilse bile verileriniz güvende kalır."
+      },
+      "zk": {
+        "title": "Sıfır-Bilgi",
+        "desc": "Şifrenizi veya verilerinizi asla görmeyiz. Her şey tarayıcınızda yerel olarak gerçekleşir. Sunucularımıza hiçbir veri gönderilmez."
+      },
+      "noPersistence": {
+        "title": "Kalıcılık Yok",
+        "desc": "Çerez, yerel depolama veya sunucu veritabanları kullanmıyoruz. Dijital Kitaplar (TXT) yerel olarak işlenir ve asla yüklenmez."
+      },
+      "antiTheft": {
+        "title": "Hırsızlık Önleme Koruması",
+        "desc": "Giriş alanları otomatik tamamlamayı ve önbelleğe almayı önler. Ayrıldığınızda bellek aktif olarak temizlenir. Genel bilgisayarlar için güvenli."
+      }
+    },
+    "audit": {
+      "title": "Teknik Denetim",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "Yalnızca İstemci Tarafı",
+        "noUploads": "Yükleme Yok (Dosya Modu)",
+        "noLog": "Günlük Yok Politikası",
+        "wipe": "Bellek Silme"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "Kurtarma Modunu Seçin",
+      "subtitle": "Verilerinizi nasıl şifrelemek/kurtarmak istediğinizi seçin.",
+      "mnemonic": {
+        "title": "Anımsatıcı İfade",
+        "desc": "Anahtar kaynağınız olarak 12/24 kelimelik bir tohum ifadesi kullanın.",
+        "features": {
+          "compliance": "BIP-39 Uyumlu",
+          "encryption": "Standart Şifreleme",
+          "security": "Yüksek Güvenlik"
+        }
+      },
+      "physical": {
+        "title": "Fiziksel Kitap",
+        "desc": "Anahtarınızı rafınızdaki gerçek bir kitapta gizleyin.",
+        "features": {
+          "manual": "Manuel Giriş",
+          "ownBook": "Kendi Kitabınızı Kullanın",
+          "flexible": "Esnek & Gizli"
+        }
+      },
+      "digital": {
+        "title": "Dijital Kitap (Dosya)",
+        "desc": "Anahtar kaynağınız olarak bir metin dosyası yükleyin.",
+        "features": {
+          "local": "Yerel Olarak İşlenir",
+          "noUpload": "Sunucuya Yükleme Yok",
+          "offline": "Çevrimdışı Çalışır"
+        }
+      },
+      "url": {
+        "title": "Çevrimiçi Kitap (URL)",
+        "desc": "Anahtar kaynağınız olarak kalıcı bir URL kullanın.",
+        "features": {
+          "remote": "Uzak İçerik",
+          "convenient": "Kolay Erişim",
+          "dynamic": "Dinamik Referans"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "Anımsatıcı Girin",
+        "file": "Dosya Yükle",
+        "url": "URL Girin",
+        "general": "Veri Girin"
+      },
+      "subtitle": {
+        "mnemonic": "12 veya 24 kelimelik anımsatıcı ifadenizi girin.",
+        "file": "Şifrelemek için bir metin dosyası yükleyin.",
+        "url": "İçerik getirmek için bir URL girin.",
+        "general": "Şifrelemek için herhangi bir metin verisi girin."
+      },
+      "file": {
+        "loaded": "Dosya Başarıyla Yüklendi",
+        "upload": "Sürükle & bırak veya Yüklemek için Tıkla",
+        "sizeLoaded": "Yüklendi",
+        "maxSize": "Maks 5MB • TXT",
+        "scheme": "Şifreleme Şeması",
+        "schemes": {
+          "offset": "Karakter Ofseti",
+          "chapter": "Bölüm İndeksi",
+          "virtual": "Sanal Satır"
+        }
+      },
+      "url": {
+        "fetch": "İçerik Getir",
+        "proxy": {
+          "title": "Yerel Proxy Aktif",
+          "desc": "Geliştirme için yerel proxy kullanılıyor."
+        },
+        "success": "{{count}} karakter yüklendi",
+        "recommended": "Önerilen Kitaplar",
+        "clickToFill": "Doldurmak için tıklayın"
+      },
+      "general": {
+        "placeholder": "Veri satırı girin...",
+        "addLine": "Yeni Satır Ekle",
+        "generate": "Rastgele Veri"
+      },
+      "mnemonic": {
+        "label": "Anımsatıcı İfade",
+        "required": "(Gerekli)",
+        "placeholder": "Anımsatıcı ifadenizi girin...",
+        "paste": "Yapıştır",
+        "generate": "Oluştur"
+      }
+    },
+    "mixStep": {
+      "title": "Şifreleme Şifresi Belirle",
+      "subtitle": "Kasanızı şifrelemek için güçlü bir şifre belirleyin.",
+      "password": {
+        "label": "Şifreleme Şifresi Belirle",
+        "placeholder": "Güçlü bir şifre girin"
+      },
+      "confirm": {
+        "label": "Şifreyi Onayla",
+        "placeholder": "Şifreyi tekrar girin"
+      },
+      "rowCount": {
+        "label": "Satır Sayısı (Karışım Yoğunluğu)",
+        "help": "Daha yüksek sayı = Daha iyi anonimlik.",
+        "upgrade": "(Limit: 100. Yükseltmek için Tıkla)",
+        "proRequired": "100'den büyük değerler Pro lisansı gerektirir."
+      },
+      "duress": {
+        "label": "Zorlama Şifresi (İsteğe Bağlı)",
+        "help": "Farklı bir şifreyle açılan sahte bir kasa oluşturun. Cihazınızın kilidini açmaya zorlanırsanız bunu kullanın.",
+        "passwordLabel": "Zorlama Şifresi",
+        "placeholder": "Gerçek şifreden farklı",
+        "fakeContentLabel": "Sahte İçerik (Aldatıcı)"
+      },
+      "error": {
+        "required": "Şifre gereklidir",
+        "mismatch": "Şifreler uyuşmuyor",
+        "minLength": "Şifre en az 8 karakter olmalıdır",
+        "duressRequired": "Zorlama şifresi gereklidir",
+        "duressSame": "Zorlama şifresi gerçek şifreyle aynı olamaz",
+        "encryptionFailed": "Şifreleme başarısız. Lütfen tekrar deneyin."
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "Başarıyla Şifrelendi",
+        "title": "Yedeğiniz Hazır",
+        "subtitle": "Şifreli Metni kaydedin ve kimlik bilgilerinizi ezberleyin."
+      },
+      "mode": {
+        "personal": "Kişisel",
+        "public": "Genel"
+      },
+      "realIndex": {
+        "title": "Gerçek Satır İndeksi",
+        "help": "Bu, verilerinizi içeren TEK satırdır. Diğerlerinin tümü sahte."
+      },
+      "mnemonic": {
+        "title": "Orijinal Anımsatıcı"
+      },
+      "hash": {
+        "label": "Hash"
+      },
+      "actions": {
+        "copy": "Kopyala",
+        "copied": "Kopyalandı!",
+        "download": "İndir",
+        "email": "E-posta",
+        "print": "Yazdır"
+      },
+      "dualAuth": {
+        "button": "İkili Kimlik Doğrulama Parçaları Oluştur",
+        "pro": "Pro Özellik: Erişim için Yükselt"
+      },
+      "reset": "Sıfırla"
+    }
+  },
+  "decryption": {
+    "title": "Şifre Çözme Aracı",
+    "subtitle": "Orijinal mesajınızı çeşitli kaynaklardan kurtarın",
+    "status": {
+      "scanning": "Taranıyor...",
+      "processing": "Akış verileri işleniyor...",
+      "reassembling": "Yeniden birleştiriliyor & Açılıyor...",
+      "scanProgress": "Taranıyor... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "İkili Kimlik Doğrulama Tespit Edildi",
+      "dualAuthDesc": "Bu içerik İkili-Faktör Kimlik Doğrulama ile korunuyor.",
+      "switchToDual": "İkili Kimlik Doğrulama Moduna Geç",
+      "backToStandard": "Standart Şifre Çözmeye Dön",
+      "dualAuthBadge": "İkili Kimlik Doğrulama Modu"
+    },
+    "label": {
+      "ciphertext": "Şifreli Metin / Şifrelenmiş Veri",
+      "closeScanner": "Tarayıcıyı Kapat",
+      "password": "Şifre Çözme Şifresi",
+      "failedFiles": "Başarısız Dosyalar:",
+      "missingParts": "Eksik Parçalar:",
+      "fragmentsFound": "Bulunan Parçalar:",
+      "uploadRemaining": "Kalanı Yükle"
+    },
+    "button": {
+      "scanStream": "Akışı Tara",
+      "uploadQRShards": "QR Parçalarını Yükle",
+      "paste": "Yapıştır",
+      "decrypt": "Verilerin Şifresini Çöz"
+    },
+    "placeholder": {
+      "ciphertext": "Şifreli metninizi, şifreli bloğunuzu veya QR içeriğinizi buraya yapıştırın...",
+      "password": "Şifreleme için kullanılan şifreyi girin"
+    },
+    "mode": {
+      "physicalBook": "Fiziksel / Sanal Kitap",
+      "digitalBook": "Dijital Kitap (Dosya)",
+      "onlineBook": "Çevrimiçi Kitap (URL)"
+    },
+    "file": {
+      "title": "Kitap Dosyası Yükle",
+      "description": "Şifreleme sırasında kullanılan <strong>tam olarak aynı Gutenberg TXT dosyasını</strong> yükleyin.",
+      "loaded": "Yüklendi: {{size}} KB",
+      "choose": "Gutenberg TXT Dosyasını Seç...",
+      "browse": "Gözat",
+      "parsed": "{{count}} Bölüm başarıyla ayrıştırıldı"
+    },
+    "url": {
+      "title": "Kitap URL'sini Getir",
+      "description": "Şifreleme sırasında kullanılan <strong>tam Gutenberg HTML URL'sini</strong> girin.",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "Getir",
+      "loaded": "Yüklendi: {{length}} karakter (Hash: {{hash}}...)"
+    },
+    "locate": {
+      "title": "Veriyi Bul",
+      "description": "Hangi satır verilerinizi içeriyor?",
+      "row": "Satır"
+    },
+    "result": {
+      "title": "Kurtarılan Veri (Satır {{row}})",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı!",
+      "empty": "Satır boş veya geçersiz",
+      "rowAppears": "Satır {{row}} boş gibi görünüyor veya geçersiz veri içeriyor.",
+      "enterRow": "Gizlediğiniz verileri ortaya çıkarmak için satır numarasını (1-100+) girin.",
+      "rawPreview": "HAM VERİ ÖNİZLEMESİ"
+    },
+    "errors": {
+      "incompleteData": "Eksik veri: {{current}}/{{total}} parça bulundu",
+      "invalidFormat": "(Geçersiz format)",
+      "noQrFound": "(QR kodu bulunamadı)",
+      "failedToReadFile": "(Dosya okunamadı)",
+      "decryptionFailed": "Şifre çözme başarısız. Lütfen şifrenizi kontrol edin."
+    },
+    "error": {
+      "fileMode": "Verileri kurtarmak için lütfen orijinal kitap dosyasını yükleyin.",
+      "fileModeUnknown": "Dosya modu için bilinmeyen veri formatı.",
+      "urlMode": "Verileri kurtarmak için lütfen kitap URL'sini getirin.",
+      "clipboard": "Panoya erişilemiyor. Lütfen manuel olarak yapıştırın.",
+      "decryptFailed": "Şifre çözme başarısız. Lütfen şifrenizi kontrol edin."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "Veriyi Gizle",
+      "extract": "Veriyi Çıkar"
+    },
+    "label": {
+      "carrierImages": "Taşıyıcı Resim(ler)",
+      "imagesLoaded": "resim yüklendi",
+      "source": "Kaynak: {{name}}",
+      "original": "Orijinal: {{name}}",
+      "uploadImages": "Resim(leri) Yükle",
+      "uploadExtractHelp": "Yeniden oluşturmak için tüm parça resimlerini yükleyin.",
+      "uploadHideHelp": "Taşıyıcı resim yükleyin.",
+      "limitInfo": "Ücretsiz: 3 resim. Pro: Sınırsız.",
+      "secretMessage": "Gizli Mesaj",
+      "enableSharding": "Gizli Paylaşımı Etkinleştir (Parçalama)",
+      "proOnly": "(Yalnızca Pro)",
+      "totalShares": "Toplam Paylar (N)",
+      "threshold": "Şifre Çözmek için Gerekli (K)",
+      "strictMatching": "Katı Dosya Adı Eşleştirme",
+      "strictMatchingHelp": "Şifre çözme yalnızca dosyalar orijinal adlarıyla tam olarak eşleşirse çalışacaktır.",
+      "extractedContent": "Çıkarılan İçerik"
+    },
+    "placeholder": {
+      "pasteCiphertext": "Şifreli metni buraya yapıştırın...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "Çıktı Dosya Adı"
+    },
+    "warning": {
+      "title": "KRİTİK UYARI:",
+      "text": "Düz metin (anımsatıcılar gibi) doğrudan girmeyin! Resme sahip olan herkes çıkarabilir. Verilerinizi önce şifreleyin (örn. \"Şifrele\" sekmesini kullanarak) ve Şifreli Metni buraya yapıştırın."
+    },
+    "button": {
+      "clearAll": "Tümünü Temizle",
+      "paste": "Yapıştır",
+      "generateShards": "Oluştur & Parçaları İndir",
+      "hideData": "Veriyi Gizle & İndir",
+      "copied": "Kopyalandı!",
+      "copy": "Kopyala",
+      "extractHidden": "Gizli Veriyi Çıkar"
+    },
+    "status": {
+      "successHide": "Veri başarıyla gizlendi! Resim indirildi.",
+      "successShards": "{{count}} parça resmi başarıyla oluşturuldu ve indirildi.",
+      "noData": "Geçerli gizli veri bulunamadı. Katı mod kullanıldıysa dosya adlarını kontrol edin.",
+      "reconstructFailed": "Yeniden oluşturma başarısız: {{error}}. Ham veriler aşağıda gösteriliyor.",
+      "waitingImage": "Resim bekleniyor..."
+    },
+    "about": {
+      "title": "Steganografi Hakkında",
+      "text": "Bu araç verilerinizi resim piksellerinin en az önemli bitlerinde (LSB) gizler. Ortaya çıkan resim insan gözüne aynı görünür ancak gizli mesajınızı içerir.",
+      "noteTitle": "Not:",
+      "noteText": "İndirilen resmi sıkıştırmayın (örn. WhatsApp/Messenger üzerinden göndermek genellikle resimleri sıkıştırır). Her zaman Dosya (Belge) olarak paylaşın veya kesinlikle yerel tutun."
+    }
+  },
+  "wallet": {
+    "title": "Güvenli Cüzdan Oluşturucu",
+    "subtitle": "BIP39/BIP44 uyumlu cüzdanlar oluşturun. %100 İstemci tarafı.",
+    "strength": {
+      "12words": "12 Kelime (128-bit)",
+      "24words": "24 Kelime (256-bit)"
+    },
+    "action": {
+      "generate": "Yeni Cüzdan Oluştur",
+      "import": "Anımsatıcı İçe Aktar"
+    },
+    "import": {
+      "title": "Mevcut Cüzdanı İçe Aktar",
+      "placeholder": "12, 15, 18, 21 veya 24 kelimelik anımsatıcı ifadenizi buraya girin...",
+      "paste": "Yapıştır",
+      "submit": "Cüzdanı İçe Aktar"
+    },
+    "error": {
+      "invalidMnemonic": "Geçersiz anımsatıcı"
+    },
+    "mnemonic": {
+      "title": "Kurtarma İfadesi (Anımsatıcı)",
+      "reveal": "Göstermek için Tıkla"
+    },
+    "copyTo": {
+      "encrypt": "\"Anımsatıcı İfade Gir\"e Kopyala",
+      "steganography": "\"Steganografi\"ye Kopyala"
+    },
+    "details": {
+      "title": "Cüzdan Detayları",
+      "showKeys": "Hassas Anahtarları Göster",
+      "hideKeys": "Hassas Anahtarları Gizle",
+      "ethAddress": "Ethereum Adresi (BIP44)",
+      "path": "Yol: {{path}} (Standart Metamask/Ledger)",
+      "privateKey": "Özel Anahtar",
+      "publicKey": "Genel Anahtar",
+      "addressQr": "Adres QR"
+    },
+    "security": {
+      "title": "Güvenlik Uyarısı",
+      "line1": "Bu kelimeleri kağıda yazın ve güvenli bir şekilde saklayın.",
+      "never": "Asla",
+      "line2": "kimseyle paylaşmayın.",
+      "line3": "Bu kelimeleri kaybederseniz, fonlarınız sonsuza kadar kaybolur."
+    },
+    "tooltip": {
+      "pasteClipboard": "Panodan yapıştır",
+      "hide": "Gizle",
+      "show": "Göster",
+      "copyClipboard": "Panoya kopyala"
+    }
+  },
+  "installAuth": {
+    "redirecting": "App Store'a yönlendiriliyor...",
+    "detecting": "Cihazınız algılanıyor..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Dili Değiştir"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "Erişim Reddedildi. Yetkisiz deneme kaydedildi.",
+      "passwordRequired": "Şifre gereklidir",
+      "passwordMismatch": "Şifreler uyuşmuyor",
+      "passwordTooShort": "Şifre en az 8 karakter olmalıdır",
+      "duressPasswordRequired": "Zorlama şifresi gereklidir",
+      "duressPasswordSame": "Zorlama şifresi gerçek şifreyle aynı olamaz"
+    },
+    "duress": {
+      "defaultMessage": "Erişim Reddedildi. Yetkisiz deneme kaydedildi."
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "Geçersiz anımsatıcı ifade. Lütfen kelimelerinizi kontrol edin.",
+      "enterCiphertext": "Lütfen şifreli metin verisini girin",
+      "invalidMode": "Geçersiz mod veya eksik veri",
+      "encryptionFailed": "Şifreleme işlemi başarısız. Lütfen girişinizi kontrol edin.",
+      "parseFileFailed": "Dosya ayrıştırılamadı. Lütfen geçerli bir metin dosyası olduğundan emin olun.",
+      "invalidUrl": "Geçersiz URL",
+      "fetchUrlFailed": "URL getirilemedi"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "Satırı kaldır",
+      "generateRandom": "Rastgele Veri Oluştur",
+      "pasteClipboard": "Panodan Yapıştır",
+      "generateMnemonic": "Rastgele Anımsatıcı Oluştur"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【CryptoKey Güvenli Yedekleme】",
+      "ciphertext": "Şifreli Metin:",
+      "hash": "Hash:",
+      "footer": "Şifre çöz: https://cryptokey.im",
+      "generated": "Oluşturulma: {{date}}",
+      "note": "NOT: Şifre çözmek için şifre + satır indeksi gerektirir."
+    },
+    "watermark": "https://CryptoKey.im adresinde şifreyi çöz | {{date}} tarihinde oluşturuldu",
+    "print": {
+      "title": "CryptoKey Güvenli Yedekleme"
+    },
+    "clipboard": {
+      "labels": "Şifreli Metin: {{ciphertext}}\\nHash: {{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "Tamamlanıyor..."
+    },
+    "errors": {
+      "invalidFormat": "(Geçersiz format)",
+      "integrityFailed": "Bütünlük Kontrolü Başarısız: Yeniden birleştirilen veriler bozuk. Lütfen tekrar tarayın.",
+      "decompressionError": "Açma Hatası: Hatalı Veri. Lütfen resimleri tekrar yüklemeyi deneyin, net ve eksiksiz olduklarından emin olun.",
+      "decompressionFailed": "Açma başarısız: {{error}}"
+    },
+    "error": {
+      "generationFailed": "Oluşturma başarısız",
+      "startProcessing": "İşleme başlatılıyor...",
+      "processingImage": "{{total}} resimden {{current}}. işleniyor..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "Sistem saati hatası algılandı. Pro özelliklerini kullanmaya devam etmek için lütfen sistem saatinizi düzeltin.",
+      "deactivateConfirm": "Real Pro Lisansını devre dışı bırak?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "Geri",
+    "processing": "İşleniyor...",
+    "encryptGenerate": "Şifrele & Oluştur"
+  },
+  "steganographyExtra": {
+    "successGenerated": "{{count}} parça resmi başarıyla oluşturuldu ve indirildi.",
+    "carrierImages": "Taşıyıcı Resim(ler)",
+    "strictMatchRequired": "Katı Eşleşme Gerekli"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm Performans Kıyaslaması",
+    "testConfig": "Test Yapılandırması",
+    "algorithm": "Algoritma: Shamir'in Gizli Paylaşımı (GF(2^8))",
+    "shares": "Paylar: 5 toplam, 3 eşik",
+    "payload": "Yük: Rastgele 32-bayt gizli anahtar + Sağlama toplamı",
+    "steganography": "Steganografi: 100x100 tampon üzerinde LSB Gömme",
+    "running": "Testler Çalışıyor...",
+    "startBenchmark": "Kıyaslamayı Başlat (Ham Kanıt)",
+    "jsTime": "JS Zamanı",
+    "wasmTime": "Wasm Zamanı",
+    "fasterSuffix": "{{ratio}}x Daha Hızlı",
+    "correctness": "Doğruluk",
+    "verified": "DOĞRULANMıŞ",
+    "failed": "BAŞARISIZ",
+    "waiting": "Başlamak için bekleniyor..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - Güvenli Yedekleme",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "Kıyaslama Başlatılıyor...",
+      "runningJs": "JS Uygulaması Çalıştırılıyor...",
+      "loadingWasm": "Wasm Modülü Yükleniyor...",
+      "runningWasm": "Wasm Uygulaması Çalıştırılıyor..."
+    },
+    "validation": {
+      "pass": "GEÇTİ",
+      "fail": "BAŞARISIZ",
+      "result": "Doğrulama Sonucu: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "Lütfen önce kimlik doğrulayıcıları bağlayın",
+    "invalidDataFormat": "Geçersiz veri biçimi",
+    "hashMismatch": "Hash uyuşmazlığı",
+    "noValidQr": "Geçerli QR kodu bulunamadı",
+    "passwordIncorrect": "Herhangi bir kasa içeriği için şifre yanlış",
+    "couldNotReadQr": "QR kodu okunamadı",
+    "invalidAuthQr": "Geçersiz Kimlik Doğrulama QR Kodu",
+    "noSecretInQr": "QR'da gizli anahtar bulunamadı",
+    "authAIncorrect": "Kimlik Doğrulayıcı A kodu yanlış",
+    "authBIncorrect": "Kimlik Doğrulayıcı B kodu yanlış",
+    "decryptCiphertextFailed": "Şifreli Metin şifresi çözülemedi (Anahtar A yanlış olabilir)",
+    "decryptContextFailedA": "Bağlam şifresi çözülemedi (Anahtar B yanlış olabilir)",
+    "decryptMnemonicFailed": "Anımsatıcı şifresi çözülemedi (Anahtar A yanlış olabilir)",
+    "decryptContextFailedB": "Bağlam şifresi çözülemedi (Anahtar B yanlış olabilir)",
+    "shardIntegrityError": "Parça Bütünlük Hatası: {{filename}} dosyası farklı bir kümeye ait. Lütfen tüm dosyaların aynı şifreleme oturumundan olduğundan emin olun.",
+    "shareApiNotSupported": "Paylaşım API'si desteklenmiyor",
+    "canvasContext": "Canvas bağlamı alınamadı",
+    "invalidShareType": "jsSplit geçersiz tür döndürdü: {{type}}",
+    "wasmLoadFailed": "Wasm modülü yüklenemedi"
+  }
+}

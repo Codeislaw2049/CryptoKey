@@ -56,8 +56,8 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
     setSecretA(sA);
     setSecretB(sB);
 
-    const uriA = generateTotpUri(sA, 'CryptoKey:Ciphertext', 'CryptoKey');
-    const uriB = generateTotpUri(sB, 'CryptoKey:PasswordLine', 'CryptoKey');
+    const uriA = generateTotpUri(sA, t('shardDualAuth.prefix.ciphertext'), 'CryptoKey');
+    const uriB = generateTotpUri(sB, t('shardDualAuth.prefix.passwordLine'), 'CryptoKey');
 
     const qrA = await QRCode.toDataURL(uriA);
     const qrB = await QRCode.toDataURL(uriB);
@@ -70,7 +70,7 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
   const generateShardCodes = async () => {
     setLoading(true);
     try {
-      if (!secretA || !secretB) throw new Error('Please bind authenticators first');
+      if (!secretA || !secretB) throw new Error(t('errors.bindAuthFirst'));
 
       // 1. Encrypt Password+Line with Secret B
       const pwdLineData = JSON.stringify({ password, lineNumber });
@@ -130,7 +130,7 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
 
     } catch (e) {
       console.error(e);
-      alert('Generation failed');
+      alert(t('shardDualAuth.error.generationFailed'));
     } finally {
       setLoading(false);
     }

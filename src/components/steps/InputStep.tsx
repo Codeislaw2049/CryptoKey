@@ -107,7 +107,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
       if (mode !== 'general') {
         const validation = validateMnemonic(mnemonic);
         if (!validation.isValid) {
-          setError(validation.error || "Invalid mnemonic phrase. Please check your words.");
+          setError(validation.error || t('inputStep.error.invalidMnemonic'));
           return;
         }
       }
@@ -122,7 +122,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
         // Physical Book: Manual Entry of Ciphertext
         const validRows = physicalRows.filter(r => r.trim());
         if (validRows.length === 0) {
-          throw new Error('Please enter the ciphertext data');
+          throw new Error(t('inputStep.error.enterCiphertext'));
         }
         cipherData = validRows;
         onNext(cipherData, validRows.join(' '));
@@ -140,13 +140,13 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
         // Project 5: Online Book (URL)
         cipherData = mnemonicToIndex(mnemonic, urlInfo.pureText, urlInfo.textHash);
       } else {
-        throw new Error('Invalid mode or missing data');
+        throw new Error(t('inputStep.error.invalidMode'));
       }
 
       onNext(cipherData, mnemonic);
     } catch (e: any) {
       console.error(e);
-      setError(e.message || "Encryption process failed. Please check your input.");
+      setError(e.message || t('inputStep.error.encryptionFailed'));
     }
   };
 
@@ -160,7 +160,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
       const info = await parseGutenbergTxt(file);
       setFileInfo(info);
     } catch (e: any) {
-      setError(e.message || "Failed to parse the file. Please ensure it is a valid text file.");
+      setError(e.message || t('inputStep.error.parseFileFailed'));
     } finally {
       setIsLoading(false);
     }
@@ -173,12 +173,12 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
     try {
       // Validate URL first
       const cleanUrl = sanitizeUrl(url);
-      if (!cleanUrl) throw new Error('Invalid URL');
+      if (!cleanUrl) throw new Error(t('inputStep.error.invalidUrl'));
 
       const info = await fetchGutenbergContent(cleanUrl);
       setUrlInfo(info);
     } catch (e: any) {
-      setError(e.message || 'Failed to fetch URL');
+      setError(e.message || t('inputStep.error.fetchUrlFailed'));
     } finally {
       setIsLoading(false);
     }
@@ -289,7 +289,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                 <Input
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
-                  placeholder="https://gutenberg.org/files/..."
+                  placeholder={t('inputStep.placeholder.bookUrl')}
                   className="font-mono text-sm"
                 />
                 <Button 
@@ -353,7 +353,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                       <button
                         onClick={() => removePhysicalRow(index)}
                         className="p-2 text-slate-500 hover:text-red-400 hover:bg-red-500/10 rounded-md transition-colors"
-                        title="Remove line"
+                        title={t('inputStep.tooltip.removeLine')}
                       >
                         <Trash2 size={16} />
                       </button>
@@ -373,7 +373,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
               <button
                 onClick={handleGeneratePhysical}
                 className="absolute top-[-40px] right-0 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full border border-slate-600 transition-colors flex items-center gap-1.5"
-                title="Generate Random Data"
+                title={t('inputStep.tooltip.generateRandom')}
               >
                 <Dices size={14} />
                 {t('wizard.inputStep.general.generate')}
@@ -401,7 +401,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                 <button
                   onClick={handlePaste}
                   className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full border border-slate-600 transition-colors flex items-center gap-1.5"
-                  title="Paste from Clipboard"
+                  title={t('inputStep.tooltip.pasteClipboard')}
                 >
                   <Clipboard size={14} />
                   {t('wizard.inputStep.mnemonic.paste')}
@@ -409,7 +409,7 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                 <button
                   onClick={handleGenerateMnemonic}
                   className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-full border border-slate-600 transition-colors flex items-center gap-1.5"
-                  title="Generate Random Mnemonic"
+                  title={t('inputStep.tooltip.generateMnemonic')}
                 >
                   <Dices size={14} />
                   {t('wizard.inputStep.mnemonic.generate')}

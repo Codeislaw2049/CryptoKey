@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { wasmManager } from '../wasm/wasmLoader';
 import { getDeviceFingerprint } from '../utils/device';
 
@@ -30,6 +31,7 @@ interface LicenseContextType {
 const LicenseContext = createContext<LicenseContextType | undefined>(undefined);
 
 export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { t } = useTranslation();
   // Default to free
   const [licenseType, setLicenseType] = useState<'free' | 'pro_simulated' | 'pro_real' | 'pro_local' | 'pro_temp'>('free');
   const [userNickname, setUserNickname] = useState<string | null>(null);
@@ -55,7 +57,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
             const now = Date.now();
             if (lastSeen && now < parseInt(lastSeen)) {
                 console.error("System time manipulation detected. Clock moved backwards.");
-                alert("System clock error detected. Please correct your system time to continue using Pro features.");
+                alert(t('license.alerts.systemClockError'));
                 logout();
                 return;
             }
@@ -316,7 +318,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const toggleLicense = () => {
     if (licenseType === 'pro_real') {
-        if (confirm("Deactivate Real Pro License?")) {
+        if (confirm(t('license.alerts.deactivateConfirm'))) {
             logout();
         }
         return;

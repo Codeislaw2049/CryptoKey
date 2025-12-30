@@ -35,7 +35,7 @@ export const IntegrityCheck: React.FC = () => {
 
     try {
       // 1. Fetch Official Checksums from GitHub
-      logs.push(`Fetching release signature for ${APP_VERSION}...`);
+      logs.push(t('integrityCheck.fetching', { version: APP_VERSION }));
       const checksumUrl = `https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/download/${APP_VERSION}/sha256sums.txt`;
       
       let remoteChecksums = '';
@@ -94,10 +94,10 @@ export const IntegrityCheck: React.FC = () => {
       let checkedCount = 0;
 
       for (const path of assetsToCheck) {
-        logs.push(`Verifying ${path}...`);
+        logs.push(t('integrityCheck.verifying', { path }));
         try {
           const res = await fetch('/' + path);
-          if (!res.ok) throw new Error(`Failed to load`);
+          if (!res.ok) throw new Error(t('integrityCheck.failedToLoad'));
           const blob = await res.blob();
           const hash = await calculateHash(blob);
           
@@ -120,12 +120,12 @@ export const IntegrityCheck: React.FC = () => {
              }
           } else {
              // No remote checksums, just show local hash
-             logs.push(`ℹ️ ${path}`);
-             logs.push(`   Hash: ${hash}`);
+             logs.push(t('integrityCheck.info', { path }));
+             logs.push(t('integrityCheck.hash', { hash }));
           }
           checkedCount++;
         } catch (e) {
-          logs.push(`⚠️ Could not verify ${path}: ${(e as Error).message}`);
+          logs.push(t('integrityCheck.couldNotVerify', { path, error: (e as Error).message }));
         }
       }
 
@@ -142,7 +142,7 @@ export const IntegrityCheck: React.FC = () => {
     } catch (error) {
       console.error(error);
       setStatus('failed');
-      setDetails(prev => [...prev, `Critical Error: ${(error as Error).message}`]);
+      setDetails(prev => [...prev, t('integrityCheck.criticalError', { error: (error as Error).message })]);
     }
   };
 
@@ -151,7 +151,7 @@ export const IntegrityCheck: React.FC = () => {
       <button
         onClick={verifyIntegrity}
         className="text-slate-500 hover:text-primary transition-colors flex items-center gap-1 text-xs mx-auto"
-        title="Verify that this app code matches the source code on GitHub"
+        title={t('integrityCheck.title')}
       >
         <ShieldCheck size={14} />
         {t('integrityCheck.buttonLabel')}

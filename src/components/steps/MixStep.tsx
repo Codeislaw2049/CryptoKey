@@ -27,33 +27,33 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
   // Duress Password State
   const [enableDuress, setEnableDuress] = React.useState(false);
   const [duressPassword, setDuressPassword] = useSecureMemory('');
-  const [duressFakeContent, setDuressFakeContent] = React.useState('Access Denied. Unauthorized attempt logged.');
+  const [duressFakeContent, setDuressFakeContent] = React.useState(t('mixStep.duress.defaultMessage'));
 
   const handleProcess = async () => {
     if (!password) {
-      setError('Password is required');
+      setError(t('mixStep.error.passwordRequired'));
       return;
     }
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError(t('mixStep.error.passwordMismatch'));
       return;
     }
     if (password.length < 8) {
-      setError('Password must be at least 8 characters');
+      setError(t('mixStep.error.passwordTooShort'));
       return;
     }
 
     if (enableDuress) {
       if (!duressPassword) {
-        setError('Duress password is required');
+        setError(t('mixStep.error.duressPasswordRequired'));
         return;
       }
       if (duressPassword === password) {
-        setError('Duress password cannot be the same as real password');
+        setError(t('mixStep.error.duressPasswordSame'));
         return;
       }
       if (duressPassword.length < 8) {
-        setError('Password must be at least 8 characters');
+        setError(t('mixStep.error.passwordTooShort'));
         return;
       }
     }
@@ -214,14 +214,14 @@ export const MixStep = ({ realData, onNext, onBack }: MixStepProps) => {
 
         <div className="flex gap-3 pt-4">
           <Button variant="ghost" onClick={onBack} className="flex-1">
-            Back
+            {t('mixStepButtons.back')}
           </Button>
-          <Button 
-            onClick={handleProcess} 
-            className="flex-[2]" 
+          <Button
+            onClick={handleProcess}
+            className="flex-[2]"
             disabled={isProcessing}
           >
-            {isProcessing ? 'Processing...' : 'Encrypt & Generate'}
+            {isProcessing ? t('mixStepButtons.processing') : t('mixStepButtons.encryptGenerate')}
           </Button>
         </div>
       </div>

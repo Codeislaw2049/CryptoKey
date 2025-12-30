@@ -39,6 +39,42 @@
   "pricing": {
     "title": "간편하고 투명한 요금제",
     "subtitle": "귀하의 필요에 맞는 완벽한 플랜을 선택하세요",
+    "badge": {
+      "bestValue": "최고의 가치"
+    },
+    "button": {
+      "contactSales": "영업 문의",
+      "subscribeNow": "지금 구독",
+      "extendLicense": "라이선스 연장"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "즉시 액세스",
+        "desc": "결제 후 즉시 라이선스 키와 TOTP 설정을 받으세요. 대기 시간이 없습니다."
+      },
+      "globalPayments": {
+        "title": "글로벌 결제",
+        "desc": "BSC, TRX 및 ETH 네트워크를 통한 글로벌 USDT 결제를 지원합니다.",
+        "descChina": "업데이트를 기다려주세요."
+      },
+      "securePrivate": {
+        "title": "보안 및 개인정보",
+        "desc": "개인 데이터를 보존하지 않습니다. 귀하의 보안이 우리의 최우선 과제입니다."
+      },
+      "refundPolicy": {
+        "title": "환불 정책",
+        "desc": "엄격한 환불 불가 정책. 라이선스 키가 발급되면 모든 판매는 최종 판매입니다."
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im은 보안 도구 제공업체입니다. 재무 자문, 암호화폐 거래 또는 보관 서비스를 제공하지 않습니다. 가격은 미국 달러로 표시됩니다. 귀하의 위치에 따라 부가가치세가 적용될 수 있습니다."
+    },
+    "china": {
+      "hardwareOnly": "하드웨어 인증만 가능",
+      "description": "당사의 하드웨어 제품 CryptoKey를 구매하여 사용하십시오,<1/>온라인 사용 방법은 계속 기다려주세요...",
+      "contactSales": "하드웨어 구매 영업 문의",
+      "backToHome": "홈으로 돌아가기"
+    },
     "plans": {
       "price_weekly_trial": {
         "name": "24시간 패스",
@@ -143,66 +179,16 @@
     }
   },
   "footer": {
-    "description": "군사급 스테가노그래피 및 암호화 도구 (AES-256-GCM + ChaCha20-Poly1305).\n브라우저에서 완전히 실행됩니다. 서버로 데이터가 전송되지 않습니다.",
-    "links": {
-      "pricing": "요금",
-      "terms": "이용약관",
-      "source": "소스 코드",
-      "share": "공유"
-    },
-    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. All Rights Reserved.",
-    "license": "상업용 라이선스 고지: 이 소프트웨어에는 국제 저작권법의 보호를 받는 독점 Wasm 암호화 모듈이 포함되어 있습니다. 공개 소스 코드는 CC-BY-NC-ND 4.0 라이선스에 따라 보안 감사 목적으로만 제공됩니다. 핵심 알고리즘의 무단 상업적 사용, 수정 또는 재배포는 엄격히 금지됩니다."
+    "linkCopied": "링크가 클립보드에 복사되었습니다!",
+    "forceUpdate": "강제 업데이트 / 캐시 지우기",
+    "publicRepo": "공개 리포지토리 (감사)",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "공유"
   },
   "licenseManager": {
-    "status": {
-      "active": "활성",
-      "expired": "만료됨",
-      "expiresIn": "만료:",
-      "proActive": "PRO 활성",
-      "proLicenseActive": "Pro 라이선스 활성",
-      "hardwareKeyActive": "하드웨어 키 활성",
-      "tempPro": "임시 PRO",
-      "activatePro": "PRO 활성화",
-      "unlockPro": "Pro 기능 잠금 해제",
-      "user": "사용자"
-    },
-    "login": {
-      "tab": "로그인",
-      "nickname": "닉네임",
-      "nicknamePlaceholder": "닉네임 입력",
-      "code": "인증 코드",
-      "codePlaceholder": "000 000",
-      "button": "Pro 기능 잠금 해제",
-      "success": "로그인 성공! Pro 기능이 활성화되었습니다.",
-      "error": "로그인 실패. 유효하지 않은 코드 또는 닉네임입니다.",
-      "inputError": "닉네임과 코드를 입력하세요"
-    },
-    "register": {
-      "tab": "등록",
-      "chooseNickname": "닉네임 선택",
-      "nicknamePlaceholder": "3-20자",
-      "note": "이 닉네임은 2FA 비밀 생성에 사용됩니다.",
-      "button": "인증 키 받기",
-      "scanTitle": "인증 앱으로 스캔",
-      "scanNote": "휴대폰으로 스캔하여 시스템 자동 감지 및 다운로드",
-      "success": "닉네임 등록 완료! 인증 앱을 연동하세요.",
-      "manualSuccess": "등록 완료! 비밀 키를 수동으로 입력하세요.",
-      "errorNickname": "닉네임을 입력하세요",
-      "errorFormat": "닉네임은 3-20자여야 합니다 (A-Z, 0-9, _)",
-      "errorTaken": "닉네임 \"{{nickname}}\"은(는) 이미 사용 중입니다."
-    },
-    "authApp": {
-      "title": "인증 앱",
-      "download": "다운로드",
-      "google": "Google Auth",
-      "microsoft": "Microsoft Auth"
-    },
-    "modal": {
-      "title": "Pro 라이선스",
-      "subtitle": "고급 암호화 기능 잠금 해제",
-      "logout": "로그아웃"
-    },
-    "networkError": "네트워크 오류: {{error}}"
+    "desktopAuthQr": "데스크톱 인증 QR",
+    "registrationFailed": "등록 실패"
   },
   "paymentModal": {
     "title": "USDT 결제",
@@ -245,14 +231,19 @@
         "verifying": "확인 중...",
         "errorTx": "트랜잭션 해시 (TXID)가 필요합니다",
         "errorValidation": {
-            "wallet": "지갑 주소처럼 보입니다. TXID가 아닙니다. TXID를 붙여넣으십시오.",
-            "tron": "유효하지 않은 TRON TXID입니다. 64자 16진수 문자열이어야 합니다.",
-            "eth": "유효하지 않은 {{chain}} TXID입니다. 0x...로 시작하고 64자 16진수여야 합니다."
+          "wallet": "지갑 주소처럼 보입니다. TXID가 아닙니다. TXID를 붙여넣으십시오.",
+          "tron": "유효하지 않은 TRON TXID입니다. 64자 16진수 문자열이어야 합니다.",
+          "eth": "유효하지 않은 {{chain}} TXID입니다. 0x...로 시작하고 64자 16진수여야 합니다."
         },
         "clipboardError": "클립보드를 읽지 못했습니다. 수동으로 입력하십시오.",
         "copied": "링크가 클립보드에 복사되었습니다!"
       },
       "verification": {
+        "title": "트랜잭션 확인 중...",
+        "description": "블록체인에서 결제를 확인하고 있습니다. 일반적으로 1~3분 소요됩니다.",
+        "checkingTxid": "트랜잭션 ID 확인 중:",
+        "safeToClose": "이 창을 닫아도 안전합니다.",
+        "autoActivation": "트랜잭션이 체인에서 확인되면 Pro 라이선스가 자동으로 활성화됩니다.",
         "verifying": "결제 확인 중...",
         "success": "결제 확인됨!",
         "failed": "결제 확인에 실패했습니다. 트랜잭션을 확인하십시오."
@@ -275,7 +266,10 @@
     "shardCount": "샤드 {{current}} / {{total}}",
     "saveAll": "모든 이미지 저장",
     "saveImage": "이미지 저장",
-    "close": "닫기"
+    "close": "닫기",
+    "speedSlow": "느림 (2 FPS)",
+    "speedFast": "빠름 (4 FPS)",
+    "speedTurbo": "초고속 (10 FPS)"
   },
   "dualAuthGenerator": {
     "title": "이중 인증 암호화",
@@ -368,29 +362,14 @@
     "bookCipherNote": "참고: 이것들은 책 암호 인덱스처럼 보입니다..."
   },
   "integrityCheck": {
-    "devModeWarning": "무결성 검사는 프로덕션 빌드에서만 사용할 수 있습니다.",
-    "devModeDesc": "개발 모드는 핫 리로딩 스크립트를 사용하므로 릴리스 빌드와 대조할 수 없습니다.",
-    "log": {
-      "receivedChecksums": "✅ GitHub에서 공식 체크섬을 받았습니다",
-      "corsBlocked": "⚠️ 브라우저 보안(CORS)에 의해 자동 검증이 차단되었습니다.",
-      "corsReason1": "이것은 브라우저 보안 기능이며 보안 결함이 아닙니다.",
-      "corsReason2": "GitHub 릴리스와 해시를 비교하여 수동으로 검증할 수 있습니다.",
-      "corsReason3": "또는 브라우저 확장 프로그램을 사용하여 이 검증을 위해 CORS를 우회할 수 있습니다.",
-      "fileVerified": "✅ {{path}}: 검증됨",
-      "hashMismatch": "❌ {{path}}: 해시 불일치!",
-      "noChecksum": "❓ {{path}}: 릴리스 레코드에서 체크섬을 찾을 수 없습니다"
-    },
-    "buttonLabel": "빌드 무결성 검증",
-    "modalTitle": "빌드 무결성 검사",
-    "calculating": "해시 계산 중...",
-    "connectionError": "GitHub에 연결할 수 없습니다. 인터넷 연결을 확인하세요.",
-    "manual": {
-      "title": "수동으로 검증하는 방법:",
-      "step1": "1. GitHub 릴리스 페이지를 방문하세요(아래 링크).",
-      "step2": "2. 공식 체크섬 파일(SHA256SUMS.txt)을 다운로드하세요.",
-      "step3": "3. 위의 해시와 비교하세요."
-    },
-    "viewRelease": "GitHub에서 릴리스 보기"
+    "title": "이 앱 코드가 GitHub의 소스 코드와 일치하는지 확인",
+    "fetching": "{{version}} 버전의 릴리스 서명을 가져오는 중...",
+    "verifying": "{{path}}을(를) 확인하는 중...",
+    "failedToLoad": "로드 실패",
+    "info": "ℹ️ {{path}}",
+    "hash": "해시: {{hash}}",
+    "couldNotVerify": "⚠️ {{path}}을(를) 확인할 수 없습니다: {{error}}",
+    "criticalError": "심각한 오류: {{error}}"
   },
   "militaryBadge": {
     "title": "군용 등급 보안",
@@ -568,15 +547,33 @@
         "desc": "일반 책 텍스트(Gutenberg/실물) 내에 민감한 데이터를 숨깁니다. 공격자는 무해한 페이지/행/단어 인덱스만 볼 수 있으며 암호문은 볼 수 없습니다."
       },
       "dual": {
-        "title": "이중 인증 보호",
-        "desc": "신뢰를 두 개의 기기로 분할합니다. 니모닉을 복호화하려면 두 개의 인증 비밀(Key A 및 Key B)이 모두 필요합니다. 단일 실패 지점이 없습니다."
+        "title": "이중 팩터 & 샤딩",
+        "desc": "새로운 이중 인증 모드는 암호화를 두 개의 별도 키(A와 B) 간에 분할하고 중복성을 위해 QR 샤딩을 추가합니다. 하나의 키가 손상되어도 데이터는 안전합니다."
       },
-      "client": {
-        "title": "100% 클라이언트 측",
-        "desc": "데이터는 기기를 떠나지 않습니다. 서버도 데이터베이스도 없습니다. 인터넷 연결을 끊고 오프라인에서 완벽하게 작동합니다."
+      "zk": {
+        "title": "영지식",
+        "desc": "비밀번호나 데이터를 보지 않습니다. 모든 것이 브라우저에서 로컬로 발생합니다. 서버로 데이터가 전송되지 않습니다."
+      },
+      "noPersistence": {
+        "title": "영속성 없음",
+        "desc": "쿠키, 로컬 스토리지 또는 서버 데이터베이스를 사용하지 않습니다. 디지털 북(TXT)은 로컬에서만 처리되며 업로드되지 않습니다."
+      },
+      "antiTheft": {
+        "title": "도난 방지 보호",
+        "desc": "입력 필드는 자동 완성 및 캐싱을 방지합니다. 떠날 때 메모리가 적극적으로 지워집니다. 공용 컴퓨터에서도 안전합니다."
       }
     },
-    "close": "닫기"
+    "audit": {
+      "title": "기술 감사",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "클라이언트 측만",
+        "noUploads": "업로드 없음 (파일 모드)",
+        "noLog": "로그 없음 정책",
+        "wipe": "메모리 지우기"
+      }
+    }
   },
   "wizard": {
     "modeSelection": {
@@ -611,7 +608,12 @@
       },
       "url": {
         "title": "온라인 책 (URL)",
-        "desc": "영구 URL을 키 소스로 사용합니다."
+        "desc": "영구 URL을 키 소스로 사용합니다.",
+        "features": {
+          "remote": "원격 콘텐츠",
+          "convenient": "편리한 액세스",
+          "dynamic": "동적 참조"
+        }
       }
     },
     "inputStep": {
@@ -644,13 +646,22 @@
         "proxy": {
           "title": "로컬 프록시 활성화",
           "desc": "개발을 위해 로컬 프록시를 사용 중입니다."
-        }
+        },
+        "success": "{{count}}자를 로드했습니다",
+        "recommended": "추천 도서",
+        "clickToFill": "클릭하여 채우기"
       },
       "general": {
-        "addLine": "새 줄 추가"
+        "placeholder": "데이터 행 입력...",
+        "addLine": "새 줄 추가",
+        "generate": "랜덤 데이터"
       },
       "mnemonic": {
-        "paste": "붙여넣기"
+        "label": "니모닉 문구",
+        "required": "(필수)",
+        "placeholder": "니모닉 문구를 입력하세요...",
+        "paste": "붙여넣기",
+        "generate": "생성"
       }
     },
     "mixStep": {
@@ -720,114 +731,6 @@
       "reset": "재설정"
     }
   },
-  "wizard": {
-    "steps": {
-      "mode": "모드 선택",
-      "input": "입력",
-      "mix": "혼합",
-      "result": "결과"
-    },
-    "actions": {
-      "next": "다음",
-      "back": "이전",
-      "finish": "완료",
-      "process": "암호화 시작",
-      "reset": "초기화",
-      "copy": "복사",
-      "download": "다운로드",
-      "print": "인쇄"
-    },
-    "modeSelection": {
-      "title": "보호 모드 선택",
-      "subtitle": "니모닉이나 데이터를 보호할 최적의 방법을 선택하세요",
-      "modes": {
-        "physical": {
-          "title": "실물 / 가상 책",
-          "description": "책장에 있는 실제 책에 키를 숨깁니다 (페이지-줄-단어)"
-        },
-        "online": {
-          "title": "온라인 책 (URL)",
-          "description": "영구적인 Gutenberg URL을 키 소스로 사용합니다"
-        },
-        "digital": {
-          "title": "디지털 책 (파일)",
-          "description": "Gutenberg TXT 파일을 업로드합니다"
-        },
-        "general": {
-          "title": "일반 인덱스",
-          "description": "임의의 데이터 구조를 암호화합니다"
-        }
-      }
-    },
-    "inputStep": {
-      "title": {
-        "mnemonic": "니모닉 문구 입력",
-        "file": "책 파일 업로드",
-        "url": "책 URL 입력",
-        "general": "데이터 입력"
-      },
-      "description": {
-        "mnemonic": "보호할 12, 18, 또는 24단어 니모닉을 입력하세요",
-        "file": "참조로 사용할 텍스트 파일을 선택하세요",
-        "url": "Project Gutenberg와 같은 안정적인 URL을 사용하세요",
-        "general": "암호화할 텍스트 데이터를 입력하세요"
-      },
-      "labels": {
-        "mnemonic": "니모닉 문구",
-        "password": "비밀번호 (선택사항)",
-        "file": "파일 선택",
-        "url": "URL 주소",
-        "data": "데이터"
-      },
-      "placeholders": {
-        "mnemonic": "단어들을 공백으로 구분하여 입력하세요...",
-        "password": "추가 보안을 위한 비밀번호...",
-        "url": "https://...",
-        "data": "여기에 데이터를 입력하세요..."
-      }
-    },
-    "mixStep": {
-      "title": "데이터 혼합 및 난독화",
-      "description": "실제 데이터를 가짜 데이터 속에 숨겨 보안을 강화합니다",
-      "configuration": "설정",
-      "density": {
-        "label": "행 밀도",
-        "low": "낮음 (빠름)",
-        "medium": "중간 (권장)",
-        "high": "높음 (최대 보안)"
-      },
-      "security": {
-        "label": "보안 수준",
-        "standard": "표준",
-        "high": "높음",
-        "paranoid": "최상"
-      },
-      "duress": {
-        "enable": "강압 모드 활성화",
-        "help": "강압 비밀번호를 입력하면 가짜 데이터를 복호화하여 공격자를 속일 수 있습니다",
-        "passwordLabel": "강압 비밀번호",
-        "placeholder": "이 비밀번호는 가짜 데이터를 엽니다..."
-      }
-    },
-    "resultStep": {
-      "title": "암호화 완료",
-      "subtitle": "암호화된 데이터를 안전하게 저장하세요",
-      "warnings": {
-        "save": "이 데이터를 반드시 안전한 곳에 저장해야 합니다",
-        "loss": "데이터를 분실하면 복구할 수 없습니다"
-      },
-      "formats": {
-        "text": "텍스트 형식",
-        "qr": "QR 코드",
-        "json": "JSON 백업"
-      },
-      "actions": {
-        "copyAll": "전체 복사",
-        "downloadTxt": "텍스트 다운로드",
-        "downloadQr": "QR 이미지 저장"
-      }
-    }
-  },
   "decryption": {
     "title": "복호화 도구",
     "subtitle": "다양한 소스에서 원본 메시지를 복원합니다",
@@ -846,10 +749,63 @@
     },
     "label": {
       "ciphertext": "암호문 / 암호화된 데이터",
-      "closeScanner": "스캐너 닫기"
+      "closeScanner": "스캐너 닫기",
+      "password": "복호화 비밀번호",
+      "failedFiles": "실패한 파일:",
+      "missingParts": "누락된 부분:",
+      "fragmentsFound": "발견된 조각:",
+      "uploadRemaining": "나머지 업로드"
     },
     "button": {
-      "scanStream": "스트림 스캔"
+      "scanStream": "스트림 스캔",
+      "uploadQRShards": "QR 샤드 업로드",
+      "paste": "붙여넣기",
+      "decrypt": "데이터 복호화"
+    },
+    "placeholder": {
+      "ciphertext": "암호문, 암호화 블록 또는 QR 콘텐츠를 여기에 붙여넣으세요...",
+      "password": "암호화에 사용된 비밀번호 입력"
+    },
+    "mode": {
+      "physicalBook": "물리적 / 가상 책",
+      "digitalBook": "디지털 책 (파일)",
+      "onlineBook": "온라인 책 (URL)"
+    },
+    "file": {
+      "title": "책 파일 업로드",
+      "description": "암호화 시 사용한 <strong>정확히 동일한 구텐베르크 TXT 파일</strong>을 업로드하세요.",
+      "loaded": "로드됨: {{size}} KB",
+      "choose": "구텐베르크 TXT 파일 선택...",
+      "browse": "찾아보기",
+      "parsed": "{{count}}개 챕터를 성공적으로 파싱했습니다"
+    },
+    "url": {
+      "title": "책 URL 가져오기",
+      "description": "암호화 시 사용한 <strong>정확히 동일한 구텐베르크 HTML URL</strong>을 입력하세요.",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "가져오기",
+      "loaded": "로드됨: {{length}}자 (해시: {{hash}}...)"
+    },
+    "locate": {
+      "title": "데이터 위치",
+      "description": "데이터가 어느 행에 있습니까?",
+      "row": "행"
+    },
+    "result": {
+      "title": "복원된 데이터 ({{row}}행)",
+      "copy": "복사",
+      "copied": "복사됨!",
+      "empty": "행이 비어 있거나 유효하지 않습니다",
+      "rowAppears": "{{row}}행이 비어 있거나 유효하지 않은 데이터를 포함하는 것 같습니다.",
+      "enterRow": "데이터를 숨긴 행 번호(1-100+)를 입력하여 표시하세요.",
+      "rawPreview": "원시 데이터 미리보기"
+    },
+    "errors": {
+      "incompleteData": "불완전한 데이터: {{current}}/{{total}} 부분을 찾았습니다",
+      "invalidFormat": "(잘못된 형식)",
+      "noQrFound": "(QR 코드를 찾을 수 없음)",
+      "failedToReadFile": "(파일 읽기 실패)",
+      "decryptionFailed": "복호화에 실패했습니다. 비밀번호를 확인하세요."
     },
     "error": {
       "fileMode": "데이터를 복원하려면 원본 책 파일을 업로드하세요.",
@@ -883,7 +839,9 @@
       "extractedContent": "추출된 콘텐츠"
     },
     "placeholder": {
-      "pasteCiphertext": "암호화된 암호문을 여기에 붙여넣으세요..."
+      "pasteCiphertext": "암호화된 암호문을 여기에 붙여넣으세요...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "출력 파일 이름"
     },
     "warning": {
       "title": "중요 경고:",
@@ -956,6 +914,188 @@
       "never": "절대로",
       "line2": "누구와도 공유하지 마세요.",
       "line3": "이 단어들을 잃어버리면 자금은 영원히 사라집니다."
+    },
+    "tooltip": {
+      "pasteClipboard": "클립보드에서 붙여넣기",
+      "hide": "숨기기",
+      "show": "표시",
+      "copyClipboard": "클립보드에 복사"
     }
+  },
+  "installAuth": {
+    "redirecting": "앱 스토어로 리디렉션 중...",
+    "detecting": "기기를 감지 중..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "언어 변경"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "액세스 거부됨. 무단 시도가 기록되었습니다.",
+      "passwordRequired": "비밀번호는 필수입니다",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다",
+      "passwordTooShort": "비밀번호는 8자 이상이어야 합니다",
+      "duressPasswordRequired": "강압 비밀번호는 필수입니다",
+      "duressPasswordSame": "강압 비밀번호는 실제 비밀번호와 같을 수 없습니다"
+    },
+    "duress": {
+      "defaultMessage": "접근이 거부되었습니다. 무단 시도가 기록되었습니다."
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "유효하지 않은 니모닉입니다. 단어를 확인하세요.",
+      "enterCiphertext": "암호문 데이터를 입력하세요",
+      "invalidMode": "유효하지 않은 모드 또는 데이터 누락",
+      "encryptionFailed": "암호화 프로세스가 실패했습니다. 입력을 확인하세요.",
+      "parseFileFailed": "파일 파싱에 실패했습니다. 유효한 텍스트 파일인지 확인하세요.",
+      "invalidUrl": "유효하지 않은 URL",
+      "fetchUrlFailed": "URL 가져오기 실패"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "줄 제거",
+      "generateRandom": "무작위 데이터 생성",
+      "pasteClipboard": "클립보드에서 붙여넣기",
+      "generateMnemonic": "무작위 니모닉 생성"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【CryptoKey 보안 백업】",
+      "ciphertext": "암호문:",
+      "hash": "해시:",
+      "footer": "복호화: https://cryptokey.im",
+      "generated": "생성일: {{date}}",
+      "note": "참고: 복호화하려면 비밀번호 + 행 인덱스가 필요합니다."
+    },
+    "watermark": "https://CryptoKey.im에서 복호화 | {{date}}에 생성됨",
+    "print": {
+      "title": "CryptoKey 보안 백업"
+    },
+    "clipboard": {
+      "labels": "암호문: {{ciphertext}}\\n해시: {{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "완료 중..."
+    },
+    "errors": {
+      "invalidFormat": "(잘못된 형식)",
+      "integrityFailed": "무결성 검사 실패: 재구성된 데이터가 손상되었습니다. 다시 스캔하세요.",
+      "decompressionError": "압축 해제 오류: 잘못된 데이터입니다. 이미지를 다시 업로드하여 명확하고 완전한지 확인하세요.",
+      "decompressionFailed": "압축 해제 실패: {{error}}"
+    },
+    "error": {
+      "generationFailed": "생성 실패",
+      "startProcessing": "처리 시작 중...",
+      "processingImage": "이미지 {{current}}/{{total}} 처리 중..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "시스템 시계 오류가 감지되었습니다. Pro 기능을 계속 사용하려면 시스템 시간을 수정하세요.",
+      "deactivateConfirm": "Real Pro 라이선스를 비활성화하시겠습니까?"
+    }
+  },
+  "mixStepButtons": {
+    "back": "뒤로",
+    "processing": "처리 중...",
+    "encryptGenerate": "암호화 및 생성"
+  },
+  "steganographyExtra": {
+    "successGenerated": "{{count}}개의 샤드 이미지를 성공적으로 생성하고 다운로드했습니다.",
+    "carrierImages": "캐리어 이미지",
+    "strictMatchRequired": "엄격한 일치 필요"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm 성능 벤치마크",
+    "testConfig": "테스트 구성",
+    "algorithm": "알고리즘: Shamir's Secret Sharing (GF(2^8))",
+    "shares": "공유: 총 5개, 임계값 3",
+    "payload": "페이로드: 무작위 32바이트 비밀 + 체크섬",
+    "steganography": "스테가노그래피: 100x100 버퍼에 LSB 임베딩",
+    "running": "테스트 실행 중...",
+    "startBenchmark": "벤치마크 시작 (원시 증거)",
+    "jsTime": "JS 시간",
+    "wasmTime": "Wasm 시간",
+    "fasterSuffix": "{{ratio}}배 빠름",
+    "correctness": "정확성",
+    "verified": "검증됨",
+    "failed": "실패",
+    "waiting": "시작 대기 중..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - 보안 백업",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "벤치마크 시작 중...",
+      "runningJs": "JS 구현 실행 중...",
+      "loadingWasm": "Wasm 모듈 로드 중...",
+      "runningWasm": "Wasm 구현 실행 중..."
+    },
+    "validation": {
+      "pass": "통과",
+      "fail": "실패",
+      "result": "검증 결과: {{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "먼저 인증기를 바인딩하세요",
+    "invalidDataFormat": "잘못된 데이터 형식",
+    "hashMismatch": "해시 불일치",
+    "noValidQr": "유효한 QR 코드를 찾을 수 없습니다",
+    "passwordIncorrect": "모든 저장소 내용에 대한 비밀번호가 올바르지 않습니다",
+    "couldNotReadQr": "QR 코드를 읽을 수 없습니다",
+    "invalidAuthQr": "잘못된 인증 QR 코드",
+    "noSecretInQr": "QR 코드에서 비밀이 발견되지 않았습니다",
+    "authAIncorrect": "인증기 A 코드가 올바르지 않습니다",
+    "authBIncorrect": "인증기 B 코드가 올바르지 않습니다",
+    "decryptCiphertextFailed": "암호문 복호화 실패 (키 A가 잘못되었을 수 있음)",
+    "decryptContextFailedA": "컨텍스트 복호화 실패 (키 B가 잘못되었을 수 있음)",
+    "decryptMnemonicFailed": "니모닉 복호화 실패 (키 A가 잘못되었을 수 있음)",
+    "decryptContextFailedB": "컨텍스트 복호화 실패 (키 B가 잘못되었을 수 있음)",
+    "shardIntegrityError": "샤드 무결성 오류: 파일 {{filename}}이(가) 다른 세트에 속합니다. 모든 파일이 동일한 암호화 세션에서 나온 것인지 확인하세요.",
+    "shareApiNotSupported": "공유 API가 지원되지 않습니다",
+    "canvasContext": "캔버스 컨텍스트를 가져올 수 없습니다",
+    "invalidShareType": "jsSplit이 잘못된 유형을 반환했습니다: {{type}}",
+    "wasmLoadFailed": "Wasm 모듈 로드 실패"
   }
 }

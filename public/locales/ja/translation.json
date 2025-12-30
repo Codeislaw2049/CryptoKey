@@ -39,6 +39,42 @@
   "pricing": {
     "title": "シンプルで透明性の高い料金設定",
     "subtitle": "ニーズに合ったプランをお選びください",
+    "badge": {
+      "bestValue": "最もお得"
+    },
+    "button": {
+      "contactSales": "営業に連絡",
+      "subscribeNow": "今すぐ購読",
+      "extendLicense": "ライセンス延長"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "即時アクセス",
+        "desc": "お支払い後、すぐにライセンスキーとTOTPセットアップを取得できます。待ち時間なし。"
+      },
+      "globalPayments": {
+        "title": "グローバル決済",
+        "desc": "BSC、TRX、ETHネットワークを介したグローバルUSDT決済をサポート。",
+        "descChina": "更新をお待ちください。"
+      },
+      "securePrivate": {
+        "title": "安全とプライバシー",
+        "desc": "個人データは保持しません。セキュリティが最優先事項です。"
+      },
+      "refundPolicy": {
+        "title": "返金ポリシー",
+        "desc": "厳格な返金不可ポリシー。ライセンスキーが発行されると、すべての販売は最終的なものになります。"
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.imはセキュリティツールプロバイダーです。財務アドバイス、暗号通貨取引、または保管サービスは提供していません。価格は米ドル建てです。所在地によっては付加価値税が適用される場合があります。"
+    },
+    "china": {
+      "hardwareOnly": "ハードウェア認証のみ",
+      "description": "当社のハードウェア製品CryptoKeyを購入してご利用ください、<1/>オンライン利用方法は続報をお待ちください...",
+      "contactSales": "ハードウェア購入は営業に連絡",
+      "backToHome": "ホームに戻る"
+    },
     "plans": {
       "price_weekly_trial": {
         "name": "24時間パス",
@@ -143,66 +179,16 @@
     }
   },
   "footer": {
-    "description": "軍事レベルのステガノグラフィ＆暗号化ツール（AES-256-GCM + ChaCha20-Poly1305）。\n完全にブラウザ内で実行されます。サーバーにデータは送信されません。",
-    "links": {
-      "pricing": "料金",
-      "terms": "利用規約",
-      "source": "ソースコード",
-      "share": "共有"
-    },
-    "copyright": "© {{year}} - {{nextYear}} CryptoKey.im. All Rights Reserved.",
-    "license": "商用ライセンス通知：本ソフトウェアには、国際著作権法で保護された独自のWasm暗号化モジュールが含まれています。公開ソースコードは、CC-BY-NC-ND 4.0ライセンスの下でセキュリティ監査目的でのみ提供されています。コアアルゴリズムの無許可の商用利用、変更、または再配布は固く禁じられています。"
+    "linkCopied": "リンクをクリップボードにコピーしました！",
+    "forceUpdate": "強制更新 / キャッシュクリア",
+    "publicRepo": "公開リポジトリ（監査）",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "共有"
   },
   "licenseManager": {
-    "status": {
-      "active": "有効",
-      "expired": "期限切れ",
-      "expiresIn": "有効期限:",
-      "proActive": "PRO有効",
-      "proLicenseActive": "Proライセンス有効",
-      "hardwareKeyActive": "ハードウェアキー有効",
-      "tempPro": "一時的PRO",
-      "activatePro": "PROを有効化",
-      "unlockPro": "Pro機能をロック解除",
-      "user": "ユーザー"
-    },
-    "login": {
-      "tab": "ログイン",
-      "nickname": "ニックネーム",
-      "nicknamePlaceholder": "ニックネームを入力",
-      "code": "認証コード",
-      "codePlaceholder": "000 000",
-      "button": "Pro機能をロック解除",
-      "success": "ログイン成功！Pro機能が有効化されました。",
-      "error": "ログイン失敗。コードまたはニックネームが無効です。",
-      "inputError": "ニックネームとコードを入力してください"
-    },
-    "register": {
-      "tab": "登録",
-      "chooseNickname": "ニックネームを選択",
-      "nicknamePlaceholder": "3-20文字",
-      "note": "このニックネームは2FAシークレットの生成に使用されます。",
-      "button": "認証キーを取得",
-      "scanTitle": "認証アプリでスキャン",
-      "scanNote": "スマホでスキャンしてシステムを自動検出しダウンロード",
-      "success": "ニックネーム登録完了！認証アプリを連携してください。",
-      "manualSuccess": "登録完了！シークレットを手動で入力してください。",
-      "errorNickname": "ニックネームを入力してください",
-      "errorFormat": "ニックネームは3-20文字である必要があります（A-Z, 0-9, _）",
-      "errorTaken": "ニックネーム \"{{nickname}}\" は既に使用されています。"
-    },
-    "authApp": {
-      "title": "認証アプリ",
-      "download": "ダウンロード",
-      "google": "Google Auth",
-      "microsoft": "Microsoft Auth"
-    },
-    "modal": {
-      "title": "Proライセンス",
-      "subtitle": "高度な暗号化機能をロック解除",
-      "logout": "ログアウト"
-    },
-    "networkError": "ネットワークエラー: {{error}}"
+    "desktopAuthQr": "デスクトップ認証QR",
+    "registrationFailed": "登録に失敗しました"
   },
   "paymentModal": {
     "title": "USDT支払い",
@@ -245,14 +231,19 @@
         "verifying": "検証中...",
         "errorTx": "トランザクションハッシュ (TXID) が必要です",
         "errorValidation": {
-            "wallet": "これはウォレットアドレスのようです。TXIDではありません。TXIDを貼り付けてください。",
-            "tron": "無効なTRON TXIDです。64文字の16進数文字列である必要があります。",
-            "eth": "無効な{{chain}} TXIDです。0x...で始まり、64文字の16進数である必要があります。"
+          "wallet": "これはウォレットアドレスのようです。TXIDではありません。TXIDを貼り付けてください。",
+          "tron": "無効なTRON TXIDです。64文字の16進数文字列である必要があります。",
+          "eth": "無効な{{chain}} TXIDです。0x...で始まり、64文字の16進数である必要があります。"
         },
         "clipboardError": "クリップボードの読み取りに失敗しました。手動で入力してください。",
         "copied": "リンクをクリップボードにコピーしました！"
       },
       "verification": {
+        "title": "トランザクション確認中...",
+        "description": "ブロックチェーン上でお支払いを確認しています。通常1〜3分かかります。",
+        "checkingTxid": "トランザクションIDを確認中：",
+        "safeToClose": "このウィンドウを閉じても安全です。",
+        "autoActivation": "トランザクションがチェーン上で確認されると、Proライセンスが自動的にアクティベートされます。",
         "verifying": "支払いを検証中...",
         "success": "支払い確認済み！",
         "failed": "支払いの検証に失敗しました。トランザクションを確認してください。"
@@ -275,7 +266,10 @@
     "shardCount": "シャード {{current}} / {{total}}",
     "saveAll": "全画像を保存",
     "saveImage": "画像を保存",
-    "close": "閉じる"
+    "close": "閉じる",
+    "speedSlow": "低速 (2 FPS)",
+    "speedFast": "高速 (4 FPS)",
+    "speedTurbo": "超高速 (10 FPS)"
   },
   "qrScanner": {
     "error": {
@@ -368,29 +362,14 @@
     "bookCipherNote": "注意: これらはブック暗号のインデックスのようです..."
   },
   "integrityCheck": {
-    "devModeWarning": "完全性チェックは本番ビルドでのみ利用可能です。",
-    "devModeDesc": "開発モードはホットリロードスクリプトを使用しており、リリースビルドと照合できません。",
-    "log": {
-      "receivedChecksums": "✅ GitHubから公式チェックサムを受信しました",
-      "corsBlocked": "⚠️ 自動検証がブラウザセキュリティ（CORS）によってブロックされました。",
-      "corsReason1": "これはブラウザのセキュリティ機能であり、セキュリティ上の欠陥ではありません。",
-      "corsReason2": "GitHubリリースでハッシュを比較することで手動で検証できます。",
-      "corsReason3": "または、ブラウザ拡張機能を使用してこの検証のためにCORSをバイパスできます。",
-      "fileVerified": "✅ {{path}}: 検証済み",
-      "hashMismatch": "❌ {{path}}: ハッシュ不一致！",
-      "noChecksum": "❓ {{path}}: リリースレコードにチェックサムが見つかりません"
-    },
-    "buttonLabel": "ビルド完全性を検証",
-    "modalTitle": "ビルド完全性チェック",
-    "calculating": "ハッシュを計算中...",
-    "connectionError": "GitHubに接続できませんでした。インターネット接続を確認してください。",
-    "manual": {
-      "title": "手動で検証する方法:",
-      "step1": "1. GitHubリリースページにアクセスします（下記リンク）。",
-      "step2": "2. 公式チェックサムファイル（SHA256SUMS.txt）をダウンロードします。",
-      "step3": "3. 上記のハッシュと比較します。"
-    },
-    "viewRelease": "GitHubでリリースを表示"
+    "title": "このアプリのコードがGitHub上のソースコードと一致することを検証する",
+    "fetching": "{{version}}のリリース署名を取得中...",
+    "verifying": "{{path}}を検証中...",
+    "failedToLoad": "読み込みに失敗しました",
+    "info": "ℹ️ {{path}}",
+    "hash": "ハッシュ: {{hash}}",
+    "couldNotVerify": "⚠️ {{path}}を検証できませんでした: {{error}}",
+    "criticalError": "重大なエラー: {{error}}"
   },
   "militaryBadge": {
     "title": "軍用レベルのセキュリティ",
@@ -568,15 +547,33 @@
         "desc": "機密データを通常の本のテキスト（Gutenberg/物理）の中に隠します。攻撃者は無害なページ/行/単語のインデックスのみを見ることができ、暗号文は見えません。"
       },
       "dual": {
-        "title": "デュアル認証保護",
-        "desc": "信頼を2つのデバイスに分割します。ニーモニックを復号化するには、両方の認証シークレット（Key AとKey B）が必要です。単一障害点はありません。"
+        "title": "デュアルファクター & シャーディング",
+        "desc": "新しいデュアル認証モードは、暗号化を2つの別々のキー（AとB）間に分割し、冗長性のためにQRシャーディングを追加します。1つのキーが侵害されても、データは安全なままです。"
       },
-      "client": {
-        "title": "100% クライアントサイド",
-        "desc": "データがデバイスから離れることはありません。サーバーもデータベースもありません。インターネット接続を切断しても、オフラインで完璧に動作します。"
+      "zk": {
+        "title": "ゼロ知識",
+        "desc": "パスワードやデータを見ることはありません。すべてがブラウザ内でローカルに行われます。サーバーにデータが送信されることはありません。"
+      },
+      "noPersistence": {
+        "title": "永続化なし",
+        "desc": "Cookie、ローカルストレージ、サーバーデータベースを使用しません。デジタルブック（TXT）はローカルで処理され、アップロードされることはありません。"
+      },
+      "antiTheft": {
+        "title": "盗難防止保護",
+        "desc": "入力フィールドは自動補完とキャッシングを防止します。離れるときにメモリが積極的にクリアされます。公共のコンピューターでも安全です。"
       }
     },
-    "close": "閉じる"
+    "audit": {
+      "title": "技術監査",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "クライアント側のみ",
+        "noUploads": "アップロードなし（ファイルモード）",
+        "noLog": "ログなしポリシー",
+        "wipe": "メモリワイプ"
+      }
+    }
   },
   "wizard": {
     "modeSelection": {
@@ -611,7 +608,12 @@
       },
       "url": {
         "title": "オンラインブック (URL)",
-        "desc": "永続的なURLをキーソースとして使用します。"
+        "desc": "永続的なURLをキーソースとして使用します。",
+        "features": {
+          "remote": "リモートコンテンツ",
+          "convenient": "便利なアクセス",
+          "dynamic": "動的参照"
+        }
       }
     },
     "inputStep": {
@@ -644,13 +646,22 @@
         "proxy": {
           "title": "ローカルプロキシ有効",
           "desc": "開発用にローカルプロキシを使用しています。"
-        }
+        },
+        "success": "{{count}}文字を読み込みました",
+        "recommended": "推奨書籍",
+        "clickToFill": "クリックして入力"
       },
       "general": {
-        "addLine": "新しい行を追加"
+        "placeholder": "データ行を入力...",
+        "addLine": "新しい行を追加",
+        "generate": "ランダムデータ"
       },
       "mnemonic": {
-        "paste": "貼り付け"
+        "label": "ニーモニックフレーズ",
+        "required": "（必須）",
+        "placeholder": "ニーモニックフレーズを入力してください...",
+        "paste": "貼り付け",
+        "generate": "生成"
       }
     },
     "mixStep": {
@@ -738,10 +749,63 @@
     },
     "label": {
       "ciphertext": "暗号文 / 暗号化データ",
-      "closeScanner": "スキャナーを閉じる"
+      "closeScanner": "スキャナーを閉じる",
+      "password": "復号化パスワード",
+      "failedFiles": "失敗したファイル：",
+      "missingParts": "不足部分：",
+      "fragmentsFound": "見つかったフラグメント：",
+      "uploadRemaining": "残りをアップロード"
     },
     "button": {
-      "scanStream": "ストリームをスキャン"
+      "scanStream": "ストリームをスキャン",
+      "uploadQRShards": "QRシャードをアップロード",
+      "paste": "貼り付け",
+      "decrypt": "データを復号化"
+    },
+    "placeholder": {
+      "ciphertext": "暗号文、暗号化ブロック、またはQRコンテンツをここに貼り付けてください...",
+      "password": "暗号化に使用したパスワードを入力"
+    },
+    "mode": {
+      "physicalBook": "物理的 / 仮想書籍",
+      "digitalBook": "デジタル書籍（ファイル）",
+      "onlineBook": "オンライン書籍（URL）"
+    },
+    "file": {
+      "title": "書籍ファイルをアップロード",
+      "description": "暗号化時に使用した<strong>まったく同じグーテンベルクTXTファイル</strong>をアップロードしてください。",
+      "loaded": "読み込み済み：{{size}} KB",
+      "choose": "グーテンベルクTXTファイルを選択...",
+      "browse": "参照",
+      "parsed": "{{count}}章を正常に解析しました"
+    },
+    "url": {
+      "title": "書籍URLを取得",
+      "description": "暗号化時に使用した<strong>まったく同じグーテンベルクHTML URL</strong>を入力してください。",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "取得",
+      "loaded": "読み込み済み：{{length}}文字（ハッシュ：{{hash}}...）"
+    },
+    "locate": {
+      "title": "データの位置特定",
+      "description": "データはどの行にありますか？",
+      "row": "行"
+    },
+    "result": {
+      "title": "復元されたデータ（{{row}}行目）",
+      "copy": "コピー",
+      "copied": "コピーしました！",
+      "empty": "行が空または無効です",
+      "rowAppears": "{{row}}行目は空または無効なデータを含んでいるようです。",
+      "enterRow": "データを隠した行番号（1-100+）を入力して表示してください。",
+      "rawPreview": "生データプレビュー"
+    },
+    "errors": {
+      "incompleteData": "不完全なデータ：{{current}}/{{total}}パーツが見つかりました",
+      "invalidFormat": "（無効な形式）",
+      "noQrFound": "（QRコードが見つかりません）",
+      "failedToReadFile": "（ファイルの読み取りに失敗しました）",
+      "decryptionFailed": "復号化に失敗しました。パスワードを確認してください。"
     },
     "error": {
       "fileMode": "データを復元するには元の本ファイルをアップロードしてください。",
@@ -775,7 +839,9 @@
       "extractedContent": "抽出されたコンテンツ"
     },
     "placeholder": {
-      "pasteCiphertext": "暗号化された暗号文をここに貼り付けてください..."
+      "pasteCiphertext": "暗号化された暗号文をここに貼り付けてください...",
+      "shardFilename": "share-{{index}}.png",
+      "outputFilename": "出力ファイル名"
     },
     "warning": {
       "title": "重要な警告:",
@@ -848,6 +914,188 @@
       "never": "絶対に",
       "line2": "誰にも共有しないでください。",
       "line3": "これらの単語を紛失すると、資金は永久に失われます。"
+    },
+    "tooltip": {
+      "pasteClipboard": "クリップボードから貼り付け",
+      "hide": "非表示",
+      "show": "表示",
+      "copyClipboard": "クリップボードにコピー"
     }
+  },
+  "installAuth": {
+    "redirecting": "App Storeにリダイレクト中...",
+    "detecting": "デバイスを検出中..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "言語を変更"
+  },
+  "mixStep": {
+    "error": {
+      "accessDenied": "アクセス拒否。不正なアクセス試行がログに記録されました。",
+      "passwordRequired": "パスワードは必須です",
+      "passwordMismatch": "パスワードが一致しません",
+      "passwordTooShort": "パスワードは8文字以上である必要があります",
+      "duressPasswordRequired": "脅迫用パスワードは必須です",
+      "duressPasswordSame": "脅迫用パスワードは実際のパスワードと同じにすることはできません"
+    },
+    "duress": {
+      "defaultMessage": "アクセスが拒否されました。不正なアクセス試行が記録されました。"
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "無効なニーモニックフレーズです。単語を確認してください。",
+      "enterCiphertext": "暗号文データを入力してください",
+      "invalidMode": "無効なモードまたはデータがありません",
+      "encryptionFailed": "暗号化処理に失敗しました。入力を確認してください。",
+      "parseFileFailed": "ファイルの解析に失敗しました。有効なテキストファイルであることを確認してください。",
+      "invalidUrl": "無効なURL",
+      "fetchUrlFailed": "URLの取得に失敗しました"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "行を削除",
+      "generateRandom": "ランダムデータを生成",
+      "pasteClipboard": "クリップボードから貼り付け",
+      "generateMnemonic": "ランダムなニーモニックを生成"
+    }
+  },
+  "resultStep": {
+    "fileContent": {
+      "header": "【CryptoKey セキュアバックアップ】",
+      "ciphertext": "暗号文：",
+      "hash": "ハッシュ：",
+      "footer": "復号化: https://cryptokey.im",
+      "generated": "生成日時：{{date}}",
+      "note": "注意：復号化にはパスワード + 行インデックスが必要です。"
+    },
+    "watermark": "https://CryptoKey.imで復号化 | {{date}}に生成",
+    "print": {
+      "title": "CryptoKey セキュアバックアップ"
+    },
+    "clipboard": {
+      "labels": "暗号文：{{ciphertext}}\\nハッシュ：{{hash}}"
+    }
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:Ciphertext",
+      "passwordLine": "CryptoKey:PasswordLine",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "完了中..."
+    },
+    "errors": {
+      "invalidFormat": "（無効な形式）",
+      "integrityFailed": "整合性チェックに失敗しました：再構成されたデータが破損しています。再スキャンしてください。",
+      "decompressionError": "解凍エラー：不正なデータです。画像を再アップロードして、明確で完全であることを確認してください。",
+      "decompressionFailed": "解凍に失敗しました：{{error}}"
+    },
+    "error": {
+      "generationFailed": "生成に失敗しました",
+      "startProcessing": "処理を開始しています...",
+      "processingImage": "画像{{current}}/{{total}}を処理中..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "システムクロックエラーが検出されました。Pro機能を引き続き使用するには、システム時刻を修正してください。",
+      "deactivateConfirm": "Real Proライセンスを無効化しますか？"
+    }
+  },
+  "mixStepButtons": {
+    "back": "戻る",
+    "processing": "処理中...",
+    "encryptGenerate": "暗号化して生成"
+  },
+  "steganographyExtra": {
+    "successGenerated": "{{count}} 個のシャード画像を正常に生成およびダウンロードしました。",
+    "carrierImages": "キャリア画像",
+    "strictMatchRequired": "厳密な一致が必要"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm パフォーマンスベンチマーク",
+    "testConfig": "テスト構成",
+    "algorithm": "アルゴリズム：Shamir's Secret Sharing (GF(2^8))",
+    "shares": "シェア：合計 5、しきい値 3",
+    "payload": "ペイロード：ランダム 32 バイトシークレット + チェックサム",
+    "steganography": "ステガノグラフィ：100x100 バッファへの LSB 埋め込み",
+    "running": "テストを実行中...",
+    "startBenchmark": "ベンチマーク開始（生の証拠）",
+    "jsTime": "JS 時間",
+    "wasmTime": "Wasm 時間",
+    "fasterSuffix": "{{ratio}} 倍高速",
+    "correctness": "正確性",
+    "verified": "検証済み",
+    "failed": "失敗",
+    "waiting": "開始を待機中..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - セキュアバックアップ",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "BNB Smart Chain",
+      "trx": "TRON",
+      "eth": "Ethereum"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "ベンチマークを開始しています...",
+      "runningJs": "JS実装を実行中...",
+      "loadingWasm": "Wasmモジュールを読み込み中...",
+      "runningWasm": "Wasm実装を実行中..."
+    },
+    "validation": {
+      "pass": "合格",
+      "fail": "不合格",
+      "result": "検証結果：{{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "まず認証機器をバインドしてください",
+    "invalidDataFormat": "無効なデータ形式",
+    "hashMismatch": "ハッシュが一致しません",
+    "noValidQr": "有効なQRコードが見つかりません",
+    "passwordIncorrect": "いずれのボールト内容のパスワードも正しくありません",
+    "couldNotReadQr": "QRコードを読み取れませんでした",
+    "invalidAuthQr": "無効な認証QRコード",
+    "noSecretInQr": "QRコードにシークレットが見つかりません",
+    "authAIncorrect": "認証機器 A のコードが正しくありません",
+    "authBIncorrect": "認証機器 B のコードが正しくありません",
+    "decryptCiphertextFailed": "暗号文の復号化に失敗しました（キー A が間違っている可能性があります）",
+    "decryptContextFailedA": "コンテキストの復号化に失敗しました（キー B が間違っている可能性があります）",
+    "decryptMnemonicFailed": "ニーモニックの復号化に失敗しました（キー A が間違っている可能性があります）",
+    "decryptContextFailedB": "コンテキストの復号化に失敗しました（キー B が間違っている可能性があります）",
+    "shardIntegrityError": "シャードの整合性エラー：ファイル {{filename}} は別のセットに属しています。すべてのファイルが同じ暗号化セッションのものであることを確認してください。",
+    "shareApiNotSupported": "共有APIがサポートされていません",
+    "canvasContext": "キャンバスコンテキストを取得できませんでした",
+    "invalidShareType": "jsSplitが無効な型を返しました：{{type}}",
+    "wasmLoadFailed": "Wasmモジュールの読み込みに失敗しました"
   }
 }

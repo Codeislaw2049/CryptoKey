@@ -158,7 +158,7 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
     try {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d', { willReadFrequently: true });
-      if (!ctx) throw new Error("Could not get canvas context");
+      if (!ctx) throw new Error(t('errors.canvasContext'));
 
       if (isSharded) {
           // Generate Shards
@@ -202,7 +202,7 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
               downloadImage(canvas, outputFilename);
           }
           
-          setResult(`Successfully generated and downloaded ${shares.length} shard images.`);
+          setResult(t('steganographyExtra.successGenerated', {count: shares.length}));
       } else {
           // Standard Single Image
           const carrier = hideImages[0];
@@ -233,7 +233,7 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
     try {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
-      if (!ctx) throw new Error(t('steganography.error.canvasContext'));
+      if (!ctx) throw new Error(t('errors.canvasContext'));
 
       const extractedData: string[] = [];
 
@@ -426,15 +426,15 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
               ) : mode === 'hide' && hideImages.length > 0 ? (
                 <div className="w-full space-y-4">
                     <div className="flex justify-between items-center">
-                        <p className="text-sm text-slate-400">{hideImages.length} Carrier Image(s)</p>
-                        <button 
+                        <p className="text-sm text-slate-400">{hideImages.length} {t('steganographyExtra.carrierImages')}</p>
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 setHideImages([]);
                             }}
                             className="text-xs text-red-400 hover:text-red-300"
                         >
-                            Clear All
+                            {t('steganography.button.clearAll')}
                         </button>
                     </div>
                     
@@ -457,18 +457,18 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                                             <p className="text-xs text-slate-500 mb-1">Source: {img.file.name}</p>
                                             <div className="flex items-center gap-2">
                                                 <FileText size={14} className="text-indigo-400" />
-                                                <input 
-                                                    type="text" 
+                                                <input
+                                                    type="text"
                                                     value={shardFilenames[i] || ''}
                                                     onChange={(e) => {
                                                         const newNames = [...shardFilenames];
                                                         newNames[i] = e.target.value;
                                                         setShardFilenames(newNames);
                                                     }}
-                                                    placeholder={`share-${i+1}.png`}
+                                                    placeholder={t('steganography.placeholder.shardFilename', { index: i+1 })}
                                                     className={`bg-slate-900 border rounded px-2 py-1 text-xs text-slate-200 w-full focus:ring-1 outline-none ${
-                                                        useStrictFilename 
-                                                            ? 'border-amber-500/50 focus:ring-amber-500' 
+                                                        useStrictFilename
+                                                            ? 'border-amber-500/50 focus:ring-amber-500'
                                                             : 'border-slate-600 focus:ring-indigo-500'
                                                     }`}
                                                 />
@@ -476,7 +476,7 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                                             {useStrictFilename && (
                                                 <p className="text-[10px] text-amber-500 mt-1 flex items-center gap-1">
                                                     <Lock size={10} />
-                                                    Strict Match Required
+                                                    {t('steganographyExtra.strictMatchRequired')}
                                                 </p>
                                             )}
                                         </div>
@@ -492,15 +492,15 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                                         <p className="text-xs text-slate-500 mb-1">{t('steganography.label.original', { name: img.file.name })}</p>
                                         <div className="flex items-center gap-2">
                                             <FileText size={14} className="text-indigo-400" />
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 value={img.customName}
                                                 onChange={(e) => {
                                                     const newImages = [...hideImages];
                                                     newImages[i].customName = e.target.value;
                                                     setHideImages(newImages);
                                                 }}
-                                                placeholder="Output Filename"
+                                                placeholder={t('steganography.placeholder.outputFilename')}
                                                 className="bg-slate-900 border border-slate-600 rounded px-2 py-1 text-xs text-slate-200 w-full focus:ring-1 focus:ring-indigo-500 outline-none"
                                             />
                                         </div>
@@ -656,15 +656,15 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
                       onClick={copyToClipboard}
                       disabled={!result}
                       className={`text-xs flex items-center gap-1 transition-colors ${
-                        copyFeedback 
-                          ? 'text-green-400' 
-                          : !result 
-                             ? 'text-slate-600 cursor-not-allowed' 
+                        copyFeedback
+                          ? 'text-green-400'
+                          : !result
+                             ? 'text-slate-600 cursor-not-allowed'
                              : 'text-indigo-400 hover:text-indigo-300'
                       }`}
                     >
                       {copyFeedback ? <CheckCircle2 size={12} /> : <Copy size={12} />}
-                      {copyFeedback ? "Copied!" : "Copy"}
+                      {copyFeedback ? t('steganography.button.copied') : t('steganography.button.copy')}
                     </button>
                  </label>
                  {result && mode === 'extract' ? (
@@ -722,14 +722,12 @@ export function SteganographyTool({ initialSecret, onExtract: _onExtract }: Steg
       <div className="mt-8 p-4 bg-slate-800/50 rounded-xl text-sm text-slate-400 border border-slate-700/50">
         <h4 className="font-bold text-slate-200 mb-2 flex items-center gap-2">
           <ImageIcon size={16} />
-          About Steganography
+          {t('steganography.about.title')}
         </h4>
         <p>
-          This tool hides your data in the least significant bits (LSB) of the image pixels. 
-          The resulting image looks identical to the human eye but contains your secret message.
+          {t('steganography.about.text')}
           <br/><br/>
-          <span className="text-yellow-400">Note:</span> Do not compress the downloaded image (e.g., sending via WhatsApp/Messenger often compresses images). 
-          Always share as a file (Document) or keep strictly local.
+          <span className="text-yellow-400">{t('steganography.about.noteTitle')}</span> {t('steganography.about.noteText')}
         </p>
       </div>
     </div>

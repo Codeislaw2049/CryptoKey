@@ -8,6 +8,8 @@ import QRCode from 'qrcode';
 const DesktopQRWrapper = ({ url }: { url: string }) => {
     const [dataUrl, setDataUrl] = useState<string>('');
     
+    const { t } = useTranslation();
+
     useEffect(() => {
         if (!url) return;
         QRCode.toDataURL(url, { width: 150, margin: 1 })
@@ -17,7 +19,7 @@ const DesktopQRWrapper = ({ url }: { url: string }) => {
 
     if (!dataUrl) return <div className="w-32 h-32 flex items-center justify-center"><Loader2 className="animate-spin text-slate-400" /></div>;
 
-    return <img src={dataUrl} alt="Desktop Auth QR" className="w-32 h-32" />;
+    return <img src={dataUrl} alt={t('licenseManager.desktopAuthQr')} className="w-32 h-32" />;
 };
 
 export const LicenseManager = () => {
@@ -137,7 +139,7 @@ export const LicenseManager = () => {
             }
         } else {
             // Enhanced error handling
-            const errMsg = response?.error || 'Registration failed';
+            const errMsg = response?.error || t('licenseManager.registrationFailed');
             if (errMsg.toLowerCase().includes('taken') || errMsg.toLowerCase().includes('exist')) {
                  setError(t('licenseManager.register.errorTaken', { nickname }));
             } else {
@@ -437,21 +439,22 @@ export const LicenseManager = () => {
                              </>
                          ) : (
                              <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-center animate-in zoom-in duration-300">
-                                 <h3 className="text-sm font-bold text-white mb-2">Scan with Authenticator App</h3>
+                                 <h3 className="text-sm font-bold text-white mb-2">{t('licenseManager.register.scanWithAuth')}</h3>
                                  <div className="bg-white p-2 rounded-lg inline-block mb-3">
                                     {qrCodeUrl ? (
                                        <img src={qrCodeUrl} alt="TOTP QR" className="w-32 h-32" />
                                     ) : (
-                                       <div className="w-32 h-32 flex items-center justify-center text-black text-xs">Loading QR...</div>
+                                       <div className="w-32 h-32 flex items-center justify-center text-black text-xs">{t('licenseManager.register.loadingQR')}</div>
                                     )}
                                 </div>
 
                                 <div className="mb-4">
+                                    <p className="text-[10px] text-slate-400 font-bold mb-2 uppercase tracking-wider text-center">{t('licenseManager.authApp.title')}</p>
                                     <AuthenticatorLinks />
                                 </div>
                                 
                                 <div className="text-left bg-slate-900 p-2 rounded border border-slate-800 mb-3">
-                                    <p className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Manual Entry Key</p>
+                                    <p className="text-[10px] text-slate-500 mb-1 uppercase font-bold">{t('licenseManager.register.manualEntry')}</p>
                                     <div className="flex items-center gap-2">
                                         <code className="flex-1 font-mono text-xs text-amber-400 break-all">{registerData.secret}</code>
                                         <button onClick={() => copyToClipboard(registerData.secret)} className="text-slate-400 hover:text-white">
@@ -460,16 +463,16 @@ export const LicenseManager = () => {
                                     </div>
                                  </div>
 
-                                 <Button 
-                                    size="sm" 
-                                    className="w-full bg-green-600 hover:bg-green-500 text-white" 
+                                 <Button
+                                    size="sm"
+                                    className="w-full bg-green-600 hover:bg-green-500 text-white"
                                     onClick={() => {
                                         setRegisterData(null);
                                         setMode('login');
-                                        setSuccess('Key Saved! Please Login now.');
+                                        setSuccess(t('licenseManager.register.keySaved'));
                                     }}
                                  >
-                                     I Have Saved It, Go to Login
+                                     {t('licenseManager.register.savedGoLogin')}
                                  </Button>
                              </div>
                          )}

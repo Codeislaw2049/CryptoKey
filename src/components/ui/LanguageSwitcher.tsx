@@ -3,16 +3,24 @@ import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: 'zh', label: '简体中文' },
-    { code: 'zh-TW', label: '繁体中文' },
-    { code: 'en', label: 'English' },
-    { code: 'ja', label: '日本語' },
-    { code: 'ko', label: '한국어' },
+    { code: 'en', label: t('languages.en') },
+    { code: 'zh', label: t('languages.zh') },
+    { code: 'zh-TW', label: t('languages.zhTW') },
+    { code: 'ja', label: t('languages.ja') },
+    { code: 'ko', label: t('languages.ko') },
+    { code: 'hi', label: t('languages.hi') },
+    { code: 'vi', label: t('languages.vi') },
+    { code: 'tr', label: t('languages.tr') },
+    { code: 'pt', label: t('languages.pt') },
+    { code: 'id', label: t('languages.id') },
+    { code: 'fr', label: t('languages.fr') },
+    { code: 'de', label: t('languages.de') },
+    { code: 'es', label: t('languages.es') },
   ];
 
   // Close dropdown when clicking outside
@@ -28,7 +36,7 @@ export const LanguageSwitcher = () => {
 
   const getCurrentLangLabel = () => {
     const current = languages.find(l => i18n.language === l.code);
-    return current ? current.label : 'English';
+    return current ? current.label : t('languages.en');
   };
 
   const handleLanguageChange = (langCode: string) => {
@@ -42,7 +50,7 @@ export const LanguageSwitcher = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 p-2 md:px-3 md:py-1.5 rounded-full bg-slate-900/80 border border-slate-700 hover:border-primary/50 backdrop-blur-sm transition-all hover:bg-slate-800 text-slate-300 hover:text-white group"
-        title="Change Language"
+        title={t('languageSwitcher.changeLanguage')}
       >
         <Globe size={16} className="text-primary group-hover:rotate-12 transition-transform" />
         <span className="text-xs font-medium hidden md:block">{getCurrentLangLabel()}</span>

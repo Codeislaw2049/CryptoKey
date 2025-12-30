@@ -24,15 +24,15 @@ const OFFICIAL_WALLETS: Record<Chain, string> = {
   ETH: '0xfbaa3b973faf78f7c8b736a8a923773b4f332d36'
 };
 
-const CHAIN_INFO: Record<Chain, { name: string; standard: string; color: string }> = {
-  BSC: { name: 'BNB Smart Chain', standard: 'BEP20', color: 'text-yellow-400' },
-  TRX: { name: 'TRON', standard: 'TRC20', color: 'text-red-400' },
-  ETH: { name: 'Ethereum', standard: 'ERC20', color: 'text-blue-400' }
-};
-
 export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
   const { userNickname: nickname } = useLicense();
   const { t } = useTranslation();
+
+  const CHAIN_INFO: Record<Chain, { name: string; standard: string; color: string }> = {
+    BSC: { name: t('payment.chains.bsc'), standard: t('payment.standards.bep20'), color: 'text-yellow-400' },
+    TRX: { name: t('payment.chains.trx'), standard: t('payment.standards.trc20'), color: 'text-red-400' },
+    ETH: { name: t('payment.chains.eth'), standard: t('payment.standards.erc20'), color: 'text-blue-400' }
+  };
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [selectedChain, setSelectedChain] = useState<Chain | null>(null);
 
@@ -308,7 +308,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
           {step === 2 && (
             <div className="space-y-6 animate-in slide-in-from-right-4">
               <div className="space-y-4">
-                <label className="text-sm text-slate-400 block">Select Payment Network</label>
+                <label className="text-sm text-slate-400 block">{t('paymentModal.steps.network.title')}</label>
                 <div className="grid grid-cols-1 gap-3">
                   {(Object.keys(CHAIN_INFO) as Chain[]).map((chain) => (
                     <button
@@ -355,7 +355,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
           {step === 3 && selectedChain && (
             <div className="space-y-6 animate-in slide-in-from-right-4">
               <div className="text-center space-y-2">
-                <p className="text-slate-400 text-sm">Please send exactly</p>
+                <p className="text-slate-400 text-sm">{t('paymentModal.steps.payment.instruction')}</p>
                 <div className="text-3xl font-bold text-white">{plan.price}</div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-xs font-mono text-slate-300">
                   Network: {CHAIN_INFO[selectedChain].name} ({CHAIN_INFO[selectedChain].standard})
@@ -366,9 +366,9 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                 <div className="flex justify-center bg-white p-4 rounded-lg">
                   <QRCodeSVG value={OFFICIAL_WALLETS[selectedChain]} size={160} />
                 </div>
-                
+
                 <div className="space-y-2">
-                  <label className="text-xs text-slate-500 uppercase font-bold tracking-wider">Official Wallet Address</label>
+                  <label className="text-xs text-slate-500 uppercase font-bold tracking-wider">{t('paymentModal.steps.payment.walletLabel')}</label>
                   <div className="flex gap-2">
                     <code className="flex-1 bg-black/30 p-3 rounded-lg text-xs font-mono text-slate-300 break-all border border-slate-700/50">
                       {OFFICIAL_WALLETS[selectedChain]}
@@ -386,7 +386,7 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
               <div className="bg-amber-500/10 border border-amber-500/20 p-4 rounded-lg text-sm text-amber-200 flex gap-3">
                 <AlertTriangle className="shrink-0" size={20} />
                 <div className="space-y-1">
-                   <p>Ensure you are sending USDT on the <strong>{selectedChain} ({CHAIN_INFO[selectedChain].standard})</strong> network. Wrong network transfers will be lost.</p>
+                   <p>{t('paymentModal.steps.payment.networkWarning', { network: selectedChain, standard: CHAIN_INFO[selectedChain].standard })}</p>
                 </div>
               </div>
 
@@ -394,25 +394,25 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
               <div className="bg-red-900/20 border border-red-700/50 p-4 rounded-lg text-sm text-red-200 flex gap-3 animate-in fade-in">
                   <AlertTriangle className="shrink-0 text-red-400" size={20} />
                   <div className="space-y-2">
-                      <p className="font-bold text-red-400">⚠️ Important Payment Warning:</p>
+                      <p className="font-bold text-red-400">{t('paymentModal.steps.payment.importantWarning.title')}</p>
                       <ul className="list-disc list-outside ml-4 space-y-1 text-xs opacity-90">
-                          <li>Please pay the <strong>EXACT amount</strong> shown.</li>
-                          <li><strong>Underpayment</strong> will result in failure and is <strong>non-refundable</strong>.</li>
-                          <li><strong>Overpayment</strong> is <strong>non-refundable</strong> and <strong>does not accumulate</strong> extra time.</li>
-                          <li>The system verifies a single transaction only. Do not send multiple small payments.</li>
+                          <li>{t('paymentModal.steps.payment.importantWarning.exactAmount')}</li>
+                          <li>{t('paymentModal.steps.payment.importantWarning.underpayment')}</li>
+                          <li>{t('paymentModal.steps.payment.importantWarning.overpayment')}</li>
+                          <li>{t('paymentModal.steps.payment.importantWarning.singleTx')}</li>
                       </ul>
                   </div>
               </div>
 
               <div className="space-y-4 animate-in fade-in">
-                  <label className="text-sm text-slate-400 block">Transaction Hash (TXID)</label>
+                  <label className="text-sm text-slate-400 block">{t('paymentModal.steps.payment.txHashLabel')}</label>
                   <div className="relative">
                     <Input
                       value={txHash}
                       onChange={(e) => {
                           setTxHash(e.target.value);
                       }}
-                      placeholder={`Paste the transaction hash (TXID)`}
+                      placeholder={t('paymentModal.steps.payment.txHashPlaceholder')}
                       className="pr-24 font-mono text-sm"
                     />
                     <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
@@ -434,12 +434,12 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                 </div>
               )}
 
-              <Button 
-                onClick={handlePaymentComplete} 
+              <Button
+                onClick={handlePaymentComplete}
                 className="w-full h-12 text-lg font-bold bg-green-600 hover:bg-green-700"
                 disabled={isLoading}
               >
-                {isLoading ? 'Verifying...' : 'I Have Sent Payment'}
+                {isLoading ? t('paymentModal.steps.payment.verifying') : t('paymentModal.steps.payment.button')}
               </Button>
             </div>
           )}
@@ -454,25 +454,25 @@ export const USDTPaymentModal = ({ plan, onClose }: USDTPaymentModalProps) => {
                       <ShieldCheck className="text-primary w-10 h-10" />
                    </div>
                 </div>
-                
+
                 <div className="space-y-2">
-                   <h4 className="text-xl font-bold text-white">Verifying Transaction...</h4>
+                   <h4 className="text-xl font-bold text-white">{t('paymentModal.steps.verification.title')}</h4>
                    <p className="text-slate-400 max-w-xs mx-auto">
-                      We are checking the blockchain for your payment. This usually takes 1-3 minutes.
+                      {t('paymentModal.steps.verification.description')}
                    </p>
                 </div>
 
                 <div className="bg-slate-800/50 rounded-lg p-4 max-w-sm mx-auto">
-                   <p className="text-xs text-slate-500 mb-1">Checking TXID:</p>
+                   <p className="text-xs text-slate-500 mb-1">{t('paymentModal.steps.verification.checkingTxid')}</p>
                    <p className="font-mono text-xs text-primary break-all">{paymentId}</p>
                 </div>
 
                 <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
                    <p className="text-green-400 text-sm font-medium">
-                      It is safe to close this window.
+                      {t('paymentModal.steps.verification.safeToClose')}
                    </p>
                    <p className="text-green-500/60 text-xs mt-1">
-                      Your Pro license will be activated automatically once the transaction is confirmed on-chain.
+                      {t('paymentModal.steps.verification.autoActivation')}
                    </p>
                 </div>
              </div>

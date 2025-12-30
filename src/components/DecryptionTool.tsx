@@ -139,7 +139,7 @@ export const DecryptionTool = () => {
            // Legacy or partial payload
            setCiphertext(sanitizeInput(data.em));
       } else {
-               throw new Error('Invalid data format');
+               throw new Error(t('errors.invalidDataFormat'));
           }
 
       } catch (e: any) {
@@ -180,27 +180,27 @@ export const DecryptionTool = () => {
                     const chunk = parseChunk(text);
                     if (chunk) {
                         if (globalHash && globalHash !== chunk.hash) {
-                             throw new Error('Hash mismatch');
+                             throw new Error(t('errors.hashMismatch'));
                         }
                         globalHash = chunk.hash;
                         total = chunk.total;
                         chunks.set(chunk.index, chunk.data);
                     } else {
-                        currentFailedFiles.push(`${files[i].name} (Invalid format)`);
+                        currentFailedFiles.push(`${files[i].name} ${t('decryption.errors.invalidFormat')}`);
                     }
                 } else {
-                    currentFailedFiles.push(`${files[i].name} (No QR code found)`);
+                    currentFailedFiles.push(`${files[i].name} ${t('decryption.errors.noQrFound')}`);
                 }
             } catch (err) {
                 console.warn('Failed to read QR from file:', files[i].name, err);
-                currentFailedFiles.push(`${files[i].name} (Failed to read file)`);
+                currentFailedFiles.push(`${files[i].name} ${t('decryption.errors.failedToReadFile')}`);
             }
         }
         
         setFailedFiles(currentFailedFiles);
 
         if (chunks.size === 0) {
-            throw new Error('No valid QR codes found');
+            throw new Error(t('errors.noValidQr'));
         }
 
         if (chunks.size < total) {
@@ -213,11 +213,11 @@ export const DecryptionTool = () => {
              }
              setMissingIndices(missing);
 
-             setError(`Incomplete data: ${chunks.size}/${total} parts found`);
+             setError(t('decryption.errors.incompleteData', { current: chunks.size, total }));
              return;
         }
-        
-        setScanStatus('Reassembling & Decompressing...');
+
+        setScanStatus(t('decryption.status.reassembling'));
         await delay(50);
 
         // Reassemble
@@ -248,7 +248,7 @@ export const DecryptionTool = () => {
                // We don't throw, we just let the "Dual Auth Detected" banner handle the warning.
             }
         } else {
-             throw new Error('Invalid data format');
+             throw new Error(t('errors.invalidDataFormat'));
         }
 
     // ... render logic ...
@@ -446,7 +446,7 @@ export const DecryptionTool = () => {
             }
             
             if (!decryptedJson) {
-                throw new Error('Password incorrect for any vault content.');
+                throw new Error(t('errors.passwordIncorrect'));
             }
         }
       } catch (e) {
@@ -466,11 +466,11 @@ export const DecryptionTool = () => {
           // Backward compatibility
           setRows([parsed as string[]]);
       } else {
-          throw new Error('Invalid data format');
+          throw new Error(t('errors.invalidDataFormat'));
       }
 
     } catch (e) {
-      setError('Decryption failed. Please check your password.');
+      setError(t('decryption.errors.decryptionFailed'));
     }
   };
 
@@ -483,11 +483,11 @@ export const DecryptionTool = () => {
                     setIsDualAuthDetected(false);
                 }} className="text-slate-400 hover:text-white flex items-center gap-2">
                     <ArrowLeft size={16} />
-                    Back to Standard Decryption
+                    {t('decryption.alert.backToStandard')}
                 </Button>
                 {isDualAuthDetected && (
                   <span className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded border border-indigo-500/30">
-                    Dual Auth Mode
+                    {t('decryption.alert.dualAuthBadge')}
                   </span>
                 )}
             </div>
@@ -502,13 +502,13 @@ export const DecryptionTool = () => {
       {showScanner && (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
           <div className="w-full max-w-lg bg-slate-900 rounded-xl overflow-hidden border border-slate-700 relative">
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               className="absolute top-2 right-2 z-10 text-slate-400 hover:text-white"
               onClick={() => setShowScanner(false)}
             >
-              Close Scanner
+              {t('decryption.label.closeScanner')}
             </Button>
             <QRCodeStreamScanner 
               onScanComplete={handleStreamScanComplete}
@@ -520,18 +520,18 @@ export const DecryptionTool = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
         <div className="text-center flex-1">
-          <h2 className="text-2xl font-bold text-white mb-2">Decryption Tool</h2>
-          <p className="text-slate-400 text-sm">Recover your original message from various sources</p>
+          <h2 className="text-2xl font-bold text-white mb-2">{t('decryption.title')}</h2>
+          <p className="text-slate-400 text-sm">{t('decryption.subtitle')}</p>
         </div>
-        <Button 
-                    variant="outline" 
+        <Button
+                    variant="outline"
                     size="sm"
                     onClick={() => features.allowDualAuth ? setUseDualAuth(true) : triggerUpgrade()}
                     className={`flex items-center gap-2 border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 whitespace-nowrap ${!features.allowDualAuth ? 'opacity-70' : ''}`}
                     title={!features.allowDualAuth ? "Pro Feature: Click to Upgrade" : ""}
                 >
                     <ShieldCheck size={16} />
-                    Dual Auth Mode
+                    {t('decryption.alert.dualAuthBadge')}
                     <ProBadge />
                 </Button>
       </div>
@@ -539,18 +539,18 @@ export const DecryptionTool = () => {
       <div className="bg-surface p-6 rounded-xl border border-slate-800 space-y-6">
         <div className="space-y-2">
           <div className="flex justify-between items-center flex-wrap gap-2">
-            <label className="text-sm font-medium text-slate-400">Ciphertext / Encrypted Data</label>
+            <label className="text-sm font-medium text-slate-400">{t('decryption.label.ciphertext')}</label>
             <div className="flex items-center gap-2 flex-wrap">
                 {/* Scan Stream Button */}
-                <Button 
-                    variant="outline" 
+                <Button
+                    variant="outline"
                     size="sm"
                     className={`text-xs h-8 flex items-center gap-2 border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 ${!features.allowStreamScan ? 'opacity-70' : ''}`}
                     onClick={() => features.allowStreamScan ? setShowScanner(true) : triggerUpgrade()}
                     title={!features.allowStreamScan ? "Pro Feature: Click to Upgrade" : ""}
                 >
                     <Camera size={14} />
-                    Scan Stream
+                    {t('decryption.button.scanStream')}
                     <ProBadge />
                 </Button>
 
@@ -564,36 +564,36 @@ export const DecryptionTool = () => {
                         onChange={handleQRUpload}
                         className="hidden"
                     />
-                    <Button 
+                    <Button
                         variant="secondary"
                         size="sm"
                         className="text-xs h-8"
                         onClick={() => document.getElementById('qr-upload')?.click()}
                     >
                         {isScanning ? <Loader2 size={14} className="animate-spin mr-2" /> : <QrCode size={14} className="mr-2" />}
-                        {isScanning ? scanStatus || 'Scanning...' : 'Upload QR Shards'}
+                        {isScanning ? scanStatus || t('decryption.status.scanning') : t('decryption.button.uploadQRShards')}
                     </Button>
                 </div>
-                
+
                 {/* Paste Button */}
-                <Button 
+                <Button
                   variant="outline"
                   size="sm"
                   onClick={handlePaste}
                   className="text-xs h-8"
-                  title="Paste from Clipboard"
+                  title={t('inputStep.tooltip.pasteClipboard')}
                 >
                   <Clipboard size={14} className="mr-2" />
-                  Paste
+                  {t('decryption.button.paste')}
                 </Button>
             </div>
           </div>
-          
+
           <textarea
             value={ciphertext}
             onChange={(e) => setCiphertext(e.target.value)}
             className="w-full h-32 bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-sm font-mono focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-y"
-            placeholder="Paste your ciphertext, encrypted block, or QR content here..."
+            placeholder={t('decryption.placeholder.ciphertext')}
             autoComplete="off"
             spellCheck="false"
           />
@@ -601,7 +601,7 @@ export const DecryptionTool = () => {
 
         {failedFiles.length > 0 && (
             <div className="text-xs text-red-400 bg-red-900/20 p-2 rounded border border-red-800">
-                <p className="font-bold">Failed Files:</p>
+                <p className="font-bold">{t('decryption.label.failedFiles')}</p>
                 <ul className="list-disc pl-4 mt-1">
                     {failedFiles.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
@@ -610,37 +610,37 @@ export const DecryptionTool = () => {
 
         {missingIndices.length > 0 && (
             <div className="text-xs text-yellow-400 bg-yellow-900/20 p-2 rounded border border-yellow-800">
-                <p className="font-bold">Missing Parts:</p>
+                <p className="font-bold">{t('decryption.label.missingParts')}</p>
                 <p>{missingIndices.join(', ')}</p>
             </div>
         )}
 
         {scanProgress && (
             <div className="bg-blue-500/10 border border-blue-500/30 p-3 rounded-lg flex items-center justify-between text-xs text-blue-300 animate-in fade-in">
-                <span>Fragments Found: {scanProgress.current} / {scanProgress.total}</span>
-                <span className="font-bold">Upload Remaining</span>
+                <span>{t('decryption.label.fragmentsFound')} {scanProgress.current} / {scanProgress.total}</span>
+                <span className="font-bold">{t('decryption.label.uploadRemaining')}</span>
             </div>
         )}
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-400">Decryption Password</label>
+          <label className="text-sm font-medium text-slate-400">{t('decryption.label.password')}</label>
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter the password used for encryption"
+            placeholder={t('decryption.placeholder.password')}
             autoComplete="new-password"
             className="bg-slate-900/50"
           />
         </div>
 
-        <Button 
+        <Button
           onClick={handleDecrypt}
           disabled={!ciphertext || !password}
           className="w-full h-12 text-lg font-bold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg shadow-primary/20"
         >
           <Unlock size={20} className="mr-2" />
-          Decrypt Data
+          {t('decryption.button.decrypt')}
         </Button>
         
         {error && <p className="text-red-500 text-center font-medium bg-red-500/10 p-2 rounded">{error}</p>}
@@ -660,7 +660,7 @@ export const DecryptionTool = () => {
                 }`}
              >
                 <BookOpen size={24} />
-                <span className="font-medium">Physical / Virtual Book</span>
+                <span className="font-medium">{t('decryption.mode.physicalBook')}</span>
              </button>
 
              <button
@@ -672,7 +672,7 @@ export const DecryptionTool = () => {
                 }`}
              >
                 <FileText size={24} />
-                <span className="font-medium">Digital Book (File)</span>
+                <span className="font-medium">{t('decryption.mode.digitalBook')}</span>
              </button>
 
              <button
@@ -684,7 +684,7 @@ export const DecryptionTool = () => {
                 }`}
              >
                 <Globe size={24} />
-                <span className="font-medium">Online Book (URL)</span>
+                <span className="font-medium">{t('decryption.mode.onlineBook')}</span>
              </button>
           </div>
 
@@ -693,11 +693,9 @@ export const DecryptionTool = () => {
              <div className="bg-slate-900/50 p-6 rounded-xl border border-slate-700 space-y-4 animate-in fade-in">
                 <div className="flex items-center gap-2 text-white font-medium">
                    <Upload size={20} className="text-blue-400" />
-                   <h3>Upload Book File</h3>
+                   <h3>{t('decryption.file.title')}</h3>
                 </div>
-                <p className="text-sm text-slate-400">
-                   Upload the <strong>exact same Gutenberg TXT file</strong> used during encryption.
-                </p>
+                <p className="text-sm text-slate-400" dangerouslySetInnerHTML={{ __html: t('decryption.file.description') }} />
                 <div className="relative">
                   <input
                     type="file"
@@ -711,13 +709,13 @@ export const DecryptionTool = () => {
                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-slate-300 flex items-center justify-between cursor-pointer hover:bg-slate-900 hover:border-blue-500 transition-all group"
                   >
                     <span className="truncate flex-1">
-                      {fileInfo ? `Loaded: ${Math.round(fileInfo.fullText.length / 1024)} KB` : 'Choose Gutenberg TXT File...'}
+                      {fileInfo ? t('decryption.file.loaded', { size: Math.round(fileInfo.fullText.length / 1024) }) : t('decryption.file.choose')}
                     </span>
                     <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full group-hover:bg-blue-500">
-                      Browse
+                      {t('decryption.file.browse')}
                     </span>
                   </label>
-                  
+
                   {isParsingFile && (
                     <div className="absolute right-3 top-3">
                       <Loader2 className="animate-spin text-blue-400" />
@@ -727,7 +725,7 @@ export const DecryptionTool = () => {
                 {fileInfo && (
                    <div className="text-xs text-green-400 flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full" />
-                      Parsed {fileInfo.chapters.length} Chapters successfully
+                      {t('decryption.file.parsed', { count: fileInfo.chapters.length })}
                    </div>
                 )}
              </div>
@@ -737,31 +735,29 @@ export const DecryptionTool = () => {
              <div className="bg-slate-900/50 p-6 rounded-xl border border-slate-700 space-y-4 animate-in fade-in">
                 <div className="flex items-center gap-2 text-white font-medium">
                    <Globe size={20} className="text-blue-400" />
-                   <h3>Fetch Book URL</h3>
+                   <h3>{t('decryption.url.title')}</h3>
                 </div>
-                <p className="text-sm text-slate-400">
-                   Enter the <strong>exact Gutenberg HTML URL</strong> used during encryption.
-                </p>
+                <p className="text-sm text-slate-400" dangerouslySetInnerHTML={{ __html: t('decryption.url.description') }} />
                 <div className="flex gap-2">
                   <input
                     type="url"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
-                    placeholder="https://www.gutenberg.org/cache/epub/..."
+                    placeholder={t('decryption.url.placeholder')}
                     className="flex-1 bg-slate-950 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500"
                   />
-                  <Button 
-                    onClick={handleFetchUrl} 
+                  <Button
+                    onClick={handleFetchUrl}
                     disabled={isFetchingUrl || !url}
                     className="bg-blue-600 hover:bg-blue-500"
                   >
-                    {isFetchingUrl ? <Loader2 className="animate-spin" /> : 'Fetch'}
+                    {isFetchingUrl ? <Loader2 className="animate-spin" /> : t('decryption.url.fetch')}
                   </Button>
                 </div>
                 {urlInfo && (
                    <div className="text-xs text-green-400 flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full" />
-                      Loaded: {urlInfo.pureText.length} chars (Hash: {urlInfo.textHash.slice(0, 8)}...)
+                      {t('decryption.url.loaded', { length: urlInfo.pureText.length, hash: urlInfo.textHash.slice(0, 8) })}
                    </div>
                 )}
              </div>
@@ -773,16 +769,16 @@ export const DecryptionTool = () => {
                   <div className="bg-surface p-4 rounded-xl border border-slate-700 space-y-3 sticky top-4">
                       <div className="flex items-center gap-2 text-white font-bold">
                           <Search size={20} className="text-primary" />
-                          <h3>Locate Data</h3>
+                          <h3>{t('decryption.locate.title')}</h3>
                       </div>
                       <p className="text-xs text-slate-400">
-                          Which row contains your data?
+                          {t('decryption.locate.description')}
                       </p>
                       <div className="flex items-center gap-2">
-                          <span className="text-slate-500 font-mono">Row</span>
-                          <input 
-                              type="number" 
-                              min="1" 
+                          <span className="text-slate-500 font-mono">{t('decryption.locate.row')}</span>
+                          <input
+                              type="number"
+                              min="1"
                               max={rows.length}
                               placeholder="?"
                               className="w-20 bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white font-mono focus:border-primary focus:outline-none text-center"
@@ -801,41 +797,41 @@ export const DecryptionTool = () => {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2 text-green-500 font-bold">
                                 <KeyRound size={20} />
-                                <h3>Recovered Data (Row {targetRow})</h3>
+                                <h3>{t('decryption.result.title', { row: targetRow })}</h3>
                             </div>
-                            <button 
+                            <button
                                 onClick={() => handleCopy(recoveredMnemonic || '')}
                                 className={`text-xs flex items-center gap-1 transition-colors ${copyFeedback ? 'text-green-400' : 'text-green-500 hover:text-green-400'}`}
                                 disabled={!recoveredMnemonic}
                             >
                                 {copyFeedback ? <CheckCircle size={14} /> : <Copy size={14} />}
-                                {copyFeedback ? "Copied!" : "Copy"}
+                                {copyFeedback ? t('decryption.result.copied') : t('decryption.result.copy')}
                             </button>
                           </div>
                           <div className="bg-slate-950 p-4 rounded-lg font-mono text-green-400 break-words leading-relaxed border border-green-500/20 shadow-inner whitespace-pre-wrap">
-                              {recoveredMnemonic || <span className="text-slate-500 italic">Row is empty or invalid</span>}
+                              {recoveredMnemonic || <span className="text-slate-500 italic">{t('decryption.result.empty')}</span>}
                           </div>
                       </div>
                   ) : targetRow ? (
                        <div className="bg-slate-800/50 p-4 rounded-xl text-center text-slate-400 border border-slate-700 border-dashed">
-                           {`Row ${targetRow} appears to be empty or contains invalid data.`}
+                           {t('decryption.result.rowAppears', { row: targetRow })}
                        </div>
                   ) : (
                       <div className="bg-primary/5 p-4 rounded-xl text-center text-primary/70 border border-primary/10">
                           <Eye className="mx-auto mb-2 opacity-50" />
-                          Enter the row number (1-100+) where you hid your data to reveal it.
+                          {t('decryption.result.enterRow')}
                       </div>
                   )}
 
                   <div className="space-y-2">
-                      <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">RAW DATA PREVIEW</h4>
+                      <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider">{t('decryption.result.rawPreview')}</h4>
                       <div className="h-64 overflow-y-auto custom-scrollbar bg-slate-950 rounded-xl border border-slate-800">
                           {rows.map((row, idx) => (
-                              <div 
-                                key={idx} 
+                              <div
+                                key={idx}
                                 className={`flex border-b border-slate-900 last:border-0 ${
-                                    (idx + 1).toString() === targetRow 
-                                    ? 'bg-primary/20 text-white' 
+                                    (idx + 1).toString() === targetRow
+                                    ? 'bg-primary/20 text-white'
                                     : 'text-slate-500 hover:bg-slate-900'
                                 }`}
                               >

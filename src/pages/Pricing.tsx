@@ -26,7 +26,11 @@ export const Pricing = () => {
   const { isPro } = useLicense();
   const { isChina } = useGeoLocation();
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Block only if user is in China AND using Simplified Chinese
+  // Users in China using other languages (English, Traditional, etc.) are allowed
+  const shouldBlock = isChina && i18n.language === 'zh';
 
   const plans: Plan[] = [
     {
@@ -135,7 +139,7 @@ export const Pricing = () => {
         <div className="absolute top-4 left-4 z-10">
           <Link to="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors bg-slate-800/50 px-3 py-2 rounded-lg text-sm backdrop-blur-sm border border-slate-700/50">
             <ArrowLeft size={16} />
-            <span className="font-medium">Back</span>
+            <span className="font-medium">{t('common.back')}</span>
           </Link>
         </div>
       )}
@@ -166,16 +170,16 @@ export const Pricing = () => {
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto animate-pulse">
                 <Lock className="w-10 h-10 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-white">仅限硬件授权</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-white">{t('pricing.china.hardwareOnly')}</h2>
               <p className="text-lg text-slate-400 leading-relaxed">
-                请购买我们的硬件产品 CryptoKey 来使用，<br/>在线使用方式静等通知...
+                <Trans i18nKey="pricing.china.description" components={[<span key="0" />, <br key="1" />]} />
               </p>
               <div className="pt-4">
                 <Button className="w-full" onClick={() => window.location.href = 'mailto:sales@cryptokey.im'}>
-                  联系销售购买硬件
+                  {t('pricing.china.contactSales')}
                 </Button>
                 <Link to="/" className="block mt-4 text-sm text-slate-400 hover:text-white transition-colors">
-                  返回首页
+                  {t('pricing.china.backToHome')}
                 </Link>
               </div>
             </div>
@@ -190,7 +194,7 @@ export const Pricing = () => {
             >
             {plan.recommended && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                Best Value
+                {t('pricing.badge.bestValue')}
               </div>
             )}
             
@@ -215,12 +219,12 @@ export const Pricing = () => {
               ))}
             </ul>
 
-            <Button 
+            <Button
               variant={plan.recommended ? 'primary' : 'outline'}
               className="w-full"
               onClick={() => handleCardClick(plan)}
             >
-              {plan.isEnterprise ? 'Contact Sales' : (isPro ? 'Extend License' : 'Subscribe Now')}
+              {plan.isEnterprise ? t('pricing.button.contactSales') : (isPro ? t('pricing.button.extendLicense') : t('pricing.button.subscribeNow'))}
             </Button>
           </Card>
         ))}
@@ -233,40 +237,36 @@ export const Pricing = () => {
           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
             <Zap size={20} />
           </div>
-          <h4 className="font-bold text-white">Instant Access</h4>
+          <h4 className="font-bold text-white">{t('pricing.features.instantAccess.title')}</h4>
           <p className="text-sm text-slate-400">
-            Get your license key and TOTP setup immediately after payment. No waiting.
+            {t('pricing.features.instantAccess.desc')}
           </p>
         </div>
         <div className="space-y-3 p-4">
           <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
             <Globe size={20} />
           </div>
-          <h4 className="font-bold text-white">Global Payments</h4>
+          <h4 className="font-bold text-white">{t('pricing.features.globalPayments.title')}</h4>
           <p className="text-sm text-slate-400">
-            {!isChina ? (
-              "We support global USDT payments via BSC, TRX, and ETH networks."
-            ) : (
-              "Stay tuned for updates."
-            )}
+            {!shouldBlock ? t('pricing.features.globalPayments.desc') : t('pricing.features.globalPayments.descChina')}
           </p>
         </div>
         <div className="space-y-3 p-4">
           <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
             <Lock size={20} />
           </div>
-          <h4 className="font-bold text-white">Secure & Private</h4>
+          <h4 className="font-bold text-white">{t('pricing.features.securePrivate.title')}</h4>
           <p className="text-sm text-slate-400">
-            No personal data retention. Your security is our top priority.
+            {t('pricing.features.securePrivate.desc')}
           </p>
         </div>
         <div className="space-y-3 p-4">
           <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500">
             <Shield size={20} />
           </div>
-          <h4 className="font-bold text-white">Refund Policy</h4>
+          <h4 className="font-bold text-white">{t('pricing.features.refundPolicy.title')}</h4>
           <p className="text-sm text-slate-400">
-            Strict No-Refund Policy. All sales are final once the license key is issued.
+            {t('pricing.features.refundPolicy.desc')}
           </p>
         </div>
       </div>
@@ -274,8 +274,7 @@ export const Pricing = () => {
       {/* Disclaimer */}
        <div className="max-w-4xl mx-auto text-center p-6 rounded-xl bg-slate-900/30 border border-slate-800">
           <p className="text-sm text-slate-500">
-            CryptoKey.im is a security tool provider. We do not provide financial advice, cryptocurrency trading, or custody services. 
-            Prices are in USD. VAT may apply depending on your location.
+            {t('pricing.disclaimer.text')}
           </p>
        </div>
     </div>
