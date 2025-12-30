@@ -9,6 +9,7 @@ export const LanguageSwitcher = () => {
 
   const languages = [
     { code: 'zh', label: '简体中文' },
+    { code: 'zh-TW', label: '繁体中文' },
     { code: 'en', label: 'English' },
     { code: 'ja', label: '日本語' },
     { code: 'ko', label: '한국어' },
@@ -32,21 +33,6 @@ export const LanguageSwitcher = () => {
 
   const handleLanguageChange = (langCode: string) => {
     localStorage.setItem('i18nextLng', langCode);
-    
-    if (langCode === 'zh') {
-       // Switch to Chinese entry point if not already there
-       if (!window.location.pathname.includes('index_zh.html')) {
-           window.location.href = '/index_zh.html';
-           return;
-       }
-    } else {
-       // For others, if we are currently in index_zh.html, go to root
-       if (window.location.pathname.includes('index_zh.html')) {
-           window.location.href = '/';
-           return;
-       }
-    }
-    
     i18n.changeLanguage(langCode);
     setIsOpen(false);
   };

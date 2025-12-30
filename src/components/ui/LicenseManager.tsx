@@ -458,7 +458,7 @@ export const LicenseManager = () => {
 
                                  <Button 
                                     size="sm" 
-                                    className="w-full bg-amber-600 hover:bg-amber-500 text-white" 
+                                    className="w-full bg-green-600 hover:bg-green-500 text-white" 
                                     onClick={() => {
                                         setRegisterData(null);
                                         setMode('login');

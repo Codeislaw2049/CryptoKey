@@ -20,7 +20,7 @@
   },
   "pricing": {
     "title": "Simple, Transparent Pricing",
-    "subtitle": "Choose the perfect plan for your needs",
+    "subtitle": "Choose the plan that fits your security needs. All plans unlock the full power of CryptoKey.im's military-grade encryption and steganography tools.",
     "plans": {
       "price_weekly_trial": {
         "name": "24-Hour Pass",
@@ -546,13 +546,22 @@
         "proxy": {
           "title": "Local Proxy Active",
           "desc": "Using local proxy for development."
-        }
+        },
+        "success": "Loaded {{count}} chars",
+        "recommended": "Recommended Books",
+        "clickToFill": "Click to fill"
       },
       "general": {
-        "addLine": "Add New Line"
+        "placeholder": "Enter data row...",
+        "addLine": "Add New Line",
+        "generate": "Random Data"
       },
       "mnemonic": {
-        "paste": "Paste"
+        "label": "Mnemonic Phrase",
+        "required": "(Required)",
+        "placeholder": "Enter your mnemonic phrase...",
+        "paste": "Paste",
+        "generate": "Generate"
       }
     },
     "mixStep": {
@@ -620,6 +629,175 @@
         "pro": "Pro Feature: Upgrade to Access"
       },
       "reset": "Reset"
+    }
+  },
+  "decryption": {
+    "title": "Decryption Tool",
+    "subtitle": "Recover your original message from various sources",
+    "status": {
+      "scanning": "Scanning...",
+      "processing": "Processing stream data...",
+      "reassembling": "Reassembling & Decompressing...",
+      "scanProgress": "Scanning... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "Dual Auth Detected",
+      "dualAuthDesc": "This content is protected by Dual-Factor Authentication.",
+      "switchToDual": "Switch to Dual Auth Mode",
+      "backToStandard": "Back to Standard Decryption",
+      "dualAuthBadge": "Dual Auth Mode"
+    },
+    "label": {
+      "ciphertext": "Ciphertext / Encrypted Data",
+      "closeScanner": "Close Scanner"
+    },
+    "button": {
+      "scanStream": "Scan Stream"
+    },
+    "error": {
+        "fileMode": "Please upload the original book file to recover data.",
+        "fileModeUnknown": "Unknown data format for File mode.",
+        "urlMode": "Please fetch the book URL to recover data.",
+        "clipboard": "Unable to access clipboard. Please paste manually.",
+        "decryptFailed": "Decryption failed. Please check your password."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "Hide Data",
+      "extract": "Extract Data"
+    },
+    "label": {
+      "carrierImages": "Carrier Image(s)",
+      "imagesLoaded": "images loaded",
+      "source": "Source: {{name}}",
+      "original": "Original: {{name}}",
+      "uploadImages": "Upload Image(s)",
+      "uploadExtractHelp": "Upload all shard images to reconstruct.",
+      "uploadHideHelp": "Upload carrier image.",
+      "limitInfo": "Free: 3 images. Pro: Unlimited.",
+      "secretMessage": "Secret Message",
+      "enableSharding": "Enable Secret Sharing (Sharding)",
+      "proOnly": "(Pro Only)",
+      "totalShares": "Total Shares (N)",
+      "threshold": "Required to Decrypt (K)",
+      "strictMatching": "Strict Filename Matching",
+      "strictMatchingHelp": "Decryption will only work if files match their original names exactly.",
+      "extractedContent": "Extracted Content"
+    },
+    "placeholder": {
+      "pasteCiphertext": "Paste encrypted ciphertext here..."
+    },
+    "warning": {
+      "title": "CRITICAL WARNING:",
+      "text": "Do not enter plaintext (like mnemonics) directly! Anyone with the image can extract it. Always encrypt your data first (e.g., using the \"Encrypt\" tab) and paste the Ciphertext here."
+    },
+    "button": {
+      "clearAll": "Clear All",
+      "paste": "Paste",
+      "generateShards": "Generate & Download Shards",
+      "hideData": "Hide Data & Download",
+      "copied": "Copied!",
+      "copy": "Copy",
+      "extractHidden": "Extract Hidden Data"
+    },
+    "status": {
+      "successHide": "Data hidden successfully! Image downloaded.",
+      "successShards": "Successfully generated and downloaded {{count}} shard images.",
+      "noData": "No valid hidden data found. Check filenames if strict mode was used.",
+      "reconstructFailed": "Reconstruction failed: {{error}}. Showing raw data below.",
+      "waitingImage": "Waiting for image..."
+    },
+    "about": {
+      "title": "About Steganography",
+      "text": "This tool hides your data in the least significant bits (LSB) of the image pixels. The resulting image looks identical to the human eye but contains your secret message.",
+      "noteTitle": "Note:",
+      "noteText": "Do not compress the downloaded image (e.g., sending via WhatsApp/Messenger often compresses images). Always share as a file (Document) or keep strictly local."
+    },
+  },
+  "wallet": {
+    "title": "Secure Wallet Generator",
+    "subtitle": "Generate BIP39/BIP44 compliant wallets. 100% Client-side.",
+    "button": {
+      "generateNew": "Generate New Wallet",
+      "import": "Import Mnemonic",
+      "importAction": "Import Wallet",
+      "paste": "Paste",
+      "reveal": "Click to Reveal",
+      "copyToInput": "Copy to \"Enter Mnemonic Phrase\"",
+      "copyToStego": "Copy to \"Steganography\"",
+      "hideSensitive": "Hide Sensitive Keys",
+      "showSensitive": "Show Sensitive Keys"
+    },
+    "label": {
+      "12words": "12 Words (128-bit)",
+      "24words": "24 Words (256-bit)",
+      "recoveryPhrase": "Recovery Phrase (Mnemonic)",
+      "walletDetails": "Wallet Details",
+      "ethAddress": "Ethereum Address (BIP44)",
+      "path": "Path: {{path}} (Standard Metamask/Ledger)",
+      "privateKey": "Private Key",
+      "publicKey": "Public Key",
+      "addressQr": "Address QR"
+    },
+    "import": {
+      "title": "Import Existing Wallet",
+      "placeholder": "Enter your 12, 15, 18, 21, or 24 word mnemonic phrase here...",
+      "error": "Invalid mnemonic"
+    },
+    "warning": {
+      "title": "Security Warning",
+      "text": "Write down these words on paper and store them safely. Never share them with anyone. If you lose these words, your funds are lost forever."
+    },
+    "error": {
+      "copyFailed": "Failed to copy",
+      "clipboardRead": "Failed to read clipboard"
+    }
+  },
+  "wallet": {
+    "title": "Secure Wallet Generator",
+    "subtitle": "Generate BIP39/BIP44 compliant wallets. 100% Client-side.",
+    "strength": {
+      "12words": "12 Words (128-bit)",
+      "24words": "24 Words (256-bit)"
+    },
+    "action": {
+      "generate": "Generate New Wallet",
+      "import": "Import Mnemonic"
+    },
+    "import": {
+      "title": "Import Existing Wallet",
+      "placeholder": "Enter your 12, 15, 18, 21, or 24 word mnemonic phrase here...",
+      "paste": "Paste",
+      "submit": "Import Wallet"
+    },
+    "error": {
+      "invalidMnemonic": "Invalid mnemonic"
+    },
+    "mnemonic": {
+      "title": "Recovery Phrase (Mnemonic)",
+      "reveal": "Click to Reveal"
+    },
+    "copyTo": {
+      "encrypt": "Copy to \"Enter Mnemonic Phrase\"",
+      "steganography": "Copy to \"Steganography\""
+    },
+    "details": {
+      "title": "Wallet Details",
+      "showKeys": "Show Sensitive Keys",
+      "hideKeys": "Hide Sensitive Keys",
+      "ethAddress": "Ethereum Address (BIP44)",
+      "path": "Path: {{path}} (Standard Metamask/Ledger)",
+      "privateKey": "Private Key",
+      "publicKey": "Public Key",
+      "addressQr": "Address QR"
+    },
+    "security": {
+      "title": "Security Warning",
+      "line1": "Write down these words on paper and store them safely.",
+      "never": "Never",
+      "line2": "share them with anyone.",
+      "line3": "If you lose these words, your funds are lost forever."
     }
   }
 }

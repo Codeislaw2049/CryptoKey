@@ -542,26 +542,26 @@
         }
       },
       "url": {
-        "fetch": "获取内容",
+        "fetch": "獲取內容",
         "proxy": {
-          "title": "本地代理已激活",
-          "desc": "正在使用本地代理进行开发。"
+          "title": "本地代理已啟用",
+          "desc": "正在使用本地代理進行開發。"
         },
-        "success": "已加载 {{count}} 个字符",
-        "recommended": "推荐书籍",
-        "clickToFill": "点击填充"
+        "success": "已載入 {{count}} 個字元",
+        "recommended": "推薦書籍",
+        "clickToFill": "點擊填入"
       },
       "general": {
-        "placeholder": "输入数据行...",
-        "addLine": "添加新行",
-        "generate": "随机数据"
+        "placeholder": "輸入資料行...",
+        "addLine": "新增一行",
+        "generate": "隨機資料"
       },
       "mnemonic": {
-        "label": "助记词短语",
+        "label": "助記詞短語",
         "required": "(必填)",
-        "placeholder": "输入您的助记词短语...",
-        "paste": "粘贴",
-        "generate": "生成"
+        "placeholder": "輸入您的助記詞短語...",
+        "paste": "貼上",
+        "generate": "產生"
       }
     },
     "mixStep": {
@@ -633,176 +633,176 @@
   },
   "decryption": {
     "title": "解密工具",
-    "subtitle": "从各种来源恢复您的原始消息",
+    "subtitle": "從各種來源恢復您的原始訊息",
     "status": {
-      "scanning": "正在扫描...",
-      "processing": "正在处理流数据...",
-      "reassembling": "正在重组与解压缩...",
-      "scanProgress": "正在扫描... {{current}} / {{total}}..."
+      "scanning": "正在掃描...",
+      "processing": "正在處理串流資料...",
+      "reassembling": "正在重組與解壓縮...",
+      "scanProgress": "正在掃描... {{current}} / {{total}}..."
     },
     "alert": {
-      "dualAuthTitle": "检测到双重认证",
-      "dualAuthDesc": "此内容受双重认证保护。",
-      "switchToDual": "切换到双重认证模式",
-      "backToStandard": "返回标准解密",
-      "dualAuthBadge": "双重认证模式"
+      "dualAuthTitle": "檢測到雙重認證",
+      "dualAuthDesc": "此內容受雙重認證保護。",
+      "switchToDual": "切換到雙重認證模式",
+      "backToStandard": "返回標準解密",
+      "dualAuthBadge": "雙重認證模式"
     },
     "label": {
-      "ciphertext": "密文 / 加密数据",
-      "closeScanner": "关闭扫描器"
+      "ciphertext": "密文 / 加密資料",
+      "closeScanner": "關閉掃描器"
     },
     "button": {
-      "scanStream": "扫描流"
+      "scanStream": "掃描串流"
     },
     "error": {
-        "fileMode": "请上传原始书籍文件以恢复数据。",
-        "fileModeUnknown": "文件模式的数据格式未知。",
-        "urlMode": "请获取书籍 URL 以恢复数据。",
-        "clipboard": "无法访问剪贴板。请手动粘贴。",
-        "decryptFailed": "解密失败。请检查您的密码。"
+        "fileMode": "請上傳原始書籍檔案以恢復資料。",
+        "fileModeUnknown": "檔案模式的資料格式未知。",
+        "urlMode": "請獲取書籍 URL 以恢復資料。",
+        "clipboard": "無法存取剪貼簿。請手動貼上。",
+        "decryptFailed": "解密失敗。請檢查您的密碼。"
     }
   },
   "steganography": {
     "mode": {
-      "hide": "隐藏数据",
-      "extract": "提取数据"
+      "hide": "隱藏數據",
+      "extract": "提取數據"
     },
     "label": {
-      "carrierImages": "载体图片",
-      "imagesLoaded": "张图片已加载",
-      "source": "来源：{{name}}",
+      "carrierImages": "載體圖片",
+      "imagesLoaded": "張圖片已載入",
+      "source": "來源：{{name}}",
       "original": "原始：{{name}}",
-      "uploadImages": "上传图片",
-      "uploadExtractHelp": "上传所有分片图片以重组。",
-      "uploadHideHelp": "上传载体图片。",
-      "limitInfo": "免费：3张。专业版：无限。",
-      "secretMessage": "秘密信息",
-      "enableSharding": "启用秘密共享（分片）",
-      "proOnly": "(仅限专业版)",
-      "totalShares": "总分片数 (N)",
-      "threshold": "解密所需数 (K)",
-      "strictMatching": "严格文件名匹配",
-      "strictMatchingHelp": "只有文件名与原始名称完全匹配时才能解密。",
-      "extractedContent": "提取的内容"
+      "uploadImages": "上傳圖片",
+      "uploadExtractHelp": "上傳所有分片圖片以重組。",
+      "uploadHideHelp": "上傳載體圖片。",
+      "limitInfo": "免費：3張。專業版：無限。",
+      "secretMessage": "秘密訊息",
+      "enableSharding": "啟用秘密共享（分片）",
+      "proOnly": "(僅限專業版)",
+      "totalShares": "總分片數 (N)",
+      "threshold": "解密所需數 (K)",
+      "strictMatching": "嚴格檔名匹配",
+      "strictMatchingHelp": "只有檔名與原始名稱完全匹配時才能解密。",
+      "extractedContent": "提取的內容"
     },
     "placeholder": {
-      "pasteCiphertext": "在此粘贴加密的密文..."
+      "pasteCiphertext": "在此貼上加密的密文..."
     },
     "warning": {
-      "title": "严重警告：",
-      "text": "请勿直接输入明文（如助记词）！任何拥有图片的人都可以提取它。请务必先加密数据（例如使用“加密”选项卡），然后在此处粘贴密文。"
+      "title": "嚴重警告：",
+      "text": "請勿直接輸入明文（如助記詞）！任何擁有圖片的人都可以提取它。請務必先加密數據（例如使用「加密」分頁），然後在此處貼上密文。"
     },
     "button": {
       "clearAll": "清除所有",
-      "paste": "粘贴",
-      "generateShards": "生成并下载分片",
-      "hideData": "隐藏数据并下载",
-      "copied": "已复制！",
-      "copy": "复制",
-      "extractHidden": "提取隐藏数据"
+      "paste": "貼上",
+      "generateShards": "生成並下載分片",
+      "hideData": "隱藏數據並下載",
+      "copied": "已複製！",
+      "copy": "複製",
+      "extractHidden": "提取隱藏數據"
     },
     "status": {
-      "successHide": "数据隐藏成功！图片已下载。",
-      "successShards": "成功生成并下载 {{count}} 个分片图片。",
-      "noData": "未找到有效的隐藏数据。如果使用了严格模式，请检查文件名。",
-      "reconstructFailed": "重组失败：{{error}}。下方显示原始数据。",
-      "waitingImage": "等待图片..."
+      "successHide": "數據隱藏成功！圖片已下載。",
+      "successShards": "成功生成並下載 {{count}} 個分片圖片。",
+      "noData": "未找到有效的隱藏數據。如果使用了嚴格模式，請檢查文件名。",
+      "reconstructFailed": "重組失敗：{{error}}。下方顯示原始數據。",
+      "waitingImage": "等待圖片..."
     },
     "about": {
-      "title": "关于隐写术",
-      "text": "此工具将您的数据隐藏在图像像素的最低有效位 (LSB) 中。生成的图像在肉眼看来完全相同，但包含您的秘密信息。",
+      "title": "關於隱寫術",
+      "text": "此工具將您的數據隱藏在圖像像素的最低有效位 (LSB) 中。生成的圖像在肉眼看來完全相同，但包含您的秘密訊息。",
       "noteTitle": "注意：",
-      "noteText": "请勿压缩下载的图像（例如，通过 WhatsApp/Messenger 发送通常会压缩图像）。始终以文件（文档）形式共享或严格保存在本地。"
+      "noteText": "請勿壓縮下載的圖像（例如，通過 WhatsApp/Messenger 發送通常會壓縮圖像）。始終以文件（文檔）形式共享或嚴格保存在本地。"
     },
     "error": {
-      "filenameMismatch": "文件名不匹配！预期：{{expected}}，实际：{{actual}}",
-      "canvasContext": "无法获取画布上下文",
-      "copyFailed": "复制到剪贴板失败"
+      "filenameMismatch": "文件名不匹配！預期：{{expected}}，實際：{{actual}}",
+      "canvasContext": "無法獲取畫布上下文",
+      "copyFailed": "複製到剪貼板失敗"
     }
   },
   "wallet": {
-    "title": "安全钱包生成器",
-    "subtitle": "生成 BIP39/BIP44 兼容钱包。100% 客户端运行。",
+    "title": "安全錢包生成器",
+    "subtitle": "生成 BIP39/BIP44 兼容錢包。100% 客戶端運行。",
     "button": {
-      "generateNew": "生成新钱包",
-      "import": "导入助记词",
-      "importAction": "导入钱包",
-      "paste": "粘贴",
-      "reveal": "点击显示",
-      "copyToInput": "复制到“输入助记词”",
-      "copyToStego": "复制到“隐写术”",
-      "hideSensitive": "隐藏敏感密钥",
-      "showSensitive": "显示敏感密钥"
+      "generateNew": "生成新錢包",
+      "import": "導入助記詞",
+      "importAction": "導入錢包",
+      "paste": "貼上",
+      "reveal": "點擊顯示",
+      "copyToInput": "複製到“輸入助記詞”",
+      "copyToStego": "複製到“隱寫術”",
+      "hideSensitive": "隱藏敏感密鑰",
+      "showSensitive": "顯示敏感密鑰"
     },
     "label": {
-      "12words": "12 个词 (128位)",
-      "24words": "24 个词 (256位)",
-      "recoveryPhrase": "恢复短语 (助记词)",
-      "walletDetails": "钱包详情",
+      "12words": "12 個詞 (128位)",
+      "24words": "24 個詞 (256位)",
+      "recoveryPhrase": "恢復短語 (助記詞)",
+      "walletDetails": "錢包詳情",
       "ethAddress": "以太坊地址 (BIP44)",
-      "path": "路径：{{path}} (标准 Metamask/Ledger)",
-      "privateKey": "私钥",
-      "publicKey": "公钥",
-      "addressQr": "地址二维码"
+      "path": "路徑：{{path}} (標準 Metamask/Ledger)",
+      "privateKey": "私鑰",
+      "publicKey": "公鑰",
+      "addressQr": "地址二維碼"
     },
     "import": {
-      "title": "导入现有钱包",
-      "placeholder": "在此输入您的 12、15、18、21 或 24 个助记词...",
-      "error": "助记词无效"
+      "title": "導入現有錢包",
+      "placeholder": "在此輸入您的 12、15、18、21 或 24 個助記詞...",
+      "error": "助記詞無效"
     },
     "warning": {
       "title": "安全警告",
-      "text": "请将这些词写在纸上并妥善保管。切勿与任何人分享。如果您丢失了这些词，您的资金将永久丢失。"
+      "text": "請將這些詞寫在紙上並妥善保管。切勿與任何人分享。如果您丟失了這些詞，您的資金將永久丟失。"
     },
     "error": {
-      "copyFailed": "复制失败",
-      "clipboardRead": "无法读取剪贴板"
+      "copyFailed": "複製失敗",
+      "clipboardRead": "無法讀取剪貼板"
     }
   },
   "wallet": {
-    "title": "安全钱包生成器",
-    "subtitle": "生成符合 BIP39/BIP44 标准的钱包。100% 客户端运行。",
+    "title": "安全錢包生成器",
+    "subtitle": "生成符合 BIP39/BIP44 標準的錢包。100% 客戶端運行。",
     "strength": {
-      "12words": "12 个助记词 (128位)",
-      "24words": "24 个助记词 (256位)"
+      "12words": "12 個助記詞 (128位)",
+      "24words": "24 個助記詞 (256位)"
     },
     "action": {
-      "generate": "生成新钱包",
-      "import": "导入助记词"
+      "generate": "生成新錢包",
+      "import": "導入助記詞"
     },
     "import": {
-      "title": "导入现有钱包",
-      "placeholder": "在此输入您的 12、15、18、21 或 24 个助记词...",
-      "paste": "粘贴",
-      "submit": "导入钱包"
+      "title": "導入現有錢包",
+      "placeholder": "在此輸入您的 12、15、18、21 或 24 個助記詞...",
+      "paste": "貼上",
+      "submit": "導入錢包"
     },
     "error": {
-      "invalidMnemonic": "无效的助记词"
+      "invalidMnemonic": "無效的助記詞"
     },
     "mnemonic": {
-      "title": "恢复短语 (助记词)",
-      "reveal": "点击显示"
+      "title": "恢復短語 (助記詞)",
+      "reveal": "點擊顯示"
     },
     "copyTo": {
-      "encrypt": "复制到“输入助记词”",
-      "steganography": "复制到“隐写术”"
+      "encrypt": "複製到“輸入助記詞”",
+      "steganography": "複製到“隱寫術”"
     },
     "details": {
-      "title": "钱包详情",
-      "showKeys": "显示敏感密钥",
-      "hideKeys": "隐藏敏感密钥",
+      "title": "錢包詳情",
+      "showKeys": "顯示敏感密鑰",
+      "hideKeys": "隱藏敏感密鑰",
       "ethAddress": "以太坊地址 (BIP44)",
-      "path": "路径: {{path}} (标准 Metamask/Ledger)",
-      "privateKey": "私钥",
-      "publicKey": "公钥",
-      "addressQr": "地址二维码"
+      "path": "路徑: {{path}} (標準 Metamask/Ledger)",
+      "privateKey": "私鑰",
+      "publicKey": "公鑰",
+      "addressQr": "地址二維碼"
     },
     "security": {
       "title": "安全警告",
-      "line1": "请将这些单词写在纸上并妥善保存。",
+      "line1": "請將這些單詞寫在紙上並妥善保存。",
       "never": "切勿",
-      "line2": "与任何人分享。",
-      "line3": "如果您丢失了这些单词，您的资金将永远丢失。"
+      "line2": "與任何人分享。",
+      "line3": "如果您丟失了這些單詞，您的資金將永遠丟失。"
     }
   }
 }

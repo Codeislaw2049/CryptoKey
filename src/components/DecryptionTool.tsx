@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from './ui/Button';
 import { ProBadge } from './ui/ProBadge';
 import { Input } from './ui/Input';
@@ -29,6 +30,7 @@ type RecoveryMode = 'physical' | 'file' | 'url';
 import { useLicense } from '../contexts/LicenseContext';
 
 export const DecryptionTool = () => {
+  const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [mode, setMode] = useState<RecoveryMode>('physical');
   const [ciphertext, setCiphertext] = useState('');
@@ -104,12 +106,12 @@ export const DecryptionTool = () => {
       setScanProgress(null);
       setFailedFiles([]);
       setMissingIndices([]);
-      setScanStatus('Processing stream data...');
+      setScanStatus(t('decryption.status.processing'));
       
       try {
           if (chunks.size === 0) return;
 
-          setScanStatus('Reassembling & Decompressing...');
+          setScanStatus(t('decryption.status.reassembling'));
 
           // Reassemble
           const sortedData = Array.from(chunks.entries())
@@ -156,7 +158,7 @@ export const DecryptionTool = () => {
     setScanProgress(null);
     setFailedFiles([]);
     setMissingIndices([]);
-    setScanStatus('Scanning...');
+    setScanStatus(t('decryption.status.scanning'));
     
     // Helper delay
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -169,7 +171,7 @@ export const DecryptionTool = () => {
         
         // Process all files
         for (let i = 0; i < files.length; i++) {
-            setScanStatus(`Scanning... ${i + 1} / ${files.length}...`);
+            setScanStatus(t('decryption.status.scanProgress', { current: i + 1, total: files.length }));
             await delay(50);
 
             try {
@@ -256,9 +258,9 @@ export const DecryptionTool = () => {
         <div className="flex items-center gap-3">
           <ShieldCheck className="w-8 h-8 text-indigo-400 shrink-0" />
           <div>
-            <h3 className="font-bold text-indigo-100">Dual Auth Detected</h3>
+            <h3 className="font-bold text-indigo-100">{t('decryption.alert.dualAuthTitle')}</h3>
             <p className="text-sm text-indigo-300">
-               This content is protected by Dual-Factor Authentication.
+               {t('decryption.alert.dualAuthDesc')}
             </p>
           </div>
         </div>
@@ -266,7 +268,7 @@ export const DecryptionTool = () => {
           onClick={() => setUseDualAuth(true)}
           className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white"
         >
-          Switch to Dual Auth Mode <ArrowRight className="w-4 h-4 ml-2" />
+          {t('decryption.alert.switchToDual')} <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </div>
     )}
@@ -314,7 +316,7 @@ export const DecryptionTool = () => {
         setRecoveredMnemonic(rowData.join('\n'));
       } else if (mode === 'file') {
         if (!fileInfo) {
-          setRecoveredMnemonic('Please upload the original book file to recover data.');
+          setRecoveredMnemonic(t('decryption.error.fileMode'));
           return;
         }
         
@@ -335,7 +337,7 @@ export const DecryptionTool = () => {
                   setRecoveredMnemonic(res);
                   return;
                 } catch (e2) {
-                   throw new Error('Could not decode with File mode. Ensure correct file and format.');
+                   throw new Error(t('decryption.error.fileMode'));
                 }
              }
           } else if (parts.length === 3) {
@@ -345,11 +347,11 @@ export const DecryptionTool = () => {
              return;
           }
         }
-        setRecoveredMnemonic('Unknown data format for File mode.');
+        setRecoveredMnemonic(t('decryption.error.fileModeUnknown'));
 
       } else if (mode === 'url') {
         if (!urlInfo) {
-          setRecoveredMnemonic('Please fetch the book URL to recover data.');
+          setRecoveredMnemonic(t('decryption.error.urlMode'));
           return;
         }
         
@@ -362,7 +364,7 @@ export const DecryptionTool = () => {
          if (mode === 'physical' && rowData) {
              setRecoveredMnemonic(rowData.join('\n'));
          } else {
-             setRecoveredMnemonic(`Recovery Failed: ${e.message || 'Unknown Error'}`);
+             setRecoveredMnemonic(`${t('decryption.error.decryptFailed')} ${e.message || 'Unknown Error'}`);
          }
      }
 
@@ -376,7 +378,7 @@ export const DecryptionTool = () => {
     } catch (e) {
       console.error('Failed to read clipboard', e);
       // Fallback for when clipboard API is not available/allowed
-      setError('Unable to access clipboard. Please paste manually.');
+      setError(t('decryption.error.clipboard'));
     }
   };
 
