@@ -159,12 +159,19 @@ export const DecryptionTool = () => {
       
       let clean = val;
 
-      // 1. Try to find JSON block
-      const jsonMatch = val.match(/\{[\s\S]*"iv"[\s\S]*\}/);
-      if (jsonMatch) {
-          clean = jsonMatch[0];
-      } else {
-          // 2. Regex-based Marker Extraction
+      // 1. Try to find Separator-based block (User requested robust fix)
+      // Matches content between -------------------- separators
+      const separatorMatch = val.match(/--------------------\s*\n([\s\S]*?)\n\s*--------------------/);
+      if (separatorMatch) {
+          clean = separatorMatch[1].trim();
+      } 
+      // 2. Try to find JSON block
+      else {
+          const jsonMatch = val.match(/\{[\s\S]*"iv"[\s\S]*\}/);
+          if (jsonMatch) {
+              clean = jsonMatch[0];
+          } else {
+              // 3. Regex-based Marker Extraction
           // Support multiple languages and variations
           
           // Comprehensive list of Start Markers (Ciphertext) from all 13 supported languages
@@ -240,6 +247,7 @@ export const DecryptionTool = () => {
                    clean = longest.trim();
               }
           }
+      }
       }
 
       setCiphertext(clean);

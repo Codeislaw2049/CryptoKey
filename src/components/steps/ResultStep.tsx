@@ -99,7 +99,12 @@ ${t('resultStep.fileContent.note')}
   };
 
   const handleCopy = async () => {
-    const textToCopy = t('resultStep.clipboard.labels', { ciphertext: result.ciphertext, hash: result.hash });
+    // User requested separator for robust extraction across languages
+    const separator = "--------------------";
+    const protectedCiphertext = `\n${separator}\n${result.ciphertext}\n${separator}\n`;
+    
+    // Inject the protected ciphertext with separators into the template
+    const textToCopy = t('resultStep.clipboard.labels', { ciphertext: protectedCiphertext, hash: result.hash });
     
     try {
       await navigator.clipboard.writeText(textToCopy);
