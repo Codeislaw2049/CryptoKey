@@ -3,6 +3,7 @@ import jsQR from 'jsqr';
 import { X, Camera, RefreshCw, Zap, AlertTriangle } from 'lucide-react';
 import { Button } from './ui/Button';
 import { parseChunk } from '../utils/compression';
+import { useTranslation } from 'react-i18next';
 
 interface QRCodeStreamScannerProps {
   onScanComplete: (chunks: Map<number, string>, hash?: string) => void;
@@ -11,6 +12,7 @@ interface QRCodeStreamScannerProps {
 }
 
 export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScanComplete, onClose, mode = 'fullscreen' }) => {
+  const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [error, setError] = useState<string>('');
@@ -41,7 +43,7 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
         }
       } catch (err) {
         console.error("Error accessing camera:", err);
-        setError('Camera access denied or not available. Please ensure you are using HTTPS or localhost.');
+        setError(t('qrScanner.error.cameraAccess'));
       }
     };
 
@@ -169,9 +171,9 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
         <div className="text-white">
           <h3 className="font-bold flex items-center gap-2">
             <Camera className="w-5 h-5 text-indigo-400" />
-            Stream Scanner
+            {t('qrScanner.title')}
           </h3>
-          <p className="text-xs text-slate-300">Point at the animated QR code</p>
+          <p className="text-xs text-slate-300">{t('qrScanner.instruction')}</p>
         </div>
         <Button onClick={onClose} variant="ghost" className="text-white hover:bg-white/20">
           <X size={24} />
@@ -183,7 +185,7 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
         {!hasCamera && !error && (
           <div className="text-white flex flex-col items-center gap-4">
              <RefreshCw className="w-8 h-8 animate-spin text-indigo-500" />
-             <p>Accessing Camera...</p>
+             <p>{t('qrScanner.accessingCamera')}</p>
           </div>
         )}
         
@@ -191,7 +193,7 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
           <div className="text-red-400 max-w-xs text-center p-4 bg-red-900/20 rounded-xl border border-red-500/30">
              <AlertTriangle className="w-8 h-8 mx-auto mb-2" />
              <p>{error}</p>
-             <Button onClick={onClose} className="mt-4 bg-slate-800 text-white">Close</Button>
+             <Button onClick={onClose} className="mt-4 bg-slate-800 text-white">{t('common.close')}</Button>
           </div>
         )}
 
@@ -224,7 +226,7 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
              <div className="flex justify-between items-end text-white mb-1">
                <span className="font-bold text-lg flex items-center gap-2">
                  <Zap className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                 Scanning...
+                 {t('qrScanner.scanning')}
                </span>
                <span className="font-mono text-xl text-indigo-400">
                  {chunks.size} / {totalChunks || '?'}
@@ -260,7 +262,7 @@ export const QRCodeStreamScanner: React.FC<QRCodeStreamScannerProps> = ({ onScan
           </div>
         ) : (
           <div className="text-center text-slate-400">
-            <p className="mb-2">Waiting for data stream...</p>
+            <p className="mb-2">{t('qrScanner.waitingStream')}</p>
             <div className="flex justify-center gap-2">
                <div className="w-2 h-2 bg-slate-600 rounded-full animate-bounce delay-0" />
                <div className="w-2 h-2 bg-slate-600 rounded-full animate-bounce delay-150" />

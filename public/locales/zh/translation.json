@@ -1,7 +1,25 @@
 {
   "common": {
     "loading": "加载中...",
-    "language": "语言"
+    "language": "语言",
+    "close": "关闭",
+    "back": "返回",
+    "copy": "复制",
+    "copied": "已复制！",
+    "download": "下载",
+    "email": "邮件",
+    "print": "打印",
+    "paste": "粘贴",
+    "browse": "浏览",
+    "fetch": "获取",
+    "or": "- 或 -",
+    "none": "无",
+    "processing": "处理中..."
+  },
+  "errorBoundary": {
+    "title": "出现问题",
+    "description": "发生了意外错误。您的数据可能是安全的，但显示崩溃了。",
+    "reload": "重新加载应用程序"
   },
   "nav": {
     "home": "首页",
@@ -286,6 +304,104 @@
     "errorBind": "请先绑定验证器",
     "errorGen": "生成失败"
   },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "相机访问被拒绝或不可用。请确保您使用的是HTTPS或localhost。"
+    },
+    "title": "流扫描器",
+    "instruction": "对准动画二维码",
+    "accessingCamera": "访问相机中...",
+    "scanning": "扫描中...",
+    "waitingStream": "等待数据流..."
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. 上传双重认证分片",
+      "instruction": "上传双重认证生成器生成的所有分片（通常8-12个）。"
+    },
+    "scanStream": "扫描流",
+    "selectImages": "选择图片",
+    "clearReset": "清除 / 重置",
+    "progress": "进度: {{count}} / {{total}}",
+    "failedFiles": "读取{{count}}个文件失败:",
+    "missingParts": "缺失部分: {{parts}}",
+    "mergeSuccess": "分片合并成功！",
+    "step2": {
+      "title": "2. 输入解密密钥（必需）",
+      "description": "您必须提供密钥A和B。这些是永久密钥（QR图像或Base32字符串），而不是临时的6位数代码。"
+    },
+    "keyA": {
+      "label": "密钥A（助记词密钥）",
+      "loaded": "密钥A QR已加载",
+      "upload": "上传密钥A QR",
+      "placeholder": "粘贴密钥A密钥（Base32）"
+    },
+    "keyB": {
+      "label": "密钥B（上下文密钥）",
+      "loaded": "密钥B QR已加载",
+      "upload": "上传密钥B QR",
+      "placeholder": "粘贴密钥B密钥（Base32）"
+    },
+    "lostQrHelp": "* 丢失了QR？检查您的身份验证器应用的\"导出\"或\"显示密钥\"功能以找到此代码。",
+    "step3": {
+      "title": "3. 使用身份验证器代码验证密钥（可选）",
+      "description": "如果您可以访问身份验证器应用，请输入当前的6位数代码以验证正确性（可选）。"
+    },
+    "codeA": {
+      "placeholder": "代码A（例如：123456）"
+    },
+    "codeB": {
+      "placeholder": "代码B（例如：654321）"
+    },
+    "decryptButton": "解密数据",
+    "keysRequired": "* 请提供两个密钥（第2步）以启用解密。",
+    "success": {
+      "title": "解密成功！"
+    },
+    "result": {
+      "mnemonicLabel": "恢复的密钥（助记词）",
+      "passwordLabel": "上下文密码",
+      "lineLabel": "行号",
+      "fullContent": "完整解密内容（所有行）",
+      "rawCiphertext": "原始密文（旧版）"
+    },
+    "bookCipherNote": "注意: 这些似乎是书本密码索引..."
+  },
+  "integrityCheck": {
+    "devModeWarning": "完整性检查仅在生产构建中可用。",
+    "devModeDesc": "开发模式使用热重载脚本，无法与发布构建进行验证。",
+    "log": {
+      "receivedChecksums": "✅ 已从GitHub接收官方校验和",
+      "corsBlocked": "⚠️ 自动验证被浏览器安全（CORS）阻止。",
+      "corsReason1": "这是浏览器安全功能，不是安全缺陷。",
+      "corsReason2": "您可以通过与GitHub发布比较哈希值来手动验证。",
+      "corsReason3": "或者使用浏览器扩展程序绕过CORS进行此验证。",
+      "fileVerified": "✅ {{path}}: 已验证",
+      "hashMismatch": "❌ {{path}}: 哈希不匹配！",
+      "noChecksum": "❓ {{path}}: 在发布记录中未找到校验和"
+    },
+    "buttonLabel": "验证构建完整性",
+    "modalTitle": "构建完整性检查",
+    "calculating": "计算哈希值中...",
+    "connectionError": "无法连接到GitHub。请检查您的互联网连接。",
+    "manual": {
+      "title": "如何手动验证:",
+      "step1": "1. 访问GitHub发布页面（下方链接）。",
+      "step2": "2. 下载官方校验和文件（SHA256SUMS.txt）。",
+      "step3": "3. 与上面显示的哈希值进行比较。"
+    },
+    "viewRelease": "在GitHub上查看发布"
+  },
+  "militaryBadge": {
+    "title": "军用级安全",
+    "feature1": "零知识架构",
+    "feature2": "仅客户端处理",
+    "feature3": "不保留数据日志"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "此功能在商业/专业版中可用"
+  },
   "userManual": {
     "button": "用户手册",
     "title": "CryptoKey 用户手册",
@@ -513,7 +629,12 @@
       },
       "url": {
         "title": "在线书 (URL)",
-        "desc": "使用永久 URL 作为您的密钥源。"
+        "desc": "使用永久 URL 作为您的密钥源。",
+        "features": {
+          "remote": "远程内容",
+          "convenient": "便捷访问",
+          "dynamic": "动态引用"
+        }
       }
     },
     "inputStep": {
@@ -718,45 +839,6 @@
       "filenameMismatch": "文件名不匹配！预期：{{expected}}，实际：{{actual}}",
       "canvasContext": "无法获取画布上下文",
       "copyFailed": "复制到剪贴板失败"
-    }
-  },
-  "wallet": {
-    "title": "安全钱包生成器",
-    "subtitle": "生成 BIP39/BIP44 兼容钱包。100% 客户端运行。",
-    "button": {
-      "generateNew": "生成新钱包",
-      "import": "导入助记词",
-      "importAction": "导入钱包",
-      "paste": "粘贴",
-      "reveal": "点击显示",
-      "copyToInput": "复制到“输入助记词”",
-      "copyToStego": "复制到“隐写术”",
-      "hideSensitive": "隐藏敏感密钥",
-      "showSensitive": "显示敏感密钥"
-    },
-    "label": {
-      "12words": "12 个词 (128位)",
-      "24words": "24 个词 (256位)",
-      "recoveryPhrase": "恢复短语 (助记词)",
-      "walletDetails": "钱包详情",
-      "ethAddress": "以太坊地址 (BIP44)",
-      "path": "路径：{{path}} (标准 Metamask/Ledger)",
-      "privateKey": "私钥",
-      "publicKey": "公钥",
-      "addressQr": "地址二维码"
-    },
-    "import": {
-      "title": "导入现有钱包",
-      "placeholder": "在此输入您的 12、15、18、21 或 24 个助记词...",
-      "error": "助记词无效"
-    },
-    "warning": {
-      "title": "安全警告",
-      "text": "请将这些词写在纸上并妥善保管。切勿与任何人分享。如果您丢失了这些词，您的资金将永久丢失。"
-    },
-    "error": {
-      "copyFailed": "复制失败",
-      "clipboardRead": "无法读取剪贴板"
     }
   },
   "wallet": {

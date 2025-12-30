@@ -1,7 +1,25 @@
 {
   "common": {
     "loading": "読み込み中...",
-    "language": "言語"
+    "language": "言語",
+    "close": "閉じる",
+    "back": "戻る",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "download": "ダウンロード",
+    "email": "メール",
+    "print": "印刷",
+    "paste": "貼り付け",
+    "browse": "参照",
+    "fetch": "取得",
+    "or": "- または -",
+    "none": "なし",
+    "processing": "処理中..."
+  },
+  "errorBoundary": {
+    "title": "問題が発生しました",
+    "description": "予期しないエラーが発生しました。データは安全かもしれませんが、表示がクラッシュしました。",
+    "reload": "アプリケーションを再読み込み"
   },
   "nav": {
     "home": "ホーム",
@@ -259,6 +277,16 @@
     "saveImage": "画像を保存",
     "close": "閉じる"
   },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "カメラアクセスが拒否されたか、利用できません。HTTPSまたはlocalhostを使用していることを確認してください。"
+    },
+    "title": "ストリームスキャナー",
+    "instruction": "アニメーションQRコードに向けてください",
+    "accessingCamera": "カメラにアクセス中...",
+    "scanning": "スキャン中...",
+    "waitingStream": "データストリームを待機中..."
+  },
   "dualAuthGenerator": {
     "title": "デュアル認証暗号化",
     "back": "戻る",
@@ -285,6 +313,94 @@
     "shardLabel": "シャード {{index}}",
     "errorBind": "先に認証アプリをバインドしてください",
     "errorGen": "生成に失敗しました"
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. デュアル認証シャードをアップロード",
+      "instruction": "デュアル認証ジェネレーターで生成されたすべてのシャード（通常8-12個）をアップロードします。"
+    },
+    "scanStream": "ストリームをスキャン",
+    "selectImages": "画像を選択",
+    "clearReset": "クリア / リセット",
+    "progress": "進行状況: {{count}} / {{total}}",
+    "failedFiles": "{{count}}個のファイルの読み込みに失敗しました:",
+    "missingParts": "不足パーツ: {{parts}}",
+    "mergeSuccess": "シャードのマージに成功しました！",
+    "step2": {
+      "title": "2. 復号化キーを入力（必須）",
+      "description": "シークレットA & Bの両方を提供する必要があります。これらは永久的なキー（QR画像またはBase32文字列）であり、一時的な6桁のコードではありません。"
+    },
+    "keyA": {
+      "label": "キーA（ニーモニック用シークレット）",
+      "loaded": "キーA QRが読み込まれました",
+      "upload": "キーA QRをアップロード",
+      "placeholder": "キーAシークレットを貼り付け（Base32）"
+    },
+    "keyB": {
+      "label": "キーB（コンテキスト用シークレット）",
+      "loaded": "キーB QRが読み込まれました",
+      "upload": "キーB QRをアップロード",
+      "placeholder": "キーBシークレットを貼り付け（Base32）"
+    },
+    "lostQrHelp": "* QRを紛失？Authenticatorアプリの「エクスポート」または「シークレットを表示」機能でこのコードを見つけてください。",
+    "step3": {
+      "title": "3. Authenticatorコードでキーを検証（オプション）",
+      "description": "Authenticatorアプリにアクセスできる場合は、現在の6桁のコードを入力して正確性を確認できます（オプション）。"
+    },
+    "codeA": {
+      "placeholder": "コードA（例: 123456）"
+    },
+    "codeB": {
+      "placeholder": "コードB（例: 654321）"
+    },
+    "decryptButton": "データを復号化",
+    "keysRequired": "* 復号化を有効にするには、両方のシークレットキー（ステップ2）を提供してください。",
+    "success": {
+      "title": "復号化成功！"
+    },
+    "result": {
+      "mnemonicLabel": "復元されたシークレット（ニーモニック）",
+      "passwordLabel": "コンテキストパスワード",
+      "lineLabel": "行番号",
+      "fullContent": "完全な復号化コンテンツ（全行）",
+      "rawCiphertext": "生の暗号文（レガシー）"
+    },
+    "bookCipherNote": "注意: これらはブック暗号のインデックスのようです..."
+  },
+  "integrityCheck": {
+    "devModeWarning": "完全性チェックは本番ビルドでのみ利用可能です。",
+    "devModeDesc": "開発モードはホットリロードスクリプトを使用しており、リリースビルドと照合できません。",
+    "log": {
+      "receivedChecksums": "✅ GitHubから公式チェックサムを受信しました",
+      "corsBlocked": "⚠️ 自動検証がブラウザセキュリティ（CORS）によってブロックされました。",
+      "corsReason1": "これはブラウザのセキュリティ機能であり、セキュリティ上の欠陥ではありません。",
+      "corsReason2": "GitHubリリースでハッシュを比較することで手動で検証できます。",
+      "corsReason3": "または、ブラウザ拡張機能を使用してこの検証のためにCORSをバイパスできます。",
+      "fileVerified": "✅ {{path}}: 検証済み",
+      "hashMismatch": "❌ {{path}}: ハッシュ不一致！",
+      "noChecksum": "❓ {{path}}: リリースレコードにチェックサムが見つかりません"
+    },
+    "buttonLabel": "ビルド完全性を検証",
+    "modalTitle": "ビルド完全性チェック",
+    "calculating": "ハッシュを計算中...",
+    "connectionError": "GitHubに接続できませんでした。インターネット接続を確認してください。",
+    "manual": {
+      "title": "手動で検証する方法:",
+      "step1": "1. GitHubリリースページにアクセスします（下記リンク）。",
+      "step2": "2. 公式チェックサムファイル（SHA256SUMS.txt）をダウンロードします。",
+      "step3": "3. 上記のハッシュと比較します。"
+    },
+    "viewRelease": "GitHubでリリースを表示"
+  },
+  "militaryBadge": {
+    "title": "軍用レベルのセキュリティ",
+    "feature1": "ゼロ知識アーキテクチャ",
+    "feature2": "クライアントサイド処理のみ",
+    "feature3": "データログを保持しない"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "この機能はCommercial/Proバージョンで利用可能です"
   },
   "userManual": {
     "button": "ユーザーマニュアル",
@@ -602,6 +718,136 @@
         "pro": "Pro機能: アップグレードしてアクセス"
       },
       "reset": "リセット"
+    }
+  },
+  "decryption": {
+    "title": "復号化ツール",
+    "subtitle": "様々なソースから元のメッセージを復元",
+    "status": {
+      "scanning": "スキャン中...",
+      "processing": "ストリームデータを処理中...",
+      "reassembling": "再構築と解凍中...",
+      "scanProgress": "スキャン中... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "デュアル認証を検出",
+      "dualAuthDesc": "このコンテンツはデュアルファクター認証で保護されています。",
+      "switchToDual": "デュアル認証モードに切り替え",
+      "backToStandard": "標準復号化に戻る",
+      "dualAuthBadge": "デュアル認証モード"
+    },
+    "label": {
+      "ciphertext": "暗号文 / 暗号化データ",
+      "closeScanner": "スキャナーを閉じる"
+    },
+    "button": {
+      "scanStream": "ストリームをスキャン"
+    },
+    "error": {
+      "fileMode": "データを復元するには元の本ファイルをアップロードしてください。",
+      "fileModeUnknown": "ファイルモードの未知のデータ形式です。",
+      "urlMode": "データを復元するには本のURLを取得してください。",
+      "clipboard": "クリップボードにアクセスできません。手動で貼り付けてください。",
+      "decryptFailed": "復号化に失敗しました。パスワードを確認してください。"
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "データを隠す",
+      "extract": "データを抽出"
+    },
+    "label": {
+      "carrierImages": "キャリア画像",
+      "imagesLoaded": "画像が読み込まれました",
+      "source": "ソース: {{name}}",
+      "original": "オリジナル: {{name}}",
+      "uploadImages": "画像をアップロード",
+      "uploadExtractHelp": "すべてのシャード画像をアップロードして再構築します。",
+      "uploadHideHelp": "キャリア画像をアップロードします。",
+      "limitInfo": "無料: 3画像。Pro: 無制限。",
+      "secretMessage": "秘密メッセージ",
+      "enableSharding": "秘密分散（シャーディング）を有効化",
+      "proOnly": "（Proのみ）",
+      "totalShares": "総シェア数（N）",
+      "threshold": "復号化に必要（K）",
+      "strictMatching": "厳密なファイル名マッチング",
+      "strictMatchingHelp": "ファイルが元の名前と完全に一致する場合のみ復号化されます。",
+      "extractedContent": "抽出されたコンテンツ"
+    },
+    "placeholder": {
+      "pasteCiphertext": "暗号化された暗号文をここに貼り付けてください..."
+    },
+    "warning": {
+      "title": "重要な警告:",
+      "text": "平文（ニーモニックなど）を直接入力しないでください！画像を持っている人は誰でも抽出できます。常に最初にデータを暗号化し（例:「暗号化」タブを使用）、ここに暗号文を貼り付けてください。"
+    },
+    "button": {
+      "clearAll": "すべてクリア",
+      "paste": "貼り付け",
+      "generateShards": "シャードを生成してダウンロード",
+      "hideData": "データを隠してダウンロード",
+      "copied": "コピーしました！",
+      "copy": "コピー",
+      "extractHidden": "隠しデータを抽出"
+    },
+    "status": {
+      "successHide": "データの隠蔽に成功しました！画像がダウンロードされました。",
+      "successShards": "{{count}}個のシャード画像の生成とダウンロードに成功しました。",
+      "noData": "有効な隠しデータが見つかりません。厳密モードが使用された場合はファイル名を確認してください。",
+      "reconstructFailed": "再構築に失敗しました: {{error}}。以下に生データを表示します。",
+      "waitingImage": "画像を待機中..."
+    },
+    "about": {
+      "title": "ステガノグラフィについて",
+      "text": "このツールは画像ピクセルの最下位ビット（LSB）にデータを隠します。結果の画像は人間の目には同じに見えますが、秘密メッセージが含まれています。",
+      "noteTitle": "注意:",
+      "noteText": "ダウンロードした画像を圧縮しないでください（例: WhatsApp/Messenger経由で送信すると画像が圧縮されることがよくあります）。常にファイル（ドキュメント）として共有するか、厳密にローカルに保管してください。"
+    }
+  },
+  "wallet": {
+    "title": "セキュアウォレットジェネレーター",
+    "subtitle": "BIP39/BIP44準拠のウォレットを生成。100%クライアントサイド。",
+    "strength": {
+      "12words": "12ワード（128ビット）",
+      "24words": "24ワード（256ビット）"
+    },
+    "action": {
+      "generate": "新しいウォレットを生成",
+      "import": "ニーモニックをインポート"
+    },
+    "import": {
+      "title": "既存のウォレットをインポート",
+      "placeholder": "12、15、18、21、または24ワードのニーモニックフレーズをここに入力してください...",
+      "paste": "貼り付け",
+      "submit": "ウォレットをインポート"
+    },
+    "error": {
+      "invalidMnemonic": "無効なニーモニック"
+    },
+    "mnemonic": {
+      "title": "リカバリーフレーズ（ニーモニック）",
+      "reveal": "クリックして表示"
+    },
+    "copyTo": {
+      "encrypt": "「ニーモニックフレーズを入力」にコピー",
+      "steganography": "「ステガノグラフィ」にコピー"
+    },
+    "details": {
+      "title": "ウォレットの詳細",
+      "showKeys": "機密キーを表示",
+      "hideKeys": "機密キーを非表示",
+      "ethAddress": "Ethereumアドレス（BIP44）",
+      "path": "パス: {{path}}（標準Metamask/Ledger）",
+      "privateKey": "秘密鍵",
+      "publicKey": "公開鍵",
+      "addressQr": "アドレスQR"
+    },
+    "security": {
+      "title": "セキュリティ警告",
+      "line1": "これらの単語を紙に書き留めて安全に保管してください。",
+      "never": "絶対に",
+      "line2": "誰にも共有しないでください。",
+      "line3": "これらの単語を紛失すると、資金は永久に失われます。"
     }
   }
 }

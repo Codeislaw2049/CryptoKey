@@ -1,8 +1,9 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
+import { WithTranslation, withTranslation } from 'react-i18next';
 import { Button } from './ui/Button';
 
-interface Props {
+interface Props extends WithTranslation {
   children: ReactNode;
 }
 
@@ -11,7 +12,7 @@ interface State {
   error: Error | null;
 }
 
-export class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundaryComponent extends Component<Props, State> {
   public state: State = {
     hasError: false,
     error: null
@@ -30,6 +31,8 @@ export class ErrorBoundary extends Component<Props, State> {
   };
 
   public render() {
+    const { t } = this.props;
+
     if (this.state.hasError) {
       return (
         <div className="min-h-[400px] flex flex-col items-center justify-center p-8 text-center space-y-6 bg-slate-900/50 rounded-2xl border border-red-500/20">
@@ -37,9 +40,9 @@ export class ErrorBoundary extends Component<Props, State> {
             <AlertTriangle className="text-red-500 w-8 h-8" />
           </div>
           <div className="space-y-2">
-            <h2 className="text-xl font-bold text-white">Something went wrong</h2>
+            <h2 className="text-xl font-bold text-white">{t('errorBoundary.title')}</h2>
             <p className="text-slate-400 max-w-md mx-auto">
-              An unexpected error occurred. Your data might be safe, but the display crashed.
+              {t('errorBoundary.description')}
             </p>
             {this.state.error && (
               <p className="text-xs text-red-400 font-mono bg-red-950/30 p-2 rounded mt-2">
@@ -49,7 +52,7 @@ export class ErrorBoundary extends Component<Props, State> {
           </div>
           <Button onClick={this.handleReload} variant="primary">
             <RefreshCw className="mr-2" size={18} />
-            Reload Application
+            {t('errorBoundary.reload')}
           </Button>
         </div>
       );
@@ -58,3 +61,5 @@ export class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+
+export const ErrorBoundary = withTranslation()(ErrorBoundaryComponent);

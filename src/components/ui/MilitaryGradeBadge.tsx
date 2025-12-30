@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Shield, Lock, CheckCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const MilitaryGradeBadge: React.FC = () => {
+  const { t } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -28,7 +30,7 @@ export const MilitaryGradeBadge: React.FC = () => {
         </div>
         
         <span className={`text-xs font-bold transition-colors ${isHovered ? 'text-white' : ''}`}>
-          MILITARY-GRADE SECURITY
+          {t('militaryBadge.title').toUpperCase()}
         </span>
         
         {isHovered && (
@@ -48,9 +50,9 @@ export const MilitaryGradeBadge: React.FC = () => {
             <span>AES-256-GCM</span>
             <Lock size={12} />
           </div>
-          <p>Zero-Knowledge Architecture</p>
-          <p>Client-Side Processing Only</p>
-          <p>No Data Logs Persisted</p>
+          <p>{t('militaryBadge.feature1')}</p>
+          <p>{t('militaryBadge.feature2')}</p>
+          <p>{t('militaryBadge.feature3')}</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,25 @@
 {
   "common": {
-    "loading": "加载中...",
-    "language": "语言"
+    "loading": "載入中...",
+    "language": "語言",
+    "close": "關閉",
+    "back": "返回",
+    "copy": "複製",
+    "copied": "已複製！",
+    "download": "下載",
+    "email": "郵件",
+    "print": "列印",
+    "paste": "貼上",
+    "browse": "瀏覽",
+    "fetch": "獲取",
+    "or": "- 或 -",
+    "none": "無",
+    "processing": "處理中..."
+  },
+  "errorBoundary": {
+    "title": "發生問題",
+    "description": "發生了意外錯誤。您的資料可能是安全的，但顯示崩潰了。",
+    "reload": "重新載入應用程式"
   },
   "nav": {
     "home": "首页",
@@ -286,6 +304,104 @@
     "errorBind": "请先绑定验证器",
     "errorGen": "生成失败"
   },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "相機存取被拒絕或不可用。請確保您使用的是HTTPS或localhost。"
+    },
+    "title": "串流掃描器",
+    "instruction": "對準動畫二維碼",
+    "accessingCamera": "存取相機中...",
+    "scanning": "掃描中...",
+    "waitingStream": "等待資料流..."
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. 上傳雙重驗證分片",
+      "instruction": "上傳雙重驗證產生器產生的所有分片（通常8-12個）。"
+    },
+    "scanStream": "掃描串流",
+    "selectImages": "選擇圖片",
+    "clearReset": "清除 / 重設",
+    "progress": "進度: {{count}} / {{total}}",
+    "failedFiles": "讀取{{count}}個檔案失敗:",
+    "missingParts": "缺失部分: {{parts}}",
+    "mergeSuccess": "分片合併成功！",
+    "step2": {
+      "title": "2. 輸入解密金鑰（必需）",
+      "description": "您必須提供金鑰A和B。這些是永久金鑰（QR圖像或Base32字串），而不是臨時的6位數代碼。"
+    },
+    "keyA": {
+      "label": "金鑰A（助記詞金鑰）",
+      "loaded": "金鑰A QR已載入",
+      "upload": "上傳金鑰A QR",
+      "placeholder": "貼上金鑰A密鑰（Base32）"
+    },
+    "keyB": {
+      "label": "金鑰B（上下文金鑰）",
+      "loaded": "金鑰B QR已載入",
+      "upload": "上傳金鑰B QR",
+      "placeholder": "貼上金鑰B密鑰（Base32）"
+    },
+    "lostQrHelp": "* 遺失了QR？檢查您的驗證器應用程式的\"匯出\"或\"顯示密鑰\"功能以找到此代碼。",
+    "step3": {
+      "title": "3. 使用驗證器代碼驗證金鑰（可選）",
+      "description": "如果您可以存取驗證器應用程式，請輸入當前的6位數代碼以驗證正確性（可選）。"
+    },
+    "codeA": {
+      "placeholder": "代碼A（例如：123456）"
+    },
+    "codeB": {
+      "placeholder": "代碼B（例如：654321）"
+    },
+    "decryptButton": "解密資料",
+    "keysRequired": "* 請提供兩個密鑰（第2步）以啟用解密。",
+    "success": {
+      "title": "解密成功！"
+    },
+    "result": {
+      "mnemonicLabel": "恢復的密鑰（助記詞）",
+      "passwordLabel": "上下文密碼",
+      "lineLabel": "行號",
+      "fullContent": "完整解密內容（所有行）",
+      "rawCiphertext": "原始密文（舊版）"
+    },
+    "bookCipherNote": "注意: 這些似乎是書本密碼索引..."
+  },
+  "integrityCheck": {
+    "devModeWarning": "完整性檢查僅在生產建置中可用。",
+    "devModeDesc": "開發模式使用熱重載腳本，無法與發布建置進行驗證。",
+    "log": {
+      "receivedChecksums": "✅ 已從GitHub接收官方校驗和",
+      "corsBlocked": "⚠️ 自動驗證被瀏覽器安全性（CORS）阻止。",
+      "corsReason1": "這是瀏覽器安全功能，不是安全缺陷。",
+      "corsReason2": "您可以透過與GitHub發布比較雜湊值來手動驗證。",
+      "corsReason3": "或者使用瀏覽器擴充功能繞過CORS進行此驗證。",
+      "fileVerified": "✅ {{path}}: 已驗證",
+      "hashMismatch": "❌ {{path}}: 雜湊不符合！",
+      "noChecksum": "❓ {{path}}: 在發布記錄中未找到校驗和"
+    },
+    "buttonLabel": "驗證建置完整性",
+    "modalTitle": "建置完整性檢查",
+    "calculating": "計算雜湊值中...",
+    "connectionError": "無法連接到GitHub。請檢查您的網際網路連線。",
+    "manual": {
+      "title": "如何手動驗證:",
+      "step1": "1. 訪問GitHub發布頁面（下方連結）。",
+      "step2": "2. 下載官方校驗和檔案（SHA256SUMS.txt）。",
+      "step3": "3. 與上面顯示的雜湊值進行比較。"
+    },
+    "viewRelease": "在GitHub上檢視發布"
+  },
+  "militaryBadge": {
+    "title": "軍用級安全",
+    "feature1": "零知識架構",
+    "feature2": "僅用戶端處理",
+    "feature3": "不保留資料日誌"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "此功能在商業/專業版中可用"
+  },
   "userManual": {
     "button": "用户手册",
     "title": "CryptoKey 用户手册",
@@ -482,63 +598,68 @@
   },
   "wizard": {
     "modeSelection": {
-      "title": "选择恢复模式",
-      "subtitle": "选择您想要加密/恢复数据的方式。",
+      "title": "選擇恢復模式",
+      "subtitle": "選擇您想要加密/恢復資料的方式。",
       "mnemonic": {
-        "title": "助记词",
-        "desc": "使用 12/24 个单词的种子短语作为密钥源。",
+        "title": "助記詞",
+        "desc": "使用 12/24 個單詞的種子短語作為密鑰源。",
         "features": {
-          "compliance": "符合 BIP-39 标准",
-          "encryption": "标准加密",
+          "compliance": "符合 BIP-39 標準",
+          "encryption": "標準加密",
           "security": "高安全性"
         }
       },
       "physical": {
-        "title": "实体书",
-        "desc": "将您的密钥隐藏在书架上的真实书籍中。",
+        "title": "實體書",
+        "desc": "將您的密鑰隱藏在書架上的真實書籍中。",
         "features": {
-          "manual": "手动输入",
-          "ownBook": "使用您自己的书",
-          "flexible": "灵活且隐蔽"
+          "manual": "手動輸入",
+          "ownBook": "使用您自己的書",
+          "flexible": "靈活且隱蔽"
         }
       },
       "digital": {
-        "title": "数字书 (文件)",
-        "desc": "上传文本文件作为您的密钥源。",
+        "title": "數位書 (檔案)",
+        "desc": "上傳文字檔案作為您的密鑰源。",
         "features": {
-          "local": "本地处理",
-          "noUpload": "无服务器上传",
-          "offline": "离线工作"
+          "local": "本地處理",
+          "noUpload": "無伺服器上傳",
+          "offline": "離線工作"
         }
       },
       "url": {
-        "title": "在线书 (URL)",
-        "desc": "使用永久 URL 作为您的密钥源。"
+        "title": "線上書 (URL)",
+        "desc": "使用永久 URL 作為您的密鑰源。",
+        "features": {
+          "remote": "遠端內容",
+          "convenient": "便捷存取",
+          "dynamic": "動態引用"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "输入助记词",
-        "file": "上传文件",
-        "url": "输入 URL",
-        "general": "输入数据"
+        "mnemonic": "輸入助記詞",
+        "file": "上傳檔案",
+        "url": "輸入 URL",
+        "general": "輸入資料"
       },
       "subtitle": {
-        "mnemonic": "输入您的 12 或 24 个单词的助记词短语。",
-        "file": "上传要加密的文本文件。",
-        "url": "输入 URL 以获取内容。",
-        "general": "输入任何文本数据进行加密。"
+        "mnemonic": "輸入您的 12 或 24 個單詞的助記詞短語。",
+        "file": "上傳要加密的文字檔案。",
+        "url": "輸入 URL 以獲取內容。",
+        "general": "輸入任何文字資料進行加密。"
       },
       "file": {
-        "loaded": "文件加载成功",
-        "upload": "拖放或点击上传",
-        "sizeLoaded": "已加载",
+        "loaded": "檔案載入成功",
+        "upload": "拖放或點擊上傳",
+        "sizeLoaded": "已載入",
         "maxSize": "最大 5MB • TXT",
         "scheme": "加密方案",
         "schemes": {
-          "offset": "字符偏移",
-          "chapter": "章节索引",
-          "virtual": "虚拟行"
+          "offset": "字元偏移",
+          "chapter": "章節索引",
+          "virtual": "虛擬行"
         }
       },
       "url": {
@@ -718,45 +839,6 @@
       "filenameMismatch": "文件名不匹配！預期：{{expected}}，實際：{{actual}}",
       "canvasContext": "無法獲取畫布上下文",
       "copyFailed": "複製到剪貼板失敗"
-    }
-  },
-  "wallet": {
-    "title": "安全錢包生成器",
-    "subtitle": "生成 BIP39/BIP44 兼容錢包。100% 客戶端運行。",
-    "button": {
-      "generateNew": "生成新錢包",
-      "import": "導入助記詞",
-      "importAction": "導入錢包",
-      "paste": "貼上",
-      "reveal": "點擊顯示",
-      "copyToInput": "複製到“輸入助記詞”",
-      "copyToStego": "複製到“隱寫術”",
-      "hideSensitive": "隱藏敏感密鑰",
-      "showSensitive": "顯示敏感密鑰"
-    },
-    "label": {
-      "12words": "12 個詞 (128位)",
-      "24words": "24 個詞 (256位)",
-      "recoveryPhrase": "恢復短語 (助記詞)",
-      "walletDetails": "錢包詳情",
-      "ethAddress": "以太坊地址 (BIP44)",
-      "path": "路徑：{{path}} (標準 Metamask/Ledger)",
-      "privateKey": "私鑰",
-      "publicKey": "公鑰",
-      "addressQr": "地址二維碼"
-    },
-    "import": {
-      "title": "導入現有錢包",
-      "placeholder": "在此輸入您的 12、15、18、21 或 24 個助記詞...",
-      "error": "助記詞無效"
-    },
-    "warning": {
-      "title": "安全警告",
-      "text": "請將這些詞寫在紙上並妥善保管。切勿與任何人分享。如果您丟失了這些詞，您的資金將永久丟失。"
-    },
-    "error": {
-      "copyFailed": "複製失敗",
-      "clipboardRead": "無法讀取剪貼板"
     }
   },
   "wallet": {

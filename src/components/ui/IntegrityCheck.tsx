@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { ShieldCheck, Loader2, XCircle, ExternalLink } from 'lucide-react';
 import { APP_VERSION } from '../../version';
 import { Button } from './Button';
+import { useTranslation } from 'react-i18next';
 
 export const IntegrityCheck: React.FC = () => {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<'idle' | 'checking' | 'verified' | 'failed' | 'warning'>('idle');
   const [details, setDetails] = useState<string[]>([]);
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +23,7 @@ export const IntegrityCheck: React.FC = () => {
   const verifyIntegrity = async () => {
     if (!import.meta.env.PROD) {
       setStatus('warning');
-      setDetails(['Integrity check is only available in production builds.', 'Development mode uses hot-reloading scripts which cannot be verified against release builds.']);
+      setDetails([t('integrityCheck.devModeWarning'), t('integrityCheck.devModeDesc')]);
       setShowModal(true);
       return;
     }
@@ -41,13 +43,13 @@ export const IntegrityCheck: React.FC = () => {
         const response = await fetch(checksumUrl, { mode: 'cors' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         remoteChecksums = await response.text();
-        logs.push('✅ Received official checksums from GitHub');
+        logs.push(t('integrityCheck.log.receivedChecksums'));
       } catch (e) {
         console.warn(e);
-        logs.push('⚠️ Automatic verification blocked by browser security (CORS).');
-        logs.push('   This is a standard browser security feature, not an error.');
-        logs.push('   It prevents the web page from reading the GitHub release page directly.');
-        logs.push('   Please follow the manual verification steps below to ensure safety.');
+        logs.push(t('integrityCheck.log.corsBlocked'));
+        logs.push('   ' + t('integrityCheck.log.corsReason1'));
+        logs.push('   ' + t('integrityCheck.log.corsReason2'));
+        logs.push('   ' + t('integrityCheck.log.corsReason3'));
         // Don't fail the whole check, just warn
         setStatus('warning');
       }
@@ -103,9 +105,9 @@ export const IntegrityCheck: React.FC = () => {
              const expectedHash = checksumMap.get(path);
              if (expectedHash) {
                if (expectedHash === hash) {
-                 logs.push(`✅ ${path}: Verified`);
+                 logs.push(t('integrityCheck.log.fileVerified', { path }));
                } else {
-                 logs.push(`❌ ${path}: HASH MISMATCH!`);
+                 logs.push(t('integrityCheck.log.hashMismatch', { path }));
                  logs.push(`   Expected: ${expectedHash}`);
                  logs.push(`   Calculated: ${hash}`);
                  allMatch = false;
@@ -113,7 +115,7 @@ export const IntegrityCheck: React.FC = () => {
              } else {
                // File exists locally but not in checksums (could be okay if it's dynamic, but suspicious)
                // Or maybe the path mapping is wrong
-               logs.push(`❓ ${path}: No checksum found in release record`);
+               logs.push(t('integrityCheck.log.noChecksum', { path }));
                logs.push(`   Calculated: ${hash}`);
              }
           } else {
@@ -146,13 +148,13 @@ export const IntegrityCheck: React.FC = () => {
 
   return (
     <>
-      <button 
+      <button
         onClick={verifyIntegrity}
         className="text-slate-500 hover:text-primary transition-colors flex items-center gap-1 text-xs mx-auto"
         title="Verify that this app code matches the source code on GitHub"
       >
         <ShieldCheck size={14} />
-        Verify Build Integrity
+        {t('integrityCheck.buttonLabel')}
       </button>
 
       {showModal && (
@@ -161,11 +163,11 @@ export const IntegrityCheck: React.FC = () => {
             <div className="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
               <h3 className="font-bold text-white flex items-center gap-2">
                 <ShieldCheck className={
-                  status === 'verified' ? 'text-green-500' : 
-                  status === 'failed' ? 'text-red-500' : 
+                  status === 'verified' ? 'text-green-500' :
+                  status === 'failed' ? 'text-red-500' :
                   status === 'warning' ? 'text-yellow-500' : 'text-blue-500'
                 } />
-                Build Integrity Check
+                {t('integrityCheck.modalTitle')}
               </h3>
               <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-white">
                 <XCircle size={20} />
@@ -188,40 +190,40 @@ export const IntegrityCheck: React.FC = () => {
               {status === 'checking' && (
                 <div className="flex items-center gap-2 text-blue-400 mt-4">
                   <Loader2 className="animate-spin" size={16} />
-                  Calculating hashes...
+                  {t('integrityCheck.calculating')}
                 </div>
               )}
 
               {status === 'warning' && details.length === 0 && (
                  <div className="text-yellow-400">
-                    Could not connect to GitHub. Please check your internet connection.
+                    {t('integrityCheck.connectionError')}
                  </div>
               )}
 
               {/* Manual Verification Guide */}
               {status === 'warning' && (
                 <div className="mt-4 p-3 bg-slate-800 rounded border border-slate-700 text-xs text-slate-300">
-                  <p className="font-bold text-white mb-1">How to Verify Manually:</p>
+                  <p className="font-bold text-white mb-1">{t('integrityCheck.manual.title')}</p>
                   <ol className="list-decimal pl-4 space-y-1">
-                    <li>Click <strong>View Release on GitHub</strong> below.</li>
-                    <li>Download <strong>sha256sums.txt</strong> from the Assets section.</li>
-                    <li>Compare the hashes above with the ones in the file.</li>
+                    <li dangerouslySetInnerHTML={{ __html: t('integrityCheck.manual.step1') }} />
+                    <li dangerouslySetInnerHTML={{ __html: t('integrityCheck.manual.step2') }} />
+                    <li>{t('integrityCheck.manual.step3')}</li>
                   </ol>
                 </div>
               )}
             </div>
 
             <div className="p-4 border-t border-slate-800 bg-slate-800/30 flex justify-between items-center">
-               <a 
+               <a
                  href={`https://github.com/${REPO_OWNER}/${REPO_NAME}/releases`}
                  target="_blank"
                  rel="noopener noreferrer"
                  className="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1"
                >
-                 View Release on GitHub <ExternalLink size={12} />
+                 {t('integrityCheck.viewRelease')} <ExternalLink size={12} />
                </a>
                <Button onClick={() => setShowModal(false)} size="sm">
-                 Close
+                 {t('common.close')}
                </Button>
             </div>
           </div>

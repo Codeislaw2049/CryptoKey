@@ -1,7 +1,25 @@
 {
   "common": {
     "loading": "로딩 중...",
-    "language": "언어"
+    "language": "언어",
+    "close": "닫기",
+    "back": "뒤로",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "download": "다운로드",
+    "email": "이메일",
+    "print": "인쇄",
+    "paste": "붙여넣기",
+    "browse": "찾아보기",
+    "fetch": "가져오기",
+    "or": "- 또는 -",
+    "none": "없음",
+    "processing": "처리 중..."
+  },
+  "errorBoundary": {
+    "title": "문제가 발생했습니다",
+    "description": "예기치 않은 오류가 발생했습니다. 데이터는 안전할 수 있지만 화면이 충돌했습니다.",
+    "reload": "애플리케이션 다시 로드"
   },
   "nav": {
     "home": "홈",
@@ -285,6 +303,104 @@
     "shardLabel": "샤드 {{index}}",
     "errorBind": "먼저 인증 앱을 바인딩하십시오",
     "errorGen": "생성 실패"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "카메라 액세스가 거부되었거나 사용할 수 없습니다. HTTPS 또는 localhost를 사용하고 있는지 확인하세요."
+    },
+    "title": "스트림 스캐너",
+    "instruction": "애니메이션 QR 코드를 향하세요",
+    "accessingCamera": "카메라 액세스 중...",
+    "scanning": "스캔 중...",
+    "waitingStream": "데이터 스트림 대기 중..."
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. 이중 인증 샤드 업로드",
+      "instruction": "이중 인증 생성기에서 생성된 모든 샤드(보통 8-12개)를 업로드합니다."
+    },
+    "scanStream": "스트림 스캔",
+    "selectImages": "이미지 선택",
+    "clearReset": "지우기 / 재설정",
+    "progress": "진행률: {{count}} / {{total}}",
+    "failedFiles": "{{count}}개 파일 읽기 실패:",
+    "missingParts": "누락된 부분: {{parts}}",
+    "mergeSuccess": "샤드 병합 성공!",
+    "step2": {
+      "title": "2. 복호화 키 입력 (필수)",
+      "description": "비밀 A & B 모두를 제공해야 합니다. 이것들은 영구 키(QR 이미지 또는 Base32 문자열)이며, 임시 6자리 코드가 아닙니다."
+    },
+    "keyA": {
+      "label": "키 A (니모닉용 비밀)",
+      "loaded": "키 A QR 로드됨",
+      "upload": "키 A QR 업로드",
+      "placeholder": "키 A 비밀 붙여넣기 (Base32)"
+    },
+    "keyB": {
+      "label": "키 B (컨텍스트용 비밀)",
+      "loaded": "키 B QR 로드됨",
+      "upload": "키 B QR 업로드",
+      "placeholder": "키 B 비밀 붙여넣기 (Base32)"
+    },
+    "lostQrHelp": "* QR을 잃어버렸나요? Authenticator 앱의 \"내보내기\" 또는 \"비밀 표시\" 기능에서 이 코드를 찾으세요.",
+    "step3": {
+      "title": "3. Authenticator 코드로 키 확인 (선택사항)",
+      "description": "Authenticator 앱에 액세스할 수 있는 경우 현재 6자리 코드를 입력하여 정확성을 확인할 수 있습니다(선택사항)."
+    },
+    "codeA": {
+      "placeholder": "코드 A (예: 123456)"
+    },
+    "codeB": {
+      "placeholder": "코드 B (예: 654321)"
+    },
+    "decryptButton": "데이터 복호화",
+    "keysRequired": "* 복호화를 활성화하려면 두 비밀 키(2단계)를 모두 제공하세요.",
+    "success": {
+      "title": "복호화 성공!"
+    },
+    "result": {
+      "mnemonicLabel": "복구된 비밀 (니모닉)",
+      "passwordLabel": "컨텍스트 비밀번호",
+      "lineLabel": "줄 번호",
+      "fullContent": "전체 복호화된 콘텐츠 (모든 행)",
+      "rawCiphertext": "원시 암호문 (레거시)"
+    },
+    "bookCipherNote": "참고: 이것들은 책 암호 인덱스처럼 보입니다..."
+  },
+  "integrityCheck": {
+    "devModeWarning": "무결성 검사는 프로덕션 빌드에서만 사용할 수 있습니다.",
+    "devModeDesc": "개발 모드는 핫 리로딩 스크립트를 사용하므로 릴리스 빌드와 대조할 수 없습니다.",
+    "log": {
+      "receivedChecksums": "✅ GitHub에서 공식 체크섬을 받았습니다",
+      "corsBlocked": "⚠️ 브라우저 보안(CORS)에 의해 자동 검증이 차단되었습니다.",
+      "corsReason1": "이것은 브라우저 보안 기능이며 보안 결함이 아닙니다.",
+      "corsReason2": "GitHub 릴리스와 해시를 비교하여 수동으로 검증할 수 있습니다.",
+      "corsReason3": "또는 브라우저 확장 프로그램을 사용하여 이 검증을 위해 CORS를 우회할 수 있습니다.",
+      "fileVerified": "✅ {{path}}: 검증됨",
+      "hashMismatch": "❌ {{path}}: 해시 불일치!",
+      "noChecksum": "❓ {{path}}: 릴리스 레코드에서 체크섬을 찾을 수 없습니다"
+    },
+    "buttonLabel": "빌드 무결성 검증",
+    "modalTitle": "빌드 무결성 검사",
+    "calculating": "해시 계산 중...",
+    "connectionError": "GitHub에 연결할 수 없습니다. 인터넷 연결을 확인하세요.",
+    "manual": {
+      "title": "수동으로 검증하는 방법:",
+      "step1": "1. GitHub 릴리스 페이지를 방문하세요(아래 링크).",
+      "step2": "2. 공식 체크섬 파일(SHA256SUMS.txt)을 다운로드하세요.",
+      "step3": "3. 위의 해시와 비교하세요."
+    },
+    "viewRelease": "GitHub에서 릴리스 보기"
+  },
+  "militaryBadge": {
+    "title": "군용 등급 보안",
+    "feature1": "제로 지식 아키텍처",
+    "feature2": "클라이언트 측 처리만",
+    "feature3": "데이터 로그 미저장"
+  },
+  "proBadge": {
+    "text": "Pro",
+    "tooltip": "이 기능은 Commercial/Pro 버전에서 사용할 수 있습니다"
   },
   "userManual": {
     "button": "사용자 매뉴얼",
@@ -710,6 +826,136 @@
         "downloadTxt": "텍스트 다운로드",
         "downloadQr": "QR 이미지 저장"
       }
+    }
+  },
+  "decryption": {
+    "title": "복호화 도구",
+    "subtitle": "다양한 소스에서 원본 메시지를 복원합니다",
+    "status": {
+      "scanning": "스캔 중...",
+      "processing": "스트림 데이터 처리 중...",
+      "reassembling": "재조립 및 압축 해제 중...",
+      "scanProgress": "스캔 중... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "이중 인증 감지됨",
+      "dualAuthDesc": "이 콘텐츠는 이중 인증으로 보호됩니다.",
+      "switchToDual": "이중 인증 모드로 전환",
+      "backToStandard": "표준 복호화로 돌아가기",
+      "dualAuthBadge": "이중 인증 모드"
+    },
+    "label": {
+      "ciphertext": "암호문 / 암호화된 데이터",
+      "closeScanner": "스캐너 닫기"
+    },
+    "button": {
+      "scanStream": "스트림 스캔"
+    },
+    "error": {
+      "fileMode": "데이터를 복원하려면 원본 책 파일을 업로드하세요.",
+      "fileModeUnknown": "파일 모드의 알 수 없는 데이터 형식입니다.",
+      "urlMode": "데이터를 복원하려면 책 URL을 가져오세요.",
+      "clipboard": "클립보드에 액세스할 수 없습니다. 수동으로 붙여넣으세요.",
+      "decryptFailed": "복호화에 실패했습니다. 비밀번호를 확인하세요."
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "데이터 숨기기",
+      "extract": "데이터 추출"
+    },
+    "label": {
+      "carrierImages": "캐리어 이미지",
+      "imagesLoaded": "이미지 로드됨",
+      "source": "소스: {{name}}",
+      "original": "원본: {{name}}",
+      "uploadImages": "이미지 업로드",
+      "uploadExtractHelp": "모든 샤드 이미지를 업로드하여 재구성합니다.",
+      "uploadHideHelp": "캐리어 이미지를 업로드합니다.",
+      "limitInfo": "무료: 3개 이미지. Pro: 무제한.",
+      "secretMessage": "비밀 메시지",
+      "enableSharding": "비밀 분산(샤딩) 활성화",
+      "proOnly": "(Pro 전용)",
+      "totalShares": "총 공유 수(N)",
+      "threshold": "복호화에 필요(K)",
+      "strictMatching": "엄격한 파일명 매칭",
+      "strictMatchingHelp": "파일이 원래 이름과 정확히 일치하는 경우에만 복호화됩니다.",
+      "extractedContent": "추출된 콘텐츠"
+    },
+    "placeholder": {
+      "pasteCiphertext": "암호화된 암호문을 여기에 붙여넣으세요..."
+    },
+    "warning": {
+      "title": "중요 경고:",
+      "text": "평문(니모닉 등)을 직접 입력하지 마세요! 이미지를 가진 사람은 누구나 추출할 수 있습니다. 항상 먼저 데이터를 암호화한 다음(예: \"암호화\" 탭 사용), 여기에 암호문을 붙여넣으세요."
+    },
+    "button": {
+      "clearAll": "모두 지우기",
+      "paste": "붙여넣기",
+      "generateShards": "샤드 생성 및 다운로드",
+      "hideData": "데이터 숨기기 및 다운로드",
+      "copied": "복사됨!",
+      "copy": "복사",
+      "extractHidden": "숨겨진 데이터 추출"
+    },
+    "status": {
+      "successHide": "데이터 숨기기 성공! 이미지가 다운로드되었습니다.",
+      "successShards": "{{count}}개의 샤드 이미지가 성공적으로 생성 및 다운로드되었습니다.",
+      "noData": "유효한 숨겨진 데이터를 찾을 수 없습니다. 엄격 모드가 사용된 경우 파일명을 확인하세요.",
+      "reconstructFailed": "재구성 실패: {{error}}. 아래에 원시 데이터를 표시합니다.",
+      "waitingImage": "이미지 대기 중..."
+    },
+    "about": {
+      "title": "스테가노그래피 정보",
+      "text": "이 도구는 이미지 픽셀의 최하위 비트(LSB)에 데이터를 숨깁니다. 결과 이미지는 육안으로는 동일하게 보이지만 비밀 메시지가 포함되어 있습니다.",
+      "noteTitle": "참고:",
+      "noteText": "다운로드한 이미지를 압축하지 마세요(예: WhatsApp/Messenger를 통해 전송하면 이미지가 압축되는 경우가 많습니다). 항상 파일(문서)로 공유하거나 엄격하게 로컬에 보관하세요."
+    }
+  },
+  "wallet": {
+    "title": "보안 지갑 생성기",
+    "subtitle": "BIP39/BIP44 준수 지갑 생성. 100% 클라이언트 측.",
+    "strength": {
+      "12words": "12 단어 (128비트)",
+      "24words": "24 단어 (256비트)"
+    },
+    "action": {
+      "generate": "새 지갑 생성",
+      "import": "니모닉 가져오기"
+    },
+    "import": {
+      "title": "기존 지갑 가져오기",
+      "placeholder": "12, 15, 18, 21 또는 24 단어 니모닉 문구를 여기에 입력하세요...",
+      "paste": "붙여넣기",
+      "submit": "지갑 가져오기"
+    },
+    "error": {
+      "invalidMnemonic": "유효하지 않은 니모닉"
+    },
+    "mnemonic": {
+      "title": "복구 문구 (니모닉)",
+      "reveal": "클릭하여 표시"
+    },
+    "copyTo": {
+      "encrypt": "\"니모닉 문구 입력\"으로 복사",
+      "steganography": "\"스테가노그래피\"로 복사"
+    },
+    "details": {
+      "title": "지갑 세부정보",
+      "showKeys": "민감한 키 표시",
+      "hideKeys": "민감한 키 숨기기",
+      "ethAddress": "Ethereum 주소 (BIP44)",
+      "path": "경로: {{path}} (표준 Metamask/Ledger)",
+      "privateKey": "개인 키",
+      "publicKey": "공개 키",
+      "addressQr": "주소 QR"
+    },
+    "security": {
+      "title": "보안 경고",
+      "line1": "이 단어들을 종이에 적어 안전하게 보관하세요.",
+      "never": "절대로",
+      "line2": "누구와도 공유하지 마세요.",
+      "line3": "이 단어들을 잃어버리면 자금은 영원히 사라집니다."
     }
   }
 }

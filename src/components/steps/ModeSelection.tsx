@@ -100,15 +100,15 @@ export const ModeSelection = ({ onSelect }: ModeSelectionProps) => {
               <Globe className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white">Online Book (URL)</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white">{t('wizard.modeSelection.url.title')}</h3>
               <p className="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
-                Fetch book content from a public URL.
+                {t('wizard.modeSelection.url.desc')}
               </p>
             </div>
             <ul className="text-xs md:text-sm text-slate-500 space-y-1">
-              <li>• Remote Content</li>
-              <li>• Convenient Access</li>
-              <li>• Dynamic Reference</li>
+              <li>• {t('wizard.modeSelection.url.features.remote')}</li>
+              <li>• {t('wizard.modeSelection.url.features.convenient')}</li>
+              <li>• {t('wizard.modeSelection.url.features.dynamic')}</li>
             </ul>
           </div>
         </Card>

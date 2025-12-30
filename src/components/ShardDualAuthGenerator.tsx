@@ -5,6 +5,7 @@ import { compressData, createChunks } from '../utils/compression';
 import CryptoJS from 'crypto-js';
 import { Loader2, Download, Smartphone, ShieldCheck, Lock, Play, Pause, Zap, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   mnemonic: string;
@@ -16,6 +17,7 @@ interface Props {
 }
 
 const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', lineNumber = 0, ciphertext, hash, onBack }) => {
+  const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2>(1);
   const [secretA, setSecretA] = useState('');
   const [secretB, setSecretB] = useState('');
@@ -158,22 +160,22 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
       <div className="flex items-center justify-between border-b pb-4">
         <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
           <ShieldCheck className="w-6 h-6 text-indigo-600" />
-          Dual Authenticator Encryption
+          {t('dualAuthGenerator.title')}
         </h2>
-        <Button variant="outline" onClick={onBack} size="sm">Back</Button>
+        <Button variant="outline" onClick={onBack} size="sm">{t('common.back')}</Button>
       </div>
 
       {/* Use hidden class instead of conditional rendering to prevent DOM crashes from extensions */}
       <div className={step === 1 ? 'space-y-6' : 'hidden'}>
         <div className="bg-blue-50 p-4 rounded-lg text-sm text-blue-800">
-          <p className="font-semibold">How this works:</p>
+          <p className="font-semibold">{t('dualAuthGenerator.howItWorks.title')}</p>
           <ul className="list-disc pl-5 space-y-1 mt-2">
-            <li>System generates two unique keys (Secret A & B).</li>
-            <li>You bind them to your Authenticator App (Google/Microsoft Auth).</li>
-            <li><strong>Secret A</strong> encrypts your Mnemonic.</li>
-            <li><strong>Secret B</strong> encrypts your Password & Line Number.</li>
-            <li>Result is split into QR shards.</li>
-            <li>To decrypt, you need the Shards + The Authenticator Codes (or backup Binding QRs).</li>
+            <li>{t('dualAuthGenerator.howItWorks.step1')}</li>
+            <li>{t('dualAuthGenerator.howItWorks.step2')}</li>
+            <li dangerouslySetInnerHTML={{ __html: t('dualAuthGenerator.howItWorks.step3') }} />
+            <li dangerouslySetInnerHTML={{ __html: t('dualAuthGenerator.howItWorks.step4') }} />
+            <li>{t('dualAuthGenerator.howItWorks.step5')}</li>
+            <li>{t('dualAuthGenerator.howItWorks.step6')}</li>
           </ul>
         </div>
 
@@ -181,30 +183,30 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
           <div className="text-center py-8">
             <Button onClick={generateAuthSecrets} className="w-full max-w-sm">
               <Lock className="w-4 h-4 mr-2" />
-              Generate Secure Keys
+              {t('dualAuthGenerator.generateKeys')}
             </Button>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
             <div className="border p-4 rounded-lg text-center space-y-3 bg-gray-50">
-              <h3 className="font-bold text-sm text-indigo-700">Authenticator A (Mnemonic Key)</h3>
+              <h3 className="font-bold text-sm text-indigo-700">{t('dualAuthGenerator.authA')}</h3>
               <div className="bg-white p-2 inline-block rounded shadow-sm">
                 <img src={authQrA} alt="Auth A" className="w-48 h-48" />
               </div>
-              <p className="text-xs text-gray-500">Scan with Google/Microsoft Authenticator</p>
+              <p className="text-xs text-gray-500">{t('dualAuthGenerator.scanAuth')}</p>
               <Button variant="outline" size="sm" onClick={() => downloadImage(authQrA, 'Authenticator_A_Key.png')}>
-                <Download className="w-3 h-3 mr-1" /> Save Image
+                <Download className="w-3 h-3 mr-1" /> {t('dualAuthGenerator.saveImage')}
               </Button>
             </div>
 
             <div className="border p-4 rounded-lg text-center space-y-3 bg-gray-50">
-              <h3 className="font-bold text-sm text-purple-700">Authenticator B (Context Key)</h3>
+              <h3 className="font-bold text-sm text-purple-700">{t('dualAuthGenerator.authB')}</h3>
               <div className="bg-white p-2 inline-block rounded shadow-sm">
                 <img src={authQrB} alt="Auth B" className="w-48 h-48" />
               </div>
-              <p className="text-xs text-gray-500">Scan with Google/Microsoft Authenticator</p>
+              <p className="text-xs text-gray-500">{t('dualAuthGenerator.scanAuth')}</p>
               <Button variant="outline" size="sm" onClick={() => downloadImage(authQrB, 'Authenticator_B_Key.png')}>
-                <Download className="w-3 h-3 mr-1" /> Save Image
+                <Download className="w-3 h-3 mr-1" /> {t('dualAuthGenerator.saveImage')}
               </Button>
             </div>
           </div>
@@ -212,13 +214,13 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
 
         {authQrA && (
           <div className="pt-4 border-t">
-            <Button 
-              onClick={generateShardCodes} 
-              className="w-full" 
+            <Button
+              onClick={generateShardCodes}
+              className="w-full"
               disabled={loading}
             >
               {loading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Smartphone className="w-4 h-4 mr-2" />}
-              {loading ? 'Processing...' : 'Encrypt & Generate Shards'}
+              {loading ? t('common.processing') : t('dualAuthGenerator.encryptAndGenerate')}
             </Button>
           </div>
         )}
@@ -226,12 +228,12 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
 
       <div className={step === 2 ? 'space-y-6' : 'hidden'}>
         <div className="bg-green-50 p-4 rounded-lg text-center">
-          <h3 className="text-lg font-bold text-green-800 mb-2">Encryption Complete!</h3>
+          <h3 className="text-lg font-bold text-green-800 mb-2">{t('dualAuthGenerator.encryptionComplete')}</h3>
           <p className="text-green-700 text-sm">
-            You have {shardQrcodes.length} data shards and 2 authenticator keys.
+            {t('dualAuthGenerator.resultDesc', { count: shardQrcodes.length })}
           </p>
           <p className="text-red-600 font-bold mt-2 text-sm uppercase">
-            Important: You MUST save ALL images (Shards + Auth Keys) to decrypt later!
+            {t('dualAuthGenerator.importantWarning')}
           </p>
         </div>
 
@@ -254,26 +256,26 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
                  <div className="flex items-center justify-between mb-2">
                    <span className="text-xs text-slate-500 font-bold uppercase flex items-center gap-1">
                      <Zap size={12} className="text-yellow-500 fill-yellow-500" />
-                     Air-Gap Stream Mode
+                     {t('qrGenerator.streamMode')}
                    </span>
                    <span className="text-xs font-mono text-slate-500">
                      {Math.round(1000 / streamIntervalMs)} FPS
                    </span>
                  </div>
-                 
+
                  <div className="flex items-center gap-3">
-                   <Button 
-                     onClick={() => setIsStreaming(!isStreaming)} 
+                   <Button
+                     onClick={() => setIsStreaming(!isStreaming)}
                      size="sm"
                      className={`flex-1 ${isStreaming ? 'bg-red-500 hover:bg-red-600' : 'bg-indigo-600 hover:bg-indigo-500'} text-white`}
                    >
                      {isStreaming ? (
                        <>
-                         <Pause size={16} className="mr-2" /> Pause
+                         <Pause size={16} className="mr-2" /> {t('qrGenerator.pauseStream')}
                        </>
                      ) : (
                        <>
-                         <Play size={16} className="mr-2" /> Play Stream
+                         <Play size={16} className="mr-2" /> {t('qrGenerator.playStream')}
                        </>
                      )}
                    </Button>
@@ -305,22 +307,22 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
 
              {/* Manual Navigation */}
              <div className="flex justify-between items-center bg-slate-50 p-2 rounded-lg border border-slate-200">
-                <Button 
-                  onClick={() => { setIsStreaming(false); if(currentIndex > 0) setCurrentIndex(c => c - 1); }} 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  onClick={() => { setIsStreaming(false); if(currentIndex > 0) setCurrentIndex(c => c - 1); }}
+                  variant="ghost"
+                  size="sm"
                   disabled={currentIndex === 0 || isStreaming}
                   className="text-slate-500 hover:bg-slate-200"
                 >
                   <ArrowLeft size={20} />
                 </Button>
                 <span className="text-sm font-mono text-slate-500 font-bold">
-                  Shard {currentIndex + 1} of {shardQrcodes.length}
+                  {t('qrGenerator.shardCount', { current: currentIndex + 1, total: shardQrcodes.length })}
                 </span>
-                <Button 
-                  onClick={() => { setIsStreaming(false); if(currentIndex < shardQrcodes.length - 1) setCurrentIndex(c => c + 1); }} 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  onClick={() => { setIsStreaming(false); if(currentIndex < shardQrcodes.length - 1) setCurrentIndex(c => c + 1); }}
+                  variant="ghost"
+                  size="sm"
                   disabled={currentIndex === shardQrcodes.length - 1 || isStreaming}
                   className="text-slate-500 hover:bg-slate-200"
                 >
@@ -333,17 +335,17 @@ const ShardDualAuthGenerator: React.FC<Props> = ({ mnemonic, password = '', line
           <div className="flex justify-center pt-4 border-t">
             <Button onClick={downloadAll} className="bg-green-600 hover:bg-green-700 w-full max-w-sm">
               <Download className="w-4 h-4 mr-2" />
-              Download All Images (Zip recommended)
+              {t('dualAuthGenerator.downloadAll')}
             </Button>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 opacity-50 hover:opacity-100 transition-opacity">
             {shardQrcodes.map((url, i) => (
-              <div key={i} 
+              <div key={i}
                    className={`border p-2 rounded text-center bg-gray-50 cursor-pointer ${currentIndex === i ? 'ring-2 ring-indigo-500' : ''}`}
                    onClick={() => { setIsStreaming(false); setCurrentIndex(i); }}
               >
-                <p className="text-xs font-mono mb-1 text-gray-700 font-bold">Shard {i + 1}</p>
+                <p className="text-xs font-mono mb-1 text-gray-700 font-bold">{t('dualAuthGenerator.shardLabel', { index: i + 1 })}</p>
                 <img src={url} alt={`Shard ${i+1}`} className="w-full bg-white rounded" />
               </div>
             ))}

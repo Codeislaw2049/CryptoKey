@@ -27,7 +27,7 @@ export const LanguageSwitcher = () => {
   }, []);
 
   const getCurrentLangLabel = () => {
-    const current = languages.find(l => i18n.language.startsWith(l.code));
+    const current = languages.find(l => i18n.language === l.code);
     return current ? current.label : 'English';
   };
 
