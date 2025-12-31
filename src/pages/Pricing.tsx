@@ -164,7 +164,7 @@ export const Pricing = () => {
 
       {/* Pricing Cards */}
       <div className="relative">
-        {isChina && (
+        {shouldBlock && (
           <div className="absolute inset-0 z-50 flex items-center justify-center bg-slate-900/90 backdrop-blur-sm p-8 text-center rounded-lg border border-slate-700">
             <div className="max-w-md space-y-6">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto animate-pulse">
@@ -186,7 +186,7 @@ export const Pricing = () => {
           </div>
         )}
         
-        <div className={`grid md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4 ${isChina ? 'filter blur-sm opacity-50 pointer-events-none select-none' : ''}`}>
+        <div className={`grid md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4 ${shouldBlock ? 'filter blur-sm opacity-50 pointer-events-none select-none' : ''}`}>
           {plans.map((plan) => (
             <Card 
               key={plan.name} 
