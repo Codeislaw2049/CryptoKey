@@ -47,6 +47,25 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
     // FORCE FREE ON INIT unless explicit valid license found
     
     const checkLicense = async () => {
+        // Security Fix: Check if cache is expired on startup
+        const cachedLicense = sessionStorage.getItem('cryptokey_real_license');
+        const cachedExpiry = sessionStorage.getItem('cryptokey_license_expiry');
+
+        if (cachedLicense && cachedExpiry) {
+            const expiryTime = parseInt(cachedExpiry);
+            if (Date.now() > expiryTime) {
+                console.warn('[License] Cache expired, clearing...');
+                sessionStorage.removeItem('cryptokey_real_license');
+                sessionStorage.removeItem('cryptokey_last_active');
+                sessionStorage.removeItem('cryptokey_license_expiry');
+                setLicenseType('free');
+                // Continue to allow other checks (like local .key file) to potentially upgrade it back
+                // But for now, we've cleared the stale session
+            } else {
+                console.log('[License] Cache still valid, expires in', Math.floor((expiryTime - Date.now()) / 1000), 'seconds');
+            }
+        }
+
         // Monotonic Clock Check (Anti-Time Manipulation)
         // Only applies if we have a stored real license (Online Pro)
         const storedRealForCheck = sessionStorage.getItem('cryptokey_real_license');
