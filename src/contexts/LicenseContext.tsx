@@ -330,6 +330,40 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
     };
   }, []);
 
+  // Periodic USB Check (Security Fix for Offline Version)
+  useEffect(() => {
+    if (licenseType === 'pro_local') {
+      // Check if running in Tauri context
+      const isTauri = typeof (window as any).__TAURI__ !== 'undefined';
+      
+      if (isTauri) {
+        const invoke = (window as any).__TAURI__.invoke;
+        console.log("[License] Starting periodic USB check...");
+        
+        const checkInterval = setInterval(async () => {
+          try {
+            // Call the new Rust command
+            const result: any = await invoke('check_usb_present');
+            if (result && result.present === false) {
+              console.warn("[License] ⚠️ USB Key removed, disabling Pro features");
+              setLicenseType('free');
+              sessionStorage.removeItem('cryptokey_real_license');
+              sessionStorage.removeItem('cryptokey_license_expiry');
+              alert(t('license.alerts.usbRemoved') || 'USB Key has been removed. Pro features have been disabled.');
+            }
+          } catch (e) {
+            // If command doesn't exist (e.g. running in web mode), ignore
+          }
+        }, 30000); // Check every 30 seconds
+
+        return () => {
+          console.log("[License] Stopping USB check");
+          clearInterval(checkInterval);
+        };
+      }
+    }
+  }, [licenseType, t]);
+
   const toggleLicense = () => {
     if (licenseType === 'pro_real') {
         if (confirm(t('license.alerts.deactivateConfirm'))) {
