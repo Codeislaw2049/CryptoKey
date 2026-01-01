@@ -295,16 +295,17 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     checkLicense();
 
-    // Support for Offline USB Key Auto-Activation (Option A)
-    // If configured via env var, check license periodically
-    if (import.meta.env.VITE_LICENSE_AUTO_CHECK === 'true') {
-         const interval = setInterval(checkLicense, 1000);
-         return () => {
-             clearInterval(interval);
-             window.removeEventListener('focus', handleFocus);
-             window.removeEventListener('click', updateActivity);
-             window.removeEventListener('keydown', updateActivity);
-         };
+    // -----------------------------------------------------------
+    // OFFLINE MODE / USB KEY AUTO-ACTIVATION
+    // Controlled by: VITE_LICENSE_AUTO_CHECK
+    // If 'true', skips online validation for local checks and polls periodically.
+    // -----------------------------------------------------------
+    const enableAutoCheck = import.meta.env.VITE_LICENSE_AUTO_CHECK === 'true';
+    let intervalId: NodeJS.Timeout | null = null;
+
+    if (enableAutoCheck) {
+         const intervalMs = parseInt(import.meta.env.VITE_LICENSE_CHECK_INTERVAL || '1000');
+         intervalId = setInterval(checkLicense, intervalMs);
     }
 
     const handleFocus = () => {
@@ -322,6 +323,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
     window.addEventListener('keydown', updateActivity);
     
     return () => {
+        if (intervalId) clearInterval(intervalId);
         window.removeEventListener('focus', handleFocus);
         window.removeEventListener('click', updateActivity);
         window.removeEventListener('keydown', updateActivity);
