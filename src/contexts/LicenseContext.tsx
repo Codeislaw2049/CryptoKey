@@ -394,6 +394,8 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
           if (isValid) {
               setLicenseType('pro_local');
               sessionStorage.setItem('cryptokey_real_license', 'OFFLINE_KEY_ACTIVATED');
+              // Set 5 minutes expiry for cache (Security Fix)
+              sessionStorage.setItem('cryptokey_license_expiry', (Date.now() + 300000).toString());
               sessionStorage.setItem('cryptokey_last_active', Date.now().toString());
               return true;
           }
