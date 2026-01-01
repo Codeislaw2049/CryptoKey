@@ -204,6 +204,23 @@ ${t('resultStep.fileContent.note')}
             </div>
           )}
 
+          {/* Ciphertext Display - Moved to Left for Balance */}
+          <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+             <label className="text-xs font-bold text-slate-500 mb-2 block flex items-center gap-2">
+                <Copy size={12} />
+                {t('wizard.resultStep.fileContent.ciphertext') || "Ciphertext / 密文"}
+             </label>
+             <textarea 
+                readOnly
+                value={result.ciphertext}
+                className="w-full h-48 bg-black/30 p-3 rounded text-xs text-slate-300 font-mono resize-none focus:outline-none focus:ring-1 focus:ring-primary/50"
+                onClick={(e) => (e.target as HTMLTextAreaElement).select()}
+             />
+             <p className="text-[10px] text-slate-600 mt-2 text-right">
+                {t('wizard.resultStep.actions.clickToSelect') || "Click to select all"}
+             </p>
+          </div>
+
         </div>
 
         {/* Right: Public Safe Data */}

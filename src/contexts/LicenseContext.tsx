@@ -295,6 +295,18 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     checkLicense();
 
+    // Support for Offline USB Key Auto-Activation (Option A)
+    // If configured via env var, check license periodically
+    if (import.meta.env.VITE_LICENSE_AUTO_CHECK === 'true') {
+         const interval = setInterval(checkLicense, 1000);
+         return () => {
+             clearInterval(interval);
+             window.removeEventListener('focus', handleFocus);
+             window.removeEventListener('click', updateActivity);
+             window.removeEventListener('keydown', updateActivity);
+         };
+    }
+
     const handleFocus = () => {
         checkLicense();
     };
