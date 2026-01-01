@@ -816,13 +816,17 @@
         "copied": "कॉपी हो गया!",
         "download": "डाउनलोड करें",
         "email": "ईमेल",
-        "print": "प्रिंट करें"
+        "print": "प्रिंट करें",
+        "clickToSelect": "Click to select all"
       },
       "dualAuth": {
         "button": "दोहरा Auth Shards जेनरेट करें",
         "pro": "Pro फीचर: एक्सेस के लिए अपग्रेड करें"
       },
-      "reset": "रीसेट करें"
+      "reset": "रीसेट करें",
+      "fileContent": {
+        "ciphertext": "Ciphertext"
+      }
     }
   },
   "decryption": {

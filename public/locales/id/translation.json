@@ -816,13 +816,17 @@
         "copied": "Tersalin!",
         "download": "Unduh",
         "email": "Email",
-        "print": "Cetak"
+        "print": "Cetak",
+        "clickToSelect": "Klik untuk memilih semua"
       },
       "dualAuth": {
         "button": "Hasilkan Pecahan Dual Auth",
         "pro": "Fitur Pro: Upgrade untuk Akses"
       },
-      "reset": "Reset"
+      "reset": "Reset",
+      "fileContent": {
+        "ciphertext": "Ciphertext"
+      }
     }
   },
   "decryption": {

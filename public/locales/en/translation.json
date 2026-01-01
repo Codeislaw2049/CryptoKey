@@ -828,13 +828,17 @@
         "copied": "Copied!",
         "download": "Download",
         "email": "Email",
-        "print": "Print"
+        "print": "Print",
+        "clickToSelect": "Click to select all"
       },
       "dualAuth": {
         "button": "Generate Dual Auth Shards",
         "pro": "Pro Feature: Upgrade to Access"
       },
-      "reset": "Reset"
+      "reset": "Reset",
+      "fileContent": {
+        "ciphertext": "Ciphertext"
+      }
     }
   },
   "decryption": {

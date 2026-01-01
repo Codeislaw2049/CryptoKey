@@ -816,13 +816,17 @@
         "copied": "Kopyalandı!",
         "download": "İndir",
         "email": "E-posta",
-        "print": "Yazdır"
+        "print": "Yazdır",
+        "clickToSelect": "Tümünü seçmek için tıklayın"
       },
       "dualAuth": {
         "button": "İkili Kimlik Doğrulama Parçaları Oluştur",
         "pro": "Pro Özellik: Erişim için Yükselt"
       },
-      "reset": "Sıfırla"
+      "reset": "Sıfırla",
+      "fileContent": {
+        "ciphertext": "Şifreli metin"
+      }
     }
   },
   "decryption": {

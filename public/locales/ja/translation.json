@@ -816,13 +816,17 @@
         "copied": "コピーしました！",
         "download": "ダウンロード",
         "email": "メール",
-        "print": "印刷"
+        "print": "印刷",
+        "clickToSelect": "クリックしてすべて選択"
       },
       "dualAuth": {
         "button": "デュアル認証シャードを生成",
         "pro": "Pro機能: アップグレードしてアクセス"
       },
-      "reset": "リセット"
+      "reset": "リセット",
+      "fileContent": {
+        "ciphertext": "暗号文"
+      }
     }
   },
   "decryption": {

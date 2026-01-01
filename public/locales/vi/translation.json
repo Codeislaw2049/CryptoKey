@@ -816,13 +816,17 @@
         "copied": "Đã sao chép!",
         "download": "Tải xuống",
         "email": "Email",
-        "print": "In"
+        "print": "In",
+        "clickToSelect": "Nhấp để chọn tất cả"
       },
       "dualAuth": {
         "button": "Tạo mảnh xác thực kép",
         "pro": "Tính năng Pro: Nâng cấp để truy cập"
       },
-      "reset": "Đặt lại"
+      "reset": "Đặt lại",
+      "fileContent": {
+        "ciphertext": "Văn bản mã hóa"
+      }
     }
   },
   "decryption": {

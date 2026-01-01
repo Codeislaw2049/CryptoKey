@@ -816,13 +816,17 @@
         "copied": "¡Copiado!",
         "download": "Descargar",
         "email": "Correo",
-        "print": "Imprimir"
+        "print": "Imprimir",
+        "clickToSelect": "Haga clic para seleccionar todo"
       },
       "dualAuth": {
         "button": "Generar Fragmentos de Autenticación Dual",
         "pro": "Función Pro: Actualiza para Acceder"
       },
-      "reset": "Reiniciar"
+      "reset": "Reiniciar",
+      "fileContent": {
+        "ciphertext": "Texto cifrado"
+      }
     }
   },
   "decryption": {

@@ -816,13 +816,17 @@
         "copied": "복사됨!",
         "download": "다운로드",
         "email": "이메일",
-        "print": "인쇄"
+        "print": "인쇄",
+        "clickToSelect": "클릭하여 모두 선택"
       },
       "dualAuth": {
         "button": "이중 인증 샤드 생성",
         "pro": "Pro 기능: 업그레이드하여 액세스"
       },
-      "reset": "재설정"
+      "reset": "재설정",
+      "fileContent": {
+        "ciphertext": "암호문"
+      }
     }
   },
   "decryption": {

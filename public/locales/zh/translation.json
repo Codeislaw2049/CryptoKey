@@ -816,13 +816,17 @@
         "copied": "已复制！",
         "download": "下载",
         "email": "电子邮件",
-        "print": "打印"
+        "print": "打印",
+        "clickToSelect": "点击全选"
       },
       "dualAuth": {
         "button": "生成双重验证分片",
         "pro": "专业版功能：升级以访问"
       },
-      "reset": "重置"
+      "reset": "重置",
+      "fileContent": {
+        "ciphertext": "密文"
+      }
     }
   },
   "decryption": {
