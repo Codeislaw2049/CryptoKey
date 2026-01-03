@@ -25,7 +25,7 @@ export const encryptWithAES = async (
     {
       name: 'PBKDF2',
       salt: salt,
-      iterations: 100000,
+      iterations: 600000, // Upgraded to 600,000 for better security (Audit P3)
       hash: 'SHA-256',
     },
     keyMaterial,
@@ -109,26 +109,51 @@ export const decryptWithAES = async (
         ['deriveKey']
       );
 
-      const key = await crypto.subtle.deriveKey(
-        {
-          name: 'PBKDF2',
-          salt: salt,
-          iterations: 100000,
-          hash: 'SHA-256',
-        },
-        keyMaterial,
-        { name: 'AES-GCM', length: 256 },
-        false,
-        ['encrypt', 'decrypt']
-      );
+      // Attempt decryption with new standard (600,000 iterations)
+      try {
+        const key = await crypto.subtle.deriveKey(
+            {
+            name: 'PBKDF2',
+            salt: salt,
+            iterations: 600000,
+            hash: 'SHA-256',
+            },
+            keyMaterial,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['encrypt', 'decrypt']
+        );
 
-      const decrypted = await crypto.subtle.decrypt(
-        { name: 'AES-GCM', iv },
-        key,
-        data
-      );
+        const decrypted = await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv },
+            key,
+            data
+        );
 
-      return new TextDecoder().decode(decrypted);
+        return new TextDecoder().decode(decrypted);
+      } catch (e) {
+        // Fallback to 100,000 iterations (Previous Standard)
+        const key = await crypto.subtle.deriveKey(
+            {
+            name: 'PBKDF2',
+            salt: salt,
+            iterations: 100000,
+            hash: 'SHA-256',
+            },
+            keyMaterial,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['encrypt', 'decrypt']
+        );
+
+        const decrypted = await crypto.subtle.decrypt(
+            { name: 'AES-GCM', iv },
+            key,
+            data
+        );
+
+        return new TextDecoder().decode(decrypted);
+      }
   } catch (e) {
       // Fallback for Legacy Format (IV + Data, Key = SHA256(Password))
       // Legacy structure: IV (12) + Data
