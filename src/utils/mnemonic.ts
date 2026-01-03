@@ -82,9 +82,41 @@ export const mnemonicToIndices = (mnemonic: string): number[] => {
   });
 };
 
+/**
+ * Converts arbitrary text to an array of indices (0-255).
+ * Uses UTF-8 byte values directly.
+ */
+export const textToIndices = (text: string): number[] => {
+  const encoder = new TextEncoder();
+  const bytes = encoder.encode(text);
+  return Array.from(bytes);
+};
+
 export const indicesToMnemonic = (indices: number[]): string => {
   const wordlist = bip39.wordlists.english;
   return indices.map(index => wordlist[index]).join(' ');
+};
+
+/**
+ * Converts an array of indices (0-255) back to text.
+ * Indices > 255 are ignored or treated as errors in text context,
+ * but here we just filter or clamp? 
+ * Since we only generate 0-255 from textToIndices, this is fine.
+ * If we try to convert a real mnemonic (indices up to 2047) to text,
+ * it will produce garbage or fail if we don't handle it.
+ */
+export const indicesToText = (indices: number[]): string | null => {
+  try {
+    // Filter indices to ensure they are valid byte values (0-255)
+    // If we have indices > 255, it's likely a real mnemonic, not text.
+    if (indices.some(i => i > 255 || i < 0)) return null;
+    
+    const bytes = new Uint8Array(indices);
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    return decoder.decode(bytes);
+  } catch (e) {
+    return null;
+  }
 };
 
 /**

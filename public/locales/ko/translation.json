@@ -15,7 +15,15 @@
     "or": "- 또는 -",
     "none": "없음",
     "processing": "처리 중...",
-    "next": "다음"
+    "next": "다음",
+    "upgradeToAccess": "업그레이드하여 액세스",
+    "clear": "지우기",
+    "comingSoon": "곧 출시",
+    "clickToUpload": "클릭하여 업로드",
+    "noResults": "결과를 찾을 수 없습니다",
+    "search": "검색",
+    "passwordPlaceholder": "비밀번호 입력",
+    "requiredToDecrypt": "복호화에 필요:"
   },
   "errorBoundary": {
     "title": "문제가 발생했습니다",
@@ -26,7 +34,8 @@
     "home": "홈",
     "pricing": "요금",
     "terms": "이용약관",
-    "about": "소개"
+    "about": "소개",
+    "invite": "초대 및 보상"
   },
   "home": {
     "subtitle": "군용 등급 스테가노그래피 및 암호화 도구",
@@ -34,7 +43,17 @@
       "encrypt": "암호화",
       "decrypt": "복호화",
       "stego": "스테가노그래피",
-      "wallet": "종이 지갑"
+      "wallet": "종이 지갑",
+      "passwords": "비밀번호",
+      "invite": "초대"
+    },
+    "mode": {
+      "geek": "기크 모드",
+      "simple": "간단 모드"
+    },
+    "toggle": {
+      "advanced": "기크 모드로 전환",
+      "simple": "간단 모드로 전환"
     }
   },
   "pricing": {
@@ -194,7 +213,8 @@
       "pricing": "요금",
       "terms": "서비스 약관",
       "source": "소스 코드",
-      "share": "공유"
+      "share": "공유",
+      "install": "앱 설치"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. All rights reserved.",
     "license": "감사 목적으로 CC-BY-NC-ND 4.0에 따라 라이선스가 부여됩니다. 상업적 사용에는 Pro 라이선스가 필요합니다.",
@@ -543,7 +563,7 @@
         "description": "니모닉 문구 또는 데이터를 보호하는 가장 좋은 방법을 선택하십시오:",
         "book": {
           "physical": {
-            "title": "실물 / 가상 책",
+            "title": "니모닉 / 실물 서적",
             "desc": "책장에 있는 실제 책에 키를 숨깁니다. (페이지-줄-단어)"
           },
           "online": {
@@ -680,7 +700,8 @@
           "compliance": "BIP-39 준수",
           "encryption": "표준 암호화",
           "security": "높은 보안"
-        }
+        },
+        "recommended": "권장"
       },
       "physical": {
         "title": "실물 책",
@@ -708,20 +729,31 @@
           "convenient": "편리한 액세스",
           "dynamic": "동적 참조"
         }
+      },
+      "passwordBook": {
+        "title": "경량 비밀번호 북",
+        "desc": "비밀번호와 메모를 휴대용 인덱스로 암호화합니다.",
+        "features": {
+          "anyText": "모든 텍스트 지원",
+          "portable": "높은 휴대성",
+          "secure": "군사 등급 보안"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "니모닉 입력",
+        "mnemonic": "니모닉 / 모든 텍스트",
         "file": "파일 업로드",
         "url": "URL 입력",
-        "general": "데이터 입력"
+        "general": "데이터 입력",
+        "password": "비밀번호 및 메모 보호"
       },
       "subtitle": {
-        "mnemonic": "12개 또는 24개의 단어로 된 니모닉 문구를 입력하세요.",
+        "mnemonic": "니모닉 문구 또는 모든 텍스트를 입력하십시오.",
         "file": "암호화할 텍스트 파일을 업로드하세요.",
         "url": "콘텐츠를 가져올 URL을 입력하세요.",
-        "general": "암호화할 텍스트 데이터를 입력하세요."
+        "general": "암호화할 텍스트 데이터를 입력하세요.",
+        "password": "암호화할 텍스트, 비밀번호 또는 비밀 메모를 입력하세요."
       },
       "file": {
         "loaded": "파일 로드 성공",
@@ -732,8 +764,13 @@
         "schemes": {
           "offset": "문자 오프셋",
           "chapter": "장 인덱스",
-          "virtual": "가상 라인"
-        }
+          "virtual": "가상 라인",
+          "chapterDesc": "책 인용 형식 (예: 1-20-5)",
+          "offsetDesc": "압축 숫자 형식 (예: 12345-8)",
+          "virtualDesc": "코드/로그 형식 (예: 150-5)"
+        },
+        "dragDrop": "금고를 열려면 클릭",
+        "schemeTooltip": "파일 구조 내에서 데이터를 숨기는 방법을 선택하세요."
       },
       "url": {
         "fetch": "콘텐츠 가져오기",
@@ -743,7 +780,8 @@
         },
         "success": "{{count}}자를 로드했습니다",
         "recommended": "추천 도서",
-        "clickToFill": "클릭하여 채우기"
+        "clickToFill": "클릭하여 채우기",
+        "guide": "사용하려는 책의 URL을 입력하세요."
       },
       "general": {
         "placeholder": "데이터 행 입력...",
@@ -751,11 +789,13 @@
         "generate": "랜덤 데이터"
       },
       "mnemonic": {
-        "label": "니모닉 문구",
+        "label": "니모닉 / 임의 텍스트",
         "required": "(필수)",
-        "placeholder": "니모닉 문구를 입력하세요...",
+        "placeholder": "12-24단어 복구 문구 또는 암호화할 텍스트/비밀번호를 입력하세요...",
         "paste": "붙여넣기",
-        "generate": "생성"
+        "generate": "생성",
+        "typeTag": "텍스트 / 니모닉",
+        "tooltip": "여기에 니모닉 구문을 입력하세요."
       }
     },
     "mixStep": {
@@ -865,7 +905,7 @@
       "password": "암호화에 사용된 비밀번호 입력"
     },
     "mode": {
-      "physicalBook": "물리적 / 가상 책",
+      "physicalBook": "니모닉 / 실물 서적",
       "digitalBook": "디지털 책 (파일)",
       "onlineBook": "온라인 책 (URL)"
     },
@@ -911,12 +951,30 @@
       "urlMode": "데이터를 복원하려면 책 URL을 가져오세요.",
       "clipboard": "클립보드에 액세스할 수 없습니다. 수동으로 붙여넣으세요.",
       "decryptFailed": "복호화에 실패했습니다. 비밀번호를 확인하세요."
+    },
+    "expectedType": {
+      "tooltip": "예상 유형(예: 가짜 신용카드 번호)처럼 보이는 가짜 데이터를 생성하여 실패한 복호화 시도를 난독화합니다.",
+      "creditcard": "신용카드",
+      "creditcardDesc": "가짜 신용카드 번호",
+      "mnemonic": "니모닉 구문",
+      "mnemonicDesc": "가짜 12/24 단어",
+      "password": "비밀번호",
+      "passwordDesc": "가짜 비밀번호",
+      "privatekey": "개인 키",
+      "privatekeyDesc": "가짜 개인 키(16진수)",
+      "text": "모든 텍스트",
+      "textDesc": "무작위 텍스트 단락",
+      "title": "예상 결과 유형"
     }
   },
   "steganography": {
     "mode": {
       "hide": "데이터 숨기기",
-      "extract": "데이터 추출"
+      "extract": "데이터 추출",
+      "encrypt": "암호화 및 샤드 생성",
+      "decrypt": "복호화 및 복구",
+      "hideFiles": "파일 숨기기",
+      "extractFiles": "파일 추출"
     },
     "label": {
       "carrierImages": "캐리어 이미지",
@@ -943,7 +1001,9 @@
     },
     "warning": {
       "title": "중요 경고:",
-      "text": "평문(니모닉 등)을 직접 입력하지 마세요! 이미지를 가진 사람은 누구나 추출할 수 있습니다. 항상 먼저 데이터를 암호화한 다음(예: \"암호화\" 탭 사용), 여기에 암호문을 붙여넣으세요."
+      "text": "평문(니모닉 등)을 직접 입력하지 마세요! 이미지를 가진 사람은 누구나 추출할 수 있습니다. 항상 먼저 데이터를 암호화한 다음(예: \"암호화\" 탭 사용), 여기에 암호문을 붙여넣으세요.",
+      "compression": "중요: 파일이 압축되거나 재인코딩되면 (예: 소셜 앱을 통해 전송) 숨겨진 데이터가 손실됩니다. 항상 \"원본 파일\"로 전송하세요.",
+      "password": "팁: 비밀번호를 사용하는 경우 분실 시 복구할 수 없습니다. 안전하게 보관하세요."
     },
     "button": {
       "clearAll": "모두 지우기",
@@ -959,7 +1019,12 @@
       "successShards": "{{count}}개의 샤드 이미지가 성공적으로 생성 및 다운로드되었습니다.",
       "noData": "유효한 숨겨진 데이터를 찾을 수 없습니다. 엄격 모드가 사용된 경우 파일명을 확인하세요.",
       "reconstructFailed": "재구성 실패: {{error}}. 아래에 원시 데이터를 표시합니다.",
-      "waitingImage": "이미지 대기 중..."
+      "waitingImage": "이미지 대기 중...",
+      "successExtract": "복호화 성공!",
+      "keyFilesRequired": "복호화에 키 파일 필요",
+      "reconstructing": "비밀키 재구성 중...",
+      "decryptingPayload": "페이로드 복호화 중...",
+      "success": "성공!"
     },
     "about": {
       "title": "스테가노그래피 정보",
@@ -969,7 +1034,178 @@
     },
     "error": {
       "copyFailed": "클립보드에 복사 실패"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "이미지 스테가노그래피",
+        "desc": "LSB 스테가노그래피를 사용하여 이미지 안에 텍스트 메시지를 숨깁니다."
+      },
+      "file": {
+        "title": "파일 금고",
+        "desc": "여러 파일을 암호화된 조각으로 안전하게 병합하고 분할합니다."
+      },
+      "imageVault": {
+        "title": "이미지 볼트",
+        "desc": "이미지 캐리어 내에 모든 파일을 숨깁니다."
+      },
+      "video": {
+        "title": "비디오 볼트",
+        "desc": "비디오 스트림 내에 정보를 숨깁니다."
+      }
+    },
+    "fileVault": {
+      "title": "파일 볼트",
+      "description": "여러 파일을 암호화하고 여러 안전한 파일 샤드로 분할합니다.",
+      "encryptTitle": "보안 볼트 생성",
+      "decryptTitle": "보안 볼트 열기",
+      "encryptDesc": "여러 파일을 단일 암호화된 패키지로 결합하고, 분산 저장을 위한 샤딩 옵션을 제공합니다.",
+      "decryptDesc": "단일 암호화된 패키지 또는 여러 샤드에서 파일을 복원합니다.",
+      "selectedFiles": "{{count}}개 파일 선택됨",
+      "warning": {
+        "title": "중요한 보안 알림",
+        "password": "비밀번호 또는 키 파일을 분실하면 데이터를 복구할 수 없습니다. 안전하게 보관하세요.",
+        "sharding": "페이로드 샤딩은 암호화된 데이터를 여러 부분으로 분할하여 분산 저장합니다. 복호화하려면 모든 부분이 필요합니다."
+      },
+      "about": {
+        "title": "파일 보관함 정보",
+        "text": "파일 보관함을 사용하면 여러 파일을 단일 암호화 패키지로 묶을 수 있습니다. 페이로드 샤딩을 활성화하여 결과를 여러 부분으로 분할하여 분산 저장(예: 클라우드 서비스)할 수 있습니다. 다중 키 모드는 Shamir 비밀 공유를 사용하여 복호화에 여러 키 파일이 필요합니다.",
+        "noteTitle": "모범 사례:",
+        "note": "항상 비밀번호와 키 파일의 백업을 유지하세요. 샤딩을 사용하는 경우 각 부분을 다른 위치에 저장하세요. 최대 보안을 위해 비밀번호 + 키 파일 + 샤딩을 결합하세요."
+      },
+      "tip": {
+        "compression": "암호화 전에 파일 크기를 줄이기 위해 기본적으로 압축이 활성화됩니다.",
+        "shamir": "다중 키 모드는 분산 신뢰를 제공합니다 - 단일 키 파일만으로는 데이터를 복호화할 수 없습니다."
+      }
+    },
+    "imageVault": {
+      "title": "이미지 볼트",
+      "description": "고급 스테가노그래피를 사용하여 이미지 내에 모든 파일을 숨깁니다.",
+      "hideTitle": "이미지에 파일 숨기기",
+      "extractTitle": "이미지에서 파일 추출",
+      "hideDesc": "캐리어 이미지와 숨길 파일을 선택하세요. 파일이 암호화되어 보이지 않게 삽입됩니다.",
+      "extractDesc": "숨겨진 파일이 포함된 이미지를 업로드하여 복구하세요.",
+      "aboutText": "이미지 스테가노그래피는 이미지 픽셀 내에 데이터를 보이지 않게 숨깁니다.",
+      "aboutNote": "캐리어 이미지는 약간 수정되지만 시각적으로 동일합니다.",
+      "warning": {
+        "title": "이미지 스테가노그래피 핵심 규칙",
+        "capacity": "이미지 용량은 해상도에 따라 다릅니다. 해상도가 높을수록 = 저장 공간이 커집니다. 용량을 초과하면 더 큰 이미지를 선택하세요.",
+        "format": "출력은 항상 PNG 형식입니다. JPG로 변환하거나 압축하지 마세요. 숨겨진 데이터가 영구적으로 파괴됩니다.",
+        "transfer": "공유할 때는 항상 \"파일로 전송\" 또는 \"원본 품질\"을 사용하세요. 소셜 미디어 플랫폼은 이미지를 압축하여 숨겨진 데이터를 파괴합니다."
+      },
+      "tip": {
+        "carrier": "더 나은 스테가노그래피를 위해 단순한 그래픽보다 복잡한 이미지(사진, 풍경)를 선택하세요.",
+        "security": "최대 보안을 위해 비밀번호 + 키 파일 + 다중 키 샤딩을 활성화하세요."
+      }
+    },
+    "videoVault": {
+      "title": "비디오 볼트",
+      "description": "비디오 프레임 내에 데이터를 숨깁니다.",
+      "hideTitle": "비디오에 파일 숨기기",
+      "extractTitle": "비디오에서 파일 추출",
+      "hideDesc": "캐리어 비디오와 숨길 파일을 선택하세요. 파일이 비디오에 안전하게 추가됩니다.",
+      "extractDesc": "숨겨진 파일이 포함된 비디오를 업로드하여 복구하세요.",
+      "aboutText": "비디오 스테가노그래피는 비디오 프레임 뒤에 암호화된 데이터를 추가합니다.",
+      "aboutNote": "비디오는 정상적으로 재생되며 숨겨진 데이터는 끝에 있습니다.",
+      "warning": {
+        "title": "중요한 비디오 스테가노그래피 경고",
+        "format": "숨겨진 데이터가 비디오 파일에 추가됩니다. 재인코딩, 압축 또는 비디오 형식 변경을 하지 마세요. 숨겨진 데이터가 파괴됩니다.",
+        "transfer": "공유할 때는 항상 원본 파일로 전송하세요. 비디오 스트리밍 플랫폼은 비디오를 재인코딩하여 숨겨진 데이터를 파괴합니다.",
+        "size": "출력 비디오 크기가 약간 커집니다(숨겨진 파일 크기만큼). 이것은 정상적이고 예상되는 동작입니다."
+      },
+      "tip": {
+        "carrier": "모든 비디오 형식이 작동합니다(MP4, WebM 등). 숨겨진 데이터는 형식에 독립적입니다.",
+        "detection": "비디오 스테가노그래피는 매우 은밀합니다 - 비디오가 정상적으로 재생되고 파일 크기 증가가 최소화됩니다."
+      }
+    },
+    "input": {
+      "filesToHide": "암호화할 파일 선택",
+      "filesToRecover": "암호화된 파일/샤드 선택",
+      "carrier": "1. 캐리어 이미지 선택 (PNG/JPG)",
+      "stegoImage": "1. 숨겨진 데이터가 포함된 이미지 선택",
+      "carrierVideo": "1. 캐리어 비디오 선택 (MP4/WebM)",
+      "stegoVideo": "1. 숨겨진 데이터가 포함된 비디오 선택",
+      "clickUploadImage": "이미지 업로드하려면 클릭"
+    },
+    "dropzone": {
+      "title": "클릭하여 파일 업로드",
+      "subtitle": "여러 파일 선택 지원"
+    },
+    "sharding": {
+      "enable": "샤딩 활성화",
+      "count": "샤드 수 (N)",
+      "note": "파일이 N개의 부분으로 분할됩니다. 파일을 복구하려면 모든 부분이 필요합니다."
+    },
+    "action": {
+      "encrypt": "파일 암호화",
+      "decrypt": "파일 복구",
+      "embed": "파일 삽입",
+      "extract": "파일 추출"
+    },
+    "result": {
+      "success": "작업 성공",
+      "downloadAll": "모두 다운로드",
+      "imageReady": "스테고 이미지 생성 완료!",
+      "filesRecovered": "{{count}}개 파일 복구됨!",
+      "videoReady": "스테고 비디오 생성 완료!",
+      "videoReadyDesc": "파일이 비디오 안에 안전하게 숨겨졌습니다.",
+      "clickToDownload": "아이콘을 클릭하여 개별 파일 다운로드",
+      "waiting": "작업 대기 중..."
+    },
+    "process": {
+      "packing": "파일 패킹 중...",
+      "encrypting": "암호화 중...",
+      "sharding": "샤딩 중...",
+      "analyzing": "파일 분석 중...",
+      "merging": "샤드 병합 중...",
+      "decrypting": "복호화 중...",
+      "unpacking": "압축 해제 중...",
+      "embedding": "데이터 삽입 중...",
+      "extracting": "데이터 추출 중..."
+    },
+    "fileCount": "{{count}}개 파일 선택됨",
+    "selectFiles": "숨길 파일 선택",
+    "preview": {
+      "waitingHide": "결과가 여기에 표시됩니다",
+      "waitingExtract": "복구된 파일이 여기에 표시됩니다"
+    },
+    "keyFile": {
+      "label": "키 파일 (선택 사항, 고급 보안)",
+      "placeholder": "두 번째 키로 사용할 파일 선택 (예: 사진, 음악, 전자책)",
+      "help": "사용하는 경우, 복호화에는 정확히 동일한 파일이 필요합니다. 단일 바이트 차이로 복호화가 실패합니다.",
+      "mode": "키 파일 모드",
+      "addSingle": "키 파일 추가",
+      "addFiles": "파일 추가",
+      "clear": "지우기",
+      "clearAll": "모두 지우기"
+    },
+    "enterPassword": "비밀번호 입력",
+    "compression": {
+      "label": "압축 활성화",
+      "desc": "파일 크기 감소 (품질에 영향 가능)"
+    },
+    "security": {
+      "title": "보안 옵션",
+      "usePassword": "비밀번호 사용"
+    },
+    "shamir": {
+      "filesCount": "분할용 {{count}}개 파일 선택됨",
+      "thresholdLabel": "임계값",
+      "requiredFiles": "이 {total}개 파일 중 임의의 {threshold}개가 복호화에 필요합니다.",
+      "modalTitle": "다중 키 인증",
+      "modalDesc": "이 파일은 여러 키 파일로 보호됩니다.",
+      "modalRequired": "최소 {threshold}개의 유효한 파일을 제공해야 합니다.",
+      "uploadKeyFiles": "키 파일 업로드",
+      "filesSelected": "{count}개 파일 선택됨",
+      "verifying": "확인 중...",
+      "unlock": "잠금 해제",
+      "cancel": "취소",
+      "modalNeedFiles": "최소 <strong>{threshold}</strong>개의 유효한 파일을 제공해야 합니다."
+    },
+    "keyMode": {
+      "single": "단일 키",
+      "multiKey": "다중 키 (샤딩)"
+    },
+    "filesSelected": "{count}개 파일 선택됨"
   },
   "wallet": {
     "title": "보안 지갑 생성기",
@@ -1061,6 +1297,9 @@
       "generateRandom": "무작위 데이터 생성",
       "pasteClipboard": "클립보드에서 붙여넣기",
       "generateMnemonic": "무작위 니모닉 생성"
+    },
+    "label": {
+      "password": "비밀번호 / 비밀 메모"
     }
   },
   "resultStep": {
@@ -1104,8 +1343,10 @@
   "license": {
     "alerts": {
       "systemClockError": "시스템 시계 오류가 감지되었습니다. Pro 기능을 계속 사용하려면 시스템 시간을 수정하세요.",
-      "deactivateConfirm": "Real Pro 라이선스를 비활성화하시겠습니까?"
-    }
+      "deactivateConfirm": "Real Pro 라이선스를 비활성화하시겠습니까?",
+      "usbRemoved": "USB 키가 제거되었습니다"
+    },
+    "proRequired": "이 기능에는 Pro 라이센스가 필요합니다"
   },
   "mixStepButtons": {
     "back": "뒤로",
@@ -1155,7 +1396,7 @@
   },
   "payment": {
     "chains": {
-      "bsc": "BNB Smart Chain",
+      "bsc": "BNB 스마트 체인",
       "trx": "TRON",
       "eth": "Ethereum"
     },
@@ -1197,6 +1438,109 @@
     "shareApiNotSupported": "공유 API가 지원되지 않습니다",
     "canvasContext": "캔버스 컨텍스트를 가져올 수 없습니다",
     "invalidShareType": "jsSplit이 잘못된 유형을 반환했습니다: {{type}}",
-    "wasmLoadFailed": "Wasm 모듈 로드 실패"
+    "wasmLoadFailed": "Wasm 모듈 로드 실패",
+    "noFile": "먼저 파일을 선택하세요",
+    "noPassword": "비밀번호가 필요합니다",
+    "capacityExceeded": "용량 초과. {{needed}} KB가 필요하지만 이미지에는 {{available}} KB만 있습니다.",
+    "noHiddenData": "숨겨진 데이터를 찾을 수 없거나 형식이 잘못되었습니다.",
+    "freeLimitFiles": "무료 버전은 {{limit}}개 파일로 제한",
+    "freeLimitSize": "무료 버전은 총 {{size}}MB로 제한",
+    "minShamirFiles": "Shamir 분할은 최소 {{min}}개 파일 필요",
+    "emptyResponse": "서버로부터 빈 응답",
+    "loadFailed": "추천 데이터 로드 실패",
+    "networkError": "네트워크 오류"
+  },
+  "referral": {
+    "title": "친구 초대",
+    "desc": "3명의 친구를 CryptoKey에 초대하고 Pro 기능을 무료로 잠금 해제하세요!",
+    "yourCode": "내 초대 코드",
+    "copyLink": "초대 링크 복사",
+    "stats": "초대함: {{count}} / 3",
+    "unlocked": "Pro 잠금 해제됨!",
+    "offline": "오프라인에서는 추천 시스템을 사용할 수 없습니다.",
+    "alreadyPro": "이미 프로 액세스 권한이 있습니다",
+    "localPro": "로컬 프로 라이선스 감지됨",
+    "loginRequired": "추천 시스템을 사용하려면 로그인하세요",
+    "earned": "{hours}시간 / 24시간 획득",
+    "nextReward": "다음 보상",
+    "progress": "{current} / {total}"
+  },
+  "landing": {
+    "card1": {
+      "title": "니모닉 백업",
+      "desc": "암호화폐 복구 문구를 물리적 책에 안전하게 숨깁니다."
+    },
+    "card2": {
+      "title": "비밀번호 북",
+      "desc": "비밀번호, 메모, 일기를 안전한 휴대용 형식으로 암호화합니다."
+    },
+    "card3": {
+      "title": "데이터 복원",
+      "desc": "책 키와 비밀번호를 사용하여 데이터를 복호화합니다।"
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey 보안 백업】",
+      "ciphertext": "암호문:",
+      "hash": "해시:",
+      "footer": "복호화: https://cryptokey.im",
+      "generated": "생성 시간: {{date}}",
+      "note": "참고: 복호화하려면 비밀번호 + 행 인덱스가 필요합니다."
+    },
+    "subject": "CryptoKey.im을 통한 암호화된 메시지",
+    "body": {
+      "instruction": "【중요 안내】",
+      "step1": "방금 다운로드한 파일 \"{{filename}}\"을 첨부해주세요 (다운로드 폴더 확인);",
+      "step2": "이 첨부 파일에는 암호화된 백업과 해시가 포함되어 있습니다. 삭제하거나 수정하지 마세요;",
+      "step3": "백업을 위해 자신의 이메일을 수신자로 입력할 수 있습니다.",
+      "footer": "이 데이터 복호화: https://cryptokey.im",
+      "time": "백업 시간: {{date}}"
+    },
+    "alert": {
+      "title": "✅ 작업 필요:",
+      "step1": "이메일 클라이언트가 지금 열려 있어야 합니다.",
+      "step2": "이메일에서 \"파일 첨부\"를 클릭해주세요.",
+      "step3": "다운로드 폴더에서 파일 \"{{filename}}\"을 선택하세요.",
+      "step4": "이메일을 자신에게 보내 백업을 완료하세요!",
+      "warning": "⚠️ 파일을 찾을 수 없다면, 브라우저 다운로드 기록을 확인하세요 (Ctrl+J 또는 Command+J)."
+    },
+    "error": "작업 실패: {{error}}. 수동으로 다운로드하고 이메일을 보내주세요!"
+  },
+  "passwordManager": {
+    "title": "비밀번호 관리자",
+    "subtitle": "암호화된 비밀번호를 안전하게 관리하세요",
+    "save": "비밀번호 관리자에 저장",
+    "saveSuccess": "저장 성공!",
+    "enterTitle": "제목 입력 (예: Gmail)",
+    "empty": "저장된 비밀번호가 아직 없습니다.",
+    "emptyTitle": "저장된 비밀번호 없음",
+    "emptyDesc": "\"비밀번호 북\" 도구를 사용하여 여기에 비밀번호를 암호화하고 저장하세요.",
+    "delete": "삭제",
+    "decrypt": "복호화",
+    "confirmDelete": "이 비밀번호를 삭제하시겠습니까?",
+    "copyCiphertext": "암호문 복사",
+    "rowLabel": "행: {row}"
+  },
+  "invite": {
+    "success": "초대 코드가 승인되었습니다!",
+    "self": "자신을 초대할 수 없습니다",
+    "invalid": "유효하지 않은 초대 코드",
+    "title": "초대 시스템",
+    "subtitle": "코드를 공유하고 친구를 초대하세요",
+    "myCode": "내 초대 코드",
+    "shareDesc": "이 코드를 친구들과 공유하여 초대하세요.",
+    "enterCode": "초대자 코드 입력",
+    "alreadySet": "초대자가 이미 설정되었습니다",
+    "submit": "제출",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "프로 플랜: 무제한",
+    "proUnlimitedFiles": "프로 플랜: 무제한 파일",
+    "freeLimit3Files": "무료 플랜: 최대 3개 파일",
+    "freeLimit3FilesSize": "무료 플랜: 최대 3개 파일 / 1.5MB",
+    "upgradeForUnlimited": "무제한 업그레이드",
+    "upgrade": "업그레이드"
   }
 }

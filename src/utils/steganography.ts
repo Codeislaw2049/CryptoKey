@@ -1,5 +1,5 @@
 
-import { wasmManager } from '../wasm/wasmLoader';
+// import { wasmManager } from '../wasm/wasmLoader';
 
 // Utility for LSB Steganography
 
@@ -66,6 +66,7 @@ export const embedDataJS = (imageData: ImageData, message: string): ImageData =>
 
 // Embeds message into image data using LSB
 export const embedData = (imageData: ImageData, message: string): ImageData => {
+  /*
   const exports = wasmManager.getExports();
   if (exports) {
     try {
@@ -77,6 +78,7 @@ export const embedData = (imageData: ImageData, message: string): ImageData => {
       console.warn("Wasm Embed failed, falling back to JS", e);
     }
   }
+  */
   return embedDataJS(imageData, message);
 };
 

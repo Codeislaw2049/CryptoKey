@@ -4,8 +4,12 @@ import { Button } from './ui/Button';
 import { ProBadge } from './ui/ProBadge';
 import { Input } from './ui/Input';
 import { decryptWithAES } from '../utils/crypto';
-import { decodeBookCipherToIndex, indicesToMnemonic } from '../utils/mnemonic';
-import { Unlock, Search, BookOpen, KeyRound, Eye, FileText, Globe, Upload, Loader2, Clipboard, QrCode, ShieldCheck, ArrowLeft, ArrowRight, Camera, Copy, CheckCircle } from 'lucide-react';
+import { 
+  decodeBookCipherToIndex, 
+  indicesToMnemonic, 
+  indicesToText 
+} from '../utils/mnemonic';
+import { Unlock, Search, BookOpen, KeyRound, Eye, FileText, Globe, Upload, Loader2, Clipboard, QrCode, ShieldCheck, ArrowLeft, ArrowRight, Camera, Copy, CheckCircle, Info, CreditCard, Lock, Binary } from 'lucide-react';
 import { parseChunk, decompressData } from '../utils/compression';
 import { readQrFromFile } from '../utils/qrReader';
 import ShardDualAuthDecryptor from './ShardDualAuthDecryptor';
@@ -17,23 +21,83 @@ import {
   fetchGutenbergContent 
 } from '../utils/urlFetcher';
 import { 
-  offsetsToMnemonic,
-  chapterIndicesToMnemonic,
-  virtualLineIndicesToMnemonic,
-  indexToMnemonic
+  offsetsToIndices,
+  chapterIndicesToIndices,
+  virtualLineIndicesToIndices,
+  indexToIndices
 } from '../utils/gutenbergIndex';
 
 import { sanitizeInput } from '../utils/sanitize';
+
+// Fake Data Generator for Decryption Obfuscation
+const generateFakeData = (seed: number, type: 'text' | 'mnemonic' | 'creditcard' | 'password' | 'privatekey') => {
+  const random = () => {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  };
+
+  const randInt = (min: number, max: number) => Math.floor(random() * (max - min + 1)) + min;
+  const randChar = (chars: string) => chars[randInt(0, chars.length - 1)];
+
+  if (type === 'creditcard') {
+    // Generate Fake Credit Card (Luhn-like structure not required for visual fake, just format)
+    const prefix = random() > 0.5 ? '4' : '5';
+    let num = prefix;
+    for(let i=0; i<15; i++) num += Math.floor(random() * 10);
+    return num.replace(/(.{4})/g, '$1 ').trim();
+  } 
+  
+  if (type === 'password') {
+    // Generate Fake Password
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    const len = randInt(8, 16);
+    let pwd = '';
+    for(let i=0; i<len; i++) pwd += randChar(chars);
+    return pwd;
+  }
+
+  if (type === 'privatekey') {
+    // Generate Fake Private Key (Hex)
+    const chars = '0123456789abcdef';
+    let key = '0x';
+    for(let i=0; i<64; i++) key += randChar(chars);
+    return key;
+  }
+
+  // Default: Random Text / Garbage
+  const words = ['apple', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliet', 'secret', 'data', 'hidden', 'key', 'cipher', 'block', 'chain', 'crypto', 'secure', 'access'];
+  const len = randInt(3, 8);
+  const result = [];
+  for(let i=0; i<len; i++) result.push(words[randInt(0, words.length-1)]);
+  
+  // Add some random garbage
+  if (random() > 0.5) {
+     return result.join(' ') + ' ' + randInt(100, 999);
+  }
+  
+  return result.join(' ');
+};
 
 type RecoveryMode = 'physical' | 'file' | 'url';
 
 import { useLicense } from '../contexts/LicenseContext';
 
-export const DecryptionTool = () => {
+interface DecryptionToolProps {
+  initialCiphertext?: string;
+}
+
+export const DecryptionTool = ({ initialCiphertext }: DecryptionToolProps = {}) => {
   const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [mode, setMode] = useState<RecoveryMode>('physical');
-  const [ciphertext, setCiphertext] = useState('');
+  const [ciphertext, setCiphertext] = useState(initialCiphertext || '');
+
+  useEffect(() => {
+    if (initialCiphertext) {
+      setCiphertext(initialCiphertext);
+    }
+  }, [initialCiphertext]);
+
   const [password, setPassword] = useState('');
   const [useDualAuth, setUseDualAuth] = useState(false);
   const [dualAuthShards, setDualAuthShards] = useState<Map<number, string>>(new Map());
@@ -41,6 +105,7 @@ export const DecryptionTool = () => {
   const [rows, setRows] = useState<string[][] | null>(null);
   const [targetRow, setTargetRow] = useState<string>('');
   const [recoveredMnemonic, setRecoveredMnemonic] = useState<string | null>(null);
+  const [expectedType, setExpectedType] = useState<'text' | 'mnemonic' | 'creditcard' | 'password' | 'privatekey'>('text'); 
   const [error, setError] = useState('');
   const [copyFeedback, setCopyFeedback] = useState(false);
   
@@ -344,22 +409,19 @@ export const DecryptionTool = () => {
 
     const rowData = rows[rowIndex];
     try {
+      let indices: number[] = [];
+
       if (mode === 'physical') {
         // Try to decode as book cipher first
-        const indices = rowData.map(item => decodeBookCipherToIndex(item));
-        const validIndices = indices.filter(i => i >= 0 && i <= 2047);
+        const rawIndices = rowData.map(item => decodeBookCipherToIndex(item));
+        // Filter valid indices (0-2047)
+        indices = rawIndices.filter(i => i >= 0 && i <= 2047);
         
-        // Strategy 1: It's a valid mnemonic
-        if (validIndices.length >= 12 && validIndices.length <= 24) {
-            const mnemonic = indicesToMnemonic(validIndices);
-            if (mnemonic.split(' ').length >= 12) {
-                setRecoveredMnemonic(mnemonic);
-                return;
-            }
+        if (indices.length === 0) {
+             // Strategy 2: It's general data (failed to decode as indices)
+             setRecoveredMnemonic(rowData.join('\n'));
+             return;
         }
-        
-        // Strategy 2: It's general data
-        setRecoveredMnemonic(rowData.join('\n'));
       } else if (mode === 'file') {
         if (!fileInfo) {
           setRecoveredMnemonic(t('decryption.error.fileMode'));
@@ -373,27 +435,23 @@ export const DecryptionTool = () => {
           if (parts.length === 2) {
              try {
                 // Try Virtual Line first
-                const res = virtualLineIndicesToMnemonic(rowData, fileInfo.virtualLines);
-                setRecoveredMnemonic(res);
-                return;
+                indices = virtualLineIndicesToIndices(rowData, fileInfo.virtualLines);
              } catch (e) {
                 try {
                   // Try Offset
-                  const res = offsetsToMnemonic(rowData, fileInfo.fullText);
-                  setRecoveredMnemonic(res);
-                  return;
+                  indices = offsetsToIndices(rowData, fileInfo.fullText);
                 } catch (e2) {
                    throw new Error(t('decryption.error.fileMode'));
                 }
              }
           } else if (parts.length === 3) {
              // Chapter-Line-Char
-             const res = chapterIndicesToMnemonic(rowData, fileInfo.chapters);
-             setRecoveredMnemonic(res);
-             return;
+             indices = chapterIndicesToIndices(rowData, fileInfo.chapters);
           }
+        } else {
+            setRecoveredMnemonic(t('decryption.error.fileModeUnknown'));
+            return;
         }
-        setRecoveredMnemonic(t('decryption.error.fileModeUnknown'));
 
       } else if (mode === 'url') {
         if (!urlInfo) {
@@ -402,19 +460,61 @@ export const DecryptionTool = () => {
         }
         
         // URL indices are Offset-Length-HashPrefix
-        const res = indexToMnemonic(rowData, urlInfo.pureText, urlInfo.textHash);
-        setRecoveredMnemonic(res);
+        indices = indexToIndices(rowData, urlInfo.pureText, urlInfo.textHash);
       }
+
+      // Check if we have indices
+      if (indices.length > 0) {
+          const text = indicesToText(indices);
+          const mnemonic = indicesToMnemonic(indices);
+
+          if (expectedType === 'mnemonic') {
+             setRecoveredMnemonic(mnemonic);
+          } else {
+            // For other types (text, creditcard, password, privatekey)
+            // If the text looks valid (ASCII), show it.
+            // If it's null (invalid indices) or looks like garbage (we can't easily detect garbage vs random text, 
+            // but for specific formats like Credit Card, we can check).
+            
+            // Note: "Fake Rows" are random indices.
+            // indicesToText(random_indices) -> Likely null (if index > 255) OR Random ASCII.
+            
+            let resultText = text;
+            
+            // If decoding failed or we need to fake a specific format for "garbage"
+            if (resultText === null) {
+               // Generate fake data based on row index (seed)
+               resultText = generateFakeData(rowIndex * 12345, expectedType);
+            } else {
+               // Even if text is valid ASCII, if it looks like garbage and user expects a Credit Card,
+               // we might want to fake it?
+               // But how do we know if it's garbage?
+               // Real data should look like real data.
+               // Fake data (random indices) -> Random ASCII chars.
+               
+               // Heuristic: If expectedType is Credit Card, and text does not match regex, replace with Fake.
+               if (expectedType === 'creditcard' && !/^[\d\s-]{13,19}$/.test(resultText)) {
+                   resultText = generateFakeData(rowIndex * 12345, expectedType);
+               }
+               // Heuristic: If expectedType is Private Key, and text doesn't look like hex
+               else if (expectedType === 'privatekey' && !/^0x[a-fA-F0-9]{64}$/.test(resultText)) {
+                   resultText = generateFakeData(rowIndex * 12345, expectedType);
+               }
+            }
+            
+            setRecoveredMnemonic(resultText);
+          }
+      } else {
+          setRecoveredMnemonic(null);
+      }
+
     } catch (e: any) {
-         // If all else fails, show error
-         if (mode === 'physical' && rowData) {
-             setRecoveredMnemonic(rowData.join('\n'));
-         } else {
-             setRecoveredMnemonic(`${t('decryption.error.decryptFailed')} ${e.message || 'Unknown Error'}`);
-         }
+         // If all else fails, show fake data instead of error/ciphertext to prevent "Oracle" attacks
+         // User Request: "Incorrect row should also show simulated real data"
+         setRecoveredMnemonic(generateFakeData(rowIndex * 7777, expectedType));
      }
 
-  }, [targetRow, rows, mode, fileInfo, urlInfo]);
+  }, [targetRow, rows, mode, fileInfo, urlInfo, expectedType]);
 
   const handlePaste = async () => {
     setError('');
@@ -695,6 +795,56 @@ export const DecryptionTool = () => {
       {rows && (
         <div className="space-y-6 border-t border-slate-800 pt-8 animate-in slide-in-from-bottom-4">
           
+          <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-4">
+             <div className="flex items-center justify-between flex-wrap gap-4">
+                <h3 className="font-semibold text-slate-300 flex items-center gap-2">
+                    {t('decryption.expectedType.title', 'Expected Result Type')}
+                    <div className="relative group/tooltip">
+                        <Info size={14} className="text-slate-500 hover:text-primary cursor-help" />
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg shadow-xl text-xs text-slate-300 w-64 pointer-events-none opacity-0 group-hover/tooltip:opacity-100 transition-opacity z-50">
+                            {t('decryption.expectedType.tooltip', 'Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).')}
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-900"></div>
+                        </div>
+                    </div>
+                </h3>
+                <div className="flex flex-wrap bg-slate-950 p-1 rounded-lg border border-slate-800 gap-1">
+                    {[
+                        { id: 'text', label: t('decryption.expectedType.text', 'Text'), icon: FileText },
+                        { id: 'mnemonic', label: t('decryption.expectedType.mnemonic', 'Mnemonic'), icon: KeyRound },
+                        { id: 'creditcard', label: t('decryption.expectedType.creditcard', 'Card'), icon: CreditCard },
+                        { id: 'password', label: t('decryption.expectedType.password', 'Password'), icon: Lock },
+                        { id: 'privatekey', label: t('decryption.expectedType.privatekey', 'PrivKey'), icon: Binary },
+                    ].map(type => (
+                        <button
+                            key={type.id}
+                            onClick={() => setExpectedType(type.id as any)}
+                            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-1.5 ${
+                                expectedType === type.id 
+                                    ? 'bg-primary text-white shadow' 
+                                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                            }`}
+                            title={type.label}
+                        >
+                            <type.icon size={12} />
+                            <span className="hidden sm:inline">{type.label}</span>
+                        </button>
+                    ))}
+                </div>
+             </div>
+             <p className="text-xs text-slate-500">
+                {(() => {
+                    switch(expectedType) {
+                        case 'text': return t('decryption.expectedType.textDesc', 'Select this if you encrypted a generic text, note, or file content.');
+                        case 'mnemonic': return t('decryption.expectedType.mnemonicDesc', 'Select this if you encrypted a cryptocurrency recovery phrase (12-24 words).');
+                        case 'creditcard': return t('decryption.expectedType.creditcardDesc', 'Select this if you encrypted a credit card number.');
+                        case 'password': return t('decryption.expectedType.passwordDesc', 'Select this if you encrypted a password.');
+                        case 'privatekey': return t('decryption.expectedType.privatekeyDesc', 'Select this if you encrypted a blockchain private key (Hex).');
+                        default: return '';
+                    }
+                })()}
+             </p>
+          </div>
+
           {/* Recovery Mode Selection */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
              <button

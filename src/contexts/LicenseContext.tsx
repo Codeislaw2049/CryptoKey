@@ -28,7 +28,7 @@ interface LicenseContextType {
   };
 }
 
-const LicenseContext = createContext<LicenseContextType | undefined>(undefined);
+export const LicenseContext = createContext<LicenseContextType | undefined>(undefined);
 
 export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
@@ -86,52 +86,17 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
         let newType: 'free' | 'pro_simulated' | 'pro_real' | 'pro_local' | 'pro_temp' = 'free';
 
         // 0. Auto-Read License Key (ROM/USB Strategy)
-        // ONLY valid in local environment (localhost/127.0.0.1) or Electron/Tauri
-        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        // REMOVED: File-based license check is insecure for web/online usage.
+        // Offline versions should inject license state via hardware binding (see Offline_Version_Guide.md).
         
-        if (isLocal) {
-            try {
-                // Check for license.key file in public root as requested
-                const response = await fetch('/license.key');
-                if (response.ok) {
-                const text = await response.text();
-                let isValid = false;
-
-                // 1. Try New Signed JSON Format
-                try {
-                    const json = JSON.parse(text);
-                    if (json.content && json.signature) {
-                        const { verifyLicenseSignature } = await import('../utils/licenseVerification');
-                        isValid = await verifyLicenseSignature(json.content, json.signature);
-                        console.log("License Signature Verification:", isValid ? "PASS" : "FAIL");
-                    }
-                } catch (e) {
-                    // Not JSON, fall through
-                }
-
-                // 2. Wasm Verification
-                if (!isValid && wasmManager.isReady()) {
-                     const exports = wasmManager.getExports();
-                     if (exports && exports.verify_offline_license && exports.verify_offline_license(text)) {
-                         isValid = true;
-                     }
-                }
-                
-                // 3. Fallback (Simple String Check - For Dev ONLY)
-                if (!isValid && import.meta.env.MODE === 'development' && text.includes('VALID_OFFLINE_KEY_SIGNED_BY_CRYPTOKEY_OFFICIAL')) {
-                    console.warn("Using unsigned/legacy license key format. ONLY valid in Development Mode.");
-                    isValid = true;
-                }
-
-                if (isValid) {
-                    console.log("Auto-activated via local .key file (ROM Mode)");
-                    setLicenseType('pro_local');
-                    return; // Exit early, highest priority
-                }
-            }
-        } catch (e) {
-            // Ignore fetch errors
-        }
+        // NEW: Offline License Injection via Global Variable
+        // This allows the Electron/C++ shell to inject the license status directly.
+        // See: docs/Offline_Version_Guide.md
+        const offlineLicense = (window as any).CRYPTOKEY_OFFLINE_LICENSE;
+        if (offlineLicense && offlineLicense.isPro) {
+            console.log('[License] Offline Hardware License Detected:', offlineLicense.hardwareId);
+            setLicenseType('pro_local');
+            return; // Skip other checks
         }
 
         // 1. Check Real License (SessionStorage - Cleared on Browser Close)
@@ -152,6 +117,7 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
                // Verify if it's an authenticated session
                if (storedReal.startsWith('AUTH:')) {
                    const nickname = storedReal.replace('AUTH:', '');
+                   
                    setUserNickname(nickname);
                    sessionStorage.setItem('cryptokey_last_active', now.toString());
                    
@@ -250,8 +216,8 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
                            console.warn("Background license sync failed/timed out, defaulting to free");
                            newType = 'free'; 
                        }
-                   }
-               } else if (storedReal === 'OFFLINE_KEY_ACTIVATED') {
+                    }
+                } else if (storedReal === 'OFFLINE_KEY_ACTIVATED') {
                    newType = 'pro_local';
                    sessionStorage.setItem('cryptokey_last_active', now.toString());
                } else if (storedReal === 'TEMP_PRO_ACTIVATED') {
@@ -296,12 +262,12 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
                         } else {
                             newType = 'free';
                         }
-                    }
                }
            }
-        } 
-        
-        // 2. Check Dev/Simulated License (Only if not real)
+        }
+    } 
+    
+    // 2. Check Dev/Simulated License (Only if not real)
         if (newType === 'free') {
             const stored = localStorage.getItem('cryptokey_dev_pro_status');
             if (stored === 'true') {
@@ -427,53 +393,52 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
               if (json.content && json.signature) {
                   const { verifyLicenseSignature } = await import('../utils/licenseVerification');
                   isValid = await verifyLicenseSignature(json.content, json.signature);
+
+                  if (!isValid && wasmManager.isReady()) {
+                      const exports = wasmManager.getExports();
+                      if (exports && exports.verify_license_wasm) {
+                          const contentStr = typeof json.content === 'string' ? json.content : JSON.stringify(json.content);
+                          if (exports.verify_license_wasm(contentStr, json.signature)) {
+                              isValid = true;
+                          }
+                      }
+                  }
               }
           } catch (e) {
-              // Not JSON
+              console.warn("JSON parse failed, checking legacy binary...", e);
           }
           
-          if (!isValid && wasmManager.isReady()) {
-              const exports = wasmManager.getExports();
-              if (exports && exports.verify_offline_license && exports.verify_offline_license(text)) {
-                  isValid = true;
-              }
-          }
-          
-          if (!isValid && text.includes('VALID_OFFLINE_KEY_SIGNED_BY_CRYPTOKEY_OFFICIAL')) {
-              console.warn("Using unsigned/legacy license key format via Drag & Drop.");
-              isValid = true;
+          if (!isValid) {
+              // Legacy check logic if needed
           }
 
           if (isValid) {
-              setLicenseType('pro_local');
-              sessionStorage.setItem('cryptokey_real_license', 'OFFLINE_KEY_ACTIVATED');
-              // Set 5 minutes expiry for cache (Security Fix)
-              sessionStorage.setItem('cryptokey_license_expiry', (Date.now() + 300000).toString());
-              sessionStorage.setItem('cryptokey_last_active', Date.now().toString());
-              return true;
+             setLicenseType('pro_local');
+             sessionStorage.setItem('cryptokey_real_license', 'OFFLINE_KEY_ACTIVATED');
+             sessionStorage.setItem('cryptokey_last_active', Date.now().toString());
           }
-          
+          return isValid;
+
       } catch (e) {
-          console.error("License file check failed", e);
+          console.error("License file verify error", e);
+          return false;
       }
-      return false;
   };
 
   const requestTOTP = async (nickname: string): Promise<any> => {
     try {
-      const normalizedNickname = nickname.trim();
+      // API call to backend to register/get secret
+      // Mock for now if no backend:
+      // return { success: true, data: { secret: 'JBSWY3DPEHPK3PXP', otpauth: 'otpauth://totp/CryptoKey:user?secret=JBSWY3DPEHPK3PXP&issuer=CryptoKey' } };
+      
+      const referralCode = sessionStorage.getItem('cryptokey_referral_code');
 
       const response = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nickname: normalizedNickname })
+        body: JSON.stringify({ nickname, referralCode })
       });
-      
       const data = await response.json();
-      
-      if (!response.ok) {
-          return { success: false, error: data.error || 'Request failed' };
-      }
       
       return data;
     } catch (e) {
@@ -483,6 +448,8 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   const loginWithTOTP = async (nickname: string, token: string): Promise<boolean> => {
+
+
     try {
       const normalizedNickname = nickname.trim();
       const deviceFingerprint = await getDeviceFingerprint();

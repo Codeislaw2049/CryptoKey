@@ -1,33 +1,38 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export function check_license(key: string): boolean;
+export function create_video_trailer_wasm(payload_length: number): Uint8Array;
 
-export function combine_shares(shares: string[]): string;
+export function decrypt_binary_wasm(encrypted_data: Uint8Array, password: string, key_file?: Uint8Array | null): Uint8Array;
 
-export function embed_stego(image_data: Uint8Array, message: string): Uint8Array;
+export function embed_binary_wasm(image_data: Uint8ClampedArray, payload: Uint8Array): Uint8ClampedArray;
 
-export function split_secret(secret: string, shares_count: number, threshold: number): string[];
+export function encrypt_binary_wasm(data: Uint8Array, password: string, key_file?: Uint8Array | null, iterations?: number | null): Uint8Array;
 
-export function verify_offline_license(license_json: string): boolean;
+export function extract_binary_wasm(image_data: Uint8ClampedArray): Uint8Array;
+
+export function parse_video_trailer_wasm(trailer_data: Uint8Array): number;
+
+export function verify_license_wasm(content_json: string, signature_hex: string): boolean;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly check_license: (a: number, b: number) => number;
-  readonly combine_shares: (a: number, b: number) => [number, number, number, number];
-  readonly embed_stego: (a: number, b: number, c: number, d: number) => [number, number, number, number];
-  readonly split_secret: (a: number, b: number, c: number, d: number) => [number, number, number, number];
-  readonly verify_offline_license: (a: number, b: number) => number;
-  readonly __wbindgen_malloc: (a: number, b: number) => number;
-  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
+  readonly decrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number) => [number, number, number];
+  readonly encrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => [number, number, number];
+  readonly create_video_trailer_wasm: (a: number) => any;
+  readonly embed_binary_wasm: (a: number, b: number, c: number, d: number) => [number, number, number, number];
+  readonly extract_binary_wasm: (a: number, b: number) => [number, number, number, number];
+  readonly parse_video_trailer_wasm: (a: number, b: number) => [number, number, number];
+  readonly verify_license_wasm: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_externrefs: WebAssembly.Table;
+  readonly __wbindgen_malloc: (a: number, b: number) => number;
+  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __externref_table_dealloc: (a: number) => void;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
-  readonly __externref_drop_slice: (a: number, b: number) => void;
   readonly __wbindgen_start: () => void;
 }
 

@@ -142,6 +142,24 @@ export default defineConfig({
               return;
           }
 
+          if (req.url === '/api/referral-info' && req.method === 'POST') {
+             // Mock Referral Info
+             // Drain body to prevent connection issues
+             req.on('data', () => {});
+             req.on('end', () => {
+                 res.end(JSON.stringify({ 
+                     success: true, 
+                     data: { 
+                         code: 'MOCK-REF', 
+                         count: 0, 
+                         pro: false, 
+                         earned_hours: 0 
+                     } 
+                 }));
+             });
+             return;
+          }
+
           // Default Mock Response for others
           res.end(JSON.stringify({ success: false, error: 'Mock API endpoint not implemented' }));
           return;

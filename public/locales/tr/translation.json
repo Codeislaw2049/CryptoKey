@@ -15,7 +15,15 @@
     "or": "- VEYA -",
     "none": "Yok",
     "processing": "İşleniyor...",
-    "next": "İleri"
+    "next": "İleri",
+    "upgradeToAccess": "Erişim için yükselt",
+    "clear": "Temizle",
+    "comingSoon": "Yakında",
+    "clickToUpload": "Yüklemek için tıklayın",
+    "noResults": "Sonuç bulunamadı",
+    "search": "Ara",
+    "passwordPlaceholder": "Şifre girin",
+    "requiredToDecrypt": "Şifre çözmek için gerekli:"
   },
   "errorBoundary": {
     "title": "Bir şeyler yanlış gitti",
@@ -26,7 +34,8 @@
     "home": "Ana Sayfa",
     "pricing": "Fiyatlandırma",
     "terms": "Şartlar",
-    "about": "Hakkında"
+    "about": "Hakkında",
+    "invite": "Davet Et ve Kazan"
   },
   "home": {
     "subtitle": "Askeri Düzey Steganografi & Şifreleme Aracı",
@@ -34,7 +43,17 @@
       "encrypt": "Şifrele",
       "decrypt": "Şifre Çöz",
       "stego": "Steganografi",
-      "wallet": "Kağıt Cüzdan"
+      "wallet": "Kağıt Cüzdan",
+      "passwords": "Şifreler",
+      "invite": "Davet"
+    },
+    "mode": {
+      "geek": "Geek Modu",
+      "simple": "Basit Mod"
+    },
+    "toggle": {
+      "advanced": "Geek Moduna geç",
+      "simple": "Basit Moda geç"
     }
   },
   "pricing": {
@@ -194,7 +213,8 @@
       "pricing": "Fiyatlandırma",
       "terms": "Hizmet Şartları",
       "source": "Kaynak Kodu",
-      "share": "Paylaş"
+      "share": "Paylaş",
+      "install": "Uygulamayı Yükle"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Tüm hakları saklıdır.",
     "license": "Denetim amaçlı CC-BY-NC-ND 4.0 altında lisanslanmıştır. Ticari kullanım için Pro lisansı gereklidir.",
@@ -543,7 +563,7 @@
         "description": "Anımsatıcı ifadenizi veya verilerinizi güvence altına almanın en iyi yolunu seçin:",
         "book": {
           "physical": {
-            "title": "Fiziksel / Sanal Kitap",
+            "title": "Anımsatıcı / Fiziksel Kitap",
             "desc": "Anahtarınızı rafınızdaki gerçek bir kitapta gizleyin. (Sayfa-Satır-Kelime)"
           },
           "online": {
@@ -680,7 +700,8 @@
           "compliance": "BIP-39 Uyumlu",
           "encryption": "Standart Şifreleme",
           "security": "Yüksek Güvenlik"
-        }
+        },
+        "recommended": "Önerilen"
       },
       "physical": {
         "title": "Fiziksel Kitap",
@@ -708,20 +729,31 @@
           "convenient": "Kolay Erişim",
           "dynamic": "Dinamik Referans"
         }
+      },
+      "passwordBook": {
+        "title": "Lightweight Password Book",
+        "desc": "Encrypt passwords & notes into a portable index.",
+        "features": {
+          "anyText": "Supports Any Text",
+          "portable": "Highly Portable",
+          "secure": "Military Grade"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "Anımsatıcı Girin",
+        "mnemonic": "Mnemonik / Herhangi Bir Metin",
         "file": "Dosya Yükle",
         "url": "URL Girin",
-        "general": "Veri Girin"
+        "general": "Veri Girin",
+        "password": "Secure Passwords & Notes"
       },
       "subtitle": {
-        "mnemonic": "12 veya 24 kelimelik anımsatıcı ifadenizi girin.",
+        "mnemonic": "Mnemonik ifadenizi veya herhangi bir metni girin.",
         "file": "Şifrelemek için bir metin dosyası yükleyin.",
         "url": "İçerik getirmek için bir URL girin.",
-        "general": "Şifrelemek için herhangi bir metin verisi girin."
+        "general": "Şifrelemek için herhangi bir metin verisi girin.",
+        "password": "Enter the text, password, or secret note you want to encrypt."
       },
       "file": {
         "loaded": "Dosya Başarıyla Yüklendi",
@@ -732,8 +764,13 @@
         "schemes": {
           "offset": "Karakter Ofseti",
           "chapter": "Bölüm İndeksi",
-          "virtual": "Sanal Satır"
-        }
+          "virtual": "Sanal Satır",
+          "chapterDesc": "Kitap alıntı formatı (örn: 1-20-5)",
+          "offsetDesc": "Kompakt sayısal format (örn: 12345-8)",
+          "virtualDesc": "Kod/Log formatı (örn: 150-5)"
+        },
+        "dragDrop": "Click to Open Vault",
+        "schemeTooltip": "Verilerin dosya yapısı içinde nasıl gizleneceğini seçin."
       },
       "url": {
         "fetch": "İçerik Getir",
@@ -743,7 +780,8 @@
         },
         "success": "{{count}} karakter yüklendi",
         "recommended": "Önerilen Kitaplar",
-        "clickToFill": "Doldurmak için tıklayın"
+        "clickToFill": "Doldurmak için tıklayın",
+        "guide": "Kullanmak istediğiniz kitabın URL'sini girin."
       },
       "general": {
         "placeholder": "Veri satırı girin...",
@@ -751,11 +789,13 @@
         "generate": "Rastgele Veri"
       },
       "mnemonic": {
-        "label": "Anımsatıcı İfade",
+        "label": "Anımsatıcı / Herhangi Bir Metin",
         "required": "(Gerekli)",
-        "placeholder": "Anımsatıcı ifadenizi girin...",
+        "placeholder": "12-24 kelimelik kurtarma ifadenizi girin veya şifrelemek istediğiniz herhangi bir metni/şifreyi yazın...",
         "paste": "Yapıştır",
-        "generate": "Oluştur"
+        "generate": "Oluştur",
+        "typeTag": "Text / Mnemonic",
+        "tooltip": "Buraya anımsatıcı ifadenizi girin."
       }
     },
     "mixStep": {
@@ -865,7 +905,7 @@
       "password": "Şifreleme için kullanılan şifreyi girin"
     },
     "mode": {
-      "physicalBook": "Fiziksel / Sanal Kitap",
+      "physicalBook": "Anımsatıcı / Fiziksel Kitap",
       "digitalBook": "Dijital Kitap (Dosya)",
       "onlineBook": "Çevrimiçi Kitap (URL)"
     },
@@ -911,12 +951,30 @@
       "urlMode": "Verileri kurtarmak için lütfen kitap URL'sini getirin.",
       "clipboard": "Panoya erişilemiyor. Lütfen manuel olarak yapıştırın.",
       "decryptFailed": "Şifre çözme başarısız. Lütfen şifrenizi kontrol edin."
+    },
+    "expectedType": {
+      "tooltip": "Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).",
+      "creditcard": "Kredi Kartı",
+      "creditcardDesc": "Sahte kredi kartı numaraları",
+      "mnemonic": "Anımsatıcı İfade",
+      "mnemonicDesc": "Sahte 12/24 kelime",
+      "password": "Şifre",
+      "passwordDesc": "Sahte şifreler",
+      "privatekey": "Özel Anahtar",
+      "privatekeyDesc": "Sahte özel anahtarlar (Hex)",
+      "text": "Herhangi Bir Metin",
+      "textDesc": "Rastgele metin paragrafları",
+      "title": "Beklenen Sonuç Türü"
     }
   },
   "steganography": {
     "mode": {
       "hide": "Veriyi Gizle",
-      "extract": "Veriyi Çıkar"
+      "extract": "Veriyi Çıkar",
+      "encrypt": "Şifrele ve Parçala",
+      "decrypt": "Şifre Çöz ve Kurtar",
+      "hideFiles": "Dosyaları Gizle",
+      "extractFiles": "Dosyaları Çıkar"
     },
     "label": {
       "carrierImages": "Taşıyıcı Resim(ler)",
@@ -943,7 +1001,9 @@
     },
     "warning": {
       "title": "KRİTİK UYARI:",
-      "text": "Düz metin (anımsatıcılar gibi) doğrudan girmeyin! Resme sahip olan herkes çıkarabilir. Verilerinizi önce şifreleyin (örn. \"Şifrele\" sekmesini kullanarak) ve Şifreli Metni buraya yapıştırın."
+      "text": "Düz metin (anımsatıcılar gibi) doğrudan girmeyin! Resme sahip olan herkes çıkarabilir. Verilerinizi önce şifreleyin (örn. \"Şifrele\" sekmesini kullanarak) ve Şifreli Metni buraya yapıştırın.",
+      "compression": "Önemli: Dosya sıkıştırılırsa veya yeniden kodlanırsa (örn. sosyal uygulamalar aracılığıyla gönderilirse) gizli veri kaybolacaktır. Mutlaka \"Orijinal Dosya\" olarak aktarın.",
+      "password": "İpucu: Şifre kullanırsanız, kaybedilirse kurtarılamaz. Lütfen güvenli bir şekilde saklayın."
     },
     "button": {
       "clearAll": "Tümünü Temizle",
@@ -959,7 +1019,12 @@
       "successShards": "{{count}} parça resmi başarıyla oluşturuldu ve indirildi.",
       "noData": "Geçerli gizli veri bulunamadı. Katı mod kullanıldıysa dosya adlarını kontrol edin.",
       "reconstructFailed": "Yeniden oluşturma başarısız: {{error}}. Ham veriler aşağıda gösteriliyor.",
-      "waitingImage": "Resim bekleniyor..."
+      "waitingImage": "Resim bekleniyor...",
+      "successExtract": "Şifre çözme başarılı!",
+      "keyFilesRequired": "Şifre çözme için anahtar dosyaları gerekli",
+      "reconstructing": "Gizli anahtar yeniden oluşturuluyor...",
+      "decryptingPayload": "Yük şifresi çözülüyor...",
+      "success": "Başarılı!"
     },
     "about": {
       "title": "Steganografi Hakkında",
@@ -969,7 +1034,178 @@
     },
     "error": {
       "copyFailed": "Panoya kopyalama başarısız"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "Görüntü Steganografisi",
+        "desc": "LSB steganografi kullanarak görüntüler içinde metin mesajları gizleyin."
+      },
+      "file": {
+        "title": "Dosya Kasası",
+        "desc": "Birden fazla dosyayı şifrelenmiş parçalara güvenle birleştirin ve parçalayın."
+      },
+      "imageVault": {
+        "title": "Görüntü Kasası",
+        "desc": "Görüntü taşıyıcısı içinde herhangi bir dosyayı gizleyin."
+      },
+      "video": {
+        "title": "Video Kasası",
+        "desc": "Video akışları içinde bilgi gizleyin."
+      }
+    },
+    "fileVault": {
+      "title": "Dosya Kasası",
+      "description": "Birden fazla dosyayı şifreleyin ve birden fazla güvenli dosya parçasına bölün.",
+      "encryptTitle": "Güvenli Kasa Oluştur",
+      "decryptTitle": "Güvenli Kasayı Aç",
+      "encryptDesc": "Birden fazla dosyayı tek bir şifrelenmiş pakette birleştirin, dağıtılmış depolama için isteğe bağlı parçalama ile.",
+      "decryptDesc": "Dosyalarınızı tek bir şifrelenmiş paketten veya birden fazla parçadan geri yükleyin.",
+      "selectedFiles": "{{count}} dosya seçildi",
+      "warning": {
+        "title": "Önemli Güvenlik Hatırlatıcıları",
+        "password": "Şifrenizi veya anahtar dosyanızı kaybederseniz, veriler kurtarılamaz. Lütfen güvenli bir şekilde saklayın.",
+        "sharding": "Yük parçalama, şifrelenmiş verileri dağıtılmış depolama için birden fazla parçaya böler. Şifre çözmek için tüm parçalar gereklidir."
+      },
+      "about": {
+        "title": "Dosya Kasası Hakkında",
+        "text": "Dosya Kasası, birden fazla dosyayı tek bir şifrelenmiş pakete paketlemenize olanak tanır. Sonucu dağıtılmış depolama (örneğin bulut hizmetleri) için birden fazla parçaya bölmek üzere yük parçalamayı etkinleştirebilirsiniz. Çoklu Anahtar modu, şifre çözme için birden fazla anahtar dosyası gerektirmek üzere Shamir Gizli Paylaşımı kullanır.",
+        "noteTitle": "En İyi Uygulamalar:",
+        "note": "Şifrenizin ve anahtar dosyalarınızın her zaman yedeğini alın. Parçalama kullanıyorsanız, parçaları farklı konumlarda saklayın. Maksimum güvenlik için şifre + anahtar dosyası + parçalama kombinasyonunu kullanın."
+      },
+      "tip": {
+        "compression": "Şifrelemeden önce dosya boyutunu azaltmak için sıkıştırma varsayılan olarak etkindir.",
+        "shamir": "Çoklu Anahtar modu dağıtılmış güven sağlar - tek bir anahtar dosyası tek başına veriyi çözemez."
+      }
+    },
+    "imageVault": {
+      "title": "Görsel Kasası",
+      "description": "Gelişmiş steganografi kullanarak bir görsel içinde herhangi bir dosyayı gizleyin.",
+      "hideTitle": "Görselde Dosya Gizle",
+      "extractTitle": "Görselden Dosya Çıkar",
+      "hideDesc": "Taşıyıcı görsel ve gizlenecek dosyaları seçin. Dosyalar şifrelenecek ve görünmez şekilde gömülecektir.",
+      "extractDesc": "Gizli dosyalar içeren bir görseli yükleyerek onları kurtarın.",
+      "aboutText": "Görüntü steganografisi, veriyi görüntü pikselleri içinde görünmez şekilde gizler.",
+      "aboutNote": "Taşıyıcı görüntü hafifçe değiştirilecek ancak görsel olarak aynı olacak.",
+      "warning": {
+        "title": "Görüntü Steganografisi Kritik Kuralları",
+        "capacity": "Görüntü kapasitesi çözünürlüğe bağlıdır. Daha yüksek çözünürlük = daha fazla depolama alanı. Kapasite aşılırsa, daha büyük bir görüntü seçin.",
+        "format": "Çıktı her zaman PNG formatındadır. JPG'ye dönüştürmeyin veya sıkıştırmayın, aksi takdirde gizli veriler kalıcı olarak yok olur.",
+        "transfer": "Paylaşırken her zaman \"Dosya Olarak Gönder\" veya \"Orijinal Kalite\" kullanın. Sosyal medya platformları görüntüleri sıkıştırır ve gizli verileri yok eder."
+      },
+      "tip": {
+        "carrier": "Daha iyi steganografi için basit grafikler yerine karmaşık görüntüler (fotoğraflar, manzaralar) seçin.",
+        "security": "Maksimum güvenlik için şifre + anahtar dosyası + çoklu anahtar parçalamayı etkinleştirin."
+      }
+    },
+    "videoVault": {
+      "title": "Video Kasası",
+      "description": "Video karelerinde veri gizleyin.",
+      "hideTitle": "Videoda Dosya Gizle",
+      "extractTitle": "Videodan Dosya Çıkar",
+      "hideDesc": "Taşıyıcı video ve gizlenecek dosyaları seçin. Dosyalar videoya güvenli bir şekilde eklenecektir.",
+      "extractDesc": "Gizli dosyalar içeren bir videoyu yükleyerek onları kurtarın.",
+      "aboutText": "Video steganografisi, şifrelenmiş veriyi video karelerinin ardına ekler.",
+      "aboutNote": "Video normal şekilde oynatılabilir, gizli veri sonunda.",
+      "warning": {
+        "title": "Önemli Video Steganografisi Uyarıları",
+        "format": "Gizli veriler video dosyasına eklenir. Yeniden kodlamayın, sıkıştırmayın veya video formatını değiştirmeyin, aksi takdirde gizli veriler yok olur.",
+        "transfer": "Paylaşırken her zaman orijinal dosya olarak aktarın. Video akış platformları videoyu yeniden kodlar ve gizli verileri yok eder.",
+        "size": "Çıktı video boyutu biraz daha büyük olacaktır (gizli dosyaların boyutu kadar). Bu normaldir ve beklenir."
+      },
+      "tip": {
+        "carrier": "Herhangi bir video formatı çalışır (MP4, WebM, vb.). Gizli veriler formattan bağımsızdır.",
+        "detection": "Video steganografisi oldukça gizlidir - video normal şekilde oynar ve dosya boyutu artışı minimumdur."
+      }
+    },
+    "input": {
+      "filesToHide": "Şifrelenecek Dosyaları Seçin",
+      "filesToRecover": "Şifrelenmiş Dosya/Parçaları Seçin",
+      "carrier": "1. Taşıyıcı Görsel Seçin (PNG/JPG)",
+      "stegoImage": "1. Gizli Veri İçeren Görsel Seçin",
+      "carrierVideo": "1. Taşıyıcı Video Seçin (MP4/WebM)",
+      "stegoVideo": "1. Gizli Veri İçeren Video Seçin",
+      "clickUploadImage": "Resim yüklemek için tıklayın"
+    },
+    "dropzone": {
+      "title": "Dosya yüklemek için tıklayın",
+      "subtitle": "Birden fazla dosya seçimi desteklenir"
+    },
+    "sharding": {
+      "enable": "Parçalamayı Etkinleştir",
+      "count": "Parça Sayısı (N)",
+      "note": "Dosya N parçaya bölünecektir. Dosyayı kurtarmak için tüm parçalar gereklidir."
+    },
+    "action": {
+      "encrypt": "Dosyaları Şifrele",
+      "decrypt": "Dosyaları Kurtar",
+      "embed": "Dosyaları Göm",
+      "extract": "Dosyaları Çıkar"
+    },
+    "result": {
+      "success": "İşlem Başarılı",
+      "downloadAll": "Tümünü İndir",
+      "imageReady": "Stego Görsel Oluşturuldu!",
+      "filesRecovered": "{{count}} Dosya Kurtarıldı!",
+      "videoReady": "Stego Video Oluşturuldu!",
+      "videoReadyDesc": "Dosyalarınız videonun içine güvenli bir şekilde gizlendi.",
+      "clickToDownload": "Tek tek dosyaları indirmek için simgeye tıklayın",
+      "waiting": "İşlem bekleniyor..."
+    },
+    "process": {
+      "packing": "Dosyalar paketleniyor...",
+      "encrypting": "Şifreleniyor...",
+      "sharding": "Parçalanıyor...",
+      "analyzing": "Dosyalar analiz ediliyor...",
+      "merging": "Parçalar birleştiriliyor...",
+      "decrypting": "Şifre çözülüyor...",
+      "unpacking": "Paket açılıyor...",
+      "embedding": "Veri gömülüyor...",
+      "extracting": "Veri çıkarılıyor..."
+    },
+    "fileCount": "{{count}} dosya seçildi",
+    "selectFiles": "Gizlenecek dosyaları seçin",
+    "preview": {
+      "waitingHide": "Sonuç burada görünecek",
+      "waitingExtract": "Kurtarılan dosyalar burada görünecek"
+    },
+    "keyFile": {
+      "label": "Anahtar Dosyası (İsteğe Bağlı, Gelişmiş Güvenlik)",
+      "placeholder": "İkinci anahtar olarak bir dosya seçin (örn. fotoğraf, şarkı, e-kitap)",
+      "help": "Kullanılırsa, şifre çözmek için TAM OLARAK aynı dosya gereklidir. Tek bayt fark bile şifre çözmeyi başarısız kılar.",
+      "mode": "Anahtar dosya modu",
+      "addSingle": "Anahtar dosyası ekle",
+      "addFiles": "Dosya Ekle",
+      "clear": "Temizle",
+      "clearAll": "Tümünü Temizle"
+    },
+    "enterPassword": "Şifre girin",
+    "compression": {
+      "label": "Sıkıştırmayı etkinleştir",
+      "desc": "Dosya boyutunu azalt (kaliteyi etkileyebilir)"
+    },
+    "security": {
+      "title": "Güvenlik seçenekleri",
+      "usePassword": "Şifre kullan"
+    },
+    "shamir": {
+      "filesCount": "Parçalama için {{count}} dosya seçildi",
+      "thresholdLabel": "Eşik",
+      "requiredFiles": "Bu {total} dosyadan herhangi {threshold} tanesi şifre çözmek için gerekli olacaktır.",
+      "modalTitle": "Çoklu Anahtar Kimlik Doğrulama",
+      "modalDesc": "Bu dosya birden fazla anahtar dosyası tarafından korunmaktadır.",
+      "modalRequired": "En az {threshold} geçerli dosya sağlamanız gerekmektedir.",
+      "uploadKeyFiles": "Anahtar Dosyalarını Yükle",
+      "filesSelected": "{count} dosya seçildi",
+      "verifying": "Doğrulanıyor...",
+      "unlock": "Kilidi Aç",
+      "cancel": "İptal",
+      "modalNeedFiles": "En az <strong>{threshold}</strong> geçerli dosya sağlamanız gerekir."
+    },
+    "keyMode": {
+      "single": "Tek Anahtar",
+      "multiKey": "Çoklu Anahtar (Parçalanmış)"
+    },
+    "filesSelected": "{count} dosya seçildi"
   },
   "wallet": {
     "title": "Güvenli Cüzdan Oluşturucu",
@@ -1061,6 +1297,9 @@
       "generateRandom": "Rastgele Veri Oluştur",
       "pasteClipboard": "Panodan Yapıştır",
       "generateMnemonic": "Rastgele Anımsatıcı Oluştur"
+    },
+    "label": {
+      "password": "Şifre / Gizli Not"
     }
   },
   "resultStep": {
@@ -1104,8 +1343,10 @@
   "license": {
     "alerts": {
       "systemClockError": "Sistem saati hatası algılandı. Pro özelliklerini kullanmaya devam etmek için lütfen sistem saatinizi düzeltin.",
-      "deactivateConfirm": "Real Pro Lisansını devre dışı bırak?"
-    }
+      "deactivateConfirm": "Real Pro Lisansını devre dışı bırak?",
+      "usbRemoved": "USB Anahtarı Çıkarıldı"
+    },
+    "proRequired": "Bu özellik için Pro lisansı gereklidir"
   },
   "mixStepButtons": {
     "back": "Geri",
@@ -1155,7 +1396,7 @@
   },
   "payment": {
     "chains": {
-      "bsc": "BNB Smart Chain",
+      "bsc": "BNB Akıllı Zincir",
       "trx": "TRON",
       "eth": "Ethereum"
     },
@@ -1197,6 +1438,109 @@
     "shareApiNotSupported": "Paylaşım API'si desteklenmiyor",
     "canvasContext": "Canvas bağlamı alınamadı",
     "invalidShareType": "jsSplit geçersiz tür döndürdü: {{type}}",
-    "wasmLoadFailed": "Wasm modülü yüklenemedi"
+    "wasmLoadFailed": "Wasm modülü yüklenemedi",
+    "noFile": "Lütfen önce dosyaları seçin",
+    "noPassword": "Şifre gereklidir",
+    "capacityExceeded": "Kapasite aşıldı. {{needed}} KB gerekli, ancak görselde yalnızca {{available}} KB var.",
+    "noHiddenData": "Gizli veri bulunamadı veya geçersiz format.",
+    "freeLimitFiles": "Ücretsiz sürüm {{limit}} dosya ile sınırlı",
+    "freeLimitSize": "Ücretsiz sürüm toplam {{size}} MB ile sınırlı",
+    "minShamirFiles": "Shamir en az {{min}} dosya gerektirir",
+    "emptyResponse": "Sunucudan boş yanıt",
+    "loadFailed": "Referans verileri yüklenemedi",
+    "networkError": "Ağ hatası"
+  },
+  "referral": {
+    "title": "Arkadaşlarını Davet Et",
+    "desc": "3 arkadaşını CryptoKey kullanmaya davet et ve Pro özelliklerini ücretsiz aç!",
+    "yourCode": "Davet Kodunuz",
+    "copyLink": "Davet Bağlantısını Kopyala",
+    "stats": "Davet Edildi: {{count}} / 3",
+    "unlocked": "Pro Kilidi Açıldı!",
+    "offline": "Tavsiye sistemi çevrimdışı kullanılamaz.",
+    "alreadyPro": "Zaten Pro erişiminiz var",
+    "localPro": "Yerel Pro lisansı tespit edildi",
+    "loginRequired": "Referans sistemini kullanmak için lütfen giriş yapın",
+    "earned": "{hours}s / 24s Kazanıldı",
+    "nextReward": "Sonraki Ödül",
+    "progress": "{current} / {total}"
+  },
+  "landing": {
+    "card1": {
+      "title": "Anımsatıcı Yedekleme",
+      "desc": "Kripto kurtarma ifadenizi fiziksel bir kitapta güvenle saklayın."
+    },
+    "card2": {
+      "title": "Şifre Defteri",
+      "desc": "Şifreleri, notları ve günlükleri güvenli taşınabilir formata şifreleyin."
+    },
+    "card3": {
+      "title": "Veri Geri Yükleme",
+      "desc": "Kitap anahtarınız ve şifrenizi kullanarak verilerinizi şifresini çözün."
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey Güvenli Yedekleme】",
+      "ciphertext": "Şifreli Metin:",
+      "hash": "Hash:",
+      "footer": "Şifre çöz: https://cryptokey.im",
+      "generated": "Oluşturulma: {{date}}",
+      "note": "NOT: Şifre çözmek için parola + satır dizini gereklidir."
+    },
+    "subject": "CryptoKey.im üzerinden Şifrelenmiş Mesaj",
+    "body": {
+      "instruction": "【ÖNEMLİ TALİMAT】",
+      "step1": "Lütfen az önce indirdiğiniz dosyayı EKLEYİN: \"{{filename}}\" (İndirilenler klasörünüzü kontrol edin);",
+      "step2": "Bu ek, şifreli yedeğinizi ve hash'inizi içerir. SİLMEYİN veya DEĞİŞTİRMEYİN;",
+      "step3": "Yedekleme için alıcı olarak kendi e-postanızı girebilirsiniz.",
+      "footer": "Bu veriyi şifre çözün: https://cryptokey.im",
+      "time": "Yedekleme Zamanı: {{date}}"
+    },
+    "alert": {
+      "title": "✅ İşlem Gerekli:",
+      "step1": "E-posta istemciniz şimdi açık olmalı.",
+      "step2": "Lütfen e-postanızda \"Dosya Ekle\"yi TIKLAYIN.",
+      "step3": "İNDİRMELER klasörünüzden \"{{filename}}\" dosyasını seçin.",
+      "step4": "Yedeklemeyi tamamlamak için e-postayı kendinize gönderin!",
+      "warning": "⚠️ Dosyayı bulamazsanız, tarayıcınızın indirme geçmişini kontrol edin (Ctrl+J veya Command+J)."
+    },
+    "error": "İşlem başarısız: {{error}}. Lütfen manuel olarak indirin ve e-posta gönderin!"
+  },
+  "passwordManager": {
+    "title": "Şifre Yöneticisi",
+    "subtitle": "Şifrelenmiş parolalarınızı güvenle yönetin",
+    "save": "Şifre Yöneticisine Kaydet",
+    "saveSuccess": "Başarıyla kaydedildi!",
+    "enterTitle": "Başlık girin (örn. Gmail)",
+    "empty": "Henüz kaydedilmiş şifre yok.",
+    "emptyTitle": "Kaydedilmiş şifre yok",
+    "emptyDesc": "Parolalarınızı şifrelemek ve buraya kaydetmek için \"Şifre Defteri\" aracını kullanın.",
+    "delete": "Sil",
+    "decrypt": "Şifre Çöz",
+    "confirmDelete": "Bu şifreyi silmek istediğinizden emin misiniz?",
+    "copyCiphertext": "Şifreli Metni Kopyala",
+    "rowLabel": "SATIR: {row}"
+  },
+  "invite": {
+    "success": "Davet kodu kabul edildi!",
+    "self": "Kendinizi davet edemezsiniz",
+    "invalid": "Geçersiz davet kodu",
+    "title": "Davet Sistemi",
+    "subtitle": "Kodunuzu paylaşın ve arkadaşlarınızı davet edin",
+    "myCode": "Davet Kodum",
+    "shareDesc": "Arkadaşlarınızı davet etmek için bu kodu paylaşın.",
+    "enterCode": "Davet Eden Kodunu Girin",
+    "alreadySet": "Davet eden zaten ayarlanmış",
+    "submit": "Gönder",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "Pro Plan: Sınırsız",
+    "proUnlimitedFiles": "Pro Plan: Sınırsız Dosya",
+    "freeLimit3Files": "Ücretsiz Plan: Maksimum 3 dosya",
+    "freeLimit3FilesSize": "Ücretsiz Plan: Maksimum 3 dosya / 1.5MB",
+    "upgradeForUnlimited": "Sınırsız için yükselt",
+    "upgrade": "Yükselt"
   }
 }

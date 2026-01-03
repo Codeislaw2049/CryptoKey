@@ -31,11 +31,13 @@ class WasmManager {
       await wasm.default();
       
       this.exports = {
-        check_license: wasm.check_license,
-        verify_offline_license: wasm.verify_offline_license,
-        split_secret: wasm.split_secret,
-        combine_shares: wasm.combine_shares,
-        embed_stego: wasm.embed_stego,
+        encrypt_binary_wasm: wasm.encrypt_binary_wasm,
+        decrypt_binary_wasm: wasm.decrypt_binary_wasm,
+        embed_binary_wasm: wasm.embed_binary_wasm,
+        extract_binary_wasm: wasm.extract_binary_wasm,
+        verify_license_wasm: wasm.verify_license_wasm,
+        create_video_trailer_wasm: wasm.create_video_trailer_wasm,
+        parse_video_trailer_wasm: wasm.parse_video_trailer_wasm,
         memory: (wasm as any).memory
       };
 

@@ -61,20 +61,24 @@ const WasmBenchmark: React.FC = () => {
       addLog(t('benchmark.log.runningWasm'));
       const startWasm = performance.now();
       
-      // Shamir (Rust)
-      const wasmShares = wasmExports.split_secret(secret, 5, 3);
+      // Shamir (Rust) - Not yet migrated
+      // const wasmShares = wasmExports.split_secret(secret, 5, 3);
       
       // Stego (Rust)
       // Convert Uint8ClampedArray to Uint8Array for Wasm compatibility
-      const uint8Data = new Uint8Array(dummyImageData.data.buffer);
-      wasmExports.embed_stego(uint8Data, secret);
+      // const uint8Data = new Uint8Array(dummyImageData.data.buffer);
+      // wasmExports.embed_stego(uint8Data, secret);
+      
+      // Use embed_binary_wasm instead
+      const payload = new TextEncoder().encode(secret);
+      wasmExports.embed_binary_wasm(dummyImageData.data, payload);
       
       const endWasm = performance.now();
       const wasmDuration = endWasm - startWasm;
       addLog(`Wasm Finished in ${wasmDuration.toFixed(2)}ms`);
 
       // 3. Validation
-      const isValid = recovered === secret && wasmShares.length === 5;
+      const isValid = recovered === secret; // && wasmShares.length === 5;
       addLog(t('benchmark.validation.result', { result: isValid ? t('benchmark.validation.pass') : t('benchmark.validation.fail') }));
 
       setResults({

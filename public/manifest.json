@@ -31,5 +31,20 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "text/plain": [".txt", ".ck"]
+      },
+      "icons": [
+        {
+          "src": "/pwa-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }

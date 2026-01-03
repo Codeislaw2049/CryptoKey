@@ -24,3 +24,27 @@
     background: transparent;
     display: none;
 }
+
+/* Desktop App Experience Optimization */
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+/* Allow text selection in input fields */
+input,
+textarea,
+[contenteditable="true"] {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+}
+
+html, body {
+    -webkit-touch-callout: none;
+}
+
+img, a {
+    -webkit-user-drag: none;
+}

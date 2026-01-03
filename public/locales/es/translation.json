@@ -15,7 +15,15 @@
     "or": "- O -",
     "none": "Ninguno",
     "processing": "Procesando...",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "upgradeToAccess": "Actualizar para acceder",
+    "clear": "Limpiar",
+    "comingSoon": "Próximamente",
+    "clickToUpload": "Haga clic para cargar",
+    "noResults": "No se encontraron resultados",
+    "search": "Buscar",
+    "passwordPlaceholder": "Ingrese contraseña",
+    "requiredToDecrypt": "Requerido para descifrar:"
   },
   "errorBoundary": {
     "title": "Algo salió mal",
@@ -26,7 +34,8 @@
     "home": "Inicio",
     "pricing": "Precios",
     "terms": "Términos",
-    "about": "Acerca de"
+    "about": "Acerca de",
+    "invite": "Invitar y ganar"
   },
   "home": {
     "subtitle": "Herramienta de Esteganografía y Cifrado de Grado Militar",
@@ -34,7 +43,17 @@
       "encrypt": "Cifrar",
       "decrypt": "Descifrar",
       "stego": "Esteganografía",
-      "wallet": "Cartera de Papel"
+      "wallet": "Cartera de Papel",
+      "passwords": "Contraseñas",
+      "invite": "Invitar"
+    },
+    "mode": {
+      "geek": "Modo Geek",
+      "simple": "Modo Simple"
+    },
+    "toggle": {
+      "advanced": "Cambiar a Modo Geek",
+      "simple": "Cambiar a Modo Simple"
     }
   },
   "pricing": {
@@ -194,7 +213,8 @@
       "pricing": "Precios",
       "terms": "Términos de Servicio",
       "source": "Código Fuente",
-      "share": "Compartir"
+      "share": "Compartir",
+      "install": "Instalar aplicación"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Todos los derechos reservados.",
     "license": "Licenciado bajo CC-BY-NC-ND 4.0 con fines de auditoría. Se requiere licencia Pro para uso comercial.",
@@ -543,7 +563,7 @@
         "description": "Selecciona la mejor manera de asegurar tu frase mnemónica o datos:",
         "book": {
           "physical": {
-            "title": "Libro Físico / Virtual",
+            "title": "Mnemónico / Libro Físico",
             "desc": "Oculta tu clave en un libro real en tu estante. (Página-Línea-Palabra)"
           },
           "online": {
@@ -680,7 +700,8 @@
           "compliance": "Cumple BIP-39",
           "encryption": "Cifrado Estándar",
           "security": "Alta Seguridad"
-        }
+        },
+        "recommended": "Recomendado"
       },
       "physical": {
         "title": "Libro Físico",
@@ -708,20 +729,31 @@
           "convenient": "Acceso Conveniente",
           "dynamic": "Referencia Dinámica"
         }
+      },
+      "passwordBook": {
+        "title": "Lightweight Password Book",
+        "desc": "Encrypt passwords & notes into a portable index.",
+        "features": {
+          "anyText": "Supports Any Text",
+          "portable": "Highly Portable",
+          "secure": "Military Grade"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "Ingresar Mnemónico",
+        "mnemonic": "Mnemotécnico / Cualquier Texto",
         "file": "Subir Archivo",
         "url": "Ingresar URL",
-        "general": "Ingresar Datos"
+        "general": "Ingresar Datos",
+        "password": "Secure Passwords & Notes"
       },
       "subtitle": {
-        "mnemonic": "Ingresa tu frase mnemónica de 12 o 24 palabras.",
+        "mnemonic": "Ingrese su frase mnemotécnica o cualquier texto.",
         "file": "Sube un archivo de texto para cifrar.",
         "url": "Ingresa una URL para obtener contenido.",
-        "general": "Ingresa cualquier dato de texto para cifrar."
+        "general": "Ingresa cualquier dato de texto para cifrar.",
+        "password": "Enter the text, password, or secret note you want to encrypt."
       },
       "file": {
         "loaded": "Archivo Cargado Exitosamente",
@@ -732,8 +764,13 @@
         "schemes": {
           "offset": "Desplazamiento de Caracteres",
           "chapter": "Índice de Capítulo",
-          "virtual": "Línea Virtual"
-        }
+          "virtual": "Línea Virtual",
+          "chapterDesc": "Formato de cita de libro (ej: 1-20-5)",
+          "offsetDesc": "Formato numérico compacto (ej: 12345-8)",
+          "virtualDesc": "Formato Code/Log (ej: 150-5)"
+        },
+        "dragDrop": "Click to Open Vault",
+        "schemeTooltip": "Elija cómo se ocultan los datos dentro de la estructura del archivo."
       },
       "url": {
         "fetch": "Obtener Contenido",
@@ -743,7 +780,8 @@
         },
         "success": "Cargados {{count}} caracteres",
         "recommended": "Libros Recomendados",
-        "clickToFill": "Haz clic para llenar"
+        "clickToFill": "Haz clic para llenar",
+        "guide": "Ingrese la URL del libro que desea usar."
       },
       "general": {
         "placeholder": "Ingresar fila de datos...",
@@ -751,11 +789,13 @@
         "generate": "Datos Aleatorios"
       },
       "mnemonic": {
-        "label": "Frase Mnemónica",
+        "label": "Mnemónico / Cualquier Texto",
         "required": "(Requerido)",
-        "placeholder": "Ingresa tu frase mnemónica...",
+        "placeholder": "Ingrese su frase de recuperación de 12-24 palabras, o escriba cualquier texto/contraseña...",
         "paste": "Pegar",
-        "generate": "Generar"
+        "generate": "Generar",
+        "typeTag": "Text / Mnemonic",
+        "tooltip": "Ingrese su frase mnemotécnica aquí."
       }
     },
     "mixStep": {
@@ -865,7 +905,7 @@
       "password": "Ingresa la contraseña usada para el cifrado"
     },
     "mode": {
-      "physicalBook": "Libro Físico / Virtual",
+      "physicalBook": "Mnemónico / Libro Físico",
       "digitalBook": "Libro Digital (Archivo)",
       "onlineBook": "Libro en Línea (URL)"
     },
@@ -911,12 +951,30 @@
       "urlMode": "Por favor obtén la URL del libro para recuperar datos.",
       "clipboard": "No se puede acceder al portapapeles. Por favor pega manualmente.",
       "decryptFailed": "Descifrado fallido. Por favor verifica tu contraseña."
+    },
+    "expectedType": {
+      "tooltip": "Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).",
+      "creditcard": "Tarjeta de crédito",
+      "creditcardDesc": "Números de tarjeta de crédito falsos",
+      "mnemonic": "Frase mnemotécnica",
+      "mnemonicDesc": "12/24 palabras falsas",
+      "password": "Contraseña",
+      "passwordDesc": "Contraseñas falsas",
+      "privatekey": "Clave privada",
+      "privatekeyDesc": "Claves privadas falsas (Hex)",
+      "text": "Cualquier texto",
+      "textDesc": "Párrafos de texto aleatorios",
+      "title": "Tipo de resultado esperado"
     }
   },
   "steganography": {
     "mode": {
       "hide": "Ocultar Datos",
-      "extract": "Extraer Datos"
+      "extract": "Extraer Datos",
+      "encrypt": "Cifrar y Fragmentar",
+      "decrypt": "Descifrar y Recuperar",
+      "hideFiles": "Ocultar Archivos",
+      "extractFiles": "Extraer Archivos"
     },
     "label": {
       "carrierImages": "Imagen(es) Portadora",
@@ -943,7 +1001,9 @@
     },
     "warning": {
       "title": "ADVERTENCIA CRÍTICA:",
-      "text": "¡No ingreses texto plano (como mnemónicos) directamente! Cualquiera con la imagen puede extraerlo. Siempre cifra tus datos primero (ej., usando la pestaña \"Cifrar\") y pega el Texto Cifrado aquí."
+      "text": "¡No ingreses texto plano (como mnemónicos) directamente! Cualquiera con la imagen puede extraerlo. Siempre cifra tus datos primero (ej., usando la pestaña \"Cifrar\") y pega el Texto Cifrado aquí.",
+      "compression": "Importante: Los datos ocultos se perderán si el archivo se comprime o recodifica (por ejemplo, enviado a través de aplicaciones sociales). Transfiera siempre como \"Archivo Original\".",
+      "password": "Consejo: Si usa una contraseña, no se puede recuperar si se pierde. Por favor, guárdela de forma segura."
     },
     "button": {
       "clearAll": "Limpiar Todo",
@@ -959,7 +1019,12 @@
       "successShards": "Se generaron y descargaron exitosamente {{count}} imágenes de fragmentos.",
       "noData": "No se encontraron datos ocultos válidos. Verifica los nombres de archivo si se usó modo estricto.",
       "reconstructFailed": "Reconstrucción fallida: {{error}}. Mostrando datos brutos abajo.",
-      "waitingImage": "Esperando imagen..."
+      "waitingImage": "Esperando imagen...",
+      "successExtract": "¡Descifrado exitoso!",
+      "keyFilesRequired": "Archivos de clave requeridos para descifrado",
+      "reconstructing": "Reconstruyendo secreto...",
+      "decryptingPayload": "Descifrando carga útil...",
+      "success": "¡Éxito!"
     },
     "about": {
       "title": "Acerca de la Esteganografía",
@@ -969,7 +1034,178 @@
     },
     "error": {
       "copyFailed": "Error al copiar al portapapeles"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "Esteganografía de Imagen",
+        "desc": "Oculte mensajes de texto dentro de imágenes usando esteganografía LSB."
+      },
+      "file": {
+        "title": "Bóveda de Archivos",
+        "desc": "Fusione y fragmente varios archivos en fragmentos cifrados de forma segura."
+      },
+      "imageVault": {
+        "title": "Bóveda de Imagen",
+        "desc": "Oculte cualquier archivo dentro de un portador de imagen."
+      },
+      "video": {
+        "title": "Bóveda de Video",
+        "desc": "Oculte información en flujos de video."
+      }
+    },
+    "fileVault": {
+      "title": "Bóveda de Archivos",
+      "description": "Cifre varios archivos y fragméntelos en múltiples fragmentos seguros.",
+      "encryptTitle": "Crear Bóveda Segura",
+      "decryptTitle": "Abrir Bóveda Segura",
+      "encryptDesc": "Combine varios archivos en un solo paquete cifrado, con fragmentación opcional para almacenamiento distribuido.",
+      "decryptDesc": "Restaure sus archivos desde un solo paquete cifrado o múltiples fragmentos.",
+      "selectedFiles": "{{count}} archivos seleccionados",
+      "warning": {
+        "title": "Recordatorios Importantes de Seguridad",
+        "password": "Si pierde su contraseña o archivo de clave, los datos no se podrán recuperar. Por favor, guárdelos de forma segura.",
+        "sharding": "La fragmentación de carga divide los datos cifrados en varias partes para almacenamiento distribuido. Todas las partes son necesarias para descifrar."
+      },
+      "about": {
+        "title": "Acerca de File Vault",
+        "text": "File Vault le permite empaquetar varios archivos en un único paquete cifrado. Puede habilitar la fragmentación de carga para dividir el resultado en varias partes para almacenamiento distribuido (por ejemplo, servicios en la nube). El modo Multi-Clave utiliza el Compartir Secreto de Shamir para requerir varios archivos de clave para el descifrado.",
+        "noteTitle": "Mejores Prácticas:",
+        "note": "Siempre mantenga copias de seguridad de su contraseña y archivos de clave. Si usa fragmentación, almacene las partes en diferentes ubicaciones. Para máxima seguridad, combine contraseña + archivo de clave + fragmentación."
+      },
+      "tip": {
+        "compression": "La compresión está habilitada por defecto para reducir el tamaño del archivo antes del cifrado.",
+        "shamir": "El modo Multi-Clave proporciona confianza distribuida - ningún archivo de clave único puede descifrar los datos solo."
+      }
+    },
+    "imageVault": {
+      "title": "Bóveda de Imágenes",
+      "description": "Oculte cualquier archivo dentro de una imagen usando esteganografía avanzada.",
+      "hideTitle": "Ocultar Archivos en Imagen",
+      "extractTitle": "Extraer Archivos de Imagen",
+      "hideDesc": "Seleccione una imagen portadora y archivos para ocultar. Los archivos serán cifrados e incorporados invisiblemente.",
+      "extractDesc": "Suba una imagen que contenga archivos ocultos para recuperarlos.",
+      "aboutText": "La esteganografía de imagen oculta datos invisiblemente dentro de los píxeles de la imagen.",
+      "aboutNote": "La imagen portadora se modificará ligeramente pero será visualmente idéntica.",
+      "warning": {
+        "title": "Reglas Críticas de Esteganografía de Imagen",
+        "capacity": "La capacidad de imagen depende de la resolución. Mayor resolución = más espacio de almacenamiento. Si se excede la capacidad, elija una imagen más grande.",
+        "format": "La salida siempre está en formato PNG. No convierta a JPG ni comprima, ya que esto destruirá los datos ocultos permanentemente.",
+        "transfer": "Al compartir, siempre use \"Enviar como archivo\" o \"Calidad original\". Las plataformas de redes sociales comprimen imágenes y destruirán los datos ocultos."
+      },
+      "tip": {
+        "carrier": "Elija una imagen compleja (fotos, paisajes) en lugar de gráficos simples para mejor esteganografía.",
+        "security": "Para máxima seguridad, habilite contraseña + archivo de clave + fragmentación multi-clave."
+      }
+    },
+    "videoVault": {
+      "title": "Bóveda de Videos",
+      "description": "Oculte datos dentro de fotogramas de video.",
+      "hideTitle": "Ocultar Archivos en Video",
+      "extractTitle": "Extraer Archivos de Video",
+      "hideDesc": "Seleccione un video portador y archivos para ocultar. Los archivos se agregarán al video de forma segura.",
+      "extractDesc": "Suba un video que contenga archivos ocultos para recuperarlos.",
+      "aboutText": "La esteganografía de video agrega datos cifrados después de los fotogramas de video.",
+      "aboutNote": "El video se puede reproducir normalmente, los datos ocultos están al final.",
+      "warning": {
+        "title": "Advertencias Importantes de Esteganografía de Video",
+        "format": "Los datos ocultos se agregan al archivo de video. No recodifique, comprima o cambie el formato de video, ya que esto destruirá los datos ocultos.",
+        "transfer": "Al compartir, siempre transfiera como archivo original. Las plataformas de transmisión de video recodifican videos y destruirán los datos ocultos.",
+        "size": "El tamaño del video de salida será ligeramente mayor (por el tamaño de los archivos ocultos). Esto es normal y esperado."
+      },
+      "tip": {
+        "carrier": "Cualquier formato de video funciona (MP4, WebM, etc.). Los datos ocultos son independientes del formato.",
+        "detection": "La esteganografía de video es altamente encubierta - el video se reproduce normalmente y el aumento del tamaño del archivo es mínimo."
+      }
+    },
+    "input": {
+      "filesToHide": "Seleccionar Archivos para Cifrar",
+      "filesToRecover": "Seleccionar Archivo(s) Cifrado(s)/Fragmentos",
+      "carrier": "1. Seleccionar Imagen Portadora (PNG/JPG)",
+      "stegoImage": "1. Seleccionar Imagen con Datos Ocultos",
+      "carrierVideo": "1. Seleccionar Video Portador (MP4/WebM)",
+      "stegoVideo": "1. Seleccionar Video con Datos Ocultos",
+      "clickUploadImage": "Haz clic para subir imagen"
+    },
+    "dropzone": {
+      "title": "Haga clic para subir archivos",
+      "subtitle": "Admite selección de múltiples archivos"
+    },
+    "sharding": {
+      "enable": "Activar Fragmentación",
+      "count": "Número de Fragmentos (N)",
+      "note": "El archivo se dividirá en N partes. Se requieren todas las partes para recuperar el archivo."
+    },
+    "action": {
+      "encrypt": "Cifrar Archivos",
+      "decrypt": "Recuperar Archivos",
+      "embed": "Incorporar Archivos",
+      "extract": "Extraer Archivos"
+    },
+    "result": {
+      "success": "Operación Exitosa",
+      "downloadAll": "Descargar Todo",
+      "imageReady": "¡Imagen Estego Generada!",
+      "filesRecovered": "¡{{count}} Archivos Recuperados!",
+      "videoReady": "¡Video Estego Generado!",
+      "videoReadyDesc": "Sus archivos se han ocultado de forma segura dentro del video.",
+      "clickToDownload": "Haga clic en el icono para descargar archivos individuales",
+      "waiting": "Esperando operación..."
+    },
+    "process": {
+      "packing": "Empaquetando archivos...",
+      "encrypting": "Cifrando...",
+      "sharding": "Fragmentando...",
+      "analyzing": "Analizando archivos...",
+      "merging": "Fusionando fragmentos...",
+      "decrypting": "Descifrando...",
+      "unpacking": "Desempaquetando...",
+      "embedding": "Incorporando datos...",
+      "extracting": "Extrayendo datos..."
+    },
+    "fileCount": "{{count}} archivos seleccionados",
+    "selectFiles": "Seleccionar archivos para ocultar",
+    "preview": {
+      "waitingHide": "El resultado aparecerá aquí",
+      "waitingExtract": "Los archivos recuperados aparecerán aquí"
+    },
+    "keyFile": {
+      "label": "Archivo Clave (Opcional, Seguridad Avanzada)",
+      "placeholder": "Seleccione un archivo como segunda clave (ej: foto, canción, libro electrónico)",
+      "help": "Si se usa, se requiere el archivo EXACTAMENTE igual para descifrar. Una diferencia de un solo byte hará que el descifrado falle.",
+      "mode": "Modo de archivo de clave",
+      "addSingle": "Agregar archivo de clave",
+      "addFiles": "Agregar Archivos",
+      "clear": "Borrar",
+      "clearAll": "Borrar Todo"
+    },
+    "enterPassword": "Ingrese contraseña",
+    "compression": {
+      "label": "Habilitar compresión",
+      "desc": "Reducir tamaño de archivo (puede afectar calidad)"
+    },
+    "security": {
+      "title": "Opciones de seguridad",
+      "usePassword": "Usar contraseña"
+    },
+    "shamir": {
+      "filesCount": "{{count}} archivos seleccionados para fragmentación",
+      "thresholdLabel": "Umbral",
+      "requiredFiles": "Cualquier {threshold} de estos {total} archivos serán necesarios para descifrar.",
+      "modalTitle": "Autenticación Multi-Clave",
+      "modalDesc": "Este archivo está protegido por varios archivos de clave.",
+      "modalRequired": "Necesita proporcionar al menos {threshold} archivos válidos.",
+      "uploadKeyFiles": "Cargar Archivos de Clave",
+      "filesSelected": "{count} archivos seleccionados",
+      "verifying": "Verificando...",
+      "unlock": "Desbloquear",
+      "cancel": "Cancelar",
+      "modalNeedFiles": "Debe proporcionar al menos <strong>{threshold}</strong> archivos válidos."
+    },
+    "keyMode": {
+      "single": "Clave Única",
+      "multiKey": "Multi-Clave (Fragmentada)"
+    },
+    "filesSelected": "{count} archivos seleccionados"
   },
   "wallet": {
     "title": "Generador de Cartera Segura",
@@ -1061,6 +1297,9 @@
       "generateRandom": "Generar Datos Aleatorios",
       "pasteClipboard": "Pegar desde Portapapeles",
       "generateMnemonic": "Generar Mnemónico Aleatorio"
+    },
+    "label": {
+      "password": "Contraseña / Nota Secreta"
     }
   },
   "resultStep": {
@@ -1104,8 +1343,10 @@
   "license": {
     "alerts": {
       "systemClockError": "Se detectó un error en el reloj del sistema. Por favor, corrija la hora de su sistema para continuar usando las funciones Pro.",
-      "deactivateConfirm": "¿Desactivar Licencia Real Pro?"
-    }
+      "deactivateConfirm": "¿Desactivar Licencia Real Pro?",
+      "usbRemoved": "Clave USB Eliminada"
+    },
+    "proRequired": "Se requiere licencia Pro para esta función"
   },
   "mixStepButtons": {
     "back": "Atrás",
@@ -1197,6 +1438,109 @@
     "shareApiNotSupported": "API de Compartir no compatible",
     "canvasContext": "No se pudo obtener el contexto del canvas",
     "invalidShareType": "jsSplit devolvió un tipo inválido: {{type}}",
-    "wasmLoadFailed": "Error al cargar el módulo Wasm"
+    "wasmLoadFailed": "Error al cargar el módulo Wasm",
+    "noFile": "Por favor, seleccione archivos primero",
+    "noPassword": "La contraseña es obligatoria",
+    "capacityExceeded": "Capacidad excedida. Se necesitan {{needed}} KB, pero la imagen solo tiene {{available}} KB.",
+    "noHiddenData": "No se encontraron datos ocultos o formato no válido.",
+    "freeLimitFiles": "Versión gratuita limitada a {{limit}} archivos",
+    "freeLimitSize": "Versión gratuita limitada a {{size}} MB en total",
+    "minShamirFiles": "Shamir requiere al menos {{min}} archivos",
+    "emptyResponse": "Respuesta vacía del servidor",
+    "loadFailed": "Error al cargar datos de referencia",
+    "networkError": "Error de red"
+  },
+  "referral": {
+    "title": "Invitar amigos",
+    "desc": "¡Invita a 3 amigos a usar CryptoKey y desbloquea funciones Pro gratis!",
+    "yourCode": "Tu código de invitación",
+    "copyLink": "Copiar enlace de invitación",
+    "stats": "Invitados: {{count}} / 3",
+    "unlocked": "¡Pro desbloqueado!",
+    "offline": "Sistema de referidos no disponible sin conexión.",
+    "alreadyPro": "Ya tiene acceso Pro",
+    "localPro": "Licencia Pro local detectada",
+    "loginRequired": "Por favor, inicie sesión para usar el sistema de referidos",
+    "earned": "{hours}h / 24h Ganado",
+    "nextReward": "Próxima Recompensa",
+    "progress": "{current} / {total}"
+  },
+  "landing": {
+    "card1": {
+      "title": "Respaldo Mnemónico",
+      "desc": "Oculte de forma segura su frase de recuperación cripto en un libro físico."
+    },
+    "card2": {
+      "title": "Libro de Contraseñas",
+      "desc": "Cifre contraseñas, notas y diarios en un formato portátil seguro."
+    },
+    "card3": {
+      "title": "Restaurar Datos",
+      "desc": "Descifre sus datos usando su clave de libro y contraseña."
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey Copia Segura】",
+      "ciphertext": "Texto Cifrado:",
+      "hash": "Hash:",
+      "footer": "Descifrar en: https://cryptokey.im",
+      "generated": "Generado: {{date}}",
+      "note": "NOTA: Requiere contraseña + índice de fila para descifrar."
+    },
+    "subject": "Mensaje Cifrado vía CryptoKey.im",
+    "body": {
+      "instruction": "【INSTRUCCIÓN IMPORTANTE】",
+      "step1": "Por favor, ADJUNTE el archivo que acaba de descargar: \"{{filename}}\" (Verifique su carpeta de Descargas);",
+      "step2": "Este archivo adjunto contiene su copia de seguridad cifrada y hash. NO elimine ni modifique;",
+      "step3": "Puede completar su propio correo electrónico como destinatario para la copia de seguridad.",
+      "footer": "Descifrar estos datos en: https://cryptokey.im",
+      "time": "Hora de Copia: {{date}}"
+    },
+    "alert": {
+      "title": "✅ Acción Requerida:",
+      "step1": "Su cliente de correo electrónico debería estar abierto ahora.",
+      "step2": "Por favor, HAGA CLIC en \"Adjuntar Archivo\" en su correo electrónico.",
+      "step3": "Seleccione el archivo \"{{filename}}\" de su carpeta de DESCARGAS.",
+      "step4": "¡Envíe el correo electrónico a usted mismo para completar la copia de seguridad!",
+      "warning": "⚠️ Si no puede encontrar el archivo, verifique el historial de descargas de su navegador (Ctrl+J o Command+J)."
+    },
+    "error": "Operación fallida: {{error}}. ¡Por favor descargue manualmente y envíe el correo electrónico!"
+  },
+  "passwordManager": {
+    "title": "Administrador de Contraseñas",
+    "subtitle": "Gestione sus contraseñas cifradas de forma segura",
+    "save": "Guardar en el Administrador de Contraseñas",
+    "saveSuccess": "¡Guardado con éxito!",
+    "enterTitle": "Ingrese un título (ej. Gmail)",
+    "empty": "Aún no hay contraseñas guardadas.",
+    "emptyTitle": "No hay contraseñas guardadas",
+    "emptyDesc": "Use la herramienta \"Libro de Contraseñas\" para cifrar y guardar sus contraseñas aquí.",
+    "delete": "Eliminar",
+    "decrypt": "Descifrar",
+    "confirmDelete": "¿Está seguro de que desea eliminar esta contraseña?",
+    "copyCiphertext": "Copiar Texto Cifrado",
+    "rowLabel": "FILA: {row}"
+  },
+  "invite": {
+    "success": "¡Código de invitación aceptado!",
+    "self": "No puede invitarse a sí mismo",
+    "invalid": "Código de invitación no válido",
+    "title": "Sistema de Invitaciones",
+    "subtitle": "Comparta su código e invite a amigos",
+    "myCode": "Mi Código de Invitación",
+    "shareDesc": "Comparta este código con sus amigos para invitarlos.",
+    "enterCode": "Ingrese el Código del Invitador",
+    "alreadySet": "Invitador ya establecido",
+    "submit": "Enviar",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "Plan Pro: Ilimitado",
+    "proUnlimitedFiles": "Plan Pro: Archivos ilimitados",
+    "freeLimit3Files": "Plan gratuito: Máximo 3 archivos",
+    "freeLimit3FilesSize": "Plan gratuito: Máximo 3 archivos / 1.5MB",
+    "upgradeForUnlimited": "Actualizar para ilimitado",
+    "upgrade": "Actualizar"
   }
 }

@@ -1,32 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
-import { validateMnemonic, mnemonicToIndices, encodeIndexToBookCipher, generateMnemonic } from '../../utils/mnemonic';
-import { AlertCircle, CheckCircle2, Dices, Upload, Settings2, BookOpen, Trash2, Plus, Clipboard } from 'lucide-react';
+import { validateMnemonic, mnemonicToIndices, encodeIndexToBookCipher, generateMnemonic, textToIndices } from '../../utils/mnemonic';
+import { AlertCircle, CheckCircle2, Dices, Upload, Settings2, BookOpen, Trash2, Plus, Clipboard, Lock, Info } from 'lucide-react';
 import { useSecureMemory } from '../../hooks/useSecureMemory';
 import { parseGutenbergTxt } from '../../utils/txtParser';
 import { fetchGutenbergContent } from '../../utils/urlFetcher';
 import { PRESET_BOOKS } from '../../utils/publicBooks';
 import { 
-  mnemonicToOffset, 
-  mnemonicToChapterIndices, 
-  mnemonicToVirtualLineIndices, 
-  mnemonicToIndex 
+  indicesToOffset,
+  indicesToChapterIndices,
+  indicesToVirtualLineIndices,
+  indicesToIndex
 } from '../../utils/gutenbergIndex';
 import { sanitizeUrl } from '../../utils/sanitize';
 import { useTranslation } from 'react-i18next';
+import { useLicense } from '../../contexts/LicenseContext';
+import { Tooltip } from '../ui/Tooltip'; // Assuming Tooltip exists or we'll create a simple one inline if not
 
 interface InputStepProps {
   mode: 'general' | 'mnemonic' | 'file' | 'url';
+  intent?: 'crypto' | 'password';
   initialValue?: string;
   onNext: (data: string[], originalMnemonic?: string) => void;
   onBack: () => void;
 }
 
-export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps) => {
+export const InputStep = ({ mode, intent = 'crypto', initialValue, onNext, onBack }: InputStepProps) => {
   const { t } = useTranslation();
+  const { isPro, triggerUpgrade } = useLicense();
   const [mnemonic, setMnemonic] = useSecureMemory(initialValue || '');
   const [error, setError] = React.useState('');
+
+  const handleSchemeChange = (scheme: 'offset' | 'chapter' | 'virtual') => {
+    if (scheme === 'offset') {
+      setFileScheme(scheme);
+      return;
+    }
+    
+    if (isPro) {
+      setFileScheme(scheme);
+    } else {
+      triggerUpgrade();
+    }
+  };
 
   useEffect(() => {
     if (initialValue) {
@@ -104,11 +121,20 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
 
   const handleMnemonicSubmit = () => {
     try {
+      let indices: number[] = [];
+
       if (mode !== 'general') {
         const validation = validateMnemonic(mnemonic);
-        if (!validation.isValid) {
-          setError(validation.error || t('inputStep.error.invalidMnemonic'));
-          return;
+        if (validation.isValid) {
+          indices = mnemonicToIndices(mnemonic);
+        } else {
+          // If invalid mnemonic, treat as arbitrary text
+          // But ensure it's not empty
+          if (!mnemonic.trim()) {
+             setError(t('inputStep.error.invalidMnemonic'));
+             return;
+          }
+          indices = textToIndices(mnemonic);
         }
       }
 
@@ -116,7 +142,6 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
 
       if (mode === 'mnemonic') {
         // Standard Book Cipher (Physical Book)
-        const indices = mnemonicToIndices(mnemonic);
         cipherData = indices.map(encodeIndexToBookCipher);
       } else if (mode === 'general') {
         // Physical Book: Manual Entry of Ciphertext
@@ -130,15 +155,15 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
       } else if (mode === 'file' && fileInfo) {
         // Project 4: Digital Book (TXT)
         if (fileScheme === 'offset') {
-           cipherData = mnemonicToOffset(mnemonic, fileInfo.fullText);
+           cipherData = indicesToOffset(indices, fileInfo.fullText);
         } else if (fileScheme === 'chapter') {
-           cipherData = mnemonicToChapterIndices(mnemonic, fileInfo.chapters);
+           cipherData = indicesToChapterIndices(indices, fileInfo.chapters);
         } else if (fileScheme === 'virtual') {
-           cipherData = mnemonicToVirtualLineIndices(mnemonic, fileInfo.virtualLines);
+           cipherData = indicesToVirtualLineIndices(indices, fileInfo.virtualLines);
         }
       } else if (mode === 'url' && urlInfo) {
         // Project 5: Online Book (URL)
-        cipherData = mnemonicToIndex(mnemonic, urlInfo.pureText, urlInfo.textHash);
+        cipherData = indicesToIndex(indices, urlInfo.pureText, urlInfo.textHash);
       } else {
         throw new Error(t('inputStep.error.invalidMode'));
       }
@@ -190,20 +215,32 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
     setError('');
   };
 
+  const getTitle = () => {
+    if (intent === 'password') return t('wizard.inputStep.title.password', 'Secure Passwords & Notes');
+    if (mode === 'mnemonic') return t('wizard.inputStep.title.mnemonic');
+    if (mode === 'file') return t('wizard.inputStep.title.file');
+    if (mode === 'url') return t('wizard.inputStep.title.url');
+    if (mode === 'general') return t('wizard.inputStep.title.general');
+    return '';
+  };
+
+  const getSubtitle = () => {
+    if (intent === 'password') return t('wizard.inputStep.subtitle.password', 'Enter the text, password, or secret note you want to encrypt.');
+    if (mode === 'mnemonic') return t('wizard.inputStep.subtitle.mnemonic');
+    if (mode === 'file') return t('wizard.inputStep.subtitle.file');
+    if (mode === 'url') return t('wizard.inputStep.subtitle.url');
+    if (mode === 'general') return t('wizard.inputStep.subtitle.general');
+    return '';
+  };
+
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold text-white">
-          {mode === 'mnemonic' && t('wizard.inputStep.title.mnemonic')}
-          {mode === 'file' && t('wizard.inputStep.title.file')}
-          {mode === 'url' && t('wizard.inputStep.title.url')}
-          {mode === 'general' && t('wizard.inputStep.title.general')}
+          {getTitle()}
         </h2>
         <p className="text-slate-400">
-          {mode === 'mnemonic' && t('wizard.inputStep.subtitle.mnemonic')}
-          {mode === 'file' && t('wizard.inputStep.subtitle.file')}
-          {mode === 'url' && t('wizard.inputStep.subtitle.url')}
-          {mode === 'general' && t('wizard.inputStep.subtitle.general')}
+          {getSubtitle()}
         </p>
       </div>
 
@@ -212,60 +249,114 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
         <div className="space-y-6">
           {mode === 'file' && (
             <div className="space-y-4">
-               <div className="border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-primary/50 transition-colors bg-slate-900/50">
-                  <input 
-                    type="file" 
-                    accept=".txt"
-                    onChange={handleFileUpload}
-                    className="hidden" 
-                    id="file-upload"
-                  />
-                  <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-3">
-                    <Upload className="text-primary w-10 h-10 mb-2" />
-                    <span className="text-lg font-medium text-slate-200">
-                      {fileInfo ? t('wizard.inputStep.file.loaded') : t('wizard.inputStep.file.upload')}
-                    </span>
-                    <span className="text-sm text-slate-500">
-                      {fileInfo ? `${(fileInfo.totalChars / 1024).toFixed(1)} KB ${t('wizard.inputStep.file.sizeLoaded')}` : t('wizard.inputStep.file.maxSize')}
-                    </span>
-                  </label>
+               {/* Safe Box / Vault Style Upload UI */}
+               <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative bg-slate-900 rounded-xl p-8 text-center border border-slate-700 hover:border-slate-500 transition-colors shadow-2xl">
+                      {/* Decorative elements */}
+                      <div className="absolute top-4 right-4 flex gap-1">
+                          <div className="w-2 h-2 rounded-full bg-red-500/50 animate-pulse"></div>
+                          <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
+                          <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
+                      </div>
+                      
+                      <input 
+                        type="file" 
+                        accept=".txt"
+                        onChange={handleFileUpload}
+                        className="hidden" 
+                        id="file-upload"
+                      />
+                      <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-4 py-4">
+                        <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-700 shadow-inner group-hover:scale-105 transition-transform duration-300">
+                            {fileInfo ? (
+                                <BookOpen className="text-primary w-10 h-10" />
+                            ) : (
+                                <Upload className="text-slate-400 w-10 h-10 group-hover:text-white transition-colors" />
+                            )}
+                        </div>
+                        
+                        <div className="space-y-1">
+                            <span className="text-xl font-bold text-slate-200 block tracking-wide">
+                              {fileInfo ? t('wizard.inputStep.file.loaded') : t('wizard.inputStep.file.upload')}
+                            </span>
+                            <span className="text-sm text-slate-500 font-mono block">
+                              {fileInfo ? `${(fileInfo.totalChars / 1024).toFixed(1)} KB ${t('wizard.inputStep.file.sizeLoaded')}` : t('wizard.inputStep.file.maxSize')}
+                            </span>
+                        </div>
+                        
+                        {!fileInfo && (
+                            <div className="mt-4 px-4 py-1.5 bg-slate-800 rounded-full text-xs text-slate-400 border border-slate-700 group-hover:border-primary/50 transition-colors">
+                                {t('wizard.inputStep.file.dragDrop', 'Click to Open Vault')}
+                            </div>
+                        )}
+                      </label>
+                  </div>
                </div>
 
                {fileInfo && (
                  <div className="bg-slate-800/50 p-4 rounded-lg space-y-3 border border-slate-700">
                     <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
                       <Settings2 size={16} /> {t('wizard.inputStep.file.scheme')}
+                      <Tooltip content={t('wizard.inputStep.file.schemeTooltip', 'Different ways to reference data in the book. Character Offset is standard. Chapter Index and Virtual Line are Pro features that provide better obfuscation.')}>
+                        <Info size={14} className="text-slate-500 hover:text-primary cursor-help" />
+                      </Tooltip>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                       <button 
-                        onClick={() => setFileScheme('offset')}
-                        className={`p-2 rounded-lg text-xs font-medium border transition-all ${
+                        onClick={() => handleSchemeChange('offset')}
+                        className={`p-3 rounded-lg text-left border transition-all ${
                           fileScheme === 'offset' 
-                          ? 'bg-primary/20 border-primary text-primary' 
-                          : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
+                          ? 'bg-primary/20 border-primary' 
+                          : 'bg-slate-900 border-slate-700 hover:border-slate-500'
                         }`}
                       >
-                        {t('wizard.inputStep.file.schemes.offset')}
+                        <div className={`text-xs font-medium ${fileScheme === 'offset' ? 'text-primary' : 'text-slate-300'}`}>
+                           {t('wizard.inputStep.file.schemes.offset')}
+                        </div>
+                        <div className="text-[10px] text-slate-500 mt-1 leading-tight">
+                           {t('wizard.inputStep.file.schemes.offsetDesc')}
+                        </div>
                       </button>
+
                       <button 
-                        onClick={() => setFileScheme('chapter')}
-                        className={`p-2 rounded-lg text-xs font-medium border transition-all ${
+                        onClick={() => handleSchemeChange('chapter')}
+                        className={`p-3 rounded-lg text-left border transition-all relative overflow-hidden ${
                           fileScheme === 'chapter' 
-                          ? 'bg-primary/20 border-primary text-primary' 
-                          : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
-                        }`}
+                          ? 'bg-primary/20 border-primary' 
+                          : 'bg-slate-900 border-slate-700 hover:border-slate-500'
+                        } ${!isPro ? 'opacity-90' : ''}`}
                       >
-                        {t('wizard.inputStep.file.schemes.chapter')}
+                         {!isPro && (
+                           <div className="absolute top-0 right-0 bg-amber-500 text-white text-[9px] px-1.5 py-0.5 rounded-bl font-bold z-20">PRO</div>
+                         )}
+                        <div className={`text-xs font-medium flex items-center gap-1.5 ${fileScheme === 'chapter' ? 'text-primary' : 'text-slate-300'}`}>
+                           <span className={!isPro ? 'blur-[2px] select-none' : ''}>{t('wizard.inputStep.file.schemes.chapter')}</span>
+                           {!isPro && <Lock size={12} className="text-amber-500" />}
+                        </div>
+                        <div className={`text-[10px] text-slate-500 mt-1 leading-tight ${!isPro ? 'blur-[2px] select-none' : ''}`}>
+                           {t('wizard.inputStep.file.schemes.chapterDesc')}
+                        </div>
                       </button>
+
                       <button 
-                        onClick={() => setFileScheme('virtual')}
-                        className={`p-2 rounded-lg text-xs font-medium border transition-all ${
+                        onClick={() => handleSchemeChange('virtual')}
+                        className={`p-3 rounded-lg text-left border transition-all relative overflow-hidden ${
                           fileScheme === 'virtual' 
-                          ? 'bg-primary/20 border-primary text-primary' 
-                          : 'bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500'
-                        }`}
+                          ? 'bg-primary/20 border-primary' 
+                          : 'bg-slate-900 border-slate-700 hover:border-slate-500'
+                        } ${!isPro ? 'opacity-90' : ''}`}
                       >
-                        {t('wizard.inputStep.file.schemes.virtual')}
+                         {!isPro && (
+                           <div className="absolute top-0 right-0 bg-amber-500 text-white text-[9px] px-1.5 py-0.5 rounded-bl font-bold z-20">PRO</div>
+                         )}
+                        <div className={`text-xs font-medium flex items-center gap-1.5 ${fileScheme === 'virtual' ? 'text-primary' : 'text-slate-300'}`}>
+                           <span className={!isPro ? 'blur-[2px] select-none' : ''}>{t('wizard.inputStep.file.schemes.virtual')}</span>
+                           {!isPro && <Lock size={12} className="text-amber-500" />}
+                        </div>
+                        <div className={`text-[10px] text-slate-500 mt-1 leading-tight ${!isPro ? 'blur-[2px] select-none' : ''}`}>
+                           {t('wizard.inputStep.file.schemes.virtualDesc')}
+                        </div>
                       </button>
                     </div>
                  </div>
@@ -275,6 +366,11 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
 
           {mode === 'url' && (
             <div className="space-y-4">
+              <div className="bg-slate-800/50 p-3 rounded-lg border border-slate-700/50 text-xs text-slate-400 flex gap-2">
+                 <Info size={14} className="shrink-0 mt-0.5 text-primary" />
+                 <p>{t('wizard.inputStep.url.guide', 'Paste a Gutenberg eBook URL or select from our recommended classics. This URL becomes your permanent key.')}</p>
+              </div>
+
               {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') && (
                  <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-3 flex gap-3 items-start text-xs text-indigo-200/80">
                     <CheckCircle2 size={16} className="shrink-0 mt-0.5 text-indigo-400" />
@@ -313,24 +409,42 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
               <div className="space-y-2">
                 <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">{t('wizard.inputStep.url.recommended')}</p>
                 <div className="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto custom-scrollbar pr-2 border border-slate-800/50 rounded-lg p-2 bg-slate-900/30">
-                  {PRESET_BOOKS.map((book) => (
-                    <button
-                      key={book.id}
-                      onClick={() => {
-                        setUrl(book.url);
-                      }}
-                      className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800 transition-colors text-left group hover:border-primary/50"
-                    >
-                      <BookOpen size={16} className="text-slate-500 group-hover:text-primary transition-colors flex-shrink-0" />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium text-slate-300 truncate group-hover:text-white transition-colors">{book.title}</div>
-                        <div className="text-xs text-slate-500">{book.author}</div>
-                      </div>
-                      <div className="text-[10px] text-slate-600 font-mono bg-slate-900/50 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                        {t('wizard.inputStep.url.clickToFill')}
-                      </div>
-                    </button>
-                  ))}
+                  {PRESET_BOOKS.map((book, index) => {
+                    const isLocked = !isPro && index > 0;
+                    return (
+                      <button
+                        key={book.id}
+                        onClick={() => {
+                          if (isLocked) {
+                            triggerUpgrade();
+                            return;
+                          }
+                          setUrl(book.url);
+                        }}
+                        className={`flex items-center gap-3 p-2 rounded-lg text-left group transition-all ${
+                          isLocked 
+                            ? 'bg-slate-900/20 border border-slate-800 opacity-60 cursor-not-allowed' 
+                            : 'bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800 hover:border-primary/50'
+                        }`}
+                      >
+                        <BookOpen size={16} className={`flex-shrink-0 transition-colors ${isLocked ? 'text-slate-600' : 'text-slate-500 group-hover:text-primary'}`} />
+                        <div className="flex-1 min-w-0">
+                          <div className={`text-sm font-medium truncate transition-colors ${isLocked ? 'text-slate-500' : 'text-slate-300 group-hover:text-white'}`}>{book.title}</div>
+                          <div className="text-xs text-slate-500">{book.author}</div>
+                        </div>
+                        {isLocked ? (
+                          <div className="flex items-center gap-1 bg-amber-500/10 px-2 py-1 rounded text-[10px] text-amber-500 font-bold border border-amber-500/20">
+                            <Lock size={10} />
+                            PRO
+                          </div>
+                        ) : (
+                          <div className="text-[10px] text-slate-600 font-mono bg-slate-900/50 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                            {t('wizard.inputStep.url.clickToFill')}
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -385,6 +499,16 @@ export const InputStep = ({ mode, initialValue, onNext, onBack }: InputStepProps
                  <div className="flex items-center gap-2 mb-2 text-sm font-medium text-slate-400">
                     <span>{t('wizard.inputStep.mnemonic.label')}</span>
                     <span className="text-xs text-slate-500 font-normal">{t('wizard.inputStep.mnemonic.required')}</span>
+                 </div>
+              )}
+              {mode === 'mnemonic' && (
+                 <div className="flex justify-between items-center mb-2">
+                    <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
+                      {intent === 'password' ? t('inputStep.label.password', 'Password / Secret Note') : t('wizard.inputStep.mnemonic.label')}
+                      <Tooltip content={t('wizard.inputStep.mnemonic.tooltip', 'Enter your 12 or 24 word recovery phrase. Or switch to "Any Text" mode to encrypt arbitrary passwords or notes.')}>
+                        <Info size={14} className="text-slate-500 hover:text-primary cursor-help" />
+                      </Tooltip>
+                    </label>
                  </div>
               )}
               <textarea

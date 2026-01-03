@@ -1,4 +1,4 @@
-import { wasmManager } from '../wasm/wasmLoader';
+// import { wasmManager } from '../wasm/wasmLoader';
 
 // Basic Shamir's Secret Sharing implementation in TypeScript
 // Uses GF(2^8) with primitive polynomial x^8 + x^4 + x^3 + x + 1 (0x11b)
@@ -133,6 +133,7 @@ export const splitJS = async (secret: string, shares: number, threshold: number)
 };
 
 export const split = async (secret: string, shares: number, threshold: number): Promise<string[]> => {
+  /*
   const exports = wasmManager.getExports();
   if (exports) {
     try {
@@ -142,6 +143,7 @@ export const split = async (secret: string, shares: number, threshold: number): 
       console.warn("Wasm Split failed, falling back to JS", e);
     }
   }
+  */
   return splitJS(secret, shares, threshold);
 };
 
@@ -247,6 +249,7 @@ export const combineJS = async (shares: string[]): Promise<string> => {
 };
 
 export const combine = async (shares: string[]): Promise<string> => {
+  /*
   const exports = wasmManager.getExports();
   if (exports) {
     try {
@@ -256,6 +259,7 @@ export const combine = async (shares: string[]): Promise<string> => {
       console.warn("Wasm Combine failed, falling back to JS", e);
     }
   }
+  */
   return combineJS(shares);
 };
 

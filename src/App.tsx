@@ -18,11 +18,18 @@ function App() {
     wasmManager.loadProModule().then(success => {
         if (success) console.log("Pro Wasm Module Loaded");
     });
+
+    // Capture Referral Code
+    const params = new URLSearchParams(window.location.search);
+    const refCode = params.get('ref');
+    if (refCode) {
+        sessionStorage.setItem('cryptokey_referral_code', refCode);
+    }
   }, []);
 
   return (
     <Router>
-      <div className="min-h-screen bg-background text-slate-100 py-6 md:py-12 px-2 md:px-4 selection:bg-primary/30 relative pb-24 md:pb-12 overflow-x-hidden">
+      <div className="min-h-screen bg-background text-slate-100 py-3 md:py-6 px-2 md:px-4 selection:bg-primary/30 relative pb-12 md:pb-6 overflow-x-hidden">
         <ErrorBoundary>
           <SecurityBadge />
           <LicenseManager />

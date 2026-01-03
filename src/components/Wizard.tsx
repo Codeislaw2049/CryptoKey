@@ -8,18 +8,24 @@ type Step = 'mode' | 'input' | 'mix' | 'result';
 
 interface WizardProps {
   initialSecret?: string;
+  initialMode?: 'general' | 'mnemonic' | 'file' | 'url';
+  initialIntent?: 'crypto' | 'password';
   onNavigateToStego?: (secret: string) => void;
 }
 
-export const Wizard = ({ initialSecret, onNavigateToStego: _onNavigateToStego }: WizardProps) => {
-  const [step, setStep] = useState<Step>(initialSecret ? 'input' : 'mode');
-  const [mode, setMode] = useState<'general' | 'mnemonic' | 'file' | 'url'>(initialSecret ? 'mnemonic' : 'general');
+export const Wizard = ({ initialSecret, initialMode, initialIntent, onNavigateToStego: _onNavigateToStego }: WizardProps) => {
+  const [step, setStep] = useState<Step>(initialSecret || initialMode ? 'input' : 'mode');
+  const [mode, setMode] = useState<'general' | 'mnemonic' | 'file' | 'url'>(initialMode || (initialSecret ? 'mnemonic' : 'general'));
+  const [intent, setIntent] = useState<'crypto' | 'password'>(initialIntent || 'crypto');
   const [realData, setRealData] = useState<string[]>([]);
   const [originalInput, setOriginalInput] = useState<string>(initialSecret || '');
   const [result, setResult] = useState<{ ciphertext: string; hash: string; realRowIndex: number; password?: string } | null>(null);
 
-  const handleModeSelect = (selectedMode: 'general' | 'mnemonic' | 'file' | 'url') => {
+  const handleModeSelect = (selectedMode: 'general' | 'mnemonic' | 'file' | 'url', selectedIntent?: 'crypto' | 'password') => {
     setMode(selectedMode);
+    if (selectedIntent) {
+      setIntent(selectedIntent);
+    }
     setStep('input');
   };
 
@@ -46,11 +52,12 @@ export const Wizard = ({ initialSecret, onNavigateToStego: _onNavigateToStego }:
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto">
       {step === 'mode' && <ModeSelection onSelect={handleModeSelect} />}
       {step === 'input' && (
         <InputStep 
-          mode={mode} 
+          mode={mode}
+          intent={intent}
           initialValue={originalInput}
           onNext={handleInputSubmit} 
           onBack={() => setStep('mode')} 
@@ -67,6 +74,7 @@ export const Wizard = ({ initialSecret, onNavigateToStego: _onNavigateToStego }:
         <ResultStep 
           result={result} 
           mnemonic={originalInput}
+          intent={intent}
           onReset={handleReset} 
         />
       )}

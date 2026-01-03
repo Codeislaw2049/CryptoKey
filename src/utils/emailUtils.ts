@@ -1,3 +1,5 @@
+import i18n from '../i18n';
+
 /**
  * Pure frontend implementation of "ciphertext as email attachment"
  * (Auto-download attachment + invoke email client)
@@ -11,19 +13,21 @@ export const sendEmailWithAttachment = async (
   userEmail?: string
 ) => {
   try {
+    const t = i18n.t;
+
     // Step 1: Generate ciphertext attachment file (.txt format, auto-download to user local)
     const filename = `cryptokey_backup_${Date.now()}.txt`;
-    const fileContent = `【CryptoKey Secure Backup】
-Ciphertext:
+    const fileContent = `${t('email.file.header')}
+${t('email.file.ciphertext')}
 ${ciphertext}
 
-Hash:
+${t('email.file.hash')}
 ${hash}
 
 ---
-Decrypt at: https://cryptokey.im
-Generated: ${new Date().toLocaleString()}
-NOTE: Requires password + row index to decrypt.
+${t('email.file.footer')}
+${t('email.file.generated', { date: new Date().toLocaleString() })}
+${t('email.file.note')}
 `;
 
     // Auto download attachment (save to user default download folder)
@@ -38,18 +42,18 @@ NOTE: Requires password + row index to decrypt.
     URL.revokeObjectURL(url);
 
     // Step 2: Invoke email client (fill subject/body guide, do not fill ultra-long ciphertext)
-    const subject = encodeURIComponent('Encrypted Message via CryptoKey.im');
+    const subject = encodeURIComponent(t('email.subject'));
     const body = encodeURIComponent(`
-【IMPORTANT INSTRUCTION】
-1. Please ATTACH the file you just downloaded: "${filename}" (Check your Downloads folder);
-2. This attachment contains your encrypted backup and hash. Do NOT delete or modify it;
-3. You can fill in your own email as recipient for backup.
+${t('email.body.instruction')}
+1. ${t('email.body.step1', { filename })}
+2. ${t('email.body.step2')}
+3. ${t('email.body.step3')}
 
 ---
-Decrypt this data at: https://cryptokey.im
+${t('email.body.footer')}
 ---
 
-Backup Time: ${new Date().toLocaleString()}
+${t('email.body.time', { date: new Date().toLocaleString() })}
 `);
 
     // Construct mailto link (only fill subject/body/recipient, no ultra-long ciphertext)
@@ -60,18 +64,18 @@ Backup Time: ${new Date().toLocaleString()}
     // Using a small timeout to ensure mail client is invoked first
     setTimeout(() => {
       alert(`
-✅ Action Required:
+${t('email.alert.title')}
 
-1. Your email client should be open now.
-2. Please CLICK "Attach File" in your email.
-3. Select the file "${filename}" from your DOWNLOADS folder.
-4. Send the email to yourself to complete backup!
+1. ${t('email.alert.step1')}
+2. ${t('email.alert.step2')}
+3. ${t('email.alert.step3', { filename })}
+4. ${t('email.alert.step4')}
 
-⚠️ If you can't find the file, check your browser's download history (Ctrl+J or Command+J).
+${t('email.alert.warning')}
       `);
     }, 1000);
 
   } catch (e) {
-    alert(`Operation failed: ${(e as Error).message}. Please manually download and send email!`);
+    alert(`${i18n.t('email.error', { error: (e as Error).message })}`);
   }
 };

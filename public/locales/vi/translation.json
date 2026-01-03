@@ -15,7 +15,15 @@
     "or": "- HOẶC -",
     "none": "Không có",
     "processing": "Đang xử lý...",
-    "next": "Tiếp theo"
+    "next": "Tiếp theo",
+    "upgradeToAccess": "Nâng cấp để truy cập",
+    "clear": "Xóa",
+    "comingSoon": "Sắp ra mắt",
+    "clickToUpload": "Nhấp để tải lên",
+    "noResults": "Không tìm thấy kết quả",
+    "search": "Tìm kiếm",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "requiredToDecrypt": "Yêu cầu để giải mã:"
   },
   "errorBoundary": {
     "title": "Đã xảy ra lỗi",
@@ -26,7 +34,8 @@
     "home": "Trang chủ",
     "pricing": "Bảng giá",
     "terms": "Điều khoản",
-    "about": "Giới thiệu"
+    "about": "Giới thiệu",
+    "invite": "Mời và Kiếm"
   },
   "home": {
     "subtitle": "Công cụ mã hóa & Steganography cấp quân sự",
@@ -34,7 +43,17 @@
       "encrypt": "Mã hóa",
       "decrypt": "Giải mã",
       "stego": "Steganography",
-      "wallet": "Ví giấy"
+      "wallet": "Ví giấy",
+      "passwords": "Mật khẩu",
+      "invite": "Mời"
+    },
+    "mode": {
+      "geek": "Chế độ Geek",
+      "simple": "Chế độ đơn giản"
+    },
+    "toggle": {
+      "advanced": "Chuyển sang chế độ Geek",
+      "simple": "Chuyển sang chế độ đơn giản"
     }
   },
   "pricing": {
@@ -194,7 +213,8 @@
       "pricing": "Bảng giá",
       "terms": "Điều khoản dịch vụ",
       "source": "Mã nguồn",
-      "share": "Chia sẻ"
+      "share": "Chia sẻ",
+      "install": "Cài đặt ứng dụng"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Bảo lưu mọi quyền.",
     "license": "Được cấp phép theo CC-BY-NC-ND 4.0 cho mục đích kiểm toán. Cần giấy phép Pro cho sử dụng thương mại.",
@@ -543,7 +563,7 @@
         "description": "Chọn cách tốt nhất để bảo mật cụm từ mnemonic hoặc dữ liệu của bạn:",
         "book": {
           "physical": {
-            "title": "Sách vật lý / Ảo",
+            "title": "Gợi nhớ / Sách Vật lý",
             "desc": "Ẩn khóa của bạn trong một cuốn sách thật trên kệ. (Trang-Dòng-Từ)"
           },
           "online": {
@@ -680,7 +700,8 @@
           "compliance": "Tuân thủ BIP-39",
           "encryption": "Mã hóa tiêu chuẩn",
           "security": "Bảo mật cao"
-        }
+        },
+        "recommended": "Được đề xuất"
       },
       "physical": {
         "title": "Sách vật lý",
@@ -708,20 +729,31 @@
           "convenient": "Truy cập thuận tiện",
           "dynamic": "Tham chiếu động"
         }
+      },
+      "passwordBook": {
+        "title": "Lightweight Password Book",
+        "desc": "Encrypt passwords & notes into a portable index.",
+        "features": {
+          "anyText": "Supports Any Text",
+          "portable": "Highly Portable",
+          "secure": "Military Grade"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "Nhập Mnemonic",
+        "mnemonic": "Mnemonic / Bất kỳ văn bản",
         "file": "Tải lên tệp",
         "url": "Nhập URL",
-        "general": "Nhập dữ liệu"
+        "general": "Nhập dữ liệu",
+        "password": "Secure Passwords & Notes"
       },
       "subtitle": {
-        "mnemonic": "Nhập cụm từ mnemonic 12 hoặc 24 từ của bạn.",
+        "mnemonic": "Nhập cụm từ ghi nhớ hoặc bất kỳ văn bản nào.",
         "file": "Tải lên tệp văn bản để mã hóa.",
         "url": "Nhập URL để tải nội dung.",
-        "general": "Nhập bất kỳ dữ liệu văn bản nào để mã hóa."
+        "general": "Nhập bất kỳ dữ liệu văn bản nào để mã hóa.",
+        "password": "Enter the text, password, or secret note you want to encrypt."
       },
       "file": {
         "loaded": "Đã tải tệp thành công",
@@ -732,8 +764,13 @@
         "schemes": {
           "offset": "Độ lệch ký tự",
           "chapter": "Chỉ số chương",
-          "virtual": "Dòng ảo"
-        }
+          "virtual": "Dòng ảo",
+          "chapterDesc": "Định dạng trích dẫn sách (ví dụ: 1-20-5)",
+          "offsetDesc": "Định dạng số gọn (ví dụ: 12345-8)",
+          "virtualDesc": "Định dạng Code/Log (ví dụ: 150-5)"
+        },
+        "dragDrop": "Click to Open Vault",
+        "schemeTooltip": "Chọn cách dữ liệu được ẩn trong cấu trúc tệp."
       },
       "url": {
         "fetch": "Tải nội dung",
@@ -743,7 +780,8 @@
         },
         "success": "Đã tải {{count}} ký tự",
         "recommended": "Sách được khuyến nghị",
-        "clickToFill": "Nhấp để điền"
+        "clickToFill": "Nhấp để điền",
+        "guide": "Nhập URL của cuốn sách bạn muốn sử dụng."
       },
       "general": {
         "placeholder": "Nhập dòng dữ liệu...",
@@ -751,11 +789,13 @@
         "generate": "Dữ liệu ngẫu nhiên"
       },
       "mnemonic": {
-        "label": "Cụm từ Mnemonic",
+        "label": "Gợi nhớ / Văn bản",
         "required": "(Bắt buộc)",
-        "placeholder": "Nhập cụm từ mnemonic của bạn...",
+        "placeholder": "Nhập cụm từ khôi phục 12-24 từ của bạn hoặc nhập bất kỳ văn bản/mật khẩu nào...",
         "paste": "Dán",
-        "generate": "Tạo"
+        "generate": "Tạo",
+        "typeTag": "Text / Mnemonic",
+        "tooltip": "Nhập cụm từ ghi nhớ của bạn tại đây."
       }
     },
     "mixStep": {
@@ -865,7 +905,7 @@
       "password": "Nhập mật khẩu được sử dụng để mã hóa"
     },
     "mode": {
-      "physicalBook": "Sách vật lý / Ảo",
+      "physicalBook": "Gợi nhớ / Sách Vật lý",
       "digitalBook": "Sách kỹ thuật số (Tệp)",
       "onlineBook": "Sách trực tuyến (URL)"
     },
@@ -911,12 +951,30 @@
       "urlMode": "Vui lòng tải URL sách để khôi phục dữ liệu.",
       "clipboard": "Không thể truy cập clipboard. Vui lòng dán thủ công.",
       "decryptFailed": "Giải mã thất bại. Vui lòng kiểm tra mật khẩu của bạn."
+    },
+    "expectedType": {
+      "tooltip": "Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).",
+      "creditcard": "Thẻ tín dụng",
+      "creditcardDesc": "Số thẻ tín dụng giả",
+      "mnemonic": "Cụm từ ghi nhớ",
+      "mnemonicDesc": "12/24 từ giả",
+      "password": "Mật khẩu",
+      "passwordDesc": "Mật khẩu giả",
+      "privatekey": "Khóa riêng",
+      "privatekeyDesc": "Khóa riêng giả (Hex)",
+      "text": "Bất kỳ văn bản nào",
+      "textDesc": "Đoạn văn bản ngẫu nhiên",
+      "title": "Loại kết quả mong đợi"
     }
   },
   "steganography": {
     "mode": {
       "hide": "Ẩn dữ liệu",
-      "extract": "Trích xuất dữ liệu"
+      "extract": "Trích xuất dữ liệu",
+      "encrypt": "Mã hóa & Chia mảnh",
+      "decrypt": "Giải mã & Khôi phục",
+      "hideFiles": "Ẩn tệp",
+      "extractFiles": "Trích xuất tệp"
     },
     "label": {
       "carrierImages": "Hình ảnh mang",
@@ -943,7 +1001,9 @@
     },
     "warning": {
       "title": "CẢNH BÁO QUAN TRỌNG:",
-      "text": "Không nhập văn bản thô (như mnemonic) trực tiếp! Bất kỳ ai có hình ảnh đều có thể trích xuất nó. Luôn mã hóa dữ liệu của bạn trước (ví dụ: sử dụng tab \"Mã hóa\") và dán Ciphertext tại đây."
+      "text": "Không nhập văn bản thô (như mnemonic) trực tiếp! Bất kỳ ai có hình ảnh đều có thể trích xuất nó. Luôn mã hóa dữ liệu của bạn trước (ví dụ: sử dụng tab \"Mã hóa\") và dán Ciphertext tại đây.",
+      "compression": "Quan trọng: Dữ liệu ẩn sẽ bị mất nếu tệp bị nén hoặc mã hóa lại (ví dụ: gửi qua ứng dụng mạng xã hội). Luôn chuyển dưới dạng \"Tệp gốc\".",
+      "password": "Mẹo: Nếu bạn sử dụng mật khẩu, nó không thể được khôi phục nếu bị mất. Vui lòng lưu trữ an toàn."
     },
     "button": {
       "clearAll": "Xóa tất cả",
@@ -959,7 +1019,12 @@
       "successShards": "Đã tạo và tải xuống thành công {{count}} hình ảnh mảnh.",
       "noData": "Không tìm thấy dữ liệu ẩn hợp lệ. Kiểm tra tên tệp nếu chế độ nghiêm ngặt được sử dụng.",
       "reconstructFailed": "Tái tạo thất bại: {{error}}. Hiển thị dữ liệu thô bên dưới.",
-      "waitingImage": "Đang chờ hình ảnh..."
+      "waitingImage": "Đang chờ hình ảnh...",
+      "successExtract": "Giải mã thành công!",
+      "keyFilesRequired": "Cần tệp khóa để giải mã",
+      "reconstructing": "Đang tái tạo khóa bí mật...",
+      "decryptingPayload": "Đang giải mã dữ liệu...",
+      "success": "Thành công!"
     },
     "about": {
       "title": "Về Steganography",
@@ -969,7 +1034,178 @@
     },
     "error": {
       "copyFailed": "Không sao chép vào clipboard được"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "Steganography hình ảnh",
+        "desc": "Ẩn tin nhắn văn bản bên trong hình ảnh bằng LSB steganography."
+      },
+      "file": {
+        "title": "Kho tệp",
+        "desc": "Hợp nhất và phân mảnh nhiều tệp thành các mảnh được mã hóa một cách an toàn."
+      },
+      "imageVault": {
+        "title": "Kho hình ảnh",
+        "desc": "Ẩn bất kỳ tệp nào trong hình ảnh mang."
+      },
+      "video": {
+        "title": "Kho video",
+        "desc": "Ẩn thông tin trong luồng video."
+      }
+    },
+    "fileVault": {
+      "title": "Két tệp",
+      "description": "Mã hóa nhiều tệp và chia thành nhiều mảnh tệp an toàn.",
+      "encryptTitle": "Tạo két an toàn",
+      "decryptTitle": "Mở két an toàn",
+      "encryptDesc": "Kết hợp nhiều tệp thành một gói mã hóa duy nhất, với tùy chọn chia mảnh để lưu trữ phân tán.",
+      "decryptDesc": "Khôi phục tệp từ một gói mã hóa đơn lẻ hoặc nhiều mảnh.",
+      "selectedFiles": "Đã chọn {{count}} tệp",
+      "warning": {
+        "title": "Lời nhắc bảo mật quan trọng",
+        "password": "Nếu bạn mất mật khẩu hoặc tệp khóa, dữ liệu sẽ không thể khôi phục. Vui lòng lưu trữ chúng an toàn.",
+        "sharding": "Phân mảnh tải trọng chia dữ liệu được mã hóa thành nhiều phần để lưu trữ phân tán. Tất cả các phần đều cần thiết để giải mã."
+      },
+      "about": {
+        "title": "Giới thiệu về File Vault",
+        "text": "File Vault cho phép bạn đóng gói nhiều tệp thành một gói được mã hóa duy nhất. Bạn có thể bật phân mảnh tải trọng để chia kết quả thành nhiều phần để lưu trữ phân tán (ví dụ: dịch vụ đám mây). Chế độ đa khóa sử dụng Shamir Secret Sharing để yêu cầu nhiều tệp khóa để giải mã.",
+        "noteTitle": "Thực hành tốt nhất:",
+        "note": "Luôn giữ bản sao lưu mật khẩu và tệp khóa của bạn. Nếu sử dụng phân mảnh, hãy lưu trữ các phần ở các vị trí khác nhau. Để có bảo mật tối đa, hãy kết hợp mật khẩu + tệp khóa + phân mảnh."
+      },
+      "tip": {
+        "compression": "Nén được bật theo mặc định để giảm kích thước tệp trước khi mã hóa.",
+        "shamir": "Chế độ đa khóa cung cấp niềm tin phân tán - không có tệp khóa đơn lẻ nào có thể giải mã dữ liệu một mình."
+      }
+    },
+    "imageVault": {
+      "title": "Két hình ảnh",
+      "description": "Ẩn bất kỳ tệp nào trong hình ảnh bằng kỹ thuật ẩn thông tin nâng cao.",
+      "hideTitle": "Ẩn tệp trong hình ảnh",
+      "extractTitle": "Trích xuất tệp từ hình ảnh",
+      "hideDesc": "Chọn hình ảnh mang và các tệp cần ẩn. Các tệp sẽ được mã hóa và nhúng vô hình.",
+      "extractDesc": "Tải lên hình ảnh chứa tệp ẩn để khôi phục chúng.",
+      "aboutText": "Steganography hình ảnh ẩn dữ liệu vô hình trong các pixel hình ảnh.",
+      "aboutNote": "Hình ảnh mang sẽ được sửa đổi nhẹ nhưng giống hệt về mặt hình ảnh.",
+      "warning": {
+        "title": "Quy tắc quan trọng về ẩn tin trong ảnh",
+        "capacity": "Dung lượng ảnh phụ thuộc vào độ phân giải. Độ phân giải cao hơn = không gian lưu trữ nhiều hơn. Nếu vượt quá dung lượng, hãy chọn ảnh lớn hơn.",
+        "format": "Đầu ra luôn ở định dạng PNG. Không chuyển đổi sang JPG hoặc nén, vì điều này sẽ phá hủy dữ liệu ẩn vĩnh viễn.",
+        "transfer": "Khi chia sẻ, luôn sử dụng \"Gửi dưới dạng tệp\" hoặc \"Chất lượng gốc\". Nền tảng mạng xã hội nén ảnh và sẽ phá hủy dữ liệu ẩn."
+      },
+      "tip": {
+        "carrier": "Chọn ảnh phức tạp (ảnh, phong cảnh) thay vì đồ họa đơn giản để có kết quả ẩn tin tốt hơn.",
+        "security": "Để có bảo mật tối đa, hãy bật mật khẩu + tệp khóa + phân mảnh đa khóa."
+      }
+    },
+    "videoVault": {
+      "title": "Két video",
+      "description": "Ẩn dữ liệu trong các khung hình video.",
+      "hideTitle": "Ẩn tệp trong video",
+      "extractTitle": "Trích xuất tệp từ video",
+      "hideDesc": "Chọn video mang và các tệp cần ẩn. Các tệp sẽ được thêm vào video một cách an toàn.",
+      "extractDesc": "Tải lên video chứa tệp ẩn để khôi phục chúng.",
+      "aboutText": "Steganography video nối dữ liệu được mã hóa sau các khung hình video.",
+      "aboutNote": "Video có thể phát bình thường, dữ liệu ẩn ở cuối.",
+      "warning": {
+        "title": "Cảnh báo quan trọng về ẩn tin trong video",
+        "format": "Dữ liệu ẩn được thêm vào tệp video. Không mã hóa lại, nén hoặc thay đổi định dạng video, vì điều này sẽ phá hủy dữ liệu ẩn.",
+        "transfer": "Khi chia sẻ, luôn chuyển dưới dạng tệp gốc. Nền tảng phát trực tuyến video mã hóa lại video và sẽ phá hủy dữ liệu ẩn.",
+        "size": "Kích thước video đầu ra sẽ lớn hơn một chút (theo kích thước của các tệp ẩn). Điều này là bình thường và được mong đợi."
+      },
+      "tip": {
+        "carrier": "Bất kỳ định dạng video nào cũng hoạt động (MP4, WebM, v.v.). Dữ liệu ẩn độc lập với định dạng.",
+        "detection": "Ẩn tin video có tính bí mật cao - video phát bình thường và tăng kích thước tệp tối thiểu."
+      }
+    },
+    "input": {
+      "filesToHide": "Chọn tệp để mã hóa",
+      "filesToRecover": "Chọn tệp mã hóa/mảnh",
+      "carrier": "1. Chọn hình ảnh mang (PNG/JPG)",
+      "stegoImage": "1. Chọn hình ảnh chứa dữ liệu ẩn",
+      "carrierVideo": "1. Chọn video mang (MP4/WebM)",
+      "stegoVideo": "1. Chọn video chứa dữ liệu ẩn",
+      "clickUploadImage": "Nhấp để tải lên hình ảnh"
+    },
+    "dropzone": {
+      "title": "Nhấp để tải lên tệp",
+      "subtitle": "Hỗ trợ chọn nhiều tệp"
+    },
+    "sharding": {
+      "enable": "Bật chia mảnh",
+      "count": "Số lượng mảnh (N)",
+      "note": "Tệp sẽ được chia thành N phần. Tất cả các phần đều cần thiết để khôi phục tệp."
+    },
+    "action": {
+      "encrypt": "Mã hóa tệp",
+      "decrypt": "Khôi phục tệp",
+      "embed": "Nhúng tệp",
+      "extract": "Trích xuất tệp"
+    },
+    "result": {
+      "success": "Thao tác thành công",
+      "downloadAll": "Tải xuống tất cả",
+      "imageReady": "Hình ảnh ẩn đã tạo!",
+      "filesRecovered": "Đã khôi phục {{count}} tệp!",
+      "videoReady": "Video ẩn đã tạo!",
+      "videoReadyDesc": "Các tệp của bạn đã được ẩn an toàn trong video.",
+      "clickToDownload": "Nhấp vào biểu tượng để tải xuống từng tệp",
+      "waiting": "Đang chờ thao tác..."
+    },
+    "process": {
+      "packing": "Đang đóng gói tệp...",
+      "encrypting": "Đang mã hóa...",
+      "sharding": "Đang chia mảnh...",
+      "analyzing": "Đang phân tích tệp...",
+      "merging": "Đang gộp mảnh...",
+      "decrypting": "Đang giải mã...",
+      "unpacking": "Đang giải nén...",
+      "embedding": "Đang nhúng dữ liệu...",
+      "extracting": "Đang trích xuất dữ liệu..."
+    },
+    "fileCount": "Đã chọn {{count}} tệp",
+    "selectFiles": "Chọn tệp để ẩn",
+    "preview": {
+      "waitingHide": "Kết quả sẽ xuất hiện ở đây",
+      "waitingExtract": "Các tệp đã khôi phục sẽ xuất hiện ở đây"
+    },
+    "keyFile": {
+      "label": "Tệp khóa (Tùy chọn, Bảo mật nâng cao)",
+      "placeholder": "Chọn tệp làm khóa thứ hai (ví dụ: ảnh, bài hát, sách điện tử)",
+      "help": "Nếu sử dụng, cần tệp CHÍNH XÁC giống nhau để giải mã. Sai một byte sẽ làm giải mã thất bại.",
+      "mode": "Chế độ tệp khóa",
+      "addSingle": "Thêm tệp khóa",
+      "addFiles": "Thêm tệp",
+      "clear": "Xóa",
+      "clearAll": "Xóa tất cả"
+    },
+    "enterPassword": "Nhập mật khẩu",
+    "compression": {
+      "label": "Bật nén",
+      "desc": "Giảm kích thước tệp (có thể ảnh hưởng chất lượng)"
+    },
+    "security": {
+      "title": "Tùy chọn bảo mật",
+      "usePassword": "Sử dụng mật khẩu"
+    },
+    "shamir": {
+      "filesCount": "Đã chọn {{count}} tệp để phân mảnh",
+      "thresholdLabel": "Ngưỡng",
+      "requiredFiles": "Bất kỳ {threshold} trong số {total} tệp này sẽ cần thiết để giải mã.",
+      "modalTitle": "Xác thực đa khóa",
+      "modalDesc": "Tệp này được bảo vệ bởi nhiều tệp khóa.",
+      "modalRequired": "Bạn cần cung cấp ít nhất {threshold} tệp hợp lệ.",
+      "uploadKeyFiles": "Tải lên tệp khóa",
+      "filesSelected": "Đã chọn {count} tệp",
+      "verifying": "Đang xác minh...",
+      "unlock": "Mở khóa",
+      "cancel": "Hủy",
+      "modalNeedFiles": "Bạn cần cung cấp ít nhất <strong>{threshold}</strong> tệp hợp lệ."
+    },
+    "keyMode": {
+      "single": "Khóa đơn",
+      "multiKey": "Đa khóa (Phân mảnh)"
+    },
+    "filesSelected": "Đã chọn {count} tệp"
   },
   "wallet": {
     "title": "Trình tạo ví bảo mật",
@@ -1061,6 +1297,9 @@
       "generateRandom": "Tạo dữ liệu ngẫu nhiên",
       "pasteClipboard": "Dán từ clipboard",
       "generateMnemonic": "Tạo Mnemonic ngẫu nhiên"
+    },
+    "label": {
+      "password": "Mật khẩu / Ghi chú bí mật"
     }
   },
   "resultStep": {
@@ -1104,8 +1343,10 @@
   "license": {
     "alerts": {
       "systemClockError": "Phát hiện lỗi đồng hồ hệ thống. Vui lòng điều chỉnh thời gian hệ thống của bạn để tiếp tục sử dụng các tính năng Pro.",
-      "deactivateConfirm": "Hủy kích hoạt Giấy phép Real Pro?"
-    }
+      "deactivateConfirm": "Hủy kích hoạt Giấy phép Real Pro?",
+      "usbRemoved": "Khóa USB đã được tháo"
+    },
+    "proRequired": "Tính năng này yêu cầu giấy phép Pro"
   },
   "mixStepButtons": {
     "back": "Quay lại",
@@ -1197,6 +1438,109 @@
     "shareApiNotSupported": "API Chia sẻ không được hỗ trợ",
     "canvasContext": "Không thể lấy ngữ cảnh canvas",
     "invalidShareType": "jsSplit trả về loại không hợp lệ: {{type}}",
-    "wasmLoadFailed": "Tải mô-đun Wasm thất bại"
+    "wasmLoadFailed": "Tải mô-đun Wasm thất bại",
+    "noFile": "Vui lòng chọn tệp trước",
+    "noPassword": "Mật khẩu là bắt buộc",
+    "capacityExceeded": "Vượt quá dung lượng. Cần {{needed}} KB, nhưng hình ảnh chỉ có {{available}} KB.",
+    "noHiddenData": "Không tìm thấy dữ liệu ẩn hoặc định dạng không hợp lệ.",
+    "freeLimitFiles": "Phiên bản miễn phí giới hạn {{limit}} tệp",
+    "freeLimitSize": "Phiên bản miễn phí giới hạn tổng {{size}} MB",
+    "minShamirFiles": "Shamir yêu cầu ít nhất {{min}} tệp",
+    "emptyResponse": "Phản hồi trống từ máy chủ",
+    "loadFailed": "Tải dữ liệu giới thiệu thất bại",
+    "networkError": "Lỗi mạng"
+  },
+  "referral": {
+    "title": "Mời bạn bè",
+    "desc": "Mời 3 bạn bè sử dụng CryptoKey và mở khóa tính năng Pro miễn phí!",
+    "yourCode": "Mã mời của bạn",
+    "copyLink": "Sao chép liên kết mời",
+    "stats": "Đã mời: {{count}} / 3",
+    "unlocked": "Đã mở khóa Pro!",
+    "offline": "Hệ thống giới thiệu không khả dụng ngoại tuyến.",
+    "alreadyPro": "Bạn đã có quyền truy cập Pro",
+    "localPro": "Đã phát hiện giấy phép Pro cục bộ",
+    "loginRequired": "Vui lòng đăng nhập để sử dụng hệ thống giới thiệu",
+    "earned": "{hours}h / 24h Đã kiếm",
+    "nextReward": "Phần thưởng tiếp theo",
+    "progress": "{current} / {total}"
+  },
+  "landing": {
+    "card1": {
+      "title": "Sao lưu Mnemonic",
+      "desc": "Ẩn cụm từ khôi phục tiền điện tử của bạn một cách an toàn trong một cuốn sách vật lý."
+    },
+    "card2": {
+      "title": "Sổ mật khẩu",
+      "desc": "Mã hóa mật khẩu, ghi chú và nhật ký thành định dạng di động an toàn."
+    },
+    "card3": {
+      "title": "Khôi phục dữ liệu",
+      "desc": "Giải mã dữ liệu của bạn bằng khóa sách và mật khẩu."
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey Sao lưu An toàn】",
+      "ciphertext": "Bản mã:",
+      "hash": "Mã băm:",
+      "footer": "Giải mã tại: https://cryptokey.im",
+      "generated": "Tạo lúc: {{date}}",
+      "note": "LƯU Ý: Cần mật khẩu + chỉ số dòng để giải mã."
+    },
+    "subject": "Tin nhắn mã hóa qua CryptoKey.im",
+    "body": {
+      "instruction": "【HƯỚNG DẪN QUAN TRỌNG】",
+      "step1": "Vui lòng ĐÍNH KÈM tệp bạn vừa tải xuống: \"{{filename}}\" (Kiểm tra thư mục Tải xuống);",
+      "step2": "Tệp đính kèm này chứa bản sao lưu mã hóa và mã băm của bạn. KHÔNG xóa hoặc sửa đổi;",
+      "step3": "Bạn có thể điền email của mình làm người nhận để sao lưu.",
+      "footer": "Giải mã dữ liệu này tại: https://cryptokey.im",
+      "time": "Thời gian sao lưu: {{date}}"
+    },
+    "alert": {
+      "title": "✅ Yêu cầu Hành động:",
+      "step1": "Ứng dụng email của bạn bây giờ nên đã mở.",
+      "step2": "Vui lòng NHẤP \"Đính kèm Tệp\" trong email của bạn.",
+      "step3": "Chọn tệp \"{{filename}}\" từ thư mục TẢI XUỐNG của bạn.",
+      "step4": "Gửi email cho chính bạn để hoàn tất sao lưu!",
+      "warning": "⚠️ Nếu bạn không tìm thấy tệp, hãy kiểm tra lịch sử tải xuống của trình duyệt (Ctrl+J hoặc Command+J)."
+    },
+    "error": "Thao tác thất bại: {{error}}. Vui lòng tải xuống thủ công và gửi email!"
+  },
+  "passwordManager": {
+    "title": "Trình Quản lý Mật khẩu",
+    "subtitle": "Quản lý mật khẩu mã hóa của bạn một cách an toàn",
+    "save": "Lưu vào Trình Quản lý Mật khẩu",
+    "saveSuccess": "Đã lưu thành công!",
+    "enterTitle": "Nhập tiêu đề (ví dụ: Gmail)",
+    "empty": "Chưa có mật khẩu được lưu.",
+    "emptyTitle": "Không có mật khẩu được lưu",
+    "emptyDesc": "Sử dụng công cụ \"Sổ Mật khẩu\" để mã hóa và lưu mật khẩu của bạn ở đây.",
+    "delete": "Xóa",
+    "decrypt": "Giải mã",
+    "confirmDelete": "Bạn có chắc chắn muốn xóa mật khẩu này không?",
+    "copyCiphertext": "Sao chép bản mã",
+    "rowLabel": "HÀNG: {row}"
+  },
+  "invite": {
+    "success": "Mã mời đã được chấp nhận!",
+    "self": "Bạn không thể mời chính mình",
+    "invalid": "Mã mời không hợp lệ",
+    "title": "Hệ thống Mời",
+    "subtitle": "Chia sẻ mã của bạn và mời bạn bè",
+    "myCode": "Mã mời của tôi",
+    "shareDesc": "Chia sẻ mã này với bạn bè của bạn để mời họ.",
+    "enterCode": "Nhập mã của người mời",
+    "alreadySet": "Người mời đã được thiết lập",
+    "submit": "Gửi",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "Gói Pro: Không giới hạn",
+    "proUnlimitedFiles": "Gói Pro: Tệp không giới hạn",
+    "freeLimit3Files": "Gói miễn phí: Tối đa 3 tệp",
+    "freeLimit3FilesSize": "Gói miễn phí: Tối đa 3 tệp / 1.5MB",
+    "upgradeForUnlimited": "Nâng cấp để không giới hạn",
+    "upgrade": "Nâng cấp"
   }
 }

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/Button';
 import { ProBadge } from '../ui/ProBadge';
-import { Mail, CheckCircle, Eye, EyeOff, AlertTriangle, Download, Printer, Copy, Monitor } from 'lucide-react';
+import { Mail, CheckCircle, Eye, EyeOff, AlertTriangle, Download, Printer, Copy, Monitor, Save } from 'lucide-react';
 import { QRCodeGenerator } from '../QRCodeGenerator';
 import { sendEmailWithAttachment } from '../../utils/emailUtils';
+import { savePassword } from '../../utils/passwordStorage';
 import ShardDualAuthGenerator from '../ShardDualAuthGenerator';
 import { useLicense } from '../../contexts/LicenseContext';
 
@@ -16,16 +17,33 @@ export interface ResultStepProps {
     password?: string;
   };
   mnemonic?: string;
+  intent?: 'crypto' | 'password';
   onReset: () => void;
 }
 
-export const ResultStep: React.FC<ResultStepProps> = ({ result, mnemonic, onReset }) => {
+export const ResultStep: React.FC<ResultStepProps> = ({ result, mnemonic, intent, onReset }) => {
   const { t } = useTranslation();
   const { features, triggerUpgrade } = useLicense();
   const [showRealIndex, setShowRealIndex] = useState(false);
   const [mode, setMode] = useState<'personal' | 'public'>('personal');
   const [copyFeedback, setCopyFeedback] = useState(false);
   const [showDualAuth, setShowDualAuth] = useState(false);
+  const [passwordTitle, setPasswordTitle] = useState('');
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleSavePassword = () => {
+    if (!passwordTitle.trim()) return;
+    savePassword({
+      title: passwordTitle,
+      ciphertext: result.ciphertext,
+      hash: result.hash,
+      realRowIndex: result.realRowIndex,
+      category: 'general'
+    });
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 3000);
+    setPasswordTitle('');
+  };
 
   if (showDualAuth) {
     return (
@@ -84,9 +102,9 @@ ${t('resultStep.fileContent.note')}
           </head>
           <body>
             <h1>${t('resultStep.print.title')}</h1>
-            <p><strong>Hash:</strong> ${result.hash}</p>
+            <p><strong>${t('wizard.resultStep.hash.label')}</strong> ${result.hash}</p>
             <div class="box">
-              <strong>Ciphertext:</strong><br/><br/>
+              <strong>${t('wizard.resultStep.fileContent.ciphertext')}</strong><br/><br/>
               ${result.ciphertext}
             </div>
             <p class="footer">${t('resultStep.watermark', { date: new Date().toLocaleString() })}</p>
@@ -164,7 +182,7 @@ ${t('resultStep.fileContent.note')}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Left: Critical Secrets (Only in Personal Mode) */}
-        <div className={`space-y-4 ${mode === 'public' ? 'opacity-20 pointer-events-none blur-sm select-none' : ''} transition-all duration-500`}>
+        <div className={`space-y-4 ${mode === 'public' ? 'opacity-100 blur-lg pointer-events-none select-none' : ''} transition-all duration-700 ease-in-out`}>
           
           {/* Real Index Card */}
           <div className="bg-gradient-to-br from-primary/10 to-purple-500/10 border border-primary/20 rounded-xl p-6 relative overflow-hidden group hover:border-primary/40 transition-all">
@@ -208,7 +226,7 @@ ${t('resultStep.fileContent.note')}
           <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
              <label className="text-xs font-bold text-slate-500 mb-2 block flex items-center gap-2">
                 <Copy size={12} />
-                {t('wizard.resultStep.fileContent.ciphertext') || "Ciphertext / 密文"}
+                {t('wizard.resultStep.fileContent.ciphertext')}
              </label>
              <textarea 
                 readOnly
@@ -217,7 +235,7 @@ ${t('resultStep.fileContent.note')}
                 onClick={(e) => (e.target as HTMLTextAreaElement).select()}
              />
              <p className="text-[10px] text-slate-600 mt-2 text-right">
-                {t('wizard.resultStep.actions.clickToSelect') || "Click to select all"}
+                {t('wizard.resultStep.actions.clickToSelect')}
              </p>
           </div>
 
@@ -226,6 +244,33 @@ ${t('resultStep.fileContent.note')}
         {/* Right: Public Safe Data */}
         <div className="space-y-4">
           
+          {/* Password Manager Save */}
+          {intent === 'password' && (
+             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-3 animate-in slide-in-from-right-4 duration-500">
+               <label className="text-xs font-bold text-slate-500 block flex items-center gap-2">
+                  <Save size={14} />
+                  {t('passwordManager.save', 'Save to Password Manager')}
+               </label>
+               <div className="flex gap-2">
+                 <input
+                   type="text"
+                   value={passwordTitle}
+                   onChange={(e) => setPasswordTitle(e.target.value)}
+                   placeholder={t('passwordManager.enterTitle', 'Enter a title (e.g. Gmail)')}
+                   className="flex-1 bg-black/30 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:ring-1 focus:ring-primary outline-none placeholder:text-slate-600"
+                 />
+                 <Button 
+                   onClick={handleSavePassword} 
+                   disabled={!passwordTitle.trim() || isSaved}
+                   className={`px-4 transition-all ${isSaved ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-primary hover:bg-primary/90 text-slate-900'}`}
+                 >
+                   {isSaved ? <CheckCircle size={18} /> : <Save size={18} />}
+                 </Button>
+               </div>
+               {isSaved && <p className="text-xs text-green-400 font-medium">{t('passwordManager.saveSuccess', 'Saved successfully!')}</p>}
+             </div>
+          )}
+
           {/* Hash */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4">
             <label className="text-xs font-bold text-slate-500 mb-1 block">{t('wizard.resultStep.hash.label')}</label>

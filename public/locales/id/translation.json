@@ -15,7 +15,15 @@
     "or": "- ATAU -",
     "none": "Tidak Ada",
     "processing": "Memproses...",
-    "next": "Selanjutnya"
+    "next": "Selanjutnya",
+    "upgradeToAccess": "Tingkatkan untuk akses",
+    "clear": "Hapus",
+    "comingSoon": "Segera hadir",
+    "clickToUpload": "Klik untuk mengunggah",
+    "noResults": "Tidak ada hasil ditemukan",
+    "search": "Cari",
+    "passwordPlaceholder": "Masukkan kata sandi",
+    "requiredToDecrypt": "Diperlukan untuk dekripsi:"
   },
   "errorBoundary": {
     "title": "Terjadi kesalahan",
@@ -26,7 +34,8 @@
     "home": "Beranda",
     "pricing": "Harga",
     "terms": "Ketentuan",
-    "about": "Tentang"
+    "about": "Tentang",
+    "invite": "Undang & Dapatkan"
   },
   "home": {
     "subtitle": "Alat Steganography & Enkripsi Tingkat Militer",
@@ -34,7 +43,17 @@
       "encrypt": "Enkripsi",
       "decrypt": "Dekripsi",
       "stego": "Steganography",
-      "wallet": "Paper Wallet"
+      "wallet": "Paper Wallet",
+      "passwords": "Kata sandi",
+      "invite": "Undang"
+    },
+    "mode": {
+      "geek": "Mode Geek",
+      "simple": "Mode Sederhana"
+    },
+    "toggle": {
+      "advanced": "Beralih ke Mode Geek",
+      "simple": "Beralih ke Mode Sederhana"
     }
   },
   "pricing": {
@@ -194,7 +213,8 @@
       "pricing": "Harga",
       "terms": "Ketentuan Layanan",
       "source": "Kode Sumber",
-      "share": "Bagikan"
+      "share": "Bagikan",
+      "install": "Instal Aplikasi"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. Hak cipta dilindungi.",
     "license": "Dilisensikan di bawah CC-BY-NC-ND 4.0 untuk tujuan audit. Lisensi Pro diperlukan untuk penggunaan komersial.",
@@ -543,7 +563,7 @@
         "description": "Pilih cara terbaik untuk mengamankan frasa mnemonik atau data Anda:",
         "book": {
           "physical": {
-            "title": "Buku Fisik / Virtual",
+            "title": "Mnemonic / Buku Fisik",
             "desc": "Sembunyikan kunci Anda di buku nyata di rak Anda. (Halaman-Baris-Kata)"
           },
           "online": {
@@ -680,7 +700,8 @@
           "compliance": "Sesuai BIP-39",
           "encryption": "Enkripsi Standar",
           "security": "Keamanan Tinggi"
-        }
+        },
+        "recommended": "Direkomendasikan"
       },
       "physical": {
         "title": "Buku Fisik",
@@ -708,20 +729,31 @@
           "convenient": "Akses Mudah",
           "dynamic": "Referensi Dinamis"
         }
+      },
+      "passwordBook": {
+        "title": "Lightweight Password Book",
+        "desc": "Encrypt passwords & notes into a portable index.",
+        "features": {
+          "anyText": "Supports Any Text",
+          "portable": "Highly Portable",
+          "secure": "Military Grade"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "Masukkan Mnemonic",
+        "mnemonic": "Mnemonic / Teks Apapun",
         "file": "Unggah File",
         "url": "Masukkan URL",
-        "general": "Masukkan Data"
+        "general": "Masukkan Data",
+        "password": "Secure Passwords & Notes"
       },
       "subtitle": {
-        "mnemonic": "Masukkan frasa mnemonic 12 atau 24 kata Anda.",
+        "mnemonic": "Masukkan frasa mnemonic atau teks apa pun.",
         "file": "Unggah file teks untuk dienkripsi.",
         "url": "Masukkan URL untuk mengambil konten dari.",
-        "general": "Masukkan data teks apa pun untuk dienkripsi."
+        "general": "Masukkan data teks apa pun untuk dienkripsi.",
+        "password": "Enter the text, password, or secret note you want to encrypt."
       },
       "file": {
         "loaded": "File Berhasil Dimuat",
@@ -732,8 +764,13 @@
         "schemes": {
           "offset": "Offset Karakter",
           "chapter": "Indeks Bab",
-          "virtual": "Baris Virtual"
-        }
+          "virtual": "Baris Virtual",
+          "chapterDesc": "Format kutipan buku (mis: 1-20-5)",
+          "offsetDesc": "Format numerik kompak (mis: 12345-8)",
+          "virtualDesc": "Format Code/Log (mis: 150-5)"
+        },
+        "dragDrop": "Click to Open Vault",
+        "schemeTooltip": "Pilih cara data disembunyikan dalam struktur file."
       },
       "url": {
         "fetch": "Ambil Konten",
@@ -743,7 +780,8 @@
         },
         "success": "Dimuat {{count}} karakter",
         "recommended": "Buku yang Direkomendasikan",
-        "clickToFill": "Klik untuk mengisi"
+        "clickToFill": "Klik untuk mengisi",
+        "guide": "Masukkan URL buku yang ingin Anda gunakan."
       },
       "general": {
         "placeholder": "Masukkan baris data...",
@@ -751,11 +789,13 @@
         "generate": "Data Acak"
       },
       "mnemonic": {
-        "label": "Frasa Mnemonic",
+        "label": "Mnemonic / Teks Apa Saja",
         "required": "(Wajib)",
-        "placeholder": "Masukkan frasa mnemonic Anda...",
+        "placeholder": "Masukkan frasa pemulihan 12-24 kata Anda, atau ketik teks/kata sandi apa pun...",
         "paste": "Tempel",
-        "generate": "Hasilkan"
+        "generate": "Hasilkan",
+        "typeTag": "Text / Mnemonic",
+        "tooltip": "Masukkan frasa mnemonik Anda di sini."
       }
     },
     "mixStep": {
@@ -865,7 +905,7 @@
       "password": "Masukkan kata sandi yang digunakan untuk enkripsi"
     },
     "mode": {
-      "physicalBook": "Buku Fisik / Virtual",
+      "physicalBook": "Mnemonic / Buku Fisik",
       "digitalBook": "Buku Digital (File)",
       "onlineBook": "Buku Online (URL)"
     },
@@ -911,12 +951,30 @@
       "urlMode": "Silakan ambil URL buku untuk memulihkan data.",
       "clipboard": "Tidak dapat mengakses clipboard. Silakan tempel secara manual.",
       "decryptFailed": "Dekripsi gagal. Silakan periksa kata sandi Anda."
+    },
+    "expectedType": {
+      "tooltip": "Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).",
+      "creditcard": "Kartu Kredit",
+      "creditcardDesc": "Nomor kartu kredit palsu",
+      "mnemonic": "Frasa Mnemonik",
+      "mnemonicDesc": "12/24 kata palsu",
+      "password": "Kata Sandi",
+      "passwordDesc": "Kata sandi palsu",
+      "privatekey": "Kunci Pribadi",
+      "privatekeyDesc": "Kunci pribadi palsu (Hex)",
+      "text": "Teks Apa Pun",
+      "textDesc": "Paragraf teks acak",
+      "title": "Jenis Hasil yang Diharapkan"
     }
   },
   "steganography": {
     "mode": {
       "hide": "Sembunyikan Data",
-      "extract": "Ekstrak Data"
+      "extract": "Ekstrak Data",
+      "encrypt": "Enkripsi & Pecah",
+      "decrypt": "Dekripsi & Pulihkan",
+      "hideFiles": "Sembunyikan File",
+      "extractFiles": "Ekstrak File"
     },
     "label": {
       "carrierImages": "Gambar Pembawa",
@@ -943,7 +1001,9 @@
     },
     "warning": {
       "title": "PERINGATAN KRITIS:",
-      "text": "Jangan masukkan plaintext (seperti mnemonik) secara langsung! Siapa pun dengan gambar dapat mengekstraknya. Selalu enkripsi data Anda terlebih dahulu (mis., menggunakan tab \"Enkripsi\") dan tempel Ciphertext di sini."
+      "text": "Jangan masukkan plaintext (seperti mnemonik) secara langsung! Siapa pun dengan gambar dapat mengekstraknya. Selalu enkripsi data Anda terlebih dahulu (mis., menggunakan tab \"Enkripsi\") dan tempel Ciphertext di sini.",
+      "compression": "Penting: Data tersembunyi akan hilang jika file dikompresi atau dikodekan ulang (misalnya dikirim melalui aplikasi sosial). Selalu transfer sebagai \"File Asli\".",
+      "password": "Tip: Jika Anda menggunakan kata sandi, tidak dapat dipulihkan jika hilang. Harap simpan dengan aman."
     },
     "button": {
       "clearAll": "Hapus Semua",
@@ -959,7 +1019,12 @@
       "successShards": "Berhasil menghasilkan dan mengunduh {{count}} gambar pecahan.",
       "noData": "Tidak ada data tersembunyi yang valid ditemukan. Periksa nama file jika mode ketat digunakan.",
       "reconstructFailed": "Rekonstruksi gagal: {{error}}. Menampilkan data mentah di bawah ini.",
-      "waitingImage": "Menunggu gambar..."
+      "waitingImage": "Menunggu gambar...",
+      "successExtract": "Dekripsi berhasil!",
+      "keyFilesRequired": "File kunci diperlukan untuk dekripsi",
+      "reconstructing": "Membangun kembali rahasia...",
+      "decryptingPayload": "Mendekripsi muatan...",
+      "success": "Berhasil!"
     },
     "about": {
       "title": "Tentang Steganografi",
@@ -969,7 +1034,178 @@
     },
     "error": {
       "copyFailed": "Gagal menyalin ke clipboard"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "Steganografi Gambar",
+        "desc": "Sembunyikan pesan teks di dalam gambar menggunakan steganografi LSB."
+      },
+      "file": {
+        "title": "Brankas File",
+        "desc": "Gabungkan dan pecah beberapa file menjadi fragmen terenkripsi dengan aman."
+      },
+      "imageVault": {
+        "title": "Brankas Gambar",
+        "desc": "Sembunyikan file apa pun dalam pembawa gambar."
+      },
+      "video": {
+        "title": "Brankas Video",
+        "desc": "Sembunyikan informasi dalam aliran video."
+      }
+    },
+    "fileVault": {
+      "title": "Brankas File",
+      "description": "Enkripsi beberapa file dan pecah menjadi beberapa pecahan file yang aman.",
+      "encryptTitle": "Buat Brankas Aman",
+      "decryptTitle": "Buka Brankas Aman",
+      "encryptDesc": "Gabungkan beberapa file menjadi satu paket terenkripsi, dengan opsi pemecahan untuk penyimpanan terdistribusi.",
+      "decryptDesc": "Pulihkan file Anda dari satu paket terenkripsi atau beberapa pecahan.",
+      "selectedFiles": "{{count}} file dipilih",
+      "warning": {
+        "title": "Pengingat Keamanan Penting",
+        "password": "Jika Anda kehilangan kata sandi atau file kunci, data tidak dapat dipulihkan. Harap simpan dengan aman.",
+        "sharding": "Sharding payload membagi data terenkripsi menjadi beberapa bagian untuk penyimpanan terdistribusi. Semua bagian diperlukan untuk mendekripsi."
+      },
+      "about": {
+        "title": "Tentang File Vault",
+        "text": "File Vault memungkinkan Anda mengemas beberapa file menjadi satu paket terenkripsi. Anda dapat mengaktifkan sharding payload untuk membagi hasil menjadi beberapa bagian untuk penyimpanan terdistribusi (misalnya layanan cloud). Mode Multi-Key menggunakan Shamir Secret Sharing untuk memerlukan beberapa file kunci untuk dekripsi.",
+        "noteTitle": "Praktik Terbaik:",
+        "note": "Selalu simpan cadangan kata sandi dan file kunci Anda. Jika menggunakan sharding, simpan bagian-bagian di lokasi yang berbeda. Untuk keamanan maksimum, gabungkan kata sandi + file kunci + sharding."
+      },
+      "tip": {
+        "compression": "Kompresi diaktifkan secara default untuk mengurangi ukuran file sebelum enkripsi.",
+        "shamir": "Mode Multi-Key menyediakan kepercayaan terdistribusi - tidak ada file kunci tunggal yang dapat mendekripsi data sendiri."
+      }
+    },
+    "imageVault": {
+      "title": "Brankas Gambar",
+      "description": "Sembunyikan file apa pun di dalam gambar menggunakan steganografi lanjutan.",
+      "hideTitle": "Sembunyikan File di Gambar",
+      "extractTitle": "Ekstrak File dari Gambar",
+      "hideDesc": "Pilih gambar pembawa dan file yang akan disembunyikan. File akan dienkripsi dan disematkan secara tak terlihat.",
+      "extractDesc": "Unggah gambar yang berisi file tersembunyi untuk memulihkannya.",
+      "aboutText": "Steganografi gambar menyembunyikan data secara tak terlihat di dalam piksel gambar.",
+      "aboutNote": "Gambar pembawa akan sedikit dimodifikasi tetapi secara visual identik.",
+      "warning": {
+        "title": "Aturan Penting Steganografi Gambar",
+        "capacity": "Kapasitas gambar tergantung pada resolusi. Resolusi lebih tinggi = lebih banyak ruang penyimpanan. Jika kapasitas terlampaui, pilih gambar yang lebih besar.",
+        "format": "Output selalu dalam format PNG. Jangan konversi ke JPG atau kompres, karena ini akan menghancurkan data tersembunyi secara permanen.",
+        "transfer": "Saat berbagi, selalu gunakan \"Kirim sebagai File\" atau \"Kualitas Asli\". Platform media sosial mengompres gambar dan akan menghancurkan data tersembunyi."
+      },
+      "tip": {
+        "carrier": "Pilih gambar kompleks (foto, pemandangan) daripada grafik sederhana untuk steganografi yang lebih baik.",
+        "security": "Untuk keamanan maksimum, aktifkan kata sandi + file kunci + sharding multi-key."
+      }
+    },
+    "videoVault": {
+      "title": "Brankas Video",
+      "description": "Sembunyikan data di dalam frame video.",
+      "hideTitle": "Sembunyikan File di Video",
+      "extractTitle": "Ekstrak File dari Video",
+      "hideDesc": "Pilih video pembawa dan file yang akan disembunyikan. File akan ditambahkan ke video dengan aman.",
+      "extractDesc": "Unggah video yang berisi file tersembunyi untuk memulihkannya.",
+      "aboutText": "Steganografi video menambahkan data terenkripsi setelah frame video.",
+      "aboutNote": "Video dapat diputar normal, data tersembunyi ada di akhir.",
+      "warning": {
+        "title": "Peringatan Penting Steganografi Video",
+        "format": "Data tersembunyi ditambahkan ke file video. Jangan encode ulang, kompres, atau ubah format video, karena ini akan menghancurkan data tersembunyi.",
+        "transfer": "Saat berbagi, selalu transfer sebagai file asli. Platform streaming video mengkode ulang video dan akan menghancurkan data tersembunyi.",
+        "size": "Ukuran video output akan sedikit lebih besar (sebesar ukuran file tersembunyi). Ini normal dan diharapkan."
+      },
+      "tip": {
+        "carrier": "Format video apa pun berfungsi (MP4, WebM, dll.). Data tersembunyi independen terhadap format.",
+        "detection": "Steganografi video sangat tersembunyi - video diputar normal dan peningkatan ukuran file minimal."
+      }
+    },
+    "input": {
+      "filesToHide": "Pilih File untuk Dienkripsi",
+      "filesToRecover": "Pilih File Terenkripsi/Pecahan",
+      "carrier": "1. Pilih Gambar Pembawa (PNG/JPG)",
+      "stegoImage": "1. Pilih Gambar dengan Data Tersembunyi",
+      "carrierVideo": "1. Pilih Video Pembawa (MP4/WebM)",
+      "stegoVideo": "1. Pilih Video dengan Data Tersembunyi",
+      "clickUploadImage": "Klik untuk mengunggah gambar"
+    },
+    "dropzone": {
+      "title": "Klik untuk mengunggah file",
+      "subtitle": "Mendukung pemilihan beberapa file"
+    },
+    "sharding": {
+      "enable": "Aktifkan Pemecahan",
+      "count": "Jumlah Pecahan (N)",
+      "note": "File akan dipecah menjadi N bagian. Semua bagian diperlukan untuk memulihkan file."
+    },
+    "action": {
+      "encrypt": "Enkripsi File",
+      "decrypt": "Pulihkan File",
+      "embed": "Sematkan File",
+      "extract": "Ekstrak File"
+    },
+    "result": {
+      "success": "Operasi Berhasil",
+      "downloadAll": "Unduh Semua",
+      "imageReady": "Gambar Stego Dibuat!",
+      "filesRecovered": "{{count}} File Dipulihkan!",
+      "videoReady": "Video Stego Dibuat!",
+      "videoReadyDesc": "File Anda telah disembunyikan dengan aman di dalam video.",
+      "clickToDownload": "Klik ikon untuk mengunduh file individual",
+      "waiting": "Menunggu operasi..."
+    },
+    "process": {
+      "packing": "Mengemas file...",
+      "encrypting": "Mengenkripsi...",
+      "sharding": "Memecah...",
+      "analyzing": "Menganalisis file...",
+      "merging": "Menggabungkan pecahan...",
+      "decrypting": "Mendekripsi...",
+      "unpacking": "Membongkar...",
+      "embedding": "Menyematkan data...",
+      "extracting": "Mengekstrak data..."
+    },
+    "fileCount": "{{count}} file dipilih",
+    "selectFiles": "Pilih file untuk disembunyikan",
+    "preview": {
+      "waitingHide": "Hasil akan muncul di sini",
+      "waitingExtract": "File yang dipulihkan akan muncul di sini"
+    },
+    "keyFile": {
+      "label": "File Kunci (Opsional, Keamanan Lanjutan)",
+      "placeholder": "Pilih file sebagai kunci kedua (misalnya foto, lagu, e-book)",
+      "help": "Jika digunakan, file yang PERSIS SAMA diperlukan untuk mendekripsi. Perbedaan satu byte akan gagal dekripsi.",
+      "mode": "Mode file kunci",
+      "addSingle": "Tambah file kunci",
+      "addFiles": "Tambah File",
+      "clear": "Hapus",
+      "clearAll": "Hapus Semua"
+    },
+    "enterPassword": "Masukkan kata sandi",
+    "compression": {
+      "label": "Aktifkan kompresi",
+      "desc": "Kurangi ukuran file (dapat mempengaruhi kualitas)"
+    },
+    "security": {
+      "title": "Opsi keamanan",
+      "usePassword": "Gunakan kata sandi"
+    },
+    "shamir": {
+      "filesCount": "{{count}} file dipilih untuk fragmentasi",
+      "thresholdLabel": "Ambang Batas",
+      "requiredFiles": "Setiap {threshold} dari {total} file ini akan diperlukan untuk mendekripsi.",
+      "modalTitle": "Autentikasi Multi-Kunci",
+      "modalDesc": "File ini dilindungi oleh beberapa file kunci.",
+      "modalRequired": "Anda perlu menyediakan setidaknya {threshold} file yang valid.",
+      "uploadKeyFiles": "Unggah File Kunci",
+      "filesSelected": "{count} file dipilih",
+      "verifying": "Memverifikasi...",
+      "unlock": "Buka Kunci",
+      "cancel": "Batal",
+      "modalNeedFiles": "Anda perlu menyediakan setidaknya <strong>{threshold}</strong> file yang valid."
+    },
+    "keyMode": {
+      "single": "Kunci Tunggal",
+      "multiKey": "Multi-Kunci (Tershard)"
+    },
+    "filesSelected": "{count} file dipilih"
   },
   "wallet": {
     "title": "Generator Wallet Aman",
@@ -1061,6 +1297,9 @@
       "generateRandom": "Hasilkan Data Acak",
       "pasteClipboard": "Tempel dari Clipboard",
       "generateMnemonic": "Hasilkan Mnemonic Acak"
+    },
+    "label": {
+      "password": "Kata Sandi / Catatan Rahasia"
     }
   },
   "resultStep": {
@@ -1104,8 +1343,10 @@
   "license": {
     "alerts": {
       "systemClockError": "Kesalahan jam sistem terdeteksi. Silakan perbaiki waktu sistem Anda untuk terus menggunakan fitur Pro.",
-      "deactivateConfirm": "Nonaktifkan Lisensi Real Pro?"
-    }
+      "deactivateConfirm": "Nonaktifkan Lisensi Real Pro?",
+      "usbRemoved": "Kunci USB Dihapus"
+    },
+    "proRequired": "Fitur ini memerlukan lisensi Pro"
   },
   "mixStepButtons": {
     "back": "Kembali",
@@ -1197,6 +1438,109 @@
     "shareApiNotSupported": "API Share tidak didukung",
     "canvasContext": "Tidak bisa mendapatkan konteks canvas",
     "invalidShareType": "jsSplit mengembalikan tipe yang tidak valid: {{type}}",
-    "wasmLoadFailed": "Gagal memuat modul Wasm"
+    "wasmLoadFailed": "Gagal memuat modul Wasm",
+    "noFile": "Silakan pilih file terlebih dahulu",
+    "noPassword": "Kata sandi diperlukan",
+    "capacityExceeded": "Kapasitas terlampaui. Memerlukan {{needed}} KB, tetapi gambar hanya memiliki {{available}} KB.",
+    "noHiddenData": "Tidak ditemukan data tersembunyi atau format tidak valid.",
+    "freeLimitFiles": "Versi gratis dibatasi {{limit}} file",
+    "freeLimitSize": "Versi gratis dibatasi total {{size}} MB",
+    "minShamirFiles": "Shamir memerlukan minimal {{min}} file",
+    "emptyResponse": "Respon kosong dari server",
+    "loadFailed": "Gagal memuat data referensi",
+    "networkError": "Kesalahan jaringan"
+  },
+  "referral": {
+    "title": "Undang Teman",
+    "desc": "Undang 3 teman untuk menggunakan CryptoKey dan buka fitur Pro gratis!",
+    "yourCode": "Kode Undangan Anda",
+    "copyLink": "Salin Tautan Undangan",
+    "stats": "Diundang: {{count}} / 3",
+    "unlocked": "Pro Terbuka!",
+    "offline": "Sistem rujukan tidak tersedia offline.",
+    "alreadyPro": "Anda sudah memiliki akses Pro",
+    "localPro": "Lisensi Pro lokal terdeteksi",
+    "loginRequired": "Silakan login untuk menggunakan sistem referral",
+    "earned": "{hours}j / 24j Diperoleh",
+    "nextReward": "Hadiah Berikutnya",
+    "progress": "{current} / {total}"
+  },
+  "landing": {
+    "card1": {
+      "title": "Cadangan Mnemonic",
+      "desc": "Sembunyikan frasa pemulihan kripto Anda dengan aman dalam buku fisik."
+    },
+    "card2": {
+      "title": "Buku Kata Sandi",
+      "desc": "Enkripsi kata sandi, catatan, dan buku harian ke dalam format portabel yang aman."
+    },
+    "card3": {
+      "title": "Pulihkan Data",
+      "desc": "Dekripsi data Anda menggunakan kunci buku dan kata sandi Anda."
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey Cadangan Aman】",
+      "ciphertext": "Teks Terenkripsi:",
+      "hash": "Hash:",
+      "footer": "Dekripsi di: https://cryptokey.im",
+      "generated": "Dibuat: {{date}}",
+      "note": "CATATAN: Memerlukan kata sandi + indeks baris untuk mendekripsi."
+    },
+    "subject": "Pesan Terenkripsi melalui CryptoKey.im",
+    "body": {
+      "instruction": "【INSTRUKSI PENTING】",
+      "step1": "Silakan LAMPIRKAN file yang baru Anda unduh: \"{{filename}}\" (Periksa folder Unduhan Anda);",
+      "step2": "Lampiran ini berisi cadangan terenkripsi dan hash Anda. JANGAN hapus atau modifikasi;",
+      "step3": "Anda dapat mengisi email Anda sendiri sebagai penerima untuk cadangan.",
+      "footer": "Dekripsi data ini di: https://cryptokey.im",
+      "time": "Waktu Cadangan: {{date}}"
+    },
+    "alert": {
+      "title": "✅ Tindakan Diperlukan:",
+      "step1": "Klien email Anda seharusnya sudah terbuka sekarang.",
+      "step2": "Silakan KLIK \"Lampirkan File\" di email Anda.",
+      "step3": "Pilih file \"{{filename}}\" dari folder UNDUHAN Anda.",
+      "step4": "Kirim email ke diri Anda sendiri untuk menyelesaikan cadangan!",
+      "warning": "⚠️ Jika Anda tidak dapat menemukan file, periksa riwayat unduhan browser Anda (Ctrl+J atau Command+J)."
+    },
+    "error": "Operasi gagal: {{error}}. Silakan unduh secara manual dan kirim email!"
+  },
+  "passwordManager": {
+    "title": "Manajer Kata Sandi",
+    "subtitle": "Kelola kata sandi terenkripsi Anda dengan aman",
+    "save": "Simpan ke Manajer Kata Sandi",
+    "saveSuccess": "Berhasil disimpan!",
+    "enterTitle": "Masukkan judul (misalnya Gmail)",
+    "empty": "Belum ada kata sandi yang disimpan.",
+    "emptyTitle": "Tidak ada kata sandi yang disimpan",
+    "emptyDesc": "Gunakan alat \"Buku Kata Sandi\" untuk mengenkripsi dan menyimpan kata sandi Anda di sini.",
+    "delete": "Hapus",
+    "decrypt": "Dekripsi",
+    "confirmDelete": "Apakah Anda yakin ingin menghapus kata sandi ini?",
+    "copyCiphertext": "Salin Teks Terenkripsi",
+    "rowLabel": "BARIS: {row}"
+  },
+  "invite": {
+    "success": "Kode undangan diterima!",
+    "self": "Anda tidak dapat mengundang diri sendiri",
+    "invalid": "Kode undangan tidak valid",
+    "title": "Sistem Undangan",
+    "subtitle": "Bagikan kode Anda dan undang teman",
+    "myCode": "Kode Undangan Saya",
+    "shareDesc": "Bagikan kode ini dengan teman Anda untuk mengundang mereka.",
+    "enterCode": "Masukkan Kode Pengundang",
+    "alreadySet": "Pengundang sudah diatur",
+    "submit": "Kirim",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "Paket Pro: Tanpa Batas",
+    "proUnlimitedFiles": "Paket Pro: File Tanpa Batas",
+    "freeLimit3Files": "Paket Gratis: Maksimal 3 file",
+    "freeLimit3FilesSize": "Paket Gratis: Maksimal 3 file / 1.5MB",
+    "upgradeForUnlimited": "Tingkatkan untuk tanpa batas",
+    "upgrade": "Tingkatkan"
   }
 }

@@ -11,6 +11,31 @@ import { Loader2 } from 'lucide-react';
 // Polyfill Buffer for bip39
 if (typeof window !== 'undefined') {
   window.Buffer = Buffer;
+  
+  // Disable context menu (right-click)
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  // Disable pinch-to-zoom / double-finger drag
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Disable dragstart
+  document.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+    return false;
+  });
 }
 
 // Register PWA Service Worker

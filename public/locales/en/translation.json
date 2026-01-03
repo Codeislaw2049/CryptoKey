@@ -15,7 +15,15 @@
     "or": "- OR -",
     "none": "None",
     "processing": "Processing...",
-    "next": "Next"
+    "next": "Next",
+    "upgradeToAccess": "Upgrade to Access",
+    "clear": "Clear",
+    "comingSoon": "Coming Soon",
+    "clickToUpload": "Click to upload",
+    "noResults": "No results found",
+    "search": "Search",
+    "passwordPlaceholder": "Enter password",
+    "requiredToDecrypt": "Required to Decrypt:"
   },
   "errorBoundary": {
     "title": "Something went wrong",
@@ -26,7 +34,23 @@
     "home": "Home",
     "pricing": "Pricing",
     "terms": "Terms",
-    "about": "About"
+    "about": "About",
+    "invite": "Invite & Earn"
+  },
+  "referral": {
+    "title": "Invite Friends",
+    "desc": "Invite 3 friends to use CryptoKey and unlock Pro features for free!",
+    "yourCode": "Your Invite Code",
+    "copyLink": "Copy Invite Link",
+    "stats": "Invited: {{count}} / 3",
+    "unlocked": "Pro Unlocked!",
+    "offline": "Referral system unavailable offline.",
+    "alreadyPro": "You already have Pro access",
+    "localPro": "Local Pro license detected",
+    "loginRequired": "Please login to use referral system",
+    "earned": "{hours}h / 24h Earned",
+    "nextReward": "Next Reward",
+    "progress": "{current} / {total}"
   },
   "home": {
     "subtitle": "Military-grade Steganography & Encryption Tool",
@@ -34,7 +58,31 @@
       "encrypt": "Encrypt",
       "decrypt": "Decrypt",
       "stego": "Steganography",
-      "wallet": "Paper Wallet"
+      "wallet": "Paper Wallet",
+      "passwords": "Passwords",
+      "invite": "Invite"
+    },
+    "mode": {
+      "geek": "Geek Mode",
+      "simple": "Simple Mode"
+    },
+    "toggle": {
+      "advanced": "Switch to Geek Mode",
+      "simple": "Switch to Simple Mode"
+    }
+  },
+  "landing": {
+    "card1": {
+      "title": "Backup Mnemonic",
+      "desc": "Securely hide your crypto recovery phrase in a physical book."
+    },
+    "card2": {
+      "title": "Password Book",
+      "desc": "Encrypt passwords, notes, and diaries into a secure portable format."
+    },
+    "card3": {
+      "title": "Restore Data",
+      "desc": "Decrypt your data using your book key and password."
     }
   },
   "pricing": {
@@ -194,7 +242,8 @@
       "pricing": "Pricing",
       "terms": "Terms of Service",
       "source": "Source Code",
-      "share": "Share"
+      "share": "Share",
+      "install": "Install App"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. All rights reserved.",
     "license": "Licensed under CC-BY-NC-ND 4.0 for audit purposes. Pro license required for commercial use.",
@@ -555,7 +604,7 @@
         "description": "Select the best way to secure your mnemonic phrase or data:",
         "book": {
           "physical": {
-            "title": "Physical / Virtual Book",
+            "title": "Mnemonic / Physical Book",
             "desc": "Hide your key in a real book on your shelf. (Page-Line-Word)"
           },
           "online": {
@@ -692,7 +741,8 @@
           "compliance": "BIP-39 Compliant",
           "encryption": "Standard Encryption",
           "security": "High Security"
-        }
+        },
+        "recommended": "Recommended"
       },
       "physical": {
         "title": "Physical Book",
@@ -720,20 +770,31 @@
           "convenient": "Convenient Access",
           "dynamic": "Dynamic Reference"
         }
+      },
+      "passwordBook": {
+        "title": "Lightweight Password Book",
+        "desc": "Encrypt passwords & notes into a portable index.",
+        "features": {
+          "anyText": "Supports Any Text",
+          "portable": "Highly Portable",
+          "secure": "Military Grade"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "Enter Mnemonic",
+        "mnemonic": "Enter Mnemonic / Text",
         "file": "Upload File",
         "url": "Enter URL",
-        "general": "Enter Data"
+        "general": "Enter Data",
+        "password": "Secure Passwords & Notes"
       },
       "subtitle": {
-        "mnemonic": "Enter your 12 or 24 word mnemonic phrase.",
+        "mnemonic": "Enter mnemonic phrase or any text (password/secret).",
         "file": "Upload a text file to encrypt.",
         "url": "Enter a URL to fetch content from.",
-        "general": "Enter any text data to encrypt."
+        "general": "Enter any text data to encrypt.",
+        "password": "Enter the text, password, or secret note you want to encrypt."
       },
       "file": {
         "loaded": "File Loaded Successfully",
@@ -743,9 +804,14 @@
         "scheme": "Encryption Scheme",
         "schemes": {
           "offset": "Character Offset",
+          "offsetDesc": "Compact numeric format (e.g. 12345-8)",
           "chapter": "Chapter Index",
-          "virtual": "Virtual Line"
-        }
+          "chapterDesc": "Book citation format (e.g. 1-20-5)",
+          "virtual": "Virtual Line",
+          "virtualDesc": "Code/Log format (e.g. 150-5)"
+        },
+        "dragDrop": "Click to Open Vault",
+        "schemeTooltip": "Choose how the data is hidden within the file structure."
       },
       "url": {
         "fetch": "Fetch Content",
@@ -755,7 +821,8 @@
         },
         "success": "Loaded {{count}} chars",
         "recommended": "Recommended Books",
-        "clickToFill": "Click to fill"
+        "clickToFill": "Click to fill",
+        "guide": "Enter the URL of the book you want to use."
       },
       "general": {
         "placeholder": "Enter data row...",
@@ -763,11 +830,13 @@
         "generate": "Random Data"
       },
       "mnemonic": {
-        "label": "Mnemonic Phrase",
+        "label": "Mnemonic / Any Text",
         "required": "(Required)",
-        "placeholder": "Enter your mnemonic phrase...",
+        "placeholder": "Enter your 12-24 word recovery phrase, or type any text/password you want to encrypt...",
         "paste": "Paste",
-        "generate": "Generate"
+        "generate": "Generate",
+        "typeTag": "Text / Mnemonic",
+        "tooltip": "Enter your mnemonic phrase here."
       }
     },
     "mixStep": {
@@ -884,7 +953,7 @@
       "password": "Enter the password used for encryption"
     },
     "mode": {
-      "physicalBook": "Physical / Virtual Book",
+      "physicalBook": "Mnemonic / Physical Book",
       "digitalBook": "Digital Book (File)",
       "onlineBook": "Online Book (URL)"
     },
@@ -923,12 +992,30 @@
       "urlMode": "Please fetch the book URL to recover data.",
       "clipboard": "Unable to access clipboard. Please paste manually.",
       "decryptFailed": "Decryption failed. Please check your password."
+    },
+    "expectedType": {
+      "tooltip": "Helps obfuscate failed decryption attempts by generating fake data that looks like the expected type (e.g. fake credit card numbers).",
+      "creditcard": "Credit Card",
+      "creditcardDesc": "Fake credit card numbers",
+      "mnemonic": "Mnemonic Phrase",
+      "mnemonicDesc": "Fake 12/24 words",
+      "password": "Password",
+      "passwordDesc": "Fake passwords",
+      "privatekey": "Private Key",
+      "privatekeyDesc": "Fake private keys (Hex)",
+      "text": "Any Text",
+      "textDesc": "Random text paragraphs",
+      "title": "Expected Result Type"
     }
   },
   "steganography": {
     "mode": {
       "hide": "Hide Data",
-      "extract": "Extract Data"
+      "extract": "Extract Data",
+      "encrypt": "Encrypt & Shard",
+      "decrypt": "Decrypt & Recover",
+      "hideFiles": "Hide Files",
+      "extractFiles": "Extract Files"
     },
     "label": {
       "carrierImages": "Carrier Image(s)",
@@ -955,7 +1042,9 @@
     },
     "warning": {
       "title": "CRITICAL WARNING:",
-      "text": "Do not enter plaintext (like mnemonics) directly! Anyone with the image can extract it. Always encrypt your data first (e.g., using the \"Encrypt\" tab) and paste the Ciphertext here."
+      "password": "Tip: If you use a password, it cannot be recovered if lost. Please store it safely.",
+      "text": "Do not enter plaintext (like mnemonics) directly! Anyone with the image can extract it. Always encrypt your data first (e.g., using the \"Encrypt\" tab) and paste the Ciphertext here.",
+      "compression": "Important: Hidden data will be lost if the file is compressed or re-encoded (e.g., sent via social apps). Always transfer as \"Original File\"."
     },
     "button": {
       "clearAll": "Clear All",
@@ -971,7 +1060,12 @@
       "successShards": "Successfully generated and downloaded {{count}} shard images.",
       "noData": "No valid hidden data found. Check filenames if strict mode was used.",
       "reconstructFailed": "Reconstruction failed: {{error}}. Showing raw data below.",
-      "waitingImage": "Waiting for image..."
+      "waitingImage": "Waiting for image...",
+      "successExtract": "Decryption successful!",
+      "keyFilesRequired": "Key files required for decryption",
+      "reconstructing": "Reconstructing Secret...",
+      "decryptingPayload": "Decrypting Payload...",
+      "success": "Success!"
     },
     "about": {
       "title": "About Steganography",
@@ -981,7 +1075,178 @@
     },
     "error": {
       "copyFailed": "Failed to copy to clipboard"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "Image Steganography",
+        "desc": "Hide text messages inside images using LSB steganography."
+      },
+      "file": {
+        "title": "File Vault",
+        "desc": "Securely merge and shard multiple files into encrypted fragments."
+      },
+      "imageVault": {
+        "title": "Image Vault",
+        "desc": "Hide any file within an image carrier."
+      },
+      "video": {
+        "title": "Video Vault",
+        "desc": "Conceal information within video streams."
+      }
+    },
+    "fileVault": {
+      "title": "File Vault",
+      "description": "Encrypt and shard multiple files into multiple secure file fragments.",
+      "encryptTitle": "Create Secure Vault",
+      "decryptTitle": "Open Secure Vault",
+      "encryptDesc": "Combine multiple files into a single encrypted package, with optional sharding for distributed storage.",
+      "decryptDesc": "Restore your files from a single encrypted package or multiple shards.",
+      "selectedFiles": "{{count}} files selected",
+      "warning": {
+        "title": "Important Security Reminders",
+        "password": "If you lose your password or key file, the data cannot be recovered. Please store them safely.",
+        "sharding": "Payload sharding splits encrypted data into multiple parts for distributed storage. All parts are needed to decrypt."
+      },
+      "about": {
+        "title": "About File Vault",
+        "text": "File Vault allows you to pack multiple files into a single encrypted package. You can enable payload sharding to split the result into multiple parts for distributed storage (e.g., cloud services). Multi-Key mode uses Shamir Secret Sharing to require multiple key files for decryption.",
+        "noteTitle": "Best Practices:",
+        "note": "Always keep backups of your password and key files. If using sharding, store parts in different locations. For maximum security, combine password + key file + sharding."
+      },
+      "tip": {
+        "compression": "Compression is enabled by default to reduce file size before encryption.",
+        "shamir": "Multi-Key mode provides distributed trust - no single key file can decrypt the data alone."
+      }
+    },
+    "imageVault": {
+      "title": "Image Vault",
+      "description": "Hide any file within an image using advanced steganography.",
+      "hideTitle": "Hide Files in Image",
+      "extractTitle": "Extract Files from Image",
+      "hideDesc": "Select a carrier image and files to hide. The files will be encrypted and embedded invisibly.",
+      "extractDesc": "Upload an image containing hidden files to recover them.",
+      "aboutText": "Image steganography hides data invisibly within image pixels.",
+      "aboutNote": "The carrier image will be slightly modified but visually identical.",
+      "warning": {
+        "title": "Critical Image Steganography Rules",
+        "capacity": "Image capacity depends on resolution. Higher resolution = more storage space. If capacity is exceeded, choose a larger image.",
+        "format": "The output is always PNG format. Do not convert to JPG or compress, as this will destroy hidden data permanently.",
+        "transfer": "When sharing, always use \"Send as File\" or \"Original Quality\". Social media platforms compress images and will destroy hidden data."
+      },
+      "tip": {
+        "carrier": "Choose a complex image (photos, landscapes) rather than simple graphics for better steganography.",
+        "security": "For maximum security, enable password + key file + multi-key sharding."
+      }
+    },
+    "videoVault": {
+      "title": "Video Vault",
+      "description": "Conceal data within video frames.",
+      "hideTitle": "Hide Files in Video",
+      "extractTitle": "Extract Files from Video",
+      "hideDesc": "Select a carrier video and files to hide. The files will be appended to the video securely.",
+      "extractDesc": "Upload a video containing hidden files to recover them.",
+      "aboutText": "Video steganography appends encrypted data after video frames.",
+      "aboutNote": "The video can be played normally, hidden data is at the end.",
+      "warning": {
+        "title": "Important Video Steganography Warnings",
+        "format": "Hidden data is appended to the video file. Do not re-encode, compress, or change the video format, as this will destroy the hidden data.",
+        "transfer": "When sharing, always transfer as original file. Video streaming platforms re-encode videos and will destroy hidden data.",
+        "size": "The output video size will be slightly larger (by the size of hidden files). This is normal and expected."
+      },
+      "tip": {
+        "carrier": "Any video format works (MP4, WebM, etc.). The hidden data is format-independent.",
+        "detection": "Video steganography is highly covert - the video plays normally and file size increase is minimal."
+      }
+    },
+    "input": {
+      "filesToHide": "Select Files to Encrypt",
+      "filesToRecover": "Select Encrypted File(s) / Shards",
+      "carrier": "1. Select Carrier Image (PNG/JPG)",
+      "stegoImage": "1. Select Image with Hidden Data",
+      "carrierVideo": "1. Select Carrier Video (MP4/WebM)",
+      "stegoVideo": "1. Select Video with Hidden Data",
+      "clickUploadImage": "Click to upload image"
+    },
+    "dropzone": {
+      "title": "Click to upload files",
+      "subtitle": "Support multiple files selection"
+    },
+    "sharding": {
+      "enable": "Enable Sharding",
+      "count": "Number of Shards (N)",
+      "note": "The file will be split into N parts. All parts are required to recover the file."
+    },
+    "action": {
+      "encrypt": "Encrypt Files",
+      "decrypt": "Recover Files",
+      "embed": "Embed Files",
+      "extract": "Extract Files"
+    },
+    "result": {
+      "success": "Operation Successful",
+      "downloadAll": "Download All",
+      "imageReady": "Stego Image Generated!",
+      "filesRecovered": "{{count}} Files Recovered!",
+      "videoReady": "Stego Video Generated!",
+      "videoReadyDesc": "Your files have been securely hidden inside the video.",
+      "clickToDownload": "Click icon to download individual files",
+      "waiting": "Waiting for operation..."
+    },
+    "process": {
+      "packing": "Packing files...",
+      "encrypting": "Encrypting...",
+      "sharding": "Sharding...",
+      "analyzing": "Analyzing files...",
+      "merging": "Merging shards...",
+      "decrypting": "Decrypting...",
+      "unpacking": "Unpacking...",
+      "embedding": "Embedding data...",
+      "extracting": "Extracting data..."
+    },
+    "fileCount": "{{count}} files selected",
+    "selectFiles": "Select files to hide",
+    "preview": {
+      "waitingHide": "Result will appear here",
+      "waitingExtract": "Recovered files will appear here"
+    },
+    "keyFile": {
+      "label": "Key File (Optional, Advanced Security)",
+      "placeholder": "Select a file as a second key (e.g., photo, song, ebook)",
+      "help": "If used, the EXACT same file is required to decrypt. A single byte difference will fail decryption.",
+      "mode": "Key File Mode",
+      "addSingle": "Add Key File",
+      "addFiles": "Add Files",
+      "clear": "Clear",
+      "clearAll": "Clear All"
+    },
+    "enterPassword": "Enter password",
+    "compression": {
+      "label": "Enable Compression",
+      "desc": "Reduce file size (may affect quality)"
+    },
+    "security": {
+      "title": "Security Options",
+      "usePassword": "Use Password"
+    },
+    "shamir": {
+      "filesCount": "{{count}} files selected for sharding",
+      "thresholdLabel": "Threshold",
+      "requiredFiles": "Any {threshold} of these {total} files will be needed to decrypt.",
+      "modalTitle": "Multi-Key Authentication",
+      "modalDesc": "This file is protected by multiple Key Files.",
+      "modalRequired": "You need to provide at least {threshold} valid files.",
+      "uploadKeyFiles": "Upload Key Files",
+      "filesSelected": "{count} files selected",
+      "verifying": "Verifying...",
+      "unlock": "Unlock",
+      "cancel": "Cancel",
+      "modalNeedFiles": "You need to provide at least <strong>{threshold}</strong> valid files."
+    },
+    "keyMode": {
+      "single": "Single Key",
+      "multiKey": "Multi-Key (Sharded)"
+    },
+    "filesSelected": "{count} files selected"
   },
   "wallet": {
     "title": "Secure Wallet Generator",
@@ -1040,9 +1305,11 @@
     "detecting": "Detecting your device..."
   },
   "license": {
+    "proRequired": "Pro license required for this feature",
     "alerts": {
       "systemClockError": "System clock error detected. Please correct your system time to continue using Pro features.",
-      "deactivateConfirm": "Deactivate Real Pro License?"
+      "deactivateConfirm": "Deactivate Real Pro License?",
+      "usbRemoved": "USB Key Removed"
     }
   },
   "languageSwitcher": {
@@ -1079,6 +1346,9 @@
       "generateRandom": "Generate Random Data",
       "pasteClipboard": "Paste from Clipboard",
       "generateMnemonic": "Generate Random Mnemonic"
+    },
+    "label": {
+      "password": "Password / Secret Note"
     }
   },
   "resultStep": {
@@ -1182,7 +1452,17 @@
     "shareApiNotSupported": "Share API not supported",
     "canvasContext": "Could not get canvas context",
     "invalidShareType": "jsSplit returned invalid type: {{type}}",
-    "wasmLoadFailed": "Failed to load Wasm module"
+    "wasmLoadFailed": "Failed to load Wasm module",
+    "noFile": "Please select files first",
+    "noPassword": "Password is required",
+    "capacityExceeded": "Capacity exceeded. Need {{needed}} KB, but image only has {{available}} KB.",
+    "noHiddenData": "No hidden data found or invalid format.",
+    "freeLimitFiles": "Free tier limited to {{limit}} files",
+    "freeLimitSize": "Free tier limited to {{size}} MB total",
+    "minShamirFiles": "Shamir requires at least {{min}} files",
+    "emptyResponse": "Empty response from server",
+    "loadFailed": "Failed to load referral data",
+    "networkError": "Network error"
   },
   "languages": {
     "en": "English",
@@ -1198,5 +1478,69 @@
     "fr": "Français",
     "de": "Deutsch",
     "es": "Español"
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey Secure Backup】",
+      "ciphertext": "Ciphertext:",
+      "hash": "Hash:",
+      "footer": "Decrypt at: https://cryptokey.im",
+      "generated": "Generated: {{date}}",
+      "note": "NOTE: Requires password + row index to decrypt."
+    },
+    "subject": "Encrypted Message via CryptoKey.im",
+    "body": {
+      "instruction": "【IMPORTANT INSTRUCTION】",
+      "step1": "Please ATTACH the file you just downloaded: \"{{filename}}\" (Check your Downloads folder);",
+      "step2": "This attachment contains your encrypted backup and hash. Do NOT delete or modify it;",
+      "step3": "You can fill in your own email as recipient for backup.",
+      "footer": "Decrypt this data at: https://cryptokey.im",
+      "time": "Backup Time: {{date}}"
+    },
+    "alert": {
+      "title": "✅ Action Required:",
+      "step1": "Your email client should be open now.",
+      "step2": "Please CLICK \"Attach File\" in your email.",
+      "step3": "Select the file \"{{filename}}\" from your DOWNLOADS folder.",
+      "step4": "Send the email to yourself to complete backup!",
+      "warning": "⚠️ If you can't find the file, check your browser's download history (Ctrl+J or Command+J)."
+    },
+    "error": "Operation failed: {{error}}. Please manually download and send email!"
+  },
+  "passwordManager": {
+    "title": "Password Manager",
+    "subtitle": "Manage your encrypted passwords securely",
+    "save": "Save to Password Manager",
+    "saveSuccess": "Saved successfully!",
+    "enterTitle": "Enter a title (e.g. Gmail)",
+    "empty": "No saved passwords yet.",
+    "emptyTitle": "No passwords saved",
+    "emptyDesc": "Use the \"Password Book\" tool to encrypt and save your passwords here.",
+    "delete": "Delete",
+    "decrypt": "Decrypt",
+    "confirmDelete": "Are you sure you want to delete this password?",
+    "copyCiphertext": "Copy Ciphertext",
+    "rowLabel": "ROW: {row}"
+  },
+  "invite": {
+    "success": "Invite code accepted!",
+    "self": "You cannot invite yourself",
+    "invalid": "Invalid invite code",
+    "title": "Invite System",
+    "subtitle": "Share your code and invite friends",
+    "myCode": "My Invite Code",
+    "shareDesc": "Share this code with your friends to invite them.",
+    "enterCode": "Enter Inviter's Code",
+    "alreadySet": "Inviter already set",
+    "submit": "Submit",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "Pro Plan: Unlimited",
+    "proUnlimitedFiles": "Pro Plan: Unlimited Files",
+    "freeLimit3Files": "Free Plan: Max 3 files",
+    "freeLimit3FilesSize": "Free Plan: Max 3 files / 1.5MB",
+    "upgradeForUnlimited": "Upgrade for Unlimited",
+    "upgrade": "Upgrade"
   }
 }

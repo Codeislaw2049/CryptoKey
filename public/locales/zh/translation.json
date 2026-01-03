@@ -15,7 +15,15 @@
     "or": "- 或 -",
     "none": "无",
     "processing": "处理中...",
-    "next": "下一步"
+    "next": "下一步",
+    "upgradeToAccess": "升级以访问",
+    "clear": "清除",
+    "comingSoon": "敬请期待",
+    "clickToUpload": "点击上传",
+    "noResults": "未找到结果",
+    "search": "搜索",
+    "passwordPlaceholder": "输入密码",
+    "requiredToDecrypt": "解密所需："
   },
   "errorBoundary": {
     "title": "出现问题",
@@ -26,7 +34,23 @@
     "home": "首页",
     "pricing": "价格",
     "terms": "条款",
-    "about": "关于"
+    "about": "关于",
+    "invite": "邀请有礼"
+  },
+  "referral": {
+    "title": "邀请好友",
+    "desc": "邀请 3 位好友使用 CryptoKey，免费解锁专业版功能！",
+    "yourCode": "您的邀请码",
+    "copyLink": "复制邀请链接",
+    "stats": "已邀请: {{count}} / 3",
+    "unlocked": "专业版已解锁！",
+    "offline": "离线模式下邀请系统不可用。",
+    "alreadyPro": "您已拥有专业版访问权限",
+    "localPro": "检测到本地专业版许可",
+    "loginRequired": "请登录以使用邀请系统",
+    "earned": "已获得 {hours}小时 / 24小时",
+    "nextReward": "下一奖励",
+    "progress": "{current} / {total}"
   },
   "home": {
     "subtitle": "军工级隐写术与加密工具",
@@ -34,7 +58,31 @@
       "encrypt": "加密",
       "decrypt": "解密",
       "stego": "隐写术",
-      "wallet": "纸钱包"
+      "wallet": "纸钱包",
+      "passwords": "密码",
+      "invite": "邀请"
+    },
+    "mode": {
+      "geek": "极客模式",
+      "simple": "简单模式"
+    },
+    "toggle": {
+      "advanced": "切换到极客模式",
+      "simple": "切换到简单模式"
+    }
+  },
+  "landing": {
+    "card1": {
+      "title": "备份助记词",
+      "desc": "将您的加密货币恢复短语安全地隐藏在实体书中。"
+    },
+    "card2": {
+      "title": "密码本",
+      "desc": "将密码、笔记和日记加密为安全的便携格式。"
+    },
+    "card3": {
+      "title": "恢复数据",
+      "desc": "使用您的书籍密钥和密码解密数据。"
     }
   },
   "pricing": {
@@ -194,7 +242,8 @@
       "pricing": "价格",
       "terms": "服务条款",
       "source": "源代码",
-      "share": "分享"
+      "share": "分享",
+      "install": "安装应用"
     },
     "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. 保留所有权利。",
     "license": "根据 CC-BY-NC-ND 4.0 许可证用于审计目的。商业用途需要 Pro 许可证。",
@@ -472,7 +521,7 @@
     "feature3": "不保留数据日志"
   },
   "proBadge": {
-    "text": "Pro",
+    "text": "专业版",
     "tooltip": "此功能在商业/专业版中可用"
   },
   "userManual": {
@@ -543,7 +592,7 @@
         "description": "选择保护助记词或数据的最佳方式：",
         "book": {
           "physical": {
-            "title": "实体 / 虚拟书籍",
+            "title": "助记词/实体书",
             "desc": "将您的密钥隐藏在书架上的真实书籍中。（页码-行号-单词）"
           },
           "online": {
@@ -680,7 +729,8 @@
           "compliance": "符合 BIP-39 标准",
           "encryption": "标准加密",
           "security": "高安全性"
-        }
+        },
+        "recommended": "推荐"
       },
       "physical": {
         "title": "实体书",
@@ -708,20 +758,31 @@
           "convenient": "便捷访问",
           "dynamic": "动态引用"
         }
+      },
+      "passwordBook": {
+        "title": "轻量级密码本",
+        "desc": "将密码和笔记加密为便携索引。",
+        "features": {
+          "anyText": "支持任意文本",
+          "portable": "高度便携",
+          "secure": "军工级安全"
+        }
       }
     },
     "inputStep": {
       "title": {
-        "mnemonic": "输入助记词",
+        "mnemonic": "输入助记词 / 任意文本",
         "file": "上传文件",
         "url": "输入 URL",
-        "general": "输入数据"
+        "general": "输入数据",
+        "password": "保护密码与笔记"
       },
       "subtitle": {
-        "mnemonic": "输入您的 12 或 24 个单词的助记词短语。",
+        "mnemonic": "输入助记词或任意文本 (密码/私密信息)。",
         "file": "上传要加密的文本文件。",
         "url": "输入 URL 以获取内容。",
-        "general": "输入任何文本数据进行加密。"
+        "general": "输入任何文本数据进行加密。",
+        "password": "输入您想要加密的文本、密码或秘密笔记。"
       },
       "file": {
         "loaded": "文件加载成功",
@@ -731,9 +792,14 @@
         "scheme": "加密方案",
         "schemes": {
           "offset": "字符偏移",
+          "offsetDesc": "紧凑数字序列 (如 12345-8)",
           "chapter": "章节索引",
-          "virtual": "虚拟行"
-        }
+          "chapterDesc": "书籍/法律引用格式 (如 1-20-5)",
+          "virtual": "虚拟行",
+          "virtualDesc": "代码/日志行号格式 (如 150-5)"
+        },
+        "dragDrop": "点击打开保险箱",
+        "schemeTooltip": "选择如何在文件结构中隐藏数据。"
       },
       "url": {
         "fetch": "获取内容",
@@ -743,7 +809,8 @@
         },
         "success": "已加载 {{count}} 个字符",
         "recommended": "推荐书籍",
-        "clickToFill": "点击填充"
+        "clickToFill": "点击填充",
+        "guide": "输入您要使用的书籍的网址。"
       },
       "general": {
         "placeholder": "输入数据行...",
@@ -751,11 +818,13 @@
         "generate": "随机数据"
       },
       "mnemonic": {
-        "label": "助记词短语",
+        "label": "助记词 / 任意文本",
         "required": "(必填)",
-        "placeholder": "输入您的助记词短语...",
+        "placeholder": "输入您的 12-24 个助记词，或输入任何您想加密的文本/密码...",
         "paste": "粘贴",
-        "generate": "生成"
+        "generate": "生成",
+        "typeTag": "助记词 / 文本",
+        "tooltip": "在此处输入您的助记词。"
       }
     },
     "mixStep": {
@@ -865,7 +934,7 @@
       "password": "输入用于加密的密码"
     },
     "mode": {
-      "physicalBook": "实体 / 虚拟书籍",
+      "physicalBook": "助记词/实体书",
       "digitalBook": "数字书籍（文件）",
       "onlineBook": "在线书籍（URL）"
     },
@@ -911,12 +980,30 @@
       "urlMode": "请获取书籍 URL 以恢复数据。",
       "clipboard": "无法访问剪贴板。请手动粘贴。",
       "decryptFailed": "解密失败。请检查您的密码。"
+    },
+    "expectedType": {
+      "tooltip": "通过生成看似符合预期类型（如伪造的信用卡号）的虚假数据，帮助混淆失败的解密尝试。",
+      "creditcard": "信用卡",
+      "creditcardDesc": "虚假信用卡号",
+      "mnemonic": "助记词",
+      "mnemonicDesc": "虚假的12/24个单词",
+      "password": "密码",
+      "passwordDesc": "虚假密码",
+      "privatekey": "私钥",
+      "privatekeyDesc": "虚假私钥（十六进制）",
+      "text": "任意文本",
+      "textDesc": "随机文本段落",
+      "title": "预期结果类型"
     }
   },
   "steganography": {
     "mode": {
       "hide": "隐藏数据",
-      "extract": "提取数据"
+      "extract": "提取数据",
+      "encrypt": "加密并分片",
+      "decrypt": "解密并恢复",
+      "hideFiles": "隐藏文件",
+      "extractFiles": "提取文件"
     },
     "label": {
       "carrierImages": "载体图片",
@@ -938,12 +1025,14 @@
     },
     "placeholder": {
       "pasteCiphertext": "在此粘贴加密的密文...",
-      "shardFilename": "share-{{index}}.png",
+      "shardFilename": "分片-{{index}}.png",
       "outputFilename": "输出文件名"
     },
     "warning": {
       "title": "严重警告：",
-      "text": "请勿直接输入明文（如助记词）！任何拥有图片的人都可以提取它。请务必先加密数据（例如使用“加密”选项卡），然后在此处粘贴密文。"
+      "text": "请勿直接输入明文（如助记词）！任何拥有图片的人都可以提取它。请务必先加密数据（例如使用“加密”选项卡），然后在此处粘贴密文。",
+      "compression": "重要提示：如果文件被压缩或重新编码（例如通过社交应用发送），隐藏数据将丢失。务必以「原始文件」方式传输。",
+      "password": "提示：如果使用密码，丢失后无法恢复。请妥善保存。"
     },
     "button": {
       "clearAll": "清除所有",
@@ -959,7 +1048,12 @@
       "successShards": "成功生成并下载 {{count}} 个分片图片。",
       "noData": "未找到有效的隐藏数据。如果使用了严格模式，请检查文件名。",
       "reconstructFailed": "重组失败：{{error}}。下方显示原始数据。",
-      "waitingImage": "等待图片..."
+      "waitingImage": "等待图片...",
+      "successExtract": "解密成功！",
+      "keyFilesRequired": "解密需要密钥文件",
+      "reconstructing": "正在重建密钥...",
+      "decryptingPayload": "正在解密数据...",
+      "success": "成功！"
     },
     "about": {
       "title": "关于隐写术",
@@ -969,7 +1063,178 @@
     },
     "error": {
       "copyFailed": "复制到剪贴板失败"
-    }
+    },
+    "card": {
+      "image": {
+        "title": "图像隐写术",
+        "desc": "使用LSB隐写术将文本消息隐藏在图像中。"
+      },
+      "file": {
+        "title": "文件保险库",
+        "desc": "安全地合并和分片多个文件为加密碎片。"
+      },
+      "imageVault": {
+        "title": "图像金库",
+        "desc": "在图像载体中隐藏任何文件。"
+      },
+      "video": {
+        "title": "视频金库",
+        "desc": "在视频流中隐藏信息。"
+      }
+    },
+    "fileVault": {
+      "title": "文件保险库",
+      "description": "将多个文件加密并分片为多个安全文件片段。",
+      "encryptTitle": "创建安全保险库",
+      "decryptTitle": "打开安全保险库",
+      "encryptDesc": "将多个文件合并为单个加密包，可选分片以进行分布式存储。",
+      "decryptDesc": "从单个加密包或多个分片中恢复文件。",
+      "selectedFiles": "已选择 {{count}} 个文件",
+      "warning": {
+        "title": "重要安全提醒",
+        "password": "如果丢失密码或密钥文件，数据将无法恢复。请妥善保管。",
+        "sharding": "负载分片将加密数据分割成多个部分以分布式存储。需要所有部分才能解密。"
+      },
+      "about": {
+        "title": "关于文件保险库",
+        "text": "文件保险库允许您将多个文件打包成单个加密包。您可以启用负载分片将结果分割成多个部分以分布式存储（例如云服务）。多密钥模式使用 Shamir 秘密共享，需要多个密钥文件才能解密。",
+        "noteTitle": "最佳实践：",
+        "note": "始终备份您的密码和密钥文件。如果使用分片，请将各部分存储在不同位置。为了最大安全性，请结合使用密码 + 密钥文件 + 分片。"
+      },
+      "tip": {
+        "compression": "默认启用压缩以在加密前减小文件大小。",
+        "shamir": "多密钥模式提供分布式信任 - 单个密钥文件无法单独解密数据。"
+      }
+    },
+    "imageVault": {
+      "title": "图片保险库",
+      "description": "使用高级隐写术将任何文件隐藏在图片中。",
+      "hideTitle": "在图片中隐藏文件",
+      "extractTitle": "从图片中提取文件",
+      "hideDesc": "选择载体图片和要隐藏的文件。文件将被加密并不可见地嵌入。",
+      "extractDesc": "上传包含隐藏文件的图片以恢复它们。",
+      "aboutText": "图像隐写术将数据不可见地隐藏在图像像素中。",
+      "aboutNote": "载体图像会略微修改但视觉上完全相同。",
+      "warning": {
+        "title": "图像隐写关键规则",
+        "capacity": "图像容量取决于分辨率。分辨率越高 = 存储空间越大。如果超出容量，请选择更大的图像。",
+        "format": "输出始终为 PNG 格式。请勿转换为 JPG 或压缩，否则将永久破坏隐藏数据。",
+        "transfer": "分享时，请始终使用\"作为文件发送\"或\"原始质量\"。社交媒体平台会压缩图像并破坏隐藏数据。"
+      },
+      "tip": {
+        "carrier": "选择复杂图像（照片、风景）而不是简单图形，以获得更好的隐写效果。",
+        "security": "为了最大安全性，请启用密码 + 密钥文件 + 多密钥分片。"
+      }
+    },
+    "videoVault": {
+      "title": "视频保险库",
+      "description": "在视频帧中隐藏数据。",
+      "hideTitle": "在视频中隐藏文件",
+      "extractTitle": "从视频中提取文件",
+      "hideDesc": "选择载体视频和要隐藏的文件。文件将安全地附加到视频中。",
+      "extractDesc": "上传包含隐藏文件的视频以恢复它们。",
+      "aboutText": "视频隐写术将加密数据附加在视频帧之后。",
+      "aboutNote": "视频可以正常播放，隐藏数据位于末尾。",
+      "warning": {
+        "title": "重要视频隐写警告",
+        "format": "隐藏数据附加到视频文件中。请勿重新编码、压缩或更改视频格式，否则将破坏隐藏数据。",
+        "transfer": "分享时，请始终作为原始文件传输。视频流媒体平台会重新编码视频并破坏隐藏数据。",
+        "size": "输出视频大小会略大（增加隐藏文件的大小）。这是正常且预期的。"
+      },
+      "tip": {
+        "carrier": "任何视频格式都可以（MP4、WebM 等）。隐藏数据与格式无关。",
+        "detection": "视频隐写高度隐蔽 - 视频正常播放，文件大小增加最小。"
+      }
+    },
+    "input": {
+      "filesToHide": "选择要加密的文件",
+      "filesToRecover": "选择加密文件/分片",
+      "carrier": "1. 选择载体图片（PNG/JPG）",
+      "stegoImage": "1. 选择包含隐藏数据的图片",
+      "carrierVideo": "1. 选择载体视频（MP4/WebM）",
+      "stegoVideo": "1. 选择包含隐藏数据的视频",
+      "clickUploadImage": "点击上传图片"
+    },
+    "dropzone": {
+      "title": "点击上传文件",
+      "subtitle": "支持选择多个文件"
+    },
+    "sharding": {
+      "enable": "启用分片",
+      "count": "分片数量（N）",
+      "note": "文件将被分割成 N 个部分。需要所有部分才能恢复文件。"
+    },
+    "action": {
+      "encrypt": "加密文件",
+      "decrypt": "恢复文件",
+      "embed": "嵌入文件",
+      "extract": "提取文件"
+    },
+    "result": {
+      "success": "操作成功",
+      "downloadAll": "下载全部",
+      "imageReady": "隐写图片已生成！",
+      "filesRecovered": "已恢复 {{count}} 个文件！",
+      "videoReady": "隐写视频已生成！",
+      "videoReadyDesc": "您的文件已安全地隐藏在视频中。",
+      "clickToDownload": "点击图标下载单个文件",
+      "waiting": "等待操作..."
+    },
+    "process": {
+      "packing": "正在打包文件...",
+      "encrypting": "正在加密...",
+      "sharding": "正在分片...",
+      "analyzing": "正在分析文件...",
+      "merging": "正在合并分片...",
+      "decrypting": "正在解密...",
+      "unpacking": "正在解包...",
+      "embedding": "正在嵌入数据...",
+      "extracting": "正在提取数据..."
+    },
+    "fileCount": "已选择 {{count}} 个文件",
+    "selectFiles": "选择要隐藏的文件",
+    "preview": {
+      "waitingHide": "结果将显示在这里",
+      "waitingExtract": "恢复的文件将显示在这里"
+    },
+    "keyFile": {
+      "label": "密钥文件（可选，高级安全）",
+      "placeholder": "选择一个文件作为第二密钥（例如照片、歌曲、电子书）",
+      "help": "如果使用，解密时需要完全相同的文件。单字节差异将导致解密失败。",
+      "mode": "密钥文件模式",
+      "addSingle": "添加密钥文件",
+      "addFiles": "添加文件",
+      "clear": "清除",
+      "clearAll": "清除全部"
+    },
+    "enterPassword": "输入密码",
+    "compression": {
+      "label": "启用压缩",
+      "desc": "减小文件大小（可能影响质量）"
+    },
+    "security": {
+      "title": "安全选项",
+      "usePassword": "使用密码"
+    },
+    "shamir": {
+      "filesCount": "已选择 {{count}} 个文件进行分片",
+      "thresholdLabel": "阈值",
+      "requiredFiles": "这 {total} 个文件中的任意 {threshold} 个将用于解密。",
+      "modalTitle": "多密钥认证",
+      "modalDesc": "此文件受多个密钥文件保护。",
+      "modalRequired": "您需要提供至少 {threshold} 个有效文件。",
+      "uploadKeyFiles": "上传密钥文件",
+      "filesSelected": "已选择 {count} 个文件",
+      "verifying": "验证中...",
+      "unlock": "解锁",
+      "cancel": "取消",
+      "modalNeedFiles": "您需要提供至少 <strong>{threshold}</strong> 个有效文件。"
+    },
+    "keyMode": {
+      "single": "单密钥",
+      "multiKey": "多密钥（分片）"
+    },
+    "filesSelected": "已选择 {count} 个文件"
   },
   "wallet": {
     "title": "安全钱包生成器",
@@ -1061,6 +1326,9 @@
       "generateRandom": "生成随机数据",
       "pasteClipboard": "从剪贴板粘贴",
       "generateMnemonic": "生成随机助记词"
+    },
+    "label": {
+      "password": "密码 / 秘密备注"
     }
   },
   "resultStep": {
@@ -1082,8 +1350,8 @@
   },
   "shardDualAuth": {
     "prefix": {
-      "ciphertext": "CryptoKey:Ciphertext",
-      "passwordLine": "CryptoKey:PasswordLine",
+      "ciphertext": "CryptoKey:密文",
+      "passwordLine": "CryptoKey:密码行",
       "default": "CryptoKey"
     },
     "status": {
@@ -1104,8 +1372,10 @@
   "license": {
     "alerts": {
       "systemClockError": "检测到系统时钟错误。请更正您的系统时间以继续使用 Pro 功能。",
-      "deactivateConfirm": "停用 Real Pro 许可证？"
-    }
+      "deactivateConfirm": "停用 Real Pro 许可证？",
+      "usbRemoved": "USB密钥已移除"
+    },
+    "proRequired": "此功能需要专业版许可"
   },
   "mixStepButtons": {
     "back": "返回",
@@ -1155,9 +1425,9 @@
   },
   "payment": {
     "chains": {
-      "bsc": "BNB Smart Chain",
-      "trx": "TRON",
-      "eth": "Ethereum"
+      "bsc": "币安智能链",
+      "trx": "波场",
+      "eth": "以太坊"
     },
     "standards": {
       "bep20": "BEP20",
@@ -1197,6 +1467,80 @@
     "shareApiNotSupported": "不支持共享 API",
     "canvasContext": "无法获取画布上下文",
     "invalidShareType": "jsSplit 返回无效类型：{{type}}",
-    "wasmLoadFailed": "加载 Wasm 模块失败"
+    "wasmLoadFailed": "加载 Wasm 模块失败",
+    "noFile": "请先选择文件",
+    "noPassword": "密码为必填项",
+    "capacityExceeded": "容量超出。需要 {{needed}} KB，但图片仅有 {{available}} KB。",
+    "noHiddenData": "未找到隐藏数据或格式无效。",
+    "freeLimitFiles": "免费版限制 {{limit}} 个文件",
+    "freeLimitSize": "免费版限制总大小 {{size}} MB",
+    "minShamirFiles": "Shamir 分片至少需要 {{min}} 个文件",
+    "emptyResponse": "服务器返回空响应",
+    "loadFailed": "加载推荐数据失败",
+    "networkError": "网络错误"
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey 安全备份】",
+      "ciphertext": "密文：",
+      "hash": "哈希值：",
+      "footer": "解密地址：https://cryptokey.im",
+      "generated": "生成时间：{{date}}",
+      "note": "注意：需要密码+行索引才能解密。"
+    },
+    "subject": "通过 CryptoKey.im 加密的消息",
+    "body": {
+      "instruction": "【重要说明】",
+      "step1": "请附加您刚刚下载的文件：「{{filename}}」（检查您的下载文件夹）；",
+      "step2": "此附件包含您的加密备份和哈希值。请勿删除或修改；",
+      "step3": "您可以填写自己的电子邮件作为收件人进行备份。",
+      "footer": "解密数据地址：https://cryptokey.im",
+      "time": "备份时间：{{date}}"
+    },
+    "alert": {
+      "title": "✅ 需要操作：",
+      "step1": "您的电子邮件客户端现在应该已打开。",
+      "step2": "请点击电子邮件中的「附加文件」。",
+      "step3": "从下载文件夹中选择文件「{{filename}}」。",
+      "step4": "将电子邮件发送给自己以完成备份！",
+      "warning": "⚠️ 如果找不到文件，请检查浏览器的下载历史记录（Ctrl+J 或 Command+J）。"
+    },
+    "error": "操作失败：{{error}}。请手动下载并发送电子邮件！"
+  },
+  "passwordManager": {
+    "title": "密码管理器",
+    "subtitle": "安全管理您的加密密码",
+    "save": "保存到密码管理器",
+    "saveSuccess": "保存成功！",
+    "enterTitle": "输入标题（例如 Gmail）",
+    "empty": "尚无保存的密码。",
+    "emptyTitle": "未保存密码",
+    "emptyDesc": "使用「密码本」工具在此处加密并保存您的密码。",
+    "delete": "删除",
+    "decrypt": "解密",
+    "confirmDelete": "确定要删除此密码吗？",
+    "copyCiphertext": "复制密文",
+    "rowLabel": "行号: {row}"
+  },
+  "invite": {
+    "success": "邀请码已接受！",
+    "self": "您不能邀请自己",
+    "invalid": "无效的邀请码",
+    "title": "邀请系统",
+    "subtitle": "分享您的邀请码并邀请朋友",
+    "myCode": "我的邀请码",
+    "shareDesc": "与您的朋友分享此邀请码以邀请他们。",
+    "enterCode": "输入邀请人的邀请码",
+    "alreadySet": "邀请人已设置",
+    "submit": "提交",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "专业版：无限制",
+    "proUnlimitedFiles": "专业版：无限文件",
+    "freeLimit3Files": "免费版：最多3个文件",
+    "freeLimit3FilesSize": "免费版：最多3个文件 / 1.5MB",
+    "upgradeForUnlimited": "升级享无限制",
+    "upgrade": "升级"
   }
 }

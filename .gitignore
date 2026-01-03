@@ -50,5 +50,12 @@ scripts/*.pem
 scripts/verify_compliance.ts
 scripts/license_tools.ts
 
+# Backups and Archives
+_backups/
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
 nul
 public_repo/

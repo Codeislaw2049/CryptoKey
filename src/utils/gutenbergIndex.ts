@@ -77,6 +77,16 @@ const findOffsetForIndex = (
  * Mnemonic to Character Offsets (Mining) - Scheme 1: Offset-Length
  * Returns array of "Offset-Length" strings
  */
+export const indicesToOffset = (
+  indices: number[],
+  fullText: string
+): string[] => {
+  return indices.map(idx => {
+    const offset = findOffsetForIndex(idx, fullText, 8);
+    return `${offset}-8`;
+  });
+};
+
 export const mnemonicToOffset = (
   mnemonic: string,
   fullText: string
@@ -85,16 +95,36 @@ export const mnemonicToOffset = (
   const indices = words.map(w => BIP39_WORDLIST.indexOf(w));
   if (indices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
   
-  return indices.map(idx => {
-    const offset = findOffsetForIndex(idx, fullText, 8);
-    return `${offset}-8`;
-  });
+  return indicesToOffset(indices, fullText);
 };
 
 /**
  * Mnemonic to Chapter Indices - Scheme 2: Chapter-Line-Char
  * Returns array of "Chapter-Line-Char" strings
  */
+export const indicesToChapterIndices = (
+  indices: number[],
+  chapters: Array<{ id: number; start: number; end: number; text: string }>
+): string[] => {
+  return indices.map(targetIdx => {
+    // Search in chapters
+    for (const chapter of chapters) {
+      const lines = chapter.text.split('\n');
+      for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
+        const line = lines[lineIdx];
+        // Try to find a match in this line
+        try {
+            const charIdx = findOffsetForIndex(targetIdx, line, 8);
+            return `${chapter.id}-${lineIdx + 1}-${charIdx + 1}`; // 1-based indexing
+        } catch (e) {
+            continue;
+        }
+      }
+    }
+    throw new Error(`Could not find index ${targetIdx} in any chapter.`);
+  });
+};
+
 export const mnemonicToChapterIndices = (
   mnemonic: string,
   chapters: Array<{ id: number; start: number; end: number; text: string }>
@@ -103,43 +133,18 @@ export const mnemonicToChapterIndices = (
   const wordIndices = words.map(w => BIP39_WORDLIST.indexOf(w));
   if (wordIndices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
 
-  return wordIndices.map(targetIdx => {
-    // Search in chapters
-    for (const chapter of chapters) {
-      const lines = chapter.text.split('\n');
-      for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
-        const line = lines[lineIdx];
-        // Try to find a match in this line
-        try {
-            // We search for a segment in this line that hashes to our target index
-            // Using a smaller segment length for lines might be necessary if lines are short,
-            // but 8 chars is usually fine.
-            const charIdx = findOffsetForIndex(targetIdx, line, 8);
-            // Found it!
-            return `${chapter.id}-${lineIdx + 1}-${charIdx + 1}`; // 1-based indexing for user friendliness
-        } catch (e) {
-            // Not found in this line, continue
-            continue;
-        }
-      }
-    }
-    throw new Error(`Could not find word index ${targetIdx} in any chapter.`);
-  });
+  return indicesToChapterIndices(wordIndices, chapters);
 };
 
 /**
  * Mnemonic to Virtual Line Indices - Scheme 3: VirtualLine-Char
  * Returns array of "Line-Char" strings
  */
-export const mnemonicToVirtualLineIndices = (
-  mnemonic: string,
+export const indicesToVirtualLineIndices = (
+  indices: number[],
   virtualLines: string[]
 ): string[] => {
-  const words = mnemonic.trim().split(/\s+/);
-  const wordIndices = words.map(w => BIP39_WORDLIST.indexOf(w));
-  if (wordIndices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
-
-  return wordIndices.map(targetIdx => {
+  return indices.map(targetIdx => {
     // Search in virtual lines
     for (let lineIdx = 0; lineIdx < virtualLines.length; lineIdx++) {
       const line = virtualLines[lineIdx];
@@ -150,7 +155,53 @@ export const mnemonicToVirtualLineIndices = (
         continue;
       }
     }
-    throw new Error(`Could not find word index ${targetIdx} in any virtual line.`);
+    throw new Error(`Could not find index ${targetIdx} in any virtual line.`);
+  });
+};
+
+export const mnemonicToVirtualLineIndices = (
+  mnemonic: string,
+  virtualLines: string[]
+): string[] => {
+  const words = mnemonic.trim().split(/\s+/);
+  const wordIndices = words.map(w => BIP39_WORDLIST.indexOf(w));
+  if (wordIndices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
+
+  return indicesToVirtualLineIndices(wordIndices, virtualLines);
+};
+
+/**
+ * Restore Indices from Offsets
+ */
+export const offsetsToIndices = (
+  offsets: string[],
+  fullText: string
+): number[] => {
+  return offsets.map(str => {
+    // Consistent fallback for invalid offsets
+    const fallbackHash = str.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const fallbackIndex = fallbackHash % 2048;
+
+    const parts = str.split('-').map(Number);
+    if (parts.length !== 2) return fallbackIndex;
+    
+    const [offset, length] = parts;
+    
+    // Safety check for NaN or bounds
+    if (isNaN(offset) || isNaN(length)) return fallbackIndex;
+    if (offset < 0 || offset >= fullText.length) return fallbackIndex;
+
+    const sub = fullText.slice(offset, offset + length);
+    
+    // If slice is empty (e.g. offset at end of string), fallback
+    if (!sub) return fallbackIndex;
+
+    let hash = 0;
+    for (let j = 0; j < sub.length; j++) {
+      hash = ((hash << 5) - hash) + sub.charCodeAt(j);
+      hash |= 0;
+    }
+    return Math.abs(hash) % 2048;
   });
 };
 
@@ -161,9 +212,43 @@ export const offsetsToMnemonic = (
   offsets: string[],
   fullText: string
 ): string => {
-  const indices = offsets.map(str => {
-    const [offset, length] = str.split('-').map(Number);
-    const sub = fullText.slice(offset, offset + length);
+  const indices = offsetsToIndices(offsets, fullText);
+  return indices.map(i => BIP39_WORDLIST[i]).join(' ');
+};
+
+/**
+ * Restore Indices from Chapter Indices
+ */
+export const chapterIndicesToIndices = (
+  indices: string[],
+  chapters: Array<{ id: number; start: number; end: number; text: string }>
+): number[] => {
+  return indices.map(str => {
+    // Determine a consistent "random" fallback based on the input string
+    // This ensures that the same "wrong" row always produces the same "wrong" result
+    // instead of throwing an error.
+    const fallbackHash = str.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const fallbackIndex = fallbackHash % 2048;
+
+    const parts = str.split('-').map(Number);
+    if (parts.length !== 3) return fallbackIndex;
+    const [chapId, lineIdx, charIdx] = parts;
+    
+    const chapter = chapters.find(c => c.id === chapId);
+    if (!chapter) return fallbackIndex;
+    
+    const lines = chapter.text.split('\n');
+    if (lineIdx < 1 || lineIdx > lines.length) return fallbackIndex;
+    
+    const line = lines[lineIdx - 1]; // 0-based
+    const start = charIdx - 1; // 0-based
+    
+    // Safety check for bounds
+    if (start < 0 || start >= line.length) return fallbackIndex;
+
+    // Default length is 8
+    const sub = line.substr(start, 8);
+    
     let hash = 0;
     for (let j = 0; j < sub.length; j++) {
       hash = ((hash << 5) - hash) + sub.charCodeAt(j);
@@ -171,8 +256,6 @@ export const offsetsToMnemonic = (
     }
     return Math.abs(hash) % 2048;
   });
-  
-  return indices.map(i => BIP39_WORDLIST[i]).join(' ');
 };
 
 /**
@@ -182,25 +265,34 @@ export const chapterIndicesToMnemonic = (
   indices: string[],
   chapters: Array<{ id: number; start: number; end: number; text: string }>
 ): string => {
-  const wordIndices = indices.map(str => {
+  const wordIndices = chapterIndicesToIndices(indices, chapters);
+  return wordIndices.map(i => BIP39_WORDLIST[i]).join(' ');
+};
+
+/**
+ * Restore Indices from Virtual Line Indices
+ */
+export const virtualLineIndicesToIndices = (
+  indices: string[],
+  virtualLines: string[]
+): number[] => {
+  return indices.map(str => {
+    const fallbackHash = str.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const fallbackIndex = fallbackHash % 2048;
+
     const parts = str.split('-').map(Number);
-    if (parts.length !== 3) throw new Error('Invalid chapter index format');
-    const [chapId, lineIdx, charIdx] = parts;
+    if (parts.length !== 2) return fallbackIndex;
+    const [lineIdx, charIdx] = parts;
     
-    const chapter = chapters.find(c => c.id === chapId);
-    if (!chapter) throw new Error(`Chapter ${chapId} not found`);
+    if (lineIdx < 1 || lineIdx > virtualLines.length) return fallbackIndex;
     
-    const lines = chapter.text.split('\n');
-    if (lineIdx < 1 || lineIdx > lines.length) throw new Error(`Line ${lineIdx} out of bounds`);
+    const line = virtualLines[lineIdx - 1];
+    const start = charIdx - 1;
     
-    const line = lines[lineIdx - 1]; // 0-based
-    const start = charIdx - 1; // 0-based
+    if (start < 0 || start >= line.length) return fallbackIndex;
+
+    const sub = line.substr(start, 8);
     
-    // Default length is 8
-    const length = 8;
-    if (start < 0 || start + length > line.length) throw new Error('Character index out of bounds');
-    
-    const sub = line.slice(start, start + length);
     let hash = 0;
     for (let j = 0; j < sub.length; j++) {
       hash = ((hash << 5) - hash) + sub.charCodeAt(j);
@@ -208,8 +300,6 @@ export const chapterIndicesToMnemonic = (
     }
     return Math.abs(hash) % 2048;
   });
-  
-  return wordIndices.map(i => BIP39_WORDLIST[i]).join(' ');
 };
 
 /**
@@ -219,28 +309,7 @@ export const virtualLineIndicesToMnemonic = (
   indices: string[],
   virtualLines: string[]
 ): string => {
-  const wordIndices = indices.map(str => {
-    const parts = str.split('-').map(Number);
-    if (parts.length !== 2) throw new Error('Invalid virtual line index format');
-    const [lineIdx, charIdx] = parts;
-    
-    if (lineIdx < 1 || lineIdx > virtualLines.length) throw new Error(`Virtual line ${lineIdx} out of bounds`);
-    
-    const line = virtualLines[lineIdx - 1]; // 0-based
-    const start = charIdx - 1; // 0-based
-    
-    const length = 8;
-    if (start < 0 || start + length > line.length) throw new Error('Character index out of bounds');
-    
-    const sub = line.slice(start, start + length);
-    let hash = 0;
-    for (let j = 0; j < sub.length; j++) {
-      hash = ((hash << 5) - hash) + sub.charCodeAt(j);
-      hash |= 0;
-    }
-    return Math.abs(hash) % 2048;
-  });
-  
+  const wordIndices = virtualLineIndicesToIndices(indices, virtualLines);
   return wordIndices.map(i => BIP39_WORDLIST[i]).join(' ');
 };
 
@@ -277,15 +346,11 @@ export const generateFakeOffsetIndexes = (
 /**
  * Mnemonic to Index based on Web Features (Mining)
  */
-export const mnemonicToIndex = (
-  mnemonic: string,
+export const indicesToIndex = (
+  indices: number[],
   fullText: string,
   textHash: string
 ): string[] => {
-  const words = mnemonic.trim().split(/\s+/);
-  const indices = words.map(w => BIP39_WORDLIST.indexOf(w));
-  if (indices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
-
   const hashPrefix = textHash.slice(0, 8);
   
   return indices.map(idx => {
@@ -295,17 +360,29 @@ export const mnemonicToIndex = (
   });
 };
 
+export const mnemonicToIndex = (
+  mnemonic: string,
+  fullText: string,
+  textHash: string
+): string[] => {
+  const words = mnemonic.trim().split(/\s+/);
+  const indices = words.map(w => BIP39_WORDLIST.indexOf(w));
+  if (indices.some(i => i === -1)) throw new Error('Invalid mnemonic word found');
+
+  return indicesToIndex(indices, fullText, textHash);
+};
+
 /**
- * Restore Mnemonic from Index
+ * Restore Indices from Index
  */
-export const indexToMnemonic = (
+export const indexToIndices = (
   indexes: string[],
   fullText: string,
   textHash: string
-): string => {
+): number[] => {
   const hashPrefix = textHash.slice(0, 8);
   
-  const indices = indexes.map(str => {
+  return indexes.map(str => {
     const [offset, length, prefix] = str.split('-');
     if (prefix !== hashPrefix) throw new Error('Index hash mismatch (Wrong Book/URL?)');
     
@@ -320,7 +397,17 @@ export const indexToMnemonic = (
     }
     return Math.abs(hash) % 2048;
   });
-  
+};
+
+/**
+ * Restore Mnemonic from Index
+ */
+export const indexToMnemonic = (
+  indexes: string[],
+  fullText: string,
+  textHash: string
+): string => {
+  const indices = indexToIndices(indexes, fullText, textHash);
   return indices.map(i => BIP39_WORDLIST[i]).join(' ');
 };
 
