@@ -31,11 +31,37 @@
   }
 }
 
-/* Global Scrollbar Hide */
+/* Global Scrollbar Styling - Hidden by default */
 ::-webkit-scrollbar {
     width: 0px;
+    height: 0px;
     background: transparent;
     display: none;
+}
+
+/* Firefox scrollbar hiding */
+html, body {
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+/* Fallback: If scrollbar must be visible, match background */
+html::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #0f172a; /* bg-slate-900 */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #1e293b; /* bg-slate-800 */
+    border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #334155; /* bg-slate-700 */
 }
 
 /* Desktop App Experience Optimization */
@@ -44,6 +70,7 @@
     -webkit-user-drag: none;
     -webkit-app-region: no-drag;
     user-select: none;
+    scrollbar-width: none; /* Firefox - hide all scrollbars */
 }
 
 /* Allow text selection in input fields */
