@@ -76,8 +76,8 @@ export default defineConfig({
       name: 'inject-csp',
       transformIndexHtml(html) {
         const csp = process.env.NODE_ENV === 'production'
-              ? "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://cryptokey-auth.c-2049.workers.dev; worker-src 'self' blob:;"
-              : "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org http://localhost:8787 http://127.0.0.1:8787 ws://localhost:8787 ws://127.0.0.1:8787 https://cryptokey-auth.c-2049.workers.dev; worker-src 'self' blob:;";
+              ? "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://api.cryptokey.im; worker-src 'self' blob:;"
+              : "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:8097 https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data:; connect-src 'self' https://www.gutenberg.org https://api.cryptokey.im https://api.cryptokey.im   https://api.cryptokey.im; worker-src 'self' blob:;";
 
         return html.replace(
           /<meta http-equiv="Content-Security-Policy"[^>]*>/,
@@ -96,77 +96,6 @@ export default defineConfig({
   server: {
     port: 1616,
     strictPort: true,
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        if (req.url === '/index_zh.html') {
-          // Serve index_zh.html - handled by Vite default usually, but good to have placeholder
-        }
-        
-        if (req.url.startsWith('/api/')) {
-          console.log(`[Mock API] ${req.method} ${req.url}`);
-          
-          res.setHeader('Content-Type', 'application/json');
-          
-          if (req.url === '/api/register' && req.method === 'POST') {
-             // Mock Register
-             res.end(JSON.stringify({ 
-               success: true, 
-               message: 'Mock Verification code sent',
-               debugCode: '123456' // For local dev
-             }));
-             return;
-          }
-          
-          if (req.url === '/api/login' && req.method === 'POST') {
-             // Mock Login
-             let body = '';
-             req.on('data', chunk => body += chunk);
-             req.on('end', () => {
-                 const data = JSON.parse(body);
-                 if (data.totpCode === '123456') {
-                     res.end(JSON.stringify({
-                        success: true,
-                        token: 'mock-session-token-' + Date.now(),
-                        user: { email: data.email, plan: 'free', device_fingerprint: 'mock-fp' }
-                     }));
-                 } else {
-                     res.statusCode = 400;
-                     res.end(JSON.stringify({ error: 'Invalid Code (Use 123456)' }));
-                 }
-             });
-             return;
-          }
-          
-          if (req.url === '/api/get-license' && req.method === 'POST') {
-              res.end(JSON.stringify({ success: true, license: { is_pro: false } }));
-              return;
-          }
-
-          if (req.url === '/api/referral-info' && req.method === 'POST') {
-             // Mock Referral Info
-             // Drain body to prevent connection issues
-             req.on('data', () => {});
-             req.on('end', () => {
-                 res.end(JSON.stringify({ 
-                     success: true, 
-                     data: { 
-                         code: 'MOCK-REF', 
-                         count: 0, 
-                         pro: false, 
-                         earned_hours: 0 
-                     } 
-                 }));
-             });
-             return;
-          }
-
-          // Default Mock Response for others
-          res.end(JSON.stringify({ success: false, error: 'Mock API endpoint not implemented' }));
-          return;
-        }
-        next();
-      });
-    }
   },
   build: {
     sourcemap: false, // 🔒 Security: Prevent leaking source code (.tsx) via source maps
