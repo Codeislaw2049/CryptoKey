@@ -48,9 +48,9 @@
     "alreadyPro": "You already have Pro access",
     "localPro": "Local Pro license detected",
     "loginRequired": "Please login to use referral system",
-    "earned": "{hours}h / 24h Earned",
+    "earned": "{{hours}}h / 24h Earned",
     "nextReward": "Next Reward",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "home": {
     "subtitle": "Military-grade Steganography & Encryption Tool",
@@ -1231,12 +1231,12 @@
     "shamir": {
       "filesCount": "{{count}} files selected for sharding",
       "thresholdLabel": "Threshold",
-      "requiredFiles": "Any {threshold} of these {total} files will be needed to decrypt.",
+      "requiredFiles": "Any {threshold} of these {{total}} files will be needed to decrypt.",
       "modalTitle": "Multi-Key Authentication",
       "modalDesc": "This file is protected by multiple Key Files.",
       "modalRequired": "You need to provide at least {threshold} valid files.",
       "uploadKeyFiles": "Upload Key Files",
-      "filesSelected": "{count} files selected",
+      "filesSelected": "{{count}} files selected",
       "verifying": "Verifying...",
       "unlock": "Unlock",
       "cancel": "Cancel",
@@ -1246,7 +1246,7 @@
       "single": "Single Key",
       "multiKey": "Multi-Key (Sharded)"
     },
-    "filesSelected": "{count} files selected"
+    "filesSelected": "{{count}} files selected"
   },
   "wallet": {
     "title": "Secure Wallet Generator",
@@ -1520,7 +1520,7 @@
     "decrypt": "Decrypt",
     "confirmDelete": "Are you sure you want to delete this password?",
     "copyCiphertext": "Copy Ciphertext",
-    "rowLabel": "ROW: {row}"
+    "rowLabel": "ROW: {{row}}"
   },
   "invite": {
     "success": "Invite code accepted!",

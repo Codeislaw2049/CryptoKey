@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "{{count}} arquivos selecionados para fragmentação",
       "thresholdLabel": "Limiar",
-      "requiredFiles": "Qualquer {threshold} destes {total} arquivos serão necessários para descriptografar.",
+      "requiredFiles": "Qualquer {threshold} destes {{total}} arquivos serão necessários para descriptografar.",
       "modalTitle": "Autenticação Multi-Chave",
       "modalDesc": "Este arquivo está protegido por vários arquivos de chave.",
       "modalRequired": "Você precisa fornecer pelo menos {threshold} arquivos válidos.",
       "uploadKeyFiles": "Carregar Arquivos de Chave",
-      "filesSelected": "{count} arquivos selecionados",
+      "filesSelected": "{{count}} arquivos selecionados",
       "verifying": "Verificando...",
       "unlock": "Desbloquear",
       "cancel": "Cancelar",
@@ -1205,7 +1205,7 @@
       "single": "Chave Única",
       "multiKey": "Multi-Chave (Fragmentada)"
     },
-    "filesSelected": "{count} arquivos selecionados"
+    "filesSelected": "{{count}} arquivos selecionados"
   },
   "wallet": {
     "title": "Gerador de Carteira Segura",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Você já tem acesso Pro",
     "localPro": "Licença Pro local detectada",
     "loginRequired": "Por favor, faça login para usar o sistema de indicação",
-    "earned": "{hours}h / 24h Ganho",
+    "earned": "{{hours}}h / 24h Ganho",
     "nextReward": "Próxima Recompensa",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Descriptografar",
     "confirmDelete": "Tem certeza de que deseja excluir esta senha?",
     "copyCiphertext": "Copiar Texto Cifrado",
-    "rowLabel": "LINHA: {row}"
+    "rowLabel": "LINHA: {{row}}"
   },
   "invite": {
     "success": "Código de convite aceito!",

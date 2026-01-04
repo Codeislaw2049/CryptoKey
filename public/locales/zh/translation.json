@@ -48,9 +48,9 @@
     "alreadyPro": "您已拥有专业版访问权限",
     "localPro": "检测到本地专业版许可",
     "loginRequired": "请登录以使用邀请系统",
-    "earned": "已获得 {hours}小时 / 24小时",
+    "earned": "已获得 {{hours}}小时 / 24小时",
     "nextReward": "下一奖励",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "home": {
     "subtitle": "军工级隐写术与加密工具",
@@ -1219,12 +1219,12 @@
     "shamir": {
       "filesCount": "已选择 {{count}} 个文件进行分片",
       "thresholdLabel": "阈值",
-      "requiredFiles": "这 {total} 个文件中的任意 {threshold} 个将用于解密。",
+      "requiredFiles": "这 {{total}} 个文件中的任意 {threshold} 个将用于解密。",
       "modalTitle": "多密钥认证",
       "modalDesc": "此文件受多个密钥文件保护。",
       "modalRequired": "您需要提供至少 {threshold} 个有效文件。",
       "uploadKeyFiles": "上传密钥文件",
-      "filesSelected": "已选择 {count} 个文件",
+      "filesSelected": "已选择 {{count}} 个文件",
       "verifying": "验证中...",
       "unlock": "解锁",
       "cancel": "取消",
@@ -1234,7 +1234,7 @@
       "single": "单密钥",
       "multiKey": "多密钥（分片）"
     },
-    "filesSelected": "已选择 {count} 个文件"
+    "filesSelected": "已选择 {{count}} 个文件"
   },
   "wallet": {
     "title": "安全钱包生成器",
@@ -1520,7 +1520,7 @@
     "decrypt": "解密",
     "confirmDelete": "确定要删除此密码吗？",
     "copyCiphertext": "复制密文",
-    "rowLabel": "行号: {row}"
+    "rowLabel": "行号: {{row}}"
   },
   "invite": {
     "success": "邀请码已接受！",

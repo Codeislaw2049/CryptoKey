@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "Parçalama için {{count}} dosya seçildi",
       "thresholdLabel": "Eşik",
-      "requiredFiles": "Bu {total} dosyadan herhangi {threshold} tanesi şifre çözmek için gerekli olacaktır.",
+      "requiredFiles": "Bu {{total}} dosyadan herhangi {threshold} tanesi şifre çözmek için gerekli olacaktır.",
       "modalTitle": "Çoklu Anahtar Kimlik Doğrulama",
       "modalDesc": "Bu dosya birden fazla anahtar dosyası tarafından korunmaktadır.",
       "modalRequired": "En az {threshold} geçerli dosya sağlamanız gerekmektedir.",
       "uploadKeyFiles": "Anahtar Dosyalarını Yükle",
-      "filesSelected": "{count} dosya seçildi",
+      "filesSelected": "{{count}} dosya seçildi",
       "verifying": "Doğrulanıyor...",
       "unlock": "Kilidi Aç",
       "cancel": "İptal",
@@ -1205,7 +1205,7 @@
       "single": "Tek Anahtar",
       "multiKey": "Çoklu Anahtar (Parçalanmış)"
     },
-    "filesSelected": "{count} dosya seçildi"
+    "filesSelected": "{{count}} dosya seçildi"
   },
   "wallet": {
     "title": "Güvenli Cüzdan Oluşturucu",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Zaten Pro erişiminiz var",
     "localPro": "Yerel Pro lisansı tespit edildi",
     "loginRequired": "Referans sistemini kullanmak için lütfen giriş yapın",
-    "earned": "{hours}s / 24s Kazanıldı",
+    "earned": "{{hours}}s / 24s Kazanıldı",
     "nextReward": "Sonraki Ödül",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Şifre Çöz",
     "confirmDelete": "Bu şifreyi silmek istediğinizden emin misiniz?",
     "copyCiphertext": "Şifreli Metni Kopyala",
-    "rowLabel": "SATIR: {row}"
+    "rowLabel": "SATIR: {{row}}"
   },
   "invite": {
     "success": "Davet kodu kabul edildi!",

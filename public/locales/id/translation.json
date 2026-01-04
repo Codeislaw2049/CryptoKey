@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "{{count}} file dipilih untuk fragmentasi",
       "thresholdLabel": "Ambang Batas",
-      "requiredFiles": "Setiap {threshold} dari {total} file ini akan diperlukan untuk mendekripsi.",
+      "requiredFiles": "Setiap {threshold} dari {{total}} file ini akan diperlukan untuk mendekripsi.",
       "modalTitle": "Autentikasi Multi-Kunci",
       "modalDesc": "File ini dilindungi oleh beberapa file kunci.",
       "modalRequired": "Anda perlu menyediakan setidaknya {threshold} file yang valid.",
       "uploadKeyFiles": "Unggah File Kunci",
-      "filesSelected": "{count} file dipilih",
+      "filesSelected": "{{count}} file dipilih",
       "verifying": "Memverifikasi...",
       "unlock": "Buka Kunci",
       "cancel": "Batal",
@@ -1205,7 +1205,7 @@
       "single": "Kunci Tunggal",
       "multiKey": "Multi-Kunci (Tershard)"
     },
-    "filesSelected": "{count} file dipilih"
+    "filesSelected": "{{count}} file dipilih"
   },
   "wallet": {
     "title": "Generator Wallet Aman",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Anda sudah memiliki akses Pro",
     "localPro": "Lisensi Pro lokal terdeteksi",
     "loginRequired": "Silakan login untuk menggunakan sistem referral",
-    "earned": "{hours}j / 24j Diperoleh",
+    "earned": "{{hours}}j / 24j Diperoleh",
     "nextReward": "Hadiah Berikutnya",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Dekripsi",
     "confirmDelete": "Apakah Anda yakin ingin menghapus kata sandi ini?",
     "copyCiphertext": "Salin Teks Terenkripsi",
-    "rowLabel": "BARIS: {row}"
+    "rowLabel": "BARIS: {{row}}"
   },
   "invite": {
     "success": "Kode undangan diterima!",

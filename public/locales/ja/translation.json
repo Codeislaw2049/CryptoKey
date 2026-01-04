@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "分割用に{{count}}ファイルを選択",
       "thresholdLabel": "しきい値",
-      "requiredFiles": "これらの {total} ファイルのうち任意の {threshold} 個が復号化に必要です。",
+      "requiredFiles": "これらの {{total}} ファイルのうち任意の {threshold} 個が復号化に必要です。",
       "modalTitle": "マルチキー認証",
       "modalDesc": "このファイルは複数のキーファイルで保護されています。",
       "modalRequired": "少なくとも {threshold} 個の有効なファイルを提供する必要があります。",
       "uploadKeyFiles": "キーファイルをアップロード",
-      "filesSelected": "{count} 個のファイルが選択されました",
+      "filesSelected": "{{count}} 個のファイルが選択されました",
       "verifying": "検証中...",
       "unlock": "ロック解除",
       "cancel": "キャンセル",
@@ -1205,7 +1205,7 @@
       "single": "シングルキー",
       "multiKey": "マルチキー（シャード）"
     },
-    "filesSelected": "{count} ファイルが選択されました"
+    "filesSelected": "{{count}} ファイルが選択されました"
   },
   "wallet": {
     "title": "セキュアウォレットジェネレーター",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "既にプロアクセスをお持ちです",
     "localPro": "ローカルプロライセンスを検出",
     "loginRequired": "紹介システムを使用するにはログインしてください",
-    "earned": "{hours}時間 / 24時間 獲得済み",
+    "earned": "{{hours}}時間 / 24時間 獲得済み",
     "nextReward": "次の報酬",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "復号化",
     "confirmDelete": "このパスワードを削除してもよろしいですか？",
     "copyCiphertext": "暗号文をコピー",
-    "rowLabel": "行: {row}"
+    "rowLabel": "行: {{row}}"
   },
   "invite": {
     "success": "招待コードを受け付けました！",

@@ -6,6 +6,19 @@
   body {
     @apply bg-background text-slate-100;
   }
+  
+  /* Prevent iOS zoom on inputs */
+  @media screen and (max-width: 768px) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Prevent horizontal scroll globally */
+  body {
+    overflow-x: hidden;
+    touch-action: pan-y;
+  }
 }
 
 @layer utilities {

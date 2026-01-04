@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "शार्डिंग के लिए {{count}} फ़ाइलें चयनित",
       "thresholdLabel": "थ्रेशोल्ड",
-      "requiredFiles": "इन {total} फ़ाइलों में से कोई भी {threshold} डिक्रिप्ट करने के लिए आवश्यक होंगी।",
+      "requiredFiles": "इन {{total}} फ़ाइलों में से कोई भी {threshold} डिक्रिप्ट करने के लिए आवश्यक होंगी।",
       "modalTitle": "बहु-कुंजी प्रमाणीकरण",
       "modalDesc": "यह फ़ाइल कई कुंजी फ़ाइलों द्वारा सुरक्षित है।",
       "modalRequired": "आपको कम से कम {threshold} वैध फ़ाइलें प्रदान करनी होंगी।",
       "uploadKeyFiles": "कुंजी फ़ाइलें अपलोड करें",
-      "filesSelected": "{count} फ़ाइलें चयनित",
+      "filesSelected": "{{count}} फ़ाइलें चयनित",
       "verifying": "सत्यापित हो रहा है...",
       "unlock": "अनलॉक करें",
       "cancel": "रद्द करें",
@@ -1205,7 +1205,7 @@
       "single": "एकल कुंजी",
       "multiKey": "बहु-कुंजी (शार्डेड)"
     },
-    "filesSelected": "{count} फ़ाइलें चुनी गईं"
+    "filesSelected": "{{count}} फ़ाइलें चुनी गईं"
   },
   "wallet": {
     "title": "सुरक्षित Wallet जेनरेटर",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "आपके पास पहले से ही प्रो एक्सेस है",
     "localPro": "स्थानीय प्रो लाइसेंस का पता चला",
     "loginRequired": "रेफरल सिस्टम का उपयोग करने के लिए कृपया लॉगिन करें",
-    "earned": "{hours}घंटे / 24घंटे अर्जित",
+    "earned": "{{hours}}घंटे / 24घंटे अर्जित",
     "nextReward": "अगला पुरस्कार",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "डिक्रिप्ट करें",
     "confirmDelete": "क्या आप वाकई इस पासवर्ड को हटाना चाहते हैं?",
     "copyCiphertext": "सिफरटेक्स्ट कॉपी करें",
-    "rowLabel": "पंक्ति: {row}"
+    "rowLabel": "पंक्ति: {{row}}"
   },
   "invite": {
     "success": "आमंत्रण कोड स्वीकार किया गया!",

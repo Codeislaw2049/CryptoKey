@@ -36,7 +36,22 @@ if (typeof window !== 'undefined') {
     e.preventDefault();
     return false;
   });
+
+  // Disable Desktop Zoom (Ctrl + Wheel)
+  document.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Disable Desktop Zoom (Keyboard Ctrl + / -)
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === '=' || e.key === '-' || e.key === '+' || e.key === '0')) {
+      e.preventDefault();
+    }
+  });
 }
+
 
 // Register PWA Service Worker
 registerSW({

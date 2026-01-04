@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "{{count}} archivos seleccionados para fragmentación",
       "thresholdLabel": "Umbral",
-      "requiredFiles": "Cualquier {threshold} de estos {total} archivos serán necesarios para descifrar.",
+      "requiredFiles": "Cualquier {threshold} de estos {{total}} archivos serán necesarios para descifrar.",
       "modalTitle": "Autenticación Multi-Clave",
       "modalDesc": "Este archivo está protegido por varios archivos de clave.",
       "modalRequired": "Necesita proporcionar al menos {threshold} archivos válidos.",
       "uploadKeyFiles": "Cargar Archivos de Clave",
-      "filesSelected": "{count} archivos seleccionados",
+      "filesSelected": "{{count}} archivos seleccionados",
       "verifying": "Verificando...",
       "unlock": "Desbloquear",
       "cancel": "Cancelar",
@@ -1205,7 +1205,7 @@
       "single": "Clave Única",
       "multiKey": "Multi-Clave (Fragmentada)"
     },
-    "filesSelected": "{count} archivos seleccionados"
+    "filesSelected": "{{count}} archivos seleccionados"
   },
   "wallet": {
     "title": "Generador de Cartera Segura",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Ya tiene acceso Pro",
     "localPro": "Licencia Pro local detectada",
     "loginRequired": "Por favor, inicie sesión para usar el sistema de referidos",
-    "earned": "{hours}h / 24h Ganado",
+    "earned": "{{hours}}h / 24h Ganado",
     "nextReward": "Próxima Recompensa",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Descifrar",
     "confirmDelete": "¿Está seguro de que desea eliminar esta contraseña?",
     "copyCiphertext": "Copiar Texto Cifrado",
-    "rowLabel": "FILA: {row}"
+    "rowLabel": "FILA: {{row}}"
   },
   "invite": {
     "success": "¡Código de invitación aceptado!",

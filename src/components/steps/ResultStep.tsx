@@ -21,15 +21,17 @@ export interface ResultStepProps {
   onReset: () => void;
 }
 
-export const ResultStep: React.FC<ResultStepProps> = ({ result, mnemonic, intent, onReset }) => {
+export const ResultStep: React.FC<ResultStepProps> = ({ result, mnemonic, onReset }) => {
   const { t } = useTranslation();
-  const { features, triggerUpgrade } = useLicense();
+  const { features, triggerUpgrade, licenseType } = useLicense();
   const [showRealIndex, setShowRealIndex] = useState(false);
   const [mode, setMode] = useState<'personal' | 'public'>('personal');
   const [copyFeedback, setCopyFeedback] = useState(false);
   const [showDualAuth, setShowDualAuth] = useState(false);
   const [passwordTitle, setPasswordTitle] = useState('');
   const [isSaved, setIsSaved] = useState(false);
+
+  const isPro = ['pro_real', 'pro_local', 'pro_temp'].includes(licenseType);
 
   const handleSavePassword = () => {
     if (!passwordTitle.trim()) return;
@@ -244,9 +246,13 @@ ${t('resultStep.fileContent.note')}
         {/* Right: Public Safe Data */}
         <div className="space-y-4">
           
-          {/* Password Manager Save */}
-          {intent === 'password' && (
-             <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-3 animate-in slide-in-from-right-4 duration-500">
+          {/* Password Manager Save (Available for all encryption results) */}
+          <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-3 animate-in slide-in-from-right-4 duration-500 relative overflow-hidden group">
+               {!isPro && (
+                  <div className="absolute top-0 right-0 p-1">
+                     <ProBadge />
+                  </div>
+               )}
                <label className="text-xs font-bold text-slate-500 block flex items-center gap-2">
                   <Save size={14} />
                   {t('passwordManager.save', 'Save to Password Manager')}
@@ -260,7 +266,13 @@ ${t('resultStep.fileContent.note')}
                    className="flex-1 bg-black/30 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:ring-1 focus:ring-primary outline-none placeholder:text-slate-600"
                  />
                  <Button 
-                   onClick={handleSavePassword} 
+                   onClick={() => {
+                      if (!isPro) {
+                          triggerUpgrade();
+                          return;
+                      }
+                      handleSavePassword();
+                   }} 
                    disabled={!passwordTitle.trim() || isSaved}
                    className={`px-4 transition-all ${isSaved ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-primary hover:bg-primary/90 text-slate-900'}`}
                  >
@@ -268,8 +280,7 @@ ${t('resultStep.fileContent.note')}
                  </Button>
                </div>
                {isSaved && <p className="text-xs text-green-400 font-medium">{t('passwordManager.saveSuccess', 'Saved successfully!')}</p>}
-             </div>
-          )}
+          </div>
 
           {/* Hash */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-4">

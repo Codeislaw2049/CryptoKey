@@ -7,7 +7,7 @@ import { WalletGenerator } from '../components/WalletGenerator';
 import { PasswordManager } from '../components/PasswordManager';
 import { InviteSystem } from '../components/InviteSystem';
 import WasmBenchmark from '../pages/WasmBenchmark';
-import { ShieldCheck, UnlockKeyhole, Image, Wallet, BookOpen, FileText, RotateCcw, ArrowRight, LayoutGrid, Terminal } from 'lucide-react';
+import { ShieldCheck, UnlockKeyhole, Image, Wallet, FileText, RotateCcw, ArrowRight, Terminal, LayoutGrid } from 'lucide-react';
 import { cn } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { useLicense } from '../contexts/LicenseContext';
@@ -168,19 +168,17 @@ export const Home = () => {
 
       {/* Content Area */}
       {activeTab === 'landing' ? (
-        <div className="max-w-5xl mx-auto px-4 animate-in fade-in zoom-in-95 duration-500 flex-grow flex flex-col justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <LandingCard 
-            icon={BookOpen} 
-            title={t('landing.card1.title', 'Backup Mnemonic')}
-            desc={t('landing.card1.desc', 'Securely hide your crypto recovery phrase in a physical book.')}
+        <div className="w-full max-w-5xl mx-auto px-4 md:px-6 animate-in fade-in zoom-in-95 duration-500 flex-grow flex flex-col justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+          <LandingCard
+            icon={Image}
+            title={t('steganography.card.image.title', 'Image Steganography')}
+            desc={t('steganography.card.image.desc', 'Hide text messages inside images using LSB steganography.')}
             onClick={() => {
-              setEncryptSecret('');
-              setEncryptMode('mnemonic');
-              setEncryptIntent('crypto');
-              setActiveTab('encrypt');
+              setStegoSecret(' '); // Set a non-empty value to trigger direct mode
+              setActiveTab('stego');
             }}
-            color="text-amber-400"
+            color="text-indigo-400"
           />
           <LandingCard 
             icon={FileText} 
@@ -229,7 +227,7 @@ export const Home = () => {
         </div>
       ) : (
         <div className="flex-grow flex flex-col justify-center max-w-5xl mx-auto w-full">
-            <div className="bg-surface/30 backdrop-blur-sm border border-slate-800 rounded-2xl p-4 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 focus:outline-none ring-0 outline-none flex flex-col justify-center min-h-[500px]">
+            <div className="bg-surface/30 backdrop-blur-sm border border-slate-800 rounded-2xl p-4 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 focus:outline-none ring-0 outline-none flex flex-col justify-center min-h-[500px] overflow-hidden">
               {activeTab === 'encrypt' && <Wizard initialSecret={encryptSecret} initialMode={encryptMode} initialIntent={encryptIntent} onNavigateToStego={handleNavigateToStego} />}
               {activeTab === 'decrypt' && <DecryptionTool initialCiphertext={decryptCiphertext} />}
               {activeTab === 'stego' && <SteganographyTool initialSecret={stegoSecret} onExtract={handleNavigateToEncrypt} />}

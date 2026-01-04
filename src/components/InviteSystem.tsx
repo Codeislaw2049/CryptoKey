@@ -3,17 +3,38 @@ import { useTranslation } from 'react-i18next';
 import { getIdentity, setInviter, UserIdentity } from '../utils/identity';
 import { Copy, UserPlus, CheckCircle, AlertCircle, Share2 } from 'lucide-react';
 import { Button } from './ui/Button';
+import { useLicense } from '../contexts/LicenseContext';
 
 export const InviteSystem = () => {
   const { t } = useTranslation();
+  const { userNickname } = useLicense();
   const [identity, setIdentity] = useState<UserIdentity | null>(null);
   const [inputCode, setInputCode] = useState('');
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    setIdentity(getIdentity());
-  }, []);
+    const localIdentity = getIdentity();
+    setIdentity(localIdentity);
+
+    if (userNickname) {
+      // Optimistically set invite code to nickname as they are same in backend
+      setIdentity(prev => prev ? { ...prev, inviteCode: userNickname } : null);
+
+      fetch('/api/referral-info', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nickname: userNickname })
+      })
+      .then(res => res.json())
+      .then(data => {
+          if (data.success && data.data.code) {
+              setIdentity(prev => prev ? { ...prev, inviteCode: data.data.code } : null);
+          }
+      })
+      .catch(console.error);
+    }
+  }, [userNickname]);
 
   const handleCopy = () => {
     if (identity?.inviteCode) {
@@ -89,7 +110,7 @@ export const InviteSystem = () => {
                </div>
             ) : (
                <div className="space-y-3">
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <input 
                       type="text" 
                       value={inputCode}
@@ -98,7 +119,7 @@ export const InviteSystem = () => {
                       maxLength={8}
                       className="flex-1 bg-black/40 border border-slate-600 rounded-lg p-3 text-center text-lg font-mono tracking-widest text-white placeholder:text-slate-700 focus:ring-1 focus:ring-primary outline-none uppercase"
                     />
-                    <Button onClick={handleSubmit} disabled={!inputCode} className="bg-primary hover:bg-primary/90 text-slate-900 font-bold">
+                    <Button onClick={handleSubmit} disabled={!inputCode} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-slate-900 font-bold">
                        {t('invite.submit', 'Submit')}
                     </Button>
                   </div>

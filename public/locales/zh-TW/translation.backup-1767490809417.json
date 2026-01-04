@@ -1,0 +1,1546 @@
+{
+  "common": {
+    "loading": "載入中...",
+    "language": "语言",
+    "close": "關閉",
+    "back": "返回",
+    "copy": "複製",
+    "copied": "已複製！",
+    "download": "下载",
+    "email": "邮件",
+    "print": "打印",
+    "paste": "粘贴",
+    "browse": "浏览",
+    "fetch": "获取",
+    "or": "- 或 -",
+    "none": "无",
+    "processing": "处理中...",
+    "next": "下一步",
+    "upgradeToAccess": "升级以访问",
+    "clear": "清除",
+    "comingSoon": "敬請期待",
+    "clickToUpload": "點擊上傳",
+    "noResults": "未找到结果",
+    "search": "搜索",
+    "passwordPlaceholder": "输入密碼",
+    "requiredToDecrypt": "解密所需："
+  },
+  "errorBoundary": {
+    "title": "出现问题",
+    "description": "发生了意外错误。您的資料可能是安全的，但显示崩溃了。",
+    "reload": "重新載入应用程序"
+  },
+  "nav": {
+    "home": "首页",
+    "pricing": "价格",
+    "terms": "条款",
+    "about": "关于",
+    "invite": "邀請有礼"
+  },
+  "home": {
+    "subtitle": "军工级隐写术與加密工具",
+    "tabs": {
+      "encrypt": "加密",
+      "decrypt": "解密",
+      "stego": "隐写术",
+      "wallet": "纸钱包",
+      "passwords": "密碼",
+      "invite": "邀請"
+    },
+    "mode": {
+      "geek": "极客模式",
+      "simple": "简單模式"
+    },
+    "toggle": {
+      "advanced": "切换到极客模式",
+      "simple": "切换到简單模式"
+    }
+  },
+  "pricing": {
+    "title": "简單、透明的价格",
+    "subtitle": "选择最适合您安全需求的方案。所有方案均可解鎖 CryptoKey.im 军工级加密和隐写术工具的全部功能。",
+    "badge": {
+      "bestValue": "最超值"
+    },
+    "button": {
+      "contactSales": "联系销售",
+      "subscribeNow": "立即订阅",
+      "extendLicense": "续费许可证"
+    },
+    "features": {
+      "instantAccess": {
+        "title": "即時访问",
+        "desc": "支付后立即获得许可证密钥和TOTP设置。无需等待。"
+      },
+      "globalPayments": {
+        "title": "全球支付",
+        "desc": "支持通过BSC、TRX和ETH网络进行全球USDT支付。",
+        "descChina": "敬請期待更新。"
+      },
+      "securePrivate": {
+        "title": "安全與隐私",
+        "desc": "不保留個人資料。您的安全是我們的首要任务。"
+      },
+      "refundPolicy": {
+        "title": "退款政策",
+        "desc": "严格的无退款政策。一旦颁发许可证密钥，所有销售均為最终销售。"
+      }
+    },
+    "disclaimer": {
+      "text": "CryptoKey.im 是一個安全工具提供商。我們不提供财务建议、加密货币交易或托管服务。价格以美元计价。根据您的所在地可能需要缴纳增值税。"
+    },
+    "china": {
+      "hardwareOnly": "仅限硬件授权",
+      "description": "請购买我們的硬件产品 CryptoKey 来使用，<1/>在线使用方式静等通知...",
+      "contactSales": "联系销售购买硬件",
+      "backToHome": "返回首页"
+    },
+    "plans": {
+      "price_weekly_trial": {
+        "name": "24小時通行证",
+        "description": "即時24小時访问。设备绑定，无需登录。",
+        "features": [
+          "完整专业版功能",
+          "即时访问（无需登录）",
+          "设备绑定（仅限24小时）",
+          "⚠️ 风险：清除缓存将丢失",
+          "⚠️ 不可转让"
+        ]
+      },
+      "price_monthly_standard": {
+        "name": "月付方案",
+        "description": "灵活访问，适合常规用户。",
+        "features": [
+          "完整专业版功能",
+          "随时取消",
+          "优先支持"
+        ]
+      },
+      "price_quarterly": {
+        "name": "季度方案",
+        "description": "比月付节省约 15%。",
+        "features": [
+          "完整专业版功能",
+          "优先支持",
+          "按季度计费"
+        ]
+      },
+      "price_semiannual": {
+        "name": "半年方案",
+        "description": "比月付节省约 23%。",
+        "features": [
+          "完整专业版功能",
+          "优先支持",
+          "按半年计费"
+        ]
+      },
+      "price_yearly_pro": {
+        "name": "年度方案",
+        "description": "最超值！比月付节省约 33%。",
+        "features": [
+          "完整专业版功能",
+          "优先支持",
+          "按年计费"
+        ]
+      },
+      "price_enterprise": {
+        "name": "企业版",
+        "price": "定制",
+        "period": "联系我們",
+        "description": "适用于大型团队和组织。",
+        "features": [
+          "定制许可条款",
+          "专属支持",
+          "服务等级协议 (SLA)",
+          "私有化部署选项"
+        ]
+      }
+    },
+    "periods": {
+      "oneTime": "一次性",
+      "monthly": "每月",
+      "quarterly": "每季度",
+      "semiAnnual": "每半年",
+      "yearly": "每年",
+      "contactUs": "联系我們",
+      "custom": "定制"
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "lastUpdated": "最后更新：{{date}}",
+    "backToHome": "返回首页",
+    "disclaimer": {
+      "title": "服务免责声明",
+      "content_non_china": "我們提供加密密钥安全管理工具（cryptokey.im），提供离线助记词备份、TOTP动态授权和安全密钥派生服务。我們不涉及加密货币交易、托管或金融服务——仅提供用于用户自有密钥的安全工具。",
+      "content_china": "我們提供加密密钥安全管理工具（cryptokey.im），提供离线助记词备份、TOTP动态授权和安全密钥派生服务。我們专注于数字资产的硬件安全解决方案。"
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. 接受条款",
+        "content": "访问並使用 CryptoKey.im（“本服务”），即表示您接受並同意受本协议条款和规定的约束。"
+      },
+      "nature": {
+        "title": "2. 服务性质",
+        "content": "CryptoKey.im 是一個客户端加密和隐写术工具。所有加密操作均使用 WebAssembly 在您的浏览器中本地执行。我們无法访问您的私钥、助记词或密碼。您对保护您的資料负全部责任。"
+      },
+      "responsibilities": {
+        "title": "3. 用户责任",
+        "items": {
+          "0": "您同意不將本服务用于任何非法活动。",
+          "1": "您承认，如果您丢失凭据或主密碼，我們將无法恢復您的資料。",
+          "2": "您有责任维护您的帐户和许可证密钥的机密性。"
+        }
+      },
+      "ip": {
+        "title": "4. 知识产权",
+        "content": "本服务包含专有算法和代碼。“社区版”根据 CC-BY-NC-ND 4.0 许可证提供用于审计目的。核心加密模块的商业用途需要有效的 Pro 许可证。"
+      },
+      "liability": {
+        "title": "5. 责任限制",
+        "content": "在法律允许的最大范围内，CryptoKey.im 不对因您使用本服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害负责，包括但不限于利润、資料、使用、商誉或其他无形损失的损失。"
+      },
+      "refund": {
+        "title": "6. 退款政策和费用",
+        "policy": "严格的不退款政策：所有销售均為最终销售。一旦确认付款並签发许可证密钥，在任何情况下均不提供退款。",
+        "fees": "交易费用：用户自行承担所有交易费用（包括但不限于 Gas 费、网络费和交易所提款费）。請确保您转账的金额准确无误，並包含任何必要的费用。支付不足將导致许可证激活失败。"
+      }
+    }
+  },
+  "footer": {
+    "description": "為您的数字资产提供安全加密和隐写术。军用级保护，零知识架构。",
+    "links": {
+      "pricing": "价格",
+      "terms": "服务条款",
+      "source": "源代碼",
+      "share": "分享",
+      "install": "安装应用"
+    },
+    "copyright": "© {{year}}-{{nextYear}} CryptoKey.im. 保留所有权利。",
+    "license": "根据 CC-BY-NC-ND 4.0 许可证用于审计目的。商业用途需要 Pro 许可证。",
+    "linkCopied": "連結已複製到剪贴板！",
+    "forceUpdate": "强制更新 / 清除缓存",
+    "publicRepo": "公开代碼库（审计）",
+    "telegram": "Telegram",
+    "twitter": "X.com",
+    "share": "分享"
+  },
+  "licenseManager": {
+    "desktopAuthQr": "桌面认证二维碼",
+    "registrationFailed": "注册失败",
+    "status": {
+      "hardwareKeyActive": "硬件密钥已激活",
+      "active": "已激活",
+      "activatePro": "激活專業版",
+      "tempPro": "临時專業版（24小時）",
+      "proActive": "專業版已激活",
+      "user": "用户",
+      "proLicenseActive": "專業版许可证已激活",
+      "expiresIn": "{{days}} 天后过期",
+      "expired": "已过期"
+    },
+    "networkError": "网络错误：{{error}}",
+    "authApp": {
+      "title": "使用验证器应用扫描",
+      "google": "Google Authenticator",
+      "microsoft": "Microsoft Authenticator",
+      "download": "下载"
+    },
+    "login": {
+      "tab": "登录",
+      "nickname": "昵称",
+      "nicknamePlaceholder": "输入您的昵称",
+      "code": "6位验证碼",
+      "codePlaceholder": "输入应用中的6位验证碼",
+      "button": "登录",
+      "success": "登录成功！",
+      "error": "登录失败。請检查您的凭据。",
+      "inputError": "請填写所有字段"
+    },
+    "register": {
+      "tab": "注册",
+      "chooseNickname": "选择昵称",
+      "nicknamePlaceholder": "输入唯一的昵称",
+      "note": "注意：請安全保存您的密钥。登录時需要使用。",
+      "button": "注册",
+      "scanWithAuth": "使用验证器扫描二维碼",
+      "loadingQR": "生成二维碼中...",
+      "manualEntry": "手动输入",
+      "keySaved": "密钥已保存！請前往登录选项卡。",
+      "savedGoLogin": "注册完成。請切换到登录选项卡。",
+      "scanNote": "使用您的验证器应用（Google Authenticator 或 Microsoft Authenticator）扫描此二维碼",
+      "success": "注册成功！二维碼已生成。",
+      "manualSuccess": "手动输入密钥成功！",
+      "errorNickname": "昵称必须為3-20個字符，仅限字母数字",
+      "errorFormat": "密钥格式无效。必须是base32格式（A-Z，2-7）",
+      "errorTaken": "昵称 '{{nickname}}' 已被占用。請选择其他昵称。"
+    },
+    "modal": {
+      "title": "许可证管理器",
+      "subtitle": "管理您的 Pro 许可证和身份验证",
+      "logout": "退出登录"
+    }
+  },
+  "paymentModal": {
+    "title": "USDT 支付",
+    "step": "第 {{step}}/4 步",
+    "close": "關閉",
+    "steps": {
+      "identity": {
+        "title": "账户验证",
+        "loggedIn": "当前登录：",
+        "loginRequired": "您必须登录才能订阅此计划。",
+        "loginNote": "請關閉此窗口並先注册/登录。",
+        "continue": "继续",
+        "trial": {
+          "title": "临時访问警告",
+          "subtitle": "您正在购买 24 小時通行证，无需登录。",
+          "deviceBound": "此许可证已绑定设备。它只能在此特定的浏览器和设备上使用。",
+          "risk": "如果您清除缓存或更换设备，您將永久失去访问权限。无法恢復。",
+          "note": "為了安全起见，我們建议您登录，但您可以选择匿名继续。"
+        }
+      },
+      "network": {
+        "title": "选择支付网络",
+        "selected": "已选网络：",
+        "error": "請选择支付网络"
+      },
+      "payment": {
+        "instruction": "請准确发送",
+        "walletLabel": "官方钱包地址",
+        "networkWarning": "請确保您在 {{network}} ({{standard}}) 网络上发送 USDT。错误的转账將无法找回。",
+        "importantWarning": {
+          "title": "重要支付警告：",
+          "exactAmount": "請支付显示的 确切金额。",
+          "underpayment": "支付不足將导致失败且 不可退款。",
+          "overpayment": "多付 不可退款 且 不会累积 额外時间。",
+          "singleTx": "系統仅验证單笔交易。請勿发送多笔小额支付。"
+        },
+        "txHashLabel": "交易哈希 (TXID)",
+        "txHashPlaceholder": "粘贴交易哈希 (TXID)",
+        "button": "我已完成支付",
+        "verifying": "验证中...",
+        "errorTx": "需要交易哈希 (TXID)",
+        "errorValidation": {
+          "wallet": "这看起来像钱包地址，而不是交易哈希 (TXID)。請粘贴 TXID。",
+          "tron": "无效的 TRON TXID。它应该是 64 個字符的十六进制字符串。",
+          "eth": "无效的 {{chain}} TXID。它应该以 0x 开头並包含 64 個十六进制字符。"
+        },
+        "clipboardError": "无法读取剪贴板。請手动输入。",
+        "copied": "連結已複製到剪贴板！"
+      },
+      "verification": {
+        "title": "正在验证交易...",
+        "description": "我們正在区块链上检查您的支付。通常需要1-3分钟。",
+        "checkingTxid": "正在检查交易ID：",
+        "safeToClose": "關閉此窗口是安全的。",
+        "autoActivation": "一旦交易在链上确认，您的專業版许可证將自动激活。",
+        "verifying": "正在验证支付...",
+        "success": "支付已验证！",
+        "failed": "支付验证失败。請检查您的交易。"
+      }
+    }
+  },
+  "qrGenerator": {
+    "dualAuthMode": "双重验证模式（推荐）",
+    "dualAuthDesc": "將加密拆分為两個單独的 QR 密钥（密钥 A + 密钥 B）。即使其中一個密钥被盗，您的資料仍然安全。",
+    "switchToDual": "切换到双重验证加密",
+    "generateStandard": "生成标准二维碼",
+    "generating": "生成中...",
+    "standardModeDesc": "标准模式：生成 AES-256 加密的二维碼分片。",
+    "streamMode": "气隙流模式",
+    "proFeature": "高速二维碼流是專業版功能。",
+    "unlockStream": "解鎖流模式",
+    "pauseStream": "暂停流",
+    "playStream": "播放流",
+    "scanNote": "使用兼容的二维碼扫描应用（如 Cobo Vault, Keystone）捕获流。",
+    "shardCount": "分片 {{current}} / {{total}}",
+    "saveAll": "保存所有圖片",
+    "saveImage": "保存圖片",
+    "close": "關閉",
+    "speedSlow": "慢速 (2 FPS)",
+    "speedFast": "快速 (4 FPS)",
+    "speedTurbo": "极速 (10 FPS)"
+  },
+  "dualAuthGenerator": {
+    "title": "双重验证加密",
+    "back": "返回",
+    "howItWorks": {
+      "title": "工作原理：",
+      "step1": "系統生成两個唯一密钥（密钥 A 和 B）。",
+      "step2": "您將它們绑定到您的验证器应用（Google/Microsoft Auth）。",
+      "step3": "<strong>密钥 A</strong> 加密您的助记词。",
+      "step4": "<strong>密钥 B</strong> 加密您的密碼和行號。",
+      "step5": "结果被拆分為二维碼分片。",
+      "step6": "解密時，您需要 分片 + 验证器代碼（或备份的绑定二维碼）。"
+    },
+    "generateKeys": "生成安全密钥",
+    "authA": "验证器 A（助记词密钥）",
+    "authB": "验证器 B（上下文密钥）",
+    "scanAuth": "使用 Google/Microsoft 验证器扫描",
+    "saveImage": "保存圖片",
+    "processing": "处理中...",
+    "encryptAndGenerate": "加密並生成分片",
+    "encryptionComplete": "加密完成！",
+    "resultDesc": "您有 {{count}} 個資料分片和 2 個验证器密钥。",
+    "importantWarning": "重要：您必须保存所有圖片（分片 + 验证密钥）以便稍后解密！",
+    "downloadAll": "下载所有圖片（推荐 Zip）",
+    "shardLabel": "分片 {{index}}",
+    "errorBind": "請先绑定验证器",
+    "errorGen": "生成失败"
+  },
+  "qrScanner": {
+    "error": {
+      "cameraAccess": "相机访问被拒绝或不可用。請确保您使用的是HTTPS或localhost。"
+    },
+    "title": "流扫描器",
+    "instruction": "对准动画二维碼",
+    "accessingCamera": "访问相机中...",
+    "scanning": "扫描中...",
+    "waitingStream": "等待資料流..."
+  },
+  "dualAuthDecryptor": {
+    "step1": {
+      "title": "1. 上傳双重认证分片",
+      "instruction": "上傳双重认证生成器生成的所有分片（通常8-12個）。"
+    },
+    "scanStream": "扫描流",
+    "selectImages": "选择圖片",
+    "clearReset": "清除 / 重置",
+    "progress": "进度: {{count}} / {{total}}",
+    "failedFiles": "读取{{count}}個檔案失败:",
+    "missingParts": "缺失部分: {{parts}}",
+    "mergeSuccess": "分片合並成功！",
+    "step2": {
+      "title": "2. 输入解密密钥（必需）",
+      "description": "您必须提供密钥A和B。这些是永久密钥（QR图像或Base32字符串），而不是临時的6位数代碼。"
+    },
+    "keyA": {
+      "label": "密钥A（助记词密钥）",
+      "loaded": "密钥A QR已載入",
+      "upload": "上傳密钥A QR",
+      "placeholder": "粘贴密钥A密钥（Base32）"
+    },
+    "keyB": {
+      "label": "密钥B（上下文密钥）",
+      "loaded": "密钥B QR已載入",
+      "upload": "上傳密钥B QR",
+      "placeholder": "粘贴密钥B密钥（Base32）"
+    },
+    "lostQrHelp": "* 丢失了QR？检查您的身份验证器应用的\"导出\"或\"显示密钥\"功能以找到此代碼。",
+    "step3": {
+      "title": "3. 使用身份验证器代碼验证密钥（可选）",
+      "description": "如果您可以访问身份验证器应用，請输入当前的6位数代碼以验证正确性（可选）。"
+    },
+    "codeA": {
+      "placeholder": "代碼A（例如：123456）"
+    },
+    "codeB": {
+      "placeholder": "代碼B（例如：654321）"
+    },
+    "decryptButton": "解密資料",
+    "keysRequired": "* 請提供两個密钥（第2步）以启用解密。",
+    "success": {
+      "title": "解密成功！"
+    },
+    "result": {
+      "mnemonicLabel": "恢復的密钥（助记词）",
+      "passwordLabel": "上下文密碼",
+      "lineLabel": "行號",
+      "fullContent": "完整解密内容（所有行）",
+      "rawCiphertext": "原始密文（旧版）"
+    },
+    "bookCipherNote": "注意: 这些似乎是书本密碼索引..."
+  },
+  "integrityCheck": {
+    "title": "验证此应用代碼是否與 GitHub 上的源代碼匹配",
+    "fetching": "正在获取 {{version}} 版本的签名...",
+    "verifying": "正在验证 {{path}}...",
+    "failedToLoad": "載入失败",
+    "info": "ℹ️ {{path}}",
+    "hash": "哈希值：{{hash}}",
+    "couldNotVerify": "⚠️ 无法验证 {{path}}：{{error}}",
+    "criticalError": "严重错误：{{error}}",
+    "buttonLabel": "验证完整性",
+    "devModeWarning": "⚠️ 检测到开发模式",
+    "devModeDesc": "开发模式下完整性检查已禁用。請构建生产版本以启用验证。",
+    "modalTitle": "应用完整性检查",
+    "calculating": "正在计算校验和...",
+    "connectionError": "无法连接到 GitHub 获取官方校验和。請手动检查。",
+    "viewRelease": "查看发布说明",
+    "log": {
+      "receivedChecksums": "✅ 已從 GitHub 接收官方校验和",
+      "corsBlocked": "⚠️ CORS 拦截 - 无法從 GitHub 获取校验和",
+      "corsReason1": "原因 1：GitHub 的 CORS 策略阻止跨域請求",
+      "corsReason2": "原因 2：浏览器扩展或网络代理干扰",
+      "corsReason3": "原因 3：您可以在 GitHub 发布页面手动验证",
+      "fileVerified": "✅ {{path}} 验证成功",
+      "hashMismatch": "❌ {{path}} 哈希不匹配",
+      "noChecksum": "❓ 未找到 {{path}} 的校验和"
+    },
+    "manual": {
+      "title": "手动验证指南",
+      "step1": "访问 <a href='https://github.com/Codeislaw2049/cryptokey_im/releases' target='_blank' class='text-blue-400 underline'>GitHub 发布页面</a>",
+      "step2": "下载您版本的 <code class='bg-slate-700 px-1 rounded'>sha256sums.txt</code>",
+      "step3": "使用 SHA-256 验证工具手动比较校验和"
+    }
+  },
+  "militaryBadge": {
+    "title": "军用级安全",
+    "feature1": "零知识架构",
+    "feature2": "仅客户端处理",
+    "feature3": "不保留資料日志"
+  },
+  "proBadge": {
+    "text": "專業版",
+    "tooltip": "此功能在商业/專業版中可用"
+  },
+  "userManual": {
+    "button": "用户手册",
+    "title": "CryptoKey 用户手册",
+    "subtitle": "安全資料加密與恢復指南",
+    "close": "關閉",
+    "tabs": {
+      "start": "快速入门指南",
+      "dual": "双重验证器",
+      "security": "安全與隐私",
+      "recover": "恢復流程"
+    },
+    "mobileTabs": {
+      "start": "快速入门",
+      "dual": "双重验证",
+      "security": "安全",
+      "recover": "恢復"
+    },
+    "start": {
+      "title": "开始使用",
+      "description": "CryptoKey 允许您使用标准加密或双重验证器保护將敏感資料（如助记词）隐藏在诱饵資料中。",
+      "steps": [
+        "选择一种模式（标准或双重验证器）。",
+        "输入您的秘密数据。",
+        "生成加密分片或块。",
+        "安全保存输出（二维码或文本）。"
+      ]
+    },
+    "dual": {
+      "title": "双重验证器模式",
+      "coreConcept": {
+        "title": "核心概念",
+        "description": "與标准加密不同，此模式需要<strong>两個單独的密钥</strong>（密钥 A 和密钥 B）来解密。它將信任分散在两個不同的验证器令牌/设备之间。"
+      },
+      "encryption": {
+        "title": "1. 加密（生成）",
+        "step1": "输入您的助记词和密碼/上下文。",
+        "step2": "使用您的 Google 验证器应用扫描两個生成的二维碼（密钥 A 和密钥 B）。<strong>保存这些二维碼圖片！</strong>它們是您的永久密钥。",
+        "step3": "输入应用中的 6 位代碼以验证並锁定加密。",
+        "step4": "下载生成的二维碼分片圖片。"
+      },
+      "decryption": {
+        "title": "2. 解密（恢復）",
+        "important": {
+          "title": "重要：密钥 vs 代碼",
+          "content": "<strong>密钥 (QR/Secret)：</strong>您扫描的永久“密钥”。解密所需。<br/><strong>代碼 (6 位数)：</strong>每 30 秒生成的临時“令牌”。仅用于验证。",
+          "note": "* 您不能仅使用 6 位代碼解密。您必须上傳密钥二维碼或输入密钥字符串。"
+        },
+        "step1": "上傳您的所有分片圖片。",
+        "step2": "<strong>必须：</strong>上傳密钥 A 和密钥 B 的二维碼圖片（或粘贴密钥字符串）。",
+        "step3": "（可选）输入当前的 6 位代碼以验证正确性。"
+      },
+      "lost": {
+        "title": "3. 丢失了二维碼圖片？",
+        "description": "如果您的手机上仍有验证器应用：",
+        "steps": [
+          "打开 Google 验证器。",
+          "使用“导出账户”或“转移”功能。",
+          "这将显示包含您密钥的二维码。",
+          "扫描/解码该导出二维码以找回您的密钥字符串。"
+        ]
+      }
+    },
+    "security": {
+      "mode": {
+        "title": "1. 选择保护模式",
+        "description": "选择保护助记词或資料的最佳方式：",
+        "book": {
+          "physical": {
+            "title": "助记词/实体书",
+            "desc": "將您的密钥隐藏在书架上的真实书籍中。（页碼-行號-單词）"
+          },
+          "online": {
+            "title": "在线书籍 (URL)",
+            "desc": "使用永久的古腾堡 URL 作為密钥源。无需檔案。"
+          },
+          "digital": {
+            "title": "数字书籍 (檔案)",
+            "desc": "上傳古腾堡 TXT 檔案。本地处理，從不上傳。"
+          },
+          "index": {
+            "title": "通用索引",
+            "desc": "加密任意資料结构（例如，银行信息，密碼）。"
+          }
+        }
+      },
+      "obfuscate": {
+        "title": "2. 输入與混淆",
+        "description": "输入您的敏感資料。我們会要求您设置<0>行密度</0>（例如，100 行）。您的真实資料將隐藏在 99 個虚假行中的一個随机行中。",
+        "example": {
+          "fake1": "第 34 行: 832-19-22 (假)",
+          "real": "第 35 行: 123-45-67 (真实資料)",
+          "fake2": "第 36 行: 992-11-02 (假)"
+        }
+      },
+      "export": {
+        "title": "3. 导出與保存",
+        "description": "加密后，您將收到一個密文块。您必须保存此块！",
+        "ways": "保存方式：",
+        "email": "电子邮件（個人设备）",
+        "usb": "USB 下载（最安全）",
+        "print": "打印纸张（离线）"
+      },
+      "publicComputer": {
+        "title": "公共电脑安全",
+        "description": "如果您使用的是公共电脑（网吧、图书馆、朋友的电脑）：",
+        "steps": [
+          "不要登录您的个人电子邮件。",
+          "如果可能，不要使用剪贴板（复制/粘贴）。",
+          "使用结果页面上的<strong>“公共电脑模式”</strong>开关。",
+          "将文件下载到 USB 驱动器或用手机扫描二维码。",
+          "离开前点击<strong>“清除所有数据”</strong>。"
+        ]
+      },
+      "military": {
+        "title": "军用级加密",
+        "description": "我們使用 <strong>AES-256-GCM</strong> 加密。这是政府和银行使用的相同标准。您的密碼使用 <strong>PBKDF2-HMAC-SHA256</strong> 进行加盐和哈希处理，迭代 100,000 次，使暴力破解几乎不可能。"
+      },
+      "zk": {
+        "title": "零知识架构",
+        "description": "一切都在您的浏览器中进行。我們<strong>没有伺服器</strong>，没有資料库，没有日志。如果您關閉此标签页，除非您保存了备份，否则您的資料將永远丢失。"
+      },
+      "deniability": {
+        "title": "可否认性",
+        "description": "我們生成與您的真实資料无法区分的<strong>虚假诱饵行</strong>。即使有人强迫您解密檔案，您也可以声称任何假行是“真实”的，或者檔案根本不包含有意义的資料。加密数学隐藏了哪一行是真实的。"
+      },
+      "transparency": {
+        "title": "代碼透明度",
+        "description": "CryptoKey 是一個纯客户端应用程序。您可以在浏览器的开发者工具中检查源代碼。我們鼓励安全审计。不載入外部脚本或分析工具。"
+      }
+    },
+    "recover": {
+      "title": "如何解密",
+      "steps": {
+        "step1": {
+          "title": "选择模式",
+          "description": "选择用于加密的相同模式（实体、檔案或 URL）。如果使用檔案或 URL，必须提供完全相同的源书。"
+        },
+        "step2": {
+          "title": "粘贴密文",
+          "description": "從您的电子邮件或檔案中複製整個密文块（包括随机字符）。"
+        },
+        "step3": {
+          "title": "输入密碼",
+          "description": "输入您在加密時设置的密碼。"
+        },
+        "step4": {
+          "title": "识别您的行",
+          "description": "系統將解密所有行（真实 + 假）。您必须记住哪一行是您的（例如，第 35 行）以找到您的資料。"
+        }
+      }
+    }
+  },
+  "securityBadge": {
+    "button": "军用级安全",
+    "title": "安全架构",
+    "subtitle": "零知识证明 & 军用级加密",
+    "features": {
+      "aes": {
+        "title": "AES-256-GCM 加密",
+        "desc": "您的資料使用可用的最强标准（Web Crypto API）进行加密。我們使用 PBKDF2 进行 100,000 次迭代的密钥派生。"
+      },
+      "steganography": {
+        "title": "书本密碼隐写术",
+        "desc": "將敏感資料隐藏在常规书籍文本（古腾堡/实体）中。攻击者只能看到无害的页/行/词索引，而不是密文。"
+      },
+      "dual": {
+        "title": "双重因素 & 分片",
+        "desc": "新的双重验证器模式將加密拆分在两個單独的密钥（A 和 B）之间，加上 QR 分片以实现冗余。即使一個密钥泄露，您的資料仍然安全。"
+      },
+      "zk": {
+        "title": "零知识",
+        "desc": "我們從不查看您的密碼或資料。一切都在您的浏览器中本地发生。没有任何資料发送到我們的伺服器。"
+      },
+      "noPersistence": {
+        "title": "无持久化",
+        "desc": "我們不使用 Cookie、本地存储或伺服器資料库。数字书籍 (TXT) 仅在本地处理，從不上傳。"
+      },
+      "antiTheft": {
+        "title": "防盗保护",
+        "desc": "输入字段防止自动填充和缓存。离开時内存会被主动清除。在公共电脑上使用也很安全。"
+      }
+    },
+    "audit": {
+      "title": "技术审计",
+      "badges": {
+        "pbkdf2": "PBKDF2-SHA256",
+        "aes": "AES-GCM-256",
+        "client": "仅客户端",
+        "noUploads": "无上傳 (檔案模式)",
+        "noLog": "无日志政策",
+        "wipe": "内存清除"
+      }
+    }
+  },
+  "wizard": {
+    "modeSelection": {
+      "title": "选择恢復模式",
+      "subtitle": "选择您想要加密/恢復資料的方式。",
+      "mnemonic": {
+        "title": "助记词",
+        "desc": "使用 12/24 個單词的种子短语作為密钥源。",
+        "features": {
+          "compliance": "符合 BIP-39 标准",
+          "encryption": "标准加密",
+          "security": "高安全性"
+        },
+        "recommended": "推荐"
+      },
+      "physical": {
+        "title": "实体书",
+        "desc": "將您的密钥隐藏在书架上的真实书籍中。",
+        "features": {
+          "manual": "手动输入",
+          "ownBook": "使用您自己的书",
+          "flexible": "灵活且隐蔽"
+        }
+      },
+      "digital": {
+        "title": "数字书 (檔案)",
+        "desc": "上傳文本檔案作為您的密钥源。",
+        "features": {
+          "local": "本地处理",
+          "noUpload": "无伺服器上傳",
+          "offline": "离线工作"
+        }
+      },
+      "url": {
+        "title": "在线书 (URL)",
+        "desc": "使用永久 URL 作為您的密钥源。",
+        "features": {
+          "remote": "远程内容",
+          "convenient": "便捷访问",
+          "dynamic": "动态引用"
+        }
+      },
+      "passwordBook": {
+        "title": "轻量级密碼本",
+        "desc": "將密碼和笔记加密為便携索引。",
+        "features": {
+          "anyText": "支持任意文本",
+          "portable": "高度便携",
+          "secure": "军工级安全"
+        }
+      }
+    },
+    "inputStep": {
+      "title": {
+        "mnemonic": "输入助记词 / 任意文本",
+        "file": "上傳檔案",
+        "url": "输入 URL",
+        "general": "输入資料",
+        "password": "保护密碼與笔记"
+      },
+      "subtitle": {
+        "mnemonic": "输入助记词或任意文本 (密碼/私密信息)。",
+        "file": "上傳要加密的文本檔案。",
+        "url": "输入 URL 以获取内容。",
+        "general": "输入任何文本資料进行加密。",
+        "password": "输入您想要加密的文本、密碼或秘密笔记。"
+      },
+      "file": {
+        "loaded": "檔案載入成功",
+        "upload": "拖放或點擊上傳",
+        "sizeLoaded": "已載入",
+        "maxSize": "最大 5MB • TXT",
+        "scheme": "加密方案",
+        "schemes": {
+          "offset": "字符偏移",
+          "chapter": "章节索引",
+          "virtual": "虚拟行",
+          "chapterDesc": "书籍/法律引用格式 (如 1-20-5)",
+          "offsetDesc": "紧凑数字序列 (如 12345-8)",
+          "virtualDesc": "代碼/日志行號格式 (如 150-5)"
+        },
+        "dragDrop": "點擊打开保险箱",
+        "schemeTooltip": "选择如何在檔案结构中隐藏資料。"
+      },
+      "url": {
+        "fetch": "获取内容",
+        "proxy": {
+          "title": "本地代理已激活",
+          "desc": "正在使用本地代理进行开发。"
+        },
+        "success": "已載入 {{count}} 個字符",
+        "recommended": "推荐书籍",
+        "clickToFill": "點擊填充",
+        "guide": "输入您要使用的书籍的网址。"
+      },
+      "general": {
+        "placeholder": "输入資料行...",
+        "addLine": "添加新行",
+        "generate": "随机資料"
+      },
+      "mnemonic": {
+        "label": "助记词 / 任意文本",
+        "required": "(必填)",
+        "placeholder": "输入您的 12-24 個助记词，或输入任何您想加密的文本/密碼...",
+        "paste": "粘贴",
+        "generate": "生成",
+        "typeTag": "助记词 / 文本",
+        "tooltip": "在此处输入您的助记词。"
+      }
+    },
+    "mixStep": {
+      "title": "设置加密密碼",
+      "subtitle": "设置一個强密碼来加密您的保管库。",
+      "password": {
+        "label": "设置加密密碼",
+        "placeholder": "输入强密碼"
+      },
+      "confirm": {
+        "label": "确认密碼",
+        "placeholder": "再次输入密碼"
+      },
+      "rowCount": {
+        "label": "行数 (混合密度)",
+        "help": "计数越高 = 匿名性越好。",
+        "upgrade": "(限制：100。點擊升级)",
+        "proRequired": "大于 100 的值需要專業版许可证。"
+      },
+      "duress": {
+        "label": "胁迫密碼 (可选)",
+        "help": "建立一個使用不同密碼打开的虚假保管库。如果被迫解鎖设备，請使用此密碼。",
+        "passwordLabel": "胁迫密碼",
+        "placeholder": "與真实密碼不同",
+        "fakeContentLabel": "虚假内容 (诱饵)"
+      },
+      "error": {
+        "required": "密碼為必填项",
+        "mismatch": "密碼不匹配",
+        "minLength": "密碼至少需要 8 個字符",
+        "duressRequired": "胁迫密碼為必填项",
+        "duressSame": "胁迫密碼不能與真实密碼相同",
+        "encryptionFailed": "加密失败。請重试。"
+      }
+    },
+    "resultStep": {
+      "success": {
+        "banner": "加密成功",
+        "title": "您的备份已就绪",
+        "subtitle": "保存密文並记住您的凭据。"
+      },
+      "mode": {
+        "personal": "個人",
+        "public": "公共"
+      },
+      "realIndex": {
+        "title": "真实行索引",
+        "help": "这是唯一包含您資料的行。其他所有行都是假的。"
+      },
+      "mnemonic": {
+        "title": "原始助记词"
+      },
+      "hash": {
+        "label": "哈希"
+      },
+      "actions": {
+        "copy": "複製",
+        "copied": "已複製！",
+        "download": "下载",
+        "email": "电子邮件",
+        "print": "打印",
+        "clickToSelect": "點擊全选"
+      },
+      "dualAuth": {
+        "button": "生成双重验证分片",
+        "pro": "專業版功能：升级以访问"
+      },
+      "reset": "重置",
+      "fileContent": {
+        "ciphertext": "密文"
+      }
+    }
+  },
+  "decryption": {
+    "title": "解密工具",
+    "subtitle": "從各种来源恢復您的原始消息",
+    "status": {
+      "scanning": "正在扫描...",
+      "processing": "正在处理流資料...",
+      "reassembling": "正在重组與解压缩...",
+      "scanProgress": "正在扫描... {{current}} / {{total}}..."
+    },
+    "alert": {
+      "dualAuthTitle": "检测到双重认证",
+      "dualAuthDesc": "此内容受双重认证保护。",
+      "switchToDual": "切换到双重认证模式",
+      "backToStandard": "返回标准解密",
+      "dualAuthBadge": "双重认证模式"
+    },
+    "label": {
+      "ciphertext": "密文 / 加密資料",
+      "closeScanner": "關閉扫描器",
+      "password": "解密密碼",
+      "failedFiles": "失败檔案：",
+      "missingParts": "缺失部分：",
+      "fragmentsFound": "找到片段：",
+      "uploadRemaining": "上傳剩余部分"
+    },
+    "button": {
+      "scanStream": "扫描流",
+      "uploadQRShards": "上傳二维碼分片",
+      "paste": "粘贴",
+      "decrypt": "解密資料"
+    },
+    "placeholder": {
+      "ciphertext": "在此粘贴您的密文、加密块或二维碼内容...",
+      "password": "输入用于加密的密碼"
+    },
+    "mode": {
+      "physicalBook": "助记词/实体书",
+      "digitalBook": "数字书籍（檔案）",
+      "onlineBook": "在线书籍（URL）"
+    },
+    "file": {
+      "title": "上傳书籍檔案",
+      "description": "上傳加密時使用的<strong>完全相同的古腾堡 TXT 檔案</strong>。",
+      "loaded": "已載入：{{size}} KB",
+      "choose": "选择古腾堡 TXT 檔案...",
+      "browse": "浏览",
+      "parsed": "成功解析了 {{count}} 章"
+    },
+    "url": {
+      "title": "获取书籍 URL",
+      "description": "输入加密時使用的<strong>完全相同的古腾堡 HTML URL</strong>。",
+      "placeholder": "https://www.gutenberg.org/cache/epub/...",
+      "fetch": "获取",
+      "loaded": "已載入：{{length}} 字符（哈希：{{hash}}...）"
+    },
+    "locate": {
+      "title": "定位資料",
+      "description": "您的資料在哪一行？",
+      "row": "行"
+    },
+    "result": {
+      "title": "恢復的資料（第 {{row}} 行）",
+      "copy": "複製",
+      "copied": "已複製！",
+      "empty": "行為空或无效",
+      "rowAppears": "第 {{row}} 行似乎為空或包含无效資料。",
+      "enterRow": "输入您隐藏資料的行號（1-100+）以显示它。",
+      "rawPreview": "原始資料预览"
+    },
+    "errors": {
+      "incompleteData": "資料不完整：找到 {{current}}/{{total}} 部分",
+      "invalidFormat": "（无效格式）",
+      "noQrFound": "（未找到 QR 碼）",
+      "failedToReadFile": "（读取檔案失败）",
+      "decryptionFailed": "解密失败。請检查您的密碼。"
+    },
+    "error": {
+      "fileMode": "請上傳原始书籍檔案以恢復資料。",
+      "fileModeUnknown": "檔案模式的資料格式未知。",
+      "urlMode": "請获取书籍 URL 以恢復資料。",
+      "clipboard": "无法访问剪贴板。請手动粘贴。",
+      "decryptFailed": "解密失败。請检查您的密碼。"
+    },
+    "expectedType": {
+      "tooltip": "通过生成看似符合预期类型（如伪造的信用卡號）的虚假資料，帮助混淆失败的解密尝试。",
+      "creditcard": "信用卡",
+      "creditcardDesc": "虚假信用卡號",
+      "mnemonic": "助记词",
+      "mnemonicDesc": "虚假的12/24個單词",
+      "password": "密碼",
+      "passwordDesc": "虚假密碼",
+      "privatekey": "私钥",
+      "privatekeyDesc": "虚假私钥（十六进制）",
+      "text": "任意文本",
+      "textDesc": "随机文本段落",
+      "title": "预期结果类型"
+    }
+  },
+  "steganography": {
+    "mode": {
+      "hide": "隐藏資料",
+      "extract": "提取資料",
+      "encrypt": "加密並分片",
+      "decrypt": "解密並恢復",
+      "hideFiles": "隐藏檔案",
+      "extractFiles": "提取檔案"
+    },
+    "label": {
+      "carrierImages": "載體圖片",
+      "imagesLoaded": "张圖片已載入",
+      "source": "来源：{{name}}",
+      "original": "原始：{{name}}",
+      "uploadImages": "上傳圖片",
+      "uploadExtractHelp": "上傳所有分片圖片以重组。",
+      "uploadHideHelp": "上傳載體圖片。",
+      "limitInfo": "免費：3张。專業版：无限。",
+      "secretMessage": "秘密信息",
+      "enableSharding": "启用秘密共享（分片）",
+      "proOnly": "(仅限專業版)",
+      "totalShares": "总分片数 (N)",
+      "threshold": "解密所需数 (K)",
+      "strictMatching": "严格檔案名匹配",
+      "strictMatchingHelp": "只有檔案名與原始名称完全匹配時才能解密。",
+      "extractedContent": "提取的内容"
+    },
+    "placeholder": {
+      "pasteCiphertext": "在此粘贴加密的密文...",
+      "shardFilename": "分片-{{index}}.png",
+      "outputFilename": "输出檔案名"
+    },
+    "warning": {
+      "title": "严重警告：",
+      "text": "請勿直接输入明文（如助记词）！任何拥有圖片的人都可以提取它。請务必先加密資料（例如使用“加密”选项卡），然后在此处粘贴密文。",
+      "compression": "重要提示：如果檔案被压缩或重新编碼（例如通过社交应用发送），隐藏資料將丢失。务必以「原始檔案」方式传输。",
+      "password": "提示：如果使用密碼，丢失后无法恢復。請妥善保存。"
+    },
+    "button": {
+      "clearAll": "清除所有",
+      "paste": "粘贴",
+      "generateShards": "生成並下载分片",
+      "hideData": "隐藏資料並下载",
+      "copied": "已複製！",
+      "copy": "複製",
+      "extractHidden": "提取隐藏資料"
+    },
+    "status": {
+      "successHide": "資料隐藏成功！圖片已下载。",
+      "successShards": "成功生成並下载 {{count}} 個分片圖片。",
+      "noData": "未找到有效的隐藏資料。如果使用了严格模式，請检查檔案名。",
+      "reconstructFailed": "重组失败：{{error}}。下方显示原始資料。",
+      "waitingImage": "等待圖片...",
+      "successExtract": "解密成功！",
+      "keyFilesRequired": "解密需要密钥檔案",
+      "reconstructing": "正在重建密钥...",
+      "decryptingPayload": "正在解密資料...",
+      "success": "成功！"
+    },
+    "about": {
+      "title": "关于隐写术",
+      "text": "此工具將您的資料隐藏在图像像素的最低有效位 (LSB) 中。生成的图像在肉眼看来完全相同，但包含您的秘密信息。",
+      "noteTitle": "注意：",
+      "noteText": "請勿压缩下载的图像（例如，通过 WhatsApp/Messenger 发送通常会压缩图像）。始终以檔案（文档）形式共享或严格保存在本地。"
+    },
+    "error": {
+      "copyFailed": "複製到剪贴板失败"
+    },
+    "card": {
+      "image": {
+        "title": "图像隐写术",
+        "desc": "使用LSB隐写术將文本消息隐藏在图像中。"
+      },
+      "file": {
+        "title": "檔案保險庫",
+        "desc": "安全地合並和分片多個檔案為加密碎片。"
+      },
+      "imageVault": {
+        "title": "图像金库",
+        "desc": "在图像載體中隐藏任何檔案。"
+      },
+      "video": {
+        "title": "視訊金库",
+        "desc": "在視訊流中隐藏信息。"
+      }
+    },
+    "fileVault": {
+      "title": "檔案保險庫",
+      "description": "將多個檔案加密並分片為多個安全檔案片段。",
+      "encryptTitle": "建立安全保險庫",
+      "decryptTitle": "打开安全保險庫",
+      "encryptDesc": "將多個檔案合並為單個加密包，可选分片以进行分布式存储。",
+      "decryptDesc": "從單個加密包或多個分片中恢復檔案。",
+      "selectedFiles": "已选择 {{count}} 個檔案",
+      "warning": {
+        "title": "重要安全提醒",
+        "password": "如果丢失密碼或密钥檔案，資料將无法恢復。請妥善保管。",
+        "sharding": "负载分片將加密資料分割成多個部分以分布式存储。需要所有部分才能解密。"
+      },
+      "about": {
+        "title": "关于檔案保險庫",
+        "text": "檔案保險庫允许您將多個檔案打包成單個加密包。您可以启用负载分片將结果分割成多個部分以分布式存储（例如云服务）。多密钥模式使用 Shamir 秘密共享，需要多個密钥檔案才能解密。",
+        "noteTitle": "最佳实践：",
+        "note": "始终备份您的密碼和密钥檔案。如果使用分片，請將各部分存储在不同位置。為了最大安全性，請结合使用密碼 + 密钥檔案 + 分片。"
+      },
+      "tip": {
+        "compression": "默认启用压缩以在加密前减小檔案大小。",
+        "shamir": "多密钥模式提供分布式信任 - 單個密钥檔案无法單独解密資料。"
+      }
+    },
+    "imageVault": {
+      "title": "圖片保險庫",
+      "description": "使用高级隐写术將任何檔案隐藏在圖片中。",
+      "hideTitle": "在圖片中隐藏檔案",
+      "extractTitle": "從圖片中提取檔案",
+      "hideDesc": "选择載體圖片和要隐藏的檔案。檔案將被加密並不可见地嵌入。",
+      "extractDesc": "上傳包含隐藏檔案的圖片以恢復它們。",
+      "aboutText": "图像隐写术將資料不可见地隐藏在图像像素中。",
+      "aboutNote": "載體图像会略微修改但视觉上完全相同。",
+      "warning": {
+        "title": "图像隐写关键规则",
+        "capacity": "图像容量取决于分辨率。分辨率越高 = 存储空间越大。如果超出容量，請选择更大的图像。",
+        "format": "输出始终為 PNG 格式。請勿转换為 JPG 或压缩，否则將永久破坏隐藏資料。",
+        "transfer": "分享時，請始终使用\"作為檔案发送\"或\"原始质量\"。社交媒体平台会压缩图像並破坏隐藏資料。"
+      },
+      "tip": {
+        "carrier": "选择復杂图像（照片、风景）而不是简單图形，以获得更好的隐写效果。",
+        "security": "為了最大安全性，請启用密碼 + 密钥檔案 + 多密钥分片。"
+      }
+    },
+    "videoVault": {
+      "title": "視訊保險庫",
+      "description": "在視訊帧中隐藏資料。",
+      "hideTitle": "在視訊中隐藏檔案",
+      "extractTitle": "從視訊中提取檔案",
+      "hideDesc": "选择載體視訊和要隐藏的檔案。檔案將安全地附加到視訊中。",
+      "extractDesc": "上傳包含隐藏檔案的視訊以恢復它們。",
+      "aboutText": "視訊隐写术將加密資料附加在視訊帧之后。",
+      "aboutNote": "視訊可以正常播放，隐藏資料位于末尾。",
+      "warning": {
+        "title": "重要視訊隐写警告",
+        "format": "隐藏資料附加到視訊檔案中。請勿重新编碼、压缩或更改視訊格式，否则將破坏隐藏資料。",
+        "transfer": "分享時，請始终作為原始檔案传输。視訊流媒体平台会重新编碼視訊並破坏隐藏資料。",
+        "size": "输出視訊大小会略大（增加隐藏檔案的大小）。这是正常且预期的。"
+      },
+      "tip": {
+        "carrier": "任何視訊格式都可以（MP4、WebM 等）。隐藏資料與格式无关。",
+        "detection": "視訊隐写高度隐蔽 - 視訊正常播放，檔案大小增加最小。"
+      }
+    },
+    "input": {
+      "filesToHide": "选择要加密的檔案",
+      "filesToRecover": "选择加密檔案/分片",
+      "carrier": "1. 选择載體圖片（PNG/JPG）",
+      "stegoImage": "1. 选择包含隐藏資料的圖片",
+      "carrierVideo": "1. 选择載體視訊（MP4/WebM）",
+      "stegoVideo": "1. 选择包含隐藏資料的視訊",
+      "clickUploadImage": "點擊上傳圖片"
+    },
+    "dropzone": {
+      "title": "點擊上傳檔案",
+      "subtitle": "支持选择多個檔案"
+    },
+    "sharding": {
+      "enable": "启用分片",
+      "count": "分片数量（N）",
+      "note": "檔案將被分割成 N 個部分。需要所有部分才能恢復檔案。"
+    },
+    "action": {
+      "encrypt": "加密檔案",
+      "decrypt": "恢復檔案",
+      "embed": "嵌入檔案",
+      "extract": "提取檔案"
+    },
+    "result": {
+      "success": "操作成功",
+      "downloadAll": "下载全部",
+      "imageReady": "隐写圖片已生成！",
+      "filesRecovered": "已恢復 {{count}} 個檔案！",
+      "videoReady": "隐写視訊已生成！",
+      "videoReadyDesc": "您的檔案已安全地隐藏在視訊中。",
+      "clickToDownload": "點擊图标下载單個檔案",
+      "waiting": "等待操作..."
+    },
+    "process": {
+      "packing": "正在打包檔案...",
+      "encrypting": "正在加密...",
+      "sharding": "正在分片...",
+      "analyzing": "正在分析檔案...",
+      "merging": "正在合並分片...",
+      "decrypting": "正在解密...",
+      "unpacking": "正在解包...",
+      "embedding": "正在嵌入資料...",
+      "extracting": "正在提取資料..."
+    },
+    "fileCount": "已选择 {{count}} 個檔案",
+    "selectFiles": "选择要隐藏的檔案",
+    "preview": {
+      "waitingHide": "结果將显示在这里",
+      "waitingExtract": "恢復的檔案將显示在这里"
+    },
+    "keyFile": {
+      "label": "密钥檔案（可选，高级安全）",
+      "placeholder": "选择一個檔案作為第二密钥（例如照片、歌曲、电子书）",
+      "help": "如果使用，解密時需要完全相同的檔案。單位元組差異將导致解密失败。",
+      "mode": "密钥檔案模式",
+      "addSingle": "添加密钥檔案",
+      "addFiles": "添加檔案",
+      "clear": "清除",
+      "clearAll": "清除全部"
+    },
+    "enterPassword": "输入密碼",
+    "compression": {
+      "label": "启用压缩",
+      "desc": "减小檔案大小（可能影响质量）"
+    },
+    "security": {
+      "title": "安全选项",
+      "usePassword": "使用密碼"
+    },
+    "shamir": {
+      "filesCount": "已选择 {{count}} 個檔案进行分片",
+      "thresholdLabel": "阈值",
+      "requiredFiles": "这 {{total}} 個檔案中的任意 {threshold} 個將用于解密。",
+      "modalTitle": "多密钥认证",
+      "modalDesc": "此檔案受多個密钥檔案保护。",
+      "modalRequired": "您需要提供至少 {threshold} 個有效檔案。",
+      "uploadKeyFiles": "上傳密钥檔案",
+      "filesSelected": "已选择 {{count}} 個檔案",
+      "verifying": "验证中...",
+      "unlock": "解鎖",
+      "cancel": "取消",
+      "modalNeedFiles": "您需要提供至少 <strong>{threshold}</strong> 個有效檔案。"
+    },
+    "keyMode": {
+      "single": "單密钥",
+      "multiKey": "多密钥（分片）"
+    },
+    "filesSelected": "已选择 {{count}} 個檔案"
+  },
+  "wallet": {
+    "title": "安全钱包生成器",
+    "subtitle": "生成符合 BIP39/BIP44 标准的钱包。100% 客户端运行。",
+    "strength": {
+      "12words": "12 個助记词 (128位)",
+      "24words": "24 個助记词 (256位)"
+    },
+    "action": {
+      "generate": "生成新钱包",
+      "import": "导入助记词"
+    },
+    "import": {
+      "title": "导入现有钱包",
+      "placeholder": "在此输入您的 12、15、18、21 或 24 個助记词...",
+      "paste": "粘贴",
+      "submit": "导入钱包"
+    },
+    "error": {
+      "invalidMnemonic": "无效的助记词"
+    },
+    "mnemonic": {
+      "title": "恢復短语 (助记词)",
+      "reveal": "點擊显示"
+    },
+    "copyTo": {
+      "encrypt": "複製到“输入助记词”",
+      "steganography": "複製到“隐写术”"
+    },
+    "details": {
+      "title": "钱包详情",
+      "showKeys": "显示敏感密钥",
+      "hideKeys": "隐藏敏感密钥",
+      "ethAddress": "以太坊地址 (BIP44)",
+      "path": "路径: {{path}} (标准 Metamask/Ledger)",
+      "privateKey": "私钥",
+      "publicKey": "公钥",
+      "addressQr": "地址二维碼"
+    },
+    "security": {
+      "title": "安全警告",
+      "line1": "請將这些單词写在纸上並妥善保存。",
+      "never": "切勿",
+      "line2": "與任何人分享。",
+      "line3": "如果您丢失了这些單词，您的资金將永远丢失。"
+    },
+    "tooltip": {
+      "pasteClipboard": "從剪贴板粘贴",
+      "hide": "隐藏",
+      "show": "显示",
+      "copyClipboard": "複製到剪贴板"
+    }
+  },
+  "installAuth": {
+    "redirecting": "正在跳转到应用商店...",
+    "detecting": "正在检测您的设备..."
+  },
+  "languageSwitcher": {
+    "changeLanguage": "更改语言"
+  },
+  "mixStep": {
+    "duress": {
+      "defaultMessage": "访问被拒绝。未经授权的尝试已记录。"
+    },
+    "error": {
+      "accessDenied": "访问被拒绝。未经授权的尝试已记录。",
+      "passwordRequired": "密碼為必填项",
+      "passwordMismatch": "密碼不匹配",
+      "passwordTooShort": "密碼必须至少8個字符",
+      "duressPasswordRequired": "胁迫密碼為必填项",
+      "duressPasswordSame": "胁迫密碼不能與真实密碼相同"
+    }
+  },
+  "inputStep": {
+    "error": {
+      "invalidMnemonic": "无效的助记词。請检查您的單词。",
+      "enterCiphertext": "請输入密文資料",
+      "invalidMode": "无效的模式或缺少資料",
+      "encryptionFailed": "加密过程失败。請检查您的输入。",
+      "parseFileFailed": "解析檔案失败。請确保它是有效的文本檔案。",
+      "invalidUrl": "无效的 URL",
+      "fetchUrlFailed": "获取 URL 失败"
+    },
+    "placeholder": {
+      "bookUrl": "https://gutenberg.org/files/..."
+    },
+    "tooltip": {
+      "removeLine": "删除行",
+      "generateRandom": "生成随机資料",
+      "pasteClipboard": "從剪贴板粘贴",
+      "generateMnemonic": "生成随机助记词"
+    },
+    "label": {
+      "password": "密碼 / 秘密备注"
+    }
+  },
+  "resultStep": {
+    "print": {
+      "title": "CryptoKey 安全备份"
+    },
+    "clipboard": {
+      "labels": "密文：{{ciphertext}}\n哈希：{{hash}}"
+    },
+    "fileContent": {
+      "header": "【CryptoKey 安全备份】",
+      "ciphertext": "密文：",
+      "hash": "哈希值：",
+      "footer": "解密地址：https://cryptokey.im",
+      "generated": "生成時间：{{date}}",
+      "note": "注意：需要密碼 + 行索引才能解密。"
+    },
+    "watermark": "在 https://CryptoKey.im 解密 | 生成于 {{date}}"
+  },
+  "shardDualAuth": {
+    "prefix": {
+      "ciphertext": "CryptoKey:密文",
+      "passwordLine": "CryptoKey:密碼行",
+      "default": "CryptoKey"
+    },
+    "status": {
+      "finalizing": "正在完成..."
+    },
+    "errors": {
+      "invalidFormat": "（无效格式）",
+      "integrityFailed": "完整性检查失败：重组的資料已损坏。請重新扫描。",
+      "decompressionError": "解压缩错误：資料格式错误。請尝试重新上傳圖片，确保它們清晰完整。",
+      "decompressionFailed": "解压缩失败：{{error}}"
+    },
+    "error": {
+      "generationFailed": "生成失败",
+      "startProcessing": "开始处理...",
+      "processingImage": "正在处理第 {{current}} 张圖片，共 {{total}} 张..."
+    }
+  },
+  "license": {
+    "alerts": {
+      "systemClockError": "检测到系統時钟错误。請更正您的系統時间以继续使用 Pro 功能。",
+      "deactivateConfirm": "停用 Real Pro 许可证？",
+      "usbRemoved": "USB密钥已移除"
+    },
+    "proRequired": "此功能需要專業版许可"
+  },
+  "mixStepButtons": {
+    "back": "返回",
+    "processing": "处理中...",
+    "encryptGenerate": "加密並生成"
+  },
+  "steganographyExtra": {
+    "successGenerated": "成功生成並下载了 {{count}} 個分片圖片。",
+    "carrierImages": "載體圖片",
+    "strictMatchRequired": "需要严格匹配"
+  },
+  "wasmBenchmark": {
+    "title": "Wasm 性能基准测试",
+    "testConfig": "测试配置",
+    "algorithm": "算法：Shamir's Secret Sharing (GF(2^8))",
+    "shares": "分片：总共 5 個，阈值 3",
+    "payload": "载荷：随机 32 字节密钥 + 校验和",
+    "steganography": "隐写术：LSB 嵌入在 100x100 缓冲区上",
+    "running": "正在运行测试...",
+    "startBenchmark": "开始基准测试（原始证据）",
+    "jsTime": "JS 時间",
+    "wasmTime": "Wasm 時间",
+    "fasterSuffix": "快 {{ratio}} 倍",
+    "correctness": "正确性",
+    "verified": "已验证",
+    "failed": "失败",
+    "waiting": "等待开始..."
+  },
+  "footerExtra": {
+    "shareTitle": "CryptoKey.im - 安全备份",
+    "brandName": "CryptoKey.im"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "中文简",
+    "zhTW": "中文繁",
+    "ja": "日本語",
+    "ko": "한국어",
+    "hi": "हिन्दी",
+    "vi": "Tiếng Việt",
+    "tr": "Türkçe",
+    "pt": "Português",
+    "id": "Bahasa Indonesia",
+    "fr": "Français",
+    "de": "Deutsch",
+    "es": "Español"
+  },
+  "payment": {
+    "chains": {
+      "bsc": "币安智能链",
+      "trx": "波场",
+      "eth": "以太坊"
+    },
+    "standards": {
+      "bep20": "BEP20",
+      "trc20": "TRC20",
+      "erc20": "ERC20"
+    }
+  },
+  "benchmark": {
+    "log": {
+      "starting": "开始基准测试...",
+      "runningJs": "运行 JS 实现...",
+      "loadingWasm": "載入 Wasm 模块...",
+      "runningWasm": "运行 Wasm 实现..."
+    },
+    "validation": {
+      "pass": "通过",
+      "fail": "失败",
+      "result": "验证结果：{{result}}"
+    }
+  },
+  "errors": {
+    "bindAuthFirst": "請先绑定身份验证器",
+    "invalidDataFormat": "无效的資料格式",
+    "hashMismatch": "哈希不匹配",
+    "noValidQr": "未找到有效的二维碼",
+    "passwordIncorrect": "任何保險庫内容的密碼不正确",
+    "couldNotReadQr": "无法读取二维碼",
+    "invalidAuthQr": "无效的身份验证二维碼",
+    "noSecretInQr": "二维碼中未找到密钥",
+    "authAIncorrect": "身份验证器 A 代碼不正确",
+    "authBIncorrect": "身份验证器 B 代碼不正确",
+    "decryptCiphertextFailed": "解密密文失败（密钥 A 可能错误）",
+    "decryptContextFailedA": "解密上下文失败（密钥 B 可能错误）",
+    "decryptMnemonicFailed": "解密助记词失败（密钥 A 可能错误）",
+    "decryptContextFailedB": "解密上下文失败（密钥 B 可能错误）",
+    "shardIntegrityError": "分片完整性错误：檔案 {{filename}} 属于不同的集合。請确保所有檔案来自同一加密会话。",
+    "shareApiNotSupported": "不支持共享 API",
+    "canvasContext": "无法获取画布上下文",
+    "invalidShareType": "jsSplit 返回无效类型：{{type}}",
+    "wasmLoadFailed": "載入 Wasm 模块失败",
+    "noFile": "請先选择檔案",
+    "noPassword": "密碼為必填项",
+    "capacityExceeded": "容量超出。需要 {{needed}} KB，但圖片仅有 {{available}} KB。",
+    "noHiddenData": "未找到隐藏資料或格式无效。",
+    "freeLimitFiles": "免費版限制 {{limit}} 個檔案",
+    "freeLimitSize": "免費版限制总大小 {{size}} MB",
+    "minShamirFiles": "Shamir 分片至少需要 {{min}} 個檔案",
+    "emptyResponse": "伺服器返回空响应",
+    "loadFailed": "載入推荐資料失败",
+    "networkError": "网络错误"
+  },
+  "referral": {
+    "title": "邀請好友",
+    "desc": "邀請 3 位好友使用 CryptoKey，免費解鎖專業版功能！",
+    "yourCode": "您的邀請碼",
+    "copyLink": "複製邀請連結",
+    "stats": "已邀請: {{count}} / 3",
+    "unlocked": "專業版已解鎖！",
+    "offline": "离线模式下邀請系統不可用。",
+    "alreadyPro": "您已拥有專業版访问权限",
+    "localPro": "检测到本地專業版许可",
+    "loginRequired": "請登录以使用邀請系統",
+    "earned": "已获得 {{hours}}小時 / 24小時",
+    "nextReward": "下一奖励",
+    "progress": "{{current}} / {{total}}"
+  },
+  "landing": {
+    "card1": {
+      "title": "备份助记词",
+      "desc": "將您的加密货币恢復短语安全地隐藏在实体书中。"
+    },
+    "card2": {
+      "title": "密碼本",
+      "desc": "將密碼、笔记和日记加密為安全的便携格式。"
+    },
+    "card3": {
+      "title": "恢復資料",
+      "desc": "使用您的书籍密钥和密碼解密資料。"
+    }
+  },
+  "email": {
+    "file": {
+      "header": "【CryptoKey 安全备份】",
+      "ciphertext": "密文：",
+      "hash": "哈希值：",
+      "footer": "解密地址：https://cryptokey.im",
+      "generated": "生成時间：{{date}}",
+      "note": "注意：需要密碼+行索引才能解密。"
+    },
+    "subject": "通过 CryptoKey.im 加密的消息",
+    "body": {
+      "instruction": "【重要说明】",
+      "step1": "請附加您刚刚下载的檔案：「{{filename}}」（检查您的下载檔案夹）；",
+      "step2": "此附件包含您的加密备份和哈希值。請勿删除或修改；",
+      "step3": "您可以填写自己的电子邮件作為收件人进行备份。",
+      "footer": "解密資料地址：https://cryptokey.im",
+      "time": "备份時间：{{date}}"
+    },
+    "alert": {
+      "title": "✅ 需要操作：",
+      "step1": "您的电子邮件客户端现在应该已打开。",
+      "step2": "請點擊电子邮件中的「附加檔案」。",
+      "step3": "從下载檔案夹中选择檔案「{{filename}}」。",
+      "step4": "將电子邮件发送给自己以完成备份！",
+      "warning": "⚠️ 如果找不到檔案，請检查浏览器的下载历史记录（Ctrl+J 或 Command+J）。"
+    },
+    "error": "操作失败：{{error}}。請手动下载並发送电子邮件！"
+  },
+  "passwordManager": {
+    "title": "密碼管理器",
+    "subtitle": "安全管理您的加密密碼",
+    "save": "保存到密碼管理器",
+    "saveSuccess": "保存成功！",
+    "enterTitle": "输入标题（例如 Gmail）",
+    "empty": "尚无保存的密碼。",
+    "emptyTitle": "未保存密碼",
+    "emptyDesc": "使用「密碼本」工具在此处加密並保存您的密碼。",
+    "delete": "删除",
+    "decrypt": "解密",
+    "confirmDelete": "确定要删除此密碼吗？",
+    "copyCiphertext": "複製密文",
+    "rowLabel": "行號: {{row}}"
+  },
+  "invite": {
+    "success": "邀請碼已接受！",
+    "self": "您不能邀請自己",
+    "invalid": "无效的邀請碼",
+    "title": "邀請系統",
+    "subtitle": "分享您的邀請碼並邀請朋友",
+    "myCode": "我的邀請碼",
+    "shareDesc": "與您的朋友分享此邀請碼以邀請他們。",
+    "enterCode": "输入邀請人的邀請碼",
+    "alreadySet": "邀請人已设置",
+    "submit": "提交",
+    "placeholder": "ABC12345"
+  },
+  "plan": {
+    "proUnlimited": "專業版：无限制",
+    "proUnlimitedFiles": "專業版：无限檔案",
+    "freeLimit3Files": "免費版：最多3個檔案",
+    "freeLimit3FilesSize": "免費版：最多3個檔案 / 1.5MB",
+    "upgradeForUnlimited": "升级享无限制",
+    "upgrade": "升级"
+  }
+}

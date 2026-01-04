@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "분할용 {{count}}개 파일 선택됨",
       "thresholdLabel": "임계값",
-      "requiredFiles": "이 {total}개 파일 중 임의의 {threshold}개가 복호화에 필요합니다.",
+      "requiredFiles": "이 {{total}}개 파일 중 임의의 {threshold}개가 복호화에 필요합니다.",
       "modalTitle": "다중 키 인증",
       "modalDesc": "이 파일은 여러 키 파일로 보호됩니다.",
       "modalRequired": "최소 {threshold}개의 유효한 파일을 제공해야 합니다.",
       "uploadKeyFiles": "키 파일 업로드",
-      "filesSelected": "{count}개 파일 선택됨",
+      "filesSelected": "{{count}}개 파일 선택됨",
       "verifying": "확인 중...",
       "unlock": "잠금 해제",
       "cancel": "취소",
@@ -1205,7 +1205,7 @@
       "single": "단일 키",
       "multiKey": "다중 키 (샤딩)"
     },
-    "filesSelected": "{count}개 파일 선택됨"
+    "filesSelected": "{{count}}개 파일 선택됨"
   },
   "wallet": {
     "title": "보안 지갑 생성기",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "이미 프로 액세스 권한이 있습니다",
     "localPro": "로컬 프로 라이선스 감지됨",
     "loginRequired": "추천 시스템을 사용하려면 로그인하세요",
-    "earned": "{hours}시간 / 24시간 획득",
+    "earned": "{{hours}}시간 / 24시간 획득",
     "nextReward": "다음 보상",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "복호화",
     "confirmDelete": "이 비밀번호를 삭제하시겠습니까?",
     "copyCiphertext": "암호문 복사",
-    "rowLabel": "행: {row}"
+    "rowLabel": "행: {{row}}"
   },
   "invite": {
     "success": "초대 코드가 승인되었습니다!",

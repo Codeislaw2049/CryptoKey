@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "{{count}} Dateien für Fragmentierung ausgewählt",
       "thresholdLabel": "Schwellenwert",
-      "requiredFiles": "Beliebige {threshold} dieser {total} Dateien werden zum Entschlüsseln benötigt.",
+      "requiredFiles": "Beliebige {threshold} dieser {{total}} Dateien werden zum Entschlüsseln benötigt.",
       "modalTitle": "Multi-Schlüssel-Authentifizierung",
       "modalDesc": "Diese Datei ist durch mehrere Schlüsseldateien geschützt.",
       "modalRequired": "Sie müssen mindestens {threshold} gültige Dateien bereitstellen.",
       "uploadKeyFiles": "Schlüsseldateien Hochladen",
-      "filesSelected": "{count} Dateien ausgewählt",
+      "filesSelected": "{{count}} Dateien ausgewählt",
       "verifying": "Überprüfen...",
       "unlock": "Entsperren",
       "cancel": "Abbrechen",
@@ -1205,7 +1205,7 @@
       "single": "Einzelschlüssel",
       "multiKey": "Multi-Schlüssel (Fragmentiert)"
     },
-    "filesSelected": "{count} Dateien ausgewählt"
+    "filesSelected": "{{count}} Dateien ausgewählt"
   },
   "wallet": {
     "title": "Sicherer Wallet-Generator",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Sie haben bereits Pro-Zugang",
     "localPro": "Lokale Pro-Lizenz erkannt",
     "loginRequired": "Bitte melden Sie sich an, um das Empfehlungssystem zu nutzen",
-    "earned": "{hours}h / 24h Verdient",
+    "earned": "{{hours}}h / 24h Verdient",
     "nextReward": "Nächste Belohnung",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Entschlüsseln",
     "confirmDelete": "Sind Sie sicher, dass Sie dieses Passwort löschen möchten?",
     "copyCiphertext": "Geheimtext Kopieren",
-    "rowLabel": "ZEILE: {row}"
+    "rowLabel": "ZEILE: {{row}}"
   },
   "invite": {
     "success": "Einladungscode akzeptiert!",

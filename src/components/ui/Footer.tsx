@@ -70,7 +70,7 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className="mt-4 border-t border-slate-800/50 bg-slate-900/20 backdrop-blur-sm py-8" data-build-version={APP_VERSION} data-force-refresh="20260104-1">
+      <footer className="mt-4 border-t border-slate-800/50 bg-slate-900/20 backdrop-blur-sm py-8" data-build-version={APP_VERSION} data-force-refresh="20260104-2">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             

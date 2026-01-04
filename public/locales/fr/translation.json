@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "{{count}} fichiers sélectionnés pour la fragmentation",
       "thresholdLabel": "Seuil",
-      "requiredFiles": "N'importe quel {threshold} de ces {total} fichiers seront nécessaires pour déchiffrer.",
+      "requiredFiles": "N'importe quel {threshold} de ces {{total}} fichiers seront nécessaires pour déchiffrer.",
       "modalTitle": "Authentification Multi-Clé",
       "modalDesc": "Ce fichier est protégé par plusieurs fichiers de clé.",
       "modalRequired": "Vous devez fournir au moins {threshold} fichiers valides.",
       "uploadKeyFiles": "Télécharger des Fichiers de Clé",
-      "filesSelected": "{count} fichiers sélectionnés",
+      "filesSelected": "{{count}} fichiers sélectionnés",
       "verifying": "Vérification...",
       "unlock": "Déverrouiller",
       "cancel": "Annuler",
@@ -1205,7 +1205,7 @@
       "single": "Clé Unique",
       "multiKey": "Multi-Clé (Fragmenté)"
     },
-    "filesSelected": "{count} fichiers sélectionnés"
+    "filesSelected": "{{count}} fichiers sélectionnés"
   },
   "wallet": {
     "title": "Générateur de portefeuille sécurisé",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Vous avez déjà un accès Pro",
     "localPro": "Licence Pro locale détectée",
     "loginRequired": "Veuillez vous connecter pour utiliser le système de parrainage",
-    "earned": "{hours}h / 24h Gagné",
+    "earned": "{{hours}}h / 24h Gagné",
     "nextReward": "Prochaine Récompense",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Déchiffrer",
     "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce mot de passe ?",
     "copyCiphertext": "Copier le Texte Chiffré",
-    "rowLabel": "LIGNE: {row}"
+    "rowLabel": "LIGNE: {{row}}"
   },
   "invite": {
     "success": "Code d'invitation accepté !",

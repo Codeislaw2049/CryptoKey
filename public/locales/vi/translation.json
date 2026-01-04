@@ -1190,12 +1190,12 @@
     "shamir": {
       "filesCount": "Đã chọn {{count}} tệp để phân mảnh",
       "thresholdLabel": "Ngưỡng",
-      "requiredFiles": "Bất kỳ {threshold} trong số {total} tệp này sẽ cần thiết để giải mã.",
+      "requiredFiles": "Bất kỳ {threshold} trong số {{total}} tệp này sẽ cần thiết để giải mã.",
       "modalTitle": "Xác thực đa khóa",
       "modalDesc": "Tệp này được bảo vệ bởi nhiều tệp khóa.",
       "modalRequired": "Bạn cần cung cấp ít nhất {threshold} tệp hợp lệ.",
       "uploadKeyFiles": "Tải lên tệp khóa",
-      "filesSelected": "Đã chọn {count} tệp",
+      "filesSelected": "Đã chọn {{count}} tệp",
       "verifying": "Đang xác minh...",
       "unlock": "Mở khóa",
       "cancel": "Hủy",
@@ -1205,7 +1205,7 @@
       "single": "Khóa đơn",
       "multiKey": "Đa khóa (Phân mảnh)"
     },
-    "filesSelected": "Đã chọn {count} tệp"
+    "filesSelected": "Đã chọn {{count}} tệp"
   },
   "wallet": {
     "title": "Trình tạo ví bảo mật",
@@ -1461,9 +1461,9 @@
     "alreadyPro": "Bạn đã có quyền truy cập Pro",
     "localPro": "Đã phát hiện giấy phép Pro cục bộ",
     "loginRequired": "Vui lòng đăng nhập để sử dụng hệ thống giới thiệu",
-    "earned": "{hours}h / 24h Đã kiếm",
+    "earned": "{{hours}}h / 24h Đã kiếm",
     "nextReward": "Phần thưởng tiếp theo",
-    "progress": "{current} / {total}"
+    "progress": "{{current}} / {{total}}"
   },
   "landing": {
     "card1": {
@@ -1520,7 +1520,7 @@
     "decrypt": "Giải mã",
     "confirmDelete": "Bạn có chắc chắn muốn xóa mật khẩu này không?",
     "copyCiphertext": "Sao chép bản mã",
-    "rowLabel": "HÀNG: {row}"
+    "rowLabel": "HÀNG: {{row}}"
   },
   "invite": {
     "success": "Mã mời đã được chấp nhận!",
