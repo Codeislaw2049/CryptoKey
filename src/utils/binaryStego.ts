@@ -5,6 +5,7 @@
  */
 
 import { wasmManager } from '../wasm/wasmLoader';
+import i18n from '../i18n';
 
 const MAGIC_SIGNATURE = [0x49, 0x4D, 0x47, 0x56]; // "IMGV" (Image Vault)
 

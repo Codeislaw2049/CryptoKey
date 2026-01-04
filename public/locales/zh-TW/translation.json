@@ -1449,7 +1449,11 @@
     "minShamirFiles": "Shamir 分片至少需要 {{min}} 個檔案",
     "emptyResponse": "伺服器返回空響應",
     "loadFailed": "載入推薦資料失敗",
-    "networkError": "網路錯誤"
+    "networkError": "網路錯誤",
+    "wasmCritical": "严重错误：WASM 执行失败。请确保您的浏览器支持 WebAssembly。",
+    "wasmSecurity": "安全违规：PRO 功能需要加载 WebAssembly 核心。",
+    "wasmRequired": "PRO 功能需要 WASM 支持。",
+    "wasmNotReady": "WASM 未准备好用于许可证验证"
   },
   "referral": {
     "title": "邀請好友",

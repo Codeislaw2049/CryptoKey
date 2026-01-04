@@ -1,4 +1,4 @@
-// import { wasmManager } from '../wasm/wasmLoader';
+import { wasmManager } from '../wasm/wasmLoader';
 
 // Basic Shamir's Secret Sharing implementation in TypeScript
 // Uses GF(2^8) with primitive polynomial x^8 + x^4 + x^3 + x + 1 (0x11b)
@@ -91,18 +91,18 @@ export const splitJS = async (secret: string, shares: number, threshold: number)
   throw new Error("Sharding is a PRO feature. Please upgrade to use this functionality.");
 };
 
+import i18n from '../i18n';
+
 export const split = async (secret: string, shares: number, threshold: number): Promise<string[]> => {
-  /*
   const exports = wasmManager.getExports();
-  if (exports) {
-    try {
-      console.log("Using Wasm for Split");
-      return exports.split_secret(secret, shares, threshold);
-    } catch (e) {
-      console.warn("Wasm Split failed, falling back to JS", e);
-    }
+  
+  // Enforce WASM loaded in Production for security context check
+  if (import.meta.env.PROD && !exports) {
+      throw new Error(i18n.t('errors.wasmSecurity'));
   }
-  */
+
+  // Currently WASM implementation for Shamir is pending
+  // Using JS implementation securely within the validated context
   return splitJS(secret, shares, threshold);
 };
 
@@ -127,17 +127,15 @@ export const combineJS = async (shares: string[]): Promise<string> => {
 };
 
 export const combine = async (shares: string[]): Promise<string> => {
-  /*
   const exports = wasmManager.getExports();
-  if (exports) {
-    try {
-      console.log("Using Wasm for Combine");
-      return exports.combine_shares(shares);
-    } catch (e) {
-      console.warn("Wasm Combine failed, falling back to JS", e);
-    }
+  
+  // Enforce WASM loaded in Production for security context check
+  if (import.meta.env.PROD && !exports) {
+      throw new Error(i18n.t('errors.wasmSecurity'));
   }
-  */
+
+  // Currently WASM implementation for Shamir is pending
+  // Using JS implementation securely within the validated context
   return combineJS(shares);
 };
 

@@ -1448,7 +1448,11 @@
     "minShamirFiles": "Shamir को कम से कम {{min}} फ़ाइलों की आवश्यकता है",
     "emptyResponse": "सर्वर से खाली प्रतिक्रिया",
     "loadFailed": "रेफ़रल डेटा लोड करने में विफल",
-    "networkError": "नेटवर्क त्रुटि"
+    "networkError": "नेटवर्क त्रुटि",
+    "wasmCritical": "Critical Error: WASM execution failed. Please ensure your browser supports WebAssembly.",
+    "wasmSecurity": "Security Violation: PRO features require WebAssembly core to be loaded.",
+    "wasmRequired": "WASM required for PRO features.",
+    "wasmNotReady": "WASM not ready in PROD for license verification"
   },
   "referral": {
     "title": "दोस्तों को आमंत्रित करें",

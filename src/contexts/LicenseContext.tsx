@@ -391,15 +391,31 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
           try {
               const json = JSON.parse(text);
               if (json.content && json.signature) {
-                  const { verifyLicenseSignature } = await import('../utils/licenseVerification');
-                  isValid = await verifyLicenseSignature(json.content, json.signature);
-
-                  if (!isValid && wasmManager.isReady()) {
-                      const exports = wasmManager.getExports();
-                      if (exports && exports.verify_license_wasm) {
-                          const contentStr = typeof json.content === 'string' ? json.content : JSON.stringify(json.content);
-                          if (exports.verify_license_wasm(contentStr, json.signature)) {
-                              isValid = true;
+                  // NEW LOGIC: Priority to WASM in PROD
+                  if (import.meta.env.PROD) {
+                      if (wasmManager.isReady()) {
+                          const exports = wasmManager.getExports();
+                          if (exports && exports.verify_license_wasm) {
+                              const contentStr = typeof json.content === 'string' ? json.content : JSON.stringify(json.content);
+                              isValid = exports.verify_license_wasm(contentStr, json.signature);
+                          }
+                      } else {
+                          console.error("WASM not ready in PROD for license verification");
+                          // Fail open or closed? Closed.
+                          isValid = false;
+                      }
+                  } else {
+                      // DEV: Try JS first, then WASM
+                      const { verifyLicenseSignature } = await import('../utils/licenseVerification');
+                      isValid = await verifyLicenseSignature(json.content, json.signature);
+                      
+                      if (!isValid && wasmManager.isReady()) {
+                          const exports = wasmManager.getExports();
+                          if (exports && exports.verify_license_wasm) {
+                              const contentStr = typeof json.content === 'string' ? json.content : JSON.stringify(json.content);
+                              if (exports.verify_license_wasm(contentStr, json.signature)) {
+                                  isValid = true;
+                              }
                           }
                       }
                   }

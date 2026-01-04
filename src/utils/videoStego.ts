@@ -1,5 +1,6 @@
 
 import { wasmManager } from '../wasm/wasmLoader';
+import i18n from '../i18n';
 
 const MAGIC_SIGNATURE = 'CKVIDEOVAULT'; // 12 chars
 const TRAILER_SIZE = 20; // 12 (Sig) + 8 (Length)
