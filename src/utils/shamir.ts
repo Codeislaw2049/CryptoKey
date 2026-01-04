@@ -1,7 +1,11 @@
 import { wasmManager } from '../wasm/wasmLoader';
+import i18n from '../i18n';
 
 // Basic Shamir's Secret Sharing implementation in TypeScript
 // Uses GF(2^8) with primitive polynomial x^8 + x^4 + x^3 + x + 1 (0x11b)
+//
+// NOTE: This JS implementation is kept primarily for benchmarking and legacy support.
+// The production environment enforces usage of the WASM implementation.
 
 // Global tables for GF(2^8) arithmetic
 const LOG: number[] = [];
@@ -91,19 +95,30 @@ export const splitJS = async (secret: string, shares: number, threshold: number)
   throw new Error("Sharding is a PRO feature. Please upgrade to use this functionality.");
 };
 
-import i18n from '../i18n';
-
 export const split = async (secret: string, shares: number, threshold: number): Promise<string[]> => {
   const exports = wasmManager.getExports();
   
   // Enforce WASM loaded in Production for security context check
-  if (import.meta.env.PROD && !exports) {
-      throw new Error(i18n.t('errors.wasmSecurity'));
+  // AND actually use it!
+  if (!exports) {
+      if (import.meta.env.PROD) {
+          throw new Error(i18n.t('errors.wasmSecurity'));
+      } else {
+          console.warn("WASM not loaded, falling back to JS (DEV ONLY)");
+          return splitJS(secret, shares, threshold);
+      }
   }
 
-  // Currently WASM implementation for Shamir is pending
-  // Using JS implementation securely within the validated context
-  return splitJS(secret, shares, threshold);
+  try {
+      // Call WASM implementation
+      return exports.split_secret_wasm(secret, shares, threshold) as string[];
+  } catch (e) {
+      console.error("WASM Split Error:", e);
+      if (import.meta.env.PROD) {
+          throw new Error("WASM Split Failed");
+      }
+      return splitJS(secret, shares, threshold);
+  }
 };
 
 // Helper for power
@@ -130,13 +145,29 @@ export const combine = async (shares: string[]): Promise<string> => {
   const exports = wasmManager.getExports();
   
   // Enforce WASM loaded in Production for security context check
-  if (import.meta.env.PROD && !exports) {
-      throw new Error(i18n.t('errors.wasmSecurity'));
+  if (!exports) {
+      if (import.meta.env.PROD) {
+          throw new Error(i18n.t('errors.wasmSecurity'));
+      } else {
+          console.warn("WASM not loaded, falling back to JS (DEV ONLY)");
+          return combineJS(shares);
+      }
   }
 
-  // Currently WASM implementation for Shamir is pending
-  // Using JS implementation securely within the validated context
-  return combineJS(shares);
+  try {
+      // Call WASM implementation
+      return exports.combine_shares_wasm(shares);
+  } catch (e) {
+       console.error("WASM Combine Error:", e);
+       // Check if it's a legacy share format that WASM can't handle?
+       // WASM expects specific format. If it fails, maybe try JS if allowed?
+       // But user wants "absolute security" which implies consistency.
+       // However, we can fallback to JS for legacy support IF we trust JS implementation.
+       if (import.meta.env.PROD) {
+           throw e;
+       }
+       return combineJS(shares);
+  }
 };
 
 // Helper to recover secret from legacy hex (mixed length, UTF-16 char codes)
@@ -147,7 +178,7 @@ const recoverLegacySecret = async (hexSecretPart: string, targetChecksum: string
   // We are grouping bytes (pairs of hex digits) into char codes.
   // e.g. "61" -> \u0061 ('a')
   //      "4e2d" -> \u4e2d ('中')
-  
+
   const solve = (index: number, currentStr: string) => {
     if (results.length >= MAX_RESULTS) return;
     if (index === hexSecretPart.length) {

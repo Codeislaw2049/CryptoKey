@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export function combine_shares_wasm(shares: any): string;
+
 export function create_video_trailer_wasm(payload_length: number): Uint8Array;
 
 export function decrypt_binary_wasm(encrypted_data: Uint8Array, password: string, key_file?: Uint8Array | null): Uint8Array;
@@ -13,24 +15,28 @@ export function extract_binary_wasm(image_data: Uint8ClampedArray): Uint8Array;
 
 export function parse_video_trailer_wasm(trailer_data: Uint8Array): number;
 
+export function split_secret_wasm(secret: string, shares_count: number, threshold: number): any;
+
 export function verify_license_wasm(content_json: string, signature_hex: string): boolean;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly decrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number) => [number, number, number];
-  readonly encrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => [number, number, number];
+  readonly combine_shares_wasm: (a: any) => [number, number, number, number];
+  readonly split_secret_wasm: (a: number, b: number, c: number, d: number) => [number, number, number];
   readonly create_video_trailer_wasm: (a: number) => any;
-  readonly embed_binary_wasm: (a: number, b: number, c: number, d: number) => [number, number, number, number];
-  readonly extract_binary_wasm: (a: number, b: number) => [number, number, number, number];
   readonly parse_video_trailer_wasm: (a: number, b: number) => [number, number, number];
   readonly verify_license_wasm: (a: number, b: number, c: number, d: number) => number;
+  readonly decrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number) => [number, number, number];
+  readonly encrypt_binary_wasm: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => [number, number, number];
+  readonly embed_binary_wasm: (a: number, b: number, c: number, d: number) => [number, number, number, number];
+  readonly extract_binary_wasm: (a: number, b: number) => [number, number, number, number];
+  readonly __wbindgen_malloc: (a: number, b: number) => number;
+  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_exn_store: (a: number) => void;
   readonly __externref_table_alloc: () => number;
   readonly __wbindgen_externrefs: WebAssembly.Table;
-  readonly __wbindgen_malloc: (a: number, b: number) => number;
-  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __externref_table_dealloc: (a: number) => void;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __wbindgen_start: () => void;

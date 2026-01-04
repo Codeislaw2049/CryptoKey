@@ -38,6 +38,8 @@ class WasmManager {
         verify_license_wasm: wasm.verify_license_wasm,
         create_video_trailer_wasm: wasm.create_video_trailer_wasm,
         parse_video_trailer_wasm: wasm.parse_video_trailer_wasm,
+        split_secret_wasm: wasm.split_secret_wasm,
+        combine_shares_wasm: wasm.combine_shares_wasm,
         memory: (wasm as any).memory
       };
 

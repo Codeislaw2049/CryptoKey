@@ -6,6 +6,8 @@ export interface ProWasmExports {
   verify_license_wasm: (content_json: string, signature_hex: string) => boolean;
   create_video_trailer_wasm: (payload_length: number) => Uint8Array;
   parse_video_trailer_wasm: (trailer_data: Uint8Array) => number;
+  split_secret_wasm: (secret: string, shares_count: number, threshold: number) => any;
+  combine_shares_wasm: (shares: any) => string;
   memory: WebAssembly.Memory;
 }
 
