@@ -866,7 +866,7 @@ export const DecryptionTool = ({ initialCiphertext }: DecryptionToolProps = {}) 
                             title={type.label}
                         >
                             <type.icon size={14} className="shrink-0" />
-                            <span className="hidden 2xl:inline whitespace-nowrap overflow-hidden text-ellipsis max-w-full">{type.label}</span>
+                            <span className="hidden 2xl:inline absolute 2xl:static w-0 2xl:w-auto h-0 2xl:h-auto overflow-hidden 2xl:overflow-visible whitespace-nowrap max-w-full text-ellipsis">{type.label}</span>
                         </button>
                     ))}
                 </div>

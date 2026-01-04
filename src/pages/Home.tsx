@@ -81,7 +81,7 @@ export const Home = () => {
   const LandingCard = ({ icon: Icon, title, desc, onClick, color }: any) => (
     <button 
       onClick={onClick}
-      className="group relative overflow-hidden rounded-2xl bg-surface/40 border border-slate-800 p-6 text-left transition-all hover:bg-surface/60 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 w-full h-full flex flex-col focus:outline-none focus:ring-0"
+      className="group relative overflow-hidden rounded-2xl bg-surface/40 border border-slate-800 p-6 text-left transition-all hover:bg-surface/60 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 w-full max-w-md md:max-w-none mx-auto md:mx-0 h-full flex flex-col focus:outline-none focus:ring-0"
     >
       <div className={`mb-4 p-3 rounded-xl bg-slate-900/50 w-fit ${color} group-hover:scale-110 transition-transform duration-300`}>
         <Icon size={32} />

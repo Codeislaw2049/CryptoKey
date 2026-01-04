@@ -26,9 +26,12 @@ export const InviteSystem = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ nickname: userNickname })
       })
-      .then(res => res.json())
+      .then(async res => {
+          if (!res.ok) return null;
+          try { return await res.json(); } catch { return null; }
+      })
       .then(data => {
-          if (data.success && data.data.code) {
+          if (data && data.success && data.data.code) {
               setIdentity(prev => prev ? { ...prev, inviteCode: data.data.code } : null);
           }
       })

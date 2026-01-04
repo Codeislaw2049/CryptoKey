@@ -266,14 +266,14 @@ ${t('resultStep.fileContent.note')}
                    className="flex-1 bg-black/30 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:ring-1 focus:ring-primary outline-none placeholder:text-slate-600"
                  />
                  <Button 
-                   onClick={() => {
-                      if (!isPro) {
-                          triggerUpgrade();
-                          return;
-                      }
-                      handleSavePassword();
-                   }} 
-                   disabled={!passwordTitle.trim() || isSaved}
+               onClick={() => {
+                  if (!isPro) {
+                      triggerUpgrade();
+                      return;
+                  }
+                  handleSavePassword();
+               }} 
+               disabled={isPro && (!passwordTitle.trim() || isSaved)}
                    className={`px-4 transition-all ${isSaved ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-primary hover:bg-primary/90 text-slate-900'}`}
                  >
                    {isSaved ? <CheckCircle size={18} /> : <Save size={18} />}
