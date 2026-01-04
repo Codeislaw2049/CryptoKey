@@ -267,13 +267,13 @@ export const LicenseProvider: React.FC<{ children: React.ReactNode }> = ({ child
         }
     } 
     
-    // 2. Check Dev/Simulated License (Only if not real)
-        if (newType === 'free') {
-            const stored = localStorage.getItem('cryptokey_dev_pro_status');
-            if (stored === 'true') {
-               newType = 'pro_simulated';
-            }
+    // 2. Check Dev/Simulated License (Only in Development Environment)
+    if (import.meta.env.DEV && newType === 'free') {
+        const stored = localStorage.getItem('cryptokey_dev_pro_status');
+        if (stored === 'true') {
+           newType = 'pro_simulated';
         }
+    }
         
         setLicenseType(newType);
     };
