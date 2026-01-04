@@ -88,48 +88,7 @@ export const sha256 = async (str: string): Promise<string> => {
  * @returns Array of shares strings, format "id-hexdata"
  */
 export const splitJS = async (secret: string, shares: number, threshold: number): Promise<string[]> => {
-  if (threshold > shares) throw new Error("Threshold cannot be greater than total shares");
-  if (threshold < 2) throw new Error("Threshold must be at least 2");
-
-  // Calculate checksum
-  const checksum = await sha256(secret);
-  // Payload format: CHECKSUM(64 chars)|SECRET
-  const payload = `${checksum}|${secret}`;
-
-  const hexSecret = strToHex(payload);
-  const secretBytes = [];
-  for (let i = 0; i < hexSecret.length; i += 2) {
-    secretBytes.push(parseInt(hexSecret.substr(i, 2), 16));
-  }
-
-  // Generate random polynomials for each byte of the secret
-  const polynomials = [];
-  for (let i = 0; i < secretBytes.length; i++) {
-    const coeffs = [secretBytes[i]]; // a0 is the secret byte
-    for (let j = 1; j < threshold; j++) {
-      let r = randomByte();
-      coeffs.push(r);
-    }
-    polynomials.push(coeffs);
-  }
-
-  // Generate shares
-  const resultShares: string[] = [];
-  for (let i = 1; i <= shares; i++) {
-    let shareBytes = '';
-    for (let j = 0; j < polynomials.length; j++) {
-      const coeffs = polynomials[j];
-      let val = coeffs[0];
-      for (let k = 1; k < coeffs.length; k++) {
-        const term = mul(coeffs[k], getPower(i, k));
-        val = add(val, term);
-      }
-      shareBytes += val.toString(16).padStart(2, '0');
-    }
-    resultShares.push(`${i}-${shareBytes}`);
-  }
-
-  return resultShares;
+  throw new Error("Sharding is a PRO feature. Please upgrade to use this functionality.");
 };
 
 export const split = async (secret: string, shares: number, threshold: number): Promise<string[]> => {
@@ -164,88 +123,7 @@ const getPower = (base: number, exp: number): number => {
  * @returns The reconstructed secret string
  */
 export const combineJS = async (shares: string[]): Promise<string> => {
-  if (shares.length === 0) return '';
-
-  // Parse shares
-  const parsedShares: { x: number; data: number[] }[] = [];
-  let dataLength = -1;
-
-  for (const share of shares) {
-      const parts = share.split('-');
-      if (parts.length !== 2) continue;
-      
-      const x = parseInt(parts[0], 10);
-      const hexData = parts[1];
-      
-      const dataBytes = [];
-      for (let i = 0; i < hexData.length; i += 2) {
-          dataBytes.push(parseInt(hexData.substr(i, 2), 16));
-      }
-      
-      if (dataLength === -1) {
-          dataLength = dataBytes.length;
-      } else if (dataLength !== dataBytes.length) {
-          continue; 
-      }
-      
-      // Check for duplicates
-      if (!parsedShares.some(s => s.x === x)) {
-        parsedShares.push({ x, data: dataBytes });
-      }
-  }
-
-  if (parsedShares.length < 2) {
-      throw new Error("Not enough valid shares to reconstruct");
-  }
-
-  let reconstructedHex = '';
-  
-  for (let byteIdx = 0; byteIdx < dataLength; byteIdx++) {
-      let result = 0;
-      for (let i = 0; i < parsedShares.length; i++) {
-          const xi = parsedShares[i].x;
-          const yi = parsedShares[i].data[byteIdx];
-          let numerator = 1;
-          let denominator = 1;
-          for (let j = 0; j < parsedShares.length; j++) {
-              if (i === j) continue;
-              const xj = parsedShares[j].x;
-              numerator = mul(numerator, xj);
-              denominator = mul(denominator, sub(xi, xj));
-          }
-          const lagrange = mul(yi, div(numerator, denominator));
-          result = add(result, lagrange);
-      }
-      reconstructedHex += result.toString(16).padStart(2, '0');
-  }
-
-  const reconstructedPayload = hexToStr(reconstructedHex);
-  
-  // Verify Checksum
-  // Format: CHECKSUM(64 chars)|SECRET
-  const separatorIndex = reconstructedPayload.indexOf('|');
-  if (separatorIndex === -1 || separatorIndex !== 64) {
-      throw new Error("Integrity check failed: Invalid payload format (Checksum mismatch)");
-  }
-
-  const extractedChecksum = reconstructedPayload.substring(0, 64);
-  const extractedSecret = reconstructedPayload.substring(65);
-
-  const calculatedChecksum = await sha256(extractedSecret);
-
-  if (extractedChecksum !== calculatedChecksum) {
-      // Try Legacy Recovery (for shares generated with older versions)
-      try {
-          const legacySecret = await recoverLegacySecret(reconstructedHex.substring(130), extractedChecksum); // 130 = 64*2 + 2 (|)
-          if (legacySecret) return legacySecret;
-      } catch (e) {
-          console.warn("Legacy recovery failed", e);
-      }
-      
-      throw new Error("Integrity check failed: Checksum mismatch (Corrupted or wrong shares)");
-  }
-
-  return extractedSecret;
+  throw new Error("Sharding is a PRO feature. Please upgrade to use this functionality.");
 };
 
 export const combine = async (shares: string[]): Promise<string> => {
